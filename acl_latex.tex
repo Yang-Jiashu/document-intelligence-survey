@@ -1,0 +1,114 @@
+
+\documentclass[11pt]{article}
+
+% ---- English fonts for XeLaTeX ----
+\usepackage{fontspec}
+\setmainfont{Times New Roman}          % 英文正文字体
+\setsansfont{Arial}                    % 英文无衬线字体
+\setmonofont{Courier New}              % 英文等宽字体
+
+% ---- ACL template ----
+\usepackage[final]{acl}
+\usepackage{balance}
+\usepackage[final]{graphicx}
+\setkeys{Gin}{draft=false}
+
+\usepackage{dblfloatfix}
+
+% ---- Standard packages ----
+\usepackage{latexsym}
+\usepackage{microtype}
+\usepackage{inconsolata}  % 提升等宽字体美观度
+
+% ---- Title box settings ----
+\setlength\titlebox{3.2cm}
+
+% ---- Optional: 英文斜体正常，中文斜体用伪斜体 ----
+\XeTeXinterchartokenstate=1
+
+% ---- Document title ----
+\title{\raisebox{-0.25\height}{\includegraphics[height=1.0cm]{figs_by_qixingyu/logo.pdf}}~Beyond OCR: A Survey of Document Intelligence\\from Structured Perception to Multimodal Question Answering}
+
+\author{JiaShu Yang, Chi Zhang, Xingyu Qi, Ning Zhang, Jie Wu, Lingxu Chen, Jiani Guo}
+\begin{document}
+\maketitle
+% bib, reference
+% \bibliography{custom}
+Documents (paper media, images, or electronic files containing textual and graphical information) are ubiquitous in daily office work, online dissemination, and governmental and enterprise workflows; automatically parsing, retrieving, and supporting decision-making based on their content constitutes a core requirement of Document Intelligence. In real-world settings, many documents are first converted into images via scanning or photographing; consequently, document processing typically starts from visual inputs: on the one hand, the system must accurately localize layout elements such as text blocks, tables, figures, and headings, and perform text detection and recognition; on the other hand, it must conduct higher-level semantic understanding and reasoning based on structured inputs to answer queries, extract key information, and generate verifiable results. With advances in deep learning and large language models, the research focus has gradually expanded from ``character-level recognition'' to ``document-level understanding and question answering'' across regions, pages, and modalities, and the field has correspondingly developed evaluation benchmarks that emphasize end-to-end capability and robustness.
+
+Following this evolution, this paper organizes the survey in the order of ``perception first, then reasoning, and finally end-to-end unified modeling,'' and aligns evaluation suites with methodological lineages. Part I (Document Layout Analysis and OCR) focuses on layout parsing starting from page geometry, including detection/segmentation-based layout element recognition, layout-aware models that incorporate layout information into pretrained representation learning, and robustness and cross-domain generalization under real-world document distributions; it further reviews key technical points of OCR from traditional pipelines to deep learning and lightweight deployment, emphasizing error propagation and engineering constraints when OCR serves as the ``entry point'' for downstream understanding tasks. Part II (Document Understanding and Question Answering) systematically summarizes three mainstream scenarios built on structured inputs: structure-aware representations for tables, modular/executable reasoning and verifiable question answering; retrieval-augmented generation (RAG) and reasoning-driven retrieval for long texts; and multimodal pretraining and instruction alignment for visually rich documents, along with the evolution toward OCR-free modeling and multi-page, long-context understanding. Finally, we summarize the datasets and benchmarks associated with these two stages, covering task settings from single-page to multi-page documents and from closed sets to real-world enterprise documents, providing reproducible baselines for comparison and a systematic research roadmap for future studies.
+% supplementary materials
+
+\begin{figure*}[t]
+\centering
+\includegraphics[
+    width=0.95\textwidth,
+    trim=0cm 0cm 0cm 0cm,
+    clip
+]{figs_by_qixingyu/fig01.pdf}
+\caption{Overview of the Document Intelligence pipeline: Part~I (Perception) covers layout analysis and OCR, producing structured text and layout; Part~II (Understanding) includes three parallel branches---table understanding, text RAG, and multimodal VLM---each converging on the final Document QA output.}
+\label{fig:pipeline_overview}
+\end{figure*}
+
+\section{Document Layout Analysis and OCR}
+
+\input{sections/layout}
+\input{sections/ocr}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[
+    width=0.95\textwidth,
+    trim=1.6cm 2.0cm 4.0cm 1.6cm,
+    clip
+]{figs_by_qixingyu/fig03.pdf}
+\caption{Hierarchical summary of representative methods in Document Layout Analysis and OCR, organized by research category and sub-task.}
+\label{fig:layout_pipeline1}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[
+    width=0.95\textwidth,
+    trim=0cm 0cm 0cm 0cm,
+    clip
+]{figs_by_qixingyu/fig04.pdf}
+\caption{Key method milestones in Document Intelligence (2018--2026) across four research tracks: optical character recognition and document parsing, layout analysis, table understanding, and multimodal vision-language models with retrieval-augmented generation.}
+\label{fig:timeline}
+\end{figure*}
+
+\section{Document Understanding and Question Answering}
+
+\input{sections/table}
+\input{sections/text}
+\input{sections/multi}
+\input{sections/eval}
+
+\input{figs_by_qixingyu/fig11}
+\balance
+\section{Future Research Directions}
+Although document intelligence has evolved from OCR-centered pipeline approaches to end-to-end systems capable of cross-page, multimodal understanding and retrieval-augmented generation (RAG), achieving stable deployment in real-world scenarios still faces a series of critical challenges. These challenges lie not only in a model's ability to understand complex documents, but also in system-level evidence organization and reasoning mechanisms, and in risk-oriented evaluation paradigms for real-world deployment. Future research can be advanced along the following three levels.
+
+\paragraph{Verifiable and Structure-Aware Document Understanding.}
+Current document question answering systems can often produce seemingly plausible answers, yet these answers frequently lack explicit and verifiable evidence. For example, when asked about a key clause in a contract, a system may generate the correct conclusion but fail to indicate on which page or in which table cell the information is located. This phenomenon---``correct answers but opaque evidence''---limits adoption in high-stakes scenarios, because users cannot easily judge whether the model's reasoning process is trustworthy. Therefore, a key research direction is to jointly model evidence localization and answer generation, so that while producing an answer, the model can explicitly identify the supporting document regions and establish a correspondence between the answer and its evidence, making the reasoning process verifiable rather than merely plausible.
+
+Meanwhile, document understanding is shifting from pipeline methods that rely on explicit text extraction (e.g., OCR) to end-to-end vision-language models that operate directly on visual inputs. Such OCR-free methods can avoid information loss caused by recognition errors, but they also introduce new challenges: these models no longer have explicit textual and structural boundaries, and thus must automatically learn the document organization internally, such as the hierarchical relations between headings and body text, row and column alignments in tables, and semantic associations across fields. Without such structure awareness, even if a model can recognize local content, it is difficult to perform consistent and reliable reasoning.
+
+Therefore, future research should develop structure-aware vision-language modeling methods, enabling models not only to ``see'' document content but also to understand how documents are organized, and to perform content recognition, structural inference, and evidence localization within a unified framework. Such capabilities will transform document QA systems from opaque answer-generation tools into reliable analytical assistants that provide verifiable reasoning processes, thereby supporting more trustworthy automated decision-making and human-AI collaboration.
+
+\paragraph{Multimodal RAG and Agentic Systems for Complex Evidence Organization.}
+As document understanding tasks extend from single pages to long documents and even collections of multiple documents, the system's challenge is no longer merely to find the page that contains the answer, but to integrate information scattered across different locations into a consistent and reliable conclusion. For instance, an answer may partly come from textual descriptions, partly from tabular data, and partly from figures or supplementary notes on later pages. Although current methods can retrieve relevant content, they often lack effective mechanisms to confirm whether these pieces of information refer to the same entity or are logically consistent, which can lead to incomplete or even contradictory reasoning results. Therefore, future research should develop finer-grained retrieval and representation methods that allow models to localize specific regions in documents, establish cross-page and cross-modal associations, and continuously verify consistency among different evidence during reasoning, rather than relying on one-shot retrieval results.
+
+In addition, in real application scenarios, document understanding is typically not accomplished by a single model, but by the collaboration of multiple functional modules---for example, layout parsing to identify document structure, table parsing to extract structured data, retrieval modules to locate relevant content, and rule-based or computational modules to perform precise verification. Compared with a single model, an agentic system that integrates these tools can dynamically choose appropriate processing steps according to task requirements, thereby improving overall capability. However, this also brings new research challenges, including how to ensure that the model can reliably select and invoke appropriate tools, how to prevent errors from accumulating throughout multi-step processing, and how to explicitly indicate that a reliable conclusion cannot be reached when evidence is insufficient or conflicting, rather than generating a superficially plausible but ungrounded answer. Addressing these issues will enable document understanding systems to evolve from simple information extraction tools into intelligent systems that can integrate complex evidence and provide reliable reasoning processes.
+
+\paragraph{Risk-Oriented Data and Evaluation Paradigms for Real-World Deployment.}
+Most existing evaluations of document understanding systems are built on well-structured, high-quality benchmark data, such as well-typeset PDFs or form documents with fixed templates. In such environments, models can often achieve high accuracy. However, documents in real business scenarios are usually more complex: scans may be blurry, skewed, or occluded; documents from different sources can vary substantially in format and language; and key information may be scattered across long contexts or even multiple documents. This gap between training and evaluation environments and real-world conditions leads to models that perform well on benchmarks but exhibit significant performance degradation in practice. Therefore, future evaluations should pay more attention to generalization under real distributions, including robustness to low-quality documents, adaptability to cross-domain documents, and computational efficiency and stability when handling long documents.
+
+Moreover, existing evaluations typically focus only on whether the final answer is correct, but in practical applications an equally important question is whether the answer is grounded in verifiable evidence. For instance, even if a system occasionally produces the correct answer, users may still find it hard to trust the result if the system cannot explain where the evidence comes from. Therefore, future evaluations should move beyond a single accuracy metric to multi-dimensional metrics that reflect system reliability, such as whether evidence is correctly localized, whether the reasoning process is internally consistent, whether the system can explicitly indicate uncertainty when it fails, and whether errors are diagnosable. Such risk-oriented evaluation paradigms will more accurately reflect a system's trustworthiness in real-world conditions, and will shift research goals from merely improving average accuracy to building document intelligence systems whose behavior is predictable, whose reasoning is verifiable, and whose behavior in real-world deployment is reliable.
+
+
+
+\bibliography{custom}
+\appendix
+\clearpage
+\end{document}

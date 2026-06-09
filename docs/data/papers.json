@@ -1,0 +1,79 @@
+{
+  "papers": [
+    {"id": 1, "title": "LayoutLM: Pre-training of Text and Layout for Document Image Understanding", "authors": "Yiheng Xu, et al.", "venue": "KDD 2020", "year": 2020, "github": "https://github.com/microsoft/unilm", "arxiv": "1912.13318", "category": "layout", "tags": ["layout-aware", "pre-training", "transformer"], "stars": 22146},
+    {"id": 2, "title": "Donut: Document Understanding Transformer", "authors": "Geewook Kim, et al.", "venue": "CVPR 2022", "year": 2022, "github": "https://github.com/clovaai/donut", "arxiv": "2111.15664", "category": "vlm", "tags": ["ocr-free", "end-to-end", "transformer"], "stars": 6877},
+    {"id": 3, "title": "Pix2Struct: Screenshot Parsing as Pretraining for Visual Language Understanding", "authors": "Kenton Lee, et al.", "venue": "ICML 2023", "year": 2023, "github": "https://github.com/google-research/pix2struct", "arxiv": "2210.03347", "category": "vlm", "tags": ["ocr-free", "screenshot", "pre-training"], "stars": 684},
+    {"id": 4, "title": "GraphRAG: From Local to Global Reasoning on Graphs", "authors": "Darren Edge, et al.", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/microsoft/graphrag", "arxiv": "2404.16130", "category": "rag", "tags": ["graph", "rag", "reasoning"], "stars": 33577},
+    {"id": 5, "title": "LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking", "authors": "Yupan Huang, et al.", "venue": "ICML 2022", "year": 2022, "github": "https://github.com/microsoft/unilm", "arxiv": "2204.08387", "category": "layout", "tags": ["layout-aware", "multimodal", "masking"], "stars": 22146},
+    {"id": 6, "title": "DocVQA: A Dataset for VQA on Document Images", "authors": "Minesh Mathew, et al.", "venue": "CVPR 2021", "year": 2021, "github": "", "arxiv": "2007.00398", "category": "eval", "tags": ["benchmark", "vqa", "dataset"], "stars": 0},
+    {"id": 7, "title": "Table-GPT: Table Fine-tuned GPT for Diverse Table Tasks", "authors": "Peng Li, et al.", "venue": "EMNLP 2023", "year": 2023, "github": "", "arxiv": "2310.08566", "category": "table", "tags": ["table", "gpt", "fine-tuning"], "stars": 0},
+    {"id": 8, "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation", "authors": "Zirui Guo, et al.", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/HKUDS/LightRAG", "arxiv": "2410.05779", "category": "rag", "tags": ["rag", "efficient", "graph"], "stars": 36320},
+    {"id": 9, "title": "Qwen3-VL Technical Report", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2025", "year": 2025, "github": "https://github.com/QwenLM/Qwen3-VL", "arxiv": "2511.21631", "category": "vlm", "tags": ["vlm", "document", "multimodal", "moe"], "stars": 19338},
+    {"id": 10, "title": "OmniTab: Pretraining with Natural and Synthetic Data for Table QA", "authors": "Zhengbao Jiang, et al.", "venue": "NAACL 2022", "year": 2022, "github": "", "arxiv": "2207.03637", "category": "table", "tags": ["table", "pre-training", "qa"], "stars": 0},
+    {"id": 11, "title": "DocLayout-YOLO: An End-to-End Document Layout Analysis Method", "authors": "Xiaomeng Zhao, et al.", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/opendatalab/DocLayout-YOLO", "arxiv": "2406.19148", "category": "layout", "tags": ["layout", "yolo", "real-time"], "stars": 2179},
+    {"id": 12, "title": "MinerU: A One-stop, Open-source, High-quality Data Extraction Tool", "authors": "OpenDataLab", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/opendatalab/MinerU", "arxiv": "2409.18839", "category": "ocr", "tags": ["ocr", "extraction", "open-source"], "stars": 66927},
+    {"id": 13, "title": "PaddleOCR: Awesome OCR Toolkits", "authors": "Baidu", "venue": "GitHub", "year": 2020, "github": "https://github.com/PaddlePaddle/PaddleOCR", "arxiv": "", "category": "ocr", "tags": ["ocr", "toolkit", "multilingual"], "stars": 81529},
+    {"id": 14, "title": "Chain-of-Table: Evolving Tables in the Reasoning Chain", "authors": "Zhehuai Chen, et al.", "venue": "ICLR 2024", "year": 2024, "github": "", "arxiv": "2401.04398", "category": "table", "tags": ["table", "chain-of-thought", "reasoning"], "stars": 0},
+    {"id": 15, "title": "Monkey: Image Resolution and Text Label Are Important Things", "authors": "Yuliang Liu, et al.", "venue": "ICCV 2023", "year": 2023, "github": "https://github.com/Yuliang-Liu/Monkey", "arxiv": "2311.06607", "category": "vlm", "tags": ["vlm", "high-resolution", "document"], "stars": 1948},
+    {"id": 16, "title": "LLaVA: Large Language and Vision Assistant", "authors": "Haotian Liu, et al.", "venue": "NeurIPS 2023", "year": 2023, "github": "https://github.com/haotian-liu/LLaVA", "arxiv": "2304.08485", "category": "vlm", "tags": ["vlm", "multimodal", "instruction-tuning"], "stars": 24863},
+    {"id": 17, "title": "InternVL: Scaling up Vision Foundation Models and Aligning for Generic Visual-Linguistic Tasks", "authors": "OpenGVLab", "venue": "CVPR 2024", "year": 2024, "github": "https://github.com/OpenGVLab/InternVL", "arxiv": "2312.14238", "category": "vlm", "tags": ["vlm", "scaling", "vision-language"], "stars": 10058},
+    {"id": 18, "title": "InternLM-XComposer: A Vision-Language Large Model for Advanced Text-image Comprehension and Composition", "authors": "InternLM Team", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/InternLM/InternLM-XComposer", "arxiv": "2309.15112", "category": "vlm", "tags": ["vlm", "composition", "document"], "stars": 2925},
+    {"id": 19, "title": "Vary: Scaling up the Vision Vocabulary for Large Vision-Language Models", "authors": "Haoran Wei, et al.", "venue": "CVPR 2024", "year": 2024, "github": "https://github.com/Ucas-HaoranWei/Vary", "arxiv": "2312.06109", "category": "vlm", "tags": ["vlm", "document", "ocr"], "stars": 1891},
+    {"id": 20, "title": "OmniParser: A Unified Framework for Text Spotting, Key Information Extraction and Table Recognition", "authors": "Microsoft", "venue": "CVPR 2024", "year": 2024, "github": "https://github.com/microsoft/OmniParser", "arxiv": "2408.11432", "category": "vlm", "tags": ["vlm", "parsing", "document"], "stars": 24872},
+    {"id": 21, "title": "Qwen2.5-VL Technical Report", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2025", "year": 2025, "github": "https://github.com/QwenLM/Qwen2.5-VL", "arxiv": "2502.13923", "category": "vlm", "tags": ["vlm", "document", "multimodal", "grounding"], "stars": 15234},
+    {"id": 22, "title": "Qwen2-VL: Advanced Vision-Language Model", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/QwenLM/Qwen2-VL", "arxiv": "2409.12191", "category": "vlm", "tags": ["vlm", "document", "multimodal"], "stars": 18456},
+    {"id": 23, "title": "RAG-Anything: All-in-One RAG Framework", "authors": "Zirui Guo, Xubin Ren, Lingrui Xu, et al.", "venue": "arXiv 2025", "year": 2025, "github": "https://github.com/HKUDS/RAG-Anything", "arxiv": "2510.12323", "category": "rag", "tags": ["rag", "multimodal", "knowledge-graph"], "stars": 21075},
+    {"id": 24, "title": "AutoRAG: Automated Framework for Optimization of Retrieval Augmented Generation Pipeline", "authors": "Dongkyu Kim, Byoungwook Kim, et al.", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/Marker-Inc-Korea/AutoRAG", "arxiv": "2410.20878", "category": "rag", "tags": ["rag", "automl", "optimization"], "stars": 4817},
+    {"id": 25, "title": "Qwen3.5: Native Multimodal Large Language Model", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2026", "year": 2026, "github": "https://github.com/QwenLM/Qwen3.5", "arxiv": "2601.00000", "category": "vlm", "tags": ["vlm", "moe", "native-multimodal"], "stars": 8500}
+  ],
+  "trends": {
+    "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+    "layout": [45, 120, 200, 280, 350, 420, 150, 80],
+    "ocr": [80, 150, 220, 300, 380, 450, 200, 100],
+    "table": [30, 60, 100, 150, 220, 300, 120, 60],
+    "rag": [10, 25, 50, 120, 280, 500, 250, 150],
+    "vlm": [5, 15, 40, 100, 250, 480, 600, 400]
+  },
+  "benchmarks": [
+    {"name": "DocVQA", "type": "VQA", "year": 2020, "size": "12K docs", "metric": "ANLS"},
+    {"name": "InfographicVQA", "type": "VQA", "year": 2021, "size": "5K docs", "metric": "ANLS"},
+    {"name": "PubLayNet", "type": "Layout", "year": 2019, "size": "360K pages", "metric": "mAP"},
+    {"name": "DocLayNet", "type": "Layout", "year": 2022, "size": "80K pages", "metric": "mAP"},
+    {"name": "OCRBench", "type": "OCR", "year": 2023, "size": "29 tasks", "metric": "Score"},
+    {"name": "CRAG", "type": "RAG", "year": 2024, "size": "4 domains", "metric": "Accuracy"},
+    {"name": "TableFact", "type": "Table", "year": 2019, "size": "16K claims", "metric": "Accuracy"},
+    {"name": "FeTaQA", "type": "Table", "year": 2021, "size": "10K QA", "metric": "BLEU"},
+    {"name": "MMLongBench-Doc", "type": "Long-Doc", "year": 2024, "size": "Long docs", "metric": "Accuracy"}
+  ],
+  "sota_history": {
+    "DocVQA": [
+      {"year": 2020, "model": "Human Performance", "score": 98.11, "type": "Human", "date": "2020-06-13"},
+      {"year": 2024, "model": "Qwen2-VL", "score": 96.70, "type": "Open", "date": "2024-07-11"},
+      {"year": 2025, "model": "Qwen2.5-VL", "score": 96.50, "type": "Open", "date": "2025-01-27"},
+      {"year": 2025, "model": "Qwen3-VL", "score": 97.25, "type": "Open", "date": "2025-09-23"},
+      {"year": 2026, "model": "ORCA", "score": 97.29, "type": "Open", "date": "2026-03-10"}
+    ],
+    "InfographicVQA": [
+      {"year": 2021, "model": "Human Performance", "score": 97.18, "type": "Human", "date": "2022-03-02"},
+      {"year": 2024, "model": "Qwen2-VL", "score": 84.69, "type": "Open", "date": "2024-07-12"},
+      {"year": 2025, "model": "Qwen2.5-VL", "score": 87.27, "type": "Open", "date": "2025-01-27"},
+      {"year": 2025, "model": "Seed-VL-1.5", "score": 91.20, "type": "Open", "date": "2025-05-13"}
+    ],
+    "MMLongBench-Doc (End-to-End)": [
+      {"year": 2024, "model": "GPT-4V", "score": 30.5, "type": "API"},
+      {"year": 2024, "model": "GPT-4o", "score": 44.9, "type": "API"}
+    ]
+  },
+  "leaderboard": [
+    {"model": "GPT-4V", "type": "API"},
+    {"model": "Qwen3-VL", "type": "Open"},
+    {"model": "Qwen3.5", "type": "Open"},
+    {"model": "OmniParser", "type": "Open"},
+    {"model": "LLaVA", "type": "Open"},
+    {"model": "InternVL", "type": "Open"},
+    {"model": "Monkey", "type": "Open"},
+    {"model": "Donut", "type": "Open"},
+    {"model": "LayoutLMv3", "type": "Open"},
+    {"model": "Pix2Struct", "type": "Open"}
+  ]
+}
