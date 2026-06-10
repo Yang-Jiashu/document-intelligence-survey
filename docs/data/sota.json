@@ -3,7 +3,7 @@
   "updateCadence": "weekly",
   "nextScheduledCheck": "2026-06-17",
   "generatedBy": "scripts/update_sota.py",
-  "status": "source-backed snapshot",
+  "status": "auto-refreshed snapshot",
   "note": "Static GitHub Pages cannot stream live benchmark changes. This file is refreshed by a scheduled workflow and keeps source links plus the last successful check time.",
   "benchmarks": [
     {
@@ -13,9 +13,10 @@
       "metric": "ANLS",
       "sourceName": "Robust Reading Competition",
       "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1",
-      "updateMode": "manual-with-source-check",
+      "updateMode": "auto-scraped",
       "lastChecked": "2026-06-10",
       "leader": {
+        "year": 2026,
         "model": "ORCA",
         "score": 97.29,
         "type": "Open",
@@ -23,25 +24,18 @@
       },
       "history": [
         {
-          "year": 2020,
-          "model": "Human Performance",
-          "score": 98.11,
-          "type": "Human",
-          "date": "2020-06-13"
+          "year": 2026,
+          "model": "ORCA",
+          "score": 97.29,
+          "type": "Open",
+          "date": "2026-03-10"
         },
         {
-          "year": 2024,
-          "model": "Qwen2-VL",
-          "score": 96.7,
+          "year": 2026,
+          "model": "NEXT-8B",
+          "score": 97.28,
           "type": "Open",
-          "date": "2024-07-11"
-        },
-        {
-          "year": 2025,
-          "model": "Qwen2.5-VL",
-          "score": 96.5,
-          "type": "Open",
-          "date": "2025-01-27"
+          "date": "2026-01-02"
         },
         {
           "year": 2025,
@@ -51,11 +45,18 @@
           "date": "2025-09-23"
         },
         {
-          "year": 2026,
-          "model": "ORCA",
-          "score": 97.29,
+          "year": 2025,
+          "model": "Seed-VL-1.5",
+          "score": 96.91,
+          "type": "API",
+          "date": "2025-05-13"
+        },
+        {
+          "year": 2025,
+          "model": "Star_LLM",
+          "score": 96.71,
           "type": "Open",
-          "date": "2026-03-10"
+          "date": "2025-11-09"
         }
       ]
     },
@@ -66,28 +67,36 @@
       "metric": "ANLS",
       "sourceName": "Robust Reading Competition",
       "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3",
-      "updateMode": "manual-with-source-check",
+      "updateMode": "auto-scraped",
       "lastChecked": "2026-06-10",
       "leader": {
+        "year": 2025,
         "model": "Seed-VL-1.5",
         "score": 91.2,
-        "type": "Open",
+        "type": "API",
         "date": "2025-05-13"
       },
       "history": [
         {
-          "year": 2021,
-          "model": "Human Performance",
-          "score": 97.18,
-          "type": "Human",
-          "date": "2022-03-02"
+          "year": 2025,
+          "model": "Seed-VL-1.5",
+          "score": 91.2,
+          "type": "API",
+          "date": "2025-05-13"
         },
         {
-          "year": 2024,
-          "model": "Qwen2-VL",
-          "score": 84.69,
+          "year": 2025,
+          "model": "MiMo-VL-7B-RL",
+          "score": 88.06,
           "type": "Open",
-          "date": "2024-07-12"
+          "date": "2025-06-04"
+        },
+        {
+          "year": 2026,
+          "model": "ORCA",
+          "score": 88.02,
+          "type": "Open",
+          "date": "2026-03-10"
         },
         {
           "year": 2025,
@@ -97,11 +106,11 @@
           "date": "2025-01-27"
         },
         {
-          "year": 2025,
-          "model": "Seed-VL-1.5",
-          "score": 91.2,
+          "year": 2024,
+          "model": "Qwen2-VL",
+          "score": 84.69,
           "type": "Open",
-          "date": "2025-05-13"
+          "date": "2024-07-12"
         }
       ]
     },
@@ -140,6 +149,20 @@
           "year": 2026,
           "model": "Gemini 3 Pro Preview",
           "score": 63.4,
+          "type": "API",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "Seed1.6-vision",
+          "score": 62.2,
+          "type": "API",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "TeleMM-2.0",
+          "score": 61.8,
           "type": "API",
           "date": "2026-06-10"
         }
@@ -181,6 +204,20 @@
           "model": "Gemini 3 Pro Preview",
           "score": 63.8,
           "type": "API",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "Gemini-2.5-Pro",
+          "score": 62.2,
+          "type": "API",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "MiniCPM-o-4.5",
+          "score": 61.5,
+          "type": "Open",
           "date": "2026-06-10"
         }
       ]

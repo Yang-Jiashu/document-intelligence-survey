@@ -200,7 +200,10 @@ function renderLiveSOTA(data) {
     const cards = data.benchmarks.map((benchmark, idx) => {
         const color = colors[idx % colors.length];
         const history = benchmark.history || [];
-        const topRows = history.slice(-4).reverse();
+        const topRows = [...history]
+            .filter(row => Number.isFinite(Number(row.score)))
+            .sort((a, b) => Number(b.score) - Number(a.score))
+            .slice(0, 5);
         const latest = benchmark.leader || topRows[0] || {};
         const scores = history.map(h => Number(h.score)).filter(Number.isFinite);
         const width = 400;
@@ -222,7 +225,7 @@ function renderLiveSOTA(data) {
                 const x = padding.left + (i / (history.length - 1)) * chartW;
                 const y = padding.top + chartH - ((Number(h.score) - minScore) / (maxScore - minScore)) * chartH;
                 return `<circle cx="${x}" cy="${y}" r="4.5" fill="${color}" stroke="#fffaf2" stroke-width="2"/>
-                        <text x="${x}" y="${height - 10}" text-anchor="middle" font-size="10" fill="#8b7f73">${h.year || ''}</text>`;
+                        <text x="${x}" y="${height - 10}" text-anchor="middle" font-size="10" fill="#8b7f73">#${i + 1}</text>`;
             }).join('');
             chart = `
                 <svg class="sota-chart" viewBox="0 0 ${width} ${height}">
