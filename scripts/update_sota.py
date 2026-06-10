@@ -223,12 +223,106 @@ class SourceReachabilityAdapter(SourceAdapter):
         return messages
 
 
+class LLMStatsMMLongBenchDocAdapter(SourceAdapter):
+    mode = "auto-scraped"
+    url = "https://llm-stats.com/benchmarks/mmlongbench-doc"
+    api_url = "https://api.zeroeval.com/leaderboard/benchmarks/mmlongbench-doc/details"
+
+    def update(self, data: dict, checked: str) -> list[str]:
+        benches = by_id(data)
+        bench = benches.get("mmlongbench-doc")
+        if not bench:
+            raise AdapterError("mmlongbench-doc: missing benchmark in sota.json")
+
+        payload = self._fetch_payload()
+        models = payload.get("models") or []
+        if not models:
+            raise AdapterError("mmlongbench-doc: no LLM Stats models found")
+
+        entries = []
+        for model in models[:5]:
+            score = model.get("score")
+            if score is None:
+                continue
+            entries.append(
+                {
+                    "year": int((model.get("announcement_date") or checked)[:4]),
+                    "model": model["model_name"],
+                    "score": round(float(score) * 100, 2),
+                    "type": "Open" if model.get("is_open_source") else "API",
+                    "date": model.get("announcement_date") or checked,
+                    "evidence": model.get("self_reported_source") or self.url,
+                    "confidence": "self-reported" if model.get("self_reported") else "verified",
+                }
+            )
+
+        messages = [update_benchmark(bench, entries, checked, self.mode)]
+        bench["sourceName"] = "LLM Stats MMLongBench-Doc"
+        bench["sourceUrl"] = self.url
+        bench["metric"] = "Score"
+        bench["task"] = "Long-document multimodal QA"
+        return messages
+
+    def _fetch_payload(self) -> dict:
+        try:
+            return json.loads(fetch(self.api_url).text)
+        except Exception:
+            return self._extract_initial_benchmark_data(fetch(self.url).text)
+
+    @staticmethod
+    def _extract_initial_benchmark_data(html: str) -> dict:
+        marker_idx = -1
+        for marker in ('initialBenchmarkData\\\\":', 'initialBenchmarkData":', '"initialBenchmarkData":'):
+            marker_idx = html.find(marker)
+            if marker_idx != -1:
+                break
+        if marker_idx == -1:
+            raise AdapterError("mmlongbench-doc: initialBenchmarkData marker not found")
+
+        start = html.find("{", marker_idx)
+        if start == -1:
+            raise AdapterError("mmlongbench-doc: initialBenchmarkData object not found")
+
+        depth = 0
+        in_string = False
+        escaped = False
+        end = None
+        for idx in range(start, len(html)):
+            char = html[idx]
+            if escaped:
+                escaped = False
+                continue
+            if char == "\\":
+                escaped = True
+                continue
+            if char == '"':
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if char == "{":
+                depth += 1
+            elif char == "}":
+                depth -= 1
+                if depth == 0:
+                    end = idx + 1
+                    break
+
+        if end is None:
+            raise AdapterError("mmlongbench-doc: initialBenchmarkData object is incomplete")
+
+        raw = html[start:end]
+        if raw.startswith(r"{\""):
+            raw = raw.encode("utf-8").decode("unicode_escape")
+        return json.loads(raw)
+
+
 def run_adapters(data: dict, checked: str) -> tuple[list[str], list[dict]]:
     adapters: list[SourceAdapter] = [
         RRCDocVQAAdapter("docvqa", task=1),
         RRCDocVQAAdapter("infographicvqa", task=3),
         OCRBenchV2Adapter(),
-        SourceReachabilityAdapter(["mmlongbench-doc"]),
+        LLMStatsMMLongBenchDocAdapter(),
     ]
     messages: list[str] = []
     pending: list[dict] = []

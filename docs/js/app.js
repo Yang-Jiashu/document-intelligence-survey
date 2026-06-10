@@ -1,15 +1,18 @@
 let papersData = null;
 let liveSotaData = null;
+let feedbackData = null;
 let currentFilter = 'all';
 let currentSort = 'stars';
 
 async function loadData() {
-    const [papersRes, sotaRes] = await Promise.all([
+    const [papersRes, sotaRes, feedbackRes] = await Promise.all([
         fetch('data/papers.json'),
-        fetch('data/sota.json').catch(() => null)
+        fetch('data/sota.json').catch(() => null),
+        fetch('data/feedback.json').catch(() => null)
     ]);
     papersData = await papersRes.json();
     liveSotaData = sotaRes && sotaRes.ok ? await sotaRes.json() : null;
+    feedbackData = feedbackRes && feedbackRes.ok ? await feedbackRes.json() : null;
     renderAll();
     restoreHashPosition();
 }
@@ -31,6 +34,7 @@ function renderAll() {
     renderTaxonomy();
     renderTimeline();
     renderSOTA();
+    renderFeedback();
     renderPapers();
     renderDatasets();
     renderReadingList();
@@ -268,6 +272,58 @@ function renderLiveSOTA(data) {
     }).join('');
 
     container.innerHTML = meta + cards;
+}
+
+function renderFeedback() {
+    const container = document.getElementById('feedbackContainer');
+    if (!container) return;
+
+    if (!feedbackData) {
+        container.innerHTML = `
+            <div class="feedback-card">
+                <h3>Submit benchmark updates</h3>
+                <p>Use GitHub Issues to submit missing or corrected benchmark results.</p>
+                <a class="feedback-link" href="https://github.com/Yang-Jiashu/document-intelligence-survey/issues/new?template=benchmark-update.yml" target="_blank" rel="noreferrer">Open update issue</a>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="feedback-card feedback-card-wide">
+            <div>
+                <div class="feedback-kicker">Feedback loop</div>
+                <h3>${feedbackData.title}</h3>
+                <p>${feedbackData.policy}</p>
+            </div>
+            <div class="feedback-cadence">
+                <span>Auto refresh: ${feedbackData.autoRefreshCadence}</span>
+                <span>Manual review: ${feedbackData.reviewCadence}</span>
+            </div>
+            <a class="feedback-link" href="${feedbackData.githubIssueUrl}" target="_blank" rel="noreferrer">Submit benchmark update</a>
+        </div>
+        <div class="feedback-card">
+            <h3>Evidence checklist</h3>
+            <div class="feedback-pill-list">
+                ${(feedbackData.requestedEvidence || []).map(item => `<span>${item}</span>`).join('')}
+            </div>
+        </div>
+        <div class="feedback-card feedback-card-wide">
+            <h3>Tracked community candidates</h3>
+            <div class="candidate-list">
+                ${(feedbackData.trackedCandidates || []).map(item => `
+                    <div class="candidate-row">
+                        <div>
+                            <strong>${item.model}</strong>
+                            <span>${item.benchmark}</span>
+                            <p>${item.reason}</p>
+                        </div>
+                        <em>${item.status}</em>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
 }
 
 function renderTrendChart() {
