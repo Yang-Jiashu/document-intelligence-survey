@@ -264,6 +264,7 @@ function renderLiveSOTA(data) {
                             <span>${row.model}</span>
                             <strong>${row.score}</strong>
                             <em>${row.type || ''}</em>
+                            ${row.evidence ? `<a href="${row.evidence}" target="_blank" rel="noreferrer">source</a>` : ''}
                         </div>
                     `).join('')}
                 </div>

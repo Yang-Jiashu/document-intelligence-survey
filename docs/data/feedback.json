@@ -22,8 +22,8 @@
     {
       "benchmark": "MMLongBench-Doc",
       "model": "Qwen3-VL",
-      "status": "partially covered",
-      "reason": "LLM Stats currently lists Qwen3 VL 235B A22B Thinking; other Qwen3-VL variants need exact score/source before inclusion."
+      "status": "covered",
+      "reason": "The tracker includes Qwen3-VL 235B-A22B Instruct (57.0) and Thinking (56.2) from the submitted benchmark tables."
     },
     {
       "benchmark": "MMLongBench-Doc",

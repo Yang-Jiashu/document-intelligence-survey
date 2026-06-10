@@ -279,12 +279,21 @@
         },
         {
           "year": 2025,
+          "model": "Qwen3-VL 235B-A22B Instruct",
+          "score": 57.0,
+          "type": "Open",
+          "date": "2026-06-10",
+          "evidence": "images/evidence/qwen3-vl-nonthinking-benchmarks.jpg",
+          "confidence": "image-evidence"
+        },
+        {
+          "year": 2025,
           "model": "Qwen3 VL 235B A22B Thinking",
           "score": 56.2,
           "type": "Open",
-          "date": "2025-09-22",
-          "evidence": "https://llm-stats.com/benchmarks/mmlongbench-doc",
-          "confidence": "self-reported"
+          "date": "2026-06-10",
+          "evidence": "images/evidence/qwen3-vl-thinking-benchmarks.jpg",
+          "confidence": "image-evidence"
         }
       ]
     }

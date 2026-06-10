@@ -93,11 +93,11 @@ def by_id(data: dict) -> dict[str, dict]:
     return {bench["id"]: bench for bench in data.get("benchmarks", [])}
 
 
-def update_benchmark(bench: dict, entries: list[dict], checked: str, mode: str) -> str:
+def update_benchmark(bench: dict, entries: list[dict], checked: str, mode: str, limit: int = 5) -> str:
     if not entries:
         raise AdapterError(f"{bench['id']}: no normalized entries")
     bench["leader"] = entries[0]
-    bench["history"] = entries[:5]
+    bench["history"] = entries[:limit]
     bench["lastChecked"] = checked
     bench["updateMode"] = mode
     bench.pop("lastCheckError", None)
@@ -255,8 +255,14 @@ class LLMStatsMMLongBenchDocAdapter(SourceAdapter):
                     "confidence": "self-reported" if model.get("self_reported") else "verified",
                 }
             )
+        entries.extend(self._local_evidence_entries(checked))
+        entries = sorted(
+            {entry["model"]: entry for entry in entries}.values(),
+            key=lambda entry: entry["score"],
+            reverse=True,
+        )
 
-        messages = [update_benchmark(bench, entries, checked, self.mode)]
+        messages = [update_benchmark(bench, entries, checked, self.mode, limit=6)]
         bench["sourceName"] = "LLM Stats MMLongBench-Doc"
         bench["sourceUrl"] = self.url
         bench["metric"] = "Score"
@@ -268,6 +274,29 @@ class LLMStatsMMLongBenchDocAdapter(SourceAdapter):
             return json.loads(fetch(self.api_url).text)
         except Exception:
             return self._extract_initial_benchmark_data(fetch(self.url).text)
+
+    @staticmethod
+    def _local_evidence_entries(checked: str) -> list[dict]:
+        return [
+            {
+                "year": 2025,
+                "model": "Qwen3-VL 235B-A22B Instruct",
+                "score": 57.0,
+                "type": "Open",
+                "date": checked,
+                "evidence": "images/evidence/qwen3-vl-nonthinking-benchmarks.jpg",
+                "confidence": "image-evidence",
+            },
+            {
+                "year": 2025,
+                "model": "Qwen3 VL 235B A22B Thinking",
+                "score": 56.2,
+                "type": "Open",
+                "date": checked,
+                "evidence": "images/evidence/qwen3-vl-thinking-benchmarks.jpg",
+                "confidence": "image-evidence",
+            },
+        ]
 
     @staticmethod
     def _extract_initial_benchmark_data(html: str) -> dict:

@@ -584,7 +584,7 @@ body::before {
 
 .sota-mini-row {
   display: grid;
-  grid-template-columns: 1fr auto 52px;
+  grid-template-columns: 1fr auto 52px auto;
   gap: 10px;
   align-items: center;
   padding: 8px 10px;
@@ -611,6 +611,13 @@ body::before {
   color: var(--text-muted);
   font-style: normal;
   text-align: right;
+}
+
+.sota-mini-row a {
+  color: var(--accent-dark);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .feedback-card {
