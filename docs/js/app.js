@@ -1,11 +1,29 @@
 let papersData = null;
+let liveSotaData = null;
 let currentFilter = 'all';
-let currentSort = 'citations';
+let currentSort = 'stars';
 
 async function loadData() {
-    const res = await fetch('data/papers.json');
-    papersData = await res.json();
+    const [papersRes, sotaRes] = await Promise.all([
+        fetch('data/papers.json'),
+        fetch('data/sota.json').catch(() => null)
+    ]);
+    papersData = await papersRes.json();
+    liveSotaData = sotaRes && sotaRes.ok ? await sotaRes.json() : null;
     renderAll();
+    restoreHashPosition();
+}
+
+function restoreHashPosition() {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+    requestAnimationFrame(() => {
+        target.scrollIntoView({ block: 'start' });
+    });
+    window.setTimeout(() => {
+        target.scrollIntoView({ block: 'start' });
+    }, 350);
 }
 
 function renderAll() {
@@ -54,6 +72,7 @@ function renderPapers() {
     papers.sort((a, b) => b[currentSort] - a[currentSort]);
     
     const container = document.getElementById('papersContainer');
+    document.getElementById('paperCount').textContent = `${papers.length} papers`;
     container.innerHTML = papers.map(p => `
         <div class="paper-card" data-id="${p.id}">
             <div class="paper-header">
@@ -63,25 +82,30 @@ function renderPapers() {
             <div class="paper-authors">${p.authors}</div>
             <div class="paper-meta">
                 <span class="paper-venue">${p.venue}</span>
-                ${p.stars ? `<span class="paper-stars">&#11088; ${p.stars >= 1000 ? (p.stars/1000).toFixed(1)+'K' : p.stars}</span>` : ''}
+                ${p.stars ? `<span class="paper-stars">${p.stars >= 1000 ? (p.stars/1000).toFixed(1)+'K' : p.stars} stars</span>` : ''}
             </div>
             <div class="paper-tags">
                 ${p.tags.map(t => `<span class="paper-tag">${t}</span>`).join('')}
             </div>
             <div class="paper-actions">
-                ${p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" target="_blank" class="paper-btn primary">&#128196; arXiv</a>` : ''}
-                ${p.github ? `<a href="${p.github}" target="_blank" class="paper-btn secondary">&#128187; GitHub</a>` : ''}
+                ${p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" target="_blank" class="paper-btn primary">arXiv</a>` : ''}
+                ${p.github ? `<a href="${p.github}" target="_blank" class="paper-btn secondary">GitHub</a>` : ''}
             </div>
         </div>
     `).join('');
 }
 
 function getTrendColor(trend) {
-    const colors = { hot: '#e94560', rising: '#f59e0b', stable: '#22c55e' };
-    return colors[trend] || '#94a3b8';
+    const colors = { hot: '#9a5b45', rising: '#a4713f', stable: '#647f71' };
+    return colors[trend] || '#8b7f73';
 }
 
 function renderSOTA() {
+    if (liveSotaData && Array.isArray(liveSotaData.benchmarks)) {
+        renderLiveSOTA(liveSotaData);
+        return;
+    }
+
     const sotaData = papersData.sota_history;
     const container = document.getElementById('sotaContainer');
     
@@ -90,7 +114,7 @@ function renderSOTA() {
         return;
     }
     
-    const colors = ['#6366f1', '#ec4899', '#06b6d4', '#f59e0b', '#22c55e'];
+    const colors = ['#9a5b45', '#c07a5a', '#647f71', '#8f6b3f', '#4f6f82'];
     
     container.innerHTML = Object.entries(sotaData).map(([benchmark, history], idx) => {
         const color = colors[idx % colors.length];
@@ -117,7 +141,7 @@ function renderSOTA() {
             const x = padding.left + (i / (history.length - 1)) * chartW;
             const y = padding.top + chartH - ((h.score - minScore) / (maxScore - minScore)) * chartH;
             return `<text x="${x}" y="${y - 10}" text-anchor="middle" font-size="10" fill="${color}" font-weight="700">${h.score}</text>
-                    <circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="var(--bg-card)" stroke-width="2"/>
+                    <circle cx="${x}" cy="${y}" r="5" fill="${color}" stroke="#fffaf2" stroke-width="2"/>
                     <text x="${x}" y="${height - 10}" text-anchor="middle" font-size="10" fill="var(--text-muted)">${h.year}</text>`;
         }).join('');
         
@@ -155,6 +179,94 @@ function renderSOTA() {
     }).join('');
 }
 
+function renderLiveSOTA(data) {
+    const container = document.getElementById('sotaContainer');
+    const colors = ['#9a5b45', '#c07a5a', '#647f71', '#8f6b3f', '#4f6f82'];
+    const meta = `
+        <div class="sota-update-panel">
+            <div>
+                <div class="sota-update-label">SOTA tracker</div>
+                <div class="sota-update-title">${data.status || 'Source-backed snapshot'}</div>
+                <p>${data.note || 'Benchmark data is periodically refreshed from source pages.'}</p>
+            </div>
+            <div class="sota-update-meta">
+                <span>Last checked: ${data.lastChecked || 'Unknown'}</span>
+                <span>Cadence: ${data.updateCadence || 'manual'}</span>
+                <span>Next check: ${data.nextScheduledCheck || 'TBD'}</span>
+            </div>
+        </div>
+    `;
+
+    const cards = data.benchmarks.map((benchmark, idx) => {
+        const color = colors[idx % colors.length];
+        const history = benchmark.history || [];
+        const topRows = history.slice(-4).reverse();
+        const latest = benchmark.leader || topRows[0] || {};
+        const scores = history.map(h => Number(h.score)).filter(Number.isFinite);
+        const width = 400;
+        const height = 180;
+        const padding = { top: 20, right: 22, bottom: 36, left: 48 };
+        const chartW = width - padding.left - padding.right;
+        const chartH = height - padding.top - padding.bottom;
+        let chart = '<div class="sota-empty-chart">Not enough historical points yet</div>';
+
+        if (scores.length > 1) {
+            const minScore = Math.min(...scores) - 2;
+            const maxScore = Math.max(...scores) + 2;
+            const points = history.map((h, i) => {
+                const x = padding.left + (i / (history.length - 1)) * chartW;
+                const y = padding.top + chartH - ((Number(h.score) - minScore) / (maxScore - minScore)) * chartH;
+                return `${x},${y}`;
+            }).join(' ');
+            const labels = history.map((h, i) => {
+                const x = padding.left + (i / (history.length - 1)) * chartW;
+                const y = padding.top + chartH - ((Number(h.score) - minScore) / (maxScore - minScore)) * chartH;
+                return `<circle cx="${x}" cy="${y}" r="4.5" fill="${color}" stroke="#fffaf2" stroke-width="2"/>
+                        <text x="${x}" y="${height - 10}" text-anchor="middle" font-size="10" fill="#8b7f73">${h.year || ''}</text>`;
+            }).join('');
+            chart = `
+                <svg class="sota-chart" viewBox="0 0 ${width} ${height}">
+                    <polyline points="${points}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    ${labels}
+                </svg>
+            `;
+        }
+
+        return `
+            <div class="sota-card">
+                <div class="sota-card-header">
+                    <div>
+                        <div class="sota-card-title">${benchmark.name}</div>
+                        <div class="sota-card-subtitle">${benchmark.task} · ${benchmark.metric}</div>
+                    </div>
+                    <div class="sota-card-current">
+                        <div class="sota-label">Current leader</div>
+                        <div class="sota-value">${latest.score ?? '-'}</div>
+                        <div class="sota-model">${latest.model || 'Unknown'}</div>
+                    </div>
+                </div>
+                ${chart}
+                <div class="sota-source-row">
+                    <span>${benchmark.updateMode || 'manual'}</span>
+                    <span>Checked ${benchmark.lastChecked || data.lastChecked || 'Unknown'}</span>
+                    <a href="${benchmark.sourceUrl}" target="_blank" rel="noreferrer">${benchmark.sourceName || 'Source'}</a>
+                </div>
+                <div class="sota-mini-table">
+                    ${topRows.map(row => `
+                        <div class="sota-mini-row">
+                            <span>${row.model}</span>
+                            <strong>${row.score}</strong>
+                            <em>${row.type || ''}</em>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = meta + cards;
+}
+
 function renderTrendChart() {
     const trends = papersData.trends;
     const svg = document.getElementById('trendChart');
@@ -166,7 +278,7 @@ function renderTrendChart() {
     const chartW = width - padding.left - padding.right;
     const chartH = height - padding.top - padding.bottom;
     
-    const colors = { layout: '#667eea', ocr: '#f093fb', table: '#4facfe', rag: '#fa709a', vlm: '#fee140' };
+    const colors = { layout: '#9a5b45', ocr: '#c07a5a', table: '#647f71', rag: '#8f6b3f', vlm: '#4f6f82' };
     
     let paths = '';
     const categories = ['layout', 'ocr', 'table', 'rag', 'vlm'];
@@ -184,19 +296,19 @@ function renderTrendChart() {
         data.forEach((v, i) => {
             const x = padding.left + (i / (data.length - 1)) * chartW;
             const y = padding.top + chartH - (v / maxVal) * chartH;
-            paths += `<circle cx="${x}" cy="${y}" r="5" fill="${colors[cat]}" stroke="#fff" stroke-width="2"/>`;
+            paths += `<circle cx="${x}" cy="${y}" r="5" fill="${colors[cat]}" stroke="#fffaf2" stroke-width="2"/>`;
         });
     });
     
     // Axes
     const xAxisY = padding.top + chartH;
-    paths += `<line x1="${padding.left}" y1="${xAxisY}" x2="${width - padding.right}" y2="${xAxisY}" stroke="#e2e8f0" stroke-width="1"/>`;
-    paths += `<line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${xAxisY}" stroke="#e2e8f0" stroke-width="1"/>`;
+    paths += `<line x1="${padding.left}" y1="${xAxisY}" x2="${width - padding.right}" y2="${xAxisY}" stroke="#ded0c0" stroke-width="1"/>`;
+    paths += `<line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${xAxisY}" stroke="#ded0c0" stroke-width="1"/>`;
     
     // X labels
     trends.years.forEach((year, i) => {
         const x = padding.left + (i / (trends.years.length - 1)) * chartW;
-        paths += `<text x="${x}" y="${height - 10}" text-anchor="middle" font-size="12" fill="#94a3b8" font-weight="600">${year}</text>`;
+        paths += `<text x="${x}" y="${height - 10}" text-anchor="middle" font-size="12" fill="#8b7f73" font-weight="600">${year}</text>`;
     });
     
     svg.innerHTML = paths;
@@ -244,32 +356,32 @@ function renderBenchmarks() {
 function renderTaxonomy() {
     const taxonomy = [
         {
-            icon: '🔤', title: 'OCR & Text Recognition', desc: 'Optical Character Recognition, scene text, handwritten text',
+            icon: 'OCR', filter: 'ocr', title: 'OCR & Text Recognition', desc: 'Optical Character Recognition, scene text, handwritten text',
             children: ['Traditional OCR', 'Scene Text Detection', 'Handwritten Recognition', 'Multilingual OCR'],
             count: papersData.papers.filter(p => p.category === 'ocr').length
         },
         {
-            icon: '📐', title: 'Layout Analysis', desc: 'Document structure detection, region segmentation, reading order',
+            icon: 'LAY', filter: 'layout', title: 'Layout Analysis', desc: 'Document structure detection, region segmentation, reading order',
             children: ['Layout Detection', 'Region Segmentation', 'Reading Order', 'Form Understanding'],
             count: papersData.papers.filter(p => p.category === 'layout').length
         },
         {
-            icon: '📊', title: 'Table Understanding', desc: 'Table detection, structure recognition, table QA',
+            icon: 'TAB', filter: 'table', title: 'Table Understanding', desc: 'Table detection, structure recognition, table QA',
             children: ['Table Detection', 'Structure Recognition', 'Table QA', 'Spreadsheet Understanding'],
             count: papersData.papers.filter(p => p.category === 'table').length
         },
         {
-            icon: '👁️', title: 'Vision-Language Models', desc: 'VLM for document understanding, OCR-free methods, multimodal reasoning',
+            icon: 'VLM', filter: 'vlm', title: 'Vision-Language Models', desc: 'VLM for document understanding, OCR-free methods, multimodal reasoning',
             children: ['OCR-free Models', 'High-resolution VLM', 'Document VLM', 'Multimodal RAG'],
             count: papersData.papers.filter(p => p.category === 'vlm').length
         },
         {
-            icon: '🔍', title: 'Retrieval-Augmented Generation', desc: 'Document RAG, knowledge extraction, long-context understanding',
+            icon: 'RAG', filter: 'rag', title: 'Retrieval-Augmented Generation', desc: 'Document RAG, knowledge extraction, long-context understanding',
             children: ['Document RAG', 'Knowledge Graph', 'Long-context', 'Multi-hop QA'],
             count: papersData.papers.filter(p => p.category === 'rag').length
         },
         {
-            icon: '📋', title: 'Evaluation & Benchmarks', desc: 'Datasets, metrics, benchmark suites for document intelligence',
+            icon: 'EVAL', filter: 'eval', title: 'Evaluation & Benchmarks', desc: 'Datasets, metrics, benchmark suites for document intelligence',
             children: ['VQA Benchmarks', 'Layout Benchmarks', 'OCR Benchmarks', 'End-to-end Evaluation'],
             count: papersData.papers.filter(p => p.category === 'eval').length
         }
@@ -277,7 +389,7 @@ function renderTaxonomy() {
     
     const container = document.getElementById('taxonomyContainer');
     container.innerHTML = taxonomy.map(node => `
-        <div class="taxonomy-card" onclick="filterPapers('${node.title.toLowerCase().split(' ')[0]}')">
+        <div class="taxonomy-card" onclick="filterPapers('${node.filter}')">
             <div class="tc-header">
                 <div class="tc-icon">${node.icon}</div>
                 <div class="tc-info">
@@ -350,7 +462,7 @@ function renderDatasets() {
 function renderReadingList() {
     const paths = [
         {
-            title: '🚀 Getting Started',
+            title: 'Getting Started',
             desc: 'Essential papers to understand document intelligence',
             papers: [
                 { title: 'LayoutLM', desc: 'Pre-training of Text and Layout for Document Image Understanding', tag: 'Foundation' },
@@ -359,7 +471,7 @@ function renderReadingList() {
             ]
         },
         {
-            title: '🔬 Deep Dive',
+            title: 'Deep Dive',
             desc: 'Advanced methods and recent innovations',
             papers: [
                 { title: 'LayoutLMv3', desc: 'Unified Text and Image Masking for Document AI', tag: 'Pre-training' },
@@ -368,7 +480,7 @@ function renderReadingList() {
             ]
         },
         {
-            title: '🔥 Cutting Edge',
+            title: 'Cutting Edge',
             desc: 'Latest state-of-the-art methods',
             papers: [
                 { title: 'Qwen3-VL', desc: 'Advanced Vision-Language Model for Document Understanding', tag: 'SOTA' },
@@ -382,7 +494,7 @@ function renderReadingList() {
     container.innerHTML = paths.map((path, pi) => `
         <div class="reading-card">
             <h3>${path.title}</h3>
-            <p style="font-size:13px;color:var(--muted);margin-bottom:16px">${path.desc}</p>
+            <p>${path.desc}</p>
             <div class="reading-list">
                 ${path.papers.map((p, i) => `
                     <div class="reading-item">
@@ -401,11 +513,11 @@ function renderReadingList() {
 
 function renderActivity() {
     const activities = [
-        { type: 'star', icon: '⭐', title: 'MinerU reached 66.9K stars', desc: 'OpenDataLab\'s document extraction tool gains massive popularity', time: '2 days ago', color: '#fef3c7' },
-        { type: 'code', icon: '💻', title: 'GraphRAG v0.4 released', desc: 'Microsoft adds new community detection algorithms', time: '5 days ago', color: '#dcfce7' },
-        { type: 'paper', icon: '📄', title: 'New SOTA on DocVQA', desc: 'Qwen3-VL achieves 93.1% ANLS score', time: '1 week ago', color: '#dbeafe' },
-        { type: 'star', icon: '⭐', title: 'LightRAG trending', desc: 'HKUDS lightweight RAG framework hits 36.3K stars', time: '1 week ago', color: '#fef3c7' },
-        { type: 'paper', icon: '📄', title: 'DocLayout-YOLO paper', desc: 'Real-time layout detection with synthetic data augmentation', time: '2 weeks ago', color: '#dbeafe' }
+        { type: 'star', icon: 'GH', title: 'MinerU reached 66.9K stars', desc: 'OpenDataLab\'s document extraction tool gains massive popularity', time: 'Snapshot entry', color: '#f0e2d6' },
+        { type: 'code', icon: 'REL', title: 'GraphRAG v0.4 released', desc: 'Microsoft adds new community detection algorithms', time: 'Snapshot entry', color: '#e6eee8' },
+        { type: 'paper', icon: 'SOTA', title: 'New SOTA on DocVQA', desc: 'Qwen3-VL achieves 93.1% ANLS score', time: 'Needs citation', color: '#e7eef1' },
+        { type: 'star', icon: 'GH', title: 'LightRAG trending', desc: 'HKUDS lightweight RAG framework hits 36.3K stars', time: 'Snapshot entry', color: '#f0e2d6' },
+        { type: 'paper', icon: 'PPR', title: 'DocLayout-YOLO paper', desc: 'Real-time layout detection with synthetic data augmentation', time: 'Snapshot entry', color: '#e7eef1' }
     ];
     
     const container = document.getElementById('activityContainer');
@@ -446,6 +558,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => filterPapers(btn.dataset.filter));
     });
 });
+
+window.addEventListener('hashchange', restoreHashPosition);
 
 // Lightbox
 let currentFigIndex = 0;

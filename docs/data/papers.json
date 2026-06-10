@@ -23,8 +23,7 @@
     {"id": 21, "title": "Qwen2.5-VL Technical Report", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2025", "year": 2025, "github": "https://github.com/QwenLM/Qwen2.5-VL", "arxiv": "2502.13923", "category": "vlm", "tags": ["vlm", "document", "multimodal", "grounding"], "stars": 15234},
     {"id": 22, "title": "Qwen2-VL: Advanced Vision-Language Model", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/QwenLM/Qwen2-VL", "arxiv": "2409.12191", "category": "vlm", "tags": ["vlm", "document", "multimodal"], "stars": 18456},
     {"id": 23, "title": "RAG-Anything: All-in-One RAG Framework", "authors": "Zirui Guo, Xubin Ren, Lingrui Xu, et al.", "venue": "arXiv 2025", "year": 2025, "github": "https://github.com/HKUDS/RAG-Anything", "arxiv": "2510.12323", "category": "rag", "tags": ["rag", "multimodal", "knowledge-graph"], "stars": 21075},
-    {"id": 24, "title": "AutoRAG: Automated Framework for Optimization of Retrieval Augmented Generation Pipeline", "authors": "Dongkyu Kim, Byoungwook Kim, et al.", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/Marker-Inc-Korea/AutoRAG", "arxiv": "2410.20878", "category": "rag", "tags": ["rag", "automl", "optimization"], "stars": 4817},
-    {"id": 25, "title": "Qwen3.5: Native Multimodal Large Language Model", "authors": "Qwen Team, Alibaba Group", "venue": "arXiv 2026", "year": 2026, "github": "https://github.com/QwenLM/Qwen3.5", "arxiv": "2601.00000", "category": "vlm", "tags": ["vlm", "moe", "native-multimodal"], "stars": 8500}
+    {"id": 24, "title": "AutoRAG: Automated Framework for Optimization of Retrieval Augmented Generation Pipeline", "authors": "Dongkyu Kim, Byoungwook Kim, et al.", "venue": "arXiv 2024", "year": 2024, "github": "https://github.com/Marker-Inc-Korea/AutoRAG", "arxiv": "2410.20878", "category": "rag", "tags": ["rag", "automl", "optimization"], "stars": 4817}
   ],
   "trends": {
     "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
@@ -67,7 +66,6 @@
   "leaderboard": [
     {"model": "GPT-4V", "type": "API"},
     {"model": "Qwen3-VL", "type": "Open"},
-    {"model": "Qwen3.5", "type": "Open"},
     {"model": "OmniParser", "type": "Open"},
     {"model": "LLaVA", "type": "Open"},
     {"model": "InternVL", "type": "Open"},

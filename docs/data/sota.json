@@ -1,0 +1,221 @@
+{
+  "lastChecked": "2026-06-10",
+  "updateCadence": "weekly",
+  "nextScheduledCheck": "2026-06-17",
+  "generatedBy": "scripts/update_sota.py",
+  "status": "source-backed snapshot",
+  "note": "Static GitHub Pages cannot stream live benchmark changes. This file is refreshed by a scheduled workflow and keeps source links plus the last successful check time.",
+  "benchmarks": [
+    {
+      "id": "docvqa",
+      "name": "DocVQA",
+      "task": "Document VQA",
+      "metric": "ANLS",
+      "sourceName": "Robust Reading Competition",
+      "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1",
+      "updateMode": "manual-with-source-check",
+      "lastChecked": "2026-06-10",
+      "leader": {
+        "model": "ORCA",
+        "score": 97.29,
+        "type": "Open",
+        "date": "2026-03-10"
+      },
+      "history": [
+        {
+          "year": 2020,
+          "model": "Human Performance",
+          "score": 98.11,
+          "type": "Human",
+          "date": "2020-06-13"
+        },
+        {
+          "year": 2024,
+          "model": "Qwen2-VL",
+          "score": 96.7,
+          "type": "Open",
+          "date": "2024-07-11"
+        },
+        {
+          "year": 2025,
+          "model": "Qwen2.5-VL",
+          "score": 96.5,
+          "type": "Open",
+          "date": "2025-01-27"
+        },
+        {
+          "year": 2025,
+          "model": "Qwen3-VL",
+          "score": 97.25,
+          "type": "Open",
+          "date": "2025-09-23"
+        },
+        {
+          "year": 2026,
+          "model": "ORCA",
+          "score": 97.29,
+          "type": "Open",
+          "date": "2026-03-10"
+        }
+      ]
+    },
+    {
+      "id": "infographicvqa",
+      "name": "InfographicVQA",
+      "task": "Infographic VQA",
+      "metric": "ANLS",
+      "sourceName": "Robust Reading Competition",
+      "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3",
+      "updateMode": "manual-with-source-check",
+      "lastChecked": "2026-06-10",
+      "leader": {
+        "model": "Seed-VL-1.5",
+        "score": 91.2,
+        "type": "Open",
+        "date": "2025-05-13"
+      },
+      "history": [
+        {
+          "year": 2021,
+          "model": "Human Performance",
+          "score": 97.18,
+          "type": "Human",
+          "date": "2022-03-02"
+        },
+        {
+          "year": 2024,
+          "model": "Qwen2-VL",
+          "score": 84.69,
+          "type": "Open",
+          "date": "2024-07-12"
+        },
+        {
+          "year": 2025,
+          "model": "Qwen2.5-VL",
+          "score": 87.27,
+          "type": "Open",
+          "date": "2025-01-27"
+        },
+        {
+          "year": 2025,
+          "model": "Seed-VL-1.5",
+          "score": 91.2,
+          "type": "Open",
+          "date": "2025-05-13"
+        }
+      ]
+    },
+    {
+      "id": "ocrbench-v2-full",
+      "name": "OCRBench v2",
+      "task": "Visual text localization and reasoning",
+      "metric": "Average",
+      "sourceName": "OCRBench v2 Leaderboard",
+      "sourceUrl": "https://99franklin.github.io/ocrbench_v2/",
+      "updateMode": "auto-scraped",
+      "lastChecked": "2026-06-10",
+      "leader": {
+        "year": 2026,
+        "model": "KDL Frontier",
+        "score": 68.1,
+        "type": "API",
+        "date": "2026-06-10"
+      },
+      "history": [
+        {
+          "year": 2026,
+          "model": "KDL Frontier",
+          "score": 68.1,
+          "type": "API",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "NVIDIA Nemotron 3 Nano Omni 30B A3B",
+          "score": 65.8,
+          "type": "Open",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "Gemini 3 Pro Preview",
+          "score": 63.4,
+          "type": "API",
+          "date": "2026-06-10"
+        }
+      ]
+    },
+    {
+      "id": "ocrbench-v2-vqa",
+      "name": "OCRBench v2 Text-rich VQA",
+      "task": "Text-rich visual question answering",
+      "metric": "Average",
+      "sourceName": "OCRBench v2 Leaderboard",
+      "sourceUrl": "https://99franklin.github.io/ocrbench_v2/",
+      "updateMode": "auto-scraped",
+      "lastChecked": "2026-06-10",
+      "leader": {
+        "year": 2026,
+        "model": "TeleMM-2.0",
+        "score": 66.2,
+        "type": "API",
+        "date": "2026-06-10"
+      },
+      "history": [
+        {
+          "year": 2026,
+          "model": "TeleMM-2.0",
+          "score": 66.2,
+          "type": "API",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "Qwen3.5-9B",
+          "score": 64.1,
+          "type": "Open",
+          "date": "2026-06-10"
+        },
+        {
+          "year": 2026,
+          "model": "Gemini 3 Pro Preview",
+          "score": 63.8,
+          "type": "API",
+          "date": "2026-06-10"
+        }
+      ]
+    },
+    {
+      "id": "mmlongbench-doc",
+      "name": "MMLongBench-Doc",
+      "task": "Long-document multimodal QA",
+      "metric": "Accuracy",
+      "sourceName": "MMLongBench-Doc paper / project",
+      "sourceUrl": "https://arxiv.org/abs/2407.01523",
+      "updateMode": "manual-with-source-check",
+      "lastChecked": "2026-06-10",
+      "leader": {
+        "model": "GPT-4o",
+        "score": 44.9,
+        "type": "API",
+        "date": "2024-07-01"
+      },
+      "history": [
+        {
+          "year": 2024,
+          "model": "GPT-4V",
+          "score": 30.5,
+          "type": "API",
+          "date": "2024-07-01"
+        },
+        {
+          "year": 2024,
+          "model": "GPT-4o",
+          "score": 44.9,
+          "type": "API",
+          "date": "2024-07-01"
+        }
+      ]
+    }
+  ]
+}
