@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond OCR: A Survey of Document Intelligence</title>
+<style>
+:root{--pkured:#8C1515;--pkured-light:#b83a3a;--pkured-bg:#fdf5f5;--text:#1a1a1a;--text2:#555;--muted:#888;--bg:#fff;--bg2:#f8f9fa;--border:#e5e5e5;--shadow:0 2px 8px rgba(0,0,0,0.08);--shadow-lg:0 8px 30px rgba(0,0,0,0.12);--r:12px;--r2:8px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,sans-serif;background:var(--bg2);color:var(--text);line-height:1.6}
+.header{background:linear-gradient(135deg,var(--pkured) 0%,#a52a2a 100%);color:#fff;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-lg)}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-bottom:1px solid rgba(255,255,255,0.15)}
+.logo{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
+.logo-icon{width:32px;height:32px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pkured);font-weight:700;font-size:14px}
+.header-links{display:flex;gap:8px}
+.header-links a{color:rgba(255,255,255,0.9);text-decoration:none;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500;border:1px solid rgba(255,255,255,0.25);transition:all .2s}
+.header-links a:hover{background:rgba(255,255,255,0.15)}
+.hero{background:linear-gradient(135deg,var(--pkured) 0%,#a52a2a 100%);color:#fff;padding:48px 24px 56px;text-align:center}
+.hero-content{max-width:900px;margin:0 auto}
+.hero h1{font-size:2.2rem;font-weight:700;line-height:1.25;margin-bottom:20px}
+.hero-authors{font-size:1.05rem;opacity:0.92;margin-bottom:8px}
+.hero-affiliation{font-size:0.95rem;opacity:0.75;margin-bottom:24px}
+.hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:24px;font-size:13px;font-weight:500;color:#fff;text-decoration:none;transition:all .2s}
+.badge:hover{background:rgba(255,255,255,0.22);transform:translateY(-1px)}
+.nav-tabs{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:53px;z-index:99;overflow-x:auto}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tabs-inner{display:flex;gap:4px;padding:8px 16px;max-width:1200px;margin:0 auto}
+.nav-tab{padding:10px 20px;border:none;background:none;color:var(--text2);font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;border-radius:var(--r2);white-space:nowrap;transition:all .2s;position:relative}
+.nav-tab:hover{background:var(--bg2);color:var(--text)}
+.nav-tab.active{background:var(--pkured-bg);color:var(--pkured);font-weight:600}
+.nav-tab.active::after{content:'';position:absolute;bottom:-8px;left:20%;width:60%;height:2px;background:var(--pkured);border-radius:2px}
+.main-container{max-width:1200px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:260px 1fr;gap:32px}
+.sidebar{position:sticky;top:116px;height:calc(100vh - 136px);overflow-y:auto}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.sidebar-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px;padding-left:8px}
+.toc-list{list-style:none}
+.toc-item{margin-bottom:2px}
+.toc-link{display:block;padding:8px 12px;border-radius:var(--r2);color:var(--text2);text-decoration:none;font-size:13px;font-weight:500;transition:all .15s;border-left:3px solid transparent}
+.toc-link:hover{background:var(--bg2);color:var(--text)}
+.toc-link.active{background:var(--pkured-bg);color:var(--pkured);border-left-color:var(--pkured);font-weight:600}
+.toc-link.sub{padding-left:24px;font-size:12px;font-weight:400}
+.content{min-height:600px}
+.section{display:none;animation:fadeIn .3s ease}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-header{margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--border)}
+.section-header h2{font-size:1.7rem;font-weight:700;color:var(--pkured);margin-bottom:8px}
+.section-header p{color:var(--text2);font-size:1.05rem}
+.card{background:var(--bg);border-radius:var(--r);padding:28px;margin-bottom:20px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.card h3{font-size:1.15rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.card h3 .icon{width:28px;height:28px;background:var(--pkured-bg);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.card p{color:var(--text2);line-height:1.75;margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:24px 0}
+.fig-card{background:var(--bg);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);cursor:pointer;transition:all .25s}
+.fig-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.fig-card img{width:100%;height:auto;display:block;background:var(--bg2)}
+.fig-cap{padding:14px 18px;font-size:13px;color:var(--text2);line-height:1.5;border-top:1px solid var(--border)}
+.fig-cap strong{color:var(--pkured);font-weight:600}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;padding:40px}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90%;max-height:85vh;object-fit:contain;border-radius:8px}
+.lightbox-close{position:absolute;top:20px;right:30px;color:#fff;font-size:36px;cursor:pointer;opacity:0.7}
+.lightbox-close:hover{opacity:1}
+.timeline{position:relative;padding-left:28px;margin:20px 0}
+.timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:linear-gradient(to bottom,var(--pkured),var(--pkured-light));border-radius:2px}
+.tl-item{position:relative;margin-bottom:20px;padding-left:16px}
+.tl-item::before{content:'';position:absolute;left:-24px;top:6px;width:10px;height:10px;background:var(--pkured);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--pkured)}
+.tl-year{font-size:12px;font-weight:600;color:var(--pkured);margin-bottom:4px}
+.tl-content{font-size:14px;color:var(--text2);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{padding:5px 12px;background:var(--pkured-bg);color:var(--pkured);border-radius:16px;font-size:12px;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}
+.stat-card{background:var(--bg);border-radius:var(--r);padding:20px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border)}
+.stat-num{font-size:2rem;font-weight:700;color:var(--pkured);line-height:1;margin-bottom:6px}
+.stat-label{font-size:12px;color:var(--muted);font-weight:500}
+.methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0}
+.method-card{background:var(--bg);border-radius:var(--r2);padding:20px;border:1px solid var(--border);transition:all .2s}
+.method-card:hover{border-color:var(--pkured-light);box-shadow:var(--shadow)}
+.method-card h4{font-size:14px;font-weight:600;margin-bottom:8px}
+.method-card p{font-size:13px;color:var(--text2);line-height:1.6}
+@media(max-width:900px){.main-container{grid-template-columns:1fr}.sidebar{display:none}.hero h1{font-size:1.7rem}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.hero h1{font-size:1.3rem}.header-top{flex-wrap:wrap;gap:8px}.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="header-top">
+<div class="logo"><div class="logo-icon">PKU</div><span>Document Intelligence Research Group</span></div>
+<div class="header-links">
+<a href="https://github.com/your-org/document-intelligence-survey" target="_blank">GitHub</a>
+<a href="mailto:jiashuyang@pku.edu.cn">Contact</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Beyond OCR: A Survey of Document Intelligence<br>from Structured Perception to Multimodal Question Answering</h1>
+<div class="hero-authors">JiaShu Yang, Chi Zhang, Xingyu Qi, Ning Zhang, Jie Wu, Lingxu Chen, Jiani Guo</div>
+<div class="hero-affiliation">Peking University - Document Intelligence Research Group</div>
+<div class="hero-badges">
+<a href="#" class="badge">arXiv Paper</a>
+<a href="#" class="badge">Code</a>
+<a href="#" class="badge">Citation</a>
+</div>
+</div>
+</section>
+
+<nav class="nav-tabs">
+<div class="nav-tabs-inner">
+<button class="nav-tab active" data-section="overview">Overview</button>
+<button class="nav-tab" data-section="layout">Layout & OCR</button>
+<button class="nav-tab" data-section="table">Table QA</button>
+<button class="nav-tab" data-section="rag">Text RAG</button>
+<button class="nav-tab" data-section="vlm">Vision-Language</button>
+<button class="nav-tab" data-section="eval">Evaluation</button>
+<button class="nav-tab" data-section="figures">All Figures</button>
+</div>
+</nav>
+
+<div class="main-container">
+<aside class="sidebar">
+<div class="sidebar-title">Contents</div>
+<ul class="toc-list" id="toc">
+<li class="toc-item"><a href="#" class="toc-link active" data-section="overview">Overview</a></li>
+<li class="toc-item"><a href="#" class="toc-link" data-section="layout">Document Layout Analysis & OCR</a></li>
+<li class="toc-item"><a href="#" class="toc-link sub" data-section="layout">Geometric Detection</a></li>
+<li class="toc-item"><a href="#" class="toc-link sub" data-section="layout">Layout-Aware Learning</a></li>
+<li class="toc-item"><a href="#" class="toc-link sub" data-section="layout">OCR Evolution</a></li>
+<li class="toc-item"><a href="#" class="toc-link" data-section="table">Table Understanding & QA</a></li>
+<li class="toc-item"><a href="#" class="toc-link" data-section="rag">Text-Based RAG</a></li>
+<li class="toc-item"><a href="#" class="toc-link" data-section="vlm">Vision-Language Models</a></li>
+<li class="toc-item"><a href="#" class="toc-link" data-section="eval">Evaluation & Benchmarks</a></li>
+<li class="toc-item"><a href="#" class="toc-link" data-section="figures">Figure Gallery</a></li>
+</ul>
+</aside>
+
+<main class="content">
+
+<!-- OVERVIEW -->
+<div class="section active" id="overview">
+<div class="section-header">
+<h2>Survey Overview</h2>
+<p>A comprehensive review of document intelligence research, from traditional OCR pipelines to end-to-end multimodal foundation models.</p>
+</div>
+
+<div class="stats">
+<div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Core Sections</div></div>
+<div class="stat-card"><div class="stat-num">200+</div><div class="stat-label">Papers Reviewed</div></div>
+<div class="stat-card"><div class="stat-num">10</div><div class="stat-label">Figures</div></div>
+<div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Research Tracks</div></div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#127758;</span> Research Pipeline</h3>
+<p>Document Intelligence follows a two-stage paradigm: <strong>perception</strong> (layout analysis + OCR) followed by <strong>reasoning</strong> (table QA, text RAG, multimodal VLM). Modern systems are shifting toward end-to-end unified models.</p>
+<div class="gallery" style="grid-template-columns:1fr">
+<div class="fig-card" onclick="openLightbox('images/fig01.png')">
+<img src="images/fig01.png" alt="Pipeline Overview" loading="lazy">
+<div class="fig-cap"><strong>Figure 1:</strong> Overview of the Document Intelligence pipeline showing Part I (Perception) and Part II (Understanding).</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128640;</span> Evolution Timeline</h3>
+<div class="timeline">
+<div class="tl-item"><div class="tl-year">Pre-2019</div><div class="tl-content">Rule-based OCR and heuristic layout analysis with handcrafted features.</div></div>
+<div class="tl-item"><div class="tl-year">2019-2021</div><div class="tl-content">Deep learning revolution: LayoutLM, CNN-BiLSTM-CTC OCR, detection-based layout analysis.</div></div>
+<div class="tl-item"><div class="tl-year">2022-2023</div><div class="tl-content">LLM/VLM integration: Donut, Pix2Struct, retrieval-augmented generation for documents.</div></div>
+<div class="tl-item"><div class="tl-year">2024-2025</div><div class="tl-content">End-to-end multimodal models: OCR-free understanding, agentic systems, verifiable reasoning.</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128161;</span> Key Contributions</h3>
+<p><strong>1. Structured Taxonomy:</strong> Systematic organization along perception and reasoning dimensions.</p>
+<p><strong>2. Technical Depth:</strong> Traces evolution from heuristic methods through deep learning to LLM/VLM-based approaches.</p>
+<p><strong>3. Evaluation Perspective:</strong> Comprehensive benchmarks spanning single-page to multi-page, synthetic to real-world.</p>
+<div class="tags">
+<span class="tag">Layout Analysis</span><span class="tag">OCR</span><span class="tag">Table QA</span><span class="tag">RAG</span><span class="tag">Vision-Language</span><span class="tag">Multimodal</span>
+</div>
+</div>
+</div>
+
+<!-- LAYOUT & OCR -->
+<div class="section" id="layout">
+<div class="section-header">
+<h2>Document Layout Analysis & OCR</h2>
+<p>The perception stage: converting visual documents into structured, machine-readable representations.</p>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128208;</span> Geometric Structure Detection</h3>
+<p>Early approaches treated layout analysis as a computer vision problem. The deep learning era brought object detection architectures to document layout.</p>
+<div class="methods">
+<div class="method-card"><h4>Document Spectrum</h4><p>Characterized page structure from a signal processing perspective.</p></div>
+<div class="method-card"><h4>VSR Framework</h4><p>Fused vision, semantics, and relation modules.</p></div>
+<div class="method-card"><h4>DocLayout-YOLO</h4><p>Balanced speed and accuracy with synthetic data.</p></div>
+<div class="method-card"><h4>LD-DOC</h4><p>Lightweight domain-adaptive methods.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#129302;</span> Layout-Aware Representation Learning</h3>
+<p>Modern approaches integrate layout information directly into representation learning. LayoutLM pioneered joint modeling of text and 2D position.</p>
+<div class="methods">
+<div class="method-card"><h4>LayoutLM</h4><p>Pioneered joint text + 2D position modeling.</p></div>
+<div class="method-card"><h4>ERNIE-Layout</h4><p>Explicit spatial and structural relationships.</p></div>
+<div class="method-card"><h4>DocLLM</h4><p>Layout directly influences attention.</p></div>
+<div class="method-card"><h4>LayoutLLM</h4><p>Active layout consideration during generation.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128269;</span> OCR Evolution</h3>
+<p>Four-stage evolution from rule-based methods to VLM-based OCR.</p>
+<div class="gallery">
+<div class="fig-card" onclick="openLightbox('images/fig02.png')"><img src="images/fig02.png" alt="OCR Evolution" loading="lazy"><div class="fig-cap"><strong>Figure 2:</strong> Four-stage evolution of OCR technology.</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig03.png')"><img src="images/fig03.png" alt="Layout Pipeline" loading="lazy"><div class="fig-cap"><strong>Figure 3:</strong> Hierarchical summary of layout analysis methods.</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128200;</span> Layout Analysis & OCR Evaluation</h3>
+<p>Evaluation evolved from task-driven to data-driven approaches. Key benchmarks include DocVQA, PubLayNet, DocLayNet, OCRBench, and OmniDocBench.</p>
+</div>
+</div>
+
+<!-- TABLE QA -->
+<div class="section" id="table">
+<div class="section-header">
+<h2>Table Understanding & Question Answering</h2>
+<p>Tables encode structured relational data with implicit row-column dependencies and cell-level semantics.</p>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128451;</span> Structure-Aware Modeling</h3>
+<p>Early research recognized that simple table linearization weakened row-column relationship modeling. Intermediate pre-training approaches significantly improved capabilities.</p>
+<div class="methods">
+<div class="method-card"><h4>OmniTab</h4><p>Large-scale intermediate pre-training for table structures.</p></div>
+<div class="method-card"><h4>SoarGraph</h4><p>Graph-structured representations for cross-modal dependencies.</p></div>
+<div class="method-card"><h4>ReasTAP</h4><p>Integrated table reasoning skills during pre-training.</p></div>
+<div class="method-card"><h4>FORTAP</h4><p>Leveraged spreadsheet formulas for numerical reasoning.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#9881;</span> Generation Enhancement & Modular Reasoning</h3>
+<p>Research shifted toward leveraging LLM generative capabilities through modular and decomposed strategies.</p>
+<div class="methods">
+<div class="method-card"><h4>Table-GPT</h4><p>Table-tuning on general-purpose LLMs.</p></div>
+<div class="method-card"><h4>Chain-of-Table</h4><p>Evolving tables in the reasoning chain.</p></div>
+<div class="method-card"><h4>DePlot</h4><p>Visual language reasoning through plot-to-table translation.</p></div>
+<div class="method-card"><h4>TabSQLify</h4><p>Decomposed large tables into question-relevant sub-tables.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128202;</span> Three-Stage Evolution</h3>
+<div class="gallery" style="grid-template-columns:1fr">
+<div class="fig-card" onclick="openLightbox('images/fig05.png')"><img src="images/fig05.png" alt="Table QA Evolution" loading="lazy"><div class="fig-cap"><strong>Figure 5:</strong> Three-stage evolution of table understanding: structure-aware representation, generation enhancement, and verifiable reasoning.</div></div>
+</div>
+</div>
+</div>
+
+<!-- TEXT RAG -->
+<div class="section" id="rag">
+<div class="section-header">
+<h2>Text-Based Retrieval-Augmented Generation</h2>
+<p>Addressing context length limitations and hallucinations through retrieval-augmented generation.</p>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128214;</span> Five-Stage RAG Evolution</h3>
+<p>RAG paradigms have evolved through five stages: retrieve-then-generate, structure-guided, graph-enhanced, multimodal, and agentic RAG.</p>
+<div class="gallery" style="grid-template-columns:1fr">
+<div class="fig-card" onclick="openLightbox('images/fig06.png')"><img src="images/fig06.png" alt="RAG Evolution" loading="lazy"><div class="fig-cap"><strong>Figure 6:</strong> Five-stage evolution of RAG paradigms for document QA.</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128295;</span> Key Methods</h3>
+<div class="methods">
+<div class="method-card"><h4>GraphRAG</h4><p>Graph-enhanced retrieval using knowledge graphs and community detection.</p></div>
+<div class="method-card"><h4>LightRAG</h4><p>Lightweight dual-level index architecture.</p></div>
+<div class="method-card"><h4>HyperGraphRAG</h4><p>Hypergraph structures for n-ary relations.</p></div>
+<div class="method-card"><h4>BookRAG</h4><p>BookIndex fusing logical hierarchy trees and entity-relationship graphs.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128736;</span> End-to-End Document QA</h3>
+<p>Beyond retrieval-augmented approaches, end-to-end document QA has evolved through attention mechanisms, graph-based reasoning, and LLM-era methods.</p>
+</div>
+</div>
+
+<!-- VLM -->
+<div class="section" id="vlm">
+<div class="section-header">
+<h2>Vision-Language Models for Document Understanding</h2>
+<p>VLMs have propelled visual document understanding from single-modality analysis toward unified multimodal modeling.</p>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128225;</span> Foundational Models</h3>
+<p>Early research established technical foundations for document image classification and cross-modal retrieval.</p>
+<div class="methods">
+<div class="method-card"><h4>LayoutXLM</h4><p>Multimodal pre-training for multilingual visually-rich documents.</p></div>
+<div class="method-card"><h4>Donut</h4><p>End-to-end document understanding without OCR systems.</p></div>
+<div class="method-card"><h4>Pix2Struct</h4><p>OCR-free VLM based on screenshot parsing pre-training.</p></div>
+<div class="method-card"><h4>Monkey</h4><p>Systematic study of image resolution and text label quality.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128247;</span> OCR-Free and Multi-Page Context</h3>
+<p>OCR-free models utilize joint vision-language modeling, taking raw document images as direct input.</p>
+<div class="gallery">
+<div class="fig-card" onclick="openLightbox('images/fig07.png')"><img src="images/fig07.png" alt="VLM Evolution" loading="lazy"><div class="fig-cap"><strong>Figure 7:</strong> Evolution of vision-language models for document understanding.</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig04.png')"><img src="images/fig04.png" alt="VLM Details" loading="lazy"><div class="fig-cap"><strong>Figure 4:</strong> Detailed comparison of VLM architectures.</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128640;</span> Modern Evolution (2025-2026)</h3>
+<p>Explosive development of ultra-lightweight models: DocSLM, SmolDocling, Baseer, and Semantic Document Derendering.</p>
+</div>
+</div>
+
+<!-- EVALUATION -->
+<div class="section" id="eval">
+<div class="section-header">
+<h2>Evaluation & Benchmarks</h2>
+<p>Performance evaluation in complex document processing and RAG tasks.</p>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#127919;</span> Visual Document Understanding</h3>
+<p>DocQA research focuses on whether models can correctly understand text, layout, and visual cues from single-page or small-scale documents.</p>
+<div class="methods">
+<div class="method-card"><h4>DocVQA</h4><p>Systematic question answering on document images.</p></div>
+<div class="method-card"><h4>InfographicVQA</h4><p>Infographic QA for complex layouts, charts, and text.</p></div>
+<div class="method-card"><h4>PDFVQA</h4><p>Real PDF documents requiring multi-page evidence location.</p></div>
+<div class="method-card"><h4>DUDE / DLUE</h4><p>Comprehensive evaluation for visually rich long documents.</p></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128202;</span> Benchmark Landscape</h3>
+<div class="gallery" style="grid-template-columns:1fr">
+<div class="fig-card" onclick="openLightbox('images/fig10.png')"><img src="images/fig10.png" alt="Benchmarks" loading="lazy"><div class="fig-cap"><strong>Figure 10:</strong> Benchmark landscape for document intelligence (2019-2025).</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3><span class="icon">&#128200;</span> RAG Evaluation</h3>
+<p>RAG-oriented evaluation explored complex question forms and systematic frameworks: RAGProbe, CRAG, LONG2RAG, and domain-specific benchmarks.</p>
+</div>
+</div>
+
+<!-- ALL FIGURES -->
+<div class="section" id="figures">
+<div class="section-header">
+<h2>Figure Gallery</h2>
+<p>All figures from the survey paper. Click to enlarge.</p>
+</div>
+
+<div class="gallery">
+<div class="fig-card" onclick="openLightbox('images/fig01.png')"><img src="images/fig01.png" alt="Fig1" loading="lazy"><div class="fig-cap"><strong>Fig 1:</strong> Document Intelligence Pipeline Overview</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig02.png')"><img src="images/fig02.png" alt="Fig2" loading="lazy"><div class="fig-cap"><strong>Fig 2:</strong> OCR Evolution (4 stages)</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig03.png')"><img src="images/fig03.png" alt="Fig3" loading="lazy"><div class="fig-cap"><strong>Fig 3:</strong> Layout Analysis Methods</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig04.png')"><img src="images/fig04.png" alt="Fig4" loading="lazy"><div class="fig-cap"><strong>Fig 4:</strong> VLM Architecture Comparison</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig05.png')"><img src="images/fig05.png" alt="Fig5" loading="lazy"><div class="fig-cap"><strong>Fig 5:</strong> Table QA Evolution (3 stages)</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig06.png')"><img src="images/fig06.png" alt="Fig6" loading="lazy"><div class="fig-cap"><strong>Fig 6:</strong> RAG Evolution (5 stages)</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig07.png')"><img src="images/fig07.png" alt="Fig7" loading="lazy"><div class="fig-cap"><strong>Fig 7:</strong> VLM Evolution</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig08.png')"><img src="images/fig08.png" alt="Fig8" loading="lazy"><div class="fig-cap"><strong>Fig 8:</strong> Additional VLM Analysis</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig09.png')"><img src="images/fig09.png" alt="Fig9" loading="lazy"><div class="fig-cap"><strong>Fig 9:</strong> Method Comparison</div></div>
+<div class="fig-card" onclick="openLightbox('images/fig10.png')"><img src="images/fig10.png" alt="Fig10" loading="lazy"><div class="fig-cap"><strong>Fig 10:</strong> Benchmark Landscape</div></div>
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+<span class="lightbox-close">&times;</span>
+<img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+// Tab switching
+const tabs=document.querySelectorAll('.nav-tab');
+const sections=document.querySelectorAll('.section');
+const tocLinks=document.querySelectorAll('.toc-link');
+
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    const target=tab.dataset.section;
+    tabs.forEach(t=>t.classList.remove('active'));
+    sections.forEach(s=>s.classList.remove('active'));
+    tocLinks.forEach(l=>l.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(target).classList.add('active');
+    document.querySelectorAll(`.toc-link[data-section="${target}"]`).forEach(l=>l.classList.add('active'));
+  });
+});
+
+// TOC switching
+tocLinks.forEach(link=>{
+  link.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const target=link.dataset.section;
+    tabs.forEach(t=>t.classList.remove('active'));
+    sections.forEach(s=>s.classList.remove('active'));
+    tocLinks.forEach(l=>l.classList.remove('active'));
+    document.querySelector(`.nav-tab[data-section="${target}"]`).classList.add('active');
+    document.getElementById(target).classList.add('active');
+    document.querySelectorAll(`.toc-link[data-section="${target}"]`).forEach(l=>l.classList.add('active'));
+  });
+});
+
+// Lightbox
+function openLightbox(src){
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox(e){
+  if(e.target.id==='lightbox'||e.target.classList.contains('lightbox-close')){
+    document.getElementById('lightbox').classList.remove('active');
+  }
+}
+document.querySelector('.lightbox-close').addEventListener('click',()=>{
+  document.getElementById('lightbox').classList.remove('active');
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')document.getElementById('lightbox').classList.remove('active');
+});
+</script>
+
+</body>
+</html>
