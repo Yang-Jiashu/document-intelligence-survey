@@ -1,0 +1,30 @@
+name: Update SOTA snapshot
+
+on:
+  schedule:
+    - cron: "16 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sota:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh SOTA data
+        run: python scripts/update_sota.py
+
+      - name: Commit updated snapshot
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update SOTA snapshot"
+          file_pattern: docs/data/sota.json docs/data/pending_updates.json
