@@ -1,0 +1,47 @@
+{
+  "title": "Community Benchmark Updates",
+  "githubIssueUrl": "https://github.com/Yang-Jiashu/document-intelligence-survey/issues",
+  "reviewCadence": "monthly",
+  "autoRefreshCadence": "weekly",
+  "policy": "If you find a missing paper, outdated benchmark score, incorrect metadata, or a new result that should be added, please submit it through a GitHub Issue. Include the benchmark name, model name, score, source URL, and evidence such as a paper, leaderboard, repository, or screenshot. Verified updates will be reviewed and merged into the survey.",
+  "requestedEvidence": [
+    "Benchmark and split",
+    "Model or method name",
+    "Score and metric",
+    "Source URL",
+    "Evaluation setting",
+    "Date observed"
+  ],
+  "trackedCandidates": [
+    {
+      "benchmark": "MMLongBench-Doc",
+      "model": "Qwen2.5-VL",
+      "status": "needs score/source",
+      "reason": "Mentioned as relevant long-document VLM baseline; no current MMLongBench-Doc score has been verified in the tracker."
+    },
+    {
+      "benchmark": "MMLongBench-Doc",
+      "model": "Qwen3-VL",
+      "status": "covered",
+      "reason": "The tracker includes Qwen3-VL 235B-A22B Instruct (57.0) and Thinking (56.2) from the submitted benchmark tables."
+    },
+    {
+      "benchmark": "MMLongBench-Doc",
+      "model": "Qwen3.5",
+      "status": "covered",
+      "reason": "LLM Stats currently lists Qwen3.5-27B, Qwen3.5-35B-A3B, and Qwen3.5-122B-A10B."
+    },
+    {
+      "benchmark": "MMLongBench-Doc",
+      "model": "RAG-Anything",
+      "status": "needs score/source",
+      "reason": "Tracked as a candidate because it is relevant to multimodal/document RAG, but no MMLongBench-Doc score is verified yet."
+    },
+    {
+      "benchmark": "MMLongBench-Doc",
+      "model": "AutoThinkRAG",
+      "status": "needs score/source",
+      "reason": "Tracked as a candidate because it may report document-RAG results, but score and source need confirmation."
+    }
+  ]
+}
