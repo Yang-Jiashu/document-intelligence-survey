@@ -7,8 +7,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BIB_PATH = ROOT / "paper_latex" / "latex" / "custom.bib"
-SECTIONS_DIR = ROOT / "paper_latex" / "latex" / "sections"
+BIB_PATH = ROOT / "custom.bib"
+SECTIONS_DIR = ROOT / "sections"
 OUT_PATH = ROOT / "docs" / "data" / "paper_index.json"
 
 

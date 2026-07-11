@@ -1,0 +1,182 @@
+{
+  "lastUpdated": "2026-07-11T16:19:59Z",
+  "source": "scheduled-wechat-arxiv-pipeline",
+  "curatedSourceMentions": {},
+  "verifiedWechatArticles": [
+    {
+      "platform": "wechat",
+      "provider": "tavily",
+      "account": "机器之心",
+      "articleTitle": "Self-Aligned Reward: Towards Effective and Efficient Reasoners",
+      "url": "https://mp.weixin.qq.com/s/drrf-HawxTdsJUNgIMIkUg",
+      "foundAt": "2026-07-09",
+      "arxivIds": [
+        "2509.05489"
+      ]
+    },
+    {
+      "platform": "wechat",
+      "provider": "tavily",
+      "account": "机器之心",
+      "articleTitle": "https://mp.weixin.qq.com/s/TbPWc4ooFyf0it5pEaLRUA",
+      "url": "https://mp.weixin.qq.com/s/TbPWc4ooFyf0it5pEaLRUA",
+      "foundAt": "2026-07-11",
+      "arxivIds": [
+        "2504.02495"
+      ]
+    },
+    {
+      "platform": "wechat",
+      "provider": "tavily",
+      "account": "机器之心",
+      "articleTitle": "微信公众号文章",
+      "url": "https://mp.weixin.qq.com/s/_DTvTMCtrW9WV3vELjU9jw",
+      "foundAt": "2026-07-11",
+      "arxivIds": []
+    },
+    {
+      "platform": "wechat",
+      "provider": "tavily",
+      "account": "AI科技评论",
+      "articleTitle": "https://mp.weixin.qq.com/s/0PyclQ6K7CfM1Mmp1WTdGQ",
+      "url": "https://mp.weixin.qq.com/s/0PyclQ6K7CfM1Mmp1WTdGQ",
+      "foundAt": "2026-07-11",
+      "arxivIds": [
+        "2105.15075"
+      ]
+    },
+    {
+      "platform": "wechat",
+      "provider": "tavily",
+      "account": "量子位",
+      "articleTitle": "https://mp.weixin.qq.com/s/kHU8p-x7_WsEIYyfW4t91A",
+      "url": "https://mp.weixin.qq.com/s/kHU8p-x7_WsEIYyfW4t91A",
+      "foundAt": "2026-07-11",
+      "arxivIds": [
+        "2212.08045"
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "id": "arxiv:2105.15075",
+      "arxiv": "2105.15075",
+      "title": "Not All Images are Worth 16x16 Words: Dynamic Transformers for Efficient Image Recognition",
+      "authors": "Yulin Wang, Rui Huang, Shiji Song, Zeyi Huang, Gao Huang",
+      "abstract": "Vision Transformers (ViT) have achieved remarkable success in large-scale image recognition. They split every 2D image into a fixed number of patches, each of which is treated as a token. Generally, representing an image with more tokens would lead to higher prediction accuracy, while it also results in drastically increased computational cost. To achieve a decent trade-off between accuracy and speed, the number of tokens is empirically set to 16x16 or 14x14. In this paper, we argue that every image has its own characteristics, and ideally the token number should be conditioned on each individual input. In fact, we have observed that there exist a considerable number of \"easy\" images which can be accurately predicted with a mere number of 4x4 tokens, while only a small fraction of \"hard\" ones need a finer representation. Inspired by this phenomenon, we propose a Dynamic Transformer to automatically configure a proper number of tokens for each input image. This is achieved by cascading multiple Transformers with increasing numbers of tokens, which are sequentially activated in an adaptive fashion at test time, i.e., the inference is terminated once a sufficiently confident prediction is produced. We further design efficient feature reuse and relationship reuse mechanisms across different components of the Dynamic Transformer to reduce redundant computations. Extensive empirical results on ImageNet, CIFAR-10, and CIFAR-100 demonstrate that our method significantly outperforms the competitive baselines in terms of both theoretical computational efficiency and practical inference speed. Code and pre-trained models (based on PyTorch and MindSpore) are available at https://github.com/blackfeather-wang/Dynamic-Vision-Transformer and https://github.com/blackfeather-wang/Dynamic-Vision-Transformer-MindSpore.",
+      "year": 2021,
+      "published": "2021-05-31",
+      "updated": "2021-10-26",
+      "venue": "arXiv 2021",
+      "category": "other",
+      "categories": [
+        "other"
+      ],
+      "subcategory": "Outside document intelligence",
+      "tags": [
+        "From WeChat",
+        "Non-document-intelligence"
+      ],
+      "classificationConfidence": 1.0,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.0,
+      "isDocumentIntelligence": false,
+      "status": "source-only",
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "url": "https://arxiv.org/abs/2105.15075",
+      "pdfUrl": "https://arxiv.org/pdf/2105.15075",
+      "primaryArxivCategory": "cs.CV",
+      "sourceMentions": [
+        {
+          "platform": "wechat",
+          "provider": "tavily",
+          "account": "AI科技评论",
+          "articleTitle": "https://mp.weixin.qq.com/s/0PyclQ6K7CfM1Mmp1WTdGQ",
+          "url": "https://mp.weixin.qq.com/s/0PyclQ6K7CfM1Mmp1WTdGQ",
+          "foundAt": "2026-07-11"
+        }
+      ]
+    },
+    {
+      "id": "arxiv:2504.02495",
+      "arxiv": "2504.02495",
+      "title": "Inference-Time Scaling for Generalist Reward Modeling",
+      "authors": "Zijun Liu, Peiyi Wang, Runxin Xu, Shirong Ma, Chong Ruan, Peng Li, Yang Liu, Yu Wu",
+      "abstract": "Reinforcement learning (RL) has been widely adopted in post-training for large language models (LLMs) at scale. Recently, the incentivization of reasoning capabilities in LLMs from RL indicates that $\\textit{proper learning methods could enable effective inference-time scalability}$. A key challenge of RL is to obtain accurate reward signals for LLMs in various domains beyond verifiable questions or artificial rules. In this work, we investigate how to improve reward modeling (RM) with more inference compute for general queries, i.e. the $\\textbf{inference-time scalability of generalist RM}$, and further, how to improve the effectiveness of performance-compute scaling with proper learning methods. For the RM approach, we adopt pointwise generative reward modeling (GRM) to enable flexibility for different input types and potential for inference-time scaling. For the learning method, we propose Self-Principled Critique Tuning (SPCT) to foster scalable reward generation behaviors in GRMs through online RL, to generate principles adaptively and critiques accurately, resulting in $\\textbf{DeepSeek-GRM}$ models. Furthermore, for effective inference-time scaling, we use parallel sampling to expand compute usage, and introduce a meta RM to guide voting process for better scaling performance. Empirically, we show that SPCT significantly improves the quality and scalability of GRMs, outperforming existing methods and models in various RM benchmarks without severe biases, and could achieve better performance compared to training-time scaling. DeepSeek-GRM still meets challenges in some tasks, which we believe can be addressed by future efforts in generalist reward systems. The models are released at Hugging Face and ModelScope.",
+      "year": 2025,
+      "published": "2025-04-03",
+      "updated": "2025-09-25",
+      "venue": "arXiv 2025",
+      "category": "other",
+      "categories": [
+        "other"
+      ],
+      "subcategory": "Outside document intelligence",
+      "tags": [
+        "From WeChat",
+        "Non-document-intelligence"
+      ],
+      "classificationConfidence": 1.0,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.0,
+      "isDocumentIntelligence": false,
+      "status": "source-only",
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "url": "https://arxiv.org/abs/2504.02495",
+      "pdfUrl": "https://arxiv.org/pdf/2504.02495",
+      "primaryArxivCategory": "cs.CL",
+      "sourceMentions": [
+        {
+          "platform": "wechat",
+          "provider": "tavily",
+          "account": "机器之心",
+          "articleTitle": "https://mp.weixin.qq.com/s/TbPWc4ooFyf0it5pEaLRUA",
+          "url": "https://mp.weixin.qq.com/s/TbPWc4ooFyf0it5pEaLRUA",
+          "foundAt": "2026-07-11"
+        }
+      ]
+    },
+    {
+      "id": "arxiv:2212.08045",
+      "arxiv": "2212.08045",
+      "title": "CLIPPO: Image-and-Language Understanding from Pixels Only",
+      "authors": "Michael Tschannen, Basil Mustafa, Neil Houlsby",
+      "abstract": "Multimodal models are becoming increasingly effective, in part due to unified components, such as the Transformer architecture. However, multimodal models still often consist of many task- and modality-specific pieces and training procedures. For example, CLIP (Radford et al., 2021) trains independent text and image towers via a contrastive loss. We explore an additional unification: the use of a pure pixel-based model to perform image, text, and multimodal tasks. Our model is trained with contrastive loss alone, so we call it CLIP-Pixels Only (CLIPPO). CLIPPO uses a single encoder that processes both regular images and text rendered as images. CLIPPO performs image-based tasks such as retrieval and zero-shot image classification almost as well as CLIP-style models, with half the number of parameters and no text-specific tower or embedding. When trained jointly via image-text contrastive learning and next-sentence contrastive learning, CLIPPO can perform well on natural language understanding tasks, without any word-level loss (language modelling or masked language modelling), outperforming pixel-based prior work. Surprisingly, CLIPPO can obtain good accuracy in visual question answering, simply by rendering the question and image together. Finally, we exploit the fact that CLIPPO does not require a tokenizer to show that it can achieve strong performance on multilingual multimodal retrieval without modifications.",
+      "year": 2022,
+      "published": "2022-12-15",
+      "updated": "2023-04-01",
+      "venue": "arXiv 2022",
+      "category": "vlm",
+      "categories": [
+        "vlm"
+      ],
+      "subcategory": "Document VLM",
+      "tags": [
+        "Document VLM",
+        "Multimodal"
+      ],
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.0,
+      "isDocumentIntelligence": true,
+      "status": "auto",
+      "firstSeen": "2026-07-11",
+      "lastSeen": "2026-07-11",
+      "url": "https://arxiv.org/abs/2212.08045",
+      "pdfUrl": "https://arxiv.org/pdf/2212.08045",
+      "primaryArxivCategory": "cs.CV",
+      "sourceMentions": [
+        {
+          "platform": "wechat",
+          "provider": "tavily",
+          "account": "量子位",
+          "articleTitle": "https://mp.weixin.qq.com/s/kHU8p-x7_WsEIYyfW4t91A",
+          "url": "https://mp.weixin.qq.com/s/kHU8p-x7_WsEIYyfW4t91A",
+          "foundAt": "2026-07-11"
+        }
+      ]
+    }
+  ]
+}

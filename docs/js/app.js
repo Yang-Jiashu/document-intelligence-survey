@@ -2,20 +2,38 @@ let papersData = null;
 let paperIndexData = null;
 let liveSotaData = null;
 let feedbackData = null;
+let dynamicPapersData = null;
+let pendingDynamicData = null;
+let updateLogData = null;
 let currentFilter = 'all';
 let currentSort = 'year';
 
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+}
+
 async function loadData() {
-    const [papersRes, indexRes, sotaRes, feedbackRes] = await Promise.all([
+    const [papersRes, indexRes, sotaRes, feedbackRes, dynamicRes, pendingDynamicRes, updateLogRes] = await Promise.all([
         fetch('data/papers.json'),
         fetch('data/paper_index.json').catch(() => null),
         fetch('data/sota.json').catch(() => null),
-        fetch('data/feedback.json').catch(() => null)
+        fetch('data/feedback.json').catch(() => null),
+        fetch('data/dynamic_papers.json').catch(() => null),
+        fetch('data/pending_dynamic_papers.json').catch(() => null),
+        fetch('data/update_log.json').catch(() => null)
     ]);
     papersData = await papersRes.json();
     paperIndexData = indexRes && indexRes.ok ? await indexRes.json() : null;
     liveSotaData = sotaRes && sotaRes.ok ? await sotaRes.json() : null;
     feedbackData = feedbackRes && feedbackRes.ok ? await feedbackRes.json() : null;
+    dynamicPapersData = dynamicRes && dynamicRes.ok ? await dynamicRes.json() : { papers: [] };
+    pendingDynamicData = pendingDynamicRes && pendingDynamicRes.ok ? await pendingDynamicRes.json() : { items: [] };
+    updateLogData = updateLogRes && updateLogRes.ok ? await updateLogRes.json() : null;
     renderAll();
     restoreHashPosition();
 }
@@ -33,6 +51,7 @@ function restoreHashPosition() {
 }
 
 function renderAll() {
+    renderDynamicOverview();
     renderTaxonomy();
     renderTimeline();
     renderSOTA();
@@ -40,6 +59,91 @@ function renderAll() {
     renderPapers();
     renderDatasets();
     renderLeaderboard();
+}
+
+function getDynamicPapers() {
+    return dynamicPapersData && Array.isArray(dynamicPapersData.papers) ? dynamicPapersData.papers : [];
+}
+
+function getPendingDynamicItems() {
+    return pendingDynamicData && Array.isArray(pendingDynamicData.items) ? pendingDynamicData.items : [];
+}
+
+function getDynamicCategoryCounts() {
+    const counts = {};
+    getDynamicPapers().forEach(paper => {
+        const categories = paper.categories && paper.categories.length ? paper.categories : [paper.category];
+        [...new Set(categories.filter(Boolean))].forEach(category => {
+            counts[category] = (counts[category] || 0) + 1;
+        });
+    });
+    return counts;
+}
+
+function formatDateTime(value) {
+    if (!value) return 'Not run yet';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return String(value);
+    return date.toLocaleString(undefined, {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+function renderDynamicOverview() {
+    const container = document.getElementById('dynamicOverviewContainer');
+    if (!container) return;
+
+    const dynamicPapers = getDynamicPapers();
+    const pendingItems = getPendingDynamicItems();
+    const counts = getDynamicCategoryCounts();
+    const taxonomy = paperIndexData && Array.isArray(paperIndexData.taxonomy)
+        ? paperIndexData.taxonomy
+        : [
+            { id: 'ocr', title: 'OCR & Text Recognition' },
+            { id: 'layout', title: 'Layout Analysis' },
+            { id: 'table', title: 'Table Understanding' },
+            { id: 'rag', title: 'Retrieval-Augmented Generation' },
+            { id: 'vlm', title: 'Vision-Language Models' },
+            { id: 'eval', title: 'Evaluation & Benchmarks' }
+        ];
+    const lastUpdated = dynamicPapersData?.lastUpdated || updateLogData?.lastRun || null;
+    const lastUpdatedLabel = formatDateTime(lastUpdated);
+    const updatedCategories = taxonomy.filter(node => counts[node.id] > 0).length;
+    const badge = document.getElementById('dynamicLastUpdated');
+    if (badge) badge.textContent = lastUpdatedLabel;
+
+    container.innerHTML = `
+        <div class="dynamic-stat-card">
+            <span class="dynamic-stat-label">Auto-discovered</span>
+            <strong>${dynamicPapers.length}</strong>
+            <span class="dynamic-stat-note">Verified arXiv papers</span>
+        </div>
+        <div class="dynamic-stat-card">
+            <span class="dynamic-stat-label">Pending Review</span>
+            <strong>${pendingItems.length}</strong>
+            <span class="dynamic-stat-note">Hidden from the homepage</span>
+        </div>
+        <div class="dynamic-stat-card">
+            <span class="dynamic-stat-label">Active Categories</span>
+            <strong>${updatedCategories}</strong>
+            <span class="dynamic-stat-note">Categories with dynamic papers</span>
+        </div>
+        <div class="dynamic-stat-card dynamic-category-card">
+            <span class="dynamic-stat-label">Dynamic Categories</span>
+            <div class="dynamic-category-list">
+                ${taxonomy.map(node => `
+                    <span>
+                        <em>${escapeHtml(node.title)}</em>
+                        <strong>${counts[node.id] || 0}</strong>
+                    </span>
+                `).join('')}
+            </div>
+        </div>
+    `;
 }
 
 function renderStats() {
@@ -318,40 +422,41 @@ function renderBenchmarks() {
 }
 
 function renderTaxonomy() {
+    const dynamicCounts = getDynamicCategoryCounts();
     const fallbackTaxonomy = [
         {
             icon: 'OCR', filter: 'ocr', title: 'OCR & Text Recognition', desc: 'Optical Character Recognition, scene text, handwritten text',
             children: ['Traditional OCR', 'Scene Text Detection', 'Handwritten Recognition', 'Multilingual OCR'],
-            count: papersData.papers.filter(p => p.category === 'ocr').length
+            count: papersData.papers.filter(p => p.category === 'ocr').length + (dynamicCounts.ocr || 0)
         },
         {
             icon: 'LAY', filter: 'layout', title: 'Layout Analysis', desc: 'Document structure detection, region segmentation, reading order',
             children: ['Layout Detection', 'Region Segmentation', 'Reading Order', 'Form Understanding'],
-            count: papersData.papers.filter(p => p.category === 'layout').length
+            count: papersData.papers.filter(p => p.category === 'layout').length + (dynamicCounts.layout || 0)
         },
         {
             icon: 'TAB', filter: 'table', title: 'Table Understanding', desc: 'Table detection, structure recognition, table QA',
             children: ['Table Detection', 'Structure Recognition', 'Table QA', 'Spreadsheet Understanding'],
-            count: papersData.papers.filter(p => p.category === 'table').length
+            count: papersData.papers.filter(p => p.category === 'table').length + (dynamicCounts.table || 0)
         },
         {
             icon: 'VLM', filter: 'vlm', title: 'Vision-Language Models', desc: 'VLM for document understanding, OCR-free methods, multimodal reasoning',
             children: ['OCR-free Models', 'High-resolution VLM', 'Document VLM', 'Multimodal RAG'],
-            count: papersData.papers.filter(p => p.category === 'vlm').length
+            count: papersData.papers.filter(p => p.category === 'vlm').length + (dynamicCounts.vlm || 0)
         },
         {
             icon: 'RAG', filter: 'rag', title: 'Retrieval-Augmented Generation', desc: 'Document RAG, knowledge extraction, long-context understanding',
             children: ['Document RAG', 'Knowledge Graph', 'Long-context', 'Multi-hop QA'],
-            count: papersData.papers.filter(p => p.category === 'rag').length
+            count: papersData.papers.filter(p => p.category === 'rag').length + (dynamicCounts.rag || 0)
         },
         {
             icon: 'EVAL', filter: 'eval', title: 'Evaluation & Benchmarks', desc: 'Datasets, metrics, benchmark suites for document intelligence',
             children: ['VQA Benchmarks', 'Layout Benchmarks', 'OCR Benchmarks', 'End-to-end Evaluation'],
-            count: papersData.papers.filter(p => p.category === 'eval').length
+            count: papersData.papers.filter(p => p.category === 'eval').length + (dynamicCounts.eval || 0)
         }
     ];
     const taxonomy = paperIndexData && Array.isArray(paperIndexData.taxonomy)
-        ? paperIndexData.taxonomy.map(node => ({ ...node, filter: node.id }))
+        ? paperIndexData.taxonomy.map(node => ({ ...node, filter: node.id, count: (node.count || 0) + (dynamicCounts[node.id] || 0) }))
         : fallbackTaxonomy;
     
     const container = document.getElementById('taxonomyContainer');

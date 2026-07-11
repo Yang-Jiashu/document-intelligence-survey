@@ -1,4 +1,5 @@
 let paperIndex = null;
+let dynamicPaperIndex = null;
 let filteredPapers = [];
 let currentPage = 1;
 let currentQuery = '';
@@ -16,6 +17,7 @@ function escapeHtml(value) {
 
 function paperMatchesQuery(paper, query) {
     if (!query) return true;
+    const sourceMentions = getWechatSourceMentions(paper);
     const haystack = [
         paper.title,
         paper.authors,
@@ -29,6 +31,11 @@ function paperMatchesQuery(paper, query) {
         ...(paper.topics || []),
         ...(paper.tags || []),
         paper.arxiv,
+        paper.sourceType,
+        paper.sourceType === 'auto' ? 'auto-discovered' : '',
+        paper.isDocumentIntelligence === false ? 'source-only outside document intelligence other' : '',
+        sourceMentions.length ? 'wechat 微信 公众号 wechat source' : '',
+        ...sourceMentions.flatMap(mention => [mention.account, mention.articleTitle]),
     ].join(' ').toLowerCase();
     return haystack.includes(query.toLowerCase());
 }
@@ -47,7 +54,7 @@ function updateUrl() {
 }
 
 function applySearch() {
-    filteredPapers = [...paperIndex.papers]
+    filteredPapers = getSearchPapers()
         .filter(paper => paperMatchesCategory(paper, currentCategory))
         .filter(paper => paperMatchesQuery(paper, currentQuery))
         .sort((a, b) => {
@@ -64,13 +71,69 @@ function applySearch() {
     updateUrl();
 }
 
+function getSearchPapers() {
+    const curatedMentionMap = dynamicPaperIndex?.curatedSourceMentions || {};
+    const curated = (paperIndex.papers || []).map(paper => {
+        const normalizedArxiv = String(paper.arxiv || '').replace(/v\d+$/i, '');
+        return {
+            ...paper,
+            sourceType: paper.sourceType || 'curated',
+            sourceMentions: [
+                ...(Array.isArray(paper.sourceMentions) ? paper.sourceMentions : []),
+                ...(Array.isArray(curatedMentionMap[normalizedArxiv]) ? curatedMentionMap[normalizedArxiv] : [])
+            ]
+        };
+    });
+    const dynamic = dynamicPaperIndex && Array.isArray(dynamicPaperIndex.papers)
+        ? dynamicPaperIndex.papers.map(paper => ({
+            ...paper,
+            sourceType: 'auto',
+            bibKey: paper.bibKey || '',
+            stars: paper.stars || 0
+        }))
+        : [];
+    const linkedWechatUrls = new Set(
+        curated.concat(dynamic).flatMap(paper => getWechatSourceMentions(paper).map(mention => mention.url))
+    );
+    const verifiedWechatArticles = Array.isArray(dynamicPaperIndex?.verifiedWechatArticles)
+        ? dynamicPaperIndex.verifiedWechatArticles
+            .filter(article => !linkedWechatUrls.has(article.url))
+            .map((article, index) => ({
+                id: `wechat:${index}`,
+                title: article.articleTitle || '微信公众号文章',
+                authors: article.account || '微信公众号',
+                venue: '微信公众号',
+                year: Number(String(article.foundAt || '').slice(0, 4)) || '',
+                category: 'other',
+                categories: ['other'],
+                tags: ['Verified WeChat source'],
+                arxiv: Array.isArray(article.arxivIds) && article.arxivIds.length === 1 ? article.arxivIds[0] : '',
+                sourceType: 'wechat',
+                isDocumentIntelligence: false,
+                sourceMentions: [article]
+            }))
+        : [];
+    return curated.concat(dynamic, verifiedWechatArticles);
+}
+
+function getWechatSourceMentions(paper) {
+    const mentions = Array.isArray(paper.sourceMentions) ? paper.sourceMentions : [];
+    const urls = new Set();
+    return mentions.filter(mention => {
+        const url = String(mention?.url || '');
+        if (!/^https:\/\/mp\.weixin\.qq\.com\/(?:s\/|s\?)/i.test(url) || urls.has(url)) return false;
+        urls.add(url);
+        return true;
+    });
+}
+
 function renderSummary() {
     const summary = document.getElementById('resultSummary');
     const detail = document.getElementById('resultDetail');
     const categoryName = currentCategory === 'all'
         ? 'All categories'
         : (paperIndex.taxonomy.find(item => item.id === currentCategory)?.title || currentCategory);
-    summary.textContent = `${filteredPapers.length} papers`;
+    summary.textContent = `${filteredPapers.length} results`;
     detail.textContent = currentQuery
         ? `${categoryName} / "${currentQuery}"`
         : categoryName;
@@ -89,7 +152,13 @@ function renderResults() {
         const categories = (paper.categories || [paper.category]).filter(Boolean);
         const subcategories = (paper.subcategories || []).filter(Boolean).slice(0, 3);
         const arxivLink = paper.arxiv ? `https://arxiv.org/abs/${encodeURIComponent(paper.arxiv)}` : '';
-        const sourceLink = paper.url && !paper.url.includes('arxiv.org') ? paper.url : '';
+        const sourceLink = paper.sourceType !== 'auto' && paper.url && !paper.url.includes('arxiv.org') ? paper.url : '';
+        const wechatMentions = getWechatSourceMentions(paper);
+        const sourceLabel = paper.sourceType === 'wechat'
+            ? '<span class="paper-source-label">Verified WeChat article</span>'
+            : paper.sourceType === 'auto'
+                ? `<span class="paper-source-label">${paper.isDocumentIntelligence === false ? 'WeChat source' : 'Auto-discovered'}</span>`
+                : '';
 
         return `
             <article class="search-result-card">
@@ -100,8 +169,9 @@ function renderResults() {
                     </div>
                     <div class="paper-authors">${escapeHtml(paper.authors || 'Unknown authors')}</div>
                     <div class="paper-meta">
-                        <span class="paper-venue">${escapeHtml(paper.venue || paper.bibKey)}</span>
-                        <span class="paper-stars">${escapeHtml(paper.bibKey)}</span>
+                        <span class="paper-venue">${escapeHtml(paper.venue || paper.bibKey || '')}</span>
+                        ${paper.bibKey ? `<span class="paper-stars">${escapeHtml(paper.bibKey)}</span>` : ''}
+                        ${sourceLabel}
                     </div>
                     <div class="paper-tags">
                         ${categories.map(item => `<span class="paper-tag">${escapeHtml(item)}</span>`).join('')}
@@ -110,7 +180,12 @@ function renderResults() {
                 </div>
                 <div class="paper-actions search-result-actions">
                     ${arxivLink ? `<a href="${arxivLink}" target="_blank" class="paper-btn primary">arXiv</a>` : ''}
-                    ${sourceLink ? `<a href="${escapeHtml(sourceLink)}" target="_blank" class="paper-btn secondary">Source</a>` : ''}
+                    ${wechatMentions.map(mention => `
+                        <a href="${escapeHtml(mention.url)}" target="_blank" rel="noreferrer" class="paper-btn secondary" title="${escapeHtml(mention.articleTitle || '')}">
+                            公众号${mention.account && mention.account !== 'Unknown' ? ` · ${escapeHtml(mention.account)}` : ''}
+                        </a>
+                    `).join('')}
+                    ${!wechatMentions.length && sourceLink ? `<a href="${escapeHtml(sourceLink)}" target="_blank" rel="noreferrer" class="paper-btn secondary">Source</a>` : ''}
                 </div>
             </article>
         `;
@@ -157,8 +232,12 @@ function setActiveFilter() {
 }
 
 async function loadSearchPage() {
-    const response = await fetch('data/paper_index.json');
-    paperIndex = await response.json();
+    const [indexResponse, dynamicResponse] = await Promise.all([
+        fetch('data/paper_index.json'),
+        fetch('data/dynamic_papers.json').catch(() => null)
+    ]);
+    paperIndex = await indexResponse.json();
+    dynamicPaperIndex = dynamicResponse && dynamicResponse.ok ? await dynamicResponse.json() : { papers: [] };
 
     const params = new URLSearchParams(window.location.search);
     currentQuery = params.get('q') || '';

@@ -1,8 +1,8 @@
 {
   "source": {
-    "bib": "paper_latex/latex/custom.bib",
-    "sections": "paper_latex/latex/sections",
-    "bibEntries": 461,
+    "bib": "custom.bib",
+    "sections": "sections",
+    "bibEntries": 409,
     "citedPapers": 409
   },
   "taxonomy": [
@@ -122,16 +122,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2601.01897",
@@ -300,14 +300,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2502.16540",
       "url": "",
@@ -450,16 +450,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2509.18174",
@@ -503,16 +503,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -531,14 +531,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2512.03413",
       "url": "",
@@ -581,14 +581,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2507.10057",
       "url": "",
@@ -656,14 +656,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "2512.12658",
       "url": "",
@@ -681,14 +681,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -756,14 +756,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "",
       "url": "",
@@ -831,14 +831,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2510.18234",
       "url": "",
@@ -856,14 +856,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2508.13238",
       "url": "",
@@ -881,14 +881,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "2510.21603",
       "url": "",
@@ -956,16 +956,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -984,14 +984,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "2511.11552",
       "url": "",
@@ -1009,16 +1009,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "",
@@ -1037,16 +1037,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2511.11313",
@@ -1115,14 +1115,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2512.02498",
       "url": "",
@@ -1165,16 +1165,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "2512.14427",
@@ -1193,14 +1193,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2506.16037",
       "url": "",
@@ -1218,14 +1218,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2505.17625",
       "url": "",
@@ -1293,14 +1293,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -1318,14 +1318,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -1368,14 +1368,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2505.23667",
       "url": "",
@@ -1443,14 +1443,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "",
       "url": "",
@@ -1543,14 +1543,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2503.21322",
       "url": "",
@@ -1618,16 +1618,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "",
@@ -1646,16 +1646,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2509.26235",
@@ -1674,14 +1674,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2512.06859",
       "url": "",
@@ -1824,14 +1824,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2512.15922",
       "url": "",
@@ -1949,14 +1949,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "2505.20096",
       "url": "",
@@ -1974,14 +1974,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -2049,16 +2049,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2509.22186",
@@ -2152,14 +2152,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2511.10390",
       "url": "",
@@ -2177,14 +2177,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2506.05218",
       "url": "",
@@ -2227,16 +2227,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "",
@@ -2280,16 +2280,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "",
@@ -2308,14 +2308,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2501.15558",
       "url": "",
@@ -2483,14 +2483,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2507.05595",
       "url": "",
@@ -2508,14 +2508,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2510.14528",
       "url": "",
@@ -2558,16 +2558,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "",
@@ -2611,16 +2611,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2506.18023",
@@ -2689,16 +2689,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2502.13923",
@@ -2717,16 +2717,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2511.21631",
@@ -2895,14 +2895,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2506.01710",
       "url": "",
@@ -3070,16 +3070,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2510.21850",
@@ -3123,16 +3123,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2511.13478",
@@ -3151,16 +3151,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "2503.11576",
@@ -3354,14 +3354,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2505.23621",
       "url": "",
@@ -3379,14 +3379,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2505.12415",
       "url": "",
@@ -3404,14 +3404,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2512.20312",
       "url": "",
@@ -3429,14 +3429,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2509.06278",
       "url": "",
@@ -3529,14 +3529,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -3554,14 +3554,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -3579,14 +3579,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2506.18421",
       "url": "",
@@ -3654,16 +3654,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -3735,13 +3735,13 @@
       "subcategory": "Multimodal RAG",
       "subcategories": [
         "Multimodal RAG",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
         "Multimodal RAG",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "2502.18017",
       "url": "",
@@ -3859,14 +3859,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2505.18961",
       "url": "",
@@ -3884,14 +3884,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2503.02695",
       "url": "",
@@ -3909,16 +3909,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2402.17983",
@@ -3962,16 +3962,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -4040,16 +4040,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "",
@@ -4143,16 +4143,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -4171,14 +4171,14 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agent",
+      "subcategory": "Agentic Frameworks for Document QA",
       "subcategories": [
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
-        "Agent"
+        "Agentic Frameworks for Document QA"
       ],
       "arxiv": "",
       "url": "",
@@ -4271,16 +4271,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2412.10302",
@@ -4403,7 +4403,7 @@
       "subcategory": "Layout-Aware Reasoning and Generation",
       "subcategories": [
         "Layout-Aware Reasoning and Generation",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Multimodal RAG"
       ],
       "topics": [
@@ -4413,7 +4413,7 @@
         "layout",
         "vlm",
         "Layout-Aware Reasoning and Generation",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Multimodal RAG",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
@@ -4458,16 +4458,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -4486,14 +4486,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2405.11461",
       "url": "",
@@ -4511,16 +4511,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "",
@@ -4564,14 +4564,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2406.07348",
       "url": "",
@@ -4639,16 +4639,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -4692,16 +4692,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2407.14177",
@@ -4720,16 +4720,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2412.05271",
@@ -4773,14 +4773,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -4848,16 +4848,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2412.08378",
@@ -4901,14 +4901,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -4926,14 +4926,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2404.16130",
       "url": "",
@@ -4951,14 +4951,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2410.04790",
       "url": "",
@@ -5001,16 +5001,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2410.13611",
@@ -5054,14 +5054,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2402.01767",
       "url": "",
@@ -5154,14 +5154,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2412.12386",
       "url": "",
@@ -5179,14 +5179,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "",
       "url": "",
@@ -5379,14 +5379,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "2410.05779",
       "url": "",
@@ -5429,16 +5429,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2401.15050",
@@ -5457,16 +5457,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Modern Document Understanding Evolution"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Modern Document Understanding Evolution"
       ],
       "arxiv": "",
@@ -5635,16 +5635,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -5667,7 +5667,7 @@
       "subcategory": "Layout-Aware Reasoning and Generation",
       "subcategories": [
         "Layout-Aware Reasoning and Generation",
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
@@ -5676,7 +5676,7 @@
         "layout",
         "vlm",
         "Layout-Aware Reasoning and Generation",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -5695,16 +5695,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -5723,14 +5723,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "",
       "url": "",
@@ -5773,16 +5773,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "",
@@ -5976,14 +5976,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2402.14361",
       "url": "",
@@ -6027,16 +6027,16 @@
         "rag",
         "eval"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG",
+        "Retrieval-Augmented Generation",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "topics": [],
       "tags": [
         "rag",
         "eval",
-        "Unimodal RAG",
+        "Retrieval-Augmented Generation",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "arxiv": "",
@@ -6055,14 +6055,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2412.04272v1",
       "url": "",
@@ -6080,14 +6080,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2412.04272",
       "url": "",
@@ -6130,16 +6130,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2409.12191",
@@ -6208,16 +6208,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2403.00816",
@@ -6286,14 +6286,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "",
       "url": "",
@@ -6311,16 +6311,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2401.12503",
@@ -6414,14 +6414,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -6489,14 +6489,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -6514,14 +6514,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "",
       "url": "",
@@ -6539,14 +6539,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "2410.05261",
       "url": "",
@@ -6564,16 +6564,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2403.04473",
@@ -6592,16 +6592,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2404.16635",
@@ -6720,16 +6720,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -6748,16 +6748,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "",
@@ -6876,16 +6876,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2410.05970",
@@ -7054,16 +7054,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -7207,16 +7207,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2312.11805",
@@ -7260,16 +7260,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -7288,16 +7288,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -7541,16 +7541,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "2310.06436",
@@ -7569,16 +7569,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2304.10592",
@@ -7597,16 +7597,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "2307.02499",
@@ -7725,16 +7725,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2310.09199",
@@ -7753,16 +7753,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2305.18565",
@@ -7781,16 +7781,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2303.03378",
@@ -7809,16 +7809,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "",
@@ -7837,16 +7837,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2308.12966",
@@ -7965,14 +7965,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multi-modal Table Understanding Stage",
+      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
       "subcategories": [
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multi-modal Table Understanding Stage"
+        "Verifiable Reasoning and Multimodal Table Understanding Stage"
       ],
       "arxiv": "2303.14935",
       "url": "",
@@ -8065,16 +8065,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "arxiv": "2308.11592",
@@ -8093,16 +8093,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -8221,16 +8221,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -8249,16 +8249,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "2201.07520",
@@ -8377,16 +8377,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -8555,16 +8555,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -8583,16 +8583,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -8611,16 +8611,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "arxiv": "",
@@ -8839,14 +8839,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "",
       "url": "",
@@ -8864,16 +8864,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -9092,16 +9092,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -9370,16 +9370,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "2104.08836",
@@ -9423,16 +9423,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "",
@@ -9551,16 +9551,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Summary of VLM for Visual Document Understanding",
+      "subcategory": "Foundational Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Summary of VLM for Visual Document Understanding"
+        "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "tags": [
         "vlm",
-        "Summary of VLM for Visual Document Understanding",
+        "Foundational Vision-Language Models for Document Understanding",
         "Foundational Period of Visually-Rich Document Understanding"
       ],
       "arxiv": "",
@@ -9679,16 +9679,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -9732,16 +9732,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "2006.06478",
@@ -9810,16 +9810,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -9913,16 +9913,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Early Attention Mechanisms"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Early Attention Mechanisms"
       ],
       "arxiv": "",
@@ -9941,16 +9941,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -9969,16 +9969,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "1906.05210",
@@ -9997,16 +9997,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "1910.00290",
@@ -10025,16 +10025,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "1910.02610",
@@ -10053,14 +10053,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "",
       "url": "",
@@ -10103,16 +10103,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -10206,14 +10206,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Unimodal RAG",
+      "subcategory": "Retrieval-Augmented Generation",
       "subcategories": [
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Unimodal RAG"
+        "Retrieval-Augmented Generation"
       ],
       "arxiv": "",
       "url": "",
@@ -10306,16 +10306,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Early Attention Mechanisms"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Early Attention Mechanisms"
       ],
       "arxiv": "",
@@ -10359,16 +10359,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Pure Text End-to-End",
+      "subcategory": "End-to-End Document Question Answering",
       "subcategories": [
-        "Pure Text End-to-End"
+        "End-to-End Document Question Answering"
       ],
       "topics": [
         "Early Attention Mechanisms"
       ],
       "tags": [
         "rag",
-        "Pure Text End-to-End",
+        "End-to-End Document Question Answering",
         "Early Attention Mechanisms"
       ],
       "arxiv": "1611.01604",
@@ -10562,14 +10562,14 @@
       "categories": [
         "ocr"
       ],
-      "subcategory": "OCR-VLM",
+      "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "OCR-VLM"
+        "VLM-Based OCR"
       ],
       "arxiv": "",
       "url": "",

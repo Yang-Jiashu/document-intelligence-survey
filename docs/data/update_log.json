@@ -1,0 +1,89 @@
+{
+  "lastRun": "2026-07-11T16:19:59Z",
+  "provider": "tavily",
+  "searchDepth": "advanced",
+  "searchedQueries": 50,
+  "rawSearchResults": 16,
+  "wechatSearchResults": 6,
+  "filteredNonWechat": 10,
+  "filteredExamples": [
+    "https://mp.weixin.qq.com/s"
+  ],
+  "sourceSearchSummary": {
+    "机器之心": {
+      "queries": 10,
+      "rawResults": 7,
+      "wechatResults": 3,
+      "queriesWithWechatResults": 3,
+      "errors": 0
+    },
+    "量子位": {
+      "queries": 10,
+      "rawResults": 5,
+      "wechatResults": 2,
+      "queriesWithWechatResults": 2,
+      "errors": 1
+    },
+    "PaperWeekly": {
+      "queries": 10,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "AI科技评论": {
+      "queries": 10,
+      "rawResults": 4,
+      "wechatResults": 1,
+      "queriesWithWechatResults": 1,
+      "errors": 0
+    },
+    "arXiv每日学术速递": {
+      "queries": 10,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    }
+  },
+  "extractRequested": 5,
+  "extractSucceeded": 5,
+  "extractFailed": 0,
+  "candidateArticles": 5,
+  "arxivIdsFound": 4,
+  "documentRelevant": 1,
+  "documentIrrelevant": 2,
+  "llmClassificationEnabled": true,
+  "llmClassificationAttempted": 3,
+  "llmClassificationSucceeded": 3,
+  "llmClassificationFailed": 0,
+  "llmClassificationSkipped": 0,
+  "autoPublished": 3,
+  "pendingReview": 1,
+  "pendingPreview": [
+    {
+      "reason": "untrusted_source",
+      "title": "https://mp.weixin.qq.com/s/LB6ovjc0kzlJj35hClpfpQ",
+      "arxiv": "",
+      "trustedSource": "",
+      "url": "https://mp.weixin.qq.com/s/LB6ovjc0kzlJj35hClpfpQ",
+      "queryTrustedSource": "机器之心",
+      "matchedQuery": "site:mp.weixin.qq.com/s 机器之心 论文推荐"
+    },
+    {
+      "reason": "query_source_unverified",
+      "title": "https://mp.weixin.qq.com/s/drrf-HawxTdsJUNgIMIkUg",
+      "arxiv": "2509.05489",
+      "trustedSource": "",
+      "url": "https://mp.weixin.qq.com/s/drrf-HawxTdsJUNgIMIkUg",
+      "queryTrustedSource": "机器之心",
+      "matchedQuery": "site:mp.weixin.qq.com/s 机器之心 arxiv"
+    }
+  ],
+  "duplicates": 0,
+  "ignoredExistingCurated": 0,
+  "existingRemovedAsIrrelevant": 0,
+  "errors": [
+    "tavily query failed: site:mp.weixin.qq.com/s 量子位 arxiv 论文: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>"
+  ]
+}

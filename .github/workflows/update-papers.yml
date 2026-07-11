@@ -1,0 +1,38 @@
+name: Update Dynamic Papers
+
+on:
+  schedule:
+    - cron: "0 18 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-papers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update dynamic paper data
+        run: python scripts/update_dynamic_papers.py
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          DMX_API_KEY: ${{ secrets.DMX_API_KEY }}
+          DMX_BASE_URL: ${{ secrets.DMX_BASE_URL }}
+          DMX_MODEL: ${{ vars.DMX_MODEL }}
+
+      - name: Commit dynamic paper data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update dynamic paper data"
+          file_pattern: docs/data/dynamic_papers.json docs/data/pending_dynamic_papers.json docs/data/update_log.json
