@@ -1,8 +1,19 @@
 name: Deploy to GitHub Pages
 
 on:
+  # 手动向 final 推送代码时部署
   push:
-    branches: [main, master]
+    branches: [final]
+
+  # 两个自动更新工作流结束后部署
+  workflow_run:
+    workflows:
+      - "Update Dynamic Papers"
+      - "Update SOTA snapshot"
+    types:
+      - completed
+
+  # 允许在 Actions 页面手动部署
   workflow_dispatch:
 
 permissions:
@@ -16,13 +27,23 @@ concurrency:
 
 jobs:
   deploy:
+    # 普通 push 和手动运行直接执行；
+    # workflow_run 只有成功时才部署
+    if: >
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout final branch
         uses: actions/checkout@v4
+        with:
+          ref: final
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -30,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: "./docs"
 
       - name: Deploy to GitHub Pages
         id: deployment
