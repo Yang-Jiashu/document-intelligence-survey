@@ -1,12 +1,61 @@
 {
   "enabledProviders": ["tavily"],
-  "autoPublishConfidence": 0.75,
-  "maxResultsPerQuery": 10,
+  "autoPublishConfidence": 0.9,
+  "maxResultsPerQuery": 7,
   "searchDepth": "advanced",
+  "searchIncludeRawContent": true,
+  "searchConcurrency": 5,
+  "extractDepth": "advanced",
   "extractArticleContent": true,
-  "maxExtractUrlsPerRun": 20,
+  "maxExtractUrlsPerRun": 40,
+  "maxCandidateArticlesPerRun": 20,
   "trustedSourcePolicy": "required",
   "allowQuerySourceTrust": false,
+  "allowGithubOnly": true,
+  "verifiedSeedArticles": [
+    {
+      "account": "智谱AI",
+      "title": "GLM-OCR",
+      "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
+      "githubUrls": ["https://github.com/zai-org/GLM-OCR"],
+      "verification": "official_github_owner"
+    },
+    {
+      "account": "飞桨PaddlePaddle",
+      "title": "PaddleOCR",
+      "url": "https://mp.weixin.qq.com/s/vYj1ZDcAfJ1lu_DzlOKgtQ",
+      "githubUrls": ["https://github.com/PaddlePaddle/PaddleOCR"],
+      "verification": "official_repository_reference"
+    },
+    {
+      "account": "刘聪NLP",
+      "title": "DeepSeek-OCR 实测与分析",
+      "url": "https://mp.weixin.qq.com/s/ksokCduU_xfnl6dR7P67_g",
+      "githubUrls": ["https://github.com/deepseek-ai/DeepSeek-OCR"],
+      "verification": "attributed_republication"
+    },
+    {
+      "account": "MinerUFans",
+      "title": "MonkeyOCR：PDF 文档解析",
+      "url": "https://mp.weixin.qq.com/s/LORCv48FfI0343-7IKCGdg",
+      "githubUrls": ["https://github.com/Yuliang-Liu/MonkeyOCR"],
+      "verification": "author_archive"
+    },
+    {
+      "account": "腾讯混元",
+      "title": "HunyuanOCR",
+      "url": "https://mp.weixin.qq.com/s/0eT7x7cLpJ3AT_XqeDwelw",
+      "githubUrls": ["https://github.com/Tencent-Hunyuan/HunyuanOCR"],
+      "verification": "official_github_owner"
+    },
+    {
+      "account": "新智元",
+      "title": "dots 文档多模态模型",
+      "url": "https://mp.weixin.qq.com/s/aftyEJCZleUGAp0s5NBk3w",
+      "githubUrls": ["https://github.com/rednote-hilab/dots.ocr"],
+      "verification": "attributed_republication"
+    }
+  ],
   "documentRelevance": {
     "required": true,
     "useSourceContext": false,
@@ -69,60 +118,43 @@
   "searchDomain": "mp.weixin.qq.com/s",
   "queryExpansion": {
     "enabled": true,
-    "maxQueriesPerSource": 10,
+    "maxQueriesPerSource": 6,
+    "rotateTerms": false,
     "template": "site:{domain} {source} {term}",
     "terms": [
-      "arxiv",
-      "arxiv 论文",
-      "arXiv 速递",
-      "论文推荐",
-      "AI论文",
-      "最新论文",
-      "文档智能",
-      "文档理解",
-      "document ai",
-      "document intelligence",
-      "document understanding",
-      "document parsing",
-      "docvqa",
-      "document vqa",
-      "document qa",
       "OCR",
-      "文字识别",
-      "OCR-free",
-      "layout analysis",
-      "版面分析",
-      "reading order",
-      "表格理解",
-      "table understanding",
-      "table structure recognition",
-      "chart understanding",
-      "图表理解",
-      "form understanding",
-      "票据识别",
-      "发票识别",
-      "PDF 解析",
-      "多模态文档",
-      "multimodal document",
-      "vision-language document",
-      "VLM 文档",
-      "document RAG",
-      "文档问答",
-      "RAG 文档",
-      "long document",
-      "长文档",
-      "benchmark 文档",
-      "dataset 文档",
-      "评测 文档",
-      "survey 文档",
-      "大模型 文档",
-      "多模态 论文",
-      "CVPR 文档",
-      "ACL 文档",
-      "EMNLP 文档",
-      "NeurIPS 文档",
-      "ICLR 文档"
-    ]
+      "文档智能",
+      "文档解析",
+      "document parsing",
+      "document layout",
+      "GitHub 开源"
+    ],
+    "sourceTerms": {
+      "新智元": ["GLM-OCR", "HunyuanOCR", "DeepSeek-OCR", "PaddleOCR", "文档解析", "OCR GitHub"],
+      "飞桨PaddlePaddle": ["PaddleOCR", "PP-OCRv5", "PP-StructureV3", "PaddleOCR-VL", "文档解析", "OCR GitHub"],
+      "OpenDataLab": ["MinerU", "MinerU2", "文档解析", "PDF解析", "OmniDocBench", "GitHub 开源"],
+      "上海人工智能实验室": ["MinerU", "OmniDocBench", "文档解析", "OCR", "document parsing", "GitHub 开源"],
+      "合合信息": ["TextIn", "xParse", "OCR", "文档解析", "表格识别", "GitHub 开源"],
+      "智谱AI": ["GLM-OCR", "OmniDocBench", "OCR", "文档解析", "表格识别", "GitHub 开源"],
+      "腾讯混元": ["HunyuanOCR", "OCR", "文档解析", "document parsing", "DocVQA", "GitHub 开源"],
+      "达观数据": ["OCR", "智能文档处理", "IDPS", "文档解析", "表格识别", "GitHub 开源"],
+      "深度求索": ["DeepSeek-OCR", "DeepSeek-OCR2", "OCR", "文档解析", "document parsing", "GitHub 开源"],
+      "OpenMMLab": ["MMOCR", "OCR", "document layout", "table recognition", "文档解析", "GitHub 开源"],
+      "百度AI": ["PaddleOCR", "PP-StructureV3", "OCR", "文档解析", "表格识别", "GitHub 开源"],
+      "腾讯云开发者": ["HunyuanOCR", "OCR", "文档解析", "表格识别", "document parsing", "GitHub 开源"],
+      "Datawhale": ["OCR", "文档智能", "文档解析", "DocVQA", "table recognition", "GitHub 开源"],
+      "小红书技术团队": ["dots.ocr", "OCR", "文档解析", "document parsing", "PDF", "GitHub 开源"],
+      "机器之心": ["PaddleOCR", "MinerU", "HunyuanOCR", "GLM-OCR", "DeepSeek-OCR", "文档解析"],
+      "量子位": ["PaddleOCR", "MinerU", "HunyuanOCR", "GLM-OCR", "DeepSeek-OCR", "文档解析"],
+      "CVer": ["PaddleOCR", "MinerU", "MMOCR", "DocVQA", "table recognition", "文档解析"],
+      "我爱计算机视觉": ["PaddleOCR", "MinerU", "MMOCR", "OCR GitHub", "table recognition", "文档解析"],
+      "极市平台": ["PaddleOCR", "MinerU", "MMOCR", "OCR GitHub", "document layout", "文档解析"]
+      ,"刘聪NLP": ["DeepSeek-OCR", "PaddleOCR", "OCR", "文档解析", "表格识别", "GitHub 开源"]
+      ,"MinerUFans": ["MinerU", "MonkeyOCR", "OCR", "文档解析", "PDF解析", "GitHub 开源"]
+      ,"码科智能": ["MinerU", "MonkeyOCR", "OCR", "文档解析", "表格识别", "GitHub 开源"]
+      ,"AI前线": ["DeepSeek-OCR", "PaddleOCR", "HunyuanOCR", "OCR", "文档解析", "GitHub 开源"]
+      ,"机器学习算法与Python学习": ["PaddleOCR", "DeepSeek-OCR", "OCR", "文档解析", "表格识别", "GitHub 开源"]
+    }
   },
   "queries": [
     "site:mp.weixin.qq.com/s 机器之心 arxiv",
@@ -137,12 +169,48 @@
     "site:mp.weixin.qq.com/s arXiv每日学术速递 文档"
   ],
   "trustedSourceHints": [
+    "新智元",
+    "飞桨PaddlePaddle",
+    "OpenDataLab",
+    "上海人工智能实验室",
+    "合合信息",
+    "智谱AI",
+    "腾讯混元",
+    "达观数据",
+    "深度求索",
+    "OpenMMLab",
+    "百度AI",
+    "腾讯云开发者",
+    "Datawhale",
+    "小红书技术团队",
     "机器之心",
     "量子位",
-    "PaperWeekly",
-    "AI科技评论",
-    "arXiv每日学术速递"
+    "CVer",
+    "我爱计算机视觉",
+    "极市平台",
+    "刘聪NLP",
+    "MinerUFans",
+    "码科智能",
+    "AI前线",
+    "机器学习算法与Python学习"
   ],
+  "trustedSourceBizIds": {
+    "飞桨PaddlePaddle": ["Mzg2OTEzODA5MA=="],
+    "合合信息": ["MzAxMzg0NjY2NA=="]
+  },
+  "trustedGithubOwners": {
+    "飞桨PaddlePaddle": ["PaddlePaddle"],
+    "OpenDataLab": ["opendatalab"],
+    "上海人工智能实验室": ["opendatalab", "InternLM"],
+    "智谱AI": ["zai-org", "THUDM"],
+    "腾讯混元": ["Tencent-Hunyuan"],
+    "深度求索": ["deepseek-ai"],
+    "OpenMMLab": ["open-mmlab"],
+    "百度AI": ["PaddlePaddle"],
+    "腾讯云开发者": ["Tencent-Hunyuan"],
+    "Datawhale": ["datawhalechina"],
+    "小红书技术团队": ["rednote-hilab"]
+  },
   "taxonomy": [
     {
       "id": "ocr",

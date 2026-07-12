@@ -99,6 +99,9 @@ function renderDynamicOverview() {
 
     const dynamicPapers = getDynamicPapers();
     const pendingItems = getPendingDynamicItems();
+    const verifiedWechatSources = Array.isArray(dynamicPapersData?.verifiedWechatArticles)
+        ? dynamicPapersData.verifiedWechatArticles
+        : [];
     const counts = getDynamicCategoryCounts();
     const taxonomy = paperIndexData && Array.isArray(paperIndexData.taxonomy)
         ? paperIndexData.taxonomy
@@ -121,6 +124,11 @@ function renderDynamicOverview() {
             <span class="dynamic-stat-label">Auto-discovered</span>
             <strong>${dynamicPapers.length}</strong>
             <span class="dynamic-stat-note">Verified arXiv papers</span>
+        </div>
+        <div class="dynamic-stat-card">
+            <span class="dynamic-stat-label">WeChat Sources</span>
+            <strong>${verifiedWechatSources.length}</strong>
+            <span class="dynamic-stat-note">Verified document intelligence links</span>
         </div>
         <div class="dynamic-stat-card">
             <span class="dynamic-stat-label">Pending Review</span>

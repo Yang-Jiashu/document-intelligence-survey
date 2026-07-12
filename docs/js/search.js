@@ -31,6 +31,7 @@ function paperMatchesQuery(paper, query) {
         ...(paper.topics || []),
         ...(paper.tags || []),
         paper.arxiv,
+        paper.github,
         paper.sourceType,
         paper.sourceType === 'auto' ? 'auto-discovered' : '',
         paper.isDocumentIntelligence === false ? 'source-only outside document intelligence other' : '',
@@ -104,12 +105,13 @@ function getSearchPapers() {
                 authors: article.account || '微信公众号',
                 venue: '微信公众号',
                 year: Number(String(article.foundAt || '').slice(0, 4)) || '',
-                category: 'other',
-                categories: ['other'],
-                tags: ['Verified WeChat source'],
+                category: article.category || 'other',
+                categories: Array.isArray(article.categories) && article.categories.length ? article.categories : [article.category || 'other'],
+                tags: ['Verified WeChat source', ...(article.tags || [])],
                 arxiv: Array.isArray(article.arxivIds) && article.arxivIds.length === 1 ? article.arxivIds[0] : '',
+                github: Array.isArray(article.githubUrls) && article.githubUrls.length ? article.githubUrls[0] : '',
                 sourceType: 'wechat',
-                isDocumentIntelligence: false,
+                isDocumentIntelligence: article.isDocumentIntelligence === true,
                 sourceMentions: [article]
             }))
         : [];
@@ -152,6 +154,7 @@ function renderResults() {
         const categories = (paper.categories || [paper.category]).filter(Boolean);
         const subcategories = (paper.subcategories || []).filter(Boolean).slice(0, 3);
         const arxivLink = paper.arxiv ? `https://arxiv.org/abs/${encodeURIComponent(paper.arxiv)}` : '';
+        const githubLink = /^https:\/\/github\.com\//i.test(String(paper.github || '')) ? paper.github : '';
         const sourceLink = paper.sourceType !== 'auto' && paper.url && !paper.url.includes('arxiv.org') ? paper.url : '';
         const wechatMentions = getWechatSourceMentions(paper);
         const sourceLabel = paper.sourceType === 'wechat'
@@ -180,6 +183,7 @@ function renderResults() {
                 </div>
                 <div class="paper-actions search-result-actions">
                     ${arxivLink ? `<a href="${arxivLink}" target="_blank" class="paper-btn primary">arXiv</a>` : ''}
+                    ${githubLink ? `<a href="${escapeHtml(githubLink)}" target="_blank" rel="noreferrer" class="paper-btn primary">GitHub</a>` : ''}
                     ${wechatMentions.map(mention => `
                         <a href="${escapeHtml(mention.url)}" target="_blank" rel="noreferrer" class="paper-btn secondary" title="${escapeHtml(mention.articleTitle || '')}">
                             公众号${mention.account && mention.account !== 'Unknown' ? ` · ${escapeHtml(mention.account)}` : ''}

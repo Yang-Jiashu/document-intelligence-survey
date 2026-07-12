@@ -51,7 +51,11 @@ vm.runInThisContext(`
             articleTitle: 'Verified article',
             url: 'https://mp.weixin.qq.com/s/verified',
             foundAt: '2026-07-11',
-            arxivIds: []
+            arxivIds: [],
+            githubUrls: ['https://github.com/PaddlePaddle/PaddleOCR'],
+            category: 'ocr',
+            categories: ['ocr'],
+            isDocumentIntelligence: true
         }]
     };
     filteredPapers = getSearchPapers();
@@ -61,6 +65,8 @@ vm.runInThisContext(`
 assert.strictEqual(vm.runInThisContext('filteredPapers.length'), 1);
 assert.match(nodes.resultsContainer.innerHTML, /Verified WeChat article/);
 assert.match(nodes.resultsContainer.innerHTML, /公众号 · 机器之心/);
+assert.match(nodes.resultsContainer.innerHTML, /https:\/\/github\.com\/PaddlePaddle\/PaddleOCR/);
+assert.match(nodes.resultsContainer.innerHTML, />GitHub</);
 
 assert.strictEqual(
     vm.runInThisContext("paperMatchesQuery(filteredPapers[0], '公众号')"),

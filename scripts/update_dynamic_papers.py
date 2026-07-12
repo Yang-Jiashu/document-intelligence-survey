@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import os
 import re
@@ -35,6 +36,10 @@ ARXIV_ID_RE = re.compile(
 )
 
 WECHAT_ARTICLE_RE = re.compile(r"^https?://mp\.weixin\.qq\.com/(?:s/[^/?#]+|s\?.*(?:__biz=|mid=))", re.IGNORECASE)
+GITHUB_REPO_RE = re.compile(
+    r"https?://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)",
+    re.IGNORECASE,
+)
 
 
 def utc_now() -> str:
@@ -97,6 +102,26 @@ def extract_arxiv_ids(text: str) -> list[str]:
     return result
 
 
+def extract_github_urls(text: str) -> list[str]:
+    seen: set[str] = set()
+    result: list[str] = []
+    reserved = {
+        "about", "apps", "collections", "events", "features", "marketplace",
+        "orgs", "search", "settings", "sponsors", "topics",
+    }
+    for match in GITHUB_REPO_RE.finditer(text or ""):
+        owner = match.group(1)
+        repo = match.group(2).rstrip(".,);]}\"").removesuffix(".git")
+        if owner.lower() in reserved or not repo:
+            continue
+        url = f"https://github.com/{owner}/{repo}"
+        key = url.lower()
+        if key not in seen:
+            seen.add(key)
+            result.append(url)
+    return result
+
+
 def is_wechat_article_url(url: str) -> bool:
     return bool(WECHAT_ARTICLE_RE.search((url or "").strip()))
 
@@ -129,13 +154,19 @@ def get_text(url: str, timeout: int = 45) -> str:
         return res.read().decode("utf-8", "replace")
 
 
-def tavily_search(query: str, api_key: str, max_results: int, search_depth: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def tavily_search(
+    query: str,
+    api_key: str,
+    max_results: int,
+    search_depth: str,
+    include_raw_content: bool,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     payload = {
         "query": query,
         "search_depth": search_depth,
         "max_results": max_results,
         "include_answer": False,
-        "include_raw_content": False,
+        "include_raw_content": include_raw_content,
     }
     data = post_json(TAVILY_SEARCH_URL, payload, api_key)
     normalized = []
@@ -153,6 +184,7 @@ def tavily_search(query: str, api_key: str, max_results: int, search_depth: str)
                 "title": str(item.get("title") or "").strip(),
                 "url": url,
                 "snippet": str(item.get("content") or "").strip(),
+                "contentText": str(item.get("raw_content") or "").strip(),
                 "score": item.get("score"),
             }
         )
@@ -163,13 +195,17 @@ def tavily_search(query: str, api_key: str, max_results: int, search_depth: str)
     }
 
 
-def tavily_extract(urls: list[str], api_key: str) -> tuple[dict[str, str], list[dict[str, Any]]]:
+def tavily_extract(
+    urls: list[str],
+    api_key: str,
+    extract_depth: str,
+) -> tuple[dict[str, str], list[dict[str, Any]]]:
     if not urls:
         return {}, []
 
     payload = {
         "urls": urls,
-        "extract_depth": "basic",
+        "extract_depth": extract_depth,
         "include_images": False,
         "include_favicon": False,
         "format": "markdown",
@@ -188,6 +224,7 @@ def enrich_articles_with_extracted_content(
     articles: list[dict[str, Any]],
     api_key: str,
     max_urls: int,
+    extract_depth: str,
     errors: list[str],
 ) -> dict[str, Any]:
     diagnostics = {
@@ -200,6 +237,8 @@ def enrich_articles_with_extracted_content(
 
     urls = []
     for article in articles:
+        if len(str(article.get("contentText") or "").strip()) >= 200:
+            continue
         url = str(article.get("url") or "")
         if url and url not in urls:
             urls.append(url)
@@ -210,7 +249,7 @@ def enrich_articles_with_extracted_content(
     for start in range(0, len(urls), 20):
         batch = urls[start : start + 20]
         try:
-            extracted, failed = tavily_extract(batch, api_key)
+            extracted, failed = tavily_extract(batch, api_key, extract_depth)
         except urllib.error.HTTPError as exc:
             errors.append(f"tavily extract failed: {format_http_error(exc)}")
             diagnostics["extractFailed"] += len(batch)
@@ -293,10 +332,20 @@ def fetch_arxiv_metadata(arxiv_ids: list[str]) -> dict[str, dict[str, Any]]:
     return result
 
 
-def detect_trusted_source(article: dict[str, Any], hints: list[str]) -> str:
+def detect_trusted_source(
+    article: dict[str, Any],
+    hints: list[str],
+    trusted_biz_ids: dict[str, list[str]] | None = None,
+) -> str:
     # The account name must be visible in the result metadata or near the top of
     # the extracted page. Searching the whole article can mistake a cited
     # account for the publisher, and trusting the query alone is not sufficient.
+    parsed_url = urllib.parse.urlparse(str(article.get("url") or ""))
+    biz_id = urllib.parse.parse_qs(parsed_url.query).get("__biz", [""])[0]
+    if biz_id:
+        for source, ids in (trusted_biz_ids or {}).items():
+            if biz_id in ids:
+                return source
     haystack = " ".join(
         [
             str(article.get("title") or ""),
@@ -326,16 +375,38 @@ def build_search_queries(config: dict[str, Any], trusted_hints: list[str]) -> li
         sources = [str(item).strip() for item in expansion.get("sources", trusted_hints) if str(item).strip()]
         terms = [str(item).strip() for item in expansion.get("terms", []) if str(item).strip()]
         max_per_source = int(expansion.get("maxQueriesPerSource") or 0)
+        if expansion.get("rotateTerms") and max_per_source > 0 and len(terms) > max_per_source:
+            window_count = (len(terms) + max_per_source - 1) // max_per_source
+            window_index = (datetime.now(timezone.utc).isocalendar().week - 1) % window_count
+            start = window_index * max_per_source
+            active_terms = terms[start : start + max_per_source]
+            if len(active_terms) < max_per_source:
+                active_terms.extend(terms[: max_per_source - len(active_terms)])
+            terms = active_terms
         entries: list[dict[str, str]] = []
         seen: set[str] = set()
+        source_terms_config = expansion.get("sourceTerms") or {}
+        terms_by_source = {
+            source: [
+                str(item).strip()
+                for item in source_terms_config.get(source, terms)
+                if str(item).strip()
+            ]
+            for source in sources
+        }
 
         # Interleave sources so a provider quota cannot be consumed entirely by
         # the first account before the other allowlisted accounts are searched.
         source_counts = {source: 0 for source in sources}
-        for term in terms:
+        max_term_count = max((len(items) for items in terms_by_source.values()), default=0)
+        for term_index in range(max_term_count):
             for source in sources:
                 if max_per_source > 0 and source_counts[source] >= max_per_source:
                     continue
+                source_terms = terms_by_source[source]
+                if term_index >= len(source_terms):
+                    continue
+                term = source_terms[term_index]
                 query = template.format(domain=domain, source=source, term=term)
                 query = " ".join(query.split())
                 if not query or query in seen:
@@ -664,7 +735,16 @@ def classify_candidate(
         classification["provider"] = "llm"
         classification["llmReason"] = llm_result.get("reason", "")
         classification["llmModel"] = llm_result.get("model", "")
-        classification["isDocumentIntelligence"] = bool(llm_result.get("isDocumentIntelligence"))
+        llm_is_relevant = bool(llm_result.get("isDocumentIntelligence"))
+        keyword_gate_required = bool((config.get("documentRelevance") or {}).get("required"))
+        keyword_is_relevant = bool(relevance.get("isDocumentIntelligence"))
+        classification["isDocumentIntelligence"] = (
+            llm_is_relevant and (keyword_is_relevant if keyword_gate_required else True)
+        )
+        if llm_is_relevant and keyword_gate_required and not keyword_is_relevant:
+            classification["llmReason"] = (
+                f"{classification['llmReason']} Rejected by the required metadata keyword relevance gate."
+            ).strip()
     else:
         if llm_status == "failed":
             log["llmClassificationFailed"] += 1
@@ -758,7 +838,7 @@ def metadata_is_complete(metadata: dict[str, Any]) -> bool:
 
 
 def create_source_mention(article: dict[str, Any], found_at: str) -> dict[str, Any]:
-    return {
+    mention = {
         "platform": "wechat",
         "provider": str(article.get("provider") or "tavily"),
         "account": str(article.get("trustedSource") or article.get("queryTrustedSource") or "Unknown"),
@@ -766,6 +846,9 @@ def create_source_mention(article: dict[str, Any], found_at: str) -> dict[str, A
         "url": str(article.get("url") or ""),
         "foundAt": found_at,
     }
+    if article.get("sourceTrustMethod"):
+        mention["sourceTrustMethod"] = str(article["sourceTrustMethod"])
+    return mention
 
 
 def merge_source_mentions(
@@ -854,11 +937,7 @@ def merge_verified_wechat_articles(
     for article in articles:
         if not article.get("trustedSource"):
             continue
-        mention = create_source_mention(article, found_at)
-        url = mention["url"]
-        if not is_wechat_article_url(url):
-            continue
-        mention["arxivIds"] = extract_arxiv_ids(
+        arxiv_ids = extract_arxiv_ids(
             " ".join(
                 [
                     str(article.get("title") or ""),
@@ -867,11 +946,50 @@ def merge_verified_wechat_articles(
                 ]
             )
         )
+        if not arxiv_ids:
+            continue
+        mention = create_source_mention(article, found_at)
+        url = mention["url"]
+        if not is_wechat_article_url(url):
+            continue
+        mention["arxivIds"] = arxiv_ids
         if url in by_url:
             by_url[url].update({key: value for key, value in mention.items() if value})
         else:
             existing.append(mention)
             by_url[url] = mention
+
+
+def add_verified_github_article(
+    dynamic: dict[str, Any],
+    article: dict[str, Any],
+    github_urls: list[str],
+    classification: dict[str, Any],
+    found_at: str,
+) -> None:
+    mention = create_source_mention(article, found_at)
+    if str(mention.get("articleTitle") or "").startswith(("http://", "https://")):
+        mention["articleTitle"] = github_urls[0].rstrip("/").rsplit("/", 1)[-1]
+    mention.update(
+        {
+            "arxivIds": [],
+            "githubUrls": github_urls,
+            "category": classification.get("category", ""),
+            "categories": [classification["category"]] if classification.get("category") else [],
+            "tags": classification.get("tags", []),
+            "classificationConfidence": classification.get("confidence", 0.0),
+            "classificationProvider": classification.get("provider", "keywords"),
+            "documentRelevanceConfidence": classification.get("documentRelevanceConfidence", 0.0),
+            "isDocumentIntelligence": True,
+            "status": "github-only",
+        }
+    )
+    existing = dynamic.setdefault("verifiedWechatArticles", [])
+    for current in existing:
+        if str(current.get("url") or "") == mention["url"]:
+            current.update(mention)
+            return
+    existing.append(mention)
 
 
 def review_existing_dynamic_papers(
@@ -903,18 +1021,16 @@ def review_existing_dynamic_papers(
         }
         classification = classify_candidate(metadata, {}, taxonomy, config, log)
         track_document_relevance(log, classification)
-        if classification.get("isDocumentIntelligence"):
+        if (
+            classification.get("isDocumentIntelligence")
+            and classification.get("category")
+            and classification.get("confidence", 0.0) >= float(config.get("autoPublishConfidence") or 0.9)
+        ):
             paper["isDocumentIntelligence"] = True
             kept_papers.append(paper)
             continue
 
-        paper["category"] = "other"
-        paper["categories"] = ["other"]
-        paper["subcategory"] = "Outside document intelligence"
-        paper["tags"] = ["From WeChat", "Non-document-intelligence"]
-        paper["isDocumentIntelligence"] = False
-        paper["status"] = "source-only"
-        kept_papers.append(paper)
+        log["existingRemovedAsIrrelevant"] += 1
 
     dynamic["papers"] = kept_papers
 
@@ -956,34 +1072,68 @@ def search_articles(
     api_key: str,
     max_results: int,
     search_depth: str,
+    concurrency: int,
+    max_candidates: int,
+    include_raw_content: bool,
     errors: list[str],
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     articles: list[dict[str, Any]] = []
     seen_urls: set[str] = set()
+    articles_by_url: dict[str, dict[str, Any]] = {}
     diagnostics: dict[str, Any] = {
         "rawSearchResults": 0,
         "wechatSearchResults": 0,
         "filteredNonWechat": 0,
         "filteredExamples": [],
         "sourceSearchSummary": {},
+        "searchConcurrency": concurrency,
+        "searchQueriesAttempted": 0,
+        "searchStoppedForExtraction": False,
+        "searchRawContentResults": 0,
     }
-    for entry in query_entries:
+
+    def search_one(entry: dict[str, str]) -> tuple[dict[str, str], list[dict[str, Any]], dict[str, Any], str, bool]:
         query_text = entry["query"]
-        query_source = entry.get("source", "")
-        source_key = query_source or "unknown"
-        source_summary = diagnostics["sourceSearchSummary"].setdefault(
-            source_key,
-            {
-                "queries": 0,
-                "rawResults": 0,
-                "wechatResults": 0,
-                "queriesWithWechatResults": 0,
-                "errors": 0,
-            },
-        )
-        source_summary["queries"] += 1
         try:
-            query_articles, query_diagnostics = tavily_search(query_text, api_key, max_results, search_depth)
+            query_articles, query_diagnostics = tavily_search(
+                query_text, api_key, max_results, search_depth, include_raw_content
+            )
+            return entry, query_articles, query_diagnostics, "", False
+        except urllib.error.HTTPError as exc:
+            is_quota_error = exc.code == 432
+            return entry, [], {}, f"tavily query failed: {query_text}: {format_http_error(exc)}", is_quota_error
+        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
+            return entry, [], {}, f"tavily query failed: {query_text}: {exc}", False
+
+    batch_size = max(1, concurrency)
+    for start in range(0, len(query_entries), batch_size):
+        batch = query_entries[start : start + batch_size]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=batch_size) as executor:
+            outcomes = list(executor.map(search_one, batch))
+        diagnostics["searchQueriesAttempted"] += len(batch)
+
+        quota_exceeded = False
+        for entry, query_articles, query_diagnostics, error, is_quota_error in outcomes:
+            query_text = entry["query"]
+            query_source = entry.get("source", "")
+            source_key = query_source or "unknown"
+            source_summary = diagnostics["sourceSearchSummary"].setdefault(
+                source_key,
+                {
+                    "queries": 0,
+                    "rawResults": 0,
+                    "wechatResults": 0,
+                    "queriesWithWechatResults": 0,
+                    "errors": 0,
+                },
+            )
+            source_summary["queries"] += 1
+            if error:
+                source_summary["errors"] += 1
+                errors.append(error)
+                quota_exceeded = quota_exceeded or is_quota_error
+                continue
+
             source_summary["rawResults"] += query_diagnostics["rawResults"]
             source_summary["wechatResults"] += query_diagnostics["wechatResults"]
             if query_diagnostics["wechatResults"]:
@@ -998,20 +1148,30 @@ def search_articles(
             for article in query_articles:
                 article["matchedQuery"] = query_text
                 article["queryTrustedSource"] = query_source
+                article["matchedQueries"] = [query_text]
+                article["queryTrustedSources"] = [query_source] if query_source else []
                 url = article["url"]
                 if url in seen_urls:
+                    existing_article = articles_by_url[url]
+                    if query_text not in existing_article.setdefault("matchedQueries", []):
+                        existing_article["matchedQueries"].append(query_text)
+                    if query_source and query_source not in existing_article.setdefault("queryTrustedSources", []):
+                        existing_article["queryTrustedSources"].append(query_source)
+                    if not existing_article.get("contentText") and article.get("contentText"):
+                        existing_article["contentText"] = article["contentText"]
                     continue
                 seen_urls.add(url)
                 articles.append(article)
-        except urllib.error.HTTPError as exc:
-            source_summary["errors"] += 1
-            errors.append(f"tavily query failed: {query_text}: {format_http_error(exc)}")
-            if exc.code == 432:
-                diagnostics["quotaExceeded"] = True
-                return articles, diagnostics
-        except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
-            source_summary["errors"] += 1
-            errors.append(f"tavily query failed: {query_text}: {exc}")
+                articles_by_url[url] = article
+                if article.get("contentText"):
+                    diagnostics["searchRawContentResults"] += 1
+
+        if quota_exceeded:
+            diagnostics["quotaExceeded"] = True
+            return articles, diagnostics
+        if max_candidates > 0 and len(articles) >= max_candidates:
+            diagnostics["searchStoppedForExtraction"] = True
+            return articles[:max_candidates], diagnostics
         time.sleep(0.2)
     return articles, diagnostics
 
@@ -1023,10 +1183,23 @@ def run(args: argparse.Namespace) -> int:
     today = utc_today()
     max_results = args.max_results or int(config.get("maxResultsPerQuery") or 10)
     search_depth = str(config.get("searchDepth") or "basic")
+    search_concurrency = max(1, int(config.get("searchConcurrency") or 1))
+    extract_depth = str(config.get("extractDepth") or "basic")
     max_extract_urls = int(config.get("maxExtractUrlsPerRun") or 0)
+    max_candidate_articles = int(config.get("maxCandidateArticlesPerRun") or 0)
+    search_include_raw_content = bool(config.get("searchIncludeRawContent", False))
     threshold = float(config.get("autoPublishConfidence") or 0.75)
     allow_query_source_trust = bool(config.get("allowQuerySourceTrust", False))
+    allow_github_only = bool(config.get("allowGithubOnly", False))
     trusted_hints = [str(item) for item in config.get("trustedSourceHints", [])]
+    trusted_biz_ids = {
+        str(source): [str(item) for item in ids]
+        for source, ids in (config.get("trustedSourceBizIds") or {}).items()
+    }
+    trusted_github_owners = {
+        str(source): {str(item).lower() for item in owners}
+        for source, owners in (config.get("trustedGithubOwners") or {}).items()
+    }
     taxonomy = config.get("taxonomy") or []
     search_query_entries = build_search_queries(config, trusted_hints)
 
@@ -1045,6 +1218,9 @@ def run(args: argparse.Namespace) -> int:
         "extractFailed": 0,
         "candidateArticles": 0,
         "arxivIdsFound": 0,
+        "githubProjectsFound": 0,
+        "githubProjectsPublished": 0,
+        "verifiedSeedArticles": 0,
         "documentRelevant": 0,
         "documentIrrelevant": 0,
         "llmClassificationEnabled": bool((config.get("llmClassification") or {}).get("enabled")),
@@ -1079,22 +1255,76 @@ def run(args: argparse.Namespace) -> int:
         return 0
 
     review_existing_dynamic_papers(dynamic, pending, taxonomy, config, log, today)
+    dynamic["verifiedWechatArticles"] = []
+    transient_pending_reasons = {"no_arxiv_id", "no_arxiv_or_github", "untrusted_source"}
+    pending["items"] = [
+        item for item in pending.get("items", [])
+        if item.get("reason") not in transient_pending_reasons
+    ]
 
-    articles, search_diagnostics = search_articles(search_query_entries, api_key, max_results, search_depth, log["errors"])
+    articles, search_diagnostics = search_articles(
+        search_query_entries,
+        api_key,
+        max_results,
+        search_depth,
+        search_concurrency,
+        max_candidate_articles,
+        search_include_raw_content,
+        log["errors"],
+    )
     log.update(search_diagnostics)
+    articles_by_url = {str(article.get("url") or ""): article for article in articles}
+    for seed in config.get("verifiedSeedArticles") or []:
+        url = str(seed.get("url") or "")
+        account = str(seed.get("account") or "")
+        if not is_wechat_article_url(url) or not account or account not in trusted_hints:
+            continue
+        seed_github_urls = [str(item) for item in seed.get("githubUrls", []) if str(item)]
+        if url in articles_by_url:
+            article = articles_by_url[url]
+            article["trustedSource"] = account
+            article["seedGithubUrls"] = seed_github_urls
+            article["sourceTrustMethod"] = str(seed.get("verification") or "verified_seed")
+            article["seedVerified"] = True
+            if str(article.get("title") or "").startswith(("http://", "https://")):
+                article["title"] = str(seed.get("title") or article["title"])
+        else:
+            article = {
+                "provider": "verified-seed",
+                "title": str(seed.get("title") or "WeChat article"),
+                "url": url,
+                "snippet": "",
+                "contentText": "",
+                "score": None,
+                "trustedSource": account,
+                "queryTrustedSource": account,
+                "queryTrustedSources": [account],
+                "matchedQuery": "verified seed article",
+                "matchedQueries": ["verified seed article"],
+                "seedGithubUrls": seed_github_urls,
+                "sourceTrustMethod": str(seed.get("verification") or "verified_seed"),
+                "seedVerified": True,
+            }
+            articles.append(article)
+            articles_by_url[url] = article
+        log["verifiedSeedArticles"] += 1
     if config.get("extractArticleContent", True) and articles:
-        extract_diagnostics = enrich_articles_with_extracted_content(articles, api_key, max_extract_urls, log["errors"])
+        extract_diagnostics = enrich_articles_with_extracted_content(
+            articles,
+            api_key,
+            max_extract_urls,
+            extract_depth,
+            log["errors"],
+        )
         log.update(extract_diagnostics)
+    log["contentAvailable"] = sum(
+        1 for article in articles if len(str(article.get("contentText") or "").strip()) >= 200
+    )
     for article in articles:
-        article["trustedSource"] = detect_trusted_source(article, trusted_hints)
+        if not article.get("seedVerified"):
+            article["trustedSource"] = detect_trusted_source(article, trusted_hints, trusted_biz_ids)
         if not article["trustedSource"] and allow_query_source_trust:
             article["trustedSource"] = article.get("queryTrustedSource", "")
-
-    merge_verified_wechat_articles(
-        dynamic,
-        [article for article in articles if article.get("trustedSource")],
-        today,
-    )
 
     log["candidateArticles"] = len(articles)
 
@@ -1102,7 +1332,55 @@ def run(args: argparse.Namespace) -> int:
     log["arxivIdsFound"] = len(grouped)
 
     for article in no_arxiv_articles:
-        reason = "no_arxiv_id" if article.get("trustedSource") else "untrusted_source"
+        article_text = " ".join(
+            str(article.get(key) or "") for key in ("title", "snippet", "url", "contentText")
+        )
+        article_text = " ".join([article_text, *[str(url) for url in article.get("seedGithubUrls", [])]])
+        github_urls = extract_github_urls(article_text) if allow_github_only else []
+        log["githubProjectsFound"] += len(github_urls)
+
+        github_owners = {
+            urllib.parse.urlparse(url).path.strip("/").split("/", 1)[0].lower()
+            for url in github_urls
+        }
+        if not article.get("trustedSource"):
+            query_sources = article.get("queryTrustedSources") or [article.get("queryTrustedSource", "")]
+            for query_source in query_sources:
+                allowed_owners = trusted_github_owners.get(str(query_source), set())
+                if allowed_owners.intersection(github_owners):
+                    article["trustedSource"] = str(query_source)
+                    article["queryTrustedSource"] = str(query_source)
+                    article["sourceTrustMethod"] = "official_github_owner"
+                    break
+
+        if article.get("trustedSource") and github_urls:
+            project_name = github_urls[0].rstrip("/").rsplit("/", 1)[-1]
+            synthetic_metadata = {
+                "arxiv": "",
+                "title": article.get("title") or project_name,
+                "authors": article.get("trustedSource", ""),
+                "abstract": " ".join(
+                    [str(article.get("snippet") or ""), str(article.get("contentText") or "")]
+                )[:12000],
+                "primaryArxivCategory": "",
+            }
+            classification = classify_candidate(synthetic_metadata, article, taxonomy, config, log)
+            track_document_relevance(log, classification)
+            if (
+                classification.get("isDocumentIntelligence")
+                and classification.get("category")
+                and classification.get("confidence", 0.0) >= threshold
+            ):
+                add_verified_github_article(dynamic, article, github_urls, classification, today)
+                log["githubProjectsPublished"] += 1
+                continue
+            reason = (
+                "not_document_relevant"
+                if not classification.get("isDocumentIntelligence")
+                else "low_confidence"
+            )
+        else:
+            reason = "no_arxiv_or_github" if article.get("trustedSource") else "untrusted_source"
         append_pending_preview(
             log,
             reason,
@@ -1112,20 +1390,8 @@ def run(args: argparse.Namespace) -> int:
             article.get("url", ""),
             article.get("queryTrustedSource", ""),
             article.get("matchedQuery", ""),
+            github_urls,
         )
-        if add_pending(
-            pending,
-            {
-                "reason": reason,
-                "candidateTitle": article.get("title", ""),
-                "sourceUrl": article.get("url", ""),
-                "sourceTitle": article.get("title", ""),
-                "trustedSource": article.get("trustedSource", ""),
-                "foundAt": today,
-            },
-        ):
-            log["pendingReview"] += 1
-
     metadata_by_id: dict[str, dict[str, Any]] = {}
     try:
         metadata_by_id = fetch_arxiv_metadata(list(grouped.keys()))
@@ -1214,19 +1480,19 @@ def run(args: argparse.Namespace) -> int:
         track_document_relevance(log, classification)
         is_document_intelligence = bool(classification.get("isDocumentIntelligence"))
         if not is_document_intelligence:
-            classification = dict(classification)
-            classification.update(
-                {
-                    "category": "other",
-                    "subcategory": "Outside document intelligence",
-                    "tags": ["From WeChat", "Non-document-intelligence"],
-                    "isDocumentIntelligence": False,
-                }
+            append_pending_preview(
+                log,
+                "not_document_relevant",
+                metadata.get("title") or representative.get("title", ""),
+                arxiv_id,
+                representative.get("trustedSource", ""),
+                representative.get("url", ""),
+                representative.get("queryTrustedSource", ""),
+                representative.get("matchedQuery", ""),
             )
+            continue
 
-        if is_document_intelligence and (
-            not classification["category"] or classification["confidence"] < threshold
-        ):
+        if not classification["category"] or classification["confidence"] < threshold:
             append_pending_preview(
                 log,
                 "low_confidence" if classification["category"] else "no_classification",
@@ -1275,6 +1541,10 @@ def run(args: argparse.Namespace) -> int:
 def print_summary(log: dict[str, Any], dry_run: bool) -> None:
     prefix = "Dry run" if dry_run else "Update"
     print(f"{prefix}: searched {log['searchedQueries']} queries")
+    if "searchQueriesAttempted" in log:
+        print(f"{prefix}: search queries attempted {log['searchQueriesAttempted']}")
+    if log.get("searchStoppedForExtraction"):
+        print(f"{prefix}: search stopped early to preserve extraction budget")
     if log.get("searchDepth"):
         print(f"{prefix}: search depth {log['searchDepth']}")
     if "rawSearchResults" in log:
@@ -1295,8 +1565,12 @@ def print_summary(log: dict[str, Any], dry_run: bool) -> None:
         print(f"{prefix}: extract requested {log['extractRequested']}")
         print(f"{prefix}: extract succeeded {log['extractSucceeded']}")
         print(f"{prefix}: extract failed {log['extractFailed']}")
+        print(f"{prefix}: candidate content available {log.get('contentAvailable', 0)}")
     print(f"{prefix}: candidate articles {log['candidateArticles']}")
+    print(f"{prefix}: verified seed articles {log.get('verifiedSeedArticles', 0)}")
     print(f"{prefix}: arXiv IDs found {log['arxivIdsFound']}")
+    print(f"{prefix}: GitHub repositories found {log.get('githubProjectsFound', 0)}")
+    print(f"{prefix}: GitHub-only articles published {log.get('githubProjectsPublished', 0)}")
     print(f"{prefix}: document relevant {log.get('documentRelevant', 0)}")
     print(f"{prefix}: document irrelevant {log.get('documentIrrelevant', 0)}")
     if log.get("llmClassificationEnabled"):
@@ -1337,6 +1611,7 @@ def append_pending_preview(
     url: str = "",
     query_trusted_source: str = "",
     matched_query: str = "",
+    github_urls: list[str] | None = None,
 ) -> None:
     preview = log.setdefault("pendingPreview", [])
     if len(preview) >= 12:
@@ -1350,6 +1625,7 @@ def append_pending_preview(
             "url": url,
             "queryTrustedSource": query_trusted_source,
             "matchedQuery": matched_query,
+            "githubUrls": github_urls or [],
         }
     )
 
