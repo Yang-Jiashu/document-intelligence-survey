@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-12T13:29:06Z",
+  "lastUpdated": "2026-07-12T19:15:42Z",
   "source": "scheduled-wechat-arxiv-pipeline",
   "curatedSourceMentions": {},
   "verifiedWechatArticles": [
@@ -25,7 +25,7 @@
         "OCR",
         "Text Recognition"
       ],
-      "classificationConfidence": 1.0,
+      "classificationConfidence": 0.9,
       "classificationProvider": "llm",
       "documentRelevanceConfidence": 0.69,
       "isDocumentIntelligence": true,
@@ -53,8 +53,8 @@
         "OCR",
         "Text Recognition"
       ],
-      "classificationConfidence": 0.9,
-      "classificationProvider": "llm",
+      "classificationConfidence": 1.0,
+      "classificationProvider": "keywords",
       "documentRelevanceConfidence": 0.69,
       "isDocumentIntelligence": true,
       "status": "github-only"
