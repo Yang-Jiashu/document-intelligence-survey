@@ -104,7 +104,7 @@ function getSearchPapers() {
                 title: article.articleTitle || '微信公众号文章',
                 authors: article.account || '微信公众号',
                 venue: '微信公众号',
-                year: Number(String(article.foundAt || '').slice(0, 4)) || '',
+                year: Number(String(article.publishedDate || '').slice(0, 4)) || '',
                 category: article.category || 'other',
                 categories: Array.isArray(article.categories) && article.categories.length ? article.categories : [article.category || 'other'],
                 tags: ['Verified WeChat source', ...(article.tags || [])],

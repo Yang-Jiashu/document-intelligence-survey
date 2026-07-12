@@ -1,268 +1,84 @@
 {
-  "lastRun": "2026-07-12T11:59:22Z",
+  "lastRun": "2026-07-12T13:29:06Z",
   "provider": "tavily",
   "searchDepth": "advanced",
-  "searchedQueries": 144,
-  "rawSearchResults": 21,
-  "wechatSearchResults": 11,
-  "filteredNonWechat": 10,
-  "filteredExamples": [
-    "https://mp.weixin.qq.com/s"
-  ],
+  "searchedQueries": 156,
+  "rawSearchResults": 0,
+  "wechatSearchResults": 0,
+  "filteredNonWechat": 0,
+  "filteredExamples": [],
   "sourceSearchSummary": {
     "新智元": {
-      "queries": 6,
-      "rawResults": 2,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 1
     },
     "飞桨PaddlePaddle": {
-      "queries": 6,
+      "queries": 1,
       "rawResults": 0,
       "wechatResults": 0,
       "queriesWithWechatResults": 0,
-      "errors": 0
+      "errors": 1
     },
     "OpenDataLab": {
-      "queries": 6,
+      "queries": 1,
       "rawResults": 0,
       "wechatResults": 0,
       "queriesWithWechatResults": 0,
-      "errors": 0
+      "errors": 1
     },
     "上海人工智能实验室": {
-      "queries": 6,
-      "rawResults": 5,
-      "wechatResults": 4,
-      "queriesWithWechatResults": 4,
-      "errors": 0
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 1
     },
     "合合信息": {
-      "queries": 6,
-      "rawResults": 2,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "智谱AI": {
-      "queries": 6,
-      "rawResults": 3,
-      "wechatResults": 3,
-      "queriesWithWechatResults": 3,
-      "errors": 0
-    },
-    "腾讯混元": {
-      "queries": 6,
+      "queries": 1,
       "rawResults": 0,
       "wechatResults": 0,
       "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "达观数据": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "深度求索": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "OpenMMLab": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "百度AI": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "腾讯云开发者": {
-      "queries": 6,
-      "rawResults": 3,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "Datawhale": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "小红书技术团队": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "机器之心": {
-      "queries": 6,
-      "rawResults": 1,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "量子位": {
-      "queries": 6,
-      "rawResults": 2,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "CVer": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "我爱计算机视觉": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "极市平台": {
-      "queries": 6,
-      "rawResults": 1,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "刘聪NLP": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "MinerUFans": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "码科智能": {
-      "queries": 6,
-      "rawResults": 1,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "AI前线": {
-      "queries": 6,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "机器学习算法与Python学习": {
-      "queries": 6,
-      "rawResults": 1,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
+      "errors": 1
     }
   },
-  "extractRequested": 6,
-  "extractSucceeded": 5,
-  "extractFailed": 1,
-  "candidateArticles": 11,
-  "arxivIdsFound": 1,
-  "githubProjectsFound": 14,
-  "githubProjectsPublished": 6,
-  "verifiedSeedArticles": 6,
-  "documentRelevant": 6,
-  "documentIrrelevant": 1,
+  "extractRequested": 8,
+  "extractSucceeded": 0,
+  "extractFailed": 8,
+  "candidateArticles": 5,
+  "arxivIdsFound": 0,
+  "githubProjectsFound": 5,
+  "githubProjectsPublished": 5,
+  "verifiedSeedArticles": 5,
+  "publicationYearRejected": 0,
+  "publicationEvidenceRejected": 0,
+  "documentRelevant": 5,
+  "documentIrrelevant": 0,
   "llmClassificationEnabled": true,
-  "llmClassificationAttempted": 7,
-  "llmClassificationSucceeded": 7,
+  "llmClassificationAttempted": 5,
+  "llmClassificationSucceeded": 5,
   "llmClassificationFailed": 0,
   "llmClassificationSkipped": 0,
   "autoPublished": 0,
-  "pendingReview": 1,
-  "pendingPreview": [
-    {
-      "reason": "untrusted_source",
-      "title": "https://mp.weixin.qq.com/s/LK0AvvKXsWCzfoKnSdWqEQ",
-      "arxiv": "",
-      "trustedSource": "",
-      "url": "https://mp.weixin.qq.com/s/LK0AvvKXsWCzfoKnSdWqEQ",
-      "queryTrustedSource": "上海人工智能实验室",
-      "matchedQuery": "site:mp.weixin.qq.com/s 上海人工智能实验室 MinerU",
-      "githubUrls": []
-    },
-    {
-      "reason": "no_arxiv_or_github",
-      "title": "https://mp.weixin.qq.com/s/ECwGom1jmk0-M4UHLVzC3A",
-      "arxiv": "",
-      "trustedSource": "机器之心",
-      "url": "https://mp.weixin.qq.com/s/ECwGom1jmk0-M4UHLVzC3A",
-      "queryTrustedSource": "机器学习算法与Python学习",
-      "matchedQuery": "site:mp.weixin.qq.com/s 机器学习算法与Python学习 DeepSeek-OCR",
-      "githubUrls": []
-    },
-    {
-      "reason": "untrusted_source",
-      "title": "https://mp.weixin.qq.com/s/VFRF55yUl-sj7mPuqnWGDg",
-      "arxiv": "",
-      "trustedSource": "",
-      "url": "https://mp.weixin.qq.com/s/VFRF55yUl-sj7mPuqnWGDg",
-      "queryTrustedSource": "合合信息",
-      "matchedQuery": "site:mp.weixin.qq.com/s 合合信息 GitHub 开源",
-      "githubUrls": [
-        "https://github.com/jianchang512/pyvideotrans",
-        "https://github.com/bensadeh/tailspin",
-        "https://github.com/keyval-dev/odigos",
-        "https://github.com/evilsocket/legba",
-        "https://github.com/antirez/smallchat",
-        "https://github.com/krahets/hello-algo",
-        "https://github.com/juspay/hyperswitch"
-      ]
-    },
-    {
-      "reason": "untrusted_source",
-      "title": "https://mp.weixin.qq.com/s/LDrbtLM0wiCTJorvd5GY9w",
-      "arxiv": "",
-      "trustedSource": "",
-      "url": "https://mp.weixin.qq.com/s/LDrbtLM0wiCTJorvd5GY9w",
-      "queryTrustedSource": "智谱AI",
-      "matchedQuery": "site:mp.weixin.qq.com/s 智谱AI GitHub 开源",
-      "githubUrls": []
-    },
-    {
-      "reason": "not_document_relevant",
-      "title": "CLIPPO: Image-and-Language Understanding from Pixels Only",
-      "arxiv": "2212.08045",
-      "trustedSource": "量子位",
-      "url": "https://mp.weixin.qq.com/s/kHU8p-x7_WsEIYyfW4t91A",
-      "queryTrustedSource": "量子位",
-      "matchedQuery": "site:mp.weixin.qq.com/s 量子位 DeepSeek-OCR",
-      "githubUrls": []
-    }
-  ],
+  "pendingReview": 0,
+  "pendingPreview": [],
   "duplicates": 0,
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
-  "errors": [],
+  "errors": [
+    "tavily query failed: site:mp.weixin.qq.com/s 新智元 GLM-OCR: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
+    "tavily query failed: site:mp.weixin.qq.com/s 飞桨PaddlePaddle PaddleOCR: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
+    "tavily query failed: site:mp.weixin.qq.com/s OpenDataLab MinerU: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
+    "tavily query failed: site:mp.weixin.qq.com/s 上海人工智能实验室 MinerU: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
+    "tavily query failed: site:mp.weixin.qq.com/s 合合信息 TextIn: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
+    "tavily extract failed: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}"
+  ],
   "searchConcurrency": 5,
-  "searchQueriesAttempted": 144,
+  "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": false,
-  "searchRawContentResults": 5,
-  "contentAvailable": 10
+  "searchRawContentResults": 0,
+  "quotaExceeded": true,
+  "contentAvailable": 0
 }

@@ -50,6 +50,32 @@ def utc_today() -> str:
     return datetime.now(timezone.utc).date().isoformat()
 
 
+def normalize_publication_date(value: str) -> str:
+    match = re.search(r"(20\d{2})[-/.年](\d{1,2})[-/.月](\d{1,2})日?", value or "")
+    if not match:
+        return ""
+    try:
+        return datetime(int(match.group(1)), int(match.group(2)), int(match.group(3))).date().isoformat()
+    except ValueError:
+        return ""
+
+
+def detect_publication_date(article: dict[str, Any]) -> str:
+    explicit = normalize_publication_date(str(article.get("publishedDate") or ""))
+    if explicit:
+        return explicit
+    text = " ".join(
+        str(article.get(key) or "") for key in ("title", "snippet", "contentText")
+    )
+    marker_match = re.search(
+        r"(?:发布时间|发布于|发表于|发布日期|date published|published(?:\s+on)?)\s*[:：]?\s*"
+        r"(20\d{2}[-/.年]\d{1,2}[-/.月]\d{1,2}日?)",
+        text,
+        re.IGNORECASE,
+    )
+    return normalize_publication_date(marker_match.group(1)) if marker_match else ""
+
+
 def read_json(path: Path, fallback: dict[str, Any]) -> dict[str, Any]:
     if not path.exists():
         return fallback
@@ -239,9 +265,10 @@ def enrich_articles_with_extracted_content(
     for article in articles:
         if len(str(article.get("contentText") or "").strip()) >= 200:
             continue
-        url = str(article.get("url") or "")
-        if url and url not in urls:
-            urls.append(url)
+        for key in ("url", "mirrorUrl"):
+            url = str(article.get(key) or "")
+            if url and url not in urls and len(urls) < max_urls:
+                urls.append(url)
         if len(urls) >= max_urls:
             break
 
@@ -263,8 +290,13 @@ def enrich_articles_with_extracted_content(
         diagnostics["extractFailed"] += len(failed)
         for article in articles:
             content = extracted.get(str(article.get("url") or ""))
+            extraction_source = "wechat"
+            if not content:
+                content = extracted.get(str(article.get("mirrorUrl") or ""))
+                extraction_source = "verified_mirror"
             if content:
                 article["contentText"] = content
+                article["contentExtractionSource"] = extraction_source
         time.sleep(0.2)
 
     return diagnostics
@@ -846,6 +878,10 @@ def create_source_mention(article: dict[str, Any], found_at: str) -> dict[str, A
         "url": str(article.get("url") or ""),
         "foundAt": found_at,
     }
+    if article.get("publishedDate"):
+        mention["publishedDate"] = str(article["publishedDate"])
+    if article.get("publicationDateEvidenceUrl"):
+        mention["publicationDateEvidenceUrl"] = str(article["publicationDateEvidenceUrl"])
     if article.get("sourceTrustMethod"):
         mention["sourceTrustMethod"] = str(article["sourceTrustMethod"])
     return mention
@@ -1039,6 +1075,9 @@ def group_articles_by_arxiv(articles: list[dict[str, Any]]) -> tuple[dict[str, l
     grouped: dict[str, list[dict[str, Any]]] = {}
     no_arxiv_articles: list[dict[str, Any]] = []
     for article in articles:
+        if article.get("preferGithubOnly") and article.get("seedGithubUrls"):
+            no_arxiv_articles.append(article)
+            continue
         text = " ".join(
             [
                 article.get("title", ""),
@@ -1221,6 +1260,8 @@ def run(args: argparse.Namespace) -> int:
         "githubProjectsFound": 0,
         "githubProjectsPublished": 0,
         "verifiedSeedArticles": 0,
+        "publicationYearRejected": 0,
+        "publicationEvidenceRejected": 0,
         "documentRelevant": 0,
         "documentIrrelevant": 0,
         "llmClassificationEnabled": bool((config.get("llmClassification") or {}).get("enabled")),
@@ -1277,17 +1318,27 @@ def run(args: argparse.Namespace) -> int:
     for seed in config.get("verifiedSeedArticles") or []:
         url = str(seed.get("url") or "")
         account = str(seed.get("account") or "")
+        published_date = normalize_publication_date(str(seed.get("publishedDate") or ""))
+        publication_evidence_url = str(seed.get("publicationDateEvidenceUrl") or "")
         if not is_wechat_article_url(url) or not account or account not in trusted_hints:
+            continue
+        if int(config.get("requiredPublicationYear") or 0) and (
+            not published_date or not publication_evidence_url.startswith(("http://", "https://"))
+        ):
+            log["publicationEvidenceRejected"] += 1
             continue
         seed_github_urls = [str(item) for item in seed.get("githubUrls", []) if str(item)]
         if url in articles_by_url:
             article = articles_by_url[url]
             article["trustedSource"] = account
             article["seedGithubUrls"] = seed_github_urls
+            article["publishedDate"] = published_date
+            article["publicationDateEvidenceUrl"] = publication_evidence_url
+            article["mirrorUrl"] = str(seed.get("mirrorUrl") or "")
+            article["preferGithubOnly"] = bool(seed.get("preferGithubOnly"))
             article["sourceTrustMethod"] = str(seed.get("verification") or "verified_seed")
             article["seedVerified"] = True
-            if str(article.get("title") or "").startswith(("http://", "https://")):
-                article["title"] = str(seed.get("title") or article["title"])
+            article["title"] = str(seed.get("title") or article.get("title") or "WeChat article")
         else:
             article = {
                 "provider": "verified-seed",
@@ -1302,6 +1353,10 @@ def run(args: argparse.Namespace) -> int:
                 "matchedQuery": "verified seed article",
                 "matchedQueries": ["verified seed article"],
                 "seedGithubUrls": seed_github_urls,
+                "publishedDate": published_date,
+                "publicationDateEvidenceUrl": publication_evidence_url,
+                "mirrorUrl": str(seed.get("mirrorUrl") or ""),
+                "preferGithubOnly": bool(seed.get("preferGithubOnly")),
                 "sourceTrustMethod": str(seed.get("verification") or "verified_seed"),
                 "seedVerified": True,
             }
@@ -1325,6 +1380,17 @@ def run(args: argparse.Namespace) -> int:
             article["trustedSource"] = detect_trusted_source(article, trusted_hints, trusted_biz_ids)
         if not article["trustedSource"] and allow_query_source_trust:
             article["trustedSource"] = article.get("queryTrustedSource", "")
+
+    required_publication_year = int(config.get("requiredPublicationYear") or 0)
+    if required_publication_year:
+        eligible_articles = []
+        for article in articles:
+            article["publishedDate"] = detect_publication_date(article)
+            if article["publishedDate"].startswith(f"{required_publication_year:04d}-"):
+                eligible_articles.append(article)
+            else:
+                log["publicationYearRejected"] += 1
+        articles = eligible_articles
 
     log["candidateArticles"] = len(articles)
 
@@ -1568,6 +1634,8 @@ def print_summary(log: dict[str, Any], dry_run: bool) -> None:
         print(f"{prefix}: candidate content available {log.get('contentAvailable', 0)}")
     print(f"{prefix}: candidate articles {log['candidateArticles']}")
     print(f"{prefix}: verified seed articles {log.get('verifiedSeedArticles', 0)}")
+    print(f"{prefix}: publication year rejected {log.get('publicationYearRejected', 0)}")
+    print(f"{prefix}: publication evidence rejected {log.get('publicationEvidenceRejected', 0)}")
     print(f"{prefix}: arXiv IDs found {log['arxivIdsFound']}")
     print(f"{prefix}: GitHub repositories found {log.get('githubProjectsFound', 0)}")
     print(f"{prefix}: GitHub-only articles published {log.get('githubProjectsPublished', 0)}")

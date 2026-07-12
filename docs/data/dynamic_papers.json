@@ -1,15 +1,17 @@
 {
-  "lastUpdated": "2026-07-12T11:59:22Z",
+  "lastUpdated": "2026-07-12T13:29:06Z",
   "source": "scheduled-wechat-arxiv-pipeline",
   "curatedSourceMentions": {},
   "verifiedWechatArticles": [
     {
       "platform": "wechat",
-      "provider": "tavily",
+      "provider": "verified-seed",
       "account": "智谱AI",
-      "articleTitle": "GLM-OCR",
+      "articleTitle": "GLM-OCR：0.9B 参数的端到端文档解析模型",
       "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
       "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-03",
+      "publicationDateEvidenceUrl": "https://ainativefoundation.org/china-ai-native-industry-insights-20260203-zhipu-ai-stepfun-technology-alibaba-more/",
       "sourceTrustMethod": "official_github_owner",
       "arxivIds": [],
       "githubUrls": [
@@ -25,47 +27,23 @@
       ],
       "classificationConfidence": 1.0,
       "classificationProvider": "llm",
-      "documentRelevanceConfidence": 0.95,
+      "documentRelevanceConfidence": 0.69,
       "isDocumentIntelligence": true,
       "status": "github-only"
     },
     {
       "platform": "wechat",
       "provider": "verified-seed",
-      "account": "飞桨PaddlePaddle",
-      "articleTitle": "PaddleOCR",
-      "url": "https://mp.weixin.qq.com/s/vYj1ZDcAfJ1lu_DzlOKgtQ",
+      "account": "AI前线",
+      "articleTitle": "DeepSeek-OCR 2：用视觉因果流实现文档解析",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA%3D%3D&mid=2247654861&idx=1&sn=906e16ef457800cbb892309786abf347",
       "foundAt": "2026-07-12",
-      "sourceTrustMethod": "official_repository_reference",
-      "arxivIds": [],
-      "githubUrls": [
-        "https://github.com/PaddlePaddle/PaddleOCR"
-      ],
-      "category": "ocr",
-      "categories": [
-        "ocr"
-      ],
-      "tags": [
-        "OCR",
-        "Text Recognition"
-      ],
-      "classificationConfidence": 1.0,
-      "classificationProvider": "llm",
-      "documentRelevanceConfidence": 0.95,
-      "isDocumentIntelligence": true,
-      "status": "github-only"
-    },
-    {
-      "platform": "wechat",
-      "provider": "verified-seed",
-      "account": "刘聪NLP",
-      "articleTitle": "DeepSeek-OCR 实测与分析",
-      "url": "https://mp.weixin.qq.com/s/ksokCduU_xfnl6dR7P67_g",
-      "foundAt": "2026-07-12",
+      "publishedDate": "2026-01-27",
+      "publicationDateEvidenceUrl": "https://www.xinfinite.net/t/topic/17198",
       "sourceTrustMethod": "attributed_republication",
       "arxivIds": [],
       "githubUrls": [
-        "https://github.com/deepseek-ai/DeepSeek-OCR"
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2"
       ],
       "category": "ocr",
       "categories": [
@@ -84,79 +62,84 @@
     {
       "platform": "wechat",
       "provider": "verified-seed",
-      "account": "MinerUFans",
-      "articleTitle": "MonkeyOCR：PDF 文档解析",
-      "url": "https://mp.weixin.qq.com/s/LORCv48FfI0343-7IKCGdg",
+      "account": "数据派THU",
+      "articleTitle": "DeepSeek-OCR 2 发布：复杂文档解析的新范式",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MjQ2OTQ3Ng%3D%3D&mid=2247664839&idx=1&sn=52e9e7ad71911c266803078ab47fe23c",
       "foundAt": "2026-07-12",
-      "sourceTrustMethod": "author_archive",
-      "arxivIds": [],
-      "githubUrls": [
-        "https://github.com/Yuliang-Liu/MonkeyOCR"
-      ],
-      "category": "ocr",
-      "categories": [
-        "ocr"
-      ],
-      "tags": [
-        "OCR",
-        "Text Recognition"
-      ],
-      "classificationConfidence": 1.0,
-      "classificationProvider": "llm",
-      "documentRelevanceConfidence": 0.95,
-      "isDocumentIntelligence": true,
-      "status": "github-only"
-    },
-    {
-      "platform": "wechat",
-      "provider": "verified-seed",
-      "account": "腾讯混元",
-      "articleTitle": "HunyuanOCR",
-      "url": "https://mp.weixin.qq.com/s/0eT7x7cLpJ3AT_XqeDwelw",
-      "foundAt": "2026-07-12",
-      "sourceTrustMethod": "official_github_owner",
-      "arxivIds": [],
-      "githubUrls": [
-        "https://github.com/Tencent-Hunyuan/HunyuanOCR"
-      ],
-      "category": "ocr",
-      "categories": [
-        "ocr"
-      ],
-      "tags": [
-        "OCR",
-        "Text Recognition"
-      ],
-      "classificationConfidence": 1.0,
-      "classificationProvider": "llm",
-      "documentRelevanceConfidence": 0.93,
-      "isDocumentIntelligence": true,
-      "status": "github-only"
-    },
-    {
-      "platform": "wechat",
-      "provider": "verified-seed",
-      "account": "新智元",
-      "articleTitle": "dots 文档多模态模型",
-      "url": "https://mp.weixin.qq.com/s/aftyEJCZleUGAp0s5NBk3w",
-      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-08",
+      "publicationDateEvidenceUrl": "https://www.xinfinite.net/t/topic/17449",
       "sourceTrustMethod": "attributed_republication",
       "arxivIds": [],
       "githubUrls": [
-        "https://github.com/rednote-hilab/dots.vlm1",
-        "https://github.com/rednote-hilab/dots.ocr"
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2"
       ],
-      "category": "vlm",
+      "category": "ocr",
       "categories": [
-        "vlm"
+        "ocr"
       ],
       "tags": [
-        "Document VLM",
-        "Multimodal"
+        "OCR",
+        "Text Recognition"
       ],
       "classificationConfidence": 0.9,
       "classificationProvider": "llm",
-      "documentRelevanceConfidence": 0.95,
+      "documentRelevanceConfidence": 0.69,
+      "isDocumentIntelligence": true,
+      "status": "github-only"
+    },
+    {
+      "platform": "wechat",
+      "provider": "verified-seed",
+      "account": "码科智能",
+      "articleTitle": "OCR 在真实场景翻车？跨页表格、密集表格与扭曲文档解析",
+      "url": "https://mp.weixin.qq.com/s/vBizKyX3ayojZc3ms8BxhA",
+      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-05",
+      "publicationDateEvidenceUrl": "https://jishuzhan.net/article/2019417067356209154",
+      "sourceTrustMethod": "attributed_republication",
+      "arxivIds": [],
+      "githubUrls": [
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.77,
+      "isDocumentIntelligence": true,
+      "status": "github-only"
+    },
+    {
+      "platform": "wechat",
+      "provider": "verified-seed",
+      "account": "AI-Frontiers",
+      "articleTitle": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
+      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
+      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-13",
+      "publicationDateEvidenceUrl": "https://cloud.tencent.com/developer/article/2630012",
+      "sourceTrustMethod": "author_republication",
+      "arxivIds": [],
+      "githubUrls": [
+        "https://github.com/opendatalab/MinerU"
+      ],
+      "category": "rag",
+      "categories": [
+        "rag"
+      ],
+      "tags": [
+        "RAG",
+        "Document QA"
+      ],
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.61,
       "isDocumentIntelligence": true,
       "status": "github-only"
     }

@@ -12,48 +12,60 @@
   "trustedSourcePolicy": "required",
   "allowQuerySourceTrust": false,
   "allowGithubOnly": true,
+  "requiredPublicationYear": 2026,
   "verifiedSeedArticles": [
     {
       "account": "智谱AI",
-      "title": "GLM-OCR",
+      "title": "GLM-OCR：0.9B 参数的端到端文档解析模型",
       "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
+      "publishedDate": "2026-02-03",
+      "publicationDateEvidenceUrl": "https://ainativefoundation.org/china-ai-native-industry-insights-20260203-zhipu-ai-stepfun-technology-alibaba-more/",
       "githubUrls": ["https://github.com/zai-org/GLM-OCR"],
-      "verification": "official_github_owner"
+      "verification": "official_github_owner",
+      "preferGithubOnly": true
     },
     {
-      "account": "飞桨PaddlePaddle",
-      "title": "PaddleOCR",
-      "url": "https://mp.weixin.qq.com/s/vYj1ZDcAfJ1lu_DzlOKgtQ",
-      "githubUrls": ["https://github.com/PaddlePaddle/PaddleOCR"],
-      "verification": "official_repository_reference"
+      "account": "AI前线",
+      "title": "DeepSeek-OCR 2：用视觉因果流实现文档解析",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA%3D%3D&mid=2247654861&idx=1&sn=906e16ef457800cbb892309786abf347",
+      "publishedDate": "2026-01-27",
+      "publicationDateEvidenceUrl": "https://www.xinfinite.net/t/topic/17198",
+      "mirrorUrl": "https://www.xinfinite.net/t/topic/17198",
+      "githubUrls": ["https://github.com/deepseek-ai/DeepSeek-OCR-2"],
+      "verification": "attributed_republication",
+      "preferGithubOnly": true
     },
     {
-      "account": "刘聪NLP",
-      "title": "DeepSeek-OCR 实测与分析",
-      "url": "https://mp.weixin.qq.com/s/ksokCduU_xfnl6dR7P67_g",
-      "githubUrls": ["https://github.com/deepseek-ai/DeepSeek-OCR"],
-      "verification": "attributed_republication"
+      "account": "数据派THU",
+      "title": "DeepSeek-OCR 2 发布：复杂文档解析的新范式",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MjQ2OTQ3Ng%3D%3D&mid=2247664839&idx=1&sn=52e9e7ad71911c266803078ab47fe23c",
+      "publishedDate": "2026-02-08",
+      "publicationDateEvidenceUrl": "https://www.xinfinite.net/t/topic/17449",
+      "mirrorUrl": "https://www.xinfinite.net/t/topic/17449",
+      "githubUrls": ["https://github.com/deepseek-ai/DeepSeek-OCR-2"],
+      "verification": "attributed_republication",
+      "preferGithubOnly": true
     },
     {
-      "account": "MinerUFans",
-      "title": "MonkeyOCR：PDF 文档解析",
-      "url": "https://mp.weixin.qq.com/s/LORCv48FfI0343-7IKCGdg",
-      "githubUrls": ["https://github.com/Yuliang-Liu/MonkeyOCR"],
-      "verification": "author_archive"
+      "account": "码科智能",
+      "title": "OCR 在真实场景翻车？跨页表格、密集表格与扭曲文档解析",
+      "url": "https://mp.weixin.qq.com/s/vBizKyX3ayojZc3ms8BxhA",
+      "publishedDate": "2026-02-05",
+      "publicationDateEvidenceUrl": "https://jishuzhan.net/article/2019417067356209154",
+      "githubUrls": ["https://github.com/deepseek-ai/DeepSeek-OCR-2"],
+      "verification": "attributed_republication",
+      "preferGithubOnly": true
     },
     {
-      "account": "腾讯混元",
-      "title": "HunyuanOCR",
-      "url": "https://mp.weixin.qq.com/s/0eT7x7cLpJ3AT_XqeDwelw",
-      "githubUrls": ["https://github.com/Tencent-Hunyuan/HunyuanOCR"],
-      "verification": "official_github_owner"
-    },
-    {
-      "account": "新智元",
-      "title": "dots 文档多模态模型",
-      "url": "https://mp.weixin.qq.com/s/aftyEJCZleUGAp0s5NBk3w",
-      "githubUrls": ["https://github.com/rednote-hilab/dots.ocr"],
-      "verification": "attributed_republication"
+      "account": "AI-Frontiers",
+      "title": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
+      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
+      "publishedDate": "2026-02-13",
+      "publicationDateEvidenceUrl": "https://cloud.tencent.com/developer/article/2630012",
+      "mirrorUrl": "https://cloud.tencent.com/developer/article/2630012",
+      "githubUrls": ["https://github.com/opendatalab/MinerU"],
+      "verification": "author_republication",
+      "preferGithubOnly": true
     }
   ],
   "documentRelevance": {
@@ -154,6 +166,8 @@
       ,"码科智能": ["MinerU", "MonkeyOCR", "OCR", "文档解析", "表格识别", "GitHub 开源"]
       ,"AI前线": ["DeepSeek-OCR", "PaddleOCR", "HunyuanOCR", "OCR", "文档解析", "GitHub 开源"]
       ,"机器学习算法与Python学习": ["PaddleOCR", "DeepSeek-OCR", "OCR", "文档解析", "表格识别", "GitHub 开源"]
+      ,"数据派THU": ["DeepSeek-OCR", "DeepSeek-OCR2", "OCR", "文档解析", "Document Layout", "GitHub 开源"]
+      ,"AI-Frontiers": ["MinerU", "PaddleOCR", "DeepSeek-OCR", "RAG 文档解析", "Document Layout", "GitHub 开源"]
     }
   },
   "queries": [
@@ -192,7 +206,9 @@
     "MinerUFans",
     "码科智能",
     "AI前线",
-    "机器学习算法与Python学习"
+    "机器学习算法与Python学习",
+    "数据派THU",
+    "AI-Frontiers"
   ],
   "trustedSourceBizIds": {
     "飞桨PaddlePaddle": ["Mzg2OTEzODA5MA=="],
