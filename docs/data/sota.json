@@ -296,6 +296,60 @@
           "confidence": "image-evidence"
         }
       ]
+    },
+    {
+      "id": "mmlongbench",
+      "name": "MMLongBench",
+      "task": "Long-context vision-language evaluation",
+      "metric": "128K Avg.",
+      "sourceName": "MMLongBench Leaderboard",
+      "sourceUrl": "https://zhaowei-wang-nlp.github.io/MMLongBench-page/#leader-board",
+      "updateMode": "paper-reported",
+      "lastChecked": "2026-07-15",
+      "leader": {
+        "year": 2025,
+        "model": "Gemini-2.5-Pro",
+        "score": 77.2,
+        "type": "API",
+        "date": "2025-05-15"
+      },
+      "history": [
+        {
+          "year": 2025,
+          "model": "Gemini-2.5-Pro",
+          "score": 77.2,
+          "type": "API",
+          "date": "2025-05-15"
+        },
+        {
+          "year": 2025,
+          "model": "Gemini-2.5-Flash",
+          "score": 70.5,
+          "type": "API",
+          "date": "2025-05-15"
+        },
+        {
+          "year": 2025,
+          "model": "Gemini-2.0-Flash-T",
+          "score": 68.5,
+          "type": "API",
+          "date": "2025-05-15"
+        },
+        {
+          "year": 2025,
+          "model": "GPT-4o",
+          "score": 62.9,
+          "type": "API",
+          "date": "2025-05-15"
+        },
+        {
+          "year": 2025,
+          "model": "Gemini-2.0-Flash",
+          "score": 59.6,
+          "type": "API",
+          "date": "2025-05-15"
+        }
+      ]
     }
   ]
 }

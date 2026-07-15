@@ -349,7 +349,7 @@ body::before {
 .dynamic-overview { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 48px; }
 .taxonomy-container { grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); margin-bottom: 48px; }
 .paper-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); margin-bottom: 48px; }
-.sota-container { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 48px; }
+.sota-container { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 48px; }
 .reading-container { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-bottom: 48px; }
 .feedback-container { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-bottom: 48px; }
 
