@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-07-12T19:15:42Z",
+  "lastRun": "2026-07-19T19:16:18Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
@@ -58,8 +58,8 @@
   "documentIrrelevant": 0,
   "llmClassificationEnabled": true,
   "llmClassificationAttempted": 5,
-  "llmClassificationSucceeded": 4,
-  "llmClassificationFailed": 1,
+  "llmClassificationSucceeded": 5,
+  "llmClassificationFailed": 0,
   "llmClassificationSkipped": 0,
   "autoPublished": 0,
   "pendingReview": 0,
@@ -73,8 +73,7 @@
     "tavily query failed: site:mp.weixin.qq.com/s OpenDataLab MinerU: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
     "tavily query failed: site:mp.weixin.qq.com/s 上海人工智能实验室 MinerU: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
     "tavily query failed: site:mp.weixin.qq.com/s 合合信息 TextIn: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "tavily extract failed: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "llm classification failed: The read operation timed out"
+    "tavily extract failed: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
