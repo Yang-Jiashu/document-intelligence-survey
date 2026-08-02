@@ -1,58 +1,58 @@
 {
-  "lastRun": "2026-07-26T19:21:44Z",
+  "lastRun": "2026-08-02T19:20:56Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
-  "rawSearchResults": 0,
-  "wechatSearchResults": 0,
+  "rawSearchResults": 35,
+  "wechatSearchResults": 35,
   "filteredNonWechat": 0,
   "filteredExamples": [],
   "sourceSearchSummary": {
     "新智元": {
       "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 1
+      "rawResults": 7,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
+      "errors": 0
     },
     "飞桨PaddlePaddle": {
       "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 1
+      "rawResults": 7,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
+      "errors": 0
     },
     "OpenDataLab": {
       "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 1
+      "rawResults": 7,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
+      "errors": 0
     },
     "上海人工智能实验室": {
       "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 1
+      "rawResults": 7,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
+      "errors": 0
     },
     "合合信息": {
       "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 1
+      "rawResults": 7,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
+      "errors": 0
     }
   },
-  "extractRequested": 8,
-  "extractSucceeded": 0,
-  "extractFailed": 8,
+  "extractRequested": 6,
+  "extractSucceeded": 4,
+  "extractFailed": 2,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
   "githubProjectsFound": 5,
   "githubProjectsPublished": 5,
   "verifiedSeedArticles": 5,
-  "publicationYearRejected": 0,
+  "publicationYearRejected": 18,
   "publicationEvidenceRejected": 0,
   "documentRelevant": 5,
   "documentIrrelevant": 0,
@@ -67,18 +67,10 @@
   "duplicates": 0,
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
-  "errors": [
-    "tavily query failed: site:mp.weixin.qq.com/s 新智元 GLM-OCR: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "tavily query failed: site:mp.weixin.qq.com/s 飞桨PaddlePaddle PaddleOCR: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "tavily query failed: site:mp.weixin.qq.com/s OpenDataLab MinerU: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "tavily query failed: site:mp.weixin.qq.com/s 上海人工智能实验室 MinerU: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "tavily query failed: site:mp.weixin.qq.com/s 合合信息 TextIn: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}",
-    "tavily extract failed: HTTP 432: : {\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"}}"
-  ],
+  "errors": [],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
-  "searchStoppedForExtraction": false,
-  "searchRawContentResults": 0,
-  "quotaExceeded": true,
-  "contentAvailable": 0
+  "searchStoppedForExtraction": true,
+  "searchRawContentResults": 33,
+  "contentAvailable": 23
 }
