@@ -1,17 +1,17 @@
 {
-  "lastChecked": "2026-07-27",
+  "lastChecked": "2026-08-03",
   "items": [
     {
       "adapter": "RRCDocVQAAdapter",
       "status": "needs-review",
       "message": "fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
-      "date": "2026-07-27"
+      "date": "2026-08-03"
     },
     {
       "adapter": "RRCDocVQAAdapter",
       "status": "needs-review",
       "message": "fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>",
-      "date": "2026-07-27"
+      "date": "2026-08-03"
     }
   ]
 }
