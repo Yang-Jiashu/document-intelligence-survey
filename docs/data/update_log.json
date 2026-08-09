@@ -1,52 +1,208 @@
 {
-  "lastRun": "2026-08-02T19:20:56Z",
+  "lastRun": "2026-08-09T18:52:02Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
-  "rawSearchResults": 35,
-  "wechatSearchResults": 35,
-  "filteredNonWechat": 0,
-  "filteredExamples": [],
+  "rawSearchResults": 81,
+  "wechatSearchResults": 26,
+  "filteredNonWechat": 55,
+  "filteredExamples": [
+    "https://github.com/zai-org/GLM-5",
+    "https://en.wikipedia.org/wiki/GLM_(AI)",
+    "https://z.ai/blog/glm-5.2",
+    "https://github.com/THUDM/GLM",
+    "https://en.wikipedia.org/wiki/Generalized_linear_model",
+    "https://en.wikipedia.org/wiki/Baidu",
+    "https://zh.wikipedia.org/wiki/%E7%99%BE%E5%BA%A6",
+    "https://www.baidu.com"
+  ],
   "sourceSearchSummary": {
     "新智元": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 7,
+      "queries": 2,
+      "rawResults": 14,
+      "wechatResults": 1,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
     "飞桨PaddlePaddle": {
-      "queries": 1,
+      "queries": 2,
       "rawResults": 7,
       "wechatResults": 7,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
     "OpenDataLab": {
-      "queries": 1,
+      "queries": 2,
       "rawResults": 7,
-      "wechatResults": 7,
-      "queriesWithWechatResults": 1,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
       "errors": 0
     },
     "上海人工智能实验室": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 7,
+      "queries": 2,
+      "rawResults": 1,
+      "wechatResults": 1,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
     "合合信息": {
-      "queries": 1,
+      "queries": 2,
+      "rawResults": 1,
+      "wechatResults": 1,
+      "queriesWithWechatResults": 1,
+      "errors": 0
+    },
+    "智谱AI": {
+      "queries": 2,
+      "rawResults": 1,
+      "wechatResults": 1,
+      "queriesWithWechatResults": 1,
+      "errors": 0
+    },
+    "腾讯混元": {
+      "queries": 2,
+      "rawResults": 1,
+      "wechatResults": 1,
+      "queriesWithWechatResults": 1,
+      "errors": 0
+    },
+    "达观数据": {
+      "queries": 2,
+      "rawResults": 7,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "深度求索": {
+      "queries": 2,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "OpenMMLab": {
+      "queries": 2,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "百度AI": {
+      "queries": 2,
+      "rawResults": 7,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "腾讯云开发者": {
+      "queries": 2,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "Datawhale": {
+      "queries": 2,
       "rawResults": 7,
       "wechatResults": 7,
       "queriesWithWechatResults": 1,
       "errors": 0
+    },
+    "小红书技术团队": {
+      "queries": 2,
+      "rawResults": 14,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
+      "errors": 0
+    },
+    "机器之心": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "量子位": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "CVer": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "我爱计算机视觉": {
+      "queries": 1,
+      "rawResults": 7,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "极市平台": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "刘聪NLP": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "MinerUFans": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "码科智能": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "AI前线": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "机器学习算法与Python学习": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "数据派THU": {
+      "queries": 1,
+      "rawResults": 7,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
+    },
+    "AI-Frontiers": {
+      "queries": 1,
+      "rawResults": 0,
+      "wechatResults": 0,
+      "queriesWithWechatResults": 0,
+      "errors": 0
     }
   },
-  "extractRequested": 6,
-  "extractSucceeded": 4,
-  "extractFailed": 2,
+  "extractRequested": 7,
+  "extractSucceeded": 3,
+  "extractFailed": 4,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
   "githubProjectsFound": 5,
@@ -69,8 +225,8 @@
   "existingRemovedAsIrrelevant": 0,
   "errors": [],
   "searchConcurrency": 5,
-  "searchQueriesAttempted": 5,
+  "searchQueriesAttempted": 40,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 33,
-  "contentAvailable": 23
+  "searchRawContentResults": 23,
+  "contentAvailable": 21
 }
