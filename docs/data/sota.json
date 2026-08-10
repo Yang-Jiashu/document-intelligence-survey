@@ -1,7 +1,7 @@
 {
-  "lastChecked": "2026-08-03",
+  "lastChecked": "2026-08-10",
   "updateCadence": "weekly",
-  "nextScheduledCheck": "2026-08-10",
+  "nextScheduledCheck": "2026-08-17",
   "generatedBy": "scripts/update_sota.py",
   "status": "partially refreshed snapshot",
   "note": "Static GitHub Pages cannot stream live benchmark changes. This file is refreshed by a scheduled workflow and keeps source links plus the last successful check time.",
@@ -122,49 +122,49 @@
       "sourceName": "OCRBench v2 Leaderboard",
       "sourceUrl": "https://99franklin.github.io/ocrbench_v2/",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-08-03",
+      "lastChecked": "2026-08-10",
       "leader": {
         "year": 2026,
-        "model": "KDL Frontier",
-        "score": 68.1,
+        "model": "Yaochi-DTS-A2T-1.9",
+        "score": 73.4,
         "type": "API",
-        "date": "2026-08-03"
+        "date": "2026-08-10"
       },
       "history": [
+        {
+          "year": 2026,
+          "model": "Yaochi-DTS-A2T-1.9",
+          "score": 73.4,
+          "type": "API",
+          "date": "2026-08-10"
+        },
         {
           "year": 2026,
           "model": "KDL Frontier",
           "score": 68.1,
           "type": "API",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         },
         {
           "year": 2026,
           "model": "NVIDIA Nemotron 3 Nano Omni 30B A3B",
           "score": 65.8,
           "type": "Open",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         },
         {
           "year": 2026,
           "model": "Qwen3.6-35B-A3B",
           "score": 65.5,
           "type": "Open",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         },
         {
           "year": 2026,
           "model": "Qwen3.5-35B-A3B",
           "score": 65.3,
           "type": "Open",
-          "date": "2026-08-03"
-        },
-        {
-          "year": 2026,
-          "model": "Gemini 3 Pro Preview",
-          "score": 63.4,
-          "type": "API",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         }
       ]
     },
@@ -176,13 +176,13 @@
       "sourceName": "OCRBench v2 Leaderboard",
       "sourceUrl": "https://99franklin.github.io/ocrbench_v2/",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-08-03",
+      "lastChecked": "2026-08-10",
       "leader": {
         "year": 2026,
         "model": "TeleMM-2.0",
         "score": 66.2,
         "type": "API",
-        "date": "2026-08-03"
+        "date": "2026-08-10"
       },
       "history": [
         {
@@ -190,35 +190,35 @@
           "model": "TeleMM-2.0",
           "score": 66.2,
           "type": "API",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         },
         {
           "year": 2026,
           "model": "Qwen3.5-9B",
           "score": 64.1,
           "type": "Open",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
+        },
+        {
+          "year": 2026,
+          "model": "Yaochi-DTS-A2T-1.9",
+          "score": 63.8,
+          "type": "API",
+          "date": "2026-08-10"
         },
         {
           "year": 2026,
           "model": "Gemini 3 Pro Preview",
           "score": 63.8,
           "type": "API",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         },
         {
           "year": 2026,
           "model": "Gemini-2.5-Pro",
           "score": 62.2,
           "type": "API",
-          "date": "2026-08-03"
-        },
-        {
-          "year": 2026,
-          "model": "Qwen3.5-35B-A3B",
-          "score": 61.7,
-          "type": "Open",
-          "date": "2026-08-03"
+          "date": "2026-08-10"
         }
       ]
     },
@@ -230,7 +230,7 @@
       "sourceName": "LLM Stats MMLongBench-Doc",
       "sourceUrl": "https://llm-stats.com/benchmarks/mmlongbench-doc",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-08-03",
+      "lastChecked": "2026-08-10",
       "leader": {
         "year": 2026,
         "model": "Qwen3.6 Plus",
@@ -282,7 +282,7 @@
           "model": "Qwen3-VL 235B-A22B Instruct",
           "score": 57.0,
           "type": "Open",
-          "date": "2026-08-03",
+          "date": "2026-08-10",
           "evidence": "images/evidence/qwen3-vl-nonthinking-benchmarks.jpg",
           "confidence": "image-evidence"
         },
@@ -291,7 +291,7 @@
           "model": "Qwen3 VL 235B A22B Thinking",
           "score": 56.2,
           "type": "Open",
-          "date": "2026-08-03",
+          "date": "2026-08-10",
           "evidence": "images/evidence/qwen3-vl-thinking-benchmarks.jpg",
           "confidence": "image-evidence"
         }
