@@ -1,232 +1,119 @@
 {
-  "lastRun": "2026-08-09T18:52:02Z",
+  "lastRun": "2026-08-16T18:38:06Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
-  "rawSearchResults": 81,
-  "wechatSearchResults": 26,
-  "filteredNonWechat": 55,
-  "filteredExamples": [
-    "https://github.com/zai-org/GLM-5",
-    "https://en.wikipedia.org/wiki/GLM_(AI)",
-    "https://z.ai/blog/glm-5.2",
-    "https://github.com/THUDM/GLM",
-    "https://en.wikipedia.org/wiki/Generalized_linear_model",
-    "https://en.wikipedia.org/wiki/Baidu",
-    "https://zh.wikipedia.org/wiki/%E7%99%BE%E5%BA%A6",
-    "https://www.baidu.com"
-  ],
+  "rawSearchResults": 35,
+  "wechatSearchResults": 35,
+  "filteredNonWechat": 0,
+  "filteredExamples": [],
   "sourceSearchSummary": {
     "新智元": {
-      "queries": 2,
-      "rawResults": 14,
-      "wechatResults": 1,
+      "queries": 1,
+      "rawResults": 7,
+      "wechatResults": 7,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
     "飞桨PaddlePaddle": {
-      "queries": 2,
+      "queries": 1,
       "rawResults": 7,
       "wechatResults": 7,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
     "OpenDataLab": {
-      "queries": 2,
+      "queries": 1,
       "rawResults": 7,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
+      "wechatResults": 7,
+      "queriesWithWechatResults": 1,
       "errors": 0
     },
     "上海人工智能实验室": {
-      "queries": 2,
-      "rawResults": 1,
-      "wechatResults": 1,
+      "queries": 1,
+      "rawResults": 7,
+      "wechatResults": 7,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
     "合合信息": {
-      "queries": 2,
-      "rawResults": 1,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "智谱AI": {
-      "queries": 2,
-      "rawResults": 1,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "腾讯混元": {
-      "queries": 2,
-      "rawResults": 1,
-      "wechatResults": 1,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "达观数据": {
-      "queries": 2,
-      "rawResults": 7,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "深度求索": {
-      "queries": 2,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "OpenMMLab": {
-      "queries": 2,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "百度AI": {
-      "queries": 2,
-      "rawResults": 7,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "腾讯云开发者": {
-      "queries": 2,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "Datawhale": {
-      "queries": 2,
+      "queries": 1,
       "rawResults": 7,
       "wechatResults": 7,
       "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "小红书技术团队": {
-      "queries": 2,
-      "rawResults": 14,
-      "wechatResults": 7,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "机器之心": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "量子位": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "CVer": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "我爱计算机视觉": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "极市平台": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "刘聪NLP": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "MinerUFans": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "码科智能": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "AI前线": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "机器学习算法与Python学习": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "数据派THU": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
-      "errors": 0
-    },
-    "AI-Frontiers": {
-      "queries": 1,
-      "rawResults": 0,
-      "wechatResults": 0,
-      "queriesWithWechatResults": 0,
       "errors": 0
     }
   },
   "extractRequested": 7,
-  "extractSucceeded": 3,
-  "extractFailed": 4,
+  "extractSucceeded": 5,
+  "extractFailed": 2,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
   "githubProjectsFound": 5,
-  "githubProjectsPublished": 5,
+  "githubProjectsPublished": 2,
   "verifiedSeedArticles": 5,
-  "publicationYearRejected": 18,
+  "publicationYearRejected": 19,
   "publicationEvidenceRejected": 0,
   "documentRelevant": 5,
   "documentIrrelevant": 0,
   "llmClassificationEnabled": true,
   "llmClassificationAttempted": 5,
-  "llmClassificationSucceeded": 5,
-  "llmClassificationFailed": 0,
+  "llmClassificationSucceeded": 0,
+  "llmClassificationFailed": 5,
   "llmClassificationSkipped": 0,
   "autoPublished": 0,
   "pendingReview": 0,
-  "pendingPreview": [],
+  "pendingPreview": [
+    {
+      "reason": "low_confidence",
+      "title": "GLM-OCR：0.9B 参数的端到端文档解析模型",
+      "arxiv": "",
+      "trustedSource": "智谱AI",
+      "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
+      "queryTrustedSource": "新智元",
+      "matchedQuery": "site:mp.weixin.qq.com/s 新智元 GLM-OCR",
+      "githubUrls": [
+        "https://github.com/zai-org/GLM-OCR"
+      ]
+    },
+    {
+      "reason": "low_confidence",
+      "title": "OCR 在真实场景翻车？跨页表格、密集表格与扭曲文档解析",
+      "arxiv": "",
+      "trustedSource": "码科智能",
+      "url": "https://mp.weixin.qq.com/s/vBizKyX3ayojZc3ms8BxhA",
+      "queryTrustedSource": "码科智能",
+      "matchedQuery": "verified seed article",
+      "githubUrls": [
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2"
+      ]
+    },
+    {
+      "reason": "low_confidence",
+      "title": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
+      "arxiv": "",
+      "trustedSource": "AI-Frontiers",
+      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
+      "queryTrustedSource": "AI-Frontiers",
+      "matchedQuery": "verified seed article",
+      "githubUrls": [
+        "https://github.com/opendatalab/MinerU"
+      ]
+    }
+  ],
   "duplicates": 0,
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
-  "errors": [],
+  "errors": [
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260816183834210718018c14228f5ibGWQAol)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260816183835561865402c14228f52C2bsCKH)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260816183837004724707c14228f5SPhBZ12J)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260816183838135884476c14228f58AfbVn8V)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260816183839912064456c14228f5M4d9aLRk)\",\"type\":\"dmx_api_error\"}}"
+  ],
   "searchConcurrency": 5,
-  "searchQueriesAttempted": 40,
+  "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 23,
-  "contentAvailable": 21
+  "searchRawContentResults": 33,
+  "contentAvailable": 24
 }
