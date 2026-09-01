@@ -1,18 +1,46 @@
 {
-  "lastUpdated": "2026-08-30T20:54:34Z",
+  "lastUpdated": "2026-09-01T14:57:47Z",
   "source": "scheduled-wechat-arxiv-pipeline",
   "curatedSourceMentions": {},
   "verifiedWechatArticles": [
     {
       "platform": "wechat",
       "provider": "verified-seed",
-      "account": "AI前线",
-      "articleTitle": "DeepSeek-OCR 2：用视觉因果流实现文档解析",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA%3D%3D&mid=2247654861&idx=1&sn=906e16ef457800cbb892309786abf347",
-      "foundAt": "2026-08-30",
-      "publishedDate": "2026-01-27",
-      "publicationDateEvidenceUrl": "https://www.xinfinite.net/t/topic/17198",
-      "sourceTrustMethod": "attributed_republication",
+      "account": "智谱AI",
+      "articleTitle": "GLM-OCR：0.9B 参数的端到端文档解析模型",
+      "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
+      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-03",
+      "publicationDateEvidenceUrl": "https://ainativefoundation.org/china-ai-native-industry-insights-20260203-zhipu-ai-stepfun-technology-alibaba-more/",
+      "sourceTrustMethod": "official_github_owner",
+      "arxivIds": [],
+      "githubUrls": [
+        "https://github.com/zai-org/GLM-OCR"
+      ],
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.69,
+      "isDocumentIntelligence": true,
+      "status": "github-only"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "大语言模型和具身智体及自动驾驶",
+      "articleTitle": "DeepSeek-OCR 2：视觉因果流",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788282575&ver=6940&signature=3e-*Rg6LH9sDFNyZArnIlU3eO6V75FBxErmFMeDw*Ig57Dt*oR1c-HtT578fCBqUWYjYxKJrAMdZ8O2f5rzt*x0jPr7YL9*h78vt-8hqzUVNkfC2P5uHxjLps6NeRgtX&new=1",
+      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-10",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=DeepSeek%20OCR%202%20%E8%A7%86%E8%A7%89%E5%9B%A0%E6%9E%9C%E6%B5%81",
+      "sourceTrustMethod": "browser_verified_sogou_wechat_article",
       "arxivIds": [],
       "githubUrls": [
         "https://github.com/deepseek-ai/DeepSeek-OCR-2"
@@ -25,9 +53,9 @@
         "OCR",
         "Text Recognition"
       ],
-      "classificationConfidence": 1.0,
+      "classificationConfidence": 1,
       "classificationProvider": "keywords",
-      "documentRelevanceConfidence": 0.77,
+      "documentRelevanceConfidence": 0.69,
       "isDocumentIntelligence": true,
       "status": "github-only"
     },
@@ -37,7 +65,7 @@
       "account": "数据派THU",
       "articleTitle": "DeepSeek-OCR 2 发布：复杂文档解析的新范式",
       "url": "https://mp.weixin.qq.com/s?__biz=MzI1MjQ2OTQ3Ng%3D%3D&mid=2247664839&idx=1&sn=52e9e7ad71911c266803078ab47fe23c",
-      "foundAt": "2026-08-30",
+      "foundAt": "2026-07-12",
       "publishedDate": "2026-02-08",
       "publicationDateEvidenceUrl": "https://www.xinfinite.net/t/topic/17449",
       "sourceTrustMethod": "attributed_republication",
@@ -53,12 +81,499 @@
         "OCR",
         "Text Recognition"
       ],
-      "classificationConfidence": 1.0,
-      "classificationProvider": "keywords",
-      "documentRelevanceConfidence": 0.93,
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.69,
+      "isDocumentIntelligence": true,
+      "status": "github-only"
+    },
+    {
+      "platform": "wechat",
+      "provider": "verified-seed",
+      "account": "码科智能",
+      "articleTitle": "OCR 在真实场景翻车？跨页表格、密集表格与扭曲文档解析",
+      "url": "https://mp.weixin.qq.com/s/vBizKyX3ayojZc3ms8BxhA",
+      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-04",
+      "publicationDateEvidenceUrl": "https://jishuzhan.net/article/2019417067356209154",
+      "sourceTrustMethod": "attributed_republication",
+      "arxivIds": [],
+      "githubUrls": [
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.77,
+      "isDocumentIntelligence": true,
+      "status": "github-only"
+    },
+    {
+      "platform": "wechat",
+      "provider": "verified-seed",
+      "account": "AI-Frontiers",
+      "articleTitle": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
+      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
+      "foundAt": "2026-07-12",
+      "publishedDate": "2026-02-13",
+      "publicationDateEvidenceUrl": "https://cloud.tencent.com/developer/article/2630012",
+      "sourceTrustMethod": "author_republication",
+      "arxivIds": [],
+      "githubUrls": [
+        "https://github.com/opendatalab/MinerU"
+      ],
+      "category": "rag",
+      "categories": [
+        "rag"
+      ],
+      "tags": [
+        "RAG",
+        "Document QA"
+      ],
+      "classificationConfidence": 0.9,
+      "classificationProvider": "llm",
+      "documentRelevanceConfidence": 0.61,
+      "isDocumentIntelligence": true,
+      "status": "github-only"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "腾讯混元",
+      "articleTitle": "训推全开源：HyOCR-1.5 让端到端 OCR 大模型跑得更快、看得更准、功能更全",
+      "url": "https://mp.weixin.qq.com/s/vKFCa9FfoGBUGK8J1MhFag",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-07-13",
+      "publicationDateEvidenceUrl": "https://www.liamding.com/posts/2026-07-14-daily-tech-brief/",
+      "sourceTrustMethod": "official_github_owner",
+      "arxivIds": [
+        "2607.04884"
+      ],
+      "githubUrls": [
+        "https://github.com/Tencent-Hunyuan/HunyuanOCR"
+      ],
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "arxiv-linked"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "AIGC大模型论文及应用技巧",
+      "articleTitle": "单前传搞定几十页文档！百度提出Unlimited OCR：破解长文档OCR内存瓶颈",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788282451&ver=6940&signature=-D17CM8SQ54EgMPNYEeeS7FuCt17nmLrS-ETe6ZC2OEeU8gFfm3vG7kh72C0C2pR82oVJmt4CREa3FlTUQrmu54f8-*IS6gqDlqLYeIZe1e6tzAxolq7tiYKiYuMaia4&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-22",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=Unlimited-OCR%2040%E9%A1%B5%20%E9%95%BF%E6%96%87%E6%A1%A3",
+      "sourceTrustMethod": "browser_verified_sogou_wechat_article",
+      "arxivIds": [
+        "2606.23050"
+      ],
+      "githubUrls": [
+        "https://github.com/baidu/Unlimited-OCR"
+      ],
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "arxiv-linked"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "几乎满级",
+      "articleTitle": "编排文档版面分析、OCR 与表格识别的 Python 库",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273522&ver=6940&signature=gd64WnfuY5RJdymbGUKo-ycRjMu9*DpiWeJ5FJkZMJtL8r-bBQYxlfll3CbcaKraEQ9CasuK2bYwH*iA-ujttMxZ9NRJxRDrUhtbfO90dCTgG5arJgfdQCyTu12oYtHd&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-22",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=%E7%BC%96%E6%8E%92%E6%96%87%E6%A1%A3%E7%89%88%E9%9D%A2%E5%88%86%E6%9E%90%20OCR%20%E8%A1%A8%E6%A0%BC%E8%AF%86%E5%88%AB%20Python%20%E5%BA%93",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "layout",
+      "categories": [
+        "layout"
+      ],
+      "tags": [
+        "Layout Analysis",
+        "Document Parsing"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "Doc问视界",
+      "articleTitle": "ECCV 2026|StrucTab:先理解表格结构,再生成HTML",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788280921&ver=6940&signature=IFBolbqSgHGUpLBeT1qzmI9ZOwHkvZ2gyQX4ukGoNrPApKbZDG2qVnzxzk2CgIb4hjZAJxNHfbqUc8*7VMRVeEOQvdFBBl4VNx24iESYIPL3U247e4hCPKPNT63dRLe6&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-29",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=ECCV%202026%20StrucTab%20%E8%A1%A8%E6%A0%BC%E7%BB%93%E6%9E%84%20HTML",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [
+        "2606.29905"
+      ],
+      "githubUrls": [
+        "https://github.com/VirtualLUOUCAS/StrucTab"
+      ],
+      "category": "table",
+      "categories": [
+        "table"
+      ],
+      "tags": [
+        "Table Understanding",
+        "Table Parsing"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "arxiv-linked"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "AI架构实战",
+      "articleTitle": "【专题】RAG 进阶四 —— 多模态 RAG 搞定 PDF 图片与表格",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273676&ver=6940&signature=UsLXtfuv8YnSnt15dGZ77LLKMHcbEWr*dJlgXgyRqclUhDxPSlaiWPS7Qx7MWIyCaXVwp5uNj6-XfLKsIUhbcenYZ-U2lIrB9YWXcu0oNEXjPgh7LxY50LTdAMjMTq46&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-23",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=RAG%20%E8%BF%9B%E9%98%B6%E5%9B%9B%20%E5%A4%9A%E6%A8%A1%E6%80%81%20RAG%20PDF%20%E5%9B%BE%E7%89%87%20%E8%A1%A8%E6%A0%BC",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "table",
+      "categories": [
+        "table"
+      ],
+      "tags": [
+        "Table Understanding",
+        "Multimodal Documents"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "Doc问视界",
+      "articleTitle": "ACL 2026|LAD-RAG:让文档RAG看懂版式,并自己决定找几页",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273895&ver=6940&signature=IFBolbqSgHGUpLBeT1qzmI9ZOwHkvZ2gyQX4ukGoNrMkSeLSZfkzSo4xwqoObU4OGw0epmjetwNGtJ3OvTKp8HcOTSWQ09XQsW5aSikESWfLz5qEsaxPTpxkGOTiunnq&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-24",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=ACL%202026%20LAD-RAG",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "rag",
+      "categories": [
+        "rag"
+      ],
+      "tags": [
+        "Retrieval-Augmented Generation",
+        "Layout-Aware Retrieval"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "深度学习研究生",
+      "articleTitle": "KDD 2026|多模态文档检索不必先做 OCR:DocRetriever 用混合编码与视觉 ICL 提升跨域召回",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273676&ver=6940&signature=E7gmFXmuAevAv9FlgUGY8ZwlsLF-W0eLLz2Xt5HegbiBVN5sUBfB58e9JivsUJBm-Bk6BzPYRkdY72oOyMJxvin9UKfqaoZuTeMDoEGVqBbALabsB7GJ*esv3z9pyUZP&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-26",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=KDD%202026%20DocRetriever",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "rag",
+      "categories": [
+        "rag"
+      ],
+      "tags": [
+        "Retrieval-Augmented Generation",
+        "Multimodal Retrieval"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "清瑶智能",
+      "articleTitle": "模型发布|Qinova视觉语言文档理解模型",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273548&ver=6940&signature=a-KZIFUX8viok0zE6pXjOfKmkj6KeRnHSamhOCXxjVRRr6IVQtA*rO93Z*ooHlx7RDP6I8V1OZFT5InQ-tr7KtWP9qkp2jEpA0jDOgdgHGXYHHzmPRZQujNU3D6z*cgt&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-07-30",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=Qinova%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E6%96%87%E6%A1%A3%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "vlm",
+      "categories": [
+        "vlm"
+      ],
+      "tags": [
+        "Vision-Language Models",
+        "Document Understanding"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "中国图象图形学报",
+      "articleTitle": "直播预告 | MonkeyOCRv2通用文档模型与MinerU.Chem化学结构与反应识别【CSIG文档图像微沙龙】",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273708&ver=6940&signature=Hkk46UfLSzQt-K2XSlZEuohPJpHyV6ucPzowwAwdqHm88Etusi3v-3O5KMKZVXxtYAxPObdcRJ8gG642XhDKI5cM*Bm5VRUb1tD*kZmF33FOLgz3-ST9H6T2wGRKp5zX&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-28",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=MonkeyOCRv2%20MinerU.Chem",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "vlm",
+      "categories": [
+        "vlm"
+      ],
+      "tags": [
+        "Vision-Language Models",
+        "Document Understanding"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "AIGC Studio",
+      "articleTitle": "端到端OCR首次登顶 OmniDocBench!阿里开源 OvisOCR2,仅 0.8B 参数搞定表格/公式/手写文档解析,可免费商用!",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788273686&ver=6940&signature=NyaS4wuXiL6koZ*sKuKsKOKsjuK5RHW38SMUyJmoYn6uF4t7THP8pP-LNduXMnNuvEJkO1THx2U-fu9opGBgCZkmmoMJdgdRTh42QlLhp6AqnH-Ys0BP4F19k*bFU8*H&new=1",
+      "foundAt": "2026-09-01",
+      "publishedDate": "2026-08-31",
+      "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=OvisOCR2%20OmniDocBench",
+      "sourceTrustMethod": "sogou_wechat_index_and_page_metadata",
+      "arxivIds": [],
+      "githubUrls": [],
+      "category": "eval",
+      "categories": [
+        "eval"
+      ],
+      "tags": [
+        "Evaluation & Benchmarks",
+        "OmniDocBench"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "verified-source"
+    },
+    {
+      "platform": "wechat",
+      "provider": "manual-review",
+      "account": "量子位",
+      "articleTitle": "20ms把PDF变成Markdown！开源OCR神器快了近300倍",
+      "url": "https://www.qbitai.com/2026/08/481075.html",
+      "foundAt": "2026-09-02",
+      "publishedDate": "2026-08-29",
+      "publicationDateEvidenceUrl": "https://www.qbitai.com/2026/08/481075.html",
+      "sourceTrustMethod": "official_publisher_page_browser_verified",
+      "arxivIds": [],
+      "githubUrls": [
+        "https://github.com/thiagotigaz/ocr-it"
+      ],
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "tags": [
+        "OCR",
+        "PDF Parsing",
+        "Markdown Conversion"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
       "isDocumentIntelligence": true,
       "status": "github-only"
     }
   ],
-  "papers": []
+  "papers": [
+    {
+      "id": "arxiv:2607.04884",
+      "arxiv": "2607.04884",
+      "title": "HunyuanOCR-1.5: Making Lightweight OCR VLMs Faster and Better",
+      "authors": "Gengluo Li, Xingyu Wan, Shangpin Peng, Weinong Wang, Hao Feng, Yongkun Du, Binghong Wu, Zheng Ruan, Zhiqiong Lu, Liang Wu, Pengyuan Lyu, Huawen Shen, Zibin Lin, Shijing Hu, Jieneng Yang, Hongbing Wen, Guanghua Yu, Hong Liu, Bochao Wang, Can Ma, Han Hu, Chengquan Zhang, Yu Zhou",
+      "abstract": "We present HunyuanOCR-1.5, a lightweight end-to-end OCR-specialized vision-language model. HunyuanOCR unifies document parsing, text spotting, information extraction, text-image translation, and multi-image document understanding within a single end-to-end VLM. Building upon the lightweight architecture of HunyuanOCR-1.0, HunyuanOCR-1.5 does not redesign the backbone, but systematically improves both efficiency and capability. For efficiency, we adapt DFlash to OCR decoding, significantly reducing the latency of long structured outputs such as dense documents, tables, and formulas while preserving output distribution. Powered by DFlash, HunyuanOCR-1.5 achieves a 6.37x Transformer inference speedup and a 2.14x speedup under vLLM, delivering the fastest inference among lightweight OCR VLMs. For capability, we propose Agentic Data Flow, an agent-driven data construction system that transforms model weaknesses into executable data requirements and autonomously performs material search, quality verification, and pipeline development. It substantially improves long-tail capabilities in ancient-script OCR, fine-grained chart and table parsing, multi-image text-centric QA, low-resource multilingual parsing, and document hallucination evaluation. HunyuanOCR-1.5 ranks among the top-tier end-to-end OCR solutions on OmniDocBench v1.6 while achieving new performance milestones across these long-tail tasks. Combined with an upgraded pretraining and post-training recipe, HunyuanOCR-1.5 further extends its capability in high-resolution, long-context, and multi-task scenarios. Experiments demonstrate faster inference, broader OCR capability coverage, and the deployment advantages of a lightweight end-to-end model. We will release the model weights and training code to support future research and real-world OCR applications.",
+      "year": 2026,
+      "published": "2026-07-06",
+      "updated": "2026-08-06",
+      "venue": "arXiv 2026",
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "subcategory": "OCR & Text Recognition",
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "auto",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "url": "https://arxiv.org/abs/2607.04884",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04884",
+      "primaryArxivCategory": "cs.CV",
+      "sourceMentions": [
+        {
+          "platform": "wechat",
+          "provider": "manual-review",
+          "account": "腾讯混元",
+          "articleTitle": "训推全开源：HyOCR-1.5 让端到端 OCR 大模型跑得更快、看得更准、功能更全",
+          "url": "https://mp.weixin.qq.com/s/vKFCa9FfoGBUGK8J1MhFag",
+          "foundAt": "2026-09-01",
+          "publishedDate": "2026-07-13",
+          "publicationDateEvidenceUrl": "https://www.liamding.com/posts/2026-07-14-daily-tech-brief/",
+          "sourceTrustMethod": "official_github_owner"
+        }
+      ]
+    },
+    {
+      "id": "arxiv:2606.23050",
+      "arxiv": "2606.23050",
+      "title": "Unlimited OCR Works",
+      "authors": "Youyang Yin, Huanhuan Liu, YY, Qunyi Xie, Chaorun Liu, Shiqi Yang, Shaohua Wang, Zhanlong Liu, Hao Zou, Jinyue Chen, Shu Wei, Jingjing Wu, Mingxin Huang, Zhen Wu, Guibin Wang, Tengyu Du, Lei Jia",
+      "abstract": "Recently, end-to-end OCR models, exemplified by DeepSeek OCR, have once again thrust OCR into the spotlight. A widely held view is that employing a large language model (LLM) as the decoder allows the model to leverage the prior distribution of language, leading to improved OCR performance. However, the downside is equally evident: as the output sequence lengthens, the accumulated KV cache drives up memory consumption and progressively slows down generation. This stands in stark contrast to humans, who exhibit no such decline in efficiency during long-horizon copying tasks. In this technical report, we propose Unlimited OCR, a model designed to emulate human parsing working memory. Taking DeepSeek OCR as the baseline, we replace all attention layers in the decoder with our proposed Reference Sliding Window Attention (R-SWA), which reduces attention computation costs while maintaining a constant KV cache throughout the entire decoding process. By combining the high compression rate of DeepSeek OCR's encoder with our constant KV cache design, Unlimited OCR can transcribe dozens of pages of documents in a single forward pass under a standard maximum length of 32K. More importantly, R-SWA is a general-purpose parsing attention mechanism - beyond OCR, it is equally applicable to tasks such as ASR, translation, etc. Codes and model weights are publicly available at http://github.com/baidu/Unlimited-OCR.",
+      "year": 2026,
+      "published": "2026-06-22",
+      "updated": "2026-06-22",
+      "venue": "arXiv 2026",
+      "category": "ocr",
+      "categories": [
+        "ocr"
+      ],
+      "subcategory": "OCR & Text Recognition",
+      "tags": [
+        "OCR",
+        "Text Recognition"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "auto",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "url": "https://arxiv.org/abs/2606.23050",
+      "pdfUrl": "https://arxiv.org/pdf/2606.23050",
+      "primaryArxivCategory": "cs.CV",
+      "sourceMentions": [
+        {
+          "platform": "wechat",
+          "provider": "manual-review",
+          "account": "AIGC大模型论文及应用技巧",
+          "articleTitle": "单前传搞定几十页文档！百度提出Unlimited OCR：破解长文档OCR内存瓶颈",
+          "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788282451&ver=6940&signature=-D17CM8SQ54EgMPNYEeeS7FuCt17nmLrS-ETe6ZC2OEeU8gFfm3vG7kh72C0C2pR82oVJmt4CREa3FlTUQrmu54f8-*IS6gqDlqLYeIZe1e6tzAxolq7tiYKiYuMaia4&new=1",
+          "foundAt": "2026-09-01",
+          "publishedDate": "2026-08-22",
+          "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=Unlimited-OCR%2040%E9%A1%B5%20%E9%95%BF%E6%96%87%E6%A1%A3",
+          "sourceTrustMethod": "browser_verified_sogou_wechat_article"
+        }
+      ]
+    },
+    {
+      "id": "arxiv:2606.29905",
+      "arxiv": "2606.29905",
+      "title": "StrucTab: A Structured Optimization Framework for Table Parsing",
+      "authors": "Gengluo Li, Shangpin Peng, Chengquan Zhang, Binghong Wu, Hao Feng, Weinong Wang, Pengyuan Lyu, Huawen Shen, Xingyu Wan, Zhuotao Tian, Han Hu, Can Ma, Yu Zhou",
+      "abstract": "Table parsing aims to convert table images into structured, machine-readable representations, a task requiring the joint perception of complex spatial layouts and textual content. While recent vision-language models (VLMs) enable end-to-end parsing, they typically rely on direct supervision of the final output, thereby bypassing the explicit intermediate reasoning that is crucial for understanding complex table structures. Furthermore, attempts to optimize these models using reinforcement learning (RL) are often hindered by unstable or ambiguous reward designs, limiting potential performance gains. To address these limitations, we propose StrucTab, a table parsing model learned through intermediate structural supervision and reward decomposition. At the modeling level, by decomposing the parsing process into human-inspired subtasks, such as row-column counting and merged-cell analysis, StrucTab progressively unifies them through a sequential reasoning strategy. At the optimization level, we introduce Uni-TabRL, a unified RL framework that leverages decomposed rewards (validity, structure, and content) to provide stable and informative optimization signals. Finally, at the evaluation level, we present TableVerse-5K, a large-scale, challenging benchmark encompassing diverse, real-world table scenarios. Extensive experiments demonstrate the state-of-the-art performance of StrucTab across all evaluated public benchmarks and significant improvements on TableVerse-5K, validating the effectiveness of explicit structural modeling and decomposed reward optimization. Code and benchmark are publicly available at https://github.com/VirtualLUOUCAS/StrucTab.",
+      "year": 2026,
+      "published": "2026-06-29",
+      "updated": "2026-06-29",
+      "venue": "arXiv 2026",
+      "category": "table",
+      "categories": [
+        "table"
+      ],
+      "subcategory": "Table Understanding",
+      "tags": [
+        "Table Understanding",
+        "Table Parsing"
+      ],
+      "classificationConfidence": 1,
+      "classificationProvider": "manual-review",
+      "documentRelevanceConfidence": 1,
+      "isDocumentIntelligence": true,
+      "status": "auto",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "url": "https://arxiv.org/abs/2606.29905",
+      "pdfUrl": "https://arxiv.org/pdf/2606.29905",
+      "primaryArxivCategory": "cs.CV",
+      "sourceMentions": [
+        {
+          "platform": "wechat",
+          "provider": "manual-review",
+          "account": "Doc问视界",
+          "articleTitle": "ECCV 2026|StrucTab:先理解表格结构,再生成HTML",
+          "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1788280921&ver=6940&signature=IFBolbqSgHGUpLBeT1qzmI9ZOwHkvZ2gyQX4ukGoNrPApKbZDG2qVnzxzk2CgIb4hjZAJxNHfbqUc8*7VMRVeEOQvdFBBl4VNx24iESYIPL3U247e4hCPKPNT63dRLe6&new=1",
+          "foundAt": "2026-09-01",
+          "publishedDate": "2026-08-29",
+          "publicationDateEvidenceUrl": "https://weixin.sogou.com/weixin?type=2&query=ECCV%202026%20StrucTab%20%E8%A1%A8%E6%A0%BC%E7%BB%93%E6%9E%84%20HTML",
+          "sourceTrustMethod": "sogou_wechat_index_and_page_metadata"
+        }
+      ]
+    }
+  ]
 }

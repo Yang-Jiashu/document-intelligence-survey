@@ -18,6 +18,7 @@ function escapeHtml(value) {
 function paperMatchesQuery(paper, query) {
     if (!query) return true;
     const sourceMentions = getWechatSourceMentions(paper);
+    const isWechatArticle = paper.sourceType === 'wechat';
     const haystack = [
         paper.title,
         paper.authors,
@@ -35,8 +36,8 @@ function paperMatchesQuery(paper, query) {
         paper.sourceType,
         paper.sourceType === 'auto' ? 'auto-discovered' : '',
         paper.isDocumentIntelligence === false ? 'source-only outside document intelligence other' : '',
-        sourceMentions.length ? 'wechat 微信 公众号 wechat source' : '',
-        ...sourceMentions.flatMap(mention => [mention.account, mention.articleTitle]),
+        isWechatArticle ? 'wechat 微信 公众号 wechat source' : '',
+        ...(isWechatArticle ? sourceMentions.flatMap(mention => [mention.account, mention.articleTitle]) : []),
     ].join(' ').toLowerCase();
     return haystack.includes(query.toLowerCase());
 }
@@ -93,12 +94,8 @@ function getSearchPapers() {
             stars: paper.stars || 0
         }))
         : [];
-    const linkedWechatUrls = new Set(
-        curated.concat(dynamic).flatMap(paper => getWechatSourceMentions(paper).map(mention => mention.url))
-    );
     const verifiedWechatArticles = Array.isArray(dynamicPaperIndex?.verifiedWechatArticles)
         ? dynamicPaperIndex.verifiedWechatArticles
-            .filter(article => !linkedWechatUrls.has(article.url))
             .map((article, index) => ({
                 id: `wechat:${index}`,
                 title: article.articleTitle || '微信公众号文章',
@@ -123,7 +120,9 @@ function getWechatSourceMentions(paper) {
     const urls = new Set();
     return mentions.filter(mention => {
         const url = String(mention?.url || '');
-        if (!/^https:\/\/mp\.weixin\.qq\.com\/(?:s\/|s\?)/i.test(url) || urls.has(url)) return false;
+        const isWechatArticleUrl = /^https:\/\/mp\.weixin\.qq\.com\/(?:s\/|s\?)/i.test(url);
+        const isVerifiedPublisherUrl = paper.sourceType === 'wechat' && /^https:\/\//i.test(url);
+        if ((!isWechatArticleUrl && !isVerifiedPublisherUrl) || urls.has(url)) return false;
         urls.add(url);
         return true;
     });
