@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-08-30T20:54:34Z",
+  "lastRun": "2026-09-06T20:17:26Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
@@ -44,22 +44,22 @@
       "errors": 0
     }
   },
-  "extractRequested": 11,
-  "extractSucceeded": 8,
+  "extractRequested": 8,
+  "extractSucceeded": 5,
   "extractFailed": 3,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
-  "githubProjectsFound": 16,
+  "githubProjectsFound": 5,
   "githubProjectsPublished": 2,
   "verifiedSeedArticles": 5,
   "publicationYearRejected": 18,
   "publicationEvidenceRejected": 0,
-  "documentRelevant": 5,
+  "documentRelevant": 8,
   "documentIrrelevant": 0,
   "llmClassificationEnabled": true,
-  "llmClassificationAttempted": 5,
+  "llmClassificationAttempted": 8,
   "llmClassificationSucceeded": 0,
-  "llmClassificationFailed": 5,
+  "llmClassificationFailed": 8,
   "llmClassificationSkipped": 0,
   "autoPublished": 0,
   "pendingReview": 0,
@@ -85,18 +85,7 @@
       "queryTrustedSource": "飞桨PaddlePaddle",
       "matchedQuery": "site:mp.weixin.qq.com/s 飞桨PaddlePaddle PaddleOCR",
       "githubUrls": [
-        "https://github.com/Unstructured-IO/unstructured",
-        "https://github.com/VikParuchuri/marker",
-        "https://github.com/pymupdf/PyMuPDF",
-        "https://github.com/docling-project/docling",
-        "https://github.com/opendatalab/MinerU",
-        "https://github.com/PaddlePaddle/PaddleOCR",
-        "https://github.com/deepseek-ai/DeepSeek-OCR",
-        "https://github.com/deepseek-ai/DeepSeek-OCR-2",
-        "https://github.com/chonkie-inc/chonkie",
-        "https://github.com/aurelio-labs/semantic-router",
-        "https://github.com/FlagOpen/FlagEmbedding",
-        "https://github.com/milvus-io/milvus"
+        "https://github.com/opendatalab/MinerU"
       ]
     },
     {
@@ -114,17 +103,20 @@
   ],
   "duplicates": 0,
   "ignoredExistingCurated": 0,
-  "existingRemovedAsIrrelevant": 0,
+  "existingRemovedAsIrrelevant": 2,
   "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260830205501270660212c14228f5r6EIiAn7)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260830205502651215191c14228f52TMu9e5o)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260830205503877414350c14228f5oXV20KOh)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260830205505514944842c14228f5UFYM8md7)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260830205506749170294c14228f5V8P7qow4)\",\"type\":\"dmx_api_error\"}}"
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201726927376049c14228f570LxlQTc)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201727831856535c14228f5yiQVdCns)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201728558544149c14228f5bfdXQaIo)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201756225555829c14228f5KzZzXl99)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201757687511129c14228f51s514Rxu)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201758545968655c14228f5alyEP5XU)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201800063254661c14228f53ZGbqxN3)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201801024342533c14228f5lge9AyCu)\",\"type\":\"dmx_api_error\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 24,
+  "searchRawContentResults": 28,
   "contentAvailable": 22
 }
