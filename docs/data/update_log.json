@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-09-06T20:17:26Z",
+  "lastRun": "2026-09-13T20:38:19Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
@@ -49,33 +49,21 @@
   "extractFailed": 3,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
-  "githubProjectsFound": 5,
+  "githubProjectsFound": 16,
   "githubProjectsPublished": 2,
   "verifiedSeedArticles": 5,
-  "publicationYearRejected": 18,
+  "publicationYearRejected": 19,
   "publicationEvidenceRejected": 0,
-  "documentRelevant": 8,
+  "documentRelevant": 6,
   "documentIrrelevant": 0,
   "llmClassificationEnabled": true,
-  "llmClassificationAttempted": 8,
+  "llmClassificationAttempted": 6,
   "llmClassificationSucceeded": 0,
-  "llmClassificationFailed": 8,
+  "llmClassificationFailed": 6,
   "llmClassificationSkipped": 0,
   "autoPublished": 0,
   "pendingReview": 0,
   "pendingPreview": [
-    {
-      "reason": "low_confidence",
-      "title": "GLM-OCR：0.9B 参数的端到端文档解析模型",
-      "arxiv": "",
-      "trustedSource": "智谱AI",
-      "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
-      "queryTrustedSource": "新智元",
-      "matchedQuery": "site:mp.weixin.qq.com/s 新智元 GLM-OCR",
-      "githubUrls": [
-        "https://github.com/zai-org/GLM-OCR"
-      ]
-    },
     {
       "reason": "low_confidence",
       "title": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
@@ -85,7 +73,30 @@
       "queryTrustedSource": "飞桨PaddlePaddle",
       "matchedQuery": "site:mp.weixin.qq.com/s 飞桨PaddlePaddle PaddleOCR",
       "githubUrls": [
-        "https://github.com/opendatalab/MinerU"
+        "https://github.com/Unstructured-IO/unstructured",
+        "https://github.com/VikParuchuri/marker",
+        "https://github.com/pymupdf/PyMuPDF",
+        "https://github.com/docling-project/docling",
+        "https://github.com/opendatalab/MinerU",
+        "https://github.com/PaddlePaddle/PaddleOCR",
+        "https://github.com/deepseek-ai/DeepSeek-OCR",
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2",
+        "https://github.com/chonkie-inc/chonkie",
+        "https://github.com/aurelio-labs/semantic-router",
+        "https://github.com/FlagOpen/FlagEmbedding",
+        "https://github.com/milvus-io/milvus"
+      ]
+    },
+    {
+      "reason": "low_confidence",
+      "title": "GLM-OCR：0.9B 参数的端到端文档解析模型",
+      "arxiv": "",
+      "trustedSource": "智谱AI",
+      "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
+      "queryTrustedSource": "智谱AI",
+      "matchedQuery": "verified seed article",
+      "githubUrls": [
+        "https://github.com/zai-org/GLM-OCR"
       ]
     },
     {
@@ -103,20 +114,18 @@
   ],
   "duplicates": 0,
   "ignoredExistingCurated": 0,
-  "existingRemovedAsIrrelevant": 2,
+  "existingRemovedAsIrrelevant": 0,
   "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201726927376049c14228f570LxlQTc)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201727831856535c14228f5yiQVdCns)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201728558544149c14228f5bfdXQaIo)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201756225555829c14228f5KzZzXl99)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201757687511129c14228f51s514Rxu)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201758545968655c14228f5alyEP5XU)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201800063254661c14228f53ZGbqxN3)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260906201801024342533c14228f5lge9AyCu)\",\"type\":\"dmx_api_error\"}}"
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203820168105049c14228f52758UPOx)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203846782450354c14228f5BD1lkTcr)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203848025472901c14228f5fq8E93ld)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203849425876789c14228f5JTxkQPiB)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203850751913829c14228f5WuAgv9we)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203852006830050c14228f5NfkzPpRb)\",\"type\":\"dmx_api_error\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 28,
-  "contentAvailable": 22
+  "searchRawContentResults": 27,
+  "contentAvailable": 23
 }
