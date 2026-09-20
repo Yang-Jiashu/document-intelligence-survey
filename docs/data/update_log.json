@@ -1,12 +1,14 @@
 {
-  "lastRun": "2026-09-13T20:38:19Z",
+  "lastRun": "2026-09-20T20:39:30Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
   "rawSearchResults": 35,
-  "wechatSearchResults": 35,
-  "filteredNonWechat": 0,
-  "filteredExamples": [],
+  "wechatSearchResults": 34,
+  "filteredNonWechat": 1,
+  "filteredExamples": [
+    "https://www.textin.com/about"
+  ],
   "sourceSearchSummary": {
     "新智元": {
       "queries": 1,
@@ -39,20 +41,20 @@
     "合合信息": {
       "queries": 1,
       "rawResults": 7,
-      "wechatResults": 7,
+      "wechatResults": 6,
       "queriesWithWechatResults": 1,
       "errors": 0
     }
   },
-  "extractRequested": 8,
-  "extractSucceeded": 5,
-  "extractFailed": 3,
+  "extractRequested": 14,
+  "extractSucceeded": 12,
+  "extractFailed": 2,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
-  "githubProjectsFound": 16,
+  "githubProjectsFound": 21,
   "githubProjectsPublished": 2,
   "verifiedSeedArticles": 5,
-  "publicationYearRejected": 19,
+  "publicationYearRejected": 20,
   "publicationEvidenceRejected": 0,
   "documentRelevant": 6,
   "documentIrrelevant": 0,
@@ -64,29 +66,6 @@
   "autoPublished": 0,
   "pendingReview": 0,
   "pendingPreview": [
-    {
-      "reason": "low_confidence",
-      "title": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
-      "arxiv": "",
-      "trustedSource": "AI-Frontiers",
-      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
-      "queryTrustedSource": "飞桨PaddlePaddle",
-      "matchedQuery": "site:mp.weixin.qq.com/s 飞桨PaddlePaddle PaddleOCR",
-      "githubUrls": [
-        "https://github.com/Unstructured-IO/unstructured",
-        "https://github.com/VikParuchuri/marker",
-        "https://github.com/pymupdf/PyMuPDF",
-        "https://github.com/docling-project/docling",
-        "https://github.com/opendatalab/MinerU",
-        "https://github.com/PaddlePaddle/PaddleOCR",
-        "https://github.com/deepseek-ai/DeepSeek-OCR",
-        "https://github.com/deepseek-ai/DeepSeek-OCR-2",
-        "https://github.com/chonkie-inc/chonkie",
-        "https://github.com/aurelio-labs/semantic-router",
-        "https://github.com/FlagOpen/FlagEmbedding",
-        "https://github.com/milvus-io/milvus"
-      ]
-    },
     {
       "reason": "low_confidence",
       "title": "GLM-OCR：0.9B 参数的端到端文档解析模型",
@@ -110,22 +89,50 @@
       "githubUrls": [
         "https://github.com/deepseek-ai/DeepSeek-OCR-2"
       ]
+    },
+    {
+      "reason": "low_confidence",
+      "title": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
+      "arxiv": "",
+      "trustedSource": "AI-Frontiers",
+      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
+      "queryTrustedSource": "AI-Frontiers",
+      "matchedQuery": "verified seed article",
+      "githubUrls": [
+        "https://github.com/Unstructured-IO/unstructured",
+        "https://github.com/VikParuchuri/marker",
+        "https://github.com/pymupdf/PyMuPDF",
+        "https://github.com/docling-project/docling",
+        "https://github.com/opendatalab/MinerU",
+        "https://github.com/PaddlePaddle/PaddleOCR",
+        "https://github.com/deepseek-ai/DeepSeek-OCR",
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2",
+        "https://github.com/chonkie-inc/chonkie",
+        "https://github.com/aurelio-labs/semantic-router",
+        "https://github.com/FlagOpen/FlagEmbedding",
+        "https://github.com/milvus-io/milvus",
+        "https://github.com/qdrant/qdrant",
+        "https://github.com/weaviate/weaviate",
+        "https://github.com/pgvector/pgvector",
+        "https://github.com/sunnweiwei/RankGPT",
+        "https://github.com/PrithivirajDamodaran/FlashRank"
+      ]
     }
   ],
   "duplicates": 0,
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
   "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203820168105049c14228f52758UPOx)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203846782450354c14228f5BD1lkTcr)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203848025472901c14228f5fq8E93ld)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203849425876789c14228f5JTxkQPiB)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203850751913829c14228f5WuAgv9we)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260913203852006830050c14228f5NfkzPpRb)\",\"type\":\"dmx_api_error\"}}"
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260920203931547888354c14228f5fdh7jkVO)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260920204003499488439c14228f5hsjJGluX)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260920204004862470435c14228f5Nd8wv6B4)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260920204006484279021c14228f5I2wXIHcF)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260920204007662884103c14228f59fl0wPXO)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260920204009547488891c14228f5QLNygN3x)\",\"type\":\"dmx_api_error\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 27,
-  "contentAvailable": 23
+  "searchRawContentResults": 20,
+  "contentAvailable": 25
 }
