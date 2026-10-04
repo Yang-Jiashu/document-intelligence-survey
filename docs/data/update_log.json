@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-09-27T21:13:39Z",
+  "lastRun": "2026-10-04T21:11:08Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
@@ -44,8 +44,8 @@
       "errors": 0
     }
   },
-  "extractRequested": 12,
-  "extractSucceeded": 10,
+  "extractRequested": 16,
+  "extractSucceeded": 14,
   "extractFailed": 2,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
@@ -105,16 +105,16 @@
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
   "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260927211339983279164c14228f53VOaGzaS)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260927211413125733546c14228f5QEhtbyQJ)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260927211414489001361c14228f5QxxPq1Si)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260927211416123004076c14228f5wbrLLsRV)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260927211417192569540c14228f5PW5aqU0k)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20260927211417930980144c14228f5Pq8fKfXS)\",\"type\":\"dmx_api_error\"}}"
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261004211109590403439c14228f5x1jrGV2e)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261004211137361882135c14228f5N0QCTFfk)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261004211138535933308c14228f5lQZdusMA)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261004211139914341552c14228f5PeLKzEpw)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261004211141022931024c14228f5FYtqbRLI)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261004211141928936597c14228f5U3F4YQRv)\",\"type\":\"dmx_api_error\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 21,
+  "searchRawContentResults": 24,
   "contentAvailable": 24
 }
