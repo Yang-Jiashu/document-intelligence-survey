@@ -1,19 +1,17 @@
 {
-  "lastRun": "2026-10-11T21:44:49Z",
+  "lastRun": "2026-10-18T20:26:38Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
   "rawSearchResults": 35,
-  "wechatSearchResults": 34,
-  "filteredNonWechat": 1,
-  "filteredExamples": [
-    "https://www.geeksforgeeks.org/machine-learning/generalized-linear-models"
-  ],
+  "wechatSearchResults": 35,
+  "filteredNonWechat": 0,
+  "filteredExamples": [],
   "sourceSearchSummary": {
     "新智元": {
       "queries": 1,
       "rawResults": 7,
-      "wechatResults": 6,
+      "wechatResults": 7,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
@@ -46,8 +44,8 @@
       "errors": 0
     }
   },
-  "extractRequested": 15,
-  "extractSucceeded": 13,
+  "extractRequested": 17,
+  "extractSucceeded": 15,
   "extractFailed": 2,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
@@ -107,16 +105,16 @@
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
   "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261011214450125165543c14228f5XQbAyhRR)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261011214514357823140c14228f5CjGcWeK3)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261011214515555213571c14228f5kjpJzTZS)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261011214517177314317c14228f5kkSXdcDW)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261011214518596965477c14228f5cSRNctnU)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261011214519472357853c14228f5OhFGQdvz)\",\"type\":\"dmx_api_error\"}}"
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261018202639111533242c14228f5p346IG5m)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261018202707679999185c14228f5bHntfDhK)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261018202709126084145c14228f5ljcXguqL)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261018202710839881406c14228f5eGL4t1gv)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261018202711981238821c14228f5LTZiyOwt)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261018202712892350906c14228f51FYtsocQ)\",\"type\":\"dmx_api_error\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 20,
+  "searchRawContentResults": 18,
   "contentAvailable": 24
 }
