@@ -1,0 +1,52 @@
+name: Diagnose RRC transport
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [final]
+    paths: [.github/workflows/diagnose-rrc.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: final
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Probe verified TLS and public HTTP without changing data
+        run: |
+          python - <<'PY'
+          import ssl, urllib.request
+          from datetime import date
+          from scripts.update_sota import RRCDocVQAAdapter
+          print(ssl.OPENSSL_VERSION)
+          print(ssl.get_default_verify_paths())
+          for label, context in [("default", ssl.create_default_context()), ("Ubuntu CA bundle", ssl.create_default_context(cafile="/etc/ssl/certs/ca-certificates.crt"))]:
+              try:
+                  with urllib.request.urlopen("https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1", context=context, timeout=15) as response:
+                      print(label, response.status, response.geturl())
+              except Exception as exc:
+                  print(label, repr(exc))
+          for bench, task in [("docvqa", 1), ("infographicvqa", 3)]:
+              adapter = RRCDocVQAAdapter(bench, task)
+              url = adapter.url.replace("https://", "http://", 1)
+              try:
+                  with urllib.request.urlopen(url, timeout=15) as response:
+                      adapter._validate_response_url(response.geturl())
+                      entries = adapter._parse_entries(response.read().decode("utf-8"), date.today().isoformat())
+                      print("Official HTTP", bench, response.status, len(entries), [(row["model"], row["score"]) for row in entries[:5]])
+              except Exception as exc:
+                  print("Official HTTP", bench, repr(exc))
+          PY
+      - name: Inspect offered certificate chain
+        run: |
+          openssl s_client -showcerts -connect rrc.cvc.uab.es:443 -servername rrc.cvc.uab.es -verify_return_error </dev/null > "$RUNNER_TEMP/rrc-tls.txt" 2>&1 || true
+          cat "$RUNNER_TEMP/rrc-tls.txt"
+          openssl x509 -in "$RUNNER_TEMP/rrc-tls.txt" -noout -subject -issuer -ext authorityInfoAccess || true
