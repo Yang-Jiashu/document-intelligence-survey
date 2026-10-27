@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -26,12 +27,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  check-source-run:
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.result }}
+    steps:
+      - name: Verify updater committed a safe snapshot
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if (context.eventName !== 'workflow_run') return true;
+            const run = context.payload.workflow_run;
+            if (run.name !== 'Update SOTA snapshot') {
+              return run.conclusion === 'success';
+            }
+            if (run.head_branch !== 'final' || run.status !== 'completed' ||
+                !['success', 'failure'].includes(run.conclusion)) return false;
+            const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {
+              ...context.repo,
+              run_id: run.id,
+              filter: 'latest',
+              per_page: 100
+            });
+            const snapshotJobs = jobs.filter(job => job.name === 'update-sota');
+            return snapshotJobs.length === 1 && snapshotJobs[0].conclusion === 'success';
+
   deploy:
-    # 普通 push 和手动运行直接执行；
-    # workflow_run 只有成功时才部署
-    if: >
-      github.event_name != 'workflow_run' ||
-      github.event.workflow_run.conclusion == 'success'
+    needs: check-source-run
+    if: ${{ needs.check-source-run.outputs.allowed == 'true' }}
 
     environment:
       name: github-pages

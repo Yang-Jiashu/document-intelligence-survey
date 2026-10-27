@@ -1,0 +1,50 @@
+name: Test SOTA updater
+
+on:
+  pull_request:
+    branches: [final]
+    paths:
+      - scripts/update_sota.py
+      - tests/**
+      - docs/data/sota.json
+      - docs/js/app.js
+      - docs/css/style.css
+      - .github/workflows/test-sota.yml
+      - .github/workflows/update-sota.yml
+      - .github/workflows/deploy.yml
+  push:
+    branches: [final]
+    paths:
+      - scripts/update_sota.py
+      - tests/**
+      - docs/data/sota.json
+      - docs/js/app.js
+      - docs/css/style.css
+      - .github/workflows/test-sota.yml
+      - .github/workflows/update-sota.yml
+      - .github/workflows/deploy.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run offline SOTA regression tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
+
+      - name: Test SOTA source status rendering
+        run: node tests/test_sota_status.js
+
+      - name: Test snapshot deployment gate offline
+        run: node tests/test_sota_deployment.js

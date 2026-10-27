@@ -789,6 +789,19 @@ body::before {
   border-color: var(--ink);
 }
 
+.sota-source-row .sota-check-stale {
+  color: #7d351f;
+  background: #f9e3d5;
+  border-color: #d69b78;
+}
+
+.sota-check-note {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .sota-mini-table {
   display: flex;
   flex-direction: column;
