@@ -1,7 +1,45 @@
 {
-  "lastAttempt": null,
-  "status": "not-yet-checked",
+  "lastAttempt": "2026-10-27T16:29:50Z",
+  "status": "refreshed",
   "errors": [],
-  "paperCount": 0,
-  "topics": []
+  "received": 227,
+  "paperCount": 223,
+  "topics": [
+    {
+      "id": "search",
+      "title": "搜索",
+      "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.IR+OR+cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.CL%29+AND+%28ti%3A%22information+retrieval%22+OR+abs%3A%22information+retrieval%22+OR+ti%3A%22information-retrieval%22+OR+abs%3A%22information-retrieval%22+OR+ti%3A%22neural+retrieval%22+OR+abs%3A%22neural+retrieval%22+OR+ti%3A%22neural-retrieval%22+OR+abs%3A%22neural-retrieval%22+OR+ti%3A%22dense+retrieval%22+OR+abs%3A%22dense+retrieval%22+OR+ti%3A%22dense-retrieval%22+OR+abs%3A%22dense-retrieval%22+OR+ti%3A%22sparse+retrieval%22+OR+abs%3A%22sparse+retrieval%22+OR+ti%3A%22sparse-retrieval%22+OR+abs%3A%22sparse-retrieval%22+OR+ti%3A%22learning+to+rank%22+OR+abs%3A%22learning+to+rank%22+OR+ti%3A%22learning-to-rank%22+OR+abs%3A%22learning-to-rank%22+OR+ti%3A%22document+ranking%22+OR+abs%3A%22document+ranking%22+OR+ti%3A%22document-ranking%22+OR+abs%3A%22document-ranking%22+OR+ti%3A%22passage+retrieval%22+OR+abs%3A%22passage+retrieval%22+OR+ti%3A%22passage-retrieval%22+OR+abs%3A%22passage-retrieval%22+OR+ti%3A%22query+rewriting%22+OR+abs%3A%22query+rewriting%22+OR+ti%3A%22query-rewriting%22+OR+abs%3A%22query-rewriting%22+OR+ti%3A%22retrieval+augmented+generation%22+OR+abs%3A%22retrieval+augmented+generation%22+OR+ti%3A%22retrieval-augmented-generation%22+OR+abs%3A%22retrieval-augmented-generation%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
+      "lastChecked": "2026-10-27T16:29:50Z",
+      "status": "fresh",
+      "fetchedCount": 100,
+      "matchedCount": 97,
+      "totalResults": 11196,
+      "resultLimit": 100,
+      "truncated": true
+    },
+    {
+      "id": "ads",
+      "title": "广告",
+      "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.IR+OR+cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.GT+OR+cat%3Astat.ML+OR+cat%3Aecon.TH%29+AND+%28ti%3A%22computational+advertising%22+OR+abs%3A%22computational+advertising%22+OR+ti%3A%22computational-advertising%22+OR+abs%3A%22computational-advertising%22+OR+ti%3A%22online+advertising%22+OR+abs%3A%22online+advertising%22+OR+ti%3A%22online-advertising%22+OR+abs%3A%22online-advertising%22+OR+ti%3A%22ad+auction%22+OR+abs%3A%22ad+auction%22+OR+ti%3A%22ad-auction%22+OR+abs%3A%22ad-auction%22+OR+ti%3A%22ad+auctions%22+OR+abs%3A%22ad+auctions%22+OR+ti%3A%22ad-auctions%22+OR+abs%3A%22ad-auctions%22+OR+ti%3A%22ad+bidding%22+OR+abs%3A%22ad+bidding%22+OR+ti%3A%22ad-bidding%22+OR+abs%3A%22ad-bidding%22+OR+ti%3A%22ad+ranking%22+OR+abs%3A%22ad+ranking%22+OR+ti%3A%22ad-ranking%22+OR+abs%3A%22ad-ranking%22+OR+ti%3A%22click+through+rate%22+OR+abs%3A%22click+through+rate%22+OR+ti%3A%22click-through-rate%22+OR+abs%3A%22click-through-rate%22+OR+ti%3A%22click+through+prediction%22+OR+abs%3A%22click+through+prediction%22+OR+ti%3A%22click-through-prediction%22+OR+abs%3A%22click-through-prediction%22+OR+ti%3A%22CTR+prediction%22+OR+abs%3A%22CTR+prediction%22+OR+ti%3A%22CTR-prediction%22+OR+abs%3A%22CTR-prediction%22+OR+ti%3A%22conversion+rate+prediction%22+OR+abs%3A%22conversion+rate+prediction%22+OR+ti%3A%22conversion-rate-prediction%22+OR+abs%3A%22conversion-rate-prediction%22+OR+ti%3A%22real+time+bidding%22+OR+abs%3A%22real+time+bidding%22+OR+ti%3A%22real-time-bidding%22+OR+abs%3A%22real-time-bidding%22+OR+ti%3A%22sponsored+search%22+OR+abs%3A%22sponsored+search%22+OR+ti%3A%22sponsored-search%22+OR+abs%3A%22sponsored-search%22+OR+ti%3A%22display+advertising%22+OR+abs%3A%22display+advertising%22+OR+ti%3A%22display-advertising%22+OR+abs%3A%22display-advertising%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
+      "lastChecked": "2026-10-27T16:29:50Z",
+      "status": "fresh",
+      "fetchedCount": 100,
+      "matchedCount": 33,
+      "totalResults": 1556,
+      "resultLimit": 100,
+      "truncated": true
+    },
+    {
+      "id": "recommendation",
+      "title": "推荐",
+      "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.IR+OR+cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.HC+OR+cat%3Acs.SI+OR+cat%3Astat.ML%29+AND+%28ti%3A%22recommender+system%22+OR+abs%3A%22recommender+system%22+OR+ti%3A%22recommender-system%22+OR+abs%3A%22recommender-system%22+OR+ti%3A%22recommender+systems%22+OR+abs%3A%22recommender+systems%22+OR+ti%3A%22recommender-systems%22+OR+abs%3A%22recommender-systems%22+OR+ti%3A%22recommendation+system%22+OR+abs%3A%22recommendation+system%22+OR+ti%3A%22recommendation-system%22+OR+abs%3A%22recommendation-system%22+OR+ti%3A%22recommendation+systems%22+OR+abs%3A%22recommendation+systems%22+OR+ti%3A%22recommendation-systems%22+OR+abs%3A%22recommendation-systems%22+OR+ti%3A%22sequential+recommendation%22+OR+abs%3A%22sequential+recommendation%22+OR+ti%3A%22sequential-recommendation%22+OR+abs%3A%22sequential-recommendation%22+OR+ti%3A%22generative+recommendation%22+OR+abs%3A%22generative+recommendation%22+OR+ti%3A%22generative-recommendation%22+OR+abs%3A%22generative-recommendation%22+OR+ti%3A%22collaborative+filtering%22+OR+abs%3A%22collaborative+filtering%22+OR+ti%3A%22collaborative-filtering%22+OR+abs%3A%22collaborative-filtering%22+OR+ti%3A%22session+based+recommendation%22+OR+abs%3A%22session+based+recommendation%22+OR+ti%3A%22session-based-recommendation%22+OR+abs%3A%22session-based-recommendation%22+OR+ti%3A%22recommendation+model%22+OR+abs%3A%22recommendation+model%22+OR+ti%3A%22recommendation-model%22+OR+abs%3A%22recommendation-model%22+OR+ti%3A%22recommendation+models%22+OR+abs%3A%22recommendation+models%22+OR+ti%3A%22recommendation-models%22+OR+abs%3A%22recommendation-models%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
+      "lastChecked": "2026-10-27T16:29:50Z",
+      "status": "fresh",
+      "fetchedCount": 100,
+      "matchedCount": 97,
+      "totalResults": 9843,
+      "resultLimit": 100,
+      "truncated": true
+    }
+  ]
 }
