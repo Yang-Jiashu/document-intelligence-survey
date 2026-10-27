@@ -283,7 +283,7 @@ function renderLiveSOTA(data) {
                 <p>${data.note || 'Benchmark data is periodically refreshed from source pages.'}</p>
             </div>
             <div class="sota-update-meta">
-                <span>Last checked: ${data.lastChecked || 'Unknown'}</span>
+                <span>Latest snapshot attempt: ${escapeHtml(data.lastChecked || 'Unknown')}</span>
                 <span>Cadence: ${data.updateCadence || 'manual'}</span>
                 <span>Next check: ${data.nextScheduledCheck || 'TBD'}</span>
             </div>
@@ -298,6 +298,9 @@ function renderLiveSOTA(data) {
             .sort((a, b) => Number(b.score) - Number(a.score))
             .slice(0, 5);
         const latest = benchmark.leader || topRows[0] || {};
+        const sourceUrl = benchmark.lastCheckSourceUrl || benchmark.sourceUrl;
+        const isStale = benchmark.checkStatus === 'stale';
+        const checkedOverHttp = /^http:\/\//i.test(benchmark.lastCheckSourceUrl || '');
         const scores = history.map(h => Number(h.score)).filter(Number.isFinite);
         const width = 400;
         const height = 180;
@@ -344,9 +347,12 @@ function renderLiveSOTA(data) {
                 ${chart}
                 <div class="sota-source-row">
                     <span>${benchmark.updateMode || 'manual'}</span>
-                    <span>Checked ${benchmark.lastChecked || data.lastChecked || 'Unknown'}</span>
-                    <a href="${benchmark.sourceUrl}" target="_blank" rel="noreferrer">${benchmark.sourceName || 'Source'}</a>
+                    <span>Last verified ${escapeHtml(benchmark.lastChecked || 'Unknown')}</span>
+                    ${isStale ? '<span class="sota-check-stale">Stale</span>' : ''}
+                    <a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(benchmark.sourceName || 'Source')}</a>
                 </div>
+                ${isStale ? `<p class="sota-check-note">Refresh failed on ${escapeHtml(benchmark.lastCheckAttempt || 'an unknown date')}; showing last verified data.</p>` : ''}
+                ${checkedOverHttp ? '<p class="sota-check-note">Source checked over HTTP</p>' : ''}
                 <div class="sota-mini-table">
                     ${topRows.map(row => `
                         <div class="sota-mini-row">

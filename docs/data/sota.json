@@ -1,9 +1,9 @@
 {
-  "lastChecked": "2026-10-26",
+  "lastChecked": "2026-10-27",
   "updateCadence": "weekly",
   "nextScheduledCheck": "2026-11-02",
   "generatedBy": "scripts/update_sota.py",
-  "status": "partially refreshed snapshot",
+  "status": "auto-refreshed snapshot",
   "note": "Static GitHub Pages cannot stream live benchmark changes. This file is refreshed by a scheduled workflow and keeps source links plus the last successful check time.",
   "benchmarks": [
     {
@@ -14,7 +14,7 @@
       "sourceName": "Robust Reading Competition",
       "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-06-10",
+      "lastChecked": "2026-10-27",
       "leader": {
         "year": 2026,
         "model": "ORCA",
@@ -58,7 +58,11 @@
           "type": "Open",
           "date": "2025-11-09"
         }
-      ]
+      ],
+      "lastCheckAttempt": "2026-10-27",
+      "checkStatus": "fresh",
+      "lastCheckSourceUrl": "http://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1",
+      "lastCheckWarning": "HTTPS failed (http: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1: HTTP 503); official RRC HTTP fallback used (unencrypted transport)"
     },
     {
       "id": "infographicvqa",
@@ -68,7 +72,7 @@
       "sourceName": "Robust Reading Competition",
       "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-06-10",
+      "lastChecked": "2026-10-27",
       "leader": {
         "year": 2025,
         "model": "Seed-VL-1.5",
@@ -112,7 +116,11 @@
           "type": "Open",
           "date": "2024-07-12"
         }
-      ]
+      ],
+      "lastCheckAttempt": "2026-10-27",
+      "checkStatus": "fresh",
+      "lastCheckSourceUrl": "http://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3",
+      "lastCheckWarning": "HTTPS failed (http: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3: HTTP 503); official RRC HTTP fallback used (unencrypted transport)"
     },
     {
       "id": "ocrbench-v2-full",

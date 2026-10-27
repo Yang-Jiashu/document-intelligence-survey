@@ -20,7 +20,14 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Run offline SOTA regression tests
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node tests/test_sota_status.js
+
       - name: Refresh SOTA data
+        id: refresh
+        continue-on-error: true
         run: python scripts/update_sota.py
 
       - name: Commit updated snapshot
@@ -28,3 +35,9 @@ jobs:
         with:
           commit_message: "Update SOTA snapshot"
           file_pattern: docs/data/sota.json docs/data/pending_updates.json
+
+      - name: Fail when a source could not be refreshed
+        if: ${{ always() && steps.refresh.outcome == 'failure' }}
+        run: |
+          echo "SOTA refresh failed or was partial. Review the refresh step summary and docs/data/pending_updates.json." >&2
+          exit 1
