@@ -32,5 +32,18 @@ async function check(label, eventName, run, jobs, expected) {
     await check('unfinished workflow', 'workflow_run', { ...normal, status: 'in_progress' }, safe, false);
     await check('healthy paper update', 'workflow_run', { ...normal, name: 'Update Dynamic Papers' }, [], true);
     await check('failed paper update', 'workflow_run', { ...normal, name: 'Update Dynamic Papers', conclusion: 'failure' }, [], false);
-    console.log('SOTA deployment gate tests OK');
+    const research = { ...normal, name: 'Update Research Progress' };
+    const researchSafe = [{ name: 'update-research', conclusion: 'success' }];
+    await check('healthy research refresh', 'workflow_run', research, researchSafe, true);
+    await check('partial research with committed data', 'workflow_run', { ...research, conclusion: 'failure' }, researchSafe, true);
+    await check('research missing snapshot job', 'workflow_run', research, [], false);
+    await check('research cannot borrow SOTA success', 'workflow_run', research, safe, false);
+    await check('research wrong branch', 'workflow_run', { ...research, head_branch: 'feature' }, researchSafe, false);
+    await check('research cancelled run', 'workflow_run', { ...research, conclusion: 'cancelled' }, researchSafe, false);
+    await check('research unfinished run', 'workflow_run', { ...research, status: 'in_progress' }, researchSafe, false);
+    for (const conclusion of ['failure', 'cancelled', 'skipped', null]) {
+        await check('unsafe research job ' + conclusion, 'workflow_run', { ...research, conclusion: 'failure' }, [{ name: 'update-research', conclusion }], false);
+    }
+    await check('ambiguous research job', 'workflow_run', research, [...researchSafe, ...researchSafe], false);
+    console.log('SOTA and research deployment gate tests OK');
 })().catch(error => { console.error(error); process.exitCode = 1; });

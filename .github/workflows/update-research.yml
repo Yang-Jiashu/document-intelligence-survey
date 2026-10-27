@@ -1,0 +1,77 @@
+name: Update Research Progress
+
+on:
+  schedule:
+    - cron: "16 3 * * *"
+  push:
+    branches: [final]
+    paths:
+      - scripts/update_research.py
+      - configs/research_sources.json
+      - docs/research.html
+      - docs/js/research.js
+      - docs/css/research.css
+      - tests/test_update_research.py
+      - tests/test_research_ui.js
+      - .github/workflows/update-research.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-research-final
+  cancel-in-progress: false
+
+jobs:
+  update-research:
+    name: update-research
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      refresh_outcome: ${{ steps.refresh.outcome }}
+    steps:
+      - name: Checkout final branch
+        uses: actions/checkout@v4
+        with:
+          ref: final
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run offline regression tests
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node tests/test_research_ui.js
+          node tests/test_sota_deployment.js
+
+      - name: Refresh search, advertising and recommendation research
+        id: refresh
+        continue-on-error: true
+        run: python scripts/update_research.py
+
+      - name: Require safely written research data
+        env:
+          SNAPSHOT_WRITTEN: ${{ steps.refresh.outputs.snapshot_written }}
+        run: test "$SNAPSHOT_WRITTEN" = "true"
+
+      - name: Commit validated research data and source status
+        if: ${{ steps.refresh.outputs.snapshot_written == 'true' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: final
+          commit_message: "Update search, advertising and recommendation research"
+          file_pattern: docs/data/research_updates.json docs/data/research_update_log.json
+
+  source-health:
+    name: Research source health
+    needs: update-research
+    if: ${{ always() && needs.update-research.result == 'success' && needs.update-research.outputs.refresh_outcome == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report partial research refresh
+        run: |
+          echo "Research data was saved, but one or more topic sources failed. Review the refresh summary and docs/data/research_update_log.json. The daily schedule retries automatically." >&2
+          exit 1

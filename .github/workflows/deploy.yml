@@ -5,11 +5,12 @@ on:
   push:
     branches: [final]
 
-  # 两个自动更新工作流结束后部署
+  # 自动更新工作流结束后检查并部署
   workflow_run:
     workflows:
       - "Update Dynamic Papers"
       - "Update SOTA snapshot"
+      - "Update Research Progress"
     types:
       - completed
 
@@ -39,7 +40,12 @@ jobs:
           script: |
             if (context.eventName !== 'workflow_run') return true;
             const run = context.payload.workflow_run;
-            if (run.name !== 'Update SOTA snapshot') {
+            const snapshotJobNames = {
+              'Update SOTA snapshot': 'update-sota',
+              'Update Research Progress': 'update-research'
+            };
+            const expectedJobName = snapshotJobNames[run.name];
+            if (!expectedJobName) {
               return run.conclusion === 'success';
             }
             if (run.head_branch !== 'final' || run.status !== 'completed' ||
@@ -50,7 +56,7 @@ jobs:
               filter: 'latest',
               per_page: 100
             });
-            const snapshotJobs = jobs.filter(job => job.name === 'update-sota');
+            const snapshotJobs = jobs.filter(job => job.name === expectedJobName);
             return snapshotJobs.length === 1 && snapshotJobs[0].conclusion === 'success';
 
   deploy:
