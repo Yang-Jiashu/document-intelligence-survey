@@ -5,6 +5,7 @@ examples. Every test blocks urllib access unless an explicit fake response is se
 """
 
 import copy
+import hashlib
 import io
 import json
 import os
@@ -152,6 +153,14 @@ class FetchTests(OfflineCase):
 
 
 class RRCAdapterTests(OfflineCase):
+    def test_rrc_intermediate_keeps_full_tls_and_hostname_verification(self):
+        context = sota.RRCDocVQAAdapter._ssl_context()
+        self.assertTrue(context.check_hostname)
+        self.assertEqual(context.verify_mode, ssl.CERT_REQUIRED)
+        self.assertFalse(context.verify_flags & ssl.VERIFY_X509_PARTIAL_CHAIN)
+        fingerprints = {hashlib.sha256(cert).hexdigest() for cert in context.get_ca_certs(binary_form=True)}
+        self.assertIn('5b678dc44095a52895b63b31f27227f4b36c3e347491bf2bfa691837a5fb8c79', fingerprints)
+
     def apply(self, html, task=1, response_url=None):
         data = snapshot()
         bench_id = "docvqa" if task == 1 else "infographicvqa"

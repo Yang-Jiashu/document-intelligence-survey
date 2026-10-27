@@ -5,6 +5,7 @@ on:
     branches: [final]
     paths:
       - scripts/update_sota.py
+      - scripts/certs/**
       - tests/**
       - docs/data/sota.json
       - docs/js/app.js
@@ -16,6 +17,7 @@ on:
     branches: [final]
     paths:
       - scripts/update_sota.py
+      - scripts/certs/**
       - tests/**
       - docs/data/sota.json
       - docs/js/app.js

@@ -7,6 +7,7 @@ on:
     branches: [final]
     paths:
       - scripts/update_sota.py
+      - scripts/certs/**
       - .github/workflows/update-sota.yml
   workflow_dispatch:
 

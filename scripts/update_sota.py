@@ -53,7 +53,7 @@ class FetchResult:
     text: str
 
 
-def fetch(url: str, timeout: int = 30, attempts: int = 3) -> FetchResult:
+def fetch(url: str, timeout: int = 30, attempts: int = 3, context: ssl.SSLContext | None = None) -> FetchResult:
     if attempts < 1:
         raise ValueError("attempts must be at least 1")
     last_error: FetchError | None = None
@@ -66,7 +66,7 @@ def fetch(url: str, timeout: int = 30, attempts: int = 3) -> FetchResult:
                     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                 },
             )
-            with urllib.request.urlopen(req, timeout=timeout) as res:
+            with urllib.request.urlopen(req, timeout=timeout, context=context) as res:
                 return FetchResult(url=res.geturl(), text=res.read().decode("utf-8", "strict"))
         except urllib.error.HTTPError as exc:
             last_error = FetchError(url, "http", f"HTTP {exc.code}",
@@ -240,6 +240,16 @@ class RRCPageContext(HTMLParser):
 class RRCDocVQAAdapter(SourceAdapter):
     mode = "auto-scraped"
 
+    @staticmethod
+    def _ssl_context() -> ssl.SSLContext:
+        # RRC omits this issuer from its TLS handshake (verified on hosted
+        # Actions runners). Supply the public intermediate, keeping the OS
+        # roots and full certificate/hostname verification in place.
+        context = ssl.create_default_context()
+        context.load_verify_locations(cafile=str(ROOT / "scripts" / "certs" / "harica-geant-tls-r1.pem"))
+        context.verify_flags &= ~ssl.VERIFY_X509_PARTIAL_CHAIN
+        return context
+
     def __init__(self, bench_id: str, task: int):
         if (bench_id, task) not in {("docvqa", 1), ("infographicvqa", 3)}:
             raise ValueError("RRC adapter only supports the verified DocVQA tasks 1 and 3")
@@ -254,7 +264,7 @@ class RRCDocVQAAdapter(SourceAdapter):
             raise AdapterError(f"{self.bench_id}: missing benchmark in sota.json")
         warning = None
         try:
-            result = fetch(self.url)
+            result = fetch(self.url, context=self._ssl_context())
         except FetchError as exc:
             if not exc.retryable:
                 raise
