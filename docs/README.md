@@ -34,11 +34,14 @@ Run the offline regression tests from the repository root with Python 3.11 or ne
 ```bash
 python -m unittest discover -s tests -p 'test_*.py'
 node tests/test_sota_status.js
+node tests/test_sota_deployment.js
 ```
 
 The tests use local fixtures and mocked requests; they require neither network access nor API keys. The `Test SOTA updater` workflow runs them on relevant pull requests and pushes to `final`. The scheduled update also runs them before fetching or writing data.
 
-To refresh the snapshot against live public sources:
+The `Update SOTA snapshot` workflow runs automatically every day at 02:16 UTC (10:16 Asia/Shanghai) on the default `final` branch. Each run fetches the official sources, retries transient failures, and commits safely validated results. A failed source is tried again on the next daily run without a manual rerun. Changes to the updater or its workflow also trigger a refresh automatically; data-only commits do not create a refresh loop.
+
+For an optional immediate local refresh against live public sources:
 
 ```bash
 python scripts/update_sota.py
@@ -50,4 +53,4 @@ DocVQA and InfographicVQA prefer their official RRC HTTPS evaluation pages. A fa
 
 On 2026-10-27, live requests to both HTTPS task pages returned an Envoy 503 upstream connection failure from the verification environment. The exact official HTTP pages returned 200 without redirects, with the correct active task and complete `Date / Method / Score` tables. This does not establish a global RRC outage or a markup regression. The repaired adapters validated 174 DocVQA and 62 InfographicVQA model rows; both top-five rankings were unchanged. Only these two benchmarks were rechecked for this repair; the other benchmarks retain their earlier dates. Snapshot-level `lastChecked` describes the latest snapshot attempt, while each benchmark records its own last successful verification.
 
-The scheduled workflow commits successful updates and failure metadata before reporting a failed check for a partial refresh. The existing Pages deployment requires a successful workflow run, so a partial refresh commit is retained in the repository but is not automatically deployed by that failed run. Inspect the source errors before retrying; an HTTP error, timeout, or missing ranking table alone does not establish a permanent source outage. Do not advance check dates or substitute unverified rankings to clear a failure.
+The scheduled workflow commits successful updates and failure metadata, then a separate source-health check fails when any source could not refresh. A snapshot-written output prevents publication after an incomplete write. Pages may publish a partial snapshot only when the upstream snapshot job successfully tested, wrote and committed it; source-health failures remain visible in Actions while the site displays retained data and stale markers. Failed tests, failed writes, failed commits and cancelled runs cannot authorize this partial-snapshot deployment. Inspect the source errors before retrying; an HTTP error, timeout, or missing ranking table alone does not establish a permanent source outage. Do not advance check dates or substitute unverified rankings to clear a failure.

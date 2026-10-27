@@ -11,6 +11,7 @@ on:
       - docs/css/style.css
       - .github/workflows/test-sota.yml
       - .github/workflows/update-sota.yml
+      - .github/workflows/deploy.yml
   push:
     branches: [final]
     paths:
@@ -21,6 +22,7 @@ on:
       - docs/css/style.css
       - .github/workflows/test-sota.yml
       - .github/workflows/update-sota.yml
+      - .github/workflows/deploy.yml
   workflow_dispatch:
 
 permissions:
@@ -43,3 +45,6 @@ jobs:
 
       - name: Test SOTA source status rendering
         run: node tests/test_sota_status.js
+
+      - name: Test snapshot deployment gate offline
+        run: node tests/test_sota_deployment.js

@@ -561,8 +561,8 @@ def report_refresh(data: dict, pending: list[dict]) -> None:
 def main() -> int:
     data = json.loads(SOTA_PATH.read_text())
     checked = date.today().isoformat()
-    cadence = data.get("updateCadence", "weekly")
-    next_check = date.today() + (timedelta(days=30) if cadence == "monthly" else timedelta(days=7))
+    cadence = data.get("updateCadence", "daily")
+    next_check = date.today() + timedelta(days={"daily": 1, "weekly": 7, "monthly": 30}[cadence])
 
     messages, pending = run_adapters(data, checked)
     data["lastChecked"] = checked
@@ -574,6 +574,12 @@ def main() -> int:
     PENDING_PATH.write_text(json.dumps({"lastChecked": checked, "items": pending}, indent=2, ensure_ascii=False) + "\n")
     print("\n".join(messages))
     report_refresh(data, pending)
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        # A nonzero source-health result can still produce a valid snapshot.
+        # Publish it only after both files and diagnostics were written.
+        with Path(output_path).open("a", encoding="utf-8") as output:
+            output.write("snapshot_written=true\n")
     return 1 if pending else 0
 
 

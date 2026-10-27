@@ -74,6 +74,9 @@ class FakeResponse:
 
 class OfflineCase(unittest.TestCase):
     def setUp(self):
+        output_env = patch.dict(os.environ, {"GITHUB_OUTPUT": ""})
+        output_env.start()
+        self.addCleanup(output_env.stop)
         self.network = patch.object(
             sota.urllib.request, "urlopen", side_effect=AssertionError("Live network is forbidden in offline tests")
         )
@@ -366,6 +369,7 @@ class PartialRefreshTests(OfflineCase):
             sota_path = root / "sota.json"
             pending_path = root / "pending_updates.json"
             summary_path = root / "summary.md"
+            output_path = root / "outputs.txt"
             sota_path.write_text(json.dumps(snapshot()), encoding="utf-8")
 
             def failed_adapter(data, checked):
@@ -377,7 +381,7 @@ class PartialRefreshTests(OfflineCase):
                     "errorKind": "timeout", "message": "synthetic source timeout", "date": checked,
                 }]
 
-            with patch.object(sota, "SOTA_PATH", sota_path), patch.object(sota, "PENDING_PATH", pending_path), patch.object(sota, "run_adapters", side_effect=failed_adapter), patch.dict(os.environ, {"GITHUB_STEP_SUMMARY": str(summary_path), "GITHUB_ACTIONS": "true"}), patch("sys.stdout", new_callable=io.StringIO):
+            with patch.object(sota, "SOTA_PATH", sota_path), patch.object(sota, "PENDING_PATH", pending_path), patch.object(sota, "run_adapters", side_effect=failed_adapter), patch.dict(os.environ, {"GITHUB_STEP_SUMMARY": str(summary_path), "GITHUB_ACTIONS": "true", "GITHUB_OUTPUT": str(output_path)}), patch("sys.stdout", new_callable=io.StringIO):
                 code = sota.main()
             self.assertNotEqual(code, 0)
             written = json.loads(sota_path.read_text())
@@ -389,6 +393,30 @@ class PartialRefreshTests(OfflineCase):
             summary = summary_path.read_text()
             self.assertIn("docvqa", summary)
             self.assertIn("synthetic source timeout", summary)
+            self.assertEqual(output_path.read_text(), "snapshot_written=true\n")
+
+    def test_daily_schedule_and_successful_snapshot_output(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sota_path, pending_path, output_path = (root / name for name in ("sota.json", "pending.json", "outputs.txt"))
+            data = snapshot()
+            data["updateCadence"] = "daily"
+            sota_path.write_text(json.dumps(data))
+            with patch.object(sota, "SOTA_PATH", sota_path), patch.object(sota, "PENDING_PATH", pending_path), patch.object(sota, "run_adapters", return_value=([], [])), patch.dict(os.environ, {"GITHUB_STEP_SUMMARY": "", "GITHUB_OUTPUT": str(output_path)}), patch("sys.stdout", new_callable=io.StringIO):
+                self.assertEqual(sota.main(), 0)
+            result = json.loads(sota_path.read_text())
+            self.assertEqual((sota.date.fromisoformat(result["nextScheduledCheck"]) - sota.date.fromisoformat(result["lastChecked"])).days, 1)
+            self.assertEqual(output_path.read_text(), "snapshot_written=true\n")
+
+    def test_failed_snapshot_write_cannot_authorize_publishing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sota_path, pending_path, output_path = (root / name for name in ("sota.json", "missing/pending.json", "outputs.txt"))
+            sota_path.write_text(json.dumps(snapshot()))
+            with patch.object(sota, "SOTA_PATH", sota_path), patch.object(sota, "PENDING_PATH", pending_path), patch.object(sota, "run_adapters", return_value=([], [])), patch.dict(os.environ, {"GITHUB_STEP_SUMMARY": "", "GITHUB_OUTPUT": str(output_path)}):
+                with self.assertRaises(OSError):
+                    sota.main()
+            self.assertFalse(output_path.exists())
 
     def test_main_returns_success_only_without_pending_sources(self):
         with tempfile.TemporaryDirectory() as tmp:

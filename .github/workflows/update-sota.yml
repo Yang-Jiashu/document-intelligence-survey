@@ -2,18 +2,33 @@ name: Update SOTA snapshot
 
 on:
   schedule:
-    - cron: "16 2 * * 1"
+    - cron: "16 2 * * *"
+  push:
+    branches: [final]
+    paths:
+      - scripts/update_sota.py
+      - .github/workflows/update-sota.yml
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-sota-final
+  cancel-in-progress: false
+
 jobs:
   update-sota:
+    name: update-sota
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      refresh_outcome: ${{ steps.refresh.outcome }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: final
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,20 +39,34 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_*.py'
           node tests/test_sota_status.js
+          node tests/test_sota_deployment.js
 
       - name: Refresh SOTA data
         id: refresh
         continue-on-error: true
         run: python scripts/update_sota.py
 
+      - name: Require a safely written snapshot
+        env:
+          SNAPSHOT_WRITTEN: ${{ steps.refresh.outputs.snapshot_written }}
+        run: |
+          test "$SNAPSHOT_WRITTEN" = "true"
+
       - name: Commit updated snapshot
+        if: ${{ steps.refresh.outputs.snapshot_written == 'true' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
+          branch: final
           commit_message: "Update SOTA snapshot"
           file_pattern: docs/data/sota.json docs/data/pending_updates.json
 
-      - name: Fail when a source could not be refreshed
-        if: ${{ always() && steps.refresh.outcome == 'failure' }}
+  source-health:
+    name: Source refresh health
+    needs: update-sota
+    if: ${{ always() && needs.update-sota.result == 'success' && needs.update-sota.outputs.refresh_outcome == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report partial refresh
         run: |
-          echo "SOTA refresh failed or was partial. Review the refresh step summary and docs/data/pending_updates.json." >&2
+          echo "Snapshot saved, but one or more sources failed. See the refresh summary and docs/data/pending_updates.json. The daily schedule retries automatically." >&2
           exit 1

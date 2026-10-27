@@ -1,7 +1,7 @@
 {
   "lastChecked": "2026-10-27",
-  "updateCadence": "weekly",
-  "nextScheduledCheck": "2026-11-02",
+  "updateCadence": "daily",
+  "nextScheduledCheck": "2026-10-28",
   "generatedBy": "scripts/update_sota.py",
   "status": "auto-refreshed snapshot",
   "note": "Static GitHub Pages cannot stream live benchmark changes. This file is refreshed by a scheduled workflow and keeps source links plus the last successful check time.",
