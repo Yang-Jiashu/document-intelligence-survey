@@ -1,4 +1,27 @@
 {
   "lastChecked": "2026-10-27",
-  "items": []
+  "items": [
+    {
+      "adapter": "RRCDocVQAAdapter",
+      "benchmarkIds": [
+        "docvqa"
+      ],
+      "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1",
+      "errorKind": "tls",
+      "status": "needs-review",
+      "message": "tls: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)",
+      "date": "2026-10-27"
+    },
+    {
+      "adapter": "RRCDocVQAAdapter",
+      "benchmarkIds": [
+        "infographicvqa"
+      ],
+      "sourceUrl": "https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3",
+      "errorKind": "tls",
+      "status": "needs-review",
+      "message": "tls: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)",
+      "date": "2026-10-27"
+    }
+  ]
 }

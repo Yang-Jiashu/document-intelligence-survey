@@ -3,7 +3,7 @@
   "updateCadence": "daily",
   "nextScheduledCheck": "2026-10-28",
   "generatedBy": "scripts/update_sota.py",
-  "status": "auto-refreshed snapshot",
+  "status": "partially refreshed snapshot",
   "note": "Static GitHub Pages cannot stream live benchmark changes. This file is refreshed by a scheduled workflow and keeps source links plus the last successful check time.",
   "benchmarks": [
     {
@@ -60,9 +60,9 @@
         }
       ],
       "lastCheckAttempt": "2026-10-27",
-      "checkStatus": "fresh",
+      "checkStatus": "stale",
       "lastCheckSourceUrl": "http://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1",
-      "lastCheckWarning": "HTTPS failed (http: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1: HTTP 503); official RRC HTTP fallback used (unencrypted transport)"
+      "lastCheckError": "tls: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=1: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)"
     },
     {
       "id": "infographicvqa",
@@ -118,9 +118,9 @@
         }
       ],
       "lastCheckAttempt": "2026-10-27",
-      "checkStatus": "fresh",
+      "checkStatus": "stale",
       "lastCheckSourceUrl": "http://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3",
-      "lastCheckWarning": "HTTPS failed (http: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3: HTTP 503); official RRC HTTP fallback used (unencrypted transport)"
+      "lastCheckError": "tls: fetch failed for https://rrc.cvc.uab.es/?ch=17&com=evaluation&task=3: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)"
     },
     {
       "id": "ocrbench-v2-full",
@@ -130,13 +130,13 @@
       "sourceName": "OCRBench v2 Leaderboard",
       "sourceUrl": "https://99franklin.github.io/ocrbench_v2/",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-10-26",
+      "lastChecked": "2026-10-27",
       "leader": {
         "year": 2026,
         "model": "SEEU DOC",
         "score": 76.2,
         "type": "API",
-        "date": "2026-10-26"
+        "date": "2026-10-27"
       },
       "history": [
         {
@@ -144,37 +144,39 @@
           "model": "SEEU DOC",
           "score": 76.2,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "Yaochi-DTS-A2T-1.9",
           "score": 73.4,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "U2-OCR",
           "score": 71.7,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "Posicube_DVLM",
           "score": 69.8,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "Qwen3.6-27B",
           "score": 68.3,
           "type": "Open",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         }
-      ]
+      ],
+      "lastCheckAttempt": "2026-10-27",
+      "checkStatus": "fresh"
     },
     {
       "id": "ocrbench-v2-vqa",
@@ -184,13 +186,13 @@
       "sourceName": "OCRBench v2 Leaderboard",
       "sourceUrl": "https://99franklin.github.io/ocrbench_v2/",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-10-26",
+      "lastChecked": "2026-10-27",
       "leader": {
         "year": 2026,
         "model": "U2-OCR",
         "score": 66.7,
         "type": "API",
-        "date": "2026-10-26"
+        "date": "2026-10-27"
       },
       "history": [
         {
@@ -198,37 +200,39 @@
           "model": "U2-OCR",
           "score": 66.7,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "TeleMM-2.0",
           "score": 66.2,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "Qwen3.5-9B",
           "score": 64.1,
           "type": "Open",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "Yaochi-DTS-A2T-1.9",
           "score": 63.8,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         },
         {
           "year": 2026,
           "model": "Gemini 3 Pro Preview",
           "score": 63.8,
           "type": "API",
-          "date": "2026-10-26"
+          "date": "2026-10-27"
         }
-      ]
+      ],
+      "lastCheckAttempt": "2026-10-27",
+      "checkStatus": "fresh"
     },
     {
       "id": "mmlongbench-doc",
@@ -238,7 +242,7 @@
       "sourceName": "LLM Stats MMLongBench-Doc",
       "sourceUrl": "https://llm-stats.com/benchmarks/mmlongbench-doc",
       "updateMode": "auto-scraped",
-      "lastChecked": "2026-10-26",
+      "lastChecked": "2026-10-27",
       "leader": {
         "year": 2026,
         "model": "Nemotron 3.5 Super VL (120B A12B)",
@@ -299,11 +303,13 @@
           "model": "Qwen3-VL 235B-A22B Instruct",
           "score": 57.0,
           "type": "Open",
-          "date": "2026-10-26",
+          "date": "2026-10-27",
           "evidence": "images/evidence/qwen3-vl-nonthinking-benchmarks.jpg",
           "confidence": "image-evidence"
         }
-      ]
+      ],
+      "lastCheckAttempt": "2026-10-27",
+      "checkStatus": "fresh"
     },
     {
       "id": "mmlongbench",
