@@ -1,0 +1,51 @@
+name: Test Research Tracker
+
+on:
+  pull_request:
+    branches: [final]
+    paths:
+      - scripts/update_research.py
+      - configs/research_sources.json
+      - docs/research.html
+      - docs/js/research.js
+      - docs/css/research.css
+      - docs/data/research_updates.json
+      - tests/**
+      - .github/workflows/update-research.yml
+      - .github/workflows/test-research.yml
+      - .github/workflows/deploy.yml
+  push:
+    branches: [final]
+    paths:
+      - scripts/update_research.py
+      - configs/research_sources.json
+      - docs/research.html
+      - docs/js/research.js
+      - docs/css/research.css
+      - docs/data/research_updates.json
+      - tests/**
+      - .github/workflows/update-research.yml
+      - .github/workflows/test-research.yml
+      - .github/workflows/deploy.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test ingestion and safe publication offline
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node tests/test_research_ui.js
+          node tests/test_sota_deployment.js

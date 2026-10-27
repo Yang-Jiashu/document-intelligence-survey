@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <id>https://arxiv.org/api/example</id>
+  <title>Synthetic offline research query</title>
+  <updated>2026-10-27T00:00:00Z</updated>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <opensearch:itemsPerPage>2</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12345v2</id>
+    <title>Neural retrieval for recommender systems</title>
+    <summary>A synthetic example of neural retrieval for recommender systems.</summary>
+    <published>2026-10-20T10:00:00Z</published>
+    <updated>2026-10-27T10:00:00Z</updated>
+    <author><name>Alice Example</name></author>
+    <author><name>Bob Example</name></author>
+    <category term="cs.IR"/>
+    <arxiv:primary_category term="cs.IR"/>
+    <link rel="alternate" href="https://arxiv.org/abs/2610.12345v2"/>
+    <link title="pdf" href="https://arxiv.org/pdf/2610.12345v2"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12346v1</id>
+    <title>CTR prediction with contextual features</title>
+    <summary>A synthetic advertising model for click-through rate prediction.</summary>
+    <published>2026-10-26T11:00:00Z</published>
+    <updated>2026-10-26T11:00:00Z</updated>
+    <author><name>Carol Example</name></author>
+    <category term="cs.IR"/>
+    <arxiv:primary_category term="cs.IR"/>
+  </entry>
+</feed>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="每日追踪搜索、计算广告与推荐系统的 arXiv 研究进展，查看原文、摘要与版本更新。">
+<title>搜广推 · 研究进展 | Research Atlas</title>
+<link rel="stylesheet" href="css/style.css?v=20260712-1">
+<link rel="stylesheet" href="css/research.css?v=20261028-1">
+</head>
+<body>
+<header class="header">
+<div class="header-inner">
+<a href="index.html" class="logo"><div class="logo-icon">RA</div><span>Research Atlas</span></a>
+<nav class="nav-links" aria-label="主导航">
+<a href="index.html">文档智能综述</a>
+<a href="search.html">文档论文检索</a>
+<a href="research.html" class="active" aria-current="page">搜广推进展</a>
+<a href="index.html#sota">SOTA 榜单</a>
+<a href="https://github.com/Yang-Jiashu/document-intelligence-survey" target="_blank" rel="noreferrer" class="github-btn">GitHub</a>
+</nav>
+</div>
+</header>
+
+<main class="research-main">
+<section class="research-intro" aria-labelledby="researchTitle">
+<div class="research-kicker">SEARCH · ADVERTISING · RECOMMENDATION</div>
+<h1 id="researchTitle">搜广推，持续追踪。</h1>
+<p>搜索、计算广告、推荐系统的新论文与版本进展。每日发现，回到原文。</p>
+<div class="research-intro-note">来源为 arXiv 预印本；主题按明确关键词归类，不代表同行评审、质量排名或个性化推荐。</div>
+</section>
+
+<section class="research-health" aria-label="抓取状态">
+<div id="researchStatus" role="status" aria-live="polite">正在读取研究进展…</div>
+<div id="researchTopics" class="research-source-grid"></div>
+</section>
+
+<section class="research-feed" aria-labelledby="feedTitle">
+<div class="research-feed-heading"><h2 id="feedTitle">研究进展</h2><span id="researchCount" class="badge-count">加载中</span></div>
+<form id="researchFilters" class="research-controls" role="search">
+<div class="research-topic-tabs" aria-label="研究领域">
+<button type="button" class="research-tab active" data-topic="all" aria-pressed="true">全部</button>
+<button type="button" class="research-tab" data-topic="search" aria-pressed="false">搜索</button>
+<button type="button" class="research-tab" data-topic="ads" aria-pressed="false">广告</button>
+<button type="button" class="research-tab" data-topic="recommendation" aria-pressed="false">推荐</button>
+</div>
+<label class="research-search-label"><span class="research-control-label">关键词</span><input id="researchQuery" type="search" placeholder="搜索标题、摘要、作者或 arXiv ID" autocomplete="off"></label>
+<div class="research-selects">
+<label><span class="research-control-label">时间范围</span><select id="researchWindow"><option value="7">近 7 天</option><option value="30" selected>近 30 天</option><option value="90">近 90 天</option><option value="all">全部已收录</option></select></label>
+<label><span class="research-control-label">排序依据</span><select id="researchSort"><option value="published" selected>新发表优先</option><option value="updated">最新版本优先</option></select></label>
+</div>
+</form>
+<div class="research-results-note" id="researchResultNote"></div>
+<div id="researchResults" class="research-results" aria-live="polite"></div>
+<nav id="researchPagination" class="research-pagination" aria-label="论文分页"></nav>
+</section>
+
+<footer class="research-footer">这是独立的搜广推研究流，文档智能论文与榜单保留在原有页面。每日按关键词核验各领域的最新候选，并非全量论文索引；每次候选上限见各领域状态。论文发表与版本日期保留来源日期，抓取核验时间显示为北京时间。</footer>
+</main>
+<script src="js/research.js?v=20261028-1"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "lastAttempt": null,
+  "lastSuccessfulCheck": null,
+  "status": "not-yet-checked",
+  "nextScheduledCheck": null,
+  "updateCadence": "daily",
+  "lookbackDays": 30,
+  "retentionDays": 90,
+  "topics": [],
+  "papers": []
+}

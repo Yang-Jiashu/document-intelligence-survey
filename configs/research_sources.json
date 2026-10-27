@@ -1,0 +1,26 @@
+{
+  "lookbackDays": 30,
+  "retentionDays": 90,
+  "maxResultsPerTopic": 100,
+  "maxPapers": 1000,
+  "topics": [
+    {
+      "id": "search",
+      "title": "搜索",
+      "categories": ["cs.IR", "cs.AI", "cs.LG", "cs.CL"],
+      "terms": ["information retrieval", "neural retrieval", "dense retrieval", "sparse retrieval", "learning to rank", "document ranking", "passage retrieval", "query rewriting", "retrieval augmented generation"]
+    },
+    {
+      "id": "ads",
+      "title": "广告",
+      "categories": ["cs.IR", "cs.AI", "cs.LG", "cs.GT", "stat.ML", "econ.TH"],
+      "terms": ["computational advertising", "online advertising", "ad auction", "ad auctions", "ad bidding", "ad ranking", "click through rate", "click through prediction", "CTR prediction", "conversion rate prediction", "real time bidding", "sponsored search", "display advertising"]
+    },
+    {
+      "id": "recommendation",
+      "title": "推荐",
+      "categories": ["cs.IR", "cs.AI", "cs.LG", "cs.HC", "cs.SI", "stat.ML"],
+      "terms": ["recommender system", "recommender systems", "recommendation system", "recommendation systems", "sequential recommendation", "generative recommendation", "collaborative filtering", "session based recommendation", "recommendation model", "recommendation models"]
+    }
+  ]
+}
