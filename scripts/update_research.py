@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Discover recent search, advertising and recommendation preprints from arXiv.
+"""Discover, filter and rank new document-intelligence information.
 
 No API key, LLM classifier or paid discovery service is required. Paper dates
 come from the official query API, never from discovery time or RSS timestamps.
@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import copy
 import json
+import math
 import os
 import re
 import ssl
@@ -19,7 +20,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, urlencode, urlsplit
+from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "configs/research_sources.json"
@@ -29,6 +30,18 @@ API_URL = "https://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
 OPEN = "{http://a9.com/-/spec/opensearch/1.1/}"
 NEXT_REQUEST_AT = 0.0
+DOCUMENT_TOPIC_IDS = {"ocr", "layout", "table", "docqa", "docrag", "eval"}
+OFFICIAL_REPOS = {"PaddlePaddle/PaddleOCR", "opendatalab/MinerU", "docling-project/docling"}
+DOCUMENT_ANCHORS = (
+    "optical character recognition", "ocr", "docvqa", "infographicvqa", "omnidocbench", "ocrbench",
+    "document intelligence", "document understanding", "document parsing", "document extraction",
+    "document digitization", "document layout", "document image", "document images",
+    "document visual question answering", "document question answering", "multimodal document retrieval",
+    "document rag", "visually rich document", "pdf parsing", "pdf question answering",
+    "table structure recognition", "table extraction", "table question answering", "chart question answering",
+    "chart understanding", "form understanding", "invoice processing", "receipt understanding", "colpali",
+    "long document understanding", "multi page document",
+)
 
 
 class ResearchError(RuntimeError):
@@ -144,6 +157,7 @@ def parse_feed(xml: str, now: datetime) -> tuple[list[dict], int]:
                 "published": iso(published), "updated": iso(updated),
                 "url": f"https://arxiv.org/abs/{arxiv}", "pdfUrl": f"https://arxiv.org/pdf/{arxiv}",
                 "arxivCategories": categories, "sourceName": "arXiv",
+                "kind": "paper",
             })
         return papers, total
     except (ET.ParseError, ValueError) as exc:
@@ -154,7 +168,28 @@ def normalized(value: str) -> str:
     return clean(re.sub(r"[^\w]+", " ", value.casefold()))
 
 
+def contains(text: str, phrase: str) -> bool:
+    return bool(re.search(r"(?<!\w)" + re.escape(normalized(phrase)) + r"(?!\w)", normalized(text)))
+
+
+def document_relevance(paper: dict) -> float:
+    """Require actual document evidence, not generic retrieval/table/doc wording."""
+    title = paper.get("title", "")
+    abstract = paper.get("abstract", "")
+    title_matches = [term for term in DOCUMENT_ANCHORS if contains(title, term)]
+    body_matches = [term for term in DOCUMENT_ANCHORS if contains(abstract, term)]
+    if title_matches:
+        return round(min(1.0, .82 + .04 * len(title_matches) + .01 * len(body_matches)), 3)
+    strong = [term for term in body_matches if term != "ocr"]
+    if strong:
+        return round(min(.8, .52 + .05 * len(strong)), 3)
+    # OCR alone in a general AI abstract is not enough to establish scope.
+    return 0.0
+
+
 def classify(paper: dict, topics: list[dict]) -> dict[str, list[str]]:
+    if not document_relevance(paper):
+        return {}
     text = normalized(paper["title"] + " " + paper["abstract"])
     result = {}
     for topic in topics:
@@ -184,7 +219,7 @@ def validate_config(config: dict) -> None:
         raise ResearchError("At least one research topic is required")
     seen = set()
     for topic in topics:
-        if not isinstance(topic, dict) or topic.get("id") not in {"search", "ads", "recommendation"} or topic["id"] in seen:
+        if not isinstance(topic, dict) or topic.get("id") not in DOCUMENT_TOPIC_IDS or topic["id"] in seen:
             raise ResearchError("Research topic IDs must be supported and unique")
         seen.add(topic["id"])
         if not isinstance(topic.get("title"), str) or not topic["title"].strip():
@@ -205,6 +240,119 @@ def validate_config(config: dict) -> None:
             raise ResearchError(f"Invalid positive bounded research limit: {key}")
     if config.get("retentionDays", 90) < config.get("lookbackDays", 30):
         raise ResearchError("Retention must cover the discovery window")
+    if config.get("scope") != "document-intelligence" or config.get("scopeVersion") != 2:
+        raise ResearchError("Document-intelligence scope version 2 is required")
+    repos = config.get("githubRepos", [])
+    if not isinstance(repos, list) or any(not isinstance(repo, str) or repo not in OFFICIAL_REPOS for repo in repos) or len(repos) != len(set(repos)):
+        raise ResearchError("GitHub sources must be distinct verified document projects")
+
+
+def parse_releases(payload: object, repo: str, now: datetime) -> list[dict]:
+    if repo not in OFFICIAL_REPOS or not isinstance(payload, list):
+        raise ResearchError("Invalid official GitHub release response")
+    result = []
+    for item in payload:
+        if not isinstance(item, dict) or type(item.get("draft")) is not bool or type(item.get("prerelease")) is not bool:
+            raise ResearchError("Missing GitHub release visibility metadata")
+        if item["draft"] or item["prerelease"]:
+            continue
+        if item.get("published_at") is None:
+            continue
+        published = timestamp(item["published_at"])
+        updated = timestamp(item.get("updated_at") or item["published_at"])
+        release_id, tag, url = item.get("id"), item.get("tag_name"), item.get("html_url", "")
+        expected = f"https://github.com/{repo}/releases/tag/{quote(str(tag), safe='')}"
+        # GitHub keeps slash-containing tag names unescaped in html_url too.
+        allowed = {expected, f"https://github.com/{repo}/releases/tag/{quote(str(tag), safe='/')}"}
+        if type(release_id) is not int or release_id <= 0 or not isinstance(tag, str) or not tag.strip() or url not in allowed:
+            raise ResearchError("Invalid official GitHub release identity or URL")
+        if published > updated or updated > now + timedelta(minutes=5):
+            raise ResearchError("Inconsistent or future official release dates")
+        body = clean(re.sub(r"<[^>]+>", " ", str(item.get("body") or "")))[:500]
+        result.append({"id": f"github:{repo}:{release_id}", "kind": "release", "repo": repo,
+                       "title": f"{repo.split('/')[-1]} · {item.get('name') or tag}",
+                       "abstract": body or f"官方正式版本 {tag}；请查看原始发布说明。",
+                       "authors": [], "published": iso(published), "updated": iso(updated),
+                       "url": url, "tag": tag, "sourceName": f"GitHub · {repo}",
+                       "topics": ["ocr", "layout", "table"],
+                       "matchedTerms": {"ocr": ["官方文档解析项目"]}, "relevanceScore": 1.0})
+    return result
+
+
+def fetch_releases(repo: str, now: datetime) -> list[dict]:
+    if repo not in OFFICIAL_REPOS:
+        raise ResearchError("Unverified GitHub project")
+    url = f"https://api.github.com/repos/{repo}/releases?per_page=20"
+    headers = {"User-Agent": "document-intelligence-survey-research-tracker/2.0", "Accept": "application/vnd.github+json",
+               "X-GitHub-Api-Version": "2022-11-28"}
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    for attempt in range(3):
+        try:
+            request = urllib.request.Request(url, headers=headers)
+            if token:
+                # The token is sent only to this exact API origin, never copied
+                # by urllib's redirect handler to another destination.
+                request.add_unredirected_header("Authorization", "Bearer " + token)
+            with urllib.request.urlopen(request, timeout=30) as response:
+                if response.geturl() != url:
+                    raise ResearchError("Unexpected GitHub API redirect")
+                body = response.read(4 * 1024 * 1024 + 1)
+                if len(body) > 4 * 1024 * 1024:
+                    raise ResearchError("GitHub release response exceeds size limit")
+                return parse_releases(json.loads(body.decode("utf-8")), repo, now)
+        except urllib.error.HTTPError as exc:
+            rate_limited = exc.code == 429 or (exc.code == 403 and exc.headers.get("X-RateLimit-Remaining") == "0")
+            message = "GitHub API rate limit exceeded" if rate_limited else f"GitHub API HTTP {exc.code}"
+            transient = exc.code in {408, 500, 502, 503, 504}
+            exc.close()
+            if not transient or attempt == 2:
+                raise ResearchError(message) from None
+        except (urllib.error.URLError, TimeoutError, OSError):
+            if attempt == 2:
+                raise ResearchError("GitHub official release connection failed") from None
+        except (ValueError, UnicodeDecodeError) as exc:
+            raise ResearchError("Malformed GitHub official release JSON") from exc
+        time.sleep(2 ** (attempt + 1))
+    raise ResearchError("GitHub official release request failed")
+
+
+def rank_documents(papers: list[dict], now: datetime) -> list[dict]:
+    """Content-based reading order: document relevance, freshness and diversity."""
+    candidates = []
+    for original in papers:
+        paper = copy.deepcopy(original)
+        relevance = 1.0 if paper.get("kind") == "release" else document_relevance(paper)
+        if not relevance:
+            continue
+        age = max(0, (now - timestamp(paper["updated"])).total_seconds() / 86400)
+        freshness = math.exp(-age / 14)
+        recent_discovery = (now - timestamp(paper.get("firstSeen", iso(now)))).days < 3
+        paper["relevanceScore"] = relevance
+        paper["rankReasons"] = ["官方文档工具发布" if paper.get("kind") == "release" else "文档主题匹配"]
+        if age <= 7:
+            paper["rankReasons"].append("近 7 天有更新")
+        if recent_discovery:
+            paper["rankReasons"].append("新收录")
+        candidates.append((.6 * relevance + .32 * freshness + (.08 if recent_discovery else 0), paper))
+    ranked, topic_counts, source_counts = [], {}, {}
+    while candidates:
+        def adjusted(candidate: tuple[float, dict]) -> float:
+            base, paper = candidate
+            same_topic = max((topic_counts.get(topic, 0) for topic in paper.get("topics", [])), default=0)
+            source = paper.get("repo") or paper.get("sourceName", "arXiv")
+            return base - .07 * min(same_topic, 3) - .04 * min(source_counts.get(source, 0), 3)
+        chosen = max(range(len(candidates)), key=lambda index: (adjusted(candidates[index]), candidates[index][1]["updated"], candidates[index][1]["id"]))
+        score = adjusted(candidates[chosen])
+        _, paper = candidates.pop(chosen)
+        paper["rankScore"] = round(max(0, score), 5)
+        if ranked:
+            paper["rankReasons"].append("兼顾主题与来源多样性")
+        ranked.append(paper)
+        for topic in paper.get("topics", []):
+            topic_counts[topic] = topic_counts.get(topic, 0) + 1
+        source = paper.get("repo") or paper.get("sourceName", "arXiv")
+        source_counts[source] = source_counts.get(source, 0) + 1
+    return ranked
 
 
 def run(data: dict, config: dict, now: datetime) -> tuple[dict, dict]:
@@ -214,8 +362,25 @@ def run(data: dict, config: dict, now: datetime) -> tuple[dict, dict]:
     limit = int(config.get("maxResultsPerTopic", 100))
     lookback = int(config.get("lookbackDays", 30))
     retention = int(config.get("retentionDays", 90))
-    previous_topics = {item["id"]: item for item in data.get("topics", [])}
-    papers = {item["id"]: copy.deepcopy(item) for item in data.get("papers", [])}
+    same_scope = data.get("schemaVersion") == 2 and data.get("scope") == "document-intelligence"
+    previous_topics = {item["id"]: item for item in data.get("topics", [])} if same_scope else {}
+    previous_sources = {item["id"]: item for item in data.get("sources", [])} if same_scope else {}
+    repos = config.get("githubRepos", [])
+    papers = {}
+    removed = 0
+    for original in data.get("papers", []):
+        paper = copy.deepcopy(original)
+        if paper.get("kind", "paper") == "release":
+            if not same_scope or paper.get("repo") not in repos:
+                removed += 1
+                continue
+        else:
+            matches = classify(paper, topics)
+            if not matches:
+                removed += 1
+                continue
+            paper.update(kind="paper", topics=list(matches), matchedTerms=matches)
+        papers[paper["id"]] = paper
     statuses, errors, received = [], [], 0
     for topic in topics:
         url = query_url(topic, limit)
@@ -250,26 +415,55 @@ def run(data: dict, config: dict, now: datetime) -> tuple[dict, dict]:
             state.update(status="stale", error=str(exc))
             errors.append({"topic": topic["id"], "message": str(exc), "sourceUrl": url})
         statuses.append(state)
+    sources = []
+    for repo in repos:
+        source_id = "github:" + repo
+        state = copy.deepcopy(previous_sources.get(source_id, {}))
+        state.update(id=source_id, title=repo, repo=repo, sourceUrl=f"https://github.com/{repo}/releases")
+        state.setdefault("lastChecked", None)
+        try:
+            releases = fetch_releases(repo, now)
+            accepted = [item for item in releases if timestamp(item["published"]) >= now - timedelta(days=lookback)]
+            for item in accepted:
+                old = papers.get(item["id"])
+                if old and timestamp(old["updated"]) > timestamp(item["updated"]):
+                    continue
+                item.update(firstSeen=old.get("firstSeen", checked) if old else checked, lastSeen=checked)
+                papers[item["id"]] = item
+            received += len(accepted)
+            state.update(status="fresh", lastChecked=checked, fetchedCount=len(releases), matchedCount=len(accepted),
+                         resultLimit=20, truncated=len(releases) >= 20)
+            state.pop("error", None)
+        except Exception as exc:
+            state.update(status="stale", error=str(exc))
+            errors.append({"topic": source_id, "message": str(exc), "sourceUrl": state["sourceUrl"]})
+        sources.append(state)
     failed = {item["topic"] for item in errors}
-    kept = [paper for paper in papers.values() if failed.intersection(paper.get("topics", [])) or timestamp(paper["updated"]) >= now - timedelta(days=retention)]
+    def affected(paper: dict) -> bool:
+        if paper.get("kind") == "release":
+            return "github:" + paper.get("repo", "") in failed
+        return bool(failed.intersection(paper.get("topics", [])))
+    kept = [paper for paper in papers.values() if affected(paper) or timestamp(paper["updated"]) >= now - timedelta(days=retention)]
     kept.sort(key=lambda paper: (paper["updated"], paper["id"]), reverse=True)
     # Failed topics' retained records are never removed just to satisfy a cap.
-    preserved = [paper for paper in kept if failed.intersection(paper.get("topics", []))]
+    preserved = [paper for paper in kept if affected(paper)]
     preserved_ids = {paper["id"] for paper in preserved}
     remaining = [paper for paper in kept if paper["id"] not in preserved_ids]
     kept = preserved + remaining[:max(0, int(config.get("maxPapers", 1000)) - len(preserved))]
-    kept.sort(key=lambda paper: (paper["updated"], paper["id"]), reverse=True)
-    status = "refreshed" if not errors else "unavailable" if len(errors) == len(topics) else "partial"
+    kept = rank_documents(kept, now)
+    status = "refreshed" if not errors else "unavailable" if len(errors) == len(topics) + len(repos) else "partial"
     next_check = now.astimezone(timezone.utc).replace(hour=3, minute=16, second=0, microsecond=0)
     if next_check <= now:
         next_check += timedelta(days=1)
-    snapshot = {"schemaVersion": 1, "lastAttempt": checked,
-                "lastSuccessfulCheck": checked if not errors else data.get("lastSuccessfulCheck"),
+    snapshot = {"schemaVersion": 2, "scope": "document-intelligence", "lastAttempt": checked,
+                "lastSuccessfulCheck": checked if not errors else data.get("lastSuccessfulCheck") if same_scope else None,
                 "status": status, "nextScheduledCheck": next_check.date().isoformat(),
                 "updateCadence": "daily", "lookbackDays": lookback, "retentionDays": retention,
-                "topics": statuses, "papers": kept}
+                "topics": statuses, "sources": sources, "papers": kept,
+                "ranking": {"method": "document-relevance-freshness-diversity", "personalized": False}}
     log = {"lastAttempt": checked, "status": status, "errors": errors, "received": received,
-           "paperCount": len(kept), "topics": statuses}
+           "scope": "document-intelligence", "paperCount": len(kept), "topics": statuses, "sources": sources,
+           "removedOutOfScope": removed}
     return snapshot, log
 
 
@@ -287,7 +481,7 @@ def main() -> int:
     write_json(DATA_PATH, snapshot)
     write_json(LOG_PATH, log)
     lines = [f"## Research progress: {snapshot['status']}", ""]
-    for topic in snapshot["topics"]:
+    for topic in snapshot["topics"] + snapshot["sources"]:
         message = f"{topic['id']}: {topic['status']}; last verified {topic.get('lastChecked') or 'never'}"
         print(message)
         lines.append("- " + message)

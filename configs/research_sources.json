@@ -1,26 +1,141 @@
 {
+  "scope": "document-intelligence",
+  "scopeVersion": 2,
   "lookbackDays": 30,
   "retentionDays": 90,
   "maxResultsPerTopic": 100,
   "maxPapers": 1000,
+  "githubRepos": [
+    "PaddlePaddle/PaddleOCR",
+    "opendatalab/MinerU",
+    "docling-project/docling"
+  ],
   "topics": [
     {
-      "id": "search",
-      "title": "搜索",
-      "categories": ["cs.IR", "cs.AI", "cs.LG", "cs.CL"],
-      "terms": ["information retrieval", "neural retrieval", "dense retrieval", "sparse retrieval", "learning to rank", "document ranking", "passage retrieval", "query rewriting", "retrieval augmented generation"]
+      "id": "ocr",
+      "title": "OCR / 解析",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.DL",
+        "cs.HC"
+      ],
+      "terms": [
+        "optical character recognition",
+        "OCR",
+        "document parsing",
+        "document extraction",
+        "document digitization"
+      ]
     },
     {
-      "id": "ads",
-      "title": "广告",
-      "categories": ["cs.IR", "cs.AI", "cs.LG", "cs.GT", "stat.ML", "econ.TH"],
-      "terms": ["computational advertising", "online advertising", "ad auction", "ad auctions", "ad bidding", "ad ranking", "click through rate", "click through prediction", "CTR prediction", "conversion rate prediction", "real time bidding", "sponsored search", "display advertising"]
+      "id": "layout",
+      "title": "版面",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.DL",
+        "cs.HC"
+      ],
+      "terms": [
+        "document layout",
+        "layout analysis",
+        "reading order",
+        "document structure"
+      ]
     },
     {
-      "id": "recommendation",
-      "title": "推荐",
-      "categories": ["cs.IR", "cs.AI", "cs.LG", "cs.HC", "cs.SI", "stat.ML"],
-      "terms": ["recommender system", "recommender systems", "recommendation system", "recommendation systems", "sequential recommendation", "generative recommendation", "collaborative filtering", "session based recommendation", "recommendation model", "recommendation models"]
+      "id": "table",
+      "title": "表格 / 图表",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.DL",
+        "cs.HC"
+      ],
+      "terms": [
+        "table structure recognition",
+        "table extraction",
+        "table question answering",
+        "chart question answering",
+        "chart understanding",
+        "table recognition",
+        "table detection"
+      ]
+    },
+    {
+      "id": "docqa",
+      "title": "文档问答",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.DL",
+        "cs.HC"
+      ],
+      "terms": [
+        "document visual question answering",
+        "DocVQA",
+        "InfographicVQA",
+        "document question answering",
+        "multi page document",
+        "document understanding",
+        "visually rich document"
+      ]
+    },
+    {
+      "id": "docrag",
+      "title": "文档 RAG",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.DL",
+        "cs.HC"
+      ],
+      "terms": [
+        "document retrieval",
+        "multimodal document retrieval",
+        "document RAG",
+        "PDF question answering",
+        "long document understanding",
+        "visually rich document retrieval",
+        "ColPali"
+      ]
+    },
+    {
+      "id": "eval",
+      "title": "评测",
+      "categories": [
+        "cs.CV",
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.DL",
+        "cs.HC"
+      ],
+      "terms": [
+        "document benchmark",
+        "document evaluation",
+        "DocVQA",
+        "OmniDocBench",
+        "OCRBench",
+        "document parsing benchmark"
+      ]
     }
   ]
 }

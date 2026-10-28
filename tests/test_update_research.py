@@ -39,19 +39,20 @@ def empty_feed():
 
 def config():
     return {
+        "scope": "document-intelligence", "scopeVersion": 2,
         "lookbackDays": 30, "retentionDays": 90, "maxPapers": 1000,
         "maxResultsPerTopic": 100,
         "topics": [
-            {"id": "search", "title": "搜索", "terms": ["neural retrieval"], "categories": ["cs.IR"]},
-            {"id": "ads", "title": "广告", "terms": ["CTR prediction", "click-through rate"], "categories": ["cs.IR"]},
-            {"id": "recommendation", "title": "推荐", "terms": ["recommender systems"], "categories": ["cs.IR"]},
+            {"id": "docqa", "title": "文档问答", "terms": ["document question answering"], "categories": ["cs.IR"]},
+            {"id": "ocr", "title": "OCR", "terms": ["optical character recognition"], "categories": ["cs.IR"]},
+            {"id": "docrag", "title": "文档检索", "terms": ["document retrieval"], "categories": ["cs.IR"]},
         ],
     }
 
 
 def snapshot():
     return {
-        "schemaVersion": 1, "lastAttempt": "2026-10-01T00:00:00Z",
+        "schemaVersion": 2, "scope": "document-intelligence", "lastAttempt": "2026-10-01T00:00:00Z",
         "lastSuccessfulCheck": "2026-10-01T00:00:00Z", "status": "refreshed",
         "topics": [
             {"id": item["id"], "title": item["title"], "status": "fresh", "lastChecked": "2026-10-01T00:00:00Z"}
@@ -59,11 +60,11 @@ def snapshot():
         ],
         "papers": [{
             "id": "arxiv:2609.00001", "arxiv": "2609.00001", "version": 1,
-            "title": "Retained advertising example", "abstract": "A prior CTR prediction paper.",
+            "title": "Retained optical character recognition example", "abstract": "A prior document parsing study.",
             "authors": ["Retained Author"], "published": "2026-09-20T10:00:00Z",
             "updated": "2026-09-20T10:00:00Z", "url": "https://arxiv.org/abs/2609.00001",
-            "pdfUrl": "https://arxiv.org/pdf/2609.00001", "topics": ["ads"],
-            "matchedTerms": {"ads": ["CTR prediction"]}, "arxivCategories": ["cs.IR"],
+            "pdfUrl": "https://arxiv.org/pdf/2609.00001", "topics": ["ocr"],
+            "matchedTerms": {"ocr": ["optical character recognition"]}, "arxivCategories": ["cs.IR"],
             "firstSeen": "2026-10-01T00:00:00Z", "lastSeen": "2026-10-01T00:00:00Z",
             "sourceName": "arXiv",
         }],
@@ -99,6 +100,16 @@ class OfflineCase(unittest.TestCase):
         ]:
             mocked.start()
             self.addCleanup(mocked.stop)
+
+    def assert_source_records_preserved(self, expected, actual):
+        """Derived reading-order scores may change; source facts must not."""
+        actual_by_id = {row["id"]: row for row in actual}
+        for old in expected:
+            self.assertIn(old["id"], actual_by_id)
+            current = actual_by_id[old["id"]]
+            for field, value in old.items():
+                if field not in {"rankScore", "rankReasons", "relevanceScore"}:
+                    self.assertEqual(current[field], value, f"Retained source fact changed: {field}")
 
 
 class AtomParsingTests(OfflineCase):
@@ -136,7 +147,7 @@ class AtomParsingTests(OfflineCase):
 
     def test_incomplete_or_invalid_metadata_rejects_entire_response(self):
         replacements = [
-            ("<title>Neural retrieval for recommender systems</title>", "<title></title>"),
+            ("<title>Document question answering with document retrieval</title>", "<title></title>"),
             ("<author><name>Alice Example</name></author>", "<author><name></name></author>"),
             ("2026-10-20T10:00:00Z", "2026-02-30T10:00:00Z"),
             ("2026-10-27T10:00:00Z", "2027-10-27T10:00:00Z"),
@@ -152,19 +163,19 @@ class TopicMatchingTests(OfflineCase):
     def test_overlap_is_explicit_and_categories_gate_irrelevant_fields(self):
         paper = research.parse_feed(xml_text(), NOW)[0][0]
         matches = research.classify(paper, config()["topics"])
-        self.assertEqual(set(matches), {"search", "recommendation"})
+        self.assertEqual(set(matches), {"docqa", "docrag"})
         paper["arxivCategories"] = ["quant-ph"]
         self.assertFalse(research.classify(paper, config()["topics"]))
 
     def test_phrase_boundaries_prevent_substring_matches(self):
-        paper = {"title": "preneural retrievals", "abstract": "not about advertising", "arxivCategories": ["cs.IR"]}
+        paper = {"title": "predocument question answerings", "abstract": "A synthetic phrase-boundary example with document parsing.", "arxivCategories": ["cs.IR"]}
         self.assertFalse(research.classify(paper, config()["topics"]))
 
     def test_query_uses_title_abstract_categories_and_recent_sort(self):
         topic = config()["topics"][0]
         query = research.build_query(topic)
-        self.assertIn('ti:"neural retrieval"', query)
-        self.assertIn('abs:"neural retrieval"', query)
+        self.assertIn('ti:"document question answering"', query)
+        self.assertIn('abs:"document question answering"', query)
         self.assertIn("cat:cs.IR", query)
         parsed = urlsplit(research.query_url(topic, 100))
         args = parse_qs(parsed.query)
@@ -238,7 +249,7 @@ class MergeTests(OfflineCase):
         ids = [item["id"] for item in result["papers"]]
         self.assertEqual(len(ids), len(set(ids)))
         paper = next(item for item in result["papers"] if item["arxiv"] == "2610.12345")
-        self.assertEqual(set(paper["topics"]), {"search", "recommendation"})
+        self.assertEqual(set(paper["topics"]), {"docqa", "docrag"})
         with patch.object(research, "fetch", side_effect=self.fetch_all):
             second, _ = research.run(result, config(), NOW)
         self.assertEqual(next(item for item in second["papers"] if item["id"] == paper["id"])["firstSeen"], paper["firstSeen"])
@@ -246,24 +257,25 @@ class MergeTests(OfflineCase):
     def test_partial_failure_retains_affected_data_and_last_success(self):
         original = snapshot()
         def fetch_topic(url, *args, **kwargs):
-            if 'CTR+prediction' in url or 'CTR%20prediction' in url:
+            if 'optical+character+recognition' in url or 'optical%20character%20recognition' in url:
                 raise research.ResearchError("synthetic timeout")
             return research.FetchResult(url, xml_text())
         with patch.object(research, "fetch", side_effect=fetch_topic):
             result, _ = research.run(original, config(), NOW)
         topics = {item["id"]: item for item in result["topics"]}
         self.assertEqual(result["status"], "partial")
-        self.assertEqual(topics["ads"]["status"], "stale")
-        self.assertEqual(topics["ads"]["lastChecked"], original["topics"][1]["lastChecked"])
+        self.assertEqual(topics["ocr"]["status"], "stale")
+        self.assertEqual(topics["ocr"]["lastChecked"], original["topics"][1]["lastChecked"])
         self.assertEqual(result["lastSuccessfulCheck"], original["lastSuccessfulCheck"])
-        self.assertIn(original["papers"][0], result["papers"])
+        self.assert_source_records_preserved(original["papers"], result["papers"])
 
     def test_all_failures_retain_old_data(self):
         original = snapshot()
         with patch.object(research, "fetch", side_effect=research.ResearchError("synthetic outage")):
             result, _ = research.run(original, config(), NOW)
         self.assertEqual(result["status"], "unavailable")
-        self.assertEqual(result["papers"], original["papers"])
+        self.assert_source_records_preserved(original["papers"], result["papers"])
+        self.assertEqual(len(result["papers"]), len(original["papers"]))
         self.assertTrue(all(item["status"] == "stale" for item in result["topics"]))
 
     def test_failed_source_keeps_old_records_even_beyond_retention_or_cap(self):
@@ -306,12 +318,13 @@ class MergeTests(OfflineCase):
         self.assertEqual(current["updated"], previous["updated"])
 
     def test_malformed_later_row_cannot_partially_publish_earlier_row(self):
-        xml = xml_text().replace("<summary>A synthetic advertising model for click-through rate prediction.</summary>", "<summary></summary>")
+        xml = xml_text().replace("<summary>A synthetic optical character recognition model for document parsing.</summary>", "<summary></summary>")
         original = snapshot()
         with patch.object(research, "fetch", side_effect=lambda url, **kwargs: research.FetchResult(url, xml)):
             result, _ = research.run(original, config(), NOW)
         self.assertEqual(result["status"], "unavailable")
-        self.assertEqual(result["papers"], original["papers"])
+        self.assert_source_records_preserved(original["papers"], result["papers"])
+        self.assertEqual(len(result["papers"]), len(original["papers"]))
 
     def test_next_schedule_matches_daily_0316_utc_boundary(self):
         for hour, minute, expected in [(3, 15, "2026-10-28"), (3, 17, "2026-10-29")]:
@@ -329,7 +342,7 @@ class ConfigurationTests(OfflineCase):
             settings[key] = value
             variants.append(settings)
         duplicate = config()
-        duplicate["topics"][1]["id"] = "search"
+        duplicate["topics"][1]["id"] = "docqa"
         variants.append(duplicate)
         for key, value in [("id", "other"), ("terms", []), ("terms", [42]), ("terms", ['unsafe"term']), ("terms", ["unsafe\nterm"]), ("categories", []), ("categories", [None]), ("categories", ['cs.IR OR all:"x"'])]:
             settings = config()
@@ -362,7 +375,8 @@ class MainTests(OfflineCase):
             code, data, log, output, summary = self.run_main(Path(folder), failed=True)
             self.assertNotEqual(code, 0)
             self.assertEqual(json.loads(data.read_text())["status"], "unavailable")
-            self.assertEqual(json.loads(data.read_text())["papers"], snapshot()["papers"])
+            self.assert_source_records_preserved(snapshot()["papers"], json.loads(data.read_text())["papers"])
+            self.assertEqual(len(json.loads(data.read_text())["papers"]), len(snapshot()["papers"]))
             self.assertIn("snapshot_written=true", output.read_text())
             self.assertTrue(log.exists())
             self.assertTrue(summary.exists())
