@@ -8,8 +8,8 @@
   <opensearch:itemsPerPage>2</opensearch:itemsPerPage>
   <entry>
     <id>http://arxiv.org/abs/2610.12345v2</id>
-    <title>Neural retrieval for recommender systems</title>
-    <summary>A synthetic example of neural retrieval for recommender systems.</summary>
+    <title>Document question answering with document retrieval</title>
+    <summary>A synthetic document question answering method uses document retrieval over visually rich documents.</summary>
     <published>2026-10-20T10:00:00Z</published>
     <updated>2026-10-27T10:00:00Z</updated>
     <author><name>Alice Example</name></author>
@@ -21,8 +21,8 @@
   </entry>
   <entry>
     <id>http://arxiv.org/abs/2610.12346v1</id>
-    <title>CTR prediction with contextual features</title>
-    <summary>A synthetic advertising model for click-through rate prediction.</summary>
+    <title>Optical character recognition for document parsing</title>
+    <summary>A synthetic optical character recognition model for document parsing.</summary>
     <published>2026-10-26T11:00:00Z</published>
     <updated>2026-10-26T11:00:00Z</updated>
     <author><name>Carol Example</name></author>
