@@ -1,17 +1,19 @@
 {
-  "lastRun": "2026-10-25T20:41:37Z",
+  "lastRun": "2026-11-01T21:55:37Z",
   "provider": "tavily",
   "searchDepth": "advanced",
   "searchedQueries": 156,
   "rawSearchResults": 35,
-  "wechatSearchResults": 35,
-  "filteredNonWechat": 0,
-  "filteredExamples": [],
+  "wechatSearchResults": 34,
+  "filteredNonWechat": 1,
+  "filteredExamples": [
+    "https://mp.weixin.qq.com/s?src=11&timestamp=1793147266&ver=7053&signature=LyAYnpDOR8dSBpGIF5N-aF2U9GC%2Ae-Ha2KYA5auGcbn0p7eyvYL7KMXj1H5UQLCY0jEwJwuXLCfSc6TUn5AEn-Nb3wVMQpJr2nqMVTpVfLgaCnDFGn4-mIkfusWZY9q0&new=1"
+  ],
   "sourceSearchSummary": {
     "新智元": {
       "queries": 1,
       "rawResults": 7,
-      "wechatResults": 7,
+      "wechatResults": 6,
       "queriesWithWechatResults": 1,
       "errors": 0
     },
@@ -44,9 +46,9 @@
       "errors": 0
     }
   },
-  "extractRequested": 13,
+  "extractRequested": 14,
   "extractSucceeded": 11,
-  "extractFailed": 2,
+  "extractFailed": 3,
   "candidateArticles": 5,
   "arxivIdsFound": 0,
   "githubProjectsFound": 5,
@@ -105,16 +107,16 @@
   "ignoredExistingCurated": 0,
   "existingRemovedAsIrrelevant": 0,
   "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261025204138159813897c14228f5g1nJgeSD)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261025204208691180872c14228f5hgtTgRPr)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261025204210073054666c14228f5TKjR4QRj)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261025204211700587300c14228f5WGoJo6Ep)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261025204212812614608c14228f5X7IeqjfH)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261025204213851386959c14228f5SbJaQz0N)\",\"type\":\"dmx_api_error\"}}"
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261101215537798098674c14228f5a31F3Dqq)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261101215611211723556c14228f5cAPJcZWq)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261101215612306866488c14228f5lOcdRM9W)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261101215613681608935c14228f5Zn0nZsWg)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261101215614791088086c14228f5pN5fYhan)\",\"type\":\"dmx_api_error\"}}",
+    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261101215615519842908c14228f5wTrOjW6Q)\",\"type\":\"dmx_api_error\"}}"
   ],
   "searchConcurrency": 5,
   "searchQueriesAttempted": 5,
   "searchStoppedForExtraction": true,
-  "searchRawContentResults": 27,
-  "contentAvailable": 24
+  "searchRawContentResults": 21,
+  "contentAvailable": 23
 }
