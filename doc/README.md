@@ -38,9 +38,14 @@ With Python and ReportLab installed, run from the repository root:
 python scripts/figures/build_evidence_diagrams.py
 python scripts/build_method_timelines.py
 python scripts/build_benchmark_timeline.py
+python scripts/figures/build_document_timeline.py
+python scripts/figures/build_document_case.py
+python scripts/figures/build_evaluation_cases.py
 ```
 
 The scripts write matching figure PDFs to both `figs/` and `../figs_by_qixingyu/`. Timeline dates mean the first public release year documented by the embedded source metadata; a citation's later venue year may differ.
+
+The curved document-AI chronology uses `../scripts/figures/document_timeline_sources.json` for first-paper dates and official checkpoint links. Yellow highlighting means that a public pretrained checkpoint was verified on the recorded inspection date, not that the model was released on the paper date or shares a common license. Figures 13 and 14 use constructed financial and staffing reports to explain cross-page evidence and evaluation errors; they are not experimental results.
 
 ## Revision and download
 

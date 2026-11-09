@@ -16,6 +16,15 @@ This is a curated narrative review. The bibliography combines foundational metho
 
 Technical descriptions and the principal comparisons refer to original papers or official resources. We distinguish a paper's first public version from its later venue publication when discussing chronology. A chronology indicates when a representative capability appeared; it does not establish that an earlier approach became obsolete. Benchmark findings retain the scope of their reported model versions, input access, and evaluation settings. This survey introduces no newly executed model benchmark, and the reported literature results should be interpreted under their original protocols.
 
+Figure~\ref{fig:document_ai_chronology} provides a chronological entry point to representative document-AI papers. OCR and layout models, structured document and table methods, and visual document models develop in parallel. The highlighted checkpoint links describe resource availability at the time of inspection, independently of paper dates; they do not rank model quality or establish a shared licensing regime.
+
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figs/fig12.pdf}
+\caption{A chronology of selected document-intelligence papers, dated by their first public paper versions. Colored markers indicate overlapping research emphases. Yellow names identify public trained weights linked by the official project and verified on 9 November 2026; daggers mark component/adapter releases rather than all model components. Unhighlighted entries have no such checkpoint verified for this figure. Branches organize dates, not model ancestry or replacement. Names link to papers; colored bars beside highlighted names link to weights. Sources are also recorded in the accompanying metadata.}
+\label{fig:document_ai_chronology}
+\end{figure*}
+
 \subsection{An Evidence-Centered Comparison Framework}
 
 The chapters follow a practical reading order from perception to downstream reasoning. Their topics are not mutually exclusive method classes: table understanding is a task family, RAG is a system strategy, and a VLM is a model family. A visual table QA system may combine all three. We therefore use five complementary axes for comparison:
@@ -30,6 +39,15 @@ The chapters follow a practical reading order from perception to downstream reas
 
 \paragraph{A running example.}
 Consider an illustrative question: ``What was the year-on-year change in operating margin, after applying the restatement described in the footnote?'' The table, its units, the comparison year, and the footnote form a joint evidence requirement. An OCR pipeline can expose individual tokens and cells, but must preserve their alignment. A direct-visual model can retain the page appearance, but must receive sufficient resolution and the relevant pages. A retrieval system must recover both the table and the footnote; a high-scoring isolated page may be insufficient. An agent may revisit the document and execute arithmetic, but a valid calculation over the wrong row still produces an unsupported answer. This example is a conceptual comparison, not a new evaluation dataset or experimental result.
+
+Figure~\ref{fig:cross_page_case} makes this dependency concrete. In the illustrative report, the printed margins are 15\% and 12\%, but the footnote restates the comparison-year operating profit from 96 to 104 while leaving revenue at 800. The corrected margin is therefore 13\%, and the increase is 2 percentage points. Reading only the table would yield 3 percentage points. Each input route must preserve the table--footnote relationship before arithmetic can resolve the question.
+
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figs/fig13.pdf}
+\caption{An illustrative cross-page financial-report question. The table and restatement note jointly determine the answer: $150/1000-104/800=0.02$, or an increase of 2 percentage points in operating margin. OCR-first, direct-visual and hybrid routes expose different representations of the same required evidence. All documents, numbers and outputs are constructed examples, not model predictions or benchmark results.}
+\label{fig:cross_page_case}
+\end{figure*}
 
 \subsection{Contributions and Organization}
 

@@ -37,6 +37,15 @@ Metrics cannot be pooled simply because they share a percentage scale. ANLS meas
 \paragraph{Four distinct validation targets}
 Answer correctness asks whether the final result matches the reference or task criterion. Evidence localization asks whether the selected page, region, cell or passage is relevant. Support and faithfulness ask whether the cited content actually justifies the answer and whether the answer depends on that content; displaying a plausible citation does not establish this dependence. Program execution correctness asks whether the stated operation was executed correctly, conditional on the selected inputs. A valid SQL result can still use the wrong table or time period. These targets require separate diagnostics: answer metrics, evidence selection metrics, support annotation and evidence-removal or substitution controls, and execution tests. Where several locations contain equivalent support, evaluation should allow valid alternative evidence rather than count a single annotated location as the only correct explanation.
 
+Figure~\ref{fig:validation_cases} illustrates why these targets require separate checks. A response can match the reference number while citing an irrelevant row or adding a cause that the document never states. Conversely, selecting the relevant cells does not guarantee correct arithmetic. Even a response that passes all displayed checks does not, by itself, establish causal reliance on the cited evidence.
+
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figs_by_qixingyu/fig14.pdf}
+\caption{Four constructed document-QA traces with different diagnostic outcomes. The staffing report supports an increase of 20 staff but gives no explanation for that increase. Numeric agreement, localization of relevant cells, support for the complete answer and correct arithmetic on the declared inputs are checked separately. These are illustrative judgments, not measured model scores; evidence-removal or substitution controls are still needed to investigate causal faithfulness.}
+\label{fig:validation_cases}
+\end{figure*}
+
 \paragraph{Deployment-oriented reporting}
 Existing resources already test unanswerable questions, evidence selection and robustness; the remaining issue is coverage of their combinations under realistic budgets. Results should therefore be broken down by page length, scan degradation, language, layout density and evidence modality where the data permit. Abstention should be evaluated together with answer coverage and error rate, rather than rewarded for refusing every question. Such reporting makes a failure diagnosable without equating a generated explanation or an agent trace with verified reasoning.
 

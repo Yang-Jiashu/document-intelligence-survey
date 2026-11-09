@@ -11,6 +11,8 @@ This revision preserves the full literature chapters and uses one set of section
 - Replaced linear replacement narratives with conditional comparisons of OCR, direct-visual, hybrid, retrieval and agent-controlled approaches. Restricted the MMLongBench-Doc comparison to the original 2024 experimental setting.
 - Corrected VISTA-OCR, Ocean-OCR, DocParseNet and DocLLM descriptions; corrected OCRBench's 29 datasets; repaired Table-GPT author names and distinguished InfographicVQA's 2021 preprint from WACV 2022 publication.
 - Rebuilt affected vector diagrams to align routes, dates and capability labels with the revised text. Removed the unprovenanced performance flower plot from the manuscript; its historical source asset is retained.
+- Added three original vector figures: a curved representative document-AI chronology, a worked cross-page financial-report example and four concrete evaluation traces. Chronology uses first-public-paper dates; public-checkpoint availability is verified separately against official project/model pages and stored in `scripts/figures/document_timeline_sources.json`. The worked examples contain explicitly constructed documents and numbers, not empirical predictions.
+- Restored the project page's three official scholar portraits to their original color by removing the grayscale/sepia CSS filter, preserving the larger reading typography.
 - Set the manuscript author order to JiaShu Yang, Chi Zhang, Xingyu Qi, Ning Zhang, Jie Wu, Lingxu Chen and Jiani Guo, matching the current project page and source instruction.
 
 ## Evidence for key corrections

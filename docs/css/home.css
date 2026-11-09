@@ -205,7 +205,7 @@ body.home {
 .home .scholar-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:25px; }
 .home .scholar-card { display:grid; grid-template-columns:88px minmax(0,1fr); gap:20px; min-width:0; padding:24px 21px 22px; background:linear-gradient(105deg,#fffdf48c,#f8f3e673); border:1px solid #d8cdb7; border-top:2px solid #aeb698; box-shadow:1px 4px 9px #67533208; position:relative; }
 .home .scholar-card::after { content:''; position:absolute; bottom:-4px; left:4px; right:4px; height:3px; border:1px solid #d8cdb7; border-top:0; background:#e8deca; }
-.home .scholar-portrait img { display:block; width:88px; height:113px; object-fit:cover; object-position:center 25%; filter:grayscale(1) sepia(.23); border:4px solid #fffaf0; outline:1px solid #d7ccb4; box-shadow:2px 3px 4px #74623e12; }
+.home .scholar-portrait img { display:block; width:88px; height:113px; object-fit:cover; object-position:center 25%; border:4px solid #fffaf0; outline:1px solid #d7ccb4; box-shadow:2px 3px 4px #74623e12; }
 .home .scholar-portrait .portrait-index { display:block; font:11px/1.7 ui-monospace,monospace; color:#726a57; letter-spacing:.025em; margin-top:15px; }
 .home .scholar-copy h3 { font-family:"Source Serif 4",Georgia,serif; font-weight:500; font-size:30px; line-height:1.25; color:#51634a; }
 .home .scholar-copy h3 > span { display:block; font:italic 18px/1.4 "Source Serif 4",Georgia,serif; color:#676d58; margin-top:4px; }

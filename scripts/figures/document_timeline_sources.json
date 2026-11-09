@@ -1,0 +1,393 @@
+{
+  "date_basis": "Date of the first public arXiv paper, not the checkpoint release date or conference year.",
+  "availability_checked": "2026-11-09",
+  "availability_definition": "Yellow marks a verified authors-released trained checkpoint, including an official adapter or a released subset of model components. Public weights do not imply unrestricted use, fully released training data, or an open-source license. Plain labels denote a method/framework or no official checkpoint verified, not proof that weights cannot exist.",
+  "chronology_note": "Representative selection, not exhaustive. Track membership is for reading and may overlap; links show chronology, not inheritance or performance superiority.",
+  "tracks": [
+    {
+      "id": "perception",
+      "label": "OCR and layout representations"
+    },
+    {
+      "id": "structured",
+      "label": "Structured documents and reasoning"
+    },
+    {
+      "id": "visual",
+      "label": "Visual document models and retrieval"
+    }
+  ],
+  "entries": [
+    {
+      "name": "CRNN",
+      "date": "2015-07-21",
+      "arxiv": "1507.05717",
+      "track": "perception",
+      "weights_url": "https://github.com/bgshih/crnn#run-demo",
+      "availability_note": "Official author implementation links the trained crnn_demo_model.t7; this is scene-text recognition, included as an enabling OCR precursor. The authors-linked Dropbox download returned HTTP 200 and an application/binary payload header (33,341,614 bytes) on the check date.",
+      "sources": [
+        "https://arxiv.org/abs/1507.05717",
+        "https://github.com/bgshih/crnn",
+        "https://github.com/bgshih/crnn#run-demo"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Calamari",
+      "date": "2018-07-05",
+      "arxiv": "1807.02004",
+      "track": "perception",
+      "weights_url": "https://github.com/Calamari-OCR/calamari_models",
+      "availability_note": "Official pretrained mixed-model repository is linked by the Calamari project.",
+      "sources": [
+        "https://arxiv.org/abs/1807.02004",
+        "https://github.com/Calamari-OCR/calamari",
+        "https://github.com/Calamari-OCR/calamari_models"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "LayoutLM",
+      "date": "2019-12-31",
+      "arxiv": "1912.13318",
+      "track": "perception",
+      "weights_url": "https://huggingface.co/microsoft/layoutlm-base-uncased",
+      "availability_note": "Microsoft model repository exposes model.safetensors and pytorch_model.bin.",
+      "sources": [
+        "https://arxiv.org/abs/1912.13318",
+        "https://github.com/microsoft/unilm/tree/master/layoutlm",
+        "https://huggingface.co/microsoft/layoutlm-base-uncased"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "TAPAS",
+      "date": "2020-04-05",
+      "arxiv": "2004.02349",
+      "track": "structured",
+      "weights_url": "https://huggingface.co/google/tapas-base",
+      "availability_note": "Official Google implementation links pretrained checkpoints; official Google model repository exposes pytorch_model.bin.",
+      "sources": [
+        "https://arxiv.org/abs/2004.02349",
+        "https://github.com/google-research/tapas",
+        "https://huggingface.co/google/tapas-base"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "PP-OCR",
+      "date": "2020-09-21",
+      "arxiv": "2009.09941",
+      "track": "perception",
+      "weights_url": "https://github.com/PaddlePaddle/PaddleOCR/blob/release/1.1/doc/doc_en/models_list_en.md",
+      "availability_note": "Official release/1.1 model list preserves the original PP-OCR downloadable inference/training weights; this refers to PP-OCR weights, not code alone or later PP-OCR variants.",
+      "sources": [
+        "https://arxiv.org/abs/2009.09941",
+        "https://github.com/PaddlePaddle/PaddleOCR",
+        "https://github.com/PaddlePaddle/PaddleOCR/blob/release/1.1/doc/doc_en/models_list_en.md"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "LayoutLMv2",
+      "date": "2020-12-29",
+      "arxiv": "2012.14740",
+      "track": "perception",
+      "weights_url": "https://huggingface.co/microsoft/layoutlmv2-base-uncased",
+      "availability_note": "Official Microsoft repository exposes pytorch_model.bin.",
+      "sources": [
+        "https://arxiv.org/abs/2012.14740",
+        "https://github.com/microsoft/unilm/tree/master/layoutlmv2",
+        "https://huggingface.co/microsoft/layoutlmv2-base-uncased"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "LayoutXLM",
+      "date": "2021-04-18",
+      "arxiv": "2104.08836",
+      "track": "perception",
+      "weights_url": "https://huggingface.co/microsoft/layoutxlm-base",
+      "availability_note": "Official Microsoft repository exposes pytorch_model.bin.",
+      "sources": [
+        "https://arxiv.org/abs/2104.08836",
+        "https://github.com/microsoft/unilm/tree/master/layoutxlm",
+        "https://huggingface.co/microsoft/layoutxlm-base"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Donut",
+      "date": "2021-11-30",
+      "arxiv": "2111.15664",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/naver-clova-ix/donut-base",
+      "availability_note": "Official clovaai/donut implementation links this checkpoint; repository exposes pytorch_model.bin.",
+      "sources": [
+        "https://arxiv.org/abs/2111.15664",
+        "https://github.com/clovaai/donut",
+        "https://huggingface.co/naver-clova-ix/donut-base"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "LiLT",
+      "date": "2022-02-28",
+      "arxiv": "2202.13669",
+      "track": "perception",
+      "weights_url": "https://github.com/jpWang/LiLT#available-checkpoints",
+      "availability_note": "Official author repository provides downloadable LiLT-RoBERTa, LiLT-InfoXLM and layout-only checkpoints through OneDrive.",
+      "sources": [
+        "https://arxiv.org/abs/2202.13669",
+        "https://github.com/jpWang/LiLT",
+        "https://github.com/jpWang/LiLT#available-checkpoints"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "LayoutLMv3",
+      "date": "2022-04-18",
+      "arxiv": "2204.08387",
+      "track": "perception",
+      "weights_url": "https://huggingface.co/microsoft/layoutlmv3-base",
+      "availability_note": "Official Microsoft repository exposes model.safetensors and pytorch_model.bin.",
+      "sources": [
+        "https://arxiv.org/abs/2204.08387",
+        "https://github.com/microsoft/unilm/tree/master/layoutlmv3",
+        "https://huggingface.co/microsoft/layoutlmv3-base"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Pix2Struct",
+      "date": "2022-10-07",
+      "arxiv": "2210.03347",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/google/pix2struct-base",
+      "availability_note": "Official Google implementation releases Base/Large checkpoints; Google model repository exposes safetensors and pytorch weights.",
+      "sources": [
+        "https://arxiv.org/abs/2210.03347",
+        "https://github.com/google-research/pix2struct",
+        "https://huggingface.co/google/pix2struct-base"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "UDOP",
+      "date": "2022-12-05",
+      "arxiv": "2212.02623",
+      "track": "structured",
+      "weights_url": "https://huggingface.co/ZinengTang/Udop",
+      "availability_note": "Official Microsoft implementation links author-hosted encoder/text-decoder checkpoints. Vision-decoder weights are not released; highlight does not claim every component is available.",
+      "sources": [
+        "https://arxiv.org/abs/2212.02623",
+        "https://github.com/microsoft/UDOP",
+        "https://huggingface.co/ZinengTang/Udop"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Qwen-VL",
+      "date": "2023-08-24",
+      "arxiv": "2308.12966",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/Qwen/Qwen-VL",
+      "availability_note": "Official Qwen model repository exposes sharded pytorch weights.",
+      "sources": [
+        "https://arxiv.org/abs/2308.12966",
+        "https://github.com/QwenLM/Qwen-VL",
+        "https://huggingface.co/Qwen/Qwen-VL"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Table-GPT",
+      "date": "2023-10-13",
+      "arxiv": "2310.09263",
+      "track": "structured",
+      "weights_url": null,
+      "availability_note": "Official release contains code and data for table-tuning GPT-3.5/ChatGPT. No authors-released standalone trained checkpoint verified; unrelated TableGPT models are not substituted.",
+      "sources": [
+        "https://arxiv.org/abs/2310.09263",
+        "https://github.com/microsoft/Table-GPT"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "DocLLM",
+      "date": "2023-12-31",
+      "arxiv": "2401.00908",
+      "track": "structured",
+      "weights_url": null,
+      "availability_note": "Author repository dongshengwang-ai/DocLLM contains paper/results but no official trained checkpoint was verified. Public third-party reimplementations do not satisfy this highlight criterion.",
+      "sources": [
+        "https://arxiv.org/abs/2401.00908",
+        "https://github.com/dongshengwang-ai/DocLLM"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "mPLUG-DocOwl 1.5",
+      "date": "2024-03-19",
+      "arxiv": "2403.12895",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/mPLUG/DocOwl1.5",
+      "availability_note": "Official X-PLUG implementation links the mPLUG model repository, which exposes safetensors and pytorch weights.",
+      "sources": [
+        "https://arxiv.org/abs/2403.12895",
+        "https://github.com/X-PLUG/mPLUG-DocOwl/tree/main/DocOwl1.5",
+        "https://huggingface.co/mPLUG/DocOwl1.5"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "GraphRAG",
+      "date": "2024-04-24",
+      "arxiv": "2404.16130",
+      "track": "structured",
+      "weights_url": null,
+      "availability_note": "GraphRAG is a retrieval/indexing framework using configurable underlying language models, not a new standalone pretrained checkpoint.",
+      "sources": [
+        "https://arxiv.org/abs/2404.16130",
+        "https://github.com/microsoft/graphrag"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "ColPali",
+      "date": "2024-06-27",
+      "arxiv": "2407.01449",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/vidore/colpali",
+      "availability_note": "Official illuin-tech/colpali repository links the paper checkpoint. Public trained adapter/projection weights are available; the PaliGemma base remains subject to its own access/license terms.",
+      "sources": [
+        "https://arxiv.org/abs/2407.01449",
+        "https://github.com/illuin-tech/colpali",
+        "https://huggingface.co/vidore/colpali"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Qwen2-VL",
+      "date": "2024-09-18",
+      "arxiv": "2409.12191",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct",
+      "availability_note": "Official Qwen checkpoint repository exposes sharded safetensors.",
+      "sources": [
+        "https://arxiv.org/abs/2409.12191",
+        "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "DocLayout-YOLO",
+      "date": "2024-10-16",
+      "arxiv": "2410.12628",
+      "track": "perception",
+      "weights_url": "https://huggingface.co/juliozhao/DocLayout-YOLO-DocStructBench",
+      "availability_note": "Official implementation links this author-hosted DocStructBench checkpoint; repository exposes .pt weights.",
+      "sources": [
+        "https://arxiv.org/abs/2410.12628",
+        "https://github.com/opendatalab/DocLayout-YOLO",
+        "https://huggingface.co/juliozhao/DocLayout-YOLO-DocStructBench"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "TableGPT2",
+      "date": "2024-11-04",
+      "arxiv": "2411.02059",
+      "track": "structured",
+      "weights_url": "https://huggingface.co/tablegpt/TableGPT2-7B",
+      "availability_note": "Official TableGPT organization publishes 7B/72B checkpoints; TableGPT2-7B exposes safetensors.",
+      "sources": [
+        "https://arxiv.org/abs/2411.02059",
+        "https://github.com/tablegpt/tablegpt-agent",
+        "https://huggingface.co/tablegpt/TableGPT2-7B"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "InternVL 2.5",
+      "date": "2024-12-06",
+      "arxiv": "2412.05271",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B",
+      "availability_note": "Official OpenGVLab checkpoint repository exposes sharded safetensors.",
+      "sources": [
+        "https://arxiv.org/abs/2412.05271",
+        "https://huggingface.co/OpenGVLab/InternVL2_5-8B"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "Qwen2.5-VL",
+      "date": "2025-02-19",
+      "arxiv": "2502.13923",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+      "availability_note": "Official Qwen checkpoint repository exposes sharded safetensors.",
+      "sources": [
+        "https://arxiv.org/abs/2502.13923",
+        "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "olmOCR",
+      "date": "2025-02-25",
+      "arxiv": "2502.18443",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/allenai/olmOCR-7B-0225-preview",
+      "availability_note": "Original official AllenAI February 2025 checkpoint exposes sharded safetensors; not substituted with the later olmOCR-2 model.",
+      "sources": [
+        "https://arxiv.org/abs/2502.18443",
+        "https://github.com/allenai/olmocr",
+        "https://huggingface.co/allenai/olmOCR-7B-0225-preview"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "SmolDocling",
+      "date": "2025-03-14",
+      "arxiv": "2503.11576",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/ds4sd/SmolDocling-256M-preview",
+      "availability_note": "Original official DS4SD SmolDocling checkpoint exposes model.safetensors; not substituted with later Granite-Docling.",
+      "sources": [
+        "https://arxiv.org/abs/2503.11576",
+        "https://huggingface.co/ds4sd/SmolDocling-256M-preview"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "MonkeyOCR",
+      "date": "2025-06-05",
+      "arxiv": "2506.05218",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/echo840/MonkeyOCR",
+      "availability_note": "Official Yuliang-Liu/MonkeyOCR implementation links original recognition, relation and layout checkpoints.",
+      "sources": [
+        "https://arxiv.org/abs/2506.05218",
+        "https://github.com/Yuliang-Liu/MonkeyOCR",
+        "https://huggingface.co/echo840/MonkeyOCR"
+      ],
+      "checked": "2026-11-09"
+    },
+    {
+      "name": "DeepSeek-OCR",
+      "date": "2025-10-21",
+      "arxiv": "2510.18234",
+      "track": "visual",
+      "weights_url": "https://huggingface.co/deepseek-ai/DeepSeek-OCR",
+      "availability_note": "Official DeepSeek checkpoint repository exposes safetensors.",
+      "sources": [
+        "https://arxiv.org/abs/2510.18234",
+        "https://github.com/deepseek-ai/DeepSeek-OCR",
+        "https://huggingface.co/deepseek-ai/DeepSeek-OCR"
+      ],
+      "checked": "2026-11-09"
+    }
+  ]
+}
