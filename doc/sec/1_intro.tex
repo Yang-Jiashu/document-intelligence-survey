@@ -1,56 +1,34 @@
 \section{Introduction}
 
-Documents communicate through words, spatial arrangement, tables, figures, and relations across pages. A question about a financial report may require recognizing a number, associating it with the correct column and unit, resolving a footnote on another page, and checking the computation used to produce the answer. Document intelligence therefore involves a sequence of information-preserving decisions. The final answer depends on which content is observed, how it is represented, which evidence is selected, and whether that evidence supports the requested conclusion.
+Document intelligence must connect what a page shows with what an answer claims. A financial question may require a table cell, its year and unit, and a correction on another page. An answer can fail at any link: character recognition, row--column alignment, page retrieval or calculation. Figure~\ref{fig:pipeline_overview} follows these links from a document to a source-backed answer.
 
-Classical systems expose many of these decisions as separate OCR, layout, extraction, retrieval, and reasoning modules. Such interfaces support inspection and specialized optimization, but recognition and serialization errors can propagate. Vision-language models can instead consume page images directly and jointly model textual and visual signals. This changes where information can be lost: image resolution, visual-token compression, page selection, and context budgets become important constraints. Retrieval and agentic control can be applied to either representation. Consequently, modular, direct-visual, and hybrid systems should be compared under explicit task and resource conditions; architectural recency alone does not determine their relative effectiveness.
+\subsection{Representations and Evidence}
 
-\subsection{Scope and Relation to Existing Surveys}
+OCR-based systems expose text and coordinates; visual models encode page appearance; hybrid systems combine both. These interfaces preserve different information. OCR may miss a symbol or its reading order, while image resizing may erase fine print. Retrieval decides which evidence reaches the reader, and tools can make numerical operations explicit. A system may combine all of these mechanisms.
 
-We focus on document-centered perception and question answering: recognizing and organizing page content, reasoning over tables and surrounding text, and retrieving and combining evidence across pages or document collections. General NLP and multimodal methods are included when they explain a mechanism used in these document settings. Results on translation, embodied interaction, or generic language benchmarks provide background only and do not establish document QA capability.
+We compare methods through five questions: \textbf{representation} (text, coordinates or pixels), \textbf{context} (region, page or collection), \textbf{granularity} (token, cell or page), \textbf{control} (fixed or iterative access), and \textbf{validation} (answer, source or computation). Table understanding is a task family, RAG an access strategy and a VLM a model family; they are compatible choices rather than competing categories.
 
-Existing surveys examine the transition toward LLM-based document AI \cite{wang2025documentintelligencesurvey} and organize multimodal document RAG by domain, retrieval modality, and granularity \cite{gao2025scalingbeyondcontext}. Our emphasis is the interface between these research areas: how a representation preserves or removes evidence, how a system selects and combines that evidence, and what its evaluation actually verifies. This emphasis motivates a cross-cutting comparison framework spanning perception, table reasoning, retrieval, and visual document models. It also connects model design with the conditions needed to interpret published evaluations.
-
-\subsection{Review Scope and Selection Principles}
-
-This is a curated narrative review. The bibliography combines foundational methods, document-specific systems, and evaluation resources. We prioritize work that introduces a distinct representation or inference mechanism, makes a document-specific failure mode observable, or provides a reusable benchmark or implementation. Multiple papers using similar mechanisms are grouped to explain a technical route; their frequency in the bibliography is not an estimate of the prevalence or superiority of that route. Coverage is selective, and we do not claim a database-complete search or retrospectively reconstructed screening counts.
-
-Technical descriptions and the principal comparisons refer to original papers or official resources. We distinguish a paper's first public version from its later venue publication when discussing chronology. A chronology indicates when a representative capability appeared; it does not establish that an earlier approach became obsolete. Benchmark findings retain the scope of their reported model versions, input access, and evaluation settings. This survey introduces no newly executed model benchmark, and the reported literature results should be interpreted under their original protocols.
-
-Figure~\ref{fig:document_ai_chronology} provides a chronological entry point to representative document-AI papers. OCR and layout models, structured document and table methods, and visual document models develop in parallel. The highlighted checkpoint links describe resource availability at the time of inspection, independently of paper dates; they do not rank model quality or establish a shared licensing regime.
-
-\begin{figure*}[tp]
-\centering
-\includegraphics[width=\textwidth]{figs/fig12.pdf}
-\caption{A chronology of selected document-intelligence papers, dated by their first public paper versions. Colored markers indicate overlapping research emphases. Yellow names identify public trained weights linked by the official project and verified on 9 November 2026; daggers mark component/adapter releases rather than all model components. Unhighlighted entries have no such checkpoint verified for this figure. Branches organize dates, not model ancestry or replacement. Names link to papers; colored bars beside highlighted names link to weights. Sources are also recorded in the accompanying metadata.}
-\label{fig:document_ai_chronology}
-\end{figure*}
-
-\subsection{An Evidence-Centered Comparison Framework}
-
-The chapters follow a practical reading order from perception to downstream reasoning. Their topics are not mutually exclusive method classes: table understanding is a task family, RAG is a system strategy, and a VLM is a model family. A visual table QA system may combine all three. We therefore use five complementary axes for comparison:
-
-\begin{enumerate}[leftmargin=*]
-    \item \textbf{Input representation}: extracted text, text with coordinates, page images, or a hybrid representation. This axis identifies both available information and preprocessing dependencies.
-    \item \textbf{Context span}: a region, a page, a multi-page document, or a collection. A model's supported context and the evidence actually supplied at inference are recorded separately.
-    \item \textbf{Evidence granularity}: tokens, layout regions, table cells, pages, or relations across documents. Retrieval granularity and output citation granularity can differ.
-    \item \textbf{Inference control}: a fixed pipeline, full-context processing, one-shot retrieval, or iterative retrieval and tool use. More iterations introduce additional latency and failure opportunities as well as possible benefits.
-    \item \textbf{Validation}: answer agreement, localization, support by the cited source, executable-program checks, or abstention when evidence is insufficient. Each validates a different property.
-\end{enumerate}
-
-\paragraph{A running example.}
-Consider an illustrative question: ``What was the year-on-year change in operating margin, after applying the restatement described in the footnote?'' The table, its units, the comparison year, and the footnote form a joint evidence requirement. An OCR pipeline can expose individual tokens and cells, but must preserve their alignment. A direct-visual model can retain the page appearance, but must receive sufficient resolution and the relevant pages. A retrieval system must recover both the table and the footnote; a high-scoring isolated page may be insufficient. An agent may revisit the document and execute arithmetic, but a valid calculation over the wrong row still produces an unsupported answer. This example is a conceptual comparison, not a new evaluation dataset or experimental result.
-
-Figure~\ref{fig:cross_page_case} makes this dependency concrete. In the illustrative report, the printed margins are 15\% and 12\%, but the footnote restates the comparison-year operating profit from 96 to 104 while leaving revenue at 800. The corrected margin is therefore 13\%, and the increase is 2 percentage points. Reading only the table would yield 3 percentage points. Each input route must preserve the table--footnote relationship before arithmetic can resolve the question.
+\paragraph{One question, two pages.}
+Figure~\ref{fig:cross_page_case} shows the running example. A table gives margins of 15\% and 12\%, but a separate note restates the earlier profit from 96 to 104. With revenue unchanged at 800, the corrected margin is 13\%: the increase is 2 percentage points. Retrieving the table alone gives a plausible but incorrect 3-point answer. Executing subtraction cannot repair the missing note.
 
 \begin{figure*}[tp]
 \centering
 \includegraphics[width=\textwidth]{figs/fig13.pdf}
-\caption{An illustrative cross-page financial-report question. The table and restatement note jointly determine the answer: $150/1000-104/800=0.02$, or an increase of 2 percentage points in operating margin. OCR-first, direct-visual and hybrid routes expose different representations of the same required evidence. All documents, numbers and outputs are constructed examples, not model predictions or benchmark results.}
+\caption{Constructed cross-page example: table A and restatement B jointly support $150/1000-104/800=0.02$, a 2-percentage-point increase. Colored links preserve the source cells and correction used in the calculation.}
 \label{fig:cross_page_case}
 \end{figure*}
 
-\subsection{Contributions and Organization}
+\subsection{Scope and Reading Map}
 
-The survey makes three contributions. First, it connects the chapter-level literature through an explicit set of comparison axes, allowing systems to occupy several task and method categories. Second, it synthesizes representation, retrieval, and control trade-offs, including conditions under which additional modeling or inference complexity is unjustified. Third, it organizes evaluation around distinct answer, evidence, and execution properties and specifies the protocol information needed to compare published results.
+This curated narrative review covers document layout, OCR, table reasoning, retrieval, visual models and evaluation. Existing surveys organize LLM-based document AI~\cite{wang2025documentintelligencesurvey} and multimodal document RAG~\cite{gao2025scalingbeyondcontext}; our focus is how representations and inference choices preserve, select and verify evidence. Representative mechanisms appear in the main text, with the broader literature retained in the project's searchable reading catalog.
 
-\Cref{sec:layout_ocr} examines layout analysis and OCR. \Cref{sec:table,sec:text_rag,sec:vlm} cover table reasoning, text-based document QA, and multimodal document systems. \Cref{sec:eval} discusses benchmarks and comparison protocols. \Cref{sec:conclusion} develops research directions from the failure modes exposed by these interfaces.
+Figure~\ref{fig:document_ai_chronology} provides a chronological entry point. Dates refer to first public papers; yellow underlines mark official trained weights verified on 9 November 2026. The chronology records coexistence rather than a ranking or replacement of earlier methods. This survey synthesizes published designs and protocols without introducing a new model benchmark.
+
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figs/fig12.pdf}
+\caption{Selected document-AI papers by first public year. Yellow underlines mark verified official trained weights; daggers indicate partial/component releases. Names link to papers and underlines to weights; chronology does not imply model ancestry.}
+\label{fig:document_ai_chronology}
+\end{figure*}
+
+\Cref{sec:layout_ocr,sec:table} examine page and table representations; \Cref{sec:text_rag,sec:vlm} compare evidence access and visual processing. \Cref{sec:eval} separates answer, evidence and execution checks, and \Cref{sec:conclusion} identifies research priorities.

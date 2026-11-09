@@ -1,28 +1,15 @@
-\section{Future Research Directions and Conclusion}
+\section{Research Priorities and Conclusion}
 \label{sec:conclusion}
 
-The approaches reviewed in this survey distribute recognition, retrieval, and reasoning across different interfaces. Their remaining limitations suggest three connected research directions: separating the properties being verified, allocating computation to unresolved evidence, and evaluating transfer under explicit deployment constraints.
+Three research priorities follow from the interfaces examined in this survey.
 
-\subsection{Separating Localization, Support, and Execution}
+\paragraph{Preserve evidence across conversions.}
+Text, coordinates, cells and image patches should retain a reversible link to their source page. In the running example, a number without its year or restatement is insufficient. Future systems should expose what is discarded during serialization, cropping and token compression, and test whether an answer changes when this information is restored.
 
-An answer accompanied by a page citation exposes an inspectable source, but that citation alone does not establish that the page supports the answer or that the model relied on it. Similarly, a SQL query can execute successfully while selecting the wrong table, column, unit, or aggregation. Four properties should therefore be evaluated separately: answer correctness, localization of the relevant evidence, support of the answer by that evidence, and correctness of any executable computation. Counterfactual evidence replacement or removal can additionally test dependence on the claimed source; an explanatory trace alone is insufficient for that purpose.
+\paragraph{Spend computation where evidence is missing.}
+A clean table may need only a reader and calculator; a small footnote may need a high-resolution crop; a cross-document question may need retrieval. Compare fixed context, one-shot retrieval and iterative access under the same source and inference budget. Additional tool calls are useful when they recover evidence or correct an error, rather than repeat a plan.
 
-Benchmarks already provide parts of this supervision. Cross-page and unanswerable questions in MMLongBench-Doc \cite{mmlongbenchdoc2024}, multimodal citation evaluation \cite{mirage2025}, and document-level locating tasks \cite{longdocurl2024} make different failures observable. A useful next step is to combine these properties in controlled settings: preserve the answer-bearing value while changing a distractor, move a supporting footnote to another page, or make the required evidence unavailable. Evaluating answer change, evidence selection, and abstention separately would help distinguish successful retrieval from unsupported answer generation.
+\paragraph{Evaluate the complete support chain.}
+Measure answer accuracy, evidence localization, source support and execution separately. Include cases with missing evidence, distracting pages, degraded scans and changing document collections. Evidence-removal or substitution controls can test reliance on a claimed source, while accuracy--coverage curves reveal whether abstention is useful.
 
-\subsection{Selective Perception and Budget-Aware Evidence Acquisition}
-
-Recognition and reasoning need not consume the same representation or the same amount of computation for every document. Dense text may benefit from explicit OCR; a chart or visually encoded relation may require image evidence; a calculation may benefit from an executable tool. A hybrid system should decide which representation is needed for the question and where additional observation is justified. The design problem includes preserving coordinates and units when converting between text, cells, and images.
-
-Future comparisons should vary OCR quality, image resolution, document length, and retrieval difficulty while controlling model version and inference budget. Relevant baselines include full-context processing, one-shot retrieval, and iterative retrieval with the same available sources. Tool calls should be assessed by the evidence they add, their latency and computational cost, and their effect on failure recovery. Such comparisons can reveal when revisiting a page is useful and when extra iterations merely repeat the same unsupported assumption. The running table-and-footnote example illustrates why arithmetic verification must follow, rather than substitute for, correct evidence selection.
-
-\subsection{Transfer, Uncertainty, and Reproducible Evaluation}
-
-Document benchmarks increasingly include long contexts, multilingual content, retrieval, and imperfect input. Their remaining gaps should be described as specific combinations of conditions. Examples include cross-page reasoning under degraded scans, evidence support across a table and a figure, or retrieval over a changing multilingual collection. Broad claims that existing evaluations only measure clean-page accuracy overlook these developments.
-
-A reproducible evaluation should record the document and annotation versions, split, model checkpoint or API version, permitted input representations, external knowledge access, page and token budgets, retrieval settings, and metric implementation. Reports should separate the effect of source parsing from retrieval and answer generation. For systems that abstain or report confidence, accuracy should be evaluated together with coverage and the treatment of unanswerable questions. Releasing predictions, retrieved evidence identifiers, and executable evaluation code would permit error diagnosis without assuming that identical headline metrics imply identical capabilities.
-
-\subsection{Conclusion}
-
-Document intelligence connects page perception with evidence-based reasoning across text, layout, tables, and images. We have reviewed this landscape through input representation, context span, evidence granularity, inference control, and validation. These axes clarify how OCR pipelines, direct-visual models, retrieval systems, and agentic controllers can be combined and where their interfaces can lose information.
-
-The reviewed literature supports a conditional view of system design: appropriate representations and inference mechanisms depend on the evidence required by the task and on available resources. Progress should be demonstrated through comparisons that preserve these conditions and distinguish answer accuracy from evidence support and execution correctness. This perspective turns evidence preservation and verification into concrete design and evaluation questions spanning the entire document intelligence workflow.
+Document intelligence therefore requires more than fluent answers or accurate OCR in isolation. The practical design question is which representation and access pattern preserve the evidence required by a task. The visual workflows and mechanism comparisons in this survey make that question explicit across perception, retrieval, table computation and multimodal reasoning.

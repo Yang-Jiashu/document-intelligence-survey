@@ -1,145 +1,98 @@
 #!/usr/bin/env python3
-"""Draw an illustrative diagnostic, not model results or measured scores.
+"""Four constructed traces and four independent checks, as a compact visual.
 
-The four constructed traces separate numeric agreement, relevant evidence,
-document support and arithmetic conditional on the displayed operands.
-They cannot establish whether a model causally relied on the cited evidence.
+Numbers and traces illustrate diagnostics; they are not model measurements.
+The caption explains source support and causal-faithfulness limitations.
 """
 from pathlib import Path
 import shutil
-
 from reportlab.lib.colors import HexColor
-from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfgen import canvas
 
-ROOT = Path(__file__).resolve().parents[2]
-W, H = 800, 824
-INK = HexColor("#263C39")
-MUTED = HexColor("#566C68")
-GREEN = HexColor("#326A53")
-RED = HexColor("#A84F3D")
-BLUE = HexColor("#38698A")
-BORDER = HexColor("#CCD6D0")
-PALE_GREEN = HexColor("#EAF2EA")
-PALE_RED = HexColor("#FAEDE6")
-PALE_BLUE = HexColor("#EAF1F5")
-PAPER = HexColor("#FBFBF6")
-WHITE = HexColor("#FFFFFF")
+ROOT=Path(__file__).resolve().parents[2]
+W,H=900,355
+INK=HexColor('#243746');NAVY=HexColor('#255C7B');TEAL=HexColor('#2D8B7B')
+CORAL=HexColor('#D57060');GRAY=HexColor('#CBD3DA');WHITE=HexColor('#FFFFFF')
+MUTED=HexColor('#6F7F8C')
 
 
-def text(c, x, y, s, size=16, bold=False, color=INK, align="left"):
+def text(c,x,y,s,size=17,bold=False,color=INK,align='left'):
+    c.setFillColor(color);c.setFont('Helvetica-Bold' if bold else 'Helvetica',size)
+    getattr(c,{'left':'drawString','center':'drawCentredString','right':'drawRightString'}[align])(x,y,s)
+
+
+def line(c,x1,y1,x2,y2,color=GRAY,width=1):
+    c.setStrokeColor(color);c.setLineWidth(width);c.line(x1,y1,x2,y2)
+
+
+def wire(c,points,color):
+    c.setStrokeColor(color);c.setLineWidth(1.8)
+    p=c.beginPath();p.moveTo(*points[0])
+    for pt in points[1:]:p.lineTo(*pt)
+    c.drawPath(p)
     c.setFillColor(color)
-    c.setFont("Helvetica-Bold" if bold else "Helvetica", size)
-    getattr(c, {"left": "drawString", "center": "drawCentredString", "right": "drawRightString"}[align])(x, y, s)
+    for x,y in (points[0],points[-1]):c.circle(x,y,3.5,fill=1,stroke=0)
 
 
-def panel(c, x, y, w, h, fill=WHITE, stroke=BORDER, r=8):
-    c.setFillColor(fill)
-    c.setStrokeColor(stroke)
-    c.setLineWidth(1)
-    c.roundRect(x, y, w, h, r, fill=1, stroke=1)
-
-
-def badge(c, x, y, s, fill, color=INK, size=15.2):
-    width = stringWidth(s, "Helvetica-Bold", size) + 18
-    panel(c, x, y-5, width, 24, fill, fill, r=4)
-    text(c, x+9, y+1, s, size, True, color)
-    return width
-
-
-def check(c, x, y, passed):
-    # Vector marks remain recognizable without a special symbol font.
-    color = GREEN if passed else RED
-    c.setFillColor(PALE_GREEN if passed else PALE_RED)
-    c.circle(x, y, 11, fill=1, stroke=0)
-    c.setStrokeColor(color)
-    c.setLineWidth(2.3)
+def mark(c,x,y,passed):
+    color=TEAL if passed else CORAL
+    c.setFillColor(HexColor('#E4F2ED') if passed else HexColor('#FBEAE5'))
+    c.circle(x,y,13,fill=1,stroke=0)
+    c.setStrokeColor(color);c.setLineWidth(2.6)
     if passed:
-        p=c.beginPath(); p.moveTo(x-5,y); p.lineTo(x-1,y-4); p.lineTo(x+6,y+5)
-        c.drawPath(p)
+        p=c.beginPath();p.moveTo(x-6,y);p.lineTo(x-1,y-5);p.lineTo(x+7,y+6);c.drawPath(p)
     else:
-        c.line(x-4,y-4,x+4,y+4); c.line(x-4,y+4,x+4,y-4)
-
-
-def card(c, x, y, key, title, answer, citation, result, support_note, good_cite=True, extra=None):
-    width, height = 372, 150
-    panel(c,x,y,width,height,PAPER)
-    badge(c,x+12,y+120,key,PALE_BLUE,BLUE)
-    text(c,x+47,y+122,title,16.5,True)
-    text(c,x+13,y+94,"Answer:",15.5,True,color=MUTED)
-    text(c,x+78,y+94,answer,17,True)
-    if extra:
-        badge(c,x+13,y+66,extra,PALE_RED,RED,15.2)
-    else:
-        text(c,x+13,y+68,"Cites",15.5,color=MUTED)
-        badge(c,x+57,y+67,citation,PALE_GREEN if good_cite else PALE_RED,GREEN if good_cite else RED,15.2)
-    text(c,x+13,y+39,"Trace:",15.5,color=MUTED)
-    text(c,x+68,y+39,result,16.5)
-    text(c,x+13,y+13,support_note,15.2,color=MUTED)
+        c.line(x-5,y-5,x+5,y+5);c.line(x-5,y+5,x+5,y-5)
 
 
 def build():
-    out=ROOT/"doc/figs/fig14.pdf"
-    out.parent.mkdir(parents=True,exist_ok=True)
-    c=canvas.Canvas(str(out),pagesize=(W,H),pageCompression=1,invariant=1)
-    c.setTitle("Why an answer score alone cannot diagnose document QA")
-    c.setAuthor("Beyond OCR survey authors")
-    c.setSubject("Constructed staffing-table example; not experimental results")
+    out=ROOT/'doc/figs/fig14.pdf';out.parent.mkdir(parents=True,exist_ok=True)
+    c=canvas.Canvas(str(out),pagesize=(W,H),invariant=1,pageCompression=1)
+    c.setTitle('Four document-QA traces with independent diagnostic outcomes')
+    c.setAuthor('Beyond OCR survey authors')
+    c.setSubject('Constructed staffing-table example; not experimental results')
+    text(c,20,330,'How many staff were added?',20,True)
+    line(c,20,317,883,317,width=.8)
 
-    text(c,20,796,"Why an answer score alone cannot diagnose document QA",22,True)
-    text(c,20,771,"Constructed example: four traces, one source document and one question",16.5,color=MUTED)
+    # Left: the document is the anchor for every citation link.
+    c.setFillColor(HexColor('#EDF0F2'));c.rect(24,39,264,263,fill=1,stroke=0)
+    c.setFillColor(WHITE);c.setStrokeColor(GRAY);c.rect(20,43,264,263,fill=1,stroke=1)
+    text(c,36,279,'Staffing report',19,True)
+    text(c,200,244,'2023',16,True,align='center');text(c,253,244,'2024',16,True,align='center')
+    line(c,35,235,270,235,INK)
+    c.setFillColor(HexColor('#E4F2ED'));c.rect(34,197,236,30,fill=1,stroke=0)
+    text(c,40,205,'Staff',17,True,TEAL);text(c,200,205,'80',19,True,TEAL,'center');text(c,253,205,'100',19,True,TEAL,'center')
+    text(c,40,173,'Contractors',17);text(c,200,173,'40',19,align='center');text(c,253,173,'50',19,align='center')
+    line(c,35,160,270,160,INK)
+    text(c,36,138,'Staff exclude contractors.',15,color=MUTED)
+    for yy,ww in [(112,228),(98,197),(84,219),(70,167)]:line(c,36,yy,36+ww,yy,GRAY,2)
 
-    panel(c,20,581,760,170,WHITE)
-    text(c,36,723,"SOURCE: STAFFING REPORT",15.2,True,color=BLUE)
-    # An actual table is shown instead of an abstract input box.
-    colx=[37,201,287]
-    text(c,colx[0],698,"Category",16,True)
-    text(c,colx[1],698,"2023",16,True)
-    text(c,colx[2],698,"2024",16,True)
-    c.setFillColor(PALE_GREEN);c.rect(31,660,316,28,fill=1,stroke=0)
-    text(c,colx[0],669,"Staff",16,True,color=GREEN)
-    text(c,colx[1],669,"80",17,True,color=GREEN)
-    text(c,colx[2],669,"100",17,True,color=GREEN)
-    text(c,colx[0],639,"Contractors",16)
-    text(c,colx[1],639,"40",17)
-    text(c,colx[2],639,"50",17)
-    c.setStrokeColor(BORDER);c.line(31,692,347,692);c.line(31,627,347,627)
-    text(c,37,604,"Note: staff exclude contractors.",15.2,color=MUTED)
-    c.setStrokeColor(BORDER);c.line(365,600,365,730)
-    text(c,386,723,"QUESTION",15.2,True,color=BLUE)
-    text(c,386,697,"How many staff were added in 2024?",17,True)
-    text(c,386,666,"Reference: 100 - 80 = 20 staff",17,color=GREEN)
-    text(c,386,637,"No reason for the change is stated.",16,color=MUTED)
-    text(c,386,611,"A numeric match can miss other errors.",16,color=MUTED)
+    # A: a wrong row is cited even though the visible arithmetic is correct.
+    wire(c,[(274,179),(301,179),(301,269),(348,269)],CORAL)
+    # B/C/D: the same correct row supports three different outcomes.
+    wire(c,[(274,210),(320,210),(320,89)],TEAL)
+    for yy in (209,149,89):wire(c,[(320,yy),(348,yy)],TEAL)
+    text(c,393,294,'Added staff',16,True,color=NAVY)
+    ys=[269,209,149,89]
+    for key,number,y,expression in zip('ABCD',['20','20','30','20'],ys,['100 - 80 = 20','100 - 80 = 20','100 - 80 = 30','100 - 80 = 20']):
+        text(c,363,y-6,key,17,True)
+        text(c,397,y-8,number,28,True,CORAL if key=='C' else INK)
+        text(c,397,y-30,expression,16,color=MUTED)
+    # The unsupported addition is a visible speech annotation, not prose.
+    text(c,452,201,'+ automation',16,True,CORAL)
+    line(c,450,194,555,194,CORAL,1.2)
 
-    card(c,20,410,"A","Correct number, wrong citation","20 staff","Contractors row","100 - 80 = 20","The cited row does not supply these inputs.",False)
-    card(c,408,410,"B","Correct cells, unsupported claim","20 staff","Staff row","100 - 80 = 20","Staff row cited; cause absent from source.",True,extra='"due to automation"')
-    card(c,20,244,"C","Correct cells, arithmetic error","30 staff","Staff row","100 - 80 = 30","Relevant evidence; incorrect calculation.")
-    card(c,408,244,"D","All observed checks consistent","20 staff","Staff row","100 - 80 = 20","Correct number with relevant support.")
-
-    # Four diagnostics are a matrix, not a single invented aggregate score.
-    panel(c,20,49,760,179,WHITE)
-    text(c,36,204,"DIAGNOSTIC",15.2,True,color=BLUE)
-    xs=[371,483,598,714]
-    labels=[("Numeric","match"),("Relevant","cells"),("Cited","support"),("Arithmetic","(given inputs)")]
-    for x,lines in zip(xs,labels):
-        text(c,x,211,lines[0],15.2,True,align="center")
-        text(c,x,193,lines[1],15.2,align="center")
-    c.setStrokeColor(BORDER);c.line(35,184,765,184)
-    rows=[("A  Wrong citation",[True,False,False,True]),
-          ("B  Unsupported claim",[True,True,False,True]),
-          ("C  Arithmetic error",[False,True,False,False]),
-          ("D  Consistent trace",[True,True,True,True])]
-    for i,(name,values) in enumerate(rows):
-        yy=165-i*30
-        text(c,36,yy-5,name,16,True)
-        for x,value in zip(xs,values): check(c,x,yy,value)
-    text(c,20,25,"Causal faithfulness still needs evidence-removal or substitution controls.",16,True,color=MUTED)
-    c.showPage();c.save()
-    target=ROOT/"figs_by_qixingyu/fig14.pdf"
-    shutil.copyfile(out,target)
-    print(f"Created {out.relative_to(ROOT)} and {target.relative_to(ROOT)}")
+    # Right: one diagnostic per column, one trace per row.
+    xs=[621,698,776,852]
+    labels=['Number','Cells','Support','Math']
+    for x,label in zip(xs,labels):text(c,x,294,label,16,True,align='center')
+    line(c,582,282,884,282,INK)
+    matrix=[[1,0,0,1],[1,1,0,1],[0,1,0,0],[1,1,1,1]]
+    for y,values in zip(ys,matrix):
+        for x,value in zip(xs,values):mark(c,x,y,bool(value))
+    for yy in (239,179,119,59):line(c,583,yy,884,yy,GRAY,.7)
+    c.showPage();c.save();alt=ROOT/'figs_by_qixingyu/fig14.pdf';shutil.copyfile(out,alt)
+    print(f'{out.relative_to(ROOT)} -> {alt.relative_to(ROOT)}; {W}x{H} pt')
 
 
-if __name__ == "__main__":
-    build()
+if __name__=='__main__':build()

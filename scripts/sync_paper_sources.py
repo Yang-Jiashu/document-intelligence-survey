@@ -39,22 +39,6 @@ document reasoning. Layout analysis and OCR are complementary interfaces, and
 their outputs may also be combined with direct visual representations.
 
 """ + read_shared("layout.tex") + "\n\n" + read_shared("ocr.tex")
-    perception += r"""
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.95\textwidth,trim=1.6cm 2.0cm 4.0cm 1.6cm,clip]{figs/fig03.pdf}
-\caption{A reading map of layout analysis and OCR methods. Categories describe different tasks and modeling interfaces and may overlap in one system.}
-\label{fig:layout_pipeline}
-\end{figure*}
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figs/fig04.pdf}
-\caption{Selected milestones across document perception, table understanding, and multimodal reasoning. The tracks coexist; their order does not imply a universal ranking of system capability.}
-\label{fig:timeline}
-\end{figure*}
-"""
     outputs = {"2_layout_ocr.tex": perception}
     for source, dest, title, label in (
         ("table.tex", "3_table.tex", "Table Understanding and Question Answering", "sec:table"),

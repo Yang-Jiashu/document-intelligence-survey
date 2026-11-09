@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-"""Draw a branched, first-public-paper chronology of document intelligence.
+"""Draw a compact, branched chronology from verified source metadata.
 
-All factual entries and availability evidence live in the adjacent JSON file.
-The geometry is authored for this survey. Branches do not imply a genealogy,
-replacement, or a performance comparison. Yellow means an official public
-pretrained checkpoint was verified; it is not an open-source license judgment.
-
-Run: python scripts/figures/build_document_timeline.py
+Dates, official checkpoint links and partial-weight qualifications remain in
+`document_timeline_sources.json`. Branch geometry organizes the reading order;
+it does not assert scientific ancestry, replacement, or a performance ranking.
+The yellow underline denotes publicly available pretrained weights, not license
+classification. Names link to papers; underlines link to checkpoints.
 """
 from __future__ import annotations
 
 import json
-import re
 import shutil
 from collections import defaultdict
 from pathlib import Path
@@ -22,30 +20,38 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = Path(__file__).with_name('document_timeline_sources.json')
-W, H = 1350, 960
-FONT = 27
-INK = HexColor('#25343D')
-MUTED = HexColor('#52646D')
-PAPER = white
-YELLOW = HexColor('#FFF0B5')
-YEAR = HexColor('#DCEBF3')
+W, H = 1100, 480
+FONT, LEADING, GAP = 22, 25, 10
+INK = HexColor('#243746')
+MUTED = HexColor('#697D89')
+BRANCH = HexColor('#8B9CA6')
+YELLOW = HexColor('#F3D27D')
+YEAR = HexColor('#EDF3F5')
 TRACKS = {
-    'perception': ('OCR / layout', '#2F6288'),
-    'structured': ('Structured / reasoning', '#2D7058'),
-    'visual': ('Visual / document', '#84527A'),
+    'perception': ('Layout / OCR', '#255C7B'),
+    'structured': ('Structure / reasoning', '#2D8B7B'),
+    'visual': ('Visual / documents', '#D57060'),
 }
-# The chronological trunk descends so the denser recent branches have room.
 ANCHORS = {
-    2015: (65, 720), 2018: (155, 711), 2019: (245, 692),
-    2020: (360, 645), 2021: (500, 555), 2022: (680, 355),
-    2023: (865, 232), 2024: (1050, 171), 2025: (1240, 152),
+    2015: (65, 244), 2018: (135, 247), 2019: (210, 248),
+    2020: (310, 245), 2021: (415, 237), 2022: (520, 230),
+    2023: (640, 225), 2024: (800, 230), 2025: (1020, 246),
 }
-# Left edge and first text baseline for each chronological model cluster.
-CLUSTERS = {
-    2015: (32, 620), 2018: (60, 485), 2019: (166, 350),
-    2020: (300, 570), 2021: (430, 310), 2022: (600, 780),
-    2023: (790, 780), 2024: (975, 780), 2025: (1160, 780),
-}
+# Recent years have two branches, preserving within-year paper-date order.
+# tuple: year, [start:end] of that year's papers, x, first baseline, side.
+CLUSTERS = [
+    (2015, 0, None, 23, 330, 'top'),
+    (2018, 0, None, 35, 145, 'bottom'),
+    (2019, 0, None, 145, 370, 'top'),
+    (2020, 0, None, 245, 165, 'bottom'),
+    (2021, 0, None, 340, 405, 'top'),
+    (2022, 0, None, 440, 165, 'bottom'),
+    (2023, 0, None, 570, 405, 'top'),
+    (2024, 0, 4, 735, 405, 'top'),
+    (2024, 4, None, 745, 165, 'bottom'),
+    (2025, 0, 3, 940, 405, 'top'),
+    (2025, 3, None, 950, 165, 'bottom'),
+]
 
 
 def text(c, x, y, value, size=FONT, bold=False, color=INK, align='left'):
@@ -55,9 +61,38 @@ def text(c, x, y, value, size=FONT, bold=False, color=INK, align='left'):
                 'right': 'drawRightString'}[align])(x, y, value)
 
 
-def wrap_name(value, width=170):
-    """Keep recognizable name components intact, without shrinking text."""
-    value = value.replace('\n', ' ')
+def icon(c, track, x, y, size=12):
+    """Small semantic glyphs, not institution or company logos."""
+    c.setStrokeColor(HexColor(TRACKS[track][1]))
+    c.setLineWidth(1.5)
+    if track == 'perception':
+        d = size / 2
+        for sx, sy in ((-1, -1), (-1, 1), (1, -1), (1, 1)):
+            p = c.beginPath()
+            p.moveTo(x + sx*d, y + sy*d*0.35)
+            p.lineTo(x + sx*d, y + sy*d)
+            p.lineTo(x + sx*d*0.35, y + sy*d)
+            c.drawPath(p, stroke=1, fill=0)
+    elif track == 'structured':
+        c.rect(x-size/2, y-size/2, size, size, stroke=1, fill=0)
+        c.line(x-size/2, y, x+size/2, y)
+        c.line(x, y-size/2, x, y+size/2)
+    else:
+        p = c.beginPath()
+        p.moveTo(x-size/2, y)
+        p.curveTo(x-size/6, y+size*.55, x+size/6, y+size*.55, x+size/2, y)
+        p.curveTo(x+size/6, y-size*.55, x-size/6, y-size*.55, x-size/2, y)
+        c.drawPath(p, stroke=1, fill=0)
+        c.setFillColor(HexColor(TRACKS[track][1]))
+        c.circle(x, y, size*.12, stroke=0, fill=1)
+
+
+def display_name(entry):
+    name = entry['name']
+    return name + ('\u2020' if name in {'UDOP', 'ColPali'} else '')
+
+
+def wrap_name(value, width=150):
     if stringWidth(value, 'Helvetica-Bold', FONT) <= width:
         return [value]
     special = {
@@ -66,69 +101,47 @@ def wrap_name(value, width=170):
         'mPLUG-DocOwl 1.5': ['mPLUG-', 'DocOwl 1.5'],
         'mPLUG-DocOwl1.5': ['mPLUG-', 'DocOwl 1.5'],
     }
-    if value in special:
-        lines = special[value]
-    else:
-        words = re.findall(r'[^\s-]+-?|\S+', value)
-        lines = []
-        current = ''
-        for word in words:
-            candidate = (current + ' ' + word).strip()
-            if current and stringWidth(candidate, 'Helvetica-Bold', FONT) > width:
-                lines.append(current)
-                current = word
-            else:
-                current = candidate
-        if current:
-            lines.append(current)
-    assert all(stringWidth(line, 'Helvetica-Bold', FONT) <= width for line in lines), value
-    return lines
-
-
-def display_name(entry):
-    name = entry['name']
-    return name + ('\u2020' if name in {'UDOP', 'ColPali'} else '')
+    assert value in special, 'New long label needs deliberate wrapping: ' + value
+    return special[value]
 
 
 def model(c, entry, x, baseline):
     lines = wrap_name(display_name(entry))
-    low = baseline - (len(lines) - 1) * 32
-    top = baseline + 25
-    high_width = max(stringWidth(line, 'Helvetica-Bold', FONT) for line in lines) + 12
+    low = baseline - (len(lines)-1) * LEADING
+    width = max(stringWidth(line, 'Helvetica-Bold', FONT) for line in lines)
+    # A slim yellow marker, rather than a large filled card, preserves the
+    # weight-availability signal without turning the timeline into a card grid.
     if entry.get('weights_url'):
         c.setFillColor(YELLOW)
-        c.roundRect(x - 5, low - 6, high_width, top - low + 9,
-                    5, stroke=0, fill=1)
-    color = HexColor(TRACKS[entry['track']][1])
-    c.setFillColor(color)
-    c.roundRect(x - 15, low - 2, 4, top - low, 2, stroke=0, fill=1)
+        for i, line in enumerate(lines):
+            y = baseline - i*LEADING
+            c.roundRect(x-1, y-2.5, stringWidth(line, 'Helvetica-Bold', FONT)+2,
+                        5.5, 2, stroke=0, fill=1)
+    icon(c, entry['track'], x-13, baseline+8, 11)
     for i, line in enumerate(lines):
-        text(c, x, baseline - i * 32, line, bold=True)
+        text(c, x, baseline-i*LEADING, line, bold=True)
     paper = entry.get('paper_url') or ('https://arxiv.org/abs/' + entry['arxiv'])
-    c.linkURL(paper, (x - 6, low - 6, x + high_width, top + 3),
+    c.linkURL(paper, (x-3, low+4, x+width+3, baseline+19),
               relative=0, thickness=0)
-    # A small link target at the stream bar opens the verified checkpoint.
     if entry.get('weights_url'):
-        c.linkURL(entry['weights_url'], (x - 20, low - 6, x - 8, top + 3),
-                  relative=0, thickness=0)
-    return low - 57
+        for i, line in enumerate(lines):
+            y = baseline-i*LEADING
+            c.linkURL(entry['weights_url'],
+                      (x-2, y-4, x+stringWidth(line, 'Helvetica-Bold', FONT)+3, y+4),
+                      relative=0, thickness=0)
+    return low-GAP-LEADING, (entry['name'], x-20, low-5, x+width+4, baseline+21)
 
 
-def branch(c, year, bottom, top):
+def branch(c, year, x, first, last, side):
     ax, ay = ANCHORS[year]
-    x, baseline = CLUSTERS[year]
-    c.setStrokeColor(MUTED)
-    c.setLineWidth(2.3)
+    tx = x + 53
+    ty = last-13 if side == 'top' else first+31
+    c.setStrokeColor(BRANCH)
+    c.setLineWidth(1.35)
     p = c.beginPath()
     p.moveTo(ax, ay)
-    if year <= 2021:
-        end = (x + 60, top + 15)
-        p.lineTo(ax, end[1] + 24)
-        p.lineTo(end[0], end[1])
-    else:
-        end = (x + 68, bottom - 20)
-        p.lineTo(ax, end[1] - 27)
-        p.lineTo(end[0], end[1])
+    mid = (ay+ty)/2
+    p.curveTo(ax, mid, tx, mid, tx, ty)
     c.drawPath(p, stroke=1, fill=0)
 
 
@@ -138,87 +151,76 @@ def build():
     grouped = defaultdict(list)
     for entry in entries:
         grouped[int(entry['date'][:4])].append(entry)
-        assert entry['track'] in TRACKS, entry
-        assert 'availability_note' in entry and entry.get('sources'), entry
-    assert set(grouped) <= set(ANCHORS), set(grouped)
-    assert len(entries) <= 29
+        assert entry['track'] in TRACKS and entry.get('sources')
     for group in grouped.values():
         group.sort(key=lambda e: (e['date'], e['name']))
-    destination = ROOT / 'doc/figs/fig12.pdf'
-    c = canvas.Canvas(str(destination), pagesize=(W, H),
-                      pageCompression=1, invariant=1)
-    c.setTitle('A chronology of representative document-intelligence models and methods')
+    assert len(entries) == 27 and set(grouped) == set(ANCHORS)
+
+    out = ROOT/'doc/figs/fig12.pdf'
+    c = canvas.Canvas(str(out), pagesize=(W,H), pageCompression=1, invariant=1)
+    c.setTitle('Representative document-intelligence models: first-public-paper timeline')
     c.setAuthor('Beyond OCR survey authors')
-    c.setSubject('First-public-paper dates; official public pretrained checkpoints highlighted in yellow')
-    c.setFillColor(PAPER)
-    c.rect(0, 0, W, H, fill=1, stroke=0)
-    text(c, 32, 918, 'A decade of document intelligence', size=38, bold=True)
-    c.setFillColor(YELLOW)
-    c.roundRect(934, 910, 384, 40, 6, fill=1, stroke=0)
-    text(c, 1126, 921, 'Publicly available weights', size=27, bold=True, align='center')
-    text(c, 32, 876, 'Selected models and methods, organized by first public paper date.', size=27, color=MUTED)
-    for x, track in zip((32, 390, 850), TRACKS):
+    c.setSubject('First-public-paper dates; yellow underlines denote public pretrained weights')
+    c.setFillColor(white)
+    c.rect(0,0,W,H,stroke=0,fill=1)
+
+    # Two compact legend rows; methodological qualifications belong in the
+    # manuscript caption and source metadata, not repeated as plot paragraphs.
+    for x, track in zip((20,225,515), TRACKS):
         label, color = TRACKS[track]
-        c.setFillColor(HexColor(color))
-        c.circle(x + 8, 837, 7, stroke=0, fill=1)
-        text(c, x + 27, 829, label, size=26, color=HexColor(color))
+        icon(c,track,x+6,466,13)
+        text(c,x+23,460,label,size=18,color=HexColor(color))
+    c.setFillColor(YELLOW)
+    c.roundRect(818,457,255,5.5,2,stroke=0,fill=1)
+    text(c,818,460,'Publicly available weights',size=18,bold=True)
+    text(c,20,437,'\u2020 Partial weights / separate base model',size=16.5,color=MUTED)
+    text(c,1080,437,'First public paper year',size=16.5,color=MUTED,align='right')
 
-    # Draw one continuous chronological curve. It is a reading guide, not a
-    # graph of scientific ancestry. Label clusters connect only to their year.
+    # Gentle horizontal curve leaves comparable space above and below.
     c.setStrokeColor(INK)
-    c.setLineWidth(4.3)
+    c.setLineWidth(2.65)
     p = c.beginPath()
-    p.moveTo(30, 724)
-    p.curveTo(225, 721, 357, 666, 463, 586)
-    p.curveTo(552, 515, 594, 423, 680, 355)
-    p.curveTo(827, 225, 1002, 151, 1315, 151)
-    c.drawPath(p, stroke=1, fill=0)
+    p.moveTo(17,240)
+    p.curveTo(205,268,410,230,640,225)
+    p.curveTo(825,217,980,267,1082,244)
+    c.drawPath(p,stroke=1,fill=0)
     c.setFillColor(INK)
-    arrow = c.beginPath()
-    arrow.moveTo(1333, 151)
-    arrow.lineTo(1306, 162)
-    arrow.lineTo(1313, 151)
-    arrow.lineTo(1306, 140)
-    arrow.close()
-    c.drawPath(arrow, stroke=0, fill=1)
+    p = c.beginPath()
+    p.moveTo(1094,241)
+    p.lineTo(1079,251)
+    p.lineTo(1082,244)
+    p.lineTo(1077,237)
+    p.close()
+    c.drawPath(p,stroke=0,fill=1)
 
-    occupied = []
-    for year in sorted(grouped):
-        x, baseline = CLUSTERS[year]
-        y = baseline
-        for entry in grouped[year]:
-            lines = wrap_name(display_name(entry))
-            low = y - (len(lines) - 1) * 32
-            occupied.append((entry['name'], x - 15, low - 6,
-                             x + max(stringWidth(s, 'Helvetica-Bold', FONT) for s in lines) + 7,
-                             y + 28))
-            y = model(c, entry, x, y)
-        branch(c, year, y + 57, baseline + 25)
+    occupied, seen = [], []
+    for year, start, stop, x, first, side in CLUSTERS:
+        group = grouped[year][start:stop]
+        assert group
+        y = first
+        for entry in group:
+            seen.append(entry['name'])
+            y, box = model(c,entry,x,y)
+            occupied.append(box)
+        last = y+GAP+LEADING
+        branch(c,year,x,first,last,side)
+    assert sorted(seen) == sorted(entry['name'] for entry in entries)
 
-    # Years are shown last with opaque light-blue tabs, keeping curve crossings
-    # behind the labels and preventing a line from cutting through date text.
-    for year in sorted(grouped):
-        ax, ay = ANCHORS[year]
+    for year, (x,y) in ANCHORS.items():
         c.setFillColor(YEAR)
-        c.roundRect(ax - 42, ay - 16, 84, 37, 5, fill=1, stroke=0)
-        text(c, ax, ay - 7, str(year), size=28, bold=True, align='center')
+        c.roundRect(x-27,y-11,54,25,3,stroke=0,fill=1)
+        text(c,x,y-5.5,str(year),size=19,bold=True,align='center')
 
-    text(c, 32, 112, '\u2020 Partial / component weights; base-model access may differ.', size=24, color=MUTED)
-    text(c, 32, 76, 'Dates are paper dates, not checkpoint-release or venue-publication dates.', size=24, color=MUTED)
-    text(c, 32, 40, 'Branches do not imply influence, replacement or performance. Yellow does not classify licenses.', size=24, color=MUTED)
     c.showPage()
     c.save()
-    shutil.copyfile(destination, ROOT / 'figs_by_qixingyu/fig12.pdf')
-    # Geometry checks catch accidental factual updates making label clusters
-    # collide or extend out of frame. They complement actual PDF rendering.
-    for name, x0, y0, x1, y1 in occupied:
-        assert x0 >= 0 and x1 < W - 5 and y0 > 110 and y1 < 812, (name, x0, y0, x1, y1)
-    for i, first in enumerate(occupied):
-        for second in occupied[i+1:]:
-            _, ax0, ay0, ax1, ay1 = first
-            _, bx0, by0, bx1, by1 = second
-            assert not (max(ax0, bx0) < min(ax1, bx1) and max(ay0, by0) < min(ay1, by1)), (first[0], second[0])
-    print(f'{len(entries)} entries; {sum(bool(e.get("weights_url")) for e in entries)} public checkpoints; {destination}')
+    shutil.copyfile(out, ROOT/'figs_by_qixingyu/fig12.pdf')
+    for name,x0,y0,x1,y1 in occupied:
+        assert 1 < x0 < x1 < W-3 and 20 < y0 < y1 < 427, (name,x0,y0,x1,y1)
+    for i, a in enumerate(occupied):
+        for b in occupied[i+1:]:
+            assert not (max(a[1],b[1]) < min(a[3],b[3]) and
+                        max(a[2],b[2]) < min(a[4],b[4])), (a[0],b[0])
+    print(f'{len(entries)} entries; {sum(bool(e.get("weights_url")) for e in entries)} public checkpoints; {W}x{H}; {out}')
 
 
 if __name__ == '__main__':

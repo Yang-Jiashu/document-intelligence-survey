@@ -1,7 +1,7 @@
 {
   "source": {
     "bib": "custom.bib",
-    "sections": "sections",
+    "sections": "supplementary/literature",
     "bibEntries": 412,
     "citedPapers": 410
   },

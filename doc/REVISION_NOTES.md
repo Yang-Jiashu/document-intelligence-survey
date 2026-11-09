@@ -1,3 +1,11 @@
+# Visual and editorial revision - 10 November 2026
+
+- Replaced the paper-by-paper narrative with a mechanism-led synthesis. Main-source word count (including captions/tables) falls from 21,696 to 6,371, approximately 71%; the validated report is 22 pages (16 main-text pages and 6 reference pages), down from 65 pages.
+- Redrew every figure used by the main manuscript as a shape-led vector illustration: page regions, OCR tokens, cells, document trees, evidence graphs, crops, tool loops and worked source-to-answer traces. Short captions carry qualifications formerly placed in text cards.
+- Removed the redundant taxonomy and date-by-focus matrices from the main manuscript; retained one compact representative chronology with linked primary metadata.
+- Preserved the complete broader reading catalog in supplementary/literature/ and kept all 410 website records and category assignments unchanged. The main reference list now contains only works actually used in its synthesis.
+- Preserved JiaShu Yang's first-author position, the larger homepage type, the color scholar portraits and the free update/search workflow.
+
 # Manuscript revision - 9 November 2026
 
 This revision preserves the full literature chapters and uses one set of section sources for the report and ACL entry points.

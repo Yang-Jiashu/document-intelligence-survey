@@ -1,175 +1,119 @@
 #!/usr/bin/env python3
-"""Author-drawn, fully vector running example for document evidence use.
+"""Compact vector evidence-join example; every value is constructed.
 
-The numbers are deliberately constructed, not reported model measurements.
-Builds identical Figure 13 assets for the report and alternative manuscript.
-All figure text is >= 18 pt on a 900 pt canvas (>= 9 pt at 450 pt width).
+The document fragments are the data, not text explanations of a pipeline.
+Caption prose supplies context. Both manuscript asset directories are updated.
 """
 from pathlib import Path
 from math import atan2, cos, sin, pi
 import shutil
-
 from reportlab.lib.colors import HexColor
-from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[2]
-W, H = 900, 820
-INK = HexColor('#263A42')
-MUTED = HexColor('#596973')
-LINE = HexColor('#B9C7CB')
-BLUE = HexColor('#326782')
-BLUE_TINT = HexColor('#EAF3F8')
-GREEN = HexColor('#3D6C56')
-GREEN_TINT = HexColor('#E8F3EB')
-RUST = HexColor('#90553B')
-WARM = HexColor('#FBF4E8')
+W, H = 900, 385
+INK = HexColor('#243746')
+NAVY = HexColor('#255C7B')
+TEAL = HexColor('#2D8B7B')
+AMBER = HexColor('#E8AD44')
+CORAL = HexColor('#D57060')
+GRAY = HexColor('#CBD3DA')
+MUTED = HexColor('#6F7F8C')
 WHITE = HexColor('#FFFFFF')
 
 
-def text(c, x, y, value, size=18, bold=False, color=INK, align='left'):
-    assert size >= 18
-    font = 'Helvetica-Bold' if bold else 'Helvetica'
-    c.setFont(font, size)
+def text(c, x, y, value, size=17, bold=False, color=INK, align='left'):
     c.setFillColor(color)
-    {'left': c.drawString, 'center': c.drawCentredString,
-     'right': c.drawRightString}[align](x, y, value)
+    c.setFont('Helvetica-Bold' if bold else 'Helvetica', size)
+    getattr(c, {'left':'drawString','center':'drawCentredString','right':'drawRightString'}[align])(x, y, value)
 
 
-def box(c, x, y, w, h, fill=WHITE, stroke=LINE, radius=7, lw=1.1):
-    c.setFillColor(fill)
-    c.setStrokeColor(stroke)
-    c.setLineWidth(lw)
-    c.roundRect(x, y, w, h, radius, fill=1, stroke=1)
+def line(c, x1, y1, x2, y2, color=GRAY, width=1):
+    c.setStrokeColor(color); c.setLineWidth(width); c.line(x1,y1,x2,y2)
 
 
-def arrow(c, x1, y1, x2, y2, color=MUTED, width=1.6):
-    c.setStrokeColor(color)
-    c.setFillColor(color)
-    c.setLineWidth(width)
-    c.line(x1, y1, x2, y2)
-    angle = atan2(y2-y1, x2-x1)
-    p = c.beginPath()
-    p.moveTo(x2, y2)
-    for delta in (-pi/6, pi/6):
-        p.lineTo(x2-8*cos(angle+delta), y2-8*sin(angle+delta))
-    p.close()
-    c.drawPath(p, fill=1, stroke=0)
+def arrow(c, points, color=TEAL, width=2):
+    c.setStrokeColor(color); c.setFillColor(color); c.setLineWidth(width)
+    p=c.beginPath();p.moveTo(*points[0])
+    for pt in points[1:]:p.lineTo(*pt)
+    c.drawPath(p)
+    (x1,y1),(x2,y2)=points[-2:];a=atan2(y2-y1,x2-x1)
+    p=c.beginPath();p.moveTo(x2,y2)
+    p.lineTo(x2-7*cos(a-pi/6),y2-7*sin(a-pi/6));p.lineTo(x2-7*cos(a+pi/6),y2-7*sin(a+pi/6));p.close()
+    c.drawPath(p,stroke=0,fill=1)
 
 
-def badge(c, x, y, value, color):
-    c.setFillColor(color)
-    c.circle(x, y, 15, fill=1, stroke=0)
-    text(c, x, y-6.2, value, 19, True, WHITE, 'center')
+def page(c,x,y,w,h,number):
+    # A folded corner and offset hard shadow give the fragments a page identity.
+    c.setFillColor(HexColor('#EDF0F2'));c.rect(x+4,y-4,w,h,fill=1,stroke=0)
+    c.setFillColor(WHITE);c.setStrokeColor(GRAY);c.setLineWidth(1)
+    p=c.beginPath();p.moveTo(x,y);p.lineTo(x+w,y);p.lineTo(x+w,y+h-16);p.lineTo(x+w-16,y+h);p.lineTo(x,y+h);p.close()
+    c.drawPath(p,fill=1,stroke=1)
+    line(c,x+w-16,y+h,x+w-16,y+h-16);line(c,x+w-16,y+h-16,x+w,y+h-16)
+    text(c,x+w-16,y+12,str(number),11,color=MUTED,align='right')
+
+
+def badge(c,x,y,label,color):
+    c.setFillColor(color);c.circle(x,y,12,fill=1,stroke=0)
+    text(c,x,y-6,label,17,True,WHITE,'center')
 
 
 def draw():
-    out = ROOT / 'doc/figs/fig13.pdf'
-    out.parent.mkdir(parents=True, exist_ok=True)
-    c = canvas.Canvas(str(out), pagesize=(W, H), invariant=1,
-                      pageCompression=1)
-    c.setTitle('A cross-page financial question: shared evidence, different representations')
+    out=ROOT/'doc/figs/fig13.pdf';out.parent.mkdir(parents=True,exist_ok=True)
+    c=canvas.Canvas(str(out),pagesize=(W,H),invariant=1,pageCompression=1)
+    c.setTitle('Joining a financial table with its restatement note')
     c.setAuthor('Beyond OCR survey authors')
-    c.setSubject('Constructed financial example, not empirical model results')
+    c.setSubject('Constructed cross-page evidence example; not empirical results')
+    text(c,20,355,'Operating margin change, after restatement?',20,True)
+    line(c,20,341,880,341,width=.8)
 
-    text(c, 20, 791, 'One question, two pages, a joint evidence requirement', 26, True)
-    text(c, 20, 766, 'Constructed example: every route must preserve the same evidence.', 19, color=MUTED)
+    page(c,20,48,286,272,12)
+    badge(c,41,300,'A',NAVY)
+    text(c,61,294,'Operating performance',18,True)
+    text(c,37,270,'USD million',14,color=MUTED)
+    # The actual table, with the superseded comparison-year cells picked out.
+    text(c,222,245,'2024',16,True,align='center')
+    text(c,278,245,'2023',16,True,align='center')
+    line(c,36,235,292,235,INK)
+    for y,label,a,b in [(211,'Revenue','1,000','800'),(181,'Operating profit','150','96'),(151,'Margin','15.0%','12.0%')]:
+        text(c,37,y,label,16)
+        text(c,222,y,a,17,align='center')
+        if label=='Operating profit':
+            c.setFillColor(HexColor('#FFF0CC'));c.rect(251,y-5,41,25,fill=1,stroke=0)
+        text(c,278,y,b,17,label=='Operating profit',CORAL if label=='Margin' else INK,'center')
+    line(c,36,138,292,138,INK)
+    for y,w in [(116,233),(103,202),(90,222)]:line(c,37,y,37+w,y,GRAY,2)
 
-    box(c, 20, 695, 860, 54, WARM, HexColor('#D7C6AC'))
-    text(c, 35, 727, 'Question: What is the year-on-year change in operating margin', 20, True)
-    text(c, 35, 704, 'after applying the restatement in the footnote?', 20, True)
+    page(c,347,82,243,238,13)
+    badge(c,369,300,'B',TEAL)
+    text(c,389,294,'Note 7',18,True)
+    text(c,365,265,'2023 operating profit',16)
+    # Supersession is drawn, rather than narrated in a box.
+    text(c,378,226,'96',27,True,CORAL)
+    line(c,374,237,413,237,CORAL,2)
+    arrow(c,[(425,235),(459,235)],TEAL)
+    text(c,470,226,'104',29,True,TEAL)
+    c.setFillColor(HexColor('#E4F2ED'));c.rect(362,178,211,28,fill=1,stroke=0)
+    text(c,371,185,'Revenue unchanged: 800',16,True,TEAL)
+    for y,w in [(158,207),(145,174),(132,197),(119,153)]:line(c,365,y,365+w,y,GRAY,2)
 
-    # Two actual-looking page fragments, rather than generic document icons.
-    for x in (20, 464):
-        box(c, x, 378, 416, 300, WHITE, LINE, radius=2)
-        c.setStrokeColor(LINE)
-        c.line(x+17, 635, x+399, 635)
-    text(c, 37, 650, 'Operating performance', 22, True)
-    text(c, 37, 615, 'USD million; margin in %', 18, color=MUTED)
-
-    tx, top, rh = 37, 601, 41
-    widths = (200, 91, 91)
-    edges = (tx, tx+200, tx+291, tx+382)
-    rows = [
-        ('', '2024', '2023'),
-        ('Revenue', '1,000', '800'),
-        ('Operating profit', '150', '96'),
-        ('Operating margin', '15.0%', '12.0%'),
-    ]
-    c.setFillColor(HexColor('#F0F3F3'))
-    c.rect(tx, top-rh, sum(widths), rh, fill=1, stroke=0)
-    # A is the table evidence region: a label does not assert it is sufficient.
-    c.setFillColor(BLUE_TINT)
-    c.rect(tx, top-4*rh, sum(widths), 3*rh, fill=1, stroke=0)
-    c.setFillColor(HexColor('#D5E9F3'))
-    c.rect(edges[2]+1, top-4*rh+1, widths[2]-2, 2*rh-2, fill=1, stroke=0)
-    for r, values in enumerate(rows):
-        y = top-r*rh-27
-        for col, value in enumerate(values):
-            if col == 0:
-                text(c, edges[col]+10, y, value, 19, r == 0)
-            else:
-                text(c, (edges[col]+edges[col+1])/2, y, value,
-                     20, r == 0, align='center')
-    c.setStrokeColor(LINE)
-    c.setLineWidth(.9)
-    for r in range(5):
-        c.line(tx, top-r*rh, tx+sum(widths), top-r*rh)
-    for x in edges:
-        c.line(x, top-4*rh, x, top)
-    c.setStrokeColor(BLUE)
-    c.setLineWidth(2)
-    c.rect(tx-2, top-4*rh-2, sum(widths)+4, 3*rh+4, fill=0, stroke=1)
-    badge(c, 403, 615, 'A', BLUE)
-    text(c, 37, 408, 'As originally reported', 18, color=MUTED)
-    text(c, 413, 390, '12', 18, color=MUTED, align='right')
-
-    text(c, 481, 650, 'Notes to the accounts', 22, True)
-    text(c, 481, 615, 'Note 7. Comparative figures', 19, True)
-    box(c, 481, 486, 382, 104, GREEN_TINT, GREEN, radius=3, lw=2)
-    text(c, 495, 562, 'The 2023 operating profit is', 20)
-    text(c, 495, 536, 'restated from 96 to 104.', 20, True, GREEN)
-    text(c, 495, 510, 'Revenue remains 800.', 20)
-    badge(c, 847, 606, 'B', GREEN)
-    text(c, 481, 453, 'The 2024 figures are unchanged.', 18)
-    for yy, length in ((430, 353), (416, 275)):
-        c.setStrokeColor(HexColor('#DEE3E4'))
-        c.setLineWidth(2)
-        c.line(481, yy, 481+length, yy)
-    text(c, 857, 390, '13', 18, color=MUTED, align='right')
-
-    # The three routes are alternatives or combinations, not a performance rank.
-    cards = [
-        (20, 'OCR + layout', BLUE_TINT, BLUE,
-         ['Text + cell coordinates', 'Keep row, year and unit.', 'Recover A and B together.']),
-        (313, 'Direct visual', GREEN_TINT, GREEN,
-         ['Page images / crops', 'Keep fine print readable.', 'Supply both relevant pages.']),
-        (606, 'Hybrid retrieval', WARM, RUST,
-         ['Text + visual evidence', 'Link table and footnote.', 'Retrieve both A and B.']),
-    ]
-    for x, title, fill, accent, lines in cards:
-        box(c, x, 182, 274, 174, fill, LINE)
-        text(c, x+14, 327, title, 22, True, accent)
-        c.setStrokeColor(LINE)
-        c.line(x+14, 313, x+260, 313)
-        for i, line in enumerate(lines):
-            assert stringWidth(line, 'Helvetica', 18) < 246, line
-            text(c, x+14, 288-i*29, line, 18)
-        text(c, x+14, 199, 'Shared evidence: A + B', 18, True, accent)
-        arrow(c, x+137, 182, x+137, 157, accent)
-
-    box(c, 20, 24, 860, 133, HexColor('#F5F7F7'), LINE)
-    text(c, 36, 129, 'Apply the restatement, then compute the change', 22, True)
-    text(c, 36, 99, '2023: 104 / 800 = 13.0%     2024: 150 / 1,000 = 15.0%', 21)
-    text(c, 36, 69, 'Answer: +2.0 percentage points, supported by A + B.', 23, True, GREEN)
-    text(c, 36, 40, 'Using 12.0% gives +3.0 points: valid arithmetic on unadjusted evidence.', 18, color=MUTED)
-
-    c.showPage()
-    c.save()
-    alt = ROOT / 'figs_by_qixingyu/fig13.pdf'
-    shutil.copyfile(out, alt)
-    print(f'{out.relative_to(ROOT)} -> {alt.relative_to(ROOT)}')
+    # The two differently colored sources meet at the calculation, visibly.
+    arrow(c,[(306,65),(625,65),(625,137),(656,137)],NAVY,2)
+    arrow(c,[(590,194),(625,194),(625,235),(656,235)],TEAL,2)
+    text(c,676,290,'2024',16,True,color=NAVY)
+    text(c,676,264,'150 / 1,000',21,color=NAVY)
+    text(c,870,264,'15%',27,True,NAVY,'right')
+    line(c,675,249,878,249,GRAY)
+    text(c,676,219,'2023',16,True,color=TEAL)
+    text(c,676,193,'104 / 800',21,color=TEAL)
+    text(c,870,193,'13%',27,True,TEAL,'right')
+    line(c,675,175,878,175,INK,1.2)
+    text(c,776,145,'15% - 13%',22,align='center')
+    text(c,776,94,'+2 pp',43,True,TEAL,'center')
+    c.setFillColor(TEAL);c.rect(712,81,128,3,fill=1,stroke=0)
+    c.showPage();c.save()
+    alt=ROOT/'figs_by_qixingyu/fig13.pdf';shutil.copyfile(out,alt)
+    print(f'{out.relative_to(ROOT)} -> {alt.relative_to(ROOT)}; {W}x{H} pt')
 
 
-if __name__ == '__main__':
-    draw()
+if __name__=='__main__':draw()
