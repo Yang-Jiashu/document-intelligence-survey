@@ -59,6 +59,7 @@ function renderAll() {
     renderPapers();
     renderDatasets();
     renderLeaderboard();
+    window.HomeAtlas?.renderStats(paperIndexData, papersData, liveSotaData);
 }
 
 function getDynamicPapers() {
@@ -96,62 +97,25 @@ function formatDateTime(value) {
 function renderDynamicOverview() {
     const container = document.getElementById('dynamicOverviewContainer');
     if (!container) return;
-
     const dynamicPapers = getDynamicPapers();
-    const pendingItems = getPendingDynamicItems();
-    const verifiedWechatSources = Array.isArray(dynamicPapersData?.verifiedWechatArticles)
-        ? dynamicPapersData.verifiedWechatArticles
-        : [];
-    const counts = getDynamicCategoryCounts();
-    const taxonomy = paperIndexData && Array.isArray(paperIndexData.taxonomy)
-        ? paperIndexData.taxonomy
-        : [
-            { id: 'ocr', title: 'OCR & Text Recognition' },
-            { id: 'layout', title: 'Layout Analysis' },
-            { id: 'table', title: 'Table Understanding' },
-            { id: 'rag', title: 'Retrieval-Augmented Generation' },
-            { id: 'vlm', title: 'Vision-Language Models' },
-            { id: 'eval', title: 'Evaluation & Benchmarks' }
-        ];
+    const sources = Array.isArray(dynamicPapersData?.verifiedWechatArticles)
+        ? dynamicPapersData.verifiedWechatArticles : [];
     const lastUpdated = dynamicPapersData?.lastUpdated || updateLogData?.lastRun || null;
-    const lastUpdatedLabel = formatDateTime(lastUpdated);
-    const updatedCategories = taxonomy.filter(node => counts[node.id] > 0).length;
     const badge = document.getElementById('dynamicLastUpdated');
-    if (badge) badge.textContent = lastUpdatedLabel;
-
+    if (badge) badge.textContent = formatDateTime(lastUpdated);
+    const featured = [...dynamicPapers].sort((a, b) =>
+        String(b.published || '').localeCompare(String(a.published || '')))[0];
+    const href = featured ? `search.html?q=${encodeURIComponent(featured.title)}` : 'research.html';
     container.innerHTML = `
-        <div class="dynamic-stat-card">
-            <span class="dynamic-stat-label">Auto-discovered</span>
-            <strong>${dynamicPapers.length}</strong>
-            <span class="dynamic-stat-note">Verified arXiv papers</span>
-        </div>
-        <div class="dynamic-stat-card">
-            <span class="dynamic-stat-label">WeChat Sources</span>
-            <strong>${verifiedWechatSources.length}</strong>
-            <span class="dynamic-stat-note">Verified document intelligence links</span>
-        </div>
-        <div class="dynamic-stat-card">
-            <span class="dynamic-stat-label">Pending Review</span>
-            <strong>${pendingItems.length}</strong>
-            <span class="dynamic-stat-note">Hidden from the homepage</span>
-        </div>
-        <div class="dynamic-stat-card">
-            <span class="dynamic-stat-label">Active Categories</span>
-            <strong>${updatedCategories}</strong>
-            <span class="dynamic-stat-note">Categories with dynamic papers</span>
-        </div>
-        <div class="dynamic-stat-card dynamic-category-card">
-            <span class="dynamic-stat-label">Dynamic Categories</span>
-            <div class="dynamic-category-list">
-                ${taxonomy.map(node => `
-                    <span>
-                        <em>${escapeHtml(node.title)}</em>
-                        <strong>${counts[node.id] || 0}</strong>
-                    </span>
-                `).join('')}
-            </div>
-        </div>
-    `;
+        <a class="pulse-feature" href="${escapeHtml(href)}">
+            <span>FROM THE DISCOVERY FEED</span>
+            <h3>${escapeHtml(featured?.title || 'Explore document intelligence progress')} <i aria-hidden="true">↗</i></h3>
+            <p>${featured ? `Published ${escapeHtml(featured.published || featured.year || 'date unavailable')} · ${escapeHtml(featured.venue || 'Source-linked paper')}` : 'Papers and official releases, with publication dates and source-check status.'}</p>
+        </a>
+        <div class="pulse-counts">
+            <span><strong>${dynamicPapers.length}</strong> discovered papers</span>
+            <span><strong>${sources.length}</strong> WeChat source articles</span>
+        </div>`;
 }
 
 function renderStats() {
@@ -171,10 +135,10 @@ function renderPapers() {
     
     const container = document.getElementById('papersContainer');
     document.getElementById('paperCount').textContent = `${papers.length} papers`;
-    container.innerHTML = papers.map(p => `
+    const paperCard = p => `
         <div class="paper-card" data-id="${p.id}">
             <div class="paper-header">
-                <div class="paper-title">${p.title}</div>
+                <h3 class="paper-title">${escapeHtml(p.title)}</h3>
                 <span class="paper-year">${p.year}</span>
             </div>
             <div class="paper-authors">${p.authors}</div>
@@ -190,7 +154,14 @@ function renderPapers() {
                 ${p.github ? `<a href="${p.github}" target="_blank" class="paper-btn secondary">GitHub</a>` : ''}
             </div>
         </div>
-    `).join('');
+    `;
+    const first = papers.slice(0, 6).map(paperCard).join('');
+    const rest = papers.slice(6).map(paperCard).join('');
+    container.innerHTML = first + (rest ? `
+        <details class="paper-archive">
+            <summary>Explore ${papers.length - 6} more selected papers</summary>
+            <div class="paper-grid">${rest}</div>
+        </details>` : '');
 }
 
 function renderSOTA() {
@@ -474,20 +445,21 @@ function renderTaxonomy() {
         : fallbackTaxonomy;
     
     const container = document.getElementById('taxonomyContainer');
-    container.innerHTML = taxonomy.map(node => `
-        <div class="taxonomy-card" onclick="filterPapers('${node.filter}')">
+    container.innerHTML = taxonomy.map((node, index) => `
+        <a class="taxonomy-card" href="search.html?category=${encodeURIComponent(node.filter)}">
             <div class="tc-header">
-                <div class="tc-icon">${node.icon}</div>
+                <div class="tc-icon">${String(index + 1).padStart(2, '0')}</div>
                 <div class="tc-info">
                     <div class="tc-title">${node.title}</div>
                     <div class="tc-count">${node.count} papers</div>
                 </div>
+                <span class="tc-arrow" aria-hidden="true">↗</span>
             </div>
             <div class="tc-desc">${node.desc}</div>
             <div class="tc-tags">
                 ${node.children.map(child => `<span class="tc-tag">${child}</span>`).join('')}
             </div>
-        </div>
+        </a>
     `).join('');
 }
 
@@ -588,7 +560,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadData();
     
     document.getElementById('searchInput').addEventListener('keydown', event => {
-        if (event.key === 'Enter') goToSearch();
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            goToSearch();
+        }
     });
     
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -625,7 +600,9 @@ function prevFig() {
 }
 
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') lightbox.classList.remove('active');
     if (e.key === 'ArrowRight') nextFig();
     if (e.key === 'ArrowLeft') prevFig();
 });

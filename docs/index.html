@@ -3,162 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>Beyond OCR: Document Intelligence Survey - Research Atlas</title>
+<meta name="description" content="Beyond OCR: a living research atlas for document intelligence, from structured perception to multimodal question answering. Explore the survey, papers, datasets and benchmark progress.">
+<meta name="theme-color" content="#080b10">
+<title>Beyond OCR — A Document Intelligence Research Atlas</title>
 <link rel="stylesheet" href="css/style.css?v=20260712-1">
+<link rel="stylesheet" href="css/home.css?v=20261109-1">
 </head>
-<body>
-
-<!-- Header -->
+<body class="home">
+<a class="skip-link" href="#mainContent">Skip to content</a>
 <header class="header">
-<div class="header-inner">
-<div class="logo"><div class="logo-icon">DI</div><span>DocIntel Survey</span></div>
-<nav class="nav-links">
-<a href="#taxonomy" class="active">Taxonomy</a>
-<a href="#timeline">Timeline</a>
-<a href="#papers">Papers</a>
-<a href="#datasets">Datasets</a>
-<a href="#leaderboard">Models</a>
-<a href="#sota">SOTA</a>
-<a href="research.html">文档智能进展</a>
-<a href="#feedback">Feedback</a>
-<a href="https://github.com/Yang-Jiashu/document-intelligence-survey" target="_blank" class="github-btn">GitHub</a>
-</nav>
-</div>
+  <div class="header-inner">
+    <a class="logo" href="#top" aria-label="Beyond OCR home"><svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 3h15l7 7v19H5z" stroke="currentColor"/><path d="M20 3v7h7M10 15h12M10 20h7M10 25h12" stroke="currentColor"/><circle cx="23" cy="20" r="2" fill="currentColor"/></svg><span>Beyond OCR<span class="brand-separator"> / </span><small>Research Atlas</small></span></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav class="nav-links" id="mainNav" aria-label="Main navigation">
+      <a href="#taxonomy">Research map</a><a href="#papers">Papers</a><a href="#sota">Benchmarks</a><a href="research.html">Latest progress <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/Yang-Jiashu/document-intelligence-survey" target="_blank" rel="noreferrer" class="github-btn">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
 </header>
-
-<!-- Hero -->
-<section class="hero">
-<div class="hero-inner">
-<div class="hero-kicker">Living survey and research atlas</div>
-<h1>Beyond OCR: A Survey of Document Intelligence</h1>
-<p class="hero-summary">A calm, structured tracker for papers, datasets, milestones, and model progress across modern document intelligence.</p>
-<div class="hero-authors">Chi Zhang, JiaShu Yang, Xingyu Qi, Ning Zhang, Jie Wu, Lingxu Chen, Jiani Guo</div>
-<div class="hero-badges">
-<a href="https://zenodo.org/records/21264117" target="_blank" rel="noreferrer" class="badge">Read Paper</a>
-<a href="research.html" class="badge">文档智能 · 最新进展</a>
-</div>
-</div>
+<main id="mainContent">
+<section class="hero" id="top" aria-labelledby="heroTitle">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker"><span class="status-dot" aria-hidden="true"></span> A living survey of document intelligence</div>
+      <h1 id="heroTitle">Beyond<br><em>OCR.</em></h1>
+      <p class="hero-subtitle">From structured perception<br>to multimodal question answering.</p>
+      <p class="hero-summary">How do machines read, understand, and reason over documents? Explore the methods connecting pixels, structure, and knowledge.</p>
+      <div class="hero-badges"><a href="https://zenodo.org/records/21264117" target="_blank" rel="noreferrer" class="badge badge-primary">Read the survey <span aria-hidden="true">↗</span></a><a href="search.html" class="badge badge-secondary">Explore the papers <span aria-hidden="true">→</span></a></div>
+      <div class="hero-authors">Chi Zhang · JiaShu Yang · Xingyu Qi · Ning Zhang<br>Jie Wu · Lingxu Chen · Jiani Guo</div>
+    </div>
+    <div class="document-atlas" id="documentAtlas" data-stage="perceive">
+      <div class="atlas-label"><span>FIG. 01</span> FROM PIXELS TO KNOWLEDGE <span class="atlas-signal" aria-hidden="true">⌁</span></div>
+      <div class="atlas-art">
+      <svg viewBox="0 0 560 410" role="img" aria-labelledby="atlasDiagramTitle atlasDiagramDescription">
+        <title id="atlasDiagramTitle">Three perspectives on document intelligence</title><desc id="atlasDiagramDescription">A document with text regions, structured tables and connected evidence. Use the three tabs below to explore perception, understanding and reasoning.</desc>
+        <defs><linearGradient id="pageSurface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#192a3e"/><stop offset="1" stop-color="#0a1019"/></linearGradient><radialGradient id="atlasGlow"><stop stop-color="#4e7eac" stop-opacity=".19"/><stop offset="1" stop-color="#0a1019" stop-opacity="0"/></radialGradient></defs>
+        <ellipse cx="289" cy="210" rx="240" ry="190" fill="url(#atlasGlow)"/>
+        <g class="atlas-orbits" fill="none" stroke="#243347"><ellipse cx="280" cy="211" rx="231" ry="134" transform="rotate(-25 280 211)"/><ellipse cx="280" cy="211" rx="236" ry="172" transform="rotate(23 280 211)"/><path d="M29 211h502M280 18v380" stroke-dasharray="2 8" opacity=".5"/></g>
+        <g transform="translate(148 37) rotate(-9 125 160)">
+          <path d="M15 22h230v305H15z" fill="#0b121d" stroke="#273b50"/><path d="M7 11h230v305H7z" fill="#0d1723" stroke="#31455c"/>
+          <path d="M0 0h185l44 44v261H0z" fill="url(#pageSurface)" stroke="#66819c"/><path d="M185 0v44h44" fill="#142334" stroke="#66819c"/>
+          <g stroke="#7b91a7" opacity=".5"><path d="M24 31h89M24 40h64" stroke-width="2"/><path d="M24 64h126M24 72h166M24 80h155M24 88h161M24 96h132M24 113h80M24 121h80M24 129h68M24 137h79M24 145h70M24 153h79M24 161h61M24 169h79M24 177h62M24 195h176M24 203h164M24 211h173M24 219h150M24 227h170M24 235h136M24 270h56"/><path d="M124 118h73v61h-73zM124 133h73M124 148h73M124 163h73M148 118v61M172 118v61"/></g>
+          <g data-layer="perceive" class="atlas-layer" fill="#79b3eb" fill-opacity=".08" stroke="#8dc3f5"><rect x="17" y="24" width="103" height="24" rx="2"/><rect x="17" y="57" width="190" height="46" rx="2"/><rect x="17" y="108" width="94" height="77" rx="2"/><path d="M17 55h190" stroke-width="2" class="scan-line"/><text x="21" y="257" fill="#a5cff4" stroke="none" font-size="9" font-family="monospace">TEXT · LAYOUT · READING ORDER</text></g>
+          <g data-layer="understand" class="atlas-layer" fill="#8dc9bd" fill-opacity=".1" stroke="#9ed4c8"><rect x="117" y="111" width="87" height="75" rx="2"/><rect x="17" y="188" width="190" height="54" rx="2"/><path d="M109 147h8M161 186v13h-52" fill="none"/><text x="21" y="257" fill="#9ed4c8" stroke="none" font-size="9" font-family="monospace">STRUCTURE · TABLES · SEMANTICS</text></g>
+          <g data-layer="reason" class="atlas-layer" fill="#e4c7a3" fill-opacity=".09" stroke="#d5bb95"><rect x="17" y="57" width="190" height="46" rx="2"/><rect x="117" y="111" width="87" height="75" rx="2"/><rect x="17" y="188" width="190" height="54" rx="2"/><path d="M205 80h30v132h-28" stroke-dasharray="3 4" fill="none"/><text x="21" y="257" fill="#e4c7a3" stroke="none" font-size="9" font-family="monospace">RETRIEVAL · EVIDENCE · REASONING</text></g>
+        </g>
+        <g class="atlas-callout" data-layer="perceive"><path d="M146 111H79v-9"/><circle cx="146" cy="111" r="3"/><text x="35" y="88">01 / PERCEIVE</text><text class="callout-note" x="35" y="103">Recover the structure</text></g>
+        <g class="atlas-callout" data-layer="understand"><path d="M357 178h86v-17"/><circle cx="357" cy="178" r="3"/><text x="389" y="140">02 / UNDERSTAND</text><text class="callout-note" x="389" y="155">Connect the meaning</text></g>
+        <g class="atlas-callout" data-layer="reason"><path d="M363 280h69v30"/><circle cx="363" cy="280" r="3"/><text x="379" y="330">03 / REASON</text><text class="callout-note" x="379" y="345">Ground the answer</text></g>
+        <g class="atlas-points" fill="#68849f"><circle cx="58" cy="278" r="2"/><circle cx="436" cy="64" r="2"/><circle cx="497" cy="235" r="2"/><circle cx="182" cy="368" r="2"/></g>
+      </svg>
+      </div>
+      <div class="atlas-tabs" role="tablist" aria-label="Explore document intelligence">
+        <button class="atlas-tab" id="atlas-tab-perceive" role="tab" type="button" data-stage="perceive" aria-selected="true" aria-controls="stagePanel"><span>01</span> Perceive</button>
+        <button class="atlas-tab" id="atlas-tab-understand" role="tab" type="button" data-stage="understand" aria-selected="false" aria-controls="stagePanel" tabindex="-1"><span>02</span> Understand</button>
+        <button class="atlas-tab" id="atlas-tab-reason" role="tab" type="button" data-stage="reason" aria-selected="false" aria-controls="stagePanel" tabindex="-1"><span>03</span> Reason</button>
+      </div>
+      <div class="atlas-caption" id="stagePanel" role="tabpanel" aria-labelledby="atlas-tab-perceive" tabindex="0"><h2 id="stageTitle">Read the page.</h2><p id="stageDescription">Recognize text, recover reading order, and turn document pixels into structured content.</p><a id="stageLink" href="search.html?category=ocr">Explore OCR methods →</a></div>
+    </div>
+  </div>
+  <div class="hero-bottom"><span>A SURVEY & AN OPEN RESEARCH ATLAS</span><a href="#taxonomy">Explore the field <span aria-hidden="true">↓</span></a></div>
 </section>
-
-<!-- Search -->
-<div class="search-section">
-<div class="search-inner">
-<div class="search-box">
-<svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-<input type="text" placeholder="Search papers, methods, authors, tags..." id="searchInput">
-</div>
-<div class="filter-group">
-<button class="filter-btn active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="layout">Layout</button>
-<button class="filter-btn" data-filter="ocr">OCR</button>
-<button class="filter-btn" data-filter="table">Table</button>
-<button class="filter-btn" data-filter="rag">RAG</button>
-<button class="filter-btn" data-filter="vlm">VLM</button>
-<button class="filter-btn" data-filter="eval">Eval</button>
-</div>
-</div>
-</div>
-
-<!-- Taxonomy Section -->
+<section class="atlas-stats" aria-label="Survey coverage">
+  <a href="search.html"><strong id="atlasPaperCount">—</strong><span>Cited references</span><i aria-hidden="true">↗</i></a>
+  <a href="#taxonomy"><strong id="atlasTopicCount">—</strong><span>Research directions</span><i aria-hidden="true">↗</i></a>
+  <a href="#sota"><strong id="atlasBenchmarkCount">—</strong><span>Benchmark profiles</span><i aria-hidden="true">↗</i></a>
+  <a class="atlas-stats-note" href="research.html"><span class="status-dot" aria-hidden="true"></span><div>Research keeps moving.<small>Follow the latest progress →</small></div></a>
+</section>
 <div class="main">
-<div class="section-title" id="dynamic">
-<h2>Dynamic Overview</h2>
-<div class="section-title-actions">
-<a class="section-link-btn" href="search.html?q=%E5%85%AC%E4%BC%97%E5%8F%B7">Latest WeChat Sources</a>
-<span class="badge-count" id="dynamicLastUpdated">Loading</span>
+<section class="atlas-section map-section" aria-labelledby="mapTitle">
+  <div class="section-title" id="taxonomy"><div><span class="section-kicker">01 / THE RESEARCH MAP</span><h2 id="mapTitle">One field.<br>Six connected perspectives.</h2></div><p class="section-intro">From recognizing a single character to reasoning across entire documents. Choose a direction to explore its methods and literature.</p></div>
+  <div class="taxonomy-container" id="taxonomyContainer"></div>
+</section>
+<section class="search-section" aria-label="Search the paper index">
+  <div class="search-intro"><span class="section-kicker">LOOK CLOSER</span><h2>Find your next reference.</h2><p>Search the full bibliography by title, author, method, or topic.</p></div>
+  <div class="search-inner"><form class="search-box" action="search.html" role="search"><label class="sr-only" for="searchInput">Search papers, methods, authors and tags</label><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="search" name="q" placeholder="A paper, a method, an idea…" id="searchInput"><button type="submit" class="search-submit" aria-label="Search bibliography">Search <span aria-hidden="true">↗</span></button></form>
+  <div class="filter-group" aria-label="Browse by research direction"><button type="button" class="filter-btn" data-filter="all">All papers ↗</button><button type="button" class="filter-btn" data-filter="ocr">OCR</button><button type="button" class="filter-btn" data-filter="layout">Layout</button><button type="button" class="filter-btn" data-filter="table">Tables</button><button type="button" class="filter-btn" data-filter="vlm">VLMs</button><button type="button" class="filter-btn" data-filter="rag">RAG</button><button type="button" class="filter-btn" data-filter="eval">Evaluation</button></div></div>
+</section>
+<section class="atlas-section pulse-section" aria-labelledby="pulseTitle">
+  <div class="section-title" id="dynamic"><div><span class="section-kicker"><span class="status-dot" aria-hidden="true"></span> RESEARCH PULSE</span><h2 id="pulseTitle">A field in motion.</h2></div><a class="text-link" href="research.html">文档智能 · 最新进展 <span aria-hidden="true">↗</span></a></div>
+  <div class="pulse-layout"><div class="pulse-copy"><p>Follow document intelligence beyond the survey: recent papers, official project releases, and discoveries with links back to their sources.</p><a class="text-link" href="search.html?q=%E5%85%AC%E4%BC%97%E5%8F%B7">Browse WeChat sources ↗</a><div class="pulse-updated">Discovery feed refreshed <span id="dynamicLastUpdated">Loading…</span></div></div><div class="dynamic-overview" id="dynamicOverviewContainer"></div></div>
+</section>
+<section class="atlas-section" aria-labelledby="selectedTitle">
+  <div class="section-title" id="papers"><div><span class="section-kicker">02 / SELECTED READING</span><h2 id="selectedTitle">Ideas shaping the field.</h2></div><div class="section-title-actions"><span class="badge-count" id="paperCount">Loading…</span><a class="text-link" href="search.html">Full paper index ↗</a></div></div><p class="section-deck">A selection from the survey, spanning document perception, vision-language models, and retrieval-augmented reasoning.</p>
+  <div class="paper-grid" id="papersContainer"></div>
+</section>
+<section class="atlas-section" aria-labelledby="timelineTitle">
+  <div class="section-title" id="timeline"><div><span class="section-kicker">03 / THE EVOLUTION</span><h2 id="timelineTitle">How we got here.</h2></div><p class="section-intro">Trace the shift from layout-aware representations to OCR-free models and agentic retrieval.</p></div><div class="timeline-container" id="timelineContainer"></div>
+</section>
+<section class="atlas-section" aria-labelledby="sotaTitle">
+  <div class="section-title" id="sota"><div><span class="section-kicker">04 / MEASURING PROGRESS</span><h2 id="sotaTitle">The benchmark landscape.</h2></div><a class="text-link" href="#datasets">Explore the datasets ↓</a></div><p class="section-deck">Scores with context. Explore benchmark snapshots, original sources, and the date each result was last verified.</p><div class="sota-container" id="sotaContainer"></div>
+</section>
+<div class="reference-columns">
+<section class="atlas-section" aria-labelledby="datasetTitle"><div class="section-title" id="datasets"><div><span class="section-kicker">REFERENCE / DATA</span><h2 id="datasetTitle">Datasets & benchmarks.</h2></div></div><div class="dataset-table-container"><table class="dataset-table" id="datasetTable"><thead><tr><th>Dataset</th><th>Task</th><th>Year</th><th>Size</th><th>Metric</th><th>Links</th></tr></thead><tbody id="datasetTableBody"></tbody></table></div></section>
+<section class="atlas-section" aria-labelledby="modelsTitle"><div class="section-title" id="leaderboard"><div><span class="section-kicker">REFERENCE / MODELS</span><h2 id="modelsTitle">Notable models.</h2></div></div><div class="leaderboard"><div class="lb-header"><div>Model</div><div>Type</div></div><div id="leaderboardBody"></div></div></section>
 </div>
+<section class="atlas-section contribute-section" aria-labelledby="feedbackTitle"><div class="section-title" id="feedback"><div><span class="section-kicker">BUILT IN THE OPEN</span><h2 id="feedbackTitle">Keep the atlas useful.</h2></div><p class="section-intro">A missing paper, a new result, a better reference. Help keep the research connected.</p></div><div class="feedback-container" id="feedbackContainer"></div></section>
 </div>
-<div class="dynamic-overview" id="dynamicOverviewContainer">
-<!-- Rendered by JS -->
-</div>
-
-<div class="section-title" id="taxonomy">
-<h2>Taxonomy</h2>
-<span class="badge-count">Field Overview</span>
-</div>
-<div class="taxonomy-container" id="taxonomyContainer">
-<!-- Rendered by JS -->
-</div>
-
-<!-- Timeline Section -->
-<div class="section-title" id="timeline">
-<h2>Development Timeline</h2>
-<span class="badge-count">Key Milestones</span>
-</div>
-<div class="timeline-container" id="timelineContainer">
-<!-- Rendered by JS -->
-</div>
-
-<!-- Papers Section -->
-<div class="section-title" id="papers">
-<h2>Recent Papers</h2>
-<span class="badge-count" id="paperCount">Loading</span>
-</div>
-<div class="paper-grid" id="papersContainer">
-<!-- Papers rendered by JS -->
-</div>
-
-<!-- SOTA Curves Section -->
-<div class="section-title" id="sota">
-<h2>SOTA Evolution</h2>
-<span class="badge-count">Benchmark Leaders</span>
-</div>
-<div class="sota-container" id="sotaContainer">
-<!-- Rendered by JS -->
-</div>
-
-<!-- Feedback Section -->
-<div class="section-title" id="feedback">
-<h2>Community Feedback</h2>
-<span class="badge-count">Benchmark updates</span>
-</div>
-<div class="feedback-container" id="feedbackContainer">
-<!-- Rendered by JS -->
-</div>
-
-<!-- Leaderboard Section -->
-<div class="section-title" id="leaderboard">
-<h2>Notable Models</h2>
-<span class="badge-count">Document Intelligence</span>
-</div>
-<div class="leaderboard">
-<div class="lb-header">
-<div>Model</div>
-<div>Type</div>
-</div>
-<div id="leaderboardBody">
-<!-- Rendered by JS -->
-</div>
-</div>
-
-<!-- Datasets Section -->
-<div class="section-title" id="datasets">
-<h2>Datasets & Benchmarks</h2>
-<span class="badge-count">8 datasets</span>
-</div>
-<div class="dataset-table-container">
-<table class="dataset-table" id="datasetTable">
-<thead>
-<tr>
-<th>Dataset</th>
-<th>Task</th>
-<th>Year</th>
-<th>Size</th>
-<th>Metric</th>
-<th>Links</th>
-</tr>
-</thead>
-<tbody id="datasetTableBody">
-<!-- Rendered by JS -->
-</tbody>
-</table>
-</div>
-
-</div>
-
+</main>
+<noscript><div class="no-script">Browse the <a href="https://zenodo.org/records/21264117">complete survey</a> or <a href="https://github.com/Yang-Jiashu/document-intelligence-survey">source repository</a>. Enable JavaScript to explore the interactive paper index and benchmark data.</div></noscript>
 <!-- Figures Gallery (hidden section) -->
 <div class="main" style="display:none" id="figuresSection">
 <div class="section-title"><h2>All Figures</h2></div>
@@ -187,7 +130,7 @@
 <!-- Footer -->
 <footer class="footer">
 <div class="footer-inner">
-<div class="footer-title">Friendly Links</div>
+<div class="footer-title">The open-source ecosystem</div>
 <div class="footer-grid">
 <a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank" class="footer-card">
 <div class="footer-icon" style="background:linear-gradient(135deg,#4f6f82,#7d96a3)">PP</div>
@@ -236,6 +179,7 @@
 </div>
 </footer>
 
-<script src="js/app.js?v=20260712-1"></script>
+<script src="js/home.js?v=20261109-1"></script>
+<script src="js/app.js?v=20261109-1"></script>
 </body>
 </html>
