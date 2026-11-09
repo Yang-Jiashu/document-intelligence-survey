@@ -1,4 +1,4 @@
-name: Update Dynamic Papers
+name: Maintain Free Research Compatibility
 
 on:
   schedule:
@@ -23,16 +23,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Update dynamic paper data
-        run: python scripts/update_dynamic_papers.py
-        env:
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
-          DMX_API_KEY: ${{ secrets.DMX_API_KEY }}
-          DMX_BASE_URL: ${{ secrets.DMX_BASE_URL }}
-          DMX_MODEL: ${{ vars.DMX_MODEL }}
+      # Daily update-research.yml owns free arXiv/GitHub discovery. This job
+      # preserves historical WeChat evidence and copies newer local metadata.
+      - name: Maintain legacy data without paid APIs or network requests
+        run: python scripts/update_dynamic_papers.py --free-only
 
       - name: Commit dynamic paper data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update dynamic paper data"
+          commit_message: "Maintain free research compatibility data"
           file_pattern: docs/data/dynamic_papers.json docs/data/pending_dynamic_papers.json docs/data/update_log.json

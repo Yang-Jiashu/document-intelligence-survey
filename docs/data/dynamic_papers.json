@@ -104,5 +104,22 @@
         }
       ]
     }
-  ]
+  ],
+  "sourceStatus": {
+    "wechat": {
+      "status": "retained_not_rechecked",
+      "enabled": false,
+      "retainedArticles": 2,
+      "configuredSeeds": 5,
+      "reason": "Paid search/extraction is disabled. Historical evidence and dates are retained; configured seeds are not new verifications."
+    },
+    "arxiv": {
+      "status": "local_snapshot",
+      "updater": "scripts/update_research.py",
+      "snapshotStatus": "refreshed",
+      "snapshotLastSuccessfulCheck": "2026-11-09T09:23:26Z",
+      "metadataUpdated": 0,
+      "reason": "Daily free arXiv/GitHub collection owns new and revised discovery; this compatibility job only copies newer existing arXiv metadata."
+    }
+  }
 }

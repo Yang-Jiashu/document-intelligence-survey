@@ -1,122 +1,37 @@
 {
-  "lastRun": "2026-11-08T21:55:02Z",
-  "provider": "tavily",
-  "searchDepth": "advanced",
-  "searchedQueries": 156,
-  "rawSearchResults": 35,
-  "wechatSearchResults": 34,
-  "filteredNonWechat": 1,
-  "filteredExamples": [
-    "https://mp.weixin.qq.com/s?src=11&timestamp=1793147266&ver=7053&signature=LyAYnpDOR8dSBpGIF5N-aF2U9GC%2Ae-Ha2KYA5auGcbn0p7eyvYL7KMXj1H5UQLCY0jEwJwuXLCfSc6TUn5AEn-Nb3wVMQpJr2nqMVTpVfLgaCnDFGn4-mIkfusWZY9q0&new=1"
-  ],
-  "sourceSearchSummary": {
-    "新智元": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 6,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "飞桨PaddlePaddle": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 7,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "OpenDataLab": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 7,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "上海人工智能实验室": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 7,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    },
-    "合合信息": {
-      "queries": 1,
-      "rawResults": 7,
-      "wechatResults": 7,
-      "queriesWithWechatResults": 1,
-      "errors": 0
-    }
-  },
-  "extractRequested": 11,
-  "extractSucceeded": 9,
-  "extractFailed": 2,
-  "candidateArticles": 5,
-  "arxivIdsFound": 0,
-  "githubProjectsFound": 5,
-  "githubProjectsPublished": 2,
-  "verifiedSeedArticles": 5,
-  "publicationYearRejected": 20,
-  "publicationEvidenceRejected": 0,
-  "documentRelevant": 6,
-  "documentIrrelevant": 0,
-  "llmClassificationEnabled": true,
-  "llmClassificationAttempted": 6,
-  "llmClassificationSucceeded": 0,
-  "llmClassificationFailed": 6,
-  "llmClassificationSkipped": 0,
+  "lastRun": "2026-11-09T09:26:38Z",
+  "provider": "free-compatibility",
+  "mode": "free-only",
+  "freeOnly": true,
+  "paidApiCalls": 0,
+  "externalRequests": 0,
+  "searchedQueries": 0,
+  "candidateArticles": 0,
   "autoPublished": 0,
   "pendingReview": 0,
-  "pendingPreview": [
-    {
-      "reason": "low_confidence",
-      "title": "GLM-OCR：0.9B 参数的端到端文档解析模型",
-      "arxiv": "",
-      "trustedSource": "智谱AI",
-      "url": "https://mp.weixin.qq.com/s/TVanw2YyfxMlzoaOrR-Naw",
-      "queryTrustedSource": "智谱AI",
-      "matchedQuery": "verified seed article",
-      "githubUrls": [
-        "https://github.com/zai-org/GLM-OCR"
-      ]
+  "verifiedSeedArticles": 0,
+  "configuredSeedArticles": 5,
+  "retainedWechatArticles": 2,
+  "retainedPapers": 1,
+  "metadataUpdated": 0,
+  "llmClassificationEnabled": false,
+  "llmClassificationAttempted": 0,
+  "sourceStatus": {
+    "wechat": {
+      "status": "retained_not_rechecked",
+      "enabled": false,
+      "retainedArticles": 2,
+      "configuredSeeds": 5,
+      "reason": "Paid search/extraction is disabled. Historical evidence and dates are retained; configured seeds are not new verifications."
     },
-    {
-      "reason": "low_confidence",
-      "title": "OCR 在真实场景翻车？跨页表格、密集表格与扭曲文档解析",
-      "arxiv": "",
-      "trustedSource": "码科智能",
-      "url": "https://mp.weixin.qq.com/s/vBizKyX3ayojZc3ms8BxhA",
-      "queryTrustedSource": "码科智能",
-      "matchedQuery": "verified seed article",
-      "githubUrls": [
-        "https://github.com/deepseek-ai/DeepSeek-OCR-2"
-      ]
-    },
-    {
-      "reason": "low_confidence",
-      "title": "RAG 文档解析工具对比：MinerU、PaddleOCR、Docling 等",
-      "arxiv": "",
-      "trustedSource": "AI-Frontiers",
-      "url": "https://mp.weixin.qq.com/s/5XAWHqjZspU9xtC_CckV3w",
-      "queryTrustedSource": "AI-Frontiers",
-      "matchedQuery": "verified seed article",
-      "githubUrls": [
-        "https://github.com/opendatalab/MinerU"
-      ]
+    "arxiv": {
+      "status": "local_snapshot",
+      "updater": "scripts/update_research.py",
+      "snapshotStatus": "refreshed",
+      "snapshotLastSuccessfulCheck": "2026-11-09T09:23:26Z",
+      "metadataUpdated": 0,
+      "reason": "Daily free arXiv/GitHub collection owns new and revised discovery; this compatibility job only copies newer existing arXiv metadata."
     }
-  ],
-  "duplicates": 0,
-  "ignoredExistingCurated": 0,
-  "existingRemovedAsIrrelevant": 0,
-  "errors": [
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261108215503712488265c14228f5KDznNBHB)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261108215521416369969c14228f5CiFGZvbO)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261108215522505824207c14228f5aH9kOqgx)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261108215523397496054c14228f53BMPuR7n)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261108215524419374531c14228f5wRIO6zkn)\",\"type\":\"dmx_api_error\"}}",
-    "llm classification failed: HTTP 401: Unauthorized: {\"error\":{\"code\":\"\",\"message\":\"无效的令牌 (request id: 20261108215525703476412c14228f54FdfPbdw)\",\"type\":\"dmx_api_error\"}}"
-  ],
-  "searchConcurrency": 5,
-  "searchQueriesAttempted": 5,
-  "searchStoppedForExtraction": true,
-  "searchRawContentResults": 29,
-  "contentAvailable": 24
+  },
+  "errors": []
 }

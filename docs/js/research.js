@@ -108,8 +108,10 @@
         });
         const searching = queryTokens(selection.q).length > 0;
         const scores = bm25Scores(candidates, selection.q);
-        const ranked = candidates.filter(item => !searching || scores.get(item) > 0).sort((a, b) => {
-            if (searching) { const relevance = scores.get(b) - scores.get(a); if (relevance) return relevance; }
+        const enhanced = window.SemanticSearch?.rank(candidates, selection.q) || new Map();
+        const score = item => (scores.get(item) || 0) + (enhanced.get(item)?.score || 0);
+        const ranked = candidates.filter(item => !searching || score(item) > 0).sort((a, b) => {
+            if (searching) { const relevance = score(b) - score(a); if (relevance) return relevance; }
             if (sort === 'recommended') {
                 const rank = item => Number.isFinite(item.rankScore) ? item.rankScore : Number(item.relevanceScore) || 0;
                 const score = rank(b) - rank(a);
@@ -188,7 +190,7 @@
         const papers = selectPapers(data, filters);
         filters.page = Math.min(filters.page, Math.max(1, Math.ceil(papers.length / pageSize)));
         document.getElementById('researchCount').textContent = `${papers.length} 条已收录进展`;
-        document.getElementById('researchResultNote').textContent = (filters.q ? '按关键词相关性检索优先，' : '') + (filters.sort === 'recommended' ? '推荐结合文档主题匹配、近期更新与新收录；不代表质量评审。' : filters.sort === 'updated' ? '按版本更新时间排序、筛选；旧论文的新版本会出现。' : '按首次发表时间排序、筛选；版本更新不当成新发表。') + ` 每页 ${pageSize} 条。`;
+        document.getElementById('researchResultNote').textContent = (filters.q ? (window.SemanticSearch ? '按主题/意图与关键词相关性检索优先，' : '按关键词相关性检索优先，') : '') + (filters.sort === 'recommended' ? '推荐结合文档主题匹配、近期更新与新收录；不代表质量评审。' : filters.sort === 'updated' ? '按版本更新时间排序、筛选；旧论文的新版本会出现。' : '按首次发表时间排序、筛选；版本更新不当成新发表。') + ` 每页 ${pageSize} 条。`;
         document.getElementById('researchResults').innerHTML = papers.length ? papers.slice((filters.page - 1) * pageSize, filters.page * pageSize).map(paperHtml).join('') : emptyHtml(data, loadError, scopeError);
         document.querySelectorAll('[data-topic]').forEach(button => { const active = button.dataset.topic === filters.topic; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
         renderPagination(papers.length); updateUrl();
@@ -206,6 +208,7 @@
             const result = await response.json();
             if (!validSnapshot(result)) { data = null; scopeError = true; } else { data = result; loadError = false; scopeError = false; }
         } catch (_) { loadError = true; }
+        await window.SemanticSearch?.load('data/semantic_index.json');
         render();
     }
     window.ResearchTracker = { readFilters, selectPapers, bm25Scores, safePaperUrl, safeReleaseUrl, safeSourceUrl, checkedLabel, validSnapshot, statusHtml, topicStatusHtml, sourceStatusHtml, paperHtml, emptyHtml, load, pageSize };

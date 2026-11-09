@@ -8,7 +8,7 @@ on:
   # 自动更新工作流结束后检查并部署
   workflow_run:
     workflows:
-      - "Update Dynamic Papers"
+      - "Maintain Free Research Compatibility"
       - "Update SOTA snapshot"
       - "Update Research Progress"
     types:

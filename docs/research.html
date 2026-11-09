@@ -7,6 +7,7 @@
 <title>文档智能进展 | Research Atlas</title>
 <link rel="stylesheet" href="css/style.css?v=20260712-1">
 <link rel="stylesheet" href="css/research.css?v=20261028-2">
+<link rel="stylesheet" href="css/research-digest.css?v=20261109-1">
 </head>
 <body>
 <header class="header">
@@ -27,8 +28,10 @@
 <div class="research-kicker">DOCUMENT INTELLIGENCE · DAILY PROGRESS</div>
 <h1 id="researchTitle">文档智能，持续进展。</h1>
 <p>汇集文档解析、版面、表格、问答、RAG 与评测的新论文和官方开源版本。</p>
-<div class="research-intro-note">多源发现 → 文档相关性筛选 → 检索与推荐阅读。推荐依据主题匹配与新近程度，论文来源为 arXiv 预印本，不代表质量评审。</div>
+<div class="research-intro-note">免费官方来源 → 增量去重与主题筛选 → 每日精选与主题/意图增强检索。精选依据主题匹配与新近程度，论文来源为 arXiv 预印本，不代表质量评审。</div>
 </section>
+
+<section id="researchDigest" class="research-digest" aria-label="每日精选" aria-live="polite"><p>正在读取每日精选…</p></section>
 
 <section class="research-health" aria-label="抓取状态">
 <div id="researchStatus" role="status" aria-live="polite">正在读取研究进展…</div>
@@ -48,7 +51,7 @@
 <button type="button" class="research-tab" data-topic="docrag" aria-pressed="false">文档 RAG</button>
 <button type="button" class="research-tab" data-topic="eval" aria-pressed="false">评测</button>
 </div>
-<label class="research-search-label"><span class="research-control-label">关键词</span><input id="researchQuery" type="search" placeholder="搜索标题、摘要、作者或 arXiv ID" autocomplete="off"></label>
+<label class="research-search-label"><span class="research-control-label">关键词或研究问题</span><input id="researchQuery" type="search" placeholder="例如：跨页证据定位、无 OCR 文档理解，或 arXiv ID" autocomplete="off"></label>
 <div class="research-selects">
 <label><span class="research-control-label">时间范围</span><select id="researchWindow"><option value="7">近 7 天</option><option value="30" selected>近 30 天</option><option value="90">近 90 天</option><option value="all">全部已收录</option></select></label>
 <label><span class="research-control-label">内容类型</span><select id="researchKind"><option value="all">全部进展</option><option value="paper">论文</option><option value="release">开源版本</option></select></label>
@@ -62,6 +65,8 @@
 
 <footer class="research-footer">每日从官方来源发现文档智能进展，按主题相关性与新近程度推荐阅读，并非全量索引或个性化质量评审。论文发表与版本日期保留来源日期，核验时间显示为北京时间。</footer>
 </main>
-<script src="js/research.js?v=20261028-2"></script>
+<script src="js/semantic-search.js?v=20261109-1"></script>
+<script src="js/research-digest.js?v=20261109-1"></script>
+<script src="js/research.js?v=20261109-1"></script>
 </body>
 </html>

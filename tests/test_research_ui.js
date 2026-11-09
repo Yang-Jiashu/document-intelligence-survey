@@ -78,6 +78,15 @@ assert.match(tracker.statusHtml(null), /正在读取文档智能进展/);
 assert.match(tracker.statusHtml({ ...data, topics: [] }), /research-status warning/);
 assert.match(tracker.topicStatusHtml({ ...data, topics: [{ ...topics[0], truncated: true }] }), /最新 100 条候选，非全量/);
 
+// The research page combines the optional intent module with its existing
+// filters and lexical fallback, even before a static LSA index is loaded.
+vm.runInContext(fs.readFileSync('docs/js/semantic-search.js', 'utf8'), context);
+const visual = { ...paper, title: 'Donut: OCR-free Document Understanding', abstract: 'An OCR-free model reads document images directly.', topics: ['docqa'], rankScore: 1 };
+assert.strictEqual(titles({ q: '不用OCR直接理解PDF' }, { ...data, papers: [paper, visual] })[0], visual.title);
+assert.deepStrictEqual(titles({ q: 'unmatchedword' }), []);
+assert.deepStrictEqual(titles({ q: '不用OCR直接理解PDF', topic: 'table' }, { ...data, papers: [paper, visual] }), []);
+delete context.window.SemanticSearch;
+
 (async () => {
     let resolveFetch;
     context.fetch = () => new Promise(resolve => { resolveFetch = resolve; });

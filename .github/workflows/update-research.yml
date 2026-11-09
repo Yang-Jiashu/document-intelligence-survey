@@ -7,12 +7,20 @@ on:
     branches: [final]
     paths:
       - scripts/update_research.py
+      - scripts/enrich_research.py
+      - scripts/build_semantic_index.py
+      - configs/free_intelligence.json
       - configs/research_sources.json
       - docs/research.html
       - docs/js/research.js
+      - docs/js/semantic-search.js
+      - docs/js/research-digest.js
       - docs/css/research.css
       - tests/test_update_research.py
       - tests/test_research_ui.js
+      - tests/test_enrich_research.py
+      - tests/test_semantic_search.js
+      - tests/test_research_digest.js
       - .github/workflows/update-research.yml
   workflow_dispatch:
 
@@ -46,6 +54,9 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py'
           node tests/test_research_ui.js
           node tests/test_sota_deployment.js
+          node tests/test_semantic_search.js
+          node tests/test_research_digest.js
+          node tests/test_search_sources.js
 
       - name: Refresh document intelligence research and official releases
         id: refresh
@@ -59,13 +70,29 @@ jobs:
           SNAPSHOT_WRITTEN: ${{ steps.refresh.outputs.snapshot_written }}
         run: test "$SNAPSHOT_WRITTEN" = "true"
 
+      - name: Enrich incremental candidates within confirmed free allowance
+        id: intelligence
+        continue-on-error: true
+        run: python scripts/enrich_research.py
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          FREE_AI_PLAN_CONFIRMED: ${{ vars.FREE_AI_PLAN_CONFIRMED }}
+
+      - name: Build offline topic and intent search index
+        run: python scripts/build_semantic_index.py
+
+      - name: Report summary fallback
+        if: ${{ steps.intelligence.outcome == 'failure' }}
+        run: echo "Summary enrichment failed. Official source updates remain available; prior summaries keep their provenance and stale status." >> "$GITHUB_STEP_SUMMARY"
+
       - name: Commit validated research data and source status
         if: ${{ steps.refresh.outputs.snapshot_written == 'true' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: final
           commit_message: "Update document intelligence research and releases"
-          file_pattern: docs/data/research_updates.json docs/data/research_update_log.json
+          file_pattern: docs/data/research_updates.json docs/data/research_update_log.json docs/data/research_digest.json docs/data/research_intelligence_cache.json docs/data/semantic_index.json
 
   source-health:
     name: Research source health

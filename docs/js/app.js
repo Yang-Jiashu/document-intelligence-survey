@@ -97,6 +97,7 @@ function formatDateTime(value) {
 function renderDynamicOverview() {
     const container = document.getElementById('dynamicOverviewContainer');
     if (!container) return;
+    if (window.ResearchDigest) return;
     const dynamicPapers = getDynamicPapers();
     const sources = Array.isArray(dynamicPapersData?.verifiedWechatArticles)
         ? dynamicPapersData.verifiedWechatArticles : [];

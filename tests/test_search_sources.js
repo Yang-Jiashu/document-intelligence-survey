@@ -76,8 +76,17 @@ assert.strictEqual(
 );
 
 const generated = JSON.parse(fs.readFileSync('docs/data/dynamic_papers.json', 'utf8'));
-assert.ok(generated.verifiedWechatArticles.length >= 5);
-assert.ok(generated.verifiedWechatArticles.every(article => /^2026-\d{2}-\d{2}$/.test(article.publishedDate)));
-assert.ok(generated.verifiedWechatArticles.every(article => /^https?:\/\//.test(article.publicationDateEvidenceUrl)));
+// The retained source snapshot has no promised article count. Validate the
+// actual evidence rather than requiring invented entries to reach a quota.
+assert.ok(generated.verifiedWechatArticles.length > 0);
+assert.strictEqual(new Set(generated.verifiedWechatArticles.map(article => article.url)).size, generated.verifiedWechatArticles.length);
+for (const article of generated.verifiedWechatArticles) {
+    assert.strictEqual(new URL(article.url).hostname, 'mp.weixin.qq.com');
+    assert.ok(article.account && article.articleTitle && article.provider);
+    assert.match(article.publishedDate, /^20\d{2}-\d{2}-\d{2}$/);
+    assert.match(article.foundAt, /^20\d{2}-\d{2}-\d{2}$/);
+    assert.strictEqual(new URL(article.publicationDateEvidenceUrl).protocol, 'https:');
+    assert.ok((article.arxivIds || []).length || (article.githubUrls || []).length);
+}
 
 console.log('Search source rendering test OK');

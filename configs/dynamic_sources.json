@@ -1,12 +1,21 @@
 {
-  "enabledProviders": ["tavily"],
+  "freeOnly": true,
+  "enabledProviders": ["local-research-snapshot"],
+  "disabledProviders": ["tavily", "dmx"],
+  "freeMaintenance": {
+    "source": "docs/data/research_updates.json",
+    "discoveryOwner": "scripts/update_research.py",
+    "networkAccess": false,
+    "preserveHistoricalEvidence": true,
+    "seedPolicy": "retain_configuration_without_new_verification"
+  },
   "autoPublishConfidence": 0.9,
   "maxResultsPerQuery": 7,
   "searchDepth": "advanced",
-  "searchIncludeRawContent": true,
+  "searchIncludeRawContent": false,
   "searchConcurrency": 5,
   "extractDepth": "advanced",
-  "extractArticleContent": true,
+  "extractArticleContent": false,
   "maxExtractUrlsPerRun": 40,
   "maxCandidateArticlesPerRun": 20,
   "trustedSourcePolicy": "required",
@@ -116,7 +125,7 @@
     ]
   },
   "llmClassification": {
-    "enabled": true,
+    "enabled": false,
     "provider": "openai-compatible",
     "apiKeyEnv": "DMX_API_KEY",
     "baseUrl": "https://www.dmxapi.cn/v1/chat/completions",

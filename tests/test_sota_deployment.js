@@ -30,8 +30,8 @@ async function check(label, eventName, run, jobs, expected) {
     await check('wrong branch', 'workflow_run', { ...normal, head_branch: 'feature' }, safe, false);
     await check('cancelled workflow', 'workflow_run', { ...normal, conclusion: 'cancelled' }, safe, false);
     await check('unfinished workflow', 'workflow_run', { ...normal, status: 'in_progress' }, safe, false);
-    await check('healthy paper update', 'workflow_run', { ...normal, name: 'Update Dynamic Papers' }, [], true);
-    await check('failed paper update', 'workflow_run', { ...normal, name: 'Update Dynamic Papers', conclusion: 'failure' }, [], false);
+    await check('healthy compatibility update', 'workflow_run', { ...normal, name: 'Maintain Free Research Compatibility' }, [], true);
+    await check('failed compatibility update', 'workflow_run', { ...normal, name: 'Maintain Free Research Compatibility', conclusion: 'failure' }, [], false);
     const research = { ...normal, name: 'Update Research Progress' };
     const researchSafe = [{ name: 'update-research', conclusion: 'success' }];
     await check('healthy research refresh', 'workflow_run', research, researchSafe, true);

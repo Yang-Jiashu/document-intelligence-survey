@@ -4,7 +4,11 @@ Interactive web demo for the survey paper **"Beyond OCR: A Survey of Document In
 
 ## Live Demo
 
-Visit: `https://your-org.github.io/document-intelligence-survey/`
+Visit: [Beyond OCR](https://yang-jiashu.github.io/document-intelligence-survey/).
+
+## Free-first discovery and summaries
+
+Daily official-source discovery, incremental summary caching and local topic/intent search are configured without a paid fallback. See [免费更新与可选 AI 摘要设置](../doc/FREE_UPDATES.md) for the three optional Cloudflare Actions settings. With no confirmed Free account, the site displays source excerpts and makes no model requests.
 
 ## Local Preview
 

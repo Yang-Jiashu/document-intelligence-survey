@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "scope": "document-intelligence",
+  "generatedAt": "2026-11-09T09:29:20Z",
+  "mode": "source-excerpts",
+  "status": "unconfigured",
+  "items": [
+    {
+      "id": "github:docling-project/docling:438122166",
+      "title": "docling · v2.149.0",
+      "kind": "release",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.149.0",
+      "published": "2026-11-08T08:25:48Z",
+      "updated": "2026-11-08T08:25:48Z",
+      "topics": [
+        "layout",
+        "ocr",
+        "table"
+      ],
+      "sourceFingerprint": "07d18ec8c84a1e9f17cde76ed3da49ebd5a228b9d830002b0ba3693131ac996d",
+      "sourceBasis": "official-release-notes",
+      "summary": "### Feature * **pdf:** Add opt-in embedded PDF image extraction (#5143) (`3df6c93`) * Refactored the cli to be more intuitive (#5214) (`55f21d6`) * **asr:** Add support for mlx-audio ([#5181](http",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "07d18ec8c84a1e9f17cde76ed3da49ebd5a228b9d830002b0ba3693131ac996d",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2606.28780",
+      "title": "Multimodal Graph RAG for Long-range Visually Rich Document Understanding",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2606.28780",
+      "published": "2026-06-27T07:14:31Z",
+      "updated": "2026-11-05T12:59:26Z",
+      "topics": [
+        "docqa"
+      ],
+      "sourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Multimodal large language models (MLLMs) are widely applied to visual document understanding. However, comprehending long documents remains an issue by the limited context window. Though recent multimodal retrieval-augmented generation (MMRAG) can address this challenge by retrieving relevant pages. It still struggles with the visual question answering (VQA) requiring holistic ",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2608.28572",
+      "title": "PULSAR: Pooled Unified Late-Interaction Search and Retrieval for Enterprise Visual Document RAG",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2608.28572",
+      "published": "2026-08-28T17:49:22Z",
+      "updated": "2026-11-06T12:01:23Z",
+      "topics": [
+        "docrag",
+        "ocr"
+      ],
+      "sourceFingerprint": "d4fed4489c5e580b998c8d0ec879a50423303cb0903b1e87c2c589e01ff788c6",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Institutional investors search visually dense pitch decks, board packs, and diligence materials that change hourly near deal closing. OCR followed by figure verbalisation is costly to refresh at this scale and can lose chart detail. We present PULSAR, a production vision-first retrieval system deployed at Mubadala Investment Company. PULSAR indexes page images with a frozen Col",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "d4fed4489c5e580b998c8d0ec879a50423303cb0903b1e87c2c589e01ff788c6",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2510.18413",
+      "title": "Adamas: Hadamard Sparse Attention for Efficient Long-Context Inference",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2510.18413",
+      "published": "2025-10-21T08:44:47Z",
+      "updated": "2026-11-06T10:07:01Z",
+      "topics": [
+        "docqa"
+      ],
+      "sourceFingerprint": "40f22541345fd1346adaf4317820def6603213678e5f8e82dbc68b441f084967",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Large language models (LLMs) now support context windows of hundreds of thousands to millions of tokens, enabling applications such as long-document summarization, large-scale code synthesis, multi-document question answering and persistent multi-turn dialogue. However, such extended contexts exacerbate the quadratic cost of self-attention, leading to severe latency in autoregr",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "40f22541345fd1346adaf4317820def6603213678e5f8e82dbc68b441f084967",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2610.36444",
+      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2610.36444",
+      "published": "2026-10-27T00:45:49Z",
+      "updated": "2026-10-27T00:45:49Z",
+      "topics": [
+        "docrag"
+      ],
+      "sourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and po",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2611.06449",
+      "title": "AmbiHTMLBench: A Benchmark for HTML-based Visually Rich Document parsing",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2611.06449",
+      "published": "2026-11-04T12:51:26Z",
+      "updated": "2026-11-04T12:51:26Z",
+      "topics": [
+        "docqa",
+        "ocr"
+      ],
+      "sourceFingerprint": "24009bbecc22d0813b37094b0b51cf42633f55ca3c00260000179cb30814c49a",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Traditional document parsing systems use Markdown as their output representation, which is effective for linear text but does not fully preserve fine-grained spatial structure, table geometry, visual hierarchy, or rendering semantics. We show that HTML is advantageous for heterogeneous and layout-sensitive documents whose representations must remain editable, inspectable, and r",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "24009bbecc22d0813b37094b0b51cf42633f55ca3c00260000179cb30814c49a",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2610.33004",
+      "title": "Entity-Aware Evaluation of OCR Systems for Historical Document Transcription",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2610.33004",
+      "published": "2026-10-07T12:12:01Z",
+      "updated": "2026-11-04T10:45:47Z",
+      "topics": [
+        "ocr"
+      ],
+      "sourceFingerprint": "dae017c3c3d4d4e33355c30fe2eedc822fcaa528431e3f7d8783f97065cfc96e",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Optical Character Recognition (OCR) is essential for digitizing historical archives, yet standard evaluation metrics such as Character Error Rate (CER) do not necessarily reflect whether meaningful information, such as names, dates, and identifiers, is preserved. In this work, we investigate entitylevel analysis of OCR errors as a complementary perspective for evaluating OCR qu",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "dae017c3c3d4d4e33355c30fe2eedc822fcaa528431e3f7d8783f97065cfc96e",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2606.09788",
+      "title": "POTATR: A Lightweight Image-to-Graph Model for Page-Level Table Extraction",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2606.09788",
+      "published": "2026-06-08T17:43:44Z",
+      "updated": "2026-11-03T22:14:53Z",
+      "topics": [
+        "ocr",
+        "table"
+      ],
+      "sourceFingerprint": "f6e0ab9ebacaa50a636127e0174ac0cad137e2e7a83ffad5dc0f3e19e705b565",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Large-scale document processing requires contextually aware table extraction (TE) that is both accurate and efficient. Yet current approaches require billions of parameters, hundreds of autoregressive steps, or costly API inference. Motivated by this, we introduce the Page-Object Table Transformer (POTATR), a lightweight 29M parameter image-to-graph model that extends the Table",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "f6e0ab9ebacaa50a636127e0174ac0cad137e2e7a83ffad5dc0f3e19e705b565",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2512.10888",
+      "title": "PubTables-v2: A new large-scale dataset for full-page and multi-page table extraction",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2512.10888",
+      "published": "2025-12-11T18:19:00Z",
+      "updated": "2026-11-03T21:47:48Z",
+      "topics": [
+        "docqa",
+        "table"
+      ],
+      "sourceFingerprint": "c753bfe4a20821416008fcd53c84ccc23b04f3f5764700803a5c9e2748ec42b5",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Table extraction (TE) is a key challenge in document understanding. Traditional approaches detect tables first, then recognize their structure. Recently, interest has surged in developing methods, such as vision-language models (VLMs), to extract tables directly in their full page or document context. However, a lack of annotated data has made progress difficult to demonstrate.",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "c753bfe4a20821416008fcd53c84ccc23b04f3f5764700803a5c9e2748ec42b5",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2610.39301",
+      "title": "Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2610.39301",
+      "published": "2026-10-29T03:49:25Z",
+      "updated": "2026-10-29T03:49:25Z",
+      "topics": [
+        "eval"
+      ],
+      "sourceFingerprint": "d289037c12f4013f3770514f5bd121ebe62fbc1100f308700fe49c04f2652818",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "We present Youtu-Parsing-Omni, an omni-modal parser that converts documents, images, audio, and video into structured records grounded in space and time, providing a perception layer for agents that read, locate, and cite evidence across modalities. Its design rests on one encoder for every modality and one schema for every task. Youtu-Omni-Encoder, initialized from a pre-train",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "d289037c12f4013f3770514f5bd121ebe62fbc1100f308700fe49c04f2652818",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    }
+  ],
+  "pendingCount": 150,
+  "sourceLastAttempt": "2026-11-09T09:23:26Z",
+  "model": {
+    "provider": "cloudflare-workers-ai",
+    "summary": "@cf/zai-org/glm-4.7-flash",
+    "summaryVersion": "abstract-zh-v1",
+    "embedding": "@cf/qwen/qwen3-embedding-0.6b",
+    "embeddingEnabled": false,
+    "configured": false,
+    "freePlanConfirmed": false
+  },
+  "budget": {
+    "modelRequests": 0,
+    "summaryRequests": 0,
+    "embeddingRequests": 0,
+    "inputTokensReserved": 0,
+    "outputTokensReserved": 0,
+    "day": "2026-11-09",
+    "timezone": "UTC",
+    "maxRequests": 8,
+    "maxSummaries": 8,
+    "maxEmbeddings": 0,
+    "blocked": false,
+    "reason": null
+  },
+  "errors": []
+}

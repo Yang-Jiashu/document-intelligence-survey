@@ -5,9 +5,14 @@ on:
     branches: [final]
     paths:
       - scripts/update_research.py
+      - scripts/enrich_research.py
+      - scripts/build_semantic_index.py
+      - configs/free_intelligence.json
       - configs/research_sources.json
       - docs/research.html
       - docs/js/research.js
+      - docs/js/semantic-search.js
+      - docs/js/research-digest.js
       - docs/css/research.css
       - docs/data/research_updates.json
       - tests/**
@@ -18,9 +23,14 @@ on:
     branches: [final]
     paths:
       - scripts/update_research.py
+      - scripts/enrich_research.py
+      - scripts/build_semantic_index.py
+      - configs/free_intelligence.json
       - configs/research_sources.json
       - docs/research.html
       - docs/js/research.js
+      - docs/js/semantic-search.js
+      - docs/js/research-digest.js
       - docs/css/research.css
       - docs/data/research_updates.json
       - tests/**
@@ -49,3 +59,6 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py'
           node tests/test_research_ui.js
           node tests/test_sota_deployment.js
+          node tests/test_semantic_search.js
+          node tests/test_research_digest.js
+          node tests/test_search_sources.js

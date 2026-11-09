@@ -12,6 +12,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from contextvars import ContextVar
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -24,6 +25,20 @@ CURATED_INDEX_PATH = ROOT / "docs" / "data" / "paper_index.json"
 DYNAMIC_PAPERS_PATH = ROOT / "docs" / "data" / "dynamic_papers.json"
 PENDING_DYNAMIC_PATH = ROOT / "docs" / "data" / "pending_dynamic_papers.json"
 UPDATE_LOG_PATH = ROOT / "docs" / "data" / "update_log.json"
+RESEARCH_UPDATES_PATH = ROOT / "docs" / "data" / "research_updates.json"
+
+# Paid integrations are retained for compatibility, but cannot make a request
+# outside the explicitly opted-in legacy runner. Credentials never opt a run in.
+_PAID_API_ALLOWED: ContextVar[bool] = ContextVar("dynamic_papers_paid_api_allowed", default=False)
+
+
+class PaidApiDisabledError(RuntimeError):
+    """Raised before opening a connection to a paid provider in free-only mode."""
+
+
+def free_only(config: dict[str, Any]) -> bool:
+    # Missing, malformed, or truthy values fail closed. Only JSON false opts out.
+    return config.get("freeOnly") is not False
 
 TAVILY_SEARCH_URL = "https://api.tavily.com/search"
 TAVILY_EXTRACT_URL = "https://api.tavily.com/extract"
@@ -153,6 +168,8 @@ def is_wechat_article_url(url: str) -> bool:
 
 
 def post_json(url: str, payload: dict[str, Any], api_key: str, timeout: int = 45) -> dict[str, Any]:
+    if not _PAID_API_ALLOWED.get():
+        raise PaidApiDisabledError("Paid search and LLM APIs are disabled by freeOnly policy")
     body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         url,
@@ -649,7 +666,11 @@ def classify_with_llm(
     taxonomy: list[dict[str, Any]],
     llm_config: dict[str, Any],
     errors: list[str],
+    *,
+    free_only_mode: bool = True,
 ) -> tuple[dict[str, Any] | None, str]:
+    if free_only_mode or not _PAID_API_ALLOWED.get():
+        return None, "free_only"
     if not llm_config.get("enabled"):
         return None, "disabled"
 
@@ -747,6 +768,7 @@ def classify_candidate(
         taxonomy,
         config.get("llmClassification") or {},
         log.setdefault("errors", []),
+        free_only_mode=free_only(config),
     )
 
     if llm_status in {"succeeded", "failed"}:
@@ -1215,9 +1237,151 @@ def search_articles(
     return articles, diagnostics
 
 
+def sync_existing_free_metadata(dynamic: dict[str, Any], snapshot: dict[str, Any]) -> int:
+    """Copy newer public metadata only; the daily collector owns discovery.
+
+    This is deliberately not a new source verification. Source mentions, source
+    dates, historical records, and pending editorial decisions stay untouched.
+    """
+    if snapshot.get("schemaVersion") != 2 or snapshot.get("scope") != "document-intelligence":
+        return 0
+    incoming: dict[str, dict[str, Any]] = {}
+    for item in snapshot.get("papers", []):
+        if not isinstance(item, dict) or item.get("kind") != "paper" or item.get("sourceName") != "arXiv":
+            continue
+        arxiv_id = normalize_arxiv_id(str(item.get("arxiv") or ""))
+        if not re.fullmatch(r"\d{4}\.\d{4,5}", arxiv_id):
+            continue
+        if str(item.get("url") or "").rstrip("/") != f"https://arxiv.org/abs/{arxiv_id}":
+            continue
+        if not item.get("title") or not item.get("abstract") or not item.get("authors"):
+            continue
+        previous = incoming.get(arxiv_id)
+        if not previous or str(item.get("updated") or "") > str(previous.get("updated") or ""):
+            incoming[arxiv_id] = item
+
+    refreshed = 0
+    for paper in dynamic.get("papers", []):
+        arxiv_id = normalize_arxiv_id(str(paper.get("arxiv") or ""))
+        item = incoming.get(arxiv_id)
+        if not item:
+            continue
+        incoming_date = str(item.get("updated") or "")[:10]
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", incoming_date):
+            continue
+        if incoming_date < str(paper.get("updated") or "")[:10]:
+            continue
+        authors = item["authors"]
+        fields = {
+            "title": item["title"],
+            "abstract": item["abstract"],
+            "authors": ", ".join(str(author) for author in authors) if isinstance(authors, list) else str(authors),
+            "updated": incoming_date,
+        }
+        for key in ("published", "url", "pdfUrl"):
+            if item.get(key):
+                fields[key] = str(item[key])[:10] if key == "published" else item[key]
+        if item.get("arxivCategories"):
+            fields["primaryArxivCategory"] = item["arxivCategories"][0]
+        if any(paper.get(key) != value for key, value in fields.items()):
+            paper.update(fields)
+            paper["metadataSource"] = "daily-arxiv-snapshot"
+            # Preserve the collector's original evidence time, never this run's time.
+            paper["metadataSnapshotLastSeen"] = item.get("lastSeen") or snapshot.get("lastSuccessfulCheck")
+            refreshed += 1
+    return refreshed
+
+
+def run_free_maintenance(
+    args: argparse.Namespace,
+    config: dict[str, Any],
+    dynamic: dict[str, Any],
+    pending: dict[str, Any],
+) -> int:
+    """Maintain legacy data from a local free-source snapshot without network I/O."""
+    original = json.dumps(dynamic, sort_keys=True, ensure_ascii=False)
+    errors: list[str] = []
+    try:
+        snapshot = read_json(RESEARCH_UPDATES_PATH, {})
+        if not isinstance(snapshot, dict):
+            snapshot = {}
+    except (OSError, ValueError) as exc:
+        snapshot = {}
+        errors.append(f"free research snapshot unavailable: {exc}")
+    valid_snapshot = snapshot.get("schemaVersion") == 2 and snapshot.get("scope") == "document-intelligence"
+    updated = sync_existing_free_metadata(dynamic, snapshot) if valid_snapshot else 0
+    source_status = dynamic.setdefault("sourceStatus", {})
+    previous_wechat_status = source_status.get("wechat")
+    source_status["wechat"] = {
+        **(previous_wechat_status if isinstance(previous_wechat_status, dict) else {}),
+        "status": "retained_not_rechecked",
+        "enabled": False,
+        "retainedArticles": len(dynamic.get("verifiedWechatArticles", [])),
+        "configuredSeeds": len(config.get("verifiedSeedArticles") or []),
+        "reason": "Paid search/extraction is disabled. Historical evidence and dates are retained; configured seeds are not new verifications.",
+    }
+    source_status["arxiv"] = {
+        "status": "local_snapshot" if valid_snapshot else "snapshot_unavailable",
+        "updater": "scripts/update_research.py",
+        "snapshotStatus": snapshot.get("status") if valid_snapshot else None,
+        "snapshotLastSuccessfulCheck": snapshot.get("lastSuccessfulCheck") if valid_snapshot else None,
+        "metadataUpdated": updated,
+        "reason": "Daily free arXiv/GitHub collection owns new and revised discovery; this compatibility job only copies newer existing arXiv metadata.",
+    }
+    log = {
+        "lastRun": utc_now(),
+        "provider": "free-compatibility",
+        "mode": "free-only",
+        "freeOnly": True,
+        "paidApiCalls": 0,
+        "externalRequests": 0,
+        "searchedQueries": 0,
+        "candidateArticles": 0,
+        "autoPublished": 0,
+        "pendingReview": len(pending.get("items", [])),
+        "verifiedSeedArticles": 0,
+        "configuredSeedArticles": len(config.get("verifiedSeedArticles") or []),
+        "retainedWechatArticles": len(dynamic.get("verifiedWechatArticles", [])),
+        "retainedPapers": len(dynamic.get("papers", [])),
+        "metadataUpdated": updated,
+        "llmClassificationEnabled": False,
+        "llmClassificationAttempted": 0,
+        "sourceStatus": source_status,
+        "errors": errors,
+    }
+    prefix = "Dry run" if args.dry_run else "Update"
+    print(f"{prefix}: free-only compatibility maintenance; paid API calls 0; external requests 0")
+    print(f"{prefix}: retained {log['retainedPapers']} papers and {log['retainedWechatArticles']} historical WeChat articles")
+    print(f"{prefix}: existing arXiv metadata updated from daily snapshot {updated}; WeChat sources not rechecked")
+    for error in errors:
+        print(f"{prefix}: error: {error}")
+    if not args.dry_run:
+        if json.dumps(dynamic, sort_keys=True, ensure_ascii=False) != original:
+            write_json(DYNAMIC_PAPERS_PATH, dynamic)
+        # Do not advance dynamic.lastUpdated, pending.lastUpdated, or source
+        # foundAt/verifiedAt dates merely because retained data was visited.
+        write_json(UPDATE_LOG_PATH, log)
+    return 0
+
+
 def run(args: argparse.Namespace) -> int:
     config_path = Path(args.config).resolve() if args.config else DEFAULT_CONFIG_PATH
+    config, _curated, dynamic, pending = load_runtime_data(config_path)
+    if free_only(config) or getattr(args, "free_only", False) or args.provider == "free":
+        # The return precedes any environment/local-secret lookup or paid helper.
+        return run_free_maintenance(args, config, dynamic, pending)
+    token = _PAID_API_ALLOWED.set(True)
+    try:
+        return run_paid_legacy(args)
+    finally:
+        _PAID_API_ALLOWED.reset(token)
+
+
+def run_paid_legacy(args: argparse.Namespace) -> int:
+    config_path = Path(args.config).resolve() if args.config else DEFAULT_CONFIG_PATH
     config, curated, dynamic, pending = load_runtime_data(config_path)
+    if free_only(config) or not _PAID_API_ALLOWED.get():
+        return run_free_maintenance(args, config, dynamic, pending)
     now = utc_now()
     today = utc_today()
     max_results = args.max_results or int(config.get("maxResultsPerQuery") or 10)
@@ -1296,7 +1460,8 @@ def run(args: argparse.Namespace) -> int:
         return 0
 
     review_existing_dynamic_papers(dynamic, pending, taxonomy, config, log, today)
-    dynamic["verifiedWechatArticles"] = []
+    # A failed/incomplete provider run must not erase previously collected evidence.
+    dynamic.setdefault("verifiedWechatArticles", [])
     transient_pending_reasons = {"no_arxiv_id", "no_arxiv_or_github", "untrusted_source"}
     pending["items"] = [
         item for item in pending.get("items", [])
@@ -1699,9 +1864,10 @@ def append_pending_preview(
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Update dynamic arXiv paper data from public WeChat search results.")
+    parser = argparse.ArgumentParser(description="Maintain legacy survey data from the daily free research snapshot.")
     parser.add_argument("--dry-run", action="store_true", help="Print planned updates without writing JSON files.")
-    parser.add_argument("--provider", default="tavily", choices=["tavily"], help="Search provider to use.")
+    parser.add_argument("--provider", default="free", choices=["free", "tavily"], help="Free compatibility maintenance by default. Paid legacy mode also requires freeOnly:false in configuration.")
+    parser.add_argument("--free-only", action="store_true", help="Force zero paid API calls even if legacy paid configuration is enabled.")
     parser.add_argument("--max-results", type=int, default=None, help="Override max results per query.")
     parser.add_argument("--config", default=str(DEFAULT_CONFIG_PATH), help="Path to dynamic source configuration JSON.")
     return parser.parse_args(argv)

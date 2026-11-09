@@ -4,6 +4,7 @@ let filteredPapers = [];
 let currentPage = 1;
 let currentQuery = '';
 let currentCategory = 'all';
+let enhancedMatches = new Map();
 const pageSize = 25;
 
 function escapeHtml(value) {
@@ -56,10 +57,15 @@ function updateUrl() {
 }
 
 function applySearch() {
-    filteredPapers = getSearchPapers()
-        .filter(paper => paperMatchesCategory(paper, currentCategory))
-        .filter(paper => paperMatchesQuery(paper, currentQuery))
+    const candidates = getSearchPapers().filter(paper => paperMatchesCategory(paper, currentCategory));
+    enhancedMatches = window.SemanticSearch?.rank(candidates, currentQuery) || new Map();
+    filteredPapers = candidates
+        .filter(paper => paperMatchesQuery(paper, currentQuery) || enhancedMatches.has(paper))
         .sort((a, b) => {
+            if (currentQuery) {
+                const relevance = (enhancedMatches.get(b)?.score || 0) - (enhancedMatches.get(a)?.score || 0);
+                if (relevance) return relevance;
+            }
             const yearDiff = (b.year || 0) - (a.year || 0);
             if (yearDiff) return yearDiff;
             return String(a.title).localeCompare(String(b.title));
@@ -138,6 +144,8 @@ function renderSummary() {
     detail.textContent = currentQuery
         ? `${categoryName} / "${currentQuery}"`
         : categoryName;
+    const mode = document.getElementById('searchMode');
+    if (mode) mode.textContent = currentQuery ? '按相关性排序 · 主题/意图增强检索' : '按年份排序 · 输入中文问题也能检索';
 }
 
 function renderResults() {
@@ -161,6 +169,7 @@ function renderResults() {
             : paper.sourceType === 'auto'
                 ? `<span class="paper-source-label">${paper.isDocumentIntelligence === false ? 'WeChat source' : 'Auto-discovered'}</span>`
                 : '';
+        const concepts = enhancedMatches.get(paper)?.concepts || [];
 
         return `
             <article class="search-result-card">
@@ -178,6 +187,7 @@ function renderResults() {
                     <div class="paper-tags">
                         ${categories.map(item => `<span class="paper-tag">${escapeHtml(item)}</span>`).join('')}
                         ${subcategories.map(item => `<span class="paper-tag">${escapeHtml(item)}</span>`).join('')}
+                        ${concepts.map(item => `<span class="paper-tag">匹配：${escapeHtml(item)}</span>`).join('')}
                     </div>
                 </div>
                 <div class="paper-actions search-result-actions">
@@ -241,6 +251,7 @@ async function loadSearchPage() {
     ]);
     paperIndex = await indexResponse.json();
     dynamicPaperIndex = dynamicResponse && dynamicResponse.ok ? await dynamicResponse.json() : { papers: [] };
+    await window.SemanticSearch?.load('data/semantic_index.json');
 
     const params = new URLSearchParams(window.location.search);
     currentQuery = params.get('q') || '';

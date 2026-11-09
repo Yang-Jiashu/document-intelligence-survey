@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "maxItems": 10,
+  "maxSummariesPerDay": 8,
+  "maxRequestsPerDay": 8,
+  "maxEmbeddingsPerDay": 0,
+  "maxInputTokens": 4096,
+  "maxOutputTokens": 768,
+  "maxDailyInputTokens": 65536,
+  "maxDailyOutputTokens": 6144,
+  "maxExcerptCharacters": 380,
+  "summaryModel": "@cf/zai-org/glm-4.7-flash",
+  "summaryVersion": "abstract-zh-v1",
+  "embeddingVersion": "source-text-v1",
+  "embedding": {
+    "enabled": false,
+    "model": "@cf/qwen/qwen3-embedding-0.6b"
+  }
+}

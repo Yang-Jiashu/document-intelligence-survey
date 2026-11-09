@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "scope": "document-intelligence",
-  "lastAttempt": "2026-11-08T10:23:34Z",
-  "lastSuccessfulCheck": "2026-11-08T10:23:34Z",
+  "lastAttempt": "2026-11-09T09:23:26Z",
+  "lastSuccessfulCheck": "2026-11-09T09:23:26Z",
   "status": "refreshed",
-  "nextScheduledCheck": "2026-11-09",
+  "nextScheduledCheck": "2026-11-10",
   "updateCadence": "daily",
   "lookbackDays": 30,
   "retentionDays": 90,
@@ -13,10 +13,10 @@
       "id": "ocr",
       "title": "OCR / 解析",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22optical+character+recognition%22+OR+abs%3A%22optical+character+recognition%22+OR+ti%3A%22optical-character-recognition%22+OR+abs%3A%22optical-character-recognition%22+OR+ti%3A%22OCR%22+OR+abs%3A%22OCR%22+OR+ti%3A%22document+parsing%22+OR+abs%3A%22document+parsing%22+OR+ti%3A%22document-parsing%22+OR+abs%3A%22document-parsing%22+OR+ti%3A%22document+extraction%22+OR+abs%3A%22document+extraction%22+OR+ti%3A%22document-extraction%22+OR+abs%3A%22document-extraction%22+OR+ti%3A%22document+digitization%22+OR+abs%3A%22document+digitization%22+OR+ti%3A%22document-digitization%22+OR+abs%3A%22document-digitization%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 100,
-      "matchedCount": 38,
+      "matchedCount": 39,
       "totalResults": 2023,
       "resultLimit": 100,
       "truncated": true
@@ -25,7 +25,7 @@
       "id": "layout",
       "title": "版面",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+layout%22+OR+abs%3A%22document+layout%22+OR+ti%3A%22document-layout%22+OR+abs%3A%22document-layout%22+OR+ti%3A%22layout+analysis%22+OR+abs%3A%22layout+analysis%22+OR+ti%3A%22layout-analysis%22+OR+abs%3A%22layout-analysis%22+OR+ti%3A%22reading+order%22+OR+abs%3A%22reading+order%22+OR+ti%3A%22reading-order%22+OR+abs%3A%22reading-order%22+OR+ti%3A%22document+structure%22+OR+abs%3A%22document+structure%22+OR+ti%3A%22document-structure%22+OR+abs%3A%22document-structure%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 9,
@@ -37,10 +37,10 @@
       "id": "table",
       "title": "表格 / 图表",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22table+structure+recognition%22+OR+abs%3A%22table+structure+recognition%22+OR+ti%3A%22table-structure-recognition%22+OR+abs%3A%22table-structure-recognition%22+OR+ti%3A%22table+extraction%22+OR+abs%3A%22table+extraction%22+OR+ti%3A%22table-extraction%22+OR+abs%3A%22table-extraction%22+OR+ti%3A%22table+question+answering%22+OR+abs%3A%22table+question+answering%22+OR+ti%3A%22table-question-answering%22+OR+abs%3A%22table-question-answering%22+OR+ti%3A%22chart+question+answering%22+OR+abs%3A%22chart+question+answering%22+OR+ti%3A%22chart-question-answering%22+OR+abs%3A%22chart-question-answering%22+OR+ti%3A%22chart+understanding%22+OR+abs%3A%22chart+understanding%22+OR+ti%3A%22chart-understanding%22+OR+abs%3A%22chart-understanding%22+OR+ti%3A%22table+recognition%22+OR+abs%3A%22table+recognition%22+OR+ti%3A%22table-recognition%22+OR+abs%3A%22table-recognition%22+OR+ti%3A%22table+detection%22+OR+abs%3A%22table+detection%22+OR+ti%3A%22table-detection%22+OR+abs%3A%22table-detection%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 100,
-      "matchedCount": 12,
+      "matchedCount": 11,
       "totalResults": 464,
       "resultLimit": 100,
       "truncated": true
@@ -49,10 +49,10 @@
       "id": "docqa",
       "title": "文档问答",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+visual+question+answering%22+OR+abs%3A%22document+visual+question+answering%22+OR+ti%3A%22document-visual-question-answering%22+OR+abs%3A%22document-visual-question-answering%22+OR+ti%3A%22DocVQA%22+OR+abs%3A%22DocVQA%22+OR+ti%3A%22InfographicVQA%22+OR+abs%3A%22InfographicVQA%22+OR+ti%3A%22document+question+answering%22+OR+abs%3A%22document+question+answering%22+OR+ti%3A%22document-question-answering%22+OR+abs%3A%22document-question-answering%22+OR+ti%3A%22multi+page+document%22+OR+abs%3A%22multi+page+document%22+OR+ti%3A%22multi-page-document%22+OR+abs%3A%22multi-page-document%22+OR+ti%3A%22document+understanding%22+OR+abs%3A%22document+understanding%22+OR+ti%3A%22document-understanding%22+OR+abs%3A%22document-understanding%22+OR+ti%3A%22visually+rich+document%22+OR+abs%3A%22visually+rich+document%22+OR+ti%3A%22visually-rich-document%22+OR+abs%3A%22visually-rich-document%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 100,
-      "matchedCount": 30,
+      "matchedCount": 31,
       "totalResults": 850,
       "resultLimit": 100,
       "truncated": true
@@ -61,10 +61,10 @@
       "id": "docrag",
       "title": "文档 RAG",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+retrieval%22+OR+abs%3A%22document+retrieval%22+OR+ti%3A%22document-retrieval%22+OR+abs%3A%22document-retrieval%22+OR+ti%3A%22multimodal+document+retrieval%22+OR+abs%3A%22multimodal+document+retrieval%22+OR+ti%3A%22multimodal-document-retrieval%22+OR+abs%3A%22multimodal-document-retrieval%22+OR+ti%3A%22document+RAG%22+OR+abs%3A%22document+RAG%22+OR+ti%3A%22document-RAG%22+OR+abs%3A%22document-RAG%22+OR+ti%3A%22PDF+question+answering%22+OR+abs%3A%22PDF+question+answering%22+OR+ti%3A%22PDF-question-answering%22+OR+abs%3A%22PDF-question-answering%22+OR+ti%3A%22long+document+understanding%22+OR+abs%3A%22long+document+understanding%22+OR+ti%3A%22long-document-understanding%22+OR+abs%3A%22long-document-understanding%22+OR+ti%3A%22visually+rich+document+retrieval%22+OR+abs%3A%22visually+rich+document+retrieval%22+OR+ti%3A%22visually-rich-document-retrieval%22+OR+abs%3A%22visually-rich-document-retrieval%22+OR+ti%3A%22ColPali%22+OR+abs%3A%22ColPali%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 100,
-      "matchedCount": 10,
+      "matchedCount": 11,
       "totalResults": 783,
       "resultLimit": 100,
       "truncated": true
@@ -73,7 +73,7 @@
       "id": "eval",
       "title": "评测",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+benchmark%22+OR+abs%3A%22document+benchmark%22+OR+ti%3A%22document-benchmark%22+OR+abs%3A%22document-benchmark%22+OR+ti%3A%22document+evaluation%22+OR+abs%3A%22document+evaluation%22+OR+ti%3A%22document-evaluation%22+OR+abs%3A%22document-evaluation%22+OR+ti%3A%22DocVQA%22+OR+abs%3A%22DocVQA%22+OR+ti%3A%22OmniDocBench%22+OR+abs%3A%22OmniDocBench%22+OR+ti%3A%22OCRBench%22+OR+abs%3A%22OCRBench%22+OR+ti%3A%22document+parsing+benchmark%22+OR+abs%3A%22document+parsing+benchmark%22+OR+ti%3A%22document-parsing-benchmark%22+OR+abs%3A%22document-parsing-benchmark%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 7,
@@ -88,7 +88,7 @@
       "title": "PaddlePaddle/PaddleOCR",
       "repo": "PaddlePaddle/PaddleOCR",
       "sourceUrl": "https://github.com/PaddlePaddle/PaddleOCR/releases",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 0,
@@ -100,7 +100,7 @@
       "title": "opendatalab/MinerU",
       "repo": "opendatalab/MinerU",
       "sourceUrl": "https://github.com/opendatalab/MinerU/releases",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 9,
@@ -112,10 +112,10 @@
       "title": "docling-project/docling",
       "repo": "docling-project/docling",
       "sourceUrl": "https://github.com/docling-project/docling/releases",
-      "lastChecked": "2026-11-08T10:23:34Z",
+      "lastChecked": "2026-11-09T09:23:26Z",
       "status": "fresh",
       "fetchedCount": 20,
-      "matchedCount": 16,
+      "matchedCount": 14,
       "resultLimit": 20,
       "truncated": true
     }
@@ -145,13 +145,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-08T10:23:34Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "新收录"
       ],
-      "rankScore": 0.99814
+      "rankScore": 0.97709
     },
     {
       "id": "arxiv:2606.28780",
@@ -183,7 +183,7 @@
         ]
       },
       "firstSeen": "2026-11-06T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.91,
       "rankReasons": [
         "文档主题匹配",
@@ -191,40 +191,7 @@
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.88628
-    },
-    {
-      "id": "github:opendatalab/MinerU:433901302",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.1.7",
-      "abstract": "MinerU 4.1.7 adds persistent authentication for the local document library and improves layout detection. - Require a persistent bearer token for Doclib HTTP endpoints. The SDK reads local credentials automatically; direct HTTP integrations must send the token. - Protect credential files with private POSIX permissions and native macOS/Windows ACLs. - Restore per-class layout output thresholds consistently across the ONNX and Torch backends. - Place absorbed image regions according to their geome",
-      "authors": [],
-      "published": "2026-11-04T12:38:24Z",
-      "updated": "2026-11-04T12:38:43Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.7-released",
-      "tag": "mineru-4.1.7-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "近 7 天有更新",
-        "新收录",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.85209
+      "rankScore": 0.86906
     },
     {
       "id": "github:docling-project/docling:435467388",
@@ -250,14 +217,125 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-06T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.76327
+      "rankScore": 0.81586
+    },
+    {
+      "id": "arxiv:2608.28572",
+      "arxiv": "2608.28572",
+      "version": 2,
+      "title": "PULSAR: Pooled Unified Late-Interaction Search and Retrieval for Enterprise Visual Document RAG",
+      "abstract": "Institutional investors search visually dense pitch decks, board packs, and diligence materials that change hourly near deal closing. OCR followed by figure verbalisation is costly to refresh at this scale and can lose chart detail. We present PULSAR, a production vision-first retrieval system deployed at Mubadala Investment Company. PULSAR indexes page images with a frozen ColPali-style backbone and uses a pooled two-stage late-interaction index: compact page summaries support initial retrieval, followed by exact MaxSim rescoring over a finer pooled representation. On ViDoRe V3, this design reduces median vector-search latency by 15.1 times against an unpooled configuration with less than 0.01 absolute NDCG@10 and Recall@10 loss; production median vector-search latency is 156 ms. Under concurrent load, the pooled index sustains approximately 88 times higher QPS than an unpooled index. The event-driven ingestion path is estimated to be approximately 20 times cheaper per page than the OCR+verbalisation baseline it replaced. Since March 2026, PULSAR has served 78 thousand documents and approximately 2.4 million pages across more than 3,000 deals. At the production top K, it more than doubles answer-fact recall over the OCR+verbalisation baseline.",
+      "authors": [
+        "Benjamin Constable",
+        "Anup Roy",
+        "Vishal Sharma",
+        "Rishabh Upadhyay",
+        "Robin Mills",
+        "Aidan Millar"
+      ],
+      "published": "2026-08-28T17:49:22Z",
+      "updated": "2026-11-06T12:01:23Z",
+      "url": "https://arxiv.org/abs/2608.28572",
+      "pdfUrl": "https://arxiv.org/pdf/2608.28572",
+      "arxivCategories": [
+        "cs.IR"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "ocr",
+        "docrag"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "OCR"
+        ],
+        "docrag": [
+          "document RAG",
+          "ColPali"
+        ]
+      },
+      "firstSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.88,
+      "rankReasons": [
+        "文档主题匹配",
+        "近 7 天有更新",
+        "新收录",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.68831
+    },
+    {
+      "id": "github:opendatalab/MinerU:433901302",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.1.7",
+      "abstract": "MinerU 4.1.7 adds persistent authentication for the local document library and improves layout detection. - Require a persistent bearer token for Doclib HTTP endpoints. The SDK reads local credentials automatically; direct HTTP integrations must send the token. - Protect credential files with private POSIX permissions and native macOS/Windows ACLs. - Restore per-class layout output thresholds consistently across the ONNX and Torch backends. - Place absorbed image regions according to their geome",
+      "authors": [],
+      "published": "2026-11-04T12:38:24Z",
+      "updated": "2026-11-04T12:38:43Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.7-released",
+      "tag": "mineru-4.1.7-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-11-05T10:56:53Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.61607
+    },
+    {
+      "id": "github:opendatalab/MinerU:432645485",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.1.6",
+      "abstract": "MinerU 4.1.6 improves PDF footnote formulas and removes duplicate nested text regions. - Preserve formulas and formula numbers inside footnotes so they reach formula recognition and native-text filling with the correct identity. - Remove fully contained text boxes with the same category while retaining the outer region and reading order. - Share layout postprocessing between the ONNX and Torch backends, including formula protection and text deduplication. - Upgrade the DocVortex dependency to `>",
+      "authors": [],
+      "published": "2026-11-03T12:08:06Z",
+      "updated": "2026-11-03T12:08:57Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.6-released",
+      "tag": "mineru-4.1.6-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-11-04T10:56:26Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.56018
     },
     {
       "id": "github:docling-project/docling:434036114",
@@ -283,14 +361,194 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.53733
+    },
+    {
+      "id": "arxiv:2510.18413",
+      "arxiv": "2510.18413",
+      "version": 2,
+      "title": "Adamas: Hadamard Sparse Attention for Efficient Long-Context Inference",
+      "abstract": "Large language models (LLMs) now support context windows of hundreds of thousands to millions of tokens, enabling applications such as long-document summarization, large-scale code synthesis, multi-document question answering and persistent multi-turn dialogue. However, such extended contexts exacerbate the quadratic cost of self-attention, leading to severe latency in autoregressive decoding. Existing sparse attention methods reduce these costs by attending to only a subset of key-value (KV) tokens, but fixed or coarse-grained selection strategies can miss important tokens or retain substantial redundancy under constrained token budgets. We introduce \\textbf{Adamas}, an accurate and efficient token-level sparse attention mechanism for long-context inference. Adamas applies the Hadamard transform, bucketization and 2-bit compression to produce compact representations, and uses lightweight distance-based estimation for efficient top-$k$ candidate selection. The selected positions are then used to gather the corresponding original KV states for sparse attention. Comprehensive evaluations show that Adamas maintains near-lossless performance within the effective context length of Llama-3.1-8B-Instruct. In efficiency evaluations, Adamas achieves up to $6.5\\times$ self-attention speedup and $1.7\\times$ end-to-end decoding speedup at a 32K context length. Adamas also maintains performance comparable to full attention on challenging long-form reasoning benchmarks, including AIME 2024 and AIME 2025.",
+      "authors": [
+        "Siyuan Yan",
+        "Guo-Qing Jiang",
+        "Yuchen Zhang",
+        "Xiaoxing Ma",
+        "Ran Zhu",
+        "Chun Cao",
+        "Jingwei Xu"
+      ],
+      "published": "2025-10-21T08:44:47Z",
+      "updated": "2026-11-06T10:07:01Z",
+      "url": "https://arxiv.org/abs/2510.18413",
+      "pdfUrl": "https://arxiv.org/pdf/2510.18413",
+      "arxivCategories": [
+        "cs.CL"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docqa"
+      ],
+      "matchedTerms": {
+        "docqa": [
+          "document question answering"
+        ]
+      },
+      "firstSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
         "近 7 天有更新",
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.63344
+      "rankScore": 0.53084
+    },
+    {
+      "id": "github:opendatalab/MinerU:432374295",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.1.5",
+      "abstract": "MinerU 4.1.5 fixes parse-path normalization and improves filename handling across the CLI and Tasks API. - Relative paths, hidden directories, and Windows-style paths now use the same extension and tier validation. Native CSV inputs can no longer bypass `mineru-kit parse` quality-tier validation. Refs #5711. - Tasks API filenames are validated as basenames; valid hidden, Unicode, and literal percent-encoded names retain their identity through API and Router execution. - `file_parse` preserves fi",
+      "authors": [],
+      "published": "2026-11-03T07:10:36Z",
+      "updated": "2026-11-03T07:11:38Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.5-released",
+      "tag": "mineru-4.1.5-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-11-03T10:53:24Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.5171
+    },
+    {
+      "id": "github:docling-project/docling:432354383",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.146.0",
+      "abstract": "### Feature * **vlm:** Add Unlimited-OCR 2 preset and layout parser ([#5107](https://github.com/docling-project/docling/issues/5107)) ([`bdb1d20`](https://github.com/docling-project/docling/commit/bdb1d20dffe4ceb06e68eaa8a665983ae78d86d7)) * Add LightOnOCR-3 presets and grounded output parsing ([#4789](https://github.com/docling-project/docling/issues/4789)) ([`4b382ee`](https://github.com/docling-project/docling/commit/4b382ee0ea8cb60abcd05bbf6ab2a92dd92502c7)) * **vlm:** Add guarded Nemotron 3",
+      "authors": [],
+      "published": "2026-11-03T06:40:56Z",
+      "updated": "2026-11-03T06:40:56Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.146.0",
+      "tag": "v2.146.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-11-03T10:53:24Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.47679
+    },
+    {
+      "id": "github:opendatalab/MinerU:431502262",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.1.4",
+      "abstract": "中文 - Standard / Advanced 的 PDF 文本模式使用 VLM 识别表格外的行内公式切片，保留混合文本与公式；单个切片识别失败时局部回退 MFR。 - 改善公式定界符和文本转义处理，避免普通文本中的美元符号被误当成公式或携带多余转义字符。 - 将 DocVortex 最低版本提升至 0.6.11，并在中英文 README 中补充解析档位指南入口。 English - Use VLM text recognition for inline formula crops outside tables in Standard / Advanced PDF text mode, preserving mixed text and math with per-crop MFR fallback. - Improve math-delimiter and text-escape handling so ordinary dollar signs remain text without redundant escape characters. - Require DocVortex",
+      "authors": [],
+      "published": "2026-11-02T13:35:00Z",
+      "updated": "2026-11-02T13:37:17Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.4-released",
+      "tag": "mineru-4.1.4-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-11-03T10:53:24Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.46655
+    },
+    {
+      "id": "arxiv:2610.36444",
+      "arxiv": "2610.36444",
+      "version": 1,
+      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
+      "abstract": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and potentially incorrect answers. Our empirical analysis reveals that Agentic execution provides query-dependent benefits, while additional operations may improve, preserve, or degrade answer accuracy. These findings motivate controlling both Agent invocation and subsequent execution. To address these challenges, we propose RouteDRAG, a learning-based framework comprising four components. Unified Document Index organizes multimodal content into a graph-backed index and derives query representations from initial retrieval. Adaptive Path Routing preserves exact answering and predicts the relative benefit of Agent over shorter execution paths. Dynamic Agent Execution maintains an evolving workspace and refines Planner proposals to control tool use and termination. Sequential Policy Learning first trains operation control from observed outcomes and then trains path routing using the resulting Agent's performance. Across two benchmarks, RouteDRAG achieves an average accuracy improvement of 3.47 percentage points over shorter-path-only execution while assigning only 79.3% of queries to Agent. Notably, it also surpasses uniform Agent execution on both benchmarks while requiring fewer answering calls. Our code is now available at https://github.com/Ereshkigal1/RouteDRAG.",
+      "authors": [
+        "Zekai Chen",
+        "Hao Zhu",
+        "Yu Liu",
+        "Xunkai Li",
+        "Zejian Kang",
+        "Rui Qian",
+        "Quanjiang Li",
+        "Rong-Hua Li"
+      ],
+      "published": "2026-10-27T00:45:49Z",
+      "updated": "2026-10-27T00:45:49Z",
+      "url": "https://arxiv.org/abs/2610.36444",
+      "pdfUrl": "https://arxiv.org/pdf/2610.36444",
+      "arxivCategories": [
+        "cs.AI"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docrag"
+      ],
+      "matchedTerms": {
+        "docrag": [
+          "document RAG"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.86,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.44923
     },
     {
       "id": "arxiv:2611.06449",
@@ -333,27 +591,26 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.91,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
-        "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.61824
+      "rankScore": 0.44222
     },
     {
-      "id": "github:opendatalab/MinerU:432645485",
+      "id": "github:opendatalab/MinerU:428913222",
       "kind": "release",
       "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.1.6",
-      "abstract": "MinerU 4.1.6 improves PDF footnote formulas and removes duplicate nested text regions. - Preserve formulas and formula numbers inside footnotes so they reach formula recognition and native-text filling with the correct identity. - Remove fully contained text boxes with the same category while retaining the outer region and reading order. - Share layout postprocessing between the ONNX and Torch backends, including formula protection and text deduplication. - Upgrade the DocVortex dependency to `>",
+      "title": "MinerU · MinerU 4.1.3",
+      "abstract": "中文 * Router 动态节点管理：支持运行时注册、查看和注销远程节点，通过独立管理密钥控制访问，无需重启即可调整节点池。 * 节点平滑退出：注销节点后停止分配新任务，等待已有任务、请求、下载及结果保留引用释放后再移除。 * API 过期时间精度：内部保留亚秒级时间精度，避免短保留期因整秒取整而提前失效；公开时间戳保持整数格式。 * 请求与运行时稳定性：修复重复文件传输可能触发的连接重置，改善反向代理路径前缀与 Unicode URL 兼容性，并优化空闲模型运行时的退出清理。 * 文档与集成示例：整理用户文档和历史资料，增加旧链接重定向与站点检查，补充 Tasks API、Router 管理、curl 和 n8n 示例。 English * Dynamic Router upstreams: Register, inspect, and deregister remote workers at runtime using an independent management key. * Graceful worker draining: Deregistered workers st",
       "authors": [],
-      "published": "2026-11-03T12:08:06Z",
-      "updated": "2026-11-03T12:08:57Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.6-released",
-      "tag": "mineru-4.1.6-released",
+      "published": "2026-10-30T10:43:37Z",
+      "updated": "2026-10-30T10:46:43Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.3-released",
+      "tag": "mineru-4.1.3-released",
       "sourceName": "GitHub · opendatalab/MinerU",
       "topics": [
         "ocr",
@@ -366,284 +623,13 @@
         ]
       },
       "relevanceScore": 1.0,
-      "firstSeen": "2026-11-04T10:56:26Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "firstSeen": "2026-10-31T09:40:07Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
-        "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.57507
-    },
-    {
-      "id": "arxiv:2610.36444",
-      "arxiv": "2610.36444",
-      "version": 1,
-      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
-      "abstract": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and potentially incorrect answers. Our empirical analysis reveals that Agentic execution provides query-dependent benefits, while additional operations may improve, preserve, or degrade answer accuracy. These findings motivate controlling both Agent invocation and subsequent execution. To address these challenges, we propose RouteDRAG, a learning-based framework comprising four components. Unified Document Index organizes multimodal content into a graph-backed index and derives query representations from initial retrieval. Adaptive Path Routing preserves exact answering and predicts the relative benefit of Agent over shorter execution paths. Dynamic Agent Execution maintains an evolving workspace and refines Planner proposals to control tool use and termination. Sequential Policy Learning first trains operation control from observed outcomes and then trains path routing using the resulting Agent's performance. Across two benchmarks, RouteDRAG achieves an average accuracy improvement of 3.47 percentage points over shorter-path-only execution while assigning only 79.3% of queries to Agent. Notably, it also surpasses uniform Agent execution on both benchmarks while requiring fewer answering calls. Our code is now available at https://github.com/Ereshkigal1/RouteDRAG.",
-      "authors": [
-        "Zekai Chen",
-        "Hao Zhu",
-        "Yu Liu",
-        "Xunkai Li",
-        "Zejian Kang",
-        "Rui Qian",
-        "Quanjiang Li",
-        "Rong-Hua Li"
-      ],
-      "published": "2026-10-27T00:45:49Z",
-      "updated": "2026-10-27T00:45:49Z",
-      "url": "https://arxiv.org/abs/2610.36444",
-      "pdfUrl": "https://arxiv.org/pdf/2610.36444",
-      "arxivCategories": [
-        "cs.AI"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "docrag"
-      ],
-      "matchedTerms": {
-        "docrag": [
-          "document RAG"
-        ]
-      },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.86,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.56796
-    },
-    {
-      "id": "github:opendatalab/MinerU:432374295",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.1.5",
-      "abstract": "MinerU 4.1.5 fixes parse-path normalization and improves filename handling across the CLI and Tasks API. - Relative paths, hidden directories, and Windows-style paths now use the same extension and tier validation. Native CSV inputs can no longer bypass `mineru-kit parse` quality-tier validation. Refs #5711. - Tasks API filenames are validated as basenames; valid hidden, Unicode, and literal percent-encoded names retain their identity through API and Router execution. - `file_parse` preserves fi",
-      "authors": [],
-      "published": "2026-11-03T07:10:36Z",
-      "updated": "2026-11-03T07:11:38Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.5-released",
-      "tag": "mineru-4.1.5-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "近 7 天有更新",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.53177
-    },
-    {
-      "id": "arxiv:2606.09788",
-      "arxiv": "2606.09788",
-      "version": 2,
-      "title": "POTATR: A Lightweight Image-to-Graph Model for Page-Level Table Extraction",
-      "abstract": "Large-scale document processing requires contextually aware table extraction (TE) that is both accurate and efficient. Yet current approaches require billions of parameters, hundreds of autoregressive steps, or costly API inference. Motivated by this, we introduce the Page-Object Table Transformer (POTATR), a lightweight 29M parameter image-to-graph model that extends the Table Transformer (TATR) for contextualized page-level TE. POTATR outperforms all models tested on the PubTables-v2 Single Pages benchmark -- including frontier MLLMs -- achieving $\\textrm{GriTS}_\\textrm{Con}$ of 0.964 while running over 130$\\times$ faster at 300$\\times$ lower cost. Further, POTATR's output is spatially grounded: every recognized element has a bounding box, enabling visual verification and geometric text assignment. As a result, POTATR performs unified page-level TE while composing with other models, enabling extension to scanned documents via external OCR and to full-document TE via techniques like cross-page merging. Code and models are available at https://github.com/kensho-technologies/POTATR.",
-      "authors": [
-        "Brandon Smock",
-        "Libin Liang",
-        "Maxim Sokolov",
-        "Amrit Ramesh",
-        "Valerie Faucon-Morin",
-        "Tayyibah Khanam",
-        "Maury Courtland"
-      ],
-      "published": "2026-06-08T17:43:44Z",
-      "updated": "2026-11-03T22:14:53Z",
-      "url": "https://arxiv.org/abs/2606.09788",
-      "pdfUrl": "https://arxiv.org/pdf/2606.09788",
-      "arxivCategories": [
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "ocr",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "OCR"
-        ],
-        "table": [
-          "table extraction"
-        ]
-      },
-      "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.88,
-      "rankReasons": [
-        "文档主题匹配",
-        "近 7 天有更新",
-        "新收录",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.50994
-    },
-    {
-      "id": "arxiv:2512.10888",
-      "arxiv": "2512.10888",
-      "version": 4,
-      "title": "PubTables-v2: A new large-scale dataset for full-page and multi-page table extraction",
-      "abstract": "Table extraction (TE) is a key challenge in document understanding. Traditional approaches detect tables first, then recognize their structure. Recently, interest has surged in developing methods, such as vision-language models (VLMs), to extract tables directly in their full page or document context. However, a lack of annotated data has made progress difficult to demonstrate. To address this, we create a new large-scale dataset, PubTables-v2. PubTables-v2 unifies TE across various levels of surrounding context and, notably, is the first benchmark for multi-page TE. Our evaluations reveal that while current frontier models strongly outperform ($+0.354\\ \\textrm{GriTS}_\\textrm{Con}$) small models on the most complex task (full-document multi-page TE), this gap can be closed or even reversed ($-0.056\\ \\textrm{GriTS}_\\textrm{Con}$) on narrower tasks (cropped table extraction) with targeted training. Data is available at https://huggingface.co/datasets/kensho/PubTables-v2.",
-      "authors": [
-        "Brandon Smock",
-        "Maxim Sokolov",
-        "Libin Liang",
-        "Valerie Faucon-Morin",
-        "Amrit Ramesh",
-        "Tayyibah Khanam",
-        "Maury Courtland"
-      ],
-      "published": "2025-12-11T18:19:00Z",
-      "updated": "2026-11-03T21:47:48Z",
-      "url": "https://arxiv.org/abs/2512.10888",
-      "pdfUrl": "https://arxiv.org/pdf/2512.10888",
-      "arxivCategories": [
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "table",
-        "docqa"
-      ],
-      "matchedTerms": {
-        "table": [
-          "table extraction"
-        ],
-        "docqa": [
-          "document understanding"
-        ]
-      },
-      "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.88,
-      "rankReasons": [
-        "文档主题匹配",
-        "近 7 天有更新",
-        "新收录",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.50962
-    },
-    {
-      "id": "arxiv:2611.05539",
-      "arxiv": "2611.05539",
-      "version": 1,
-      "title": "Rewrite, Then Veto: Rewriter-Agnostic Edit Gating for LLM-Based Post-OCR Correction",
-      "abstract": "LLMs can repair noisy OCR transcripts of historical documents, but they also change text that was already correct. We propose EditVeto, a veto gate placed after a full-context LLM rewrite. The rewrite is character-aligned to the OCR input, its differences are split into blocks, and a 0.6B-parameter gate keeps or reverts each block. An oracle analysis motivates the design: given the true error locations, per-span generation is worse than no correction, whereas vetoing a full rewrite's edits helps. Trained on rewrites by two Qwen3 models and evaluated, frozen, on the eight HIPE-OCRepair-2026 test sets, the gate improves all five rewriters tested, two of them unseen in training: weighted cMER falls by 0.0026-0.0044 and the preference score rises by 0.15-0.25 (paired bootstrap, p ~ 0.0002 each). On published competition outputs it lowers cMER for three of four teams but raises it for the winning run (0.0050 to 0.0065). In a second, disclosed test look, a retrained gate still improves LoRA-tuned rewriters (cMER -0.0011 to -0.0021), and an ensemble of their gated edits reaches a cMER of 0.0069 and a preference score of 0.928, mostly through fine-tuning and pooling rather than gating. Built only on public models and data, it is behind the winner (0.0050) and tied with the second-ranked run (0.0071), both from the only team using domain pre-training, and ahead of all other published runs. A third, secondary look shows the unchanged gate improving zero-shot Qwen3.8-27B (cMER 0.0114 to 0.0108) but only the preference score of its LoRA-tuned version.",
-      "authors": [
-        "Jorge Ramón Fonseca Cacho"
-      ],
-      "published": "2026-11-03T19:31:36Z",
-      "updated": "2026-11-03T19:31:36Z",
-      "url": "https://arxiv.org/abs/2611.05539",
-      "pdfUrl": "https://arxiv.org/pdf/2611.05539",
-      "arxivCategories": [
-        "cs.CL",
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "ocr"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "OCR"
-        ]
-      },
-      "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.87,
-      "rankReasons": [
-        "文档主题匹配",
-        "近 7 天有更新",
-        "新收录",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.50206
-    },
-    {
-      "id": "github:docling-project/docling:432354383",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.146.0",
-      "abstract": "### Feature * **vlm:** Add Unlimited-OCR 2 preset and layout parser ([#5107](https://github.com/docling-project/docling/issues/5107)) ([`bdb1d20`](https://github.com/docling-project/docling/commit/bdb1d20dffe4ceb06e68eaa8a665983ae78d86d7)) * Add LightOnOCR-3 presets and grounded output parsing ([#4789](https://github.com/docling-project/docling/issues/4789)) ([`4b382ee`](https://github.com/docling-project/docling/commit/4b382ee0ea8cb60abcd05bbf6ab2a92dd92502c7)) * **vlm:** Add guarded Nemotron 3",
-      "authors": [],
-      "published": "2026-11-03T06:40:56Z",
-      "updated": "2026-11-03T06:40:56Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.146.0",
-      "tag": "v2.146.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "近 7 天有更新",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.49144
-    },
-    {
-      "id": "github:opendatalab/MinerU:431502262",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.1.4",
-      "abstract": "中文 - Standard / Advanced 的 PDF 文本模式使用 VLM 识别表格外的行内公式切片，保留混合文本与公式；单个切片识别失败时局部回退 MFR。 - 改善公式定界符和文本转义处理，避免普通文本中的美元符号被误当成公式或携带多余转义字符。 - 将 DocVortex 最低版本提升至 0.6.11，并在中英文 README 中补充解析档位指南入口。 English - Use VLM text recognition for inline formula crops outside tables in Standard / Advanced PDF text mode, preserving mixed text and math with per-crop MFR fallback. - Improve math-delimiter and text-escape handling so ordinary dollar signs remain text without redundant escape characters. - Require DocVortex",
-      "authors": [],
-      "published": "2026-11-02T13:35:00Z",
-      "updated": "2026-11-02T13:37:17Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.4-released",
-      "tag": "mineru-4.1.4-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "近 7 天有更新",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.48047
+      "rankScore": 0.4273
     },
     {
       "id": "arxiv:2610.33004",
@@ -682,45 +668,14 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.43874
-    },
-    {
-      "id": "github:opendatalab/MinerU:428913222",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.1.3",
-      "abstract": "中文 * Router 动态节点管理：支持运行时注册、查看和注销远程节点，通过独立管理密钥控制访问，无需重启即可调整节点池。 * 节点平滑退出：注销节点后停止分配新任务，等待已有任务、请求、下载及结果保留引用释放后再移除。 * API 过期时间精度：内部保留亚秒级时间精度，避免短保留期因整秒取整而提前失效；公开时间戳保持整数格式。 * 请求与运行时稳定性：修复重复文件传输可能触发的连接重置，改善反向代理路径前缀与 Unicode URL 兼容性，并优化空闲模型运行时的退出清理。 * 文档与集成示例：整理用户文档和历史资料，增加旧链接重定向与站点检查，补充 Tasks API、Router 管理、curl 和 n8n 示例。 English * Dynamic Router upstreams: Register, inspect, and deregister remote workers at runtime using an independent management key. * Graceful worker draining: Deregistered workers st",
-      "authors": [],
-      "published": "2026-10-30T10:43:37Z",
-      "updated": "2026-10-30T10:46:43Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.1.3-released",
-      "tag": "mineru-4.1.3-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-31T09:40:07Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.43845
+      "rankScore": 0.42281
     },
     {
       "id": "github:opendatalab/MinerU:428167074",
@@ -746,12 +701,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42988
+      "rankScore": 0.41931
     },
     {
       "id": "github:opendatalab/MinerU:428051170",
@@ -777,12 +732,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42929
+      "rankScore": 0.41875
     },
     {
       "id": "github:docling-project/docling:427986395",
@@ -808,12 +763,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42866
+      "rankScore": 0.41817
     },
     {
       "id": "github:opendatalab/MinerU:427762028",
@@ -839,12 +794,104 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42703
+      "rankScore": 0.41664
+    },
+    {
+      "id": "arxiv:2606.09788",
+      "arxiv": "2606.09788",
+      "version": 2,
+      "title": "POTATR: A Lightweight Image-to-Graph Model for Page-Level Table Extraction",
+      "abstract": "Large-scale document processing requires contextually aware table extraction (TE) that is both accurate and efficient. Yet current approaches require billions of parameters, hundreds of autoregressive steps, or costly API inference. Motivated by this, we introduce the Page-Object Table Transformer (POTATR), a lightweight 29M parameter image-to-graph model that extends the Table Transformer (TATR) for contextualized page-level TE. POTATR outperforms all models tested on the PubTables-v2 Single Pages benchmark -- including frontier MLLMs -- achieving $\\textrm{GriTS}_\\textrm{Con}$ of 0.964 while running over 130$\\times$ faster at 300$\\times$ lower cost. Further, POTATR's output is spatially grounded: every recognized element has a bounding box, enabling visual verification and geometric text assignment. As a result, POTATR performs unified page-level TE while composing with other models, enabling extension to scanned documents via external OCR and to full-document TE via techniques like cross-page merging. Code and models are available at https://github.com/kensho-technologies/POTATR.",
+      "authors": [
+        "Brandon Smock",
+        "Libin Liang",
+        "Maxim Sokolov",
+        "Amrit Ramesh",
+        "Valerie Faucon-Morin",
+        "Tayyibah Khanam",
+        "Maury Courtland"
+      ],
+      "published": "2026-06-08T17:43:44Z",
+      "updated": "2026-11-03T22:14:53Z",
+      "url": "https://arxiv.org/abs/2606.09788",
+      "pdfUrl": "https://arxiv.org/pdf/2606.09788",
+      "arxivCategories": [
+        "cs.CV"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "ocr",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "OCR"
+        ],
+        "table": [
+          "table extraction"
+        ]
+      },
+      "firstSeen": "2026-11-05T10:56:53Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.88,
+      "rankReasons": [
+        "文档主题匹配",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.41459
+    },
+    {
+      "id": "arxiv:2512.10888",
+      "arxiv": "2512.10888",
+      "version": 4,
+      "title": "PubTables-v2: A new large-scale dataset for full-page and multi-page table extraction",
+      "abstract": "Table extraction (TE) is a key challenge in document understanding. Traditional approaches detect tables first, then recognize their structure. Recently, interest has surged in developing methods, such as vision-language models (VLMs), to extract tables directly in their full page or document context. However, a lack of annotated data has made progress difficult to demonstrate. To address this, we create a new large-scale dataset, PubTables-v2. PubTables-v2 unifies TE across various levels of surrounding context and, notably, is the first benchmark for multi-page TE. Our evaluations reveal that while current frontier models strongly outperform ($+0.354\\ \\textrm{GriTS}_\\textrm{Con}$) small models on the most complex task (full-document multi-page TE), this gap can be closed or even reversed ($-0.056\\ \\textrm{GriTS}_\\textrm{Con}$) on narrower tasks (cropped table extraction) with targeted training. Data is available at https://huggingface.co/datasets/kensho/PubTables-v2.",
+      "authors": [
+        "Brandon Smock",
+        "Maxim Sokolov",
+        "Libin Liang",
+        "Valerie Faucon-Morin",
+        "Amrit Ramesh",
+        "Tayyibah Khanam",
+        "Maury Courtland"
+      ],
+      "published": "2025-12-11T18:19:00Z",
+      "updated": "2026-11-03T21:47:48Z",
+      "url": "https://arxiv.org/abs/2512.10888",
+      "pdfUrl": "https://arxiv.org/pdf/2512.10888",
+      "arxivCategories": [
+        "cs.CV"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "table",
+        "docqa"
+      ],
+      "matchedTerms": {
+        "table": [
+          "table extraction"
+        ],
+        "docqa": [
+          "document understanding"
+        ]
+      },
+      "firstSeen": "2026-11-05T10:56:53Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.88,
+      "rankReasons": [
+        "文档主题匹配",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.4143
     },
     {
       "id": "arxiv:2611.04874",
@@ -887,14 +934,14 @@
         ]
       },
       "firstSeen": "2026-11-04T10:56:26Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42395
+      "rankScore": 0.409
     },
     {
       "id": "github:docling-project/docling:426615904",
@@ -920,55 +967,80 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-29T09:59:00Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41658
+      "rankScore": 0.40688
     },
     {
-      "id": "arxiv:2610.28957",
-      "arxiv": "2610.28957",
+      "id": "arxiv:2611.05539",
+      "arxiv": "2611.05539",
       "version": 1,
-      "title": "Scan or Index? large Evidence Coverage, Answer Quality, and Cost in Long-Document RAG",
-      "abstract": "Scanning every passage in a long document seems thorough, but does it preserve more useful evidence or produce better answers? We compare 11 retrieval configurations spanning lexical and dense search, hybrid reranking, and full-document scanning with Jev, OpenAI Decisions, and Cloudflare Clef. Our evaluation uses 396 QASPER questions and 80 questions from eight complete textbooks, with common passages, a five-passage limit, and a fixed answer generator. On books, Hybrid + Jev achieves the highest observed evidence coverage (94.1%), compared with 88.7% for Jev full scan and 81.3\\% for OpenAI dense retrieval. Full scans examine every passage initially, yet later reduction steps can discard relevant evidence. Higher evidence coverage also does not consistently produce better answers: Hybrid + Decisions achieves the highest observed book Answer Accuracy among retrieval methods (0.892), despite recovering less reference evidence. Full scanning incurs substantially higher latency on books under the tested deployments, while reusable dense retrieval has lower projected API cost than paid decision-based methods as queries accumulate. Most QASPER articles already fit within the hybrid candidate pool, limiting the benefit of scanning. These results highlight evidence retention, answer quality, and reuse cost as complementary criteria for choosing a long-document retrieval strategy.",
+      "title": "Rewrite, Then Veto: Rewriter-Agnostic Edit Gating for LLM-Based Post-OCR Correction",
+      "abstract": "LLMs can repair noisy OCR transcripts of historical documents, but they also change text that was already correct. We propose EditVeto, a veto gate placed after a full-context LLM rewrite. The rewrite is character-aligned to the OCR input, its differences are split into blocks, and a 0.6B-parameter gate keeps or reverts each block. An oracle analysis motivates the design: given the true error locations, per-span generation is worse than no correction, whereas vetoing a full rewrite's edits helps. Trained on rewrites by two Qwen3 models and evaluated, frozen, on the eight HIPE-OCRepair-2026 test sets, the gate improves all five rewriters tested, two of them unseen in training: weighted cMER falls by 0.0026-0.0044 and the preference score rises by 0.15-0.25 (paired bootstrap, p ~ 0.0002 each). On published competition outputs it lowers cMER for three of four teams but raises it for the winning run (0.0050 to 0.0065). In a second, disclosed test look, a retrained gate still improves LoRA-tuned rewriters (cMER -0.0011 to -0.0021), and an ensemble of their gated edits reaches a cMER of 0.0069 and a preference score of 0.928, mostly through fine-tuning and pooling rather than gating. Built only on public models and data, it is behind the winner (0.0050) and tied with the second-ranked run (0.0071), both from the only team using domain pre-training, and ahead of all other published runs. A third, secondary look shows the unchanged gate improving zero-shot Qwen3.8-27B (cMER 0.0114 to 0.0108) but only the preference score of its LoRA-tuned version.",
       "authors": [
-        "Juan Terven",
-        "Diana-Margarita Córdova-Esparza",
-        "Julio-Alejandro Romero-González",
-        "Edgar Chavez-Urbiola",
-        "Juan Irving Vasquez",
-        "Julian Andres Ramirez-Bautista",
-        "Silvia L. Chaparro-Cárdenas",
-        "Gendry Alfonso-Francia"
+        "Jorge Ramón Fonseca Cacho"
       ],
-      "published": "2026-10-20T22:11:07Z",
-      "updated": "2026-10-20T22:11:07Z",
-      "url": "https://arxiv.org/abs/2610.28957",
-      "pdfUrl": "https://arxiv.org/pdf/2610.28957",
+      "published": "2026-11-03T19:31:36Z",
+      "updated": "2026-11-03T19:31:36Z",
+      "url": "https://arxiv.org/abs/2611.05539",
+      "pdfUrl": "https://arxiv.org/pdf/2611.05539",
       "arxivCategories": [
-        "cs.CL"
+        "cs.CL",
+        "cs.CV"
       ],
       "sourceName": "arXiv",
       "kind": "paper",
       "topics": [
-        "docrag"
+        "ocr"
       ],
       "matchedTerms": {
-        "docrag": [
-          "document retrieval",
-          "document RAG"
+        "ocr": [
+          "OCR"
         ]
       },
-      "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.86,
+      "firstSeen": "2026-11-05T10:56:53Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
+        "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41131
+      "rankScore": 0.40684
+    },
+    {
+      "id": "github:docling-project/docling:425760117",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.143.1",
+      "abstract": "### Fix * **table:** Keep OCR word cells in table tokens ([`affa54c`](https://github.com/docling-project/docling/commit/affa54ce1fcb4a7e9df4900b1b9e16b9290a50ad)) * **table:** Add OCR cells to table tokens next to native words ([`ce6690b`](https://github.com/docling-project/docling/commit/ce6690b67e9dc6f028cfe42f80b508900d027f28)) * **table:** Read the page's parsed_page for table tokens in full-page OCR ([`a65b29e`](https://github.com/docling-project/docling/commit/a65b29e004ccbffaaa4fda8c40c04",
+      "authors": [],
+      "published": "2026-10-27T17:11:51Z",
+      "updated": "2026-10-27T17:11:51Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.143.1",
+      "tag": "v2.143.1",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.39941
     },
     {
       "id": "arxiv:2609.18823",
@@ -1005,26 +1077,26 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41013
+      "rankScore": 0.39609
     },
     {
-      "id": "github:docling-project/docling:425760117",
+      "id": "github:docling-project/docling:424894279",
       "kind": "release",
       "repo": "docling-project/docling",
-      "title": "docling · v2.143.1",
-      "abstract": "### Fix * **table:** Keep OCR word cells in table tokens ([`affa54c`](https://github.com/docling-project/docling/commit/affa54ce1fcb4a7e9df4900b1b9e16b9290a50ad)) * **table:** Add OCR cells to table tokens next to native words ([`ce6690b`](https://github.com/docling-project/docling/commit/ce6690b67e9dc6f028cfe42f80b508900d027f28)) * **table:** Read the page's parsed_page for table tokens in full-page OCR ([`a65b29e`](https://github.com/docling-project/docling/commit/a65b29e004ccbffaaa4fda8c40c04",
+      "title": "docling · v2.143.0",
+      "abstract": "### Feature * **service:** Add optional filename to ZipArchiveResult ([#4996](https://github.com/docling-project/docling/issues/4996)) ([`87de795`](https://github.com/docling-project/docling/commit/87de795692189b3699c1246205c3988cb806bd4e)) * Support mixed-format ZIP inputs ([#4865](https://github.com/docling-project/docling/issues/4865)) ([`aff98aa`](https://github.com/docling-project/docling/commit/aff98aa7d34956819a89695f79ecbd910276e170)) * **asr:** Run the WhisperS2T presets offline from --",
       "authors": [],
-      "published": "2026-10-27T17:11:51Z",
-      "updated": "2026-10-27T17:11:51Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.143.1",
-      "tag": "v2.143.1",
+      "published": "2026-10-26T23:59:04Z",
+      "updated": "2026-10-26T23:59:04Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.143.0",
+      "tag": "v2.143.0",
       "sourceName": "GitHub · docling-project/docling",
       "topics": [
         "ocr",
@@ -1038,12 +1110,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40858
+      "rankScore": 0.39295
     },
     {
       "id": "arxiv:2611.03023",
@@ -1079,45 +1151,14 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40167
-    },
-    {
-      "id": "github:docling-project/docling:424894279",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.143.0",
-      "abstract": "### Feature * **service:** Add optional filename to ZipArchiveResult ([#4996](https://github.com/docling-project/docling/issues/4996)) ([`87de795`](https://github.com/docling-project/docling/commit/87de795692189b3699c1246205c3988cb806bd4e)) * Support mixed-format ZIP inputs ([#4865](https://github.com/docling-project/docling/issues/4865)) ([`aff98aa`](https://github.com/docling-project/docling/commit/aff98aa7d34956819a89695f79ecbd910276e170)) * **asr:** Run the WhisperS2T presets offline from --",
-      "authors": [],
-      "published": "2026-10-26T23:59:04Z",
-      "updated": "2026-10-26T23:59:04Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.143.0",
-      "tag": "v2.143.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.40166
+      "rankScore": 0.3878
     },
     {
       "id": "arxiv:2610.39301",
@@ -1175,13 +1216,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.37562
+      "rankScore": 0.36546
     },
     {
       "id": "github:docling-project/docling:421598813",
@@ -1207,12 +1248,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.37142
+      "rankScore": 0.36471
     },
     {
       "id": "github:docling-project/docling:420824203",
@@ -1238,12 +1279,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.36618
+      "rankScore": 0.35981
     },
     {
       "id": "arxiv:2610.39308",
@@ -1287,13 +1328,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.36258
+      "rankScore": 0.35169
     },
     {
       "id": "github:docling-project/docling:418897384",
@@ -1319,30 +1360,35 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.35512
+      "rankScore": 0.34949
     },
     {
-      "id": "arxiv:2610.26313",
-      "arxiv": "2610.26313",
+      "id": "arxiv:2610.28957",
+      "arxiv": "2610.28957",
       "version": 1,
-      "title": "StrucChunk: Structure-Aware Retrieval for Legal Document RAG",
-      "abstract": "Retrieval-Augmented Generation (RAG) can ground LLM outputs in domain-specific knowledge, but legal documents are hard: standard chunking fragments hierarchical argument structure, and generic embeddings struggle with both precise citation matching and semantic understanding. We propose StrucChunk (Structure Aware Chunking) with hybrid dense-sparse retrieval for hierarchically structured legal documents. It treats documents as directed acyclic graphs of provisions, preserves clause boundaries, resolves cross-references before embedding, and combines BM25 with BGE-M3 via Reciprocal Rank Fusion. We evaluate on five corpora, three legal traditions and two languages. StrucChunk reaches 100% boundary precision (vs. 7.7% for recursive splitting on CrPC), preserves 97.6% of documented cross-references (vs. 0%), and matches section coverage with 40.3% fewer chunks on GDPR. On LegalBench-RAG (6,858 query-passage pairs), it achieves Char-Recall@8 of 48.18% vs. 23.59% for the best baseline (+104%), surpassing the published state of the art by +83%. On 501 queries each for CrPC and CPC (Indian law), Recall@5 improves from 0.557 to 0.804 (+44.4%) and from 0.158 to 0.259 (+64.6%); chunking accounts for 88% and 73% of the gain. On 501 GDPR queries, Recall@5 is 0.868 with R@1 improving +59%. On NitiBench-CCL (3,730 Thai financial law queries), HR@5 is 0.856 vs. 0.594 for naive chunking (+44.1%), showing that section-boundary alignment is the dominant factor across languages, and cross-reference augmentation adds +2.3% on cross-reference queries. We release the implementation, 5,256 evaluation queries across five legal corpora, annotation methodology and chunking quality metrics. Code: github.com/SinghSuryaDeep/legal-rag-strucchunk-1",
+      "title": "Scan or Index? large Evidence Coverage, Answer Quality, and Cost in Long-Document RAG",
+      "abstract": "Scanning every passage in a long document seems thorough, but does it preserve more useful evidence or produce better answers? We compare 11 retrieval configurations spanning lexical and dense search, hybrid reranking, and full-document scanning with Jev, OpenAI Decisions, and Cloudflare Clef. Our evaluation uses 396 QASPER questions and 80 questions from eight complete textbooks, with common passages, a five-passage limit, and a fixed answer generator. On books, Hybrid + Jev achieves the highest observed evidence coverage (94.1%), compared with 88.7% for Jev full scan and 81.3\\% for OpenAI dense retrieval. Full scans examine every passage initially, yet later reduction steps can discard relevant evidence. Higher evidence coverage also does not consistently produce better answers: Hybrid + Decisions achieves the highest observed book Answer Accuracy among retrieval methods (0.892), despite recovering less reference evidence. Full scanning incurs substantially higher latency on books under the tested deployments, while reusable dense retrieval has lower projected API cost than paid decision-based methods as queries accumulate. Most QASPER articles already fit within the hybrid candidate pool, limiting the benefit of scanning. These results highlight evidence retention, answer quality, and reuse cost as complementary criteria for choosing a long-document retrieval strategy.",
       "authors": [
-        "Surya Deep Singh",
-        "Ashutosh Tripathi",
-        "Gaurav Deep Singh"
+        "Juan Terven",
+        "Diana-Margarita Córdova-Esparza",
+        "Julio-Alejandro Romero-González",
+        "Edgar Chavez-Urbiola",
+        "Juan Irving Vasquez",
+        "Julian Andres Ramirez-Bautista",
+        "Silvia L. Chaparro-Cárdenas",
+        "Gendry Alfonso-Francia"
       ],
-      "published": "2026-10-19T12:56:58Z",
-      "updated": "2026-10-19T12:56:58Z",
-      "url": "https://arxiv.org/abs/2610.26313",
-      "pdfUrl": "https://arxiv.org/pdf/2610.26313",
+      "published": "2026-10-20T22:11:07Z",
+      "updated": "2026-10-20T22:11:07Z",
+      "url": "https://arxiv.org/abs/2610.28957",
+      "pdfUrl": "https://arxiv.org/pdf/2610.28957",
       "arxivCategories": [
-        "cs.AI"
+        "cs.CL"
       ],
       "sourceName": "arXiv",
       "kind": "paper",
@@ -1351,17 +1397,18 @@
       ],
       "matchedTerms": {
         "docrag": [
+          "document retrieval",
           "document RAG"
         ]
       },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "firstSeen": "2026-10-27T16:29:50Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.33327
+      "rankScore": 0.33566
     },
     {
       "id": "github:docling-project/docling:414745219",
@@ -1387,12 +1434,43 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.33164
+      "rankScore": 0.32756
+    },
+    {
+      "id": "github:docling-project/docling:412682585",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.139.0",
+      "abstract": "### Feature * Expose max_concurrent_results on ThreadedDoclingParseBackendOptions ([#4804](https://github.com/docling-project/docling/issues/4804)) ([`ce5621b`](https://github.com/docling-project/docling/commit/ce5621b5e5569cfda1a010566247c93faa7d7032)) * Expose per-page confidence breakdown in ConfidenceScores ([#4233](https://github.com/docling-project/docling/issues/4233)) ([`5bdabb9`](https://github.com/docling-project/docling/commit/5bdabb917617d0ff434f676d537bda80cd19615f)) * **progress:**",
+      "authors": [],
+      "published": "2026-10-14T12:18:27Z",
+      "updated": "2026-10-14T12:18:27Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0",
+      "tag": "v2.139.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.32039
     },
     {
       "id": "arxiv:2610.36929",
@@ -1426,13 +1504,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.3276
+      "rankScore": 0.31863
     },
     {
       "id": "arxiv:2610.36759",
@@ -1469,13 +1547,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32653
+      "rankScore": 0.31763
     },
     {
       "id": "arxiv:2610.35240",
@@ -1509,25 +1587,25 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32482
+      "rankScore": 0.31643
     },
     {
-      "id": "github:docling-project/docling:412682585",
+      "id": "github:docling-project/docling:410246933",
       "kind": "release",
       "repo": "docling-project/docling",
-      "title": "docling · v2.139.0",
-      "abstract": "### Feature * Expose max_concurrent_results on ThreadedDoclingParseBackendOptions ([#4804](https://github.com/docling-project/docling/issues/4804)) ([`ce5621b`](https://github.com/docling-project/docling/commit/ce5621b5e5569cfda1a010566247c93faa7d7032)) * Expose per-page confidence breakdown in ConfidenceScores ([#4233](https://github.com/docling-project/docling/issues/4233)) ([`5bdabb9`](https://github.com/docling-project/docling/commit/5bdabb917617d0ff434f676d537bda80cd19615f)) * **progress:**",
+      "title": "docling · v2.138.0",
+      "abstract": "### Feature * **iwork:** Read pictures placed on a Numbers sheet ([#4700](https://github.com/docling-project/docling/issues/4700)) ([`88fbc05`](https://github.com/docling-project/docling/commit/88fbc055771161464463bbd1537747d3ccd0ec5e)) ### Fix * **docx:** Emit textboxes in table cells once inside their cell ([#4757](https://github.com/docling-project/docling/issues/4757)) ([`6bc5770`](https://github.com/docling-project/docling/commit/6bc57702be64a487736178938c10b5c11f4604b1)) * **jats:** Parse ",
       "authors": [],
-      "published": "2026-10-14T12:18:27Z",
-      "updated": "2026-10-14T12:18:27Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0",
-      "tag": "v2.139.0",
+      "published": "2026-10-12T06:14:54Z",
+      "updated": "2026-10-12T06:14:54Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.138.0",
+      "tag": "v2.138.0",
       "sourceName": "GitHub · docling-project/docling",
       "topics": [
         "ocr",
@@ -1541,12 +1619,43 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32396
+      "rankScore": 0.3129
+    },
+    {
+      "id": "github:opendatalab/MinerU:409343850",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.0.12",
+      "abstract": "## 更新内容 / What's Changed **新增 / Features** - V1 API：自部署 API 与 Router 新增 `/v1/tasks` 异步便捷接口和 `/v1/file_parse` 同步包装，支持一次提交文件、查询状态及获取 JSON/ZIP 结果；与 `/v1/parse/jobs` 共用任务 ID / V1 API: add asynchronous `/v1/tasks` and synchronous `/v1/file_parse` convenience endpoints to self-hosted API servers and Routers, with one-request file submission, status queries and JSON/ZIP results sharing the existing parse-job IDs - 上传复用：支持 SHA-256 预检及已有 `file_id` 复用；原始字节入口在缓存命中时可提前返回，客户端示例见 `scripts/http_task_example.sh",
+      "authors": [],
+      "published": "2026-10-11T02:21:42Z",
+      "updated": "2026-10-11T02:23:44Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.12-released",
+      "tag": "mineru-4.0.12-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.30949
     },
     {
       "id": "arxiv:2610.34879",
@@ -1577,44 +1686,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31674
-    },
-    {
-      "id": "github:docling-project/docling:410246933",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.138.0",
-      "abstract": "### Feature * **iwork:** Read pictures placed on a Numbers sheet ([#4700](https://github.com/docling-project/docling/issues/4700)) ([`88fbc05`](https://github.com/docling-project/docling/commit/88fbc055771161464463bbd1537747d3ccd0ec5e)) ### Fix * **docx:** Emit textboxes in table cells once inside their cell ([#4757](https://github.com/docling-project/docling/issues/4757)) ([`6bc5770`](https://github.com/docling-project/docling/commit/6bc57702be64a487736178938c10b5c11f4604b1)) * **jats:** Parse ",
-      "authors": [],
-      "published": "2026-10-12T06:14:54Z",
-      "updated": "2026-10-12T06:14:54Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.138.0",
-      "tag": "v2.138.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.31594
+      "rankScore": 0.30849
     },
     {
       "id": "arxiv:2610.34148",
@@ -1646,26 +1724,26 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31508
+      "rankScore": 0.30734
     },
     {
-      "id": "github:opendatalab/MinerU:409343850",
+      "id": "github:docling-project/docling:407981657",
       "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.0.12",
-      "abstract": "## 更新内容 / What's Changed **新增 / Features** - V1 API：自部署 API 与 Router 新增 `/v1/tasks` 异步便捷接口和 `/v1/file_parse` 同步包装，支持一次提交文件、查询状态及获取 JSON/ZIP 结果；与 `/v1/parse/jobs` 共用任务 ID / V1 API: add asynchronous `/v1/tasks` and synchronous `/v1/file_parse` convenience endpoints to self-hosted API servers and Routers, with one-request file submission, status queries and JSON/ZIP results sharing the existing parse-job IDs - 上传复用：支持 SHA-256 预检及已有 `file_id` 复用；原始字节入口在缓存命中时可提前返回，客户端示例见 `scripts/http_task_example.sh",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.137.0",
+      "abstract": "### Feature * Adding enrichments after the VLM pipeline ([#4469](https://github.com/docling-project/docling/issues/4469)) ([`45b187e`](https://github.com/docling-project/docling/commit/45b187e7b28c3bca15cd73986c03c40afae3023d)) ### Fix * **ocr:** Read PP-OCRv6 languages through rapidocr's list_supported_langs ([`0e1567b`](https://github.com/docling-project/docling/commit/0e1567bbb8a543b364aec234fc1abe2ff9aff7ba))",
       "authors": [],
-      "published": "2026-10-11T02:21:42Z",
-      "updated": "2026-10-11T02:23:44Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.12-released",
-      "tag": "mineru-4.0.12-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
+      "published": "2026-10-09T14:12:20Z",
+      "updated": "2026-10-09T14:12:20Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.137.0",
+      "tag": "v2.137.0",
+      "sourceName": "GitHub · docling-project/docling",
       "topics": [
         "ocr",
         "layout",
@@ -1683,7 +1761,69 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31229
+      "rankScore": 0.30546
+    },
+    {
+      "id": "github:docling-project/docling:407877825",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.136.0",
+      "abstract": "### Feature * **heading_hierarchy:** Recognize Division/Subdivision heading markers in hierarchy inference ([#4473](https://github.com/docling-project/docling/issues/4473)) ([`8a6155b`](https://github.com/docling-project/docling/commit/8a6155b269b456d849cf3785d820e11ef3050b16)) * **mlx:** Add repetition penalty options ([#4616](https://github.com/docling-project/docling/issues/4616)) ([`dd7c035`](https://github.com/docling-project/docling/commit/dd7c03577d60867ed345037d51a358c00d6dbed4)) ### Fix",
+      "authors": [],
+      "published": "2026-10-09T12:08:31Z",
+      "updated": "2026-10-09T12:08:31Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.136.0",
+      "tag": "v2.136.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-08T10:23:34Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.30524
+    },
+    {
+      "id": "github:opendatalab/MinerU:407136872",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.0.11",
+      "abstract": "## 更新内容 / What's Changed **改进 / Improvements** - API：`/v1/models` 统一返回随服务版本变化的虚拟模型 ID（如 `mineru-4.0.11`），补充模型描述并保持注册时间稳定；`/v1/tiers` 的 `current_model` 同步使用该 ID，解析质量通过 `tier` 选择 / API: expose a single versioned virtual model ID through `/v1/models`, add its description and keep the registration timestamp stable; `/v1/tiers` uses the same ID for `current_model`, while parsing quality is selected through `tier` - 图像处理：移除 MinerU 生产代码中的 OpenCV 导入和调用，OCR、公式、表格及印章矫正等图像操作通过 DocVortex 公共接口执行 / Image proc",
+      "authors": [],
+      "published": "2026-10-08T18:22:41Z",
+      "updated": "2026-10-08T18:27:38Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.11-released",
+      "tag": "mineru-4.0.11-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-07T10:10:21Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.30343
     },
     {
       "id": "arxiv:2610.34094",
@@ -1715,25 +1855,25 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30846
+      "rankScore": 0.30075
     },
     {
-      "id": "github:docling-project/docling:407981657",
+      "id": "github:docling-project/docling:405653272",
       "kind": "release",
       "repo": "docling-project/docling",
-      "title": "docling · v2.137.0",
-      "abstract": "### Feature * Adding enrichments after the VLM pipeline ([#4469](https://github.com/docling-project/docling/issues/4469)) ([`45b187e`](https://github.com/docling-project/docling/commit/45b187e7b28c3bca15cd73986c03c40afae3023d)) ### Fix * **ocr:** Read PP-OCRv6 languages through rapidocr's list_supported_langs ([`0e1567b`](https://github.com/docling-project/docling/commit/0e1567bbb8a543b364aec234fc1abe2ff9aff7ba))",
+      "title": "docling · v2.135.0",
+      "abstract": "### Feature * **iwork:** Render Numbers chart images and read iWork '09 chart kinds ([#4630](https://github.com/docling-project/docling/issues/4630)) ([`f95402a`](https://github.com/docling-project/docling/commit/f95402a0f0e44ac17e4315ae2fde6ce4a456b131)) * **md:** Preserve inline formatting in Markdown table cells ([#4488](https://github.com/docling-project/docling/issues/4488)) ([`1a264db`](https://github.com/docling-project/docling/commit/1a264dbf269369ad237f6597d956f452ea3e8544)) ### Fix * *",
       "authors": [],
-      "published": "2026-10-09T14:12:20Z",
-      "updated": "2026-10-09T14:12:20Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.137.0",
-      "tag": "v2.137.0",
+      "published": "2026-10-07T10:42:24Z",
+      "updated": "2026-10-07T10:42:24Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.135.0",
+      "tag": "v2.135.0",
       "sourceName": "GitHub · docling-project/docling",
       "topics": [
         "ocr",
@@ -1747,24 +1887,24 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-05T10:56:53Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30797
+      "rankScore": 0.30042
     },
     {
-      "id": "github:docling-project/docling:407877825",
+      "id": "github:docling-project/docling:404329764",
       "kind": "release",
       "repo": "docling-project/docling",
-      "title": "docling · v2.136.0",
-      "abstract": "### Feature * **heading_hierarchy:** Recognize Division/Subdivision heading markers in hierarchy inference ([#4473](https://github.com/docling-project/docling/issues/4473)) ([`8a6155b`](https://github.com/docling-project/docling/commit/8a6155b269b456d849cf3785d820e11ef3050b16)) * **mlx:** Add repetition penalty options ([#4616](https://github.com/docling-project/docling/issues/4616)) ([`dd7c035`](https://github.com/docling-project/docling/commit/dd7c03577d60867ed345037d51a358c00d6dbed4)) ### Fix",
+      "title": "docling · v2.134.0",
+      "abstract": "### Feature * **iwork:** Add Apple Numbers (.numbers) support ([#4113](https://github.com/docling-project/docling/issues/4113)) ([`8d7cc9f`](https://github.com/docling-project/docling/commit/8d7cc9f7f42b9d85f48e953f281e228acf3f6ea8)) * **vlm:** Expose logprobs on the streaming API path ([#4528](https://github.com/docling-project/docling/issues/4528)) ([`3073a27`](https://github.com/docling-project/docling/commit/3073a27187f22166f8045fa8ac7db1d34be99afc)) ### Fix * **docx:** Preserve text from da",
       "authors": [],
-      "published": "2026-10-09T12:08:31Z",
-      "updated": "2026-10-09T12:08:31Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.136.0",
-      "tag": "v2.136.0",
+      "published": "2026-10-06T04:56:24Z",
+      "updated": "2026-10-06T04:56:24Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.134.0",
+      "tag": "v2.134.0",
       "sourceName": "GitHub · docling-project/docling",
       "topics": [
         "ocr",
@@ -1778,43 +1918,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-04T10:56:26Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30774
-    },
-    {
-      "id": "github:opendatalab/MinerU:407136872",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.0.11",
-      "abstract": "## 更新内容 / What's Changed **改进 / Improvements** - API：`/v1/models` 统一返回随服务版本变化的虚拟模型 ID（如 `mineru-4.0.11`），补充模型描述并保持注册时间稳定；`/v1/tiers` 的 `current_model` 同步使用该 ID，解析质量通过 `tier` 选择 / API: expose a single versioned virtual model ID through `/v1/models`, add its description and keep the registration timestamp stable; `/v1/tiers` uses the same ID for `current_model`, while parsing quality is selected through `tier` - 图像处理：移除 MinerU 生产代码中的 OpenCV 导入和调用，OCR、公式、表格及印章矫正等图像操作通过 DocVortex 公共接口执行 / Image proc",
-      "authors": [],
-      "published": "2026-10-08T18:22:41Z",
-      "updated": "2026-10-08T18:27:38Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.11-released",
-      "tag": "mineru-4.0.11-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-07T10:10:21Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.3058
+      "rankScore": 0.29784
     },
     {
       "id": "arxiv:2610.37701",
@@ -1848,44 +1957,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30508
-    },
-    {
-      "id": "github:docling-project/docling:405653272",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.135.0",
-      "abstract": "### Feature * **iwork:** Render Numbers chart images and read iWork '09 chart kinds ([#4630](https://github.com/docling-project/docling/issues/4630)) ([`f95402a`](https://github.com/docling-project/docling/commit/f95402a0f0e44ac17e4315ae2fde6ce4a456b131)) * **md:** Preserve inline formatting in Markdown table cells ([#4488](https://github.com/docling-project/docling/issues/4488)) ([`1a264db`](https://github.com/docling-project/docling/commit/1a264dbf269369ad237f6597d956f452ea3e8544)) ### Fix * *",
-      "authors": [],
-      "published": "2026-10-07T10:42:24Z",
-      "updated": "2026-10-07T10:42:24Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.135.0",
-      "tag": "v2.135.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-05T10:56:53Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.30257
+      "rankScore": 0.2972
     },
     {
       "id": "arxiv:2610.31385",
@@ -1928,44 +2006,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30029
-    },
-    {
-      "id": "github:docling-project/docling:404329764",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.134.0",
-      "abstract": "### Feature * **iwork:** Add Apple Numbers (.numbers) support ([#4113](https://github.com/docling-project/docling/issues/4113)) ([`8d7cc9f`](https://github.com/docling-project/docling/commit/8d7cc9f7f42b9d85f48e953f281e228acf3f6ea8)) * **vlm:** Expose logprobs on the streaming API path ([#4528](https://github.com/docling-project/docling/issues/4528)) ([`3073a27`](https://github.com/docling-project/docling/commit/3073a27187f22166f8045fa8ac7db1d34be99afc)) ### Fix * **docx:** Preserve text from da",
-      "authors": [],
-      "published": "2026-10-06T04:56:24Z",
-      "updated": "2026-10-06T04:56:24Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.134.0",
-      "tag": "v2.134.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-04T10:56:26Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.29981
+      "rankScore": 0.29392
     },
     {
       "id": "github:docling-project/docling:402480593",
@@ -1996,7 +2043,38 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29453
+      "rankScore": 0.29291
+    },
+    {
+      "id": "github:docling-project/docling:400827827",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.132.0",
+      "abstract": "### Feature * **pdf, reading-order:** Updating the reading-order algoirthm ([#4276](https://github.com/docling-project/docling/issues/4276)) ([`42de1e2`](https://github.com/docling-project/docling/commit/42de1e20fe2783c0c30c5b3c0f9c60ab5eef9e16)) ### Fix * Preserve fidelity when mapping external VLM output (Chandra, dots, MinerU) ([#4470](https://github.com/docling-project/docling/issues/4470)) ([`20ba847`](https://github.com/docling-project/docling/commit/20ba84719e1c9e29f7ddfb731eca7ad00488180",
+      "authors": [],
+      "published": "2026-10-01T09:44:36Z",
+      "updated": "2026-10-01T09:44:36Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.132.0",
+      "tag": "v2.132.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-10-31T09:40:07Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.28976
     },
     {
       "id": "arxiv:2603.12718",
@@ -2032,25 +2110,25 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29382
+      "rankScore": 0.28748
     },
     {
-      "id": "github:docling-project/docling:400827827",
+      "id": "github:docling-project/docling:398929330",
       "kind": "release",
       "repo": "docling-project/docling",
-      "title": "docling · v2.132.0",
-      "abstract": "### Feature * **pdf, reading-order:** Updating the reading-order algoirthm ([#4276](https://github.com/docling-project/docling/issues/4276)) ([`42de1e2`](https://github.com/docling-project/docling/commit/42de1e20fe2783c0c30c5b3c0f9c60ab5eef9e16)) ### Fix * Preserve fidelity when mapping external VLM output (Chandra, dots, MinerU) ([#4470](https://github.com/docling-project/docling/issues/4470)) ([`20ba847`](https://github.com/docling-project/docling/commit/20ba84719e1c9e29f7ddfb731eca7ad00488180",
+      "title": "docling · v2.131.0",
+      "abstract": "### Feature * **iwork:** Parse Keynote charts as classified pictures with data ([#4376](https://github.com/docling-project/docling/issues/4376)) ([`9da6935`](https://github.com/docling-project/docling/commit/9da693562ea817109d703c997f091ab3806dd074)) * **iwork:** Add Apple Keynote (`.key`) support ([#4330](https://github.com/docling-project/docling/issues/4330)) ([`87c6ea0`](https://github.com/docling-project/docling/commit/87c6ea0caddff2751b97accc9811b650eb714927)) ### Fix * **pypdfium2:** Buil",
       "authors": [],
-      "published": "2026-10-01T09:44:36Z",
-      "updated": "2026-10-01T09:44:36Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.132.0",
-      "tag": "v2.132.0",
+      "published": "2026-09-29T07:58:11Z",
+      "updated": "2026-09-29T07:58:11Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.131.0",
+      "tag": "v2.131.0",
       "sourceName": "GitHub · docling-project/docling",
       "topics": [
         "ocr",
@@ -2064,12 +2142,74 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-10-31T09:40:07Z",
+      "lastSeen": "2026-10-28T09:40:56Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29116
+      "rankScore": 0.28704
+    },
+    {
+      "id": "github:opendatalab/MinerU:398902715",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.0.10",
+      "abstract": "## 更新内容 / What's Changed **修复 / Fixes** - WebUI：非安全上下文（如 HTTP 或非 localhost 访问）下 `crypto.randomUUID` 不可用时提供 UUID 回退实现，避免预览等功能失效 / WebUI: fall back to an alternative UUID implementation when `crypto.randomUUID` is unavailable in insecure contexts (e.g. HTTP or non-localhost) **依赖 / Dependencies** - docvortex 最低版本提升至 0.5.4 / Require docvortex>=0.5.4 **Full Changelog**: https://github.com/opendatalab/MinerU/compare/mineru-4.0.9-released...mineru-4.0.10-released",
+      "authors": [],
+      "published": "2026-09-29T07:18:10Z",
+      "updated": "2026-09-29T07:20:30Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.10-released",
+      "tag": "mineru-4.0.10-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-10-28T09:40:56Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.28701
+    },
+    {
+      "id": "github:opendatalab/MinerU:398394476",
+      "kind": "release",
+      "repo": "opendatalab/MinerU",
+      "title": "MinerU · MinerU 4.0.9",
+      "abstract": "## 更新内容 / What's Changed **优化 / Improvements** - PDF 原生文本提取：重建词间空格，修复空格丢失导致的英文单词黏连，并保护代码 span 与相邻文本的间距 / Native PDF text extraction: rebuild inter-word spacing to fix lost spaces merging English words, with code-span spacing protection - PDF render 子进程支持非独占复用，并发任务不再排队等待 render worker / PDF render subprocess now supports non-exclusive reuse, so concurrent tasks no longer wait for an available render worker **依赖 / Dependencies** - docvortex 提升至 0.5.4（0.5.2 → 0.5.4）/ Require docvortex>=0.5.4 (0.5.2",
+      "authors": [],
+      "published": "2026-09-28T15:44:06Z",
+      "updated": "2026-09-28T15:53:40Z",
+      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.9-released",
+      "tag": "mineru-4.0.9-released",
+      "sourceName": "GitHub · opendatalab/MinerU",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-10-28T09:40:56Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.28624
     },
     {
       "id": "arxiv:2606.28916",
@@ -2103,106 +2243,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28858
-    },
-    {
-      "id": "github:docling-project/docling:398929330",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.131.0",
-      "abstract": "### Feature * **iwork:** Parse Keynote charts as classified pictures with data ([#4376](https://github.com/docling-project/docling/issues/4376)) ([`9da6935`](https://github.com/docling-project/docling/commit/9da693562ea817109d703c997f091ab3806dd074)) * **iwork:** Add Apple Keynote (`.key`) support ([#4330](https://github.com/docling-project/docling/issues/4330)) ([`87c6ea0`](https://github.com/docling-project/docling/commit/87c6ea0caddff2751b97accc9811b650eb714927)) ### Fix * **pypdfium2:** Buil",
-      "authors": [],
-      "published": "2026-09-29T07:58:11Z",
-      "updated": "2026-09-29T07:58:11Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.131.0",
-      "tag": "v2.131.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-10-28T09:40:56Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.28825
-    },
-    {
-      "id": "github:opendatalab/MinerU:398902715",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.0.10",
-      "abstract": "## 更新内容 / What's Changed **修复 / Fixes** - WebUI：非安全上下文（如 HTTP 或非 localhost 访问）下 `crypto.randomUUID` 不可用时提供 UUID 回退实现，避免预览等功能失效 / WebUI: fall back to an alternative UUID implementation when `crypto.randomUUID` is unavailable in insecure contexts (e.g. HTTP or non-localhost) **依赖 / Dependencies** - docvortex 最低版本提升至 0.5.4 / Require docvortex>=0.5.4 **Full Changelog**: https://github.com/opendatalab/MinerU/compare/mineru-4.0.9-released...mineru-4.0.10-released",
-      "authors": [],
-      "published": "2026-09-29T07:18:10Z",
-      "updated": "2026-09-29T07:20:30Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.10-released",
-      "tag": "mineru-4.0.10-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-10-28T09:40:56Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.28821
-    },
-    {
-      "id": "github:opendatalab/MinerU:398394476",
-      "kind": "release",
-      "repo": "opendatalab/MinerU",
-      "title": "MinerU · MinerU 4.0.9",
-      "abstract": "## 更新内容 / What's Changed **优化 / Improvements** - PDF 原生文本提取：重建词间空格，修复空格丢失导致的英文单词黏连，并保护代码 span 与相邻文本的间距 / Native PDF text extraction: rebuild inter-word spacing to fix lost spaces merging English words, with code-span spacing protection - PDF render 子进程支持非独占复用，并发任务不再排队等待 render worker / PDF render subprocess now supports non-exclusive reuse, so concurrent tasks no longer wait for an available render worker **依赖 / Dependencies** - docvortex 提升至 0.5.4（0.5.2 → 0.5.4）/ Require docvortex>=0.5.4 (0.5.2",
-      "authors": [],
-      "published": "2026-09-28T15:44:06Z",
-      "updated": "2026-09-28T15:53:40Z",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.0.9-released",
-      "tag": "mineru-4.0.9-released",
-      "sourceName": "GitHub · opendatalab/MinerU",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-10-28T09:40:56Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.28739
+      "rankScore": 0.28219
     },
     {
       "id": "arxiv:2608.07943",
@@ -2240,13 +2287,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.93,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28479
+      "rankScore": 0.28103
     },
     {
       "id": "arxiv:2610.28171",
@@ -2284,13 +2331,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28106
+      "rankScore": 0.27556
     },
     {
       "id": "arxiv:2610.07760",
@@ -2322,13 +2369,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27776
+      "rankScore": 0.27208
     },
     {
       "id": "arxiv:2611.00078",
@@ -2361,13 +2408,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27496
+      "rankScore": 0.27026
     },
     {
       "id": "arxiv:2610.14531",
@@ -2402,13 +2449,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27405
+      "rankScore": 0.26862
     },
     {
       "id": "arxiv:2610.25440",
@@ -2445,13 +2492,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27105
+      "rankScore": 0.26621
     },
     {
       "id": "arxiv:2610.25235",
@@ -2487,13 +2534,50 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26994
+      "rankScore": 0.26518
+    },
+    {
+      "id": "arxiv:2610.26313",
+      "arxiv": "2610.26313",
+      "version": 1,
+      "title": "StrucChunk: Structure-Aware Retrieval for Legal Document RAG",
+      "abstract": "Retrieval-Augmented Generation (RAG) can ground LLM outputs in domain-specific knowledge, but legal documents are hard: standard chunking fragments hierarchical argument structure, and generic embeddings struggle with both precise citation matching and semantic understanding. We propose StrucChunk (Structure Aware Chunking) with hybrid dense-sparse retrieval for hierarchically structured legal documents. It treats documents as directed acyclic graphs of provisions, preserves clause boundaries, resolves cross-references before embedding, and combines BM25 with BGE-M3 via Reciprocal Rank Fusion. We evaluate on five corpora, three legal traditions and two languages. StrucChunk reaches 100% boundary precision (vs. 7.7% for recursive splitting on CrPC), preserves 97.6% of documented cross-references (vs. 0%), and matches section coverage with 40.3% fewer chunks on GDPR. On LegalBench-RAG (6,858 query-passage pairs), it achieves Char-Recall@8 of 48.18% vs. 23.59% for the best baseline (+104%), surpassing the published state of the art by +83%. On 501 queries each for CrPC and CPC (Indian law), Recall@5 improves from 0.557 to 0.804 (+44.4%) and from 0.158 to 0.259 (+64.6%); chunking accounts for 88% and 73% of the gain. On 501 GDPR queries, Recall@5 is 0.868 with R@1 improving +59%. On NitiBench-CCL (3,730 Thai financial law queries), HR@5 is 0.856 vs. 0.594 for naive chunking (+44.1%), showing that section-boundary alignment is the dominant factor across languages, and cross-reference augmentation adds +2.3% on cross-reference queries. We release the implementation, 5,256 evaluation queries across five legal corpora, annotation methodology and chunking quality metrics. Code: github.com/SinghSuryaDeep/legal-rag-strucchunk-1",
+      "authors": [
+        "Surya Deep Singh",
+        "Ashutosh Tripathi",
+        "Gaurav Deep Singh"
+      ],
+      "published": "2026-10-19T12:56:58Z",
+      "updated": "2026-10-19T12:56:58Z",
+      "url": "https://arxiv.org/abs/2610.26313",
+      "pdfUrl": "https://arxiv.org/pdf/2610.26313",
+      "arxivCategories": [
+        "cs.AI"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docrag"
+      ],
+      "matchedTerms": {
+        "docrag": [
+          "document RAG"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.86,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.25816
     },
     {
       "id": "arxiv:2610.22726",
@@ -2530,13 +2614,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25782
+      "rankScore": 0.25387
     },
     {
       "id": "arxiv:2610.21318",
@@ -2574,13 +2658,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2549
+      "rankScore": 0.25114
     },
     {
       "id": "arxiv:2610.20335",
@@ -2629,49 +2713,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25244
-    },
-    {
-      "id": "arxiv:2610.41561",
-      "arxiv": "2610.41561",
-      "version": 2,
-      "title": "Digital sovereignty in professional translation workflows: a case study of migrating from Windows to Linux",
-      "abstract": "This study examines digital sovereignty in professional translation through a screening of computer-assisted translation tools and translation management systems, and a case study of migrating a translator's workstation from Windows to Linux. The framework combines three principles - Control, Continuity and Exit - with three practical requirements: native Linux operation, independence from mandatory external services, and independent access to essential data and resources. Drawing on documentary evidence and the limited number of responses received from providers, the ecosystem screening distinguishes Linux accessibility from operational independence: browser-based platforms may remain dependent on provider-controlled infrastructure. The migration case demonstrates the feasibility of reconstructing one professional workflow around a locally operable Linux core, using LoopCAT, LibreOffice and locally run TranslateGemma, alongside tools for optical character recognition, communication, credential management and backup. Selected cloud services remained available where needed. The findings suggest that digital sovereignty depends on how workflow dependencies are organized, rather than on individual applications or operating systems. It does not require technological isolation, but meaningful control over essential components, continuity of work and practical exit options. The framework is tailored to the case examined here and may require adaptation to other professional workflows.",
-      "authors": [
-        "Michael Farrell"
-      ],
-      "published": "2026-10-30T10:55:02Z",
-      "updated": "2026-11-04T08:49:07Z",
-      "url": "https://arxiv.org/abs/2610.41561",
-      "pdfUrl": "https://arxiv.org/pdf/2610.41561",
-      "arxivCategories": [
-        "cs.CL"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "ocr"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "optical character recognition"
-        ]
-      },
-      "firstSeen": "2026-11-02T11:08:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.57,
-      "rankReasons": [
-        "文档主题匹配",
-        "近 7 天有更新",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.25135
+      "rankScore": 0.24884
     },
     {
       "id": "arxiv:2610.21979",
@@ -2707,13 +2755,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25034
+      "rankScore": 0.24648
     },
     {
       "id": "arxiv:2610.21327",
@@ -2749,13 +2797,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24893
+      "rankScore": 0.24516
     },
     {
       "id": "arxiv:2610.15728",
@@ -2800,13 +2848,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24805
+      "rankScore": 0.24513
     },
     {
       "id": "arxiv:2610.20461",
@@ -2838,13 +2886,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24668
+      "rankScore": 0.24306
     },
     {
       "id": "arxiv:2610.11818",
@@ -2888,7 +2936,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24516
+      "rankScore": 0.24283
     },
     {
       "id": "arxiv:2609.15205",
@@ -2924,13 +2972,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2444
+      "rankScore": 0.24093
     },
     {
       "id": "arxiv:2610.11148",
@@ -2978,7 +3026,43 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.23821
+      "rankScore": 0.23595
+    },
+    {
+      "id": "arxiv:2610.41561",
+      "arxiv": "2610.41561",
+      "version": 2,
+      "title": "Digital sovereignty in professional translation workflows: a case study of migrating from Windows to Linux",
+      "abstract": "This study examines digital sovereignty in professional translation through a screening of computer-assisted translation tools and translation management systems, and a case study of migrating a translator's workstation from Windows to Linux. The framework combines three principles - Control, Continuity and Exit - with three practical requirements: native Linux operation, independence from mandatory external services, and independent access to essential data and resources. Drawing on documentary evidence and the limited number of responses received from providers, the ecosystem screening distinguishes Linux accessibility from operational independence: browser-based platforms may remain dependent on provider-controlled infrastructure. The migration case demonstrates the feasibility of reconstructing one professional workflow around a locally operable Linux core, using LoopCAT, LibreOffice and locally run TranslateGemma, alongside tools for optical character recognition, communication, credential management and backup. Selected cloud services remained available where needed. The findings suggest that digital sovereignty depends on how workflow dependencies are organized, rather than on individual applications or operating systems. It does not require technological isolation, but meaningful control over essential components, continuity of work and practical exit options. The framework is tailored to the case examined here and may require adaptation to other professional workflows.",
+      "authors": [
+        "Michael Farrell"
+      ],
+      "published": "2026-10-30T10:55:02Z",
+      "updated": "2026-11-04T08:49:07Z",
+      "url": "https://arxiv.org/abs/2610.41561",
+      "pdfUrl": "https://arxiv.org/pdf/2610.41561",
+      "arxivCategories": [
+        "cs.CL"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "ocr"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "optical character recognition"
+        ]
+      },
+      "firstSeen": "2026-11-02T11:08:50Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.23551
     },
     {
       "id": "arxiv:2605.12882",
@@ -3025,7 +3109,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.23259
+      "rankScore": 0.2303
     },
     {
       "id": "arxiv:2609.37712",
@@ -3091,7 +3175,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22862
+      "rankScore": 0.22739
     },
     {
       "id": "arxiv:2610.12363",
@@ -3134,7 +3218,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2277
+      "rankScore": 0.22533
     },
     {
       "id": "arxiv:2609.27678",
@@ -3176,13 +3260,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22688
+      "rankScore": 0.22417
     },
     {
       "id": "arxiv:2609.36136",
@@ -3231,7 +3315,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22156
+      "rankScore": 0.2204
     },
     {
       "id": "arxiv:2609.38282",
@@ -3274,52 +3358,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2167
-    },
-    {
-      "id": "arxiv:2604.23813",
-      "arxiv": "2604.23813",
-      "version": 2,
-      "title": "ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction",
-      "abstract": "Multimodal Large Language Models (MLLMs) have achieved remarkable performance in Visually Rich Document Understanding (VRDU) tasks, but their capabilities are mainly evaluated on pristine, well-structured document images. We consider content restoration from shredded fragments, a challenging VRDU setting that requires integrating visual pattern recognition with semantic reasoning under significant content discontinuities. To facilitate systematic evaluation of complex VRDU tasks, we introduce ShredBench, a benchmark supported by an automated generation pipeline that renders fragmented documents directly from Markdown. The proposed pipeline ensures evaluation validity by allowing the flexible integration of latest or unseen textual sources to prevent training data contamination. ShredBench assesses four scenarios (English, Chinese, Code, Table) with three fragmentation granularities (8, 12, 16 pieces). Empirical evaluations on state-of-the-art MLLMs reveal a significant performance gap: The method is effective on intact documents; however, once the document is shredded, restoration becomes a significant challenge, with NED dropping sharply as fragmentation increases. Our findings highlight that current MLLMs lack the fine-grained cross-modal reasoning required to bridge visual discontinuities, identifying a critical gap in robust VRDU research.",
-      "authors": [
-        "Zichun Guo",
-        "Yuling Shi",
-        "Wenhao Zeng",
-        "Chao Hu",
-        "Haotian Lin",
-        "Terry Yue Zhuo",
-        "Jiawei Chen",
-        "Xiaodong Gu",
-        "Wenping Ma"
-      ],
-      "published": "2026-04-26T17:26:06Z",
-      "updated": "2026-10-27T17:24:02Z",
-      "url": "https://arxiv.org/abs/2604.23813",
-      "pdfUrl": "https://arxiv.org/pdf/2604.23813",
-      "arxivCategories": [
-        "cs.CL",
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "docqa"
-      ],
-      "matchedTerms": {
-        "docqa": [
-          "document understanding",
-          "visually rich document"
-        ]
-      },
-      "firstSeen": "2026-10-28T09:40:56Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.67,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.21066
+      "rankScore": 0.21546
     },
     {
       "id": "arxiv:2609.05141",
@@ -3369,7 +3408,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20888
+      "rankScore": 0.20776
     },
     {
       "id": "arxiv:2605.11960",
@@ -3422,7 +3461,52 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20885
+      "rankScore": 0.20774
+    },
+    {
+      "id": "arxiv:2604.23813",
+      "arxiv": "2604.23813",
+      "version": 2,
+      "title": "ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction",
+      "abstract": "Multimodal Large Language Models (MLLMs) have achieved remarkable performance in Visually Rich Document Understanding (VRDU) tasks, but their capabilities are mainly evaluated on pristine, well-structured document images. We consider content restoration from shredded fragments, a challenging VRDU setting that requires integrating visual pattern recognition with semantic reasoning under significant content discontinuities. To facilitate systematic evaluation of complex VRDU tasks, we introduce ShredBench, a benchmark supported by an automated generation pipeline that renders fragmented documents directly from Markdown. The proposed pipeline ensures evaluation validity by allowing the flexible integration of latest or unseen textual sources to prevent training data contamination. ShredBench assesses four scenarios (English, Chinese, Code, Table) with three fragmentation granularities (8, 12, 16 pieces). Empirical evaluations on state-of-the-art MLLMs reveal a significant performance gap: The method is effective on intact documents; however, once the document is shredded, restoration becomes a significant challenge, with NED dropping sharply as fragmentation increases. Our findings highlight that current MLLMs lack the fine-grained cross-modal reasoning required to bridge visual discontinuities, identifying a critical gap in robust VRDU research.",
+      "authors": [
+        "Zichun Guo",
+        "Yuling Shi",
+        "Wenhao Zeng",
+        "Chao Hu",
+        "Haotian Lin",
+        "Terry Yue Zhuo",
+        "Jiawei Chen",
+        "Xiaodong Gu",
+        "Wenping Ma"
+      ],
+      "published": "2026-04-26T17:26:06Z",
+      "updated": "2026-10-27T17:24:02Z",
+      "url": "https://arxiv.org/abs/2604.23813",
+      "pdfUrl": "https://arxiv.org/pdf/2604.23813",
+      "arxivCategories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docqa"
+      ],
+      "matchedTerms": {
+        "docqa": [
+          "document understanding",
+          "visually rich document"
+        ]
+      },
+      "firstSeen": "2026-10-28T09:40:56Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.67,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.20149
     },
     {
       "id": "arxiv:2611.01967",
@@ -3456,14 +3540,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
-        "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20882
+      "rankScore": 0.1958
     },
     {
       "id": "arxiv:2610.38356",
@@ -3517,13 +3600,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.206
+      "rankScore": 0.19317
     },
     {
       "id": "arxiv:2611.00638",
@@ -3567,13 +3650,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.18988
+      "rankScore": 0.17811
     },
     {
       "id": "arxiv:2611.00242",
@@ -3603,13 +3686,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.18432
+      "rankScore": 0.17292
     },
     {
       "id": "arxiv:2606.26439",
@@ -3640,57 +3723,13 @@
         ]
       },
       "firstSeen": "2026-11-02T11:08:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.18322
-    },
-    {
-      "id": "arxiv:2610.36991",
-      "arxiv": "2610.36991",
-      "version": 3,
-      "title": "SpectRAG: Weighted Chunk Graphs for Token-Budgeted Context Selection in Multi-Hop Retrieval-Augmented Generation",
-      "abstract": "Retrieval-augmented generation (RAG) systems ground large language models (LLMs) by retrieving external evidence and conditioning generation on the retrieved context. Although dense retrieval is effective for local semantic matching, independently ranked retrieval can return redundant passages, miss cross-chunk dependencies, and provide incomplete evidence for multi-hop reasoning. We propose SpectRAG, a spectral graph-augmented retrieval framework that combines hybrid candidate seeding, weighted chunk graph construction, graph-based expansion, spectral relevance propagation, and token-budgeted context selection. Document chunks are represented by dense semantic embeddings and graph-spectral coordinates derived from a weighted chunk graph whose edges encode semantic similarity, document adjacency, section hierarchy, shared entities, citation links, and similarity between LLM-generated utility questions. At query time, SpectRAG builds a high-recall seed set using exact inner-product search and hybrid relevance signals, expands it over the chunk graph, re-scores candidates using graph proximity and spectral information, and assembles the final context under a fixed token budget. The goal is not merely to retrieve individually similar chunks, but to construct a context that is relevant, diverse, structurally connected, and sufficient for grounded reasoning. Experiments on MultiHopRAG, UltraDomain, and long-document question-answering settings show that SpectRAG improves broad evidence recovery and achieves competitive generation quality against dense, hybrid, HyDE, LightRAG, and NaiveRAG baselines. The results further indicate that graph-spectral structure is particularly useful for inference-oriented and cross-document retrieval, while highlighting trade-offs in early precision, computational cost, and domain-dependent performance.",
-      "authors": [
-        "Zafer Sahinoglu",
-        "Abdulazeez Mohammed",
-        "Buse Yaren Kazangirler",
-        "Cahit Berkay Kazangirler"
-      ],
-      "published": "2026-10-27T10:38:29Z",
-      "updated": "2026-10-30T08:57:21Z",
-      "url": "https://arxiv.org/abs/2610.36991",
-      "pdfUrl": "https://arxiv.org/pdf/2610.36991",
-      "arxivCategories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.IR"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "docqa",
-        "docrag"
-      ],
-      "matchedTerms": {
-        "docqa": [
-          "document question answering"
-        ],
-        "docrag": [
-          "document retrieval"
-        ]
-      },
-      "firstSeen": "2026-10-28T09:40:56Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.57,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.17953
+      "rankScore": 0.17189
     },
     {
       "id": "arxiv:2610.35542",
@@ -3731,13 +3770,57 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17872
+      "rankScore": 0.16967
+    },
+    {
+      "id": "arxiv:2610.36991",
+      "arxiv": "2610.36991",
+      "version": 3,
+      "title": "SpectRAG: Weighted Chunk Graphs for Token-Budgeted Context Selection in Multi-Hop Retrieval-Augmented Generation",
+      "abstract": "Retrieval-augmented generation (RAG) systems ground large language models (LLMs) by retrieving external evidence and conditioning generation on the retrieved context. Although dense retrieval is effective for local semantic matching, independently ranked retrieval can return redundant passages, miss cross-chunk dependencies, and provide incomplete evidence for multi-hop reasoning. We propose SpectRAG, a spectral graph-augmented retrieval framework that combines hybrid candidate seeding, weighted chunk graph construction, graph-based expansion, spectral relevance propagation, and token-budgeted context selection. Document chunks are represented by dense semantic embeddings and graph-spectral coordinates derived from a weighted chunk graph whose edges encode semantic similarity, document adjacency, section hierarchy, shared entities, citation links, and similarity between LLM-generated utility questions. At query time, SpectRAG builds a high-recall seed set using exact inner-product search and hybrid relevance signals, expands it over the chunk graph, re-scores candidates using graph proximity and spectral information, and assembles the final context under a fixed token budget. The goal is not merely to retrieve individually similar chunks, but to construct a context that is relevant, diverse, structurally connected, and sufficient for grounded reasoning. Experiments on MultiHopRAG, UltraDomain, and long-document question-answering settings show that SpectRAG improves broad evidence recovery and achieves competitive generation quality against dense, hybrid, HyDE, LightRAG, and NaiveRAG baselines. The results further indicate that graph-spectral structure is particularly useful for inference-oriented and cross-document retrieval, while highlighting trade-offs in early precision, computational cost, and domain-dependent performance.",
+      "authors": [
+        "Zafer Sahinoglu",
+        "Abdulazeez Mohammed",
+        "Buse Yaren Kazangirler",
+        "Cahit Berkay Kazangirler"
+      ],
+      "published": "2026-10-27T10:38:29Z",
+      "updated": "2026-10-30T08:57:21Z",
+      "url": "https://arxiv.org/abs/2610.36991",
+      "pdfUrl": "https://arxiv.org/pdf/2610.36991",
+      "arxivCategories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docqa",
+        "docrag"
+      ],
+      "matchedTerms": {
+        "docqa": [
+          "document question answering"
+        ],
+        "docrag": [
+          "document retrieval"
+        ]
+      },
+      "firstSeen": "2026-10-28T09:40:56Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.16845
     },
     {
       "id": "arxiv:2610.40233",
@@ -3769,13 +3852,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17087
+      "rankScore": 0.16036
     },
     {
       "id": "arxiv:2511.16417",
@@ -3813,13 +3896,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17046
+      "rankScore": 0.15997
     },
     {
       "id": "arxiv:2610.12823",
@@ -3855,13 +3938,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16509
+      "rankScore": 0.15496
     },
     {
       "id": "arxiv:2610.33066",
@@ -3911,13 +3994,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.67,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.15487
+      "rankScore": 0.14939
     },
     {
       "id": "arxiv:2602.00122",
@@ -3968,13 +4051,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.15009
+      "rankScore": 0.14095
     },
     {
       "id": "arxiv:2604.22678",
@@ -4006,13 +4089,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.14132
+      "rankScore": 0.13277
     },
     {
       "id": "arxiv:2610.34722",
@@ -4045,13 +4128,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.13544
+      "rankScore": 0.12727
     },
     {
       "id": "arxiv:2604.25213",
@@ -4087,52 +4170,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.12647
-    },
-    {
-      "id": "arxiv:2610.32725",
-      "arxiv": "2610.32725",
-      "version": 1,
-      "title": "Ontology-Guided Knowledge Graph Construction from Structured Metadata and Climate Science Publications",
-      "abstract": "The rapid expansion of scientific literature far outpaces the speed of manual curation, creating a fundamental bottleneck in extracting structured knowledge from scientific texts. To address this, we introduce an agentic, ontology-guided framework for knowledge graph (KG) construction. Our framework utilizes specialized agents for document understanding, information extraction, ontology conformance, and entity linking. First, an LLM extracts factual knowledge in the form of triples with explicit textual evidence from research papers. Then the triplets undergo a multistage verification process to ground the triplets in the ontology. By enforcing schema constraints and requiring evidence in the form of text fragments, we ensure the data is both semantically consistent and traceable. In an agreement study over 1,000 extracted triplets, Gemini-2.5-flash achieves Cohen's $κ$ scores of 0.640--0.700 against three human annotators, matching the human--human agreement range of 0.616--0.689. We applied this framework to 2,000 scientific publications and construct a novel, ontology-grounded KG for climate science with 133,990 nodes and 755,308 relations; of the 23,327 triplets that the publications contribute after validation, 98.96\\% are judged correct. The pipeline code and KG is publicly available https://github.com/aayushacharya/climatekg.",
-      "authors": [
-        "Aayush Acharya",
-        "Qi Zhang",
-        "Eduard Dragut",
-        "Longin Jan Latecki"
-      ],
-      "published": "2026-10-23T14:46:13Z",
-      "updated": "2026-10-23T14:46:13Z",
-      "url": "https://arxiv.org/abs/2610.32725",
-      "pdfUrl": "https://arxiv.org/pdf/2610.32725",
-      "arxivCategories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "docqa"
-      ],
-      "matchedTerms": {
-        "docqa": [
-          "document understanding"
-        ]
-      },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.57,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.11539
+      "rankScore": 0.1189
     },
     {
       "id": "arxiv:2605.13831",
@@ -4180,13 +4224,52 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.11467
+      "rankScore": 0.10987
+    },
+    {
+      "id": "arxiv:2610.32725",
+      "arxiv": "2610.32725",
+      "version": 1,
+      "title": "Ontology-Guided Knowledge Graph Construction from Structured Metadata and Climate Science Publications",
+      "abstract": "The rapid expansion of scientific literature far outpaces the speed of manual curation, creating a fundamental bottleneck in extracting structured knowledge from scientific texts. To address this, we introduce an agentic, ontology-guided framework for knowledge graph (KG) construction. Our framework utilizes specialized agents for document understanding, information extraction, ontology conformance, and entity linking. First, an LLM extracts factual knowledge in the form of triples with explicit textual evidence from research papers. Then the triplets undergo a multistage verification process to ground the triplets in the ontology. By enforcing schema constraints and requiring evidence in the form of text fragments, we ensure the data is both semantically consistent and traceable. In an agreement study over 1,000 extracted triplets, Gemini-2.5-flash achieves Cohen's $κ$ scores of 0.640--0.700 against three human annotators, matching the human--human agreement range of 0.616--0.689. We applied this framework to 2,000 scientific publications and construct a novel, ontology-grounded KG for climate science with 133,990 nodes and 755,308 relations; of the 23,327 triplets that the publications contribute after validation, 98.96\\% are judged correct. The pipeline code and KG is publicly available https://github.com/aayushacharya/climatekg.",
+      "authors": [
+        "Aayush Acharya",
+        "Qi Zhang",
+        "Eduard Dragut",
+        "Longin Jan Latecki"
+      ],
+      "published": "2026-10-23T14:46:13Z",
+      "updated": "2026-10-23T14:46:13Z",
+      "url": "https://arxiv.org/abs/2610.32725",
+      "pdfUrl": "https://arxiv.org/pdf/2610.32725",
+      "arxivCategories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docqa"
+      ],
+      "matchedTerms": {
+        "docqa": [
+          "document understanding"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.10855
     },
     {
       "id": "arxiv:2610.32463",
@@ -4217,13 +4300,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.11409
+      "rankScore": 0.10733
     },
     {
       "id": "arxiv:2610.32411",
@@ -4260,13 +4343,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.11382
+      "rankScore": 0.10708
     },
     {
       "id": "arxiv:2611.00092",
@@ -4302,99 +4385,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10907
-    },
-    {
-      "id": "arxiv:2610.28836",
-      "arxiv": "2610.28836",
-      "version": 1,
-      "title": "Sketch2Sim: an end-to-end modular framework for hand-drawn circuit analysis",
-      "abstract": "This study proposes a sketch-to-simulation system to solve handwritten circuit diagrams. The system converts raw images into a Simulation Program with Integrated Circuit Emphasis (SPICE)-compatible netlist and automatically calculates the circuit's nodal voltages and currents. Another objective is to propose a holistic framework that benefits students and educators by enhancing the teaching and learning experience of electric circuits and expediting engineering design reviews. This article presents a multistage pipeline that converts raw photographs of handwritten electric circuits into executable SPICE-like netlists, providing a solution. A dataset of 1,000 hand-drawn Resistor-Inductor-Capacitor (RLC) circuits was curated and annotated for components, text regions, and character recognition. The proposed system decomposes a circuit diagram into three stages: (i) dual You Only Look Once (YOLO)-based detectors for components and text regions, (ii) a Convolutional Recurrent Neural Network (CRNN) with Connectionist Temporal Classification (CTC) and Optical Character Recognition (OCR)-based domain-aware symbol value extraction, and (iii) image processing with thresholding, skeletonization, and Density-Based Spatial Clustering of Applications with Noise (DBSCAN) to automatically identify nodes and map them with corresponding components. The proposed system produces the netlist and solves the circuit. The qualitative and quantitative ablation studies on modular stages, as well as end-to-end tests, demonstrate robust performance across various handwriting styles, lighting conditions, and clutter.This study serves as an interactive learning aid and practical tool for professionals, providing a comprehensive user interface (UI), enabling rapid digitization of circuit sketches for study, design, prototyping, or troubleshooting.",
-      "authors": [
-        "Mohammad Kawsar",
-        "Al Amin Islam Ridoy",
-        "Md Rakib Hossain",
-        "Farzana Akter",
-        "AKM Bahalul Haque",
-        "Rejwan Bin Sulaiman",
-        "Mohammed Amin Almaiah"
-      ],
-      "published": "2026-10-20T19:04:12Z",
-      "updated": "2026-10-20T19:04:12Z",
-      "url": "https://arxiv.org/abs/2610.28836",
-      "pdfUrl": "https://arxiv.org/pdf/2610.28836",
-      "arxivCategories": [
-        "cs.AI",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "ocr"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "optical character recognition",
-          "OCR"
-        ]
-      },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.57,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.09652
-    },
-    {
-      "id": "arxiv:2610.28282",
-      "arxiv": "2610.28282",
-      "version": 1,
-      "title": "ChartEvo: Self-Evolving Agent Harnesses for Long-Tail Chart Reasoning",
-      "abstract": "Multimodal large language models (MLLMs) have substantially advanced chart understanding and reasoning, yet their performance remains highly uneven across chart types. While modern MLLMs perform well on common charts, their accuracy drops sharply on long-tail charts with diverse visual structures and reasoning requirements. Tool-augmented agents can improve complex chart reasoning by introducing specialized visual capabilities, but manually engineering strategies and tools for the heterogeneous and evolving long tail is difficult to scale. We introduce \\textbf{ChartEvo}, a recursive self-improvement framework that enables chart agents to adapt to underperforming chart types through experience-driven harness-level self-improvement. ChartEvo jointly evolves reusable chart-specific Skills and executable Tools, while learning reusable local tool-call chains to compose evolved capabilities and control the inference overhead of tool-augmented reasoning. On long-tail charts from ChartBench and ChartX, ChartEvo improves accuracy over its base MLLM, Qwen3.7-Plus, by \\textbf{45.6\\%} and \\textbf{32.5\\%}, respectively, demonstrating the effectiveness of recursive self-improvement for long-tail chart adaptation.",
-      "authors": [
-        "Qi Wang",
-        "Peijie Wang",
-        "Jun Cao",
-        "Haoyang Tong",
-        "Xiao-Hui Li",
-        "Fei Yin",
-        "Cheng-Lin Liu"
-      ],
-      "published": "2026-10-20T14:34:54Z",
-      "updated": "2026-10-20T14:34:54Z",
-      "url": "https://arxiv.org/abs/2610.28282",
-      "pdfUrl": "https://arxiv.org/pdf/2610.28282",
-      "arxivCategories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "table"
-      ],
-      "matchedTerms": {
-        "table": [
-          "chart understanding"
-        ]
-      },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
-      "relevanceScore": 0.57,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.0954
+      "rankScore": 0.10265
     },
     {
       "id": "arxiv:2609.02401",
@@ -4434,13 +4431,99 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09464
+      "rankScore": 0.09115
+    },
+    {
+      "id": "arxiv:2610.28836",
+      "arxiv": "2610.28836",
+      "version": 1,
+      "title": "Sketch2Sim: an end-to-end modular framework for hand-drawn circuit analysis",
+      "abstract": "This study proposes a sketch-to-simulation system to solve handwritten circuit diagrams. The system converts raw images into a Simulation Program with Integrated Circuit Emphasis (SPICE)-compatible netlist and automatically calculates the circuit's nodal voltages and currents. Another objective is to propose a holistic framework that benefits students and educators by enhancing the teaching and learning experience of electric circuits and expediting engineering design reviews. This article presents a multistage pipeline that converts raw photographs of handwritten electric circuits into executable SPICE-like netlists, providing a solution. A dataset of 1,000 hand-drawn Resistor-Inductor-Capacitor (RLC) circuits was curated and annotated for components, text regions, and character recognition. The proposed system decomposes a circuit diagram into three stages: (i) dual You Only Look Once (YOLO)-based detectors for components and text regions, (ii) a Convolutional Recurrent Neural Network (CRNN) with Connectionist Temporal Classification (CTC) and Optical Character Recognition (OCR)-based domain-aware symbol value extraction, and (iii) image processing with thresholding, skeletonization, and Density-Based Spatial Clustering of Applications with Noise (DBSCAN) to automatically identify nodes and map them with corresponding components. The proposed system produces the netlist and solves the circuit. The qualitative and quantitative ablation studies on modular stages, as well as end-to-end tests, demonstrate robust performance across various handwriting styles, lighting conditions, and clutter.This study serves as an interactive learning aid and practical tool for professionals, providing a comprehensive user interface (UI), enabling rapid digitization of circuit sketches for study, design, prototyping, or troubleshooting.",
+      "authors": [
+        "Mohammad Kawsar",
+        "Al Amin Islam Ridoy",
+        "Md Rakib Hossain",
+        "Farzana Akter",
+        "AKM Bahalul Haque",
+        "Rejwan Bin Sulaiman",
+        "Mohammed Amin Almaiah"
+      ],
+      "published": "2026-10-20T19:04:12Z",
+      "updated": "2026-10-20T19:04:12Z",
+      "url": "https://arxiv.org/abs/2610.28836",
+      "pdfUrl": "https://arxiv.org/pdf/2610.28836",
+      "arxivCategories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "ocr"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "optical character recognition",
+          "OCR"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.09093
+    },
+    {
+      "id": "arxiv:2610.28282",
+      "arxiv": "2610.28282",
+      "version": 1,
+      "title": "ChartEvo: Self-Evolving Agent Harnesses for Long-Tail Chart Reasoning",
+      "abstract": "Multimodal large language models (MLLMs) have substantially advanced chart understanding and reasoning, yet their performance remains highly uneven across chart types. While modern MLLMs perform well on common charts, their accuracy drops sharply on long-tail charts with diverse visual structures and reasoning requirements. Tool-augmented agents can improve complex chart reasoning by introducing specialized visual capabilities, but manually engineering strategies and tools for the heterogeneous and evolving long tail is difficult to scale. We introduce \\textbf{ChartEvo}, a recursive self-improvement framework that enables chart agents to adapt to underperforming chart types through experience-driven harness-level self-improvement. ChartEvo jointly evolves reusable chart-specific Skills and executable Tools, while learning reusable local tool-call chains to compose evolved capabilities and control the inference overhead of tool-augmented reasoning. On long-tail charts from ChartBench and ChartX, ChartEvo improves accuracy over its base MLLM, Qwen3.7-Plus, by \\textbf{45.6\\%} and \\textbf{32.5\\%}, respectively, demonstrating the effectiveness of recursive self-improvement for long-tail chart adaptation.",
+      "authors": [
+        "Qi Wang",
+        "Peijie Wang",
+        "Jun Cao",
+        "Haoyang Tong",
+        "Xiao-Hui Li",
+        "Fei Yin",
+        "Cheng-Lin Liu"
+      ],
+      "published": "2026-10-20T14:34:54Z",
+      "updated": "2026-10-20T14:34:54Z",
+      "url": "https://arxiv.org/abs/2610.28282",
+      "pdfUrl": "https://arxiv.org/pdf/2610.28282",
+      "arxivCategories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "table"
+      ],
+      "matchedTerms": {
+        "table": [
+          "chart understanding"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.08988
     },
     {
       "id": "arxiv:2610.18238",
@@ -4475,13 +4558,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09221
+      "rankScore": 0.08889
     },
     {
       "id": "arxiv:2610.27309",
@@ -4513,13 +4596,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09127
+      "rankScore": 0.08602
     },
     {
       "id": "arxiv:2610.26431",
@@ -4551,13 +4634,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.0895
+      "rankScore": 0.08438
     },
     {
       "id": "arxiv:2610.26401",
@@ -4590,13 +4673,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08945
+      "rankScore": 0.08433
     },
     {
       "id": "arxiv:2610.26362",
@@ -4630,13 +4713,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08937
+      "rankScore": 0.08425
     },
     {
       "id": "arxiv:2610.25621",
@@ -4671,13 +4754,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08653
+      "rankScore": 0.0816
     },
     {
       "id": "arxiv:2610.25575",
@@ -4710,13 +4793,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08605
+      "rankScore": 0.08115
     },
     {
       "id": "arxiv:2610.25503",
@@ -4749,13 +4832,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08541
+      "rankScore": 0.08056
     },
     {
       "id": "arxiv:2610.17530",
@@ -4794,13 +4877,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06973
+      "rankScore": 0.06591
     },
     {
       "id": "arxiv:2610.21300",
@@ -4831,13 +4914,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06884
+      "rankScore": 0.06508
     },
     {
       "id": "arxiv:2608.20840",
@@ -4873,13 +4956,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06796
+      "rankScore": 0.06426
     },
     {
       "id": "arxiv:2608.25478",
@@ -4909,13 +4992,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06187
+      "rankScore": 0.05857
     },
     {
       "id": "arxiv:2610.17937",
@@ -4950,13 +5033,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06166
+      "rankScore": 0.05837
     },
     {
       "id": "arxiv:2609.35304",
@@ -4998,7 +5081,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05933
+      "rankScore": 0.05819
     },
     {
       "id": "arxiv:2609.07629",
@@ -5032,13 +5115,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05836
+      "rankScore": 0.05529
     },
     {
       "id": "arxiv:2610.15542",
@@ -5199,13 +5282,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-08T10:23:34Z",
+      "lastSeen": "2026-11-09T09:23:26Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05546
+      "rankScore": 0.05259
     },
     {
       "id": "arxiv:2609.01216",
@@ -5246,7 +5329,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04997
+      "rankScore": 0.04746
     },
     {
       "id": "arxiv:2610.13060",
@@ -5283,7 +5366,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04909
+      "rankScore": 0.04663
     },
     {
       "id": "arxiv:2609.27257",
@@ -5325,7 +5408,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04682
+      "rankScore": 0.04451
     },
     {
       "id": "arxiv:2610.09439",
@@ -5364,7 +5447,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04401
+      "rankScore": 0.04189
     },
     {
       "id": "arxiv:2610.09360",
@@ -5406,7 +5489,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04386
+      "rankScore": 0.04175
     },
     {
       "id": "arxiv:2610.10592",
@@ -5442,7 +5525,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04305
+      "rankScore": 0.041
     },
     {
       "id": "arxiv:2610.08106",
@@ -5483,7 +5566,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04231
+      "rankScore": 0.04031
     },
     {
       "id": "arxiv:2610.07751",
@@ -5525,7 +5608,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.0418
+      "rankScore": 0.03983
     },
     {
       "id": "arxiv:2610.07622",
@@ -5562,7 +5645,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04157
+      "rankScore": 0.03962
     },
     {
       "id": "arxiv:2605.14465",
@@ -5605,7 +5688,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03726
+      "rankScore": 0.03559
     },
     {
       "id": "arxiv:2505.24033",
@@ -5645,7 +5728,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03531
+      "rankScore": 0.03376
     },
     {
       "id": "arxiv:2610.02880",
@@ -5688,7 +5771,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03449
+      "rankScore": 0.033
     },
     {
       "id": "arxiv:2610.01134",
@@ -5726,7 +5809,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03449
+      "rankScore": 0.033
     },
     {
       "id": "arxiv:2610.01191",
@@ -5764,7 +5847,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03448
+      "rankScore": 0.03299
     },
     {
       "id": "arxiv:2606.01132",
@@ -5802,7 +5885,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03423
+      "rankScore": 0.03275
     },
     {
       "id": "arxiv:2610.02117",
@@ -5844,7 +5927,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03366
+      "rankScore": 0.03223
     },
     {
       "id": "arxiv:2510.17932",
@@ -5890,7 +5973,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03175
+      "rankScore": 0.03045
     },
     {
       "id": "arxiv:2609.39013",
@@ -5928,7 +6011,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03145
+      "rankScore": 0.03016
     },
     {
       "id": "arxiv:2609.19942",
@@ -5970,7 +6053,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03135
+      "rankScore": 0.03007
     },
     {
       "id": "arxiv:2609.38861",
@@ -6008,7 +6091,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03133
+      "rankScore": 0.03005
     },
     {
       "id": "arxiv:2609.38781",
@@ -6045,7 +6128,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03126
+      "rankScore": 0.02999
     },
     {
       "id": "arxiv:2510.09741",
@@ -6093,7 +6176,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03035
+      "rankScore": 0.02913
     },
     {
       "id": "arxiv:2606.20333",
@@ -6140,7 +6223,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03035
+      "rankScore": 0.02913
     },
     {
       "id": "arxiv:2609.17538",
@@ -6177,7 +6260,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02976
+      "rankScore": 0.02859
     },
     {
       "id": "arxiv:2609.34196",
@@ -6213,7 +6296,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02875
+      "rankScore": 0.02764
     }
   ],
   "ranking": {
