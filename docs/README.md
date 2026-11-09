@@ -10,6 +10,12 @@ Visit: [Beyond OCR](https://yang-jiashu.github.io/document-intelligence-survey/)
 
 Daily official-source discovery, incremental summary caching and local topic/intent search are configured without a paid fallback. See [免费更新与可选 AI 摘要设置](../doc/FREE_UPDATES.md) for the three optional Cloudflare Actions settings. With no confirmed Free account, the site displays source excerpts and makes no model requests.
 
+## Homepage traffic
+
+The bottom of the homepage displays persisted homepage views and unique visitors through [Busuanzi](https://busuanzi.meuicat.com/), starting on 10 November 2026. It does not backfill historical traffic. Visitors are the provider's approximate deduplicated identities, not a count of people. Browser storage optionally retains the provider's opaque visitor identity; blocked storage does not prevent loading the counts.
+
+`js/visitor-stats.js` uses the [public API](https://github.com/soxft/busuanzi/wiki/api) with a fixed canonical `x-bsz-referer` of `https://yang-jiashu.github.io/document-intelligence-survey/`. The root URL, `index.html`, queries and hash links share one counter. Only `page_pv` and `page_uv` are displayed; host-wide statistics would also include unrelated GitHub Pages projects. Production loads send one POST. Local previews and other origins use a read-only GET so QA does not increase the counts. There is no automatic retry or hash-change increment. Network failures show an unavailable message rather than invented counts. The API receives the canonical page key and the network request; no third-party JavaScript is loaded.
+
 ## Local Preview
 
 ```bash

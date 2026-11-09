@@ -1,0 +1,122 @@
+{
+  "retrieved": "2026-11-10",
+  "assets": [
+    {
+      "id": "microsoft",
+      "file": "microsoft.png",
+      "source_url": "https://github.com/microsoft.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "LayoutLM",
+        "LayoutLMv2",
+        "LayoutXLM",
+        "LayoutLMv3",
+        "UDOP",
+        "Table-GPT",
+        "GraphRAG"
+      ]
+    },
+    {
+      "id": "google",
+      "file": "google.png",
+      "source_url": "https://github.com/google.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "TAPAS",
+        "Pix2Struct"
+      ]
+    },
+    {
+      "id": "PaddlePaddle",
+      "file": "PaddlePaddle.png",
+      "source_url": "https://github.com/PaddlePaddle.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "PP-OCR"
+      ]
+    },
+    {
+      "id": "clovaai",
+      "file": "clovaai.png",
+      "source_url": "https://github.com/clovaai.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "Donut"
+      ]
+    },
+    {
+      "id": "QwenLM",
+      "file": "QwenLM.png",
+      "source_url": "https://github.com/QwenLM.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "Qwen-VL",
+        "Qwen2-VL",
+        "Qwen2.5-VL"
+      ]
+    },
+    {
+      "id": "illuin-tech",
+      "file": "illuin-tech.png",
+      "source_url": "https://github.com/illuin-tech.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "ColPali"
+      ]
+    },
+    {
+      "id": "opendatalab",
+      "file": "opendatalab.png",
+      "source_url": "https://github.com/opendatalab.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "DocLayout-YOLO"
+      ]
+    },
+    {
+      "id": "tablegpt",
+      "file": "tablegpt.png",
+      "source_url": "https://github.com/tablegpt.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "TableGPT2"
+      ]
+    },
+    {
+      "id": "OpenGVLab",
+      "file": "OpenGVLab.png",
+      "source_url": "https://github.com/OpenGVLab.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "InternVL 2.5"
+      ]
+    },
+    {
+      "id": "allenai",
+      "file": "allenai.png",
+      "source_url": "https://github.com/allenai.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "olmOCR"
+      ]
+    },
+    {
+      "id": "ds4sd",
+      "file": "ds4sd.png",
+      "source_url": "https://github.com/ds4sd.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "SmolDocling"
+      ]
+    },
+    {
+      "id": "deepseek-ai",
+      "file": "deepseek-ai.png",
+      "source_url": "https://github.com/deepseek-ai.png?size=96",
+      "usage": "Official organization GitHub avatar; visual attribution, not an endorsement.",
+      "applies_to": [
+        "DeepSeek-OCR"
+      ]
+    }
+  ]
+}
