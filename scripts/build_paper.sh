@@ -11,7 +11,7 @@ python3 "$paper_root/scripts/sync_paper_sources.py"
 # Complete TeX Live installations need no environment overrides. Some minimal
 # images contain all sources/fonts but omit format files and the filename DB.
 # In that case prepare only local formats/maps; never modify the system tree.
-if ! kpsewhich pdflatex.fmt >/dev/null 2>&1 || ! kpsewhich latex.ltx >/dev/null 2>&1; then
+if ! kpsewhich -engine=pdftex pdflatex.fmt >/dev/null 2>&1 || ! kpsewhich latex.ltx >/dev/null 2>&1; then
     paper_cache="$paper_output/tex-cache"
     mkdir -p -- "$paper_cache"
     export TEXMF="{/usr/share/texlive/texmf-dist,/usr/share/texmf}"

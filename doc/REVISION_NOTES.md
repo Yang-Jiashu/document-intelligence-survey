@@ -1,3 +1,13 @@
+# Full-coverage restoration - 10 November 2026
+
+- Restored the detailed literature discussions to the main manuscript across all six shared chapters, retaining all 412 distinct works cited by the pre-condensation full manuscript. The earlier 22-page condensation removed too much substantive coverage; the supplementary reading catalog is no longer used as a substitute for the main survey.
+- Restored the fuller abstract, review scope, selection principles, evidence-centered comparison framework and research outlook. Preserved the corrected author order and factual qualifications from the pre-condensation revision.
+- Kept the revised curved chronology, representation examples, table computation, retrieval structures, visual-budget diagram, adaptive document-access loop and evaluation cases. Figure captions continue to describe their actual content, with constructed examples distinguished from empirical results.
+- Recompiled the restored manuscript to 64 pages with pdfLaTeX and BibTeX. The final build resolves all citations and references, with no overfull boxes or multiply defined labels.
+- Kept the website layout and bottom traffic statistics. Updated only the manuscript download and its revision label.
+
+The sections below describe earlier revisions and are retained as history.
+
 # Visual and editorial revision - 10 November 2026
 
 - Replaced the paper-by-paper narrative with a mechanism-led synthesis. Main-source word count (including captions/tables) falls from 21,696 to 6,371, approximately 71%; the validated report is 22 pages (16 main-text pages and 6 reference pages), down from 65 pages.
