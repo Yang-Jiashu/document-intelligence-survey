@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-09T09:29:20Z",
+  "generatedAt": "2026-11-09T09:34:08Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
@@ -223,7 +223,7 @@
     }
   ],
   "pendingCount": 150,
-  "sourceLastAttempt": "2026-11-09T09:23:26Z",
+  "sourceLastAttempt": "2026-11-09T09:33:49Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",

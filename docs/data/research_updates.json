@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "scope": "document-intelligence",
-  "lastAttempt": "2026-11-09T09:23:26Z",
-  "lastSuccessfulCheck": "2026-11-09T09:23:26Z",
+  "lastAttempt": "2026-11-09T09:33:49Z",
+  "lastSuccessfulCheck": "2026-11-09T09:33:49Z",
   "status": "refreshed",
   "nextScheduledCheck": "2026-11-10",
   "updateCadence": "daily",
@@ -13,7 +13,7 @@
       "id": "ocr",
       "title": "OCR / 解析",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22optical+character+recognition%22+OR+abs%3A%22optical+character+recognition%22+OR+ti%3A%22optical-character-recognition%22+OR+abs%3A%22optical-character-recognition%22+OR+ti%3A%22OCR%22+OR+abs%3A%22OCR%22+OR+ti%3A%22document+parsing%22+OR+abs%3A%22document+parsing%22+OR+ti%3A%22document-parsing%22+OR+abs%3A%22document-parsing%22+OR+ti%3A%22document+extraction%22+OR+abs%3A%22document+extraction%22+OR+ti%3A%22document-extraction%22+OR+abs%3A%22document-extraction%22+OR+ti%3A%22document+digitization%22+OR+abs%3A%22document+digitization%22+OR+ti%3A%22document-digitization%22+OR+abs%3A%22document-digitization%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 39,
@@ -25,7 +25,7 @@
       "id": "layout",
       "title": "版面",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+layout%22+OR+abs%3A%22document+layout%22+OR+ti%3A%22document-layout%22+OR+abs%3A%22document-layout%22+OR+ti%3A%22layout+analysis%22+OR+abs%3A%22layout+analysis%22+OR+ti%3A%22layout-analysis%22+OR+abs%3A%22layout-analysis%22+OR+ti%3A%22reading+order%22+OR+abs%3A%22reading+order%22+OR+ti%3A%22reading-order%22+OR+abs%3A%22reading-order%22+OR+ti%3A%22document+structure%22+OR+abs%3A%22document+structure%22+OR+ti%3A%22document-structure%22+OR+abs%3A%22document-structure%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 9,
@@ -37,7 +37,7 @@
       "id": "table",
       "title": "表格 / 图表",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22table+structure+recognition%22+OR+abs%3A%22table+structure+recognition%22+OR+ti%3A%22table-structure-recognition%22+OR+abs%3A%22table-structure-recognition%22+OR+ti%3A%22table+extraction%22+OR+abs%3A%22table+extraction%22+OR+ti%3A%22table-extraction%22+OR+abs%3A%22table-extraction%22+OR+ti%3A%22table+question+answering%22+OR+abs%3A%22table+question+answering%22+OR+ti%3A%22table-question-answering%22+OR+abs%3A%22table-question-answering%22+OR+ti%3A%22chart+question+answering%22+OR+abs%3A%22chart+question+answering%22+OR+ti%3A%22chart-question-answering%22+OR+abs%3A%22chart-question-answering%22+OR+ti%3A%22chart+understanding%22+OR+abs%3A%22chart+understanding%22+OR+ti%3A%22chart-understanding%22+OR+abs%3A%22chart-understanding%22+OR+ti%3A%22table+recognition%22+OR+abs%3A%22table+recognition%22+OR+ti%3A%22table-recognition%22+OR+abs%3A%22table-recognition%22+OR+ti%3A%22table+detection%22+OR+abs%3A%22table+detection%22+OR+ti%3A%22table-detection%22+OR+abs%3A%22table-detection%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 11,
@@ -49,7 +49,7 @@
       "id": "docqa",
       "title": "文档问答",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+visual+question+answering%22+OR+abs%3A%22document+visual+question+answering%22+OR+ti%3A%22document-visual-question-answering%22+OR+abs%3A%22document-visual-question-answering%22+OR+ti%3A%22DocVQA%22+OR+abs%3A%22DocVQA%22+OR+ti%3A%22InfographicVQA%22+OR+abs%3A%22InfographicVQA%22+OR+ti%3A%22document+question+answering%22+OR+abs%3A%22document+question+answering%22+OR+ti%3A%22document-question-answering%22+OR+abs%3A%22document-question-answering%22+OR+ti%3A%22multi+page+document%22+OR+abs%3A%22multi+page+document%22+OR+ti%3A%22multi-page-document%22+OR+abs%3A%22multi-page-document%22+OR+ti%3A%22document+understanding%22+OR+abs%3A%22document+understanding%22+OR+ti%3A%22document-understanding%22+OR+abs%3A%22document-understanding%22+OR+ti%3A%22visually+rich+document%22+OR+abs%3A%22visually+rich+document%22+OR+ti%3A%22visually-rich-document%22+OR+abs%3A%22visually-rich-document%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 31,
@@ -61,7 +61,7 @@
       "id": "docrag",
       "title": "文档 RAG",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+retrieval%22+OR+abs%3A%22document+retrieval%22+OR+ti%3A%22document-retrieval%22+OR+abs%3A%22document-retrieval%22+OR+ti%3A%22multimodal+document+retrieval%22+OR+abs%3A%22multimodal+document+retrieval%22+OR+ti%3A%22multimodal-document-retrieval%22+OR+abs%3A%22multimodal-document-retrieval%22+OR+ti%3A%22document+RAG%22+OR+abs%3A%22document+RAG%22+OR+ti%3A%22document-RAG%22+OR+abs%3A%22document-RAG%22+OR+ti%3A%22PDF+question+answering%22+OR+abs%3A%22PDF+question+answering%22+OR+ti%3A%22PDF-question-answering%22+OR+abs%3A%22PDF-question-answering%22+OR+ti%3A%22long+document+understanding%22+OR+abs%3A%22long+document+understanding%22+OR+ti%3A%22long-document-understanding%22+OR+abs%3A%22long-document-understanding%22+OR+ti%3A%22visually+rich+document+retrieval%22+OR+abs%3A%22visually+rich+document+retrieval%22+OR+ti%3A%22visually-rich-document-retrieval%22+OR+abs%3A%22visually-rich-document-retrieval%22+OR+ti%3A%22ColPali%22+OR+abs%3A%22ColPali%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 11,
@@ -73,7 +73,7 @@
       "id": "eval",
       "title": "评测",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+benchmark%22+OR+abs%3A%22document+benchmark%22+OR+ti%3A%22document-benchmark%22+OR+abs%3A%22document-benchmark%22+OR+ti%3A%22document+evaluation%22+OR+abs%3A%22document+evaluation%22+OR+ti%3A%22document-evaluation%22+OR+abs%3A%22document-evaluation%22+OR+ti%3A%22DocVQA%22+OR+abs%3A%22DocVQA%22+OR+ti%3A%22OmniDocBench%22+OR+abs%3A%22OmniDocBench%22+OR+ti%3A%22OCRBench%22+OR+abs%3A%22OCRBench%22+OR+ti%3A%22document+parsing+benchmark%22+OR+abs%3A%22document+parsing+benchmark%22+OR+ti%3A%22document-parsing-benchmark%22+OR+abs%3A%22document-parsing-benchmark%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 7,
@@ -88,7 +88,7 @@
       "title": "PaddlePaddle/PaddleOCR",
       "repo": "PaddlePaddle/PaddleOCR",
       "sourceUrl": "https://github.com/PaddlePaddle/PaddleOCR/releases",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 0,
@@ -100,7 +100,7 @@
       "title": "opendatalab/MinerU",
       "repo": "opendatalab/MinerU",
       "sourceUrl": "https://github.com/opendatalab/MinerU/releases",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 9,
@@ -112,7 +112,7 @@
       "title": "docling-project/docling",
       "repo": "docling-project/docling",
       "sourceUrl": "https://github.com/docling-project/docling/releases",
-      "lastChecked": "2026-11-09T09:23:26Z",
+      "lastChecked": "2026-11-09T09:33:49Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 14,
@@ -145,13 +145,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-08T10:23:34Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "新收录"
       ],
-      "rankScore": 0.97709
+      "rankScore": 0.97694
     },
     {
       "id": "arxiv:2606.28780",
@@ -183,7 +183,7 @@
         ]
       },
       "firstSeen": "2026-11-06T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.91,
       "rankReasons": [
         "文档主题匹配",
@@ -191,7 +191,7 @@
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.86906
+      "rankScore": 0.86894
     },
     {
       "id": "github:docling-project/docling:435467388",
@@ -217,14 +217,14 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-06T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.81586
+      "rankScore": 0.81573
     },
     {
       "id": "arxiv:2608.28572",
@@ -263,7 +263,7 @@
         ]
       },
       "firstSeen": "2026-11-09T09:23:26Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
@@ -271,7 +271,7 @@
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.68831
+      "rankScore": 0.68818
     },
     {
       "id": "github:opendatalab/MinerU:433901302",
@@ -297,13 +297,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.61607
+      "rankScore": 0.61596
     },
     {
       "id": "github:opendatalab/MinerU:432645485",
@@ -329,13 +329,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-04T10:56:26Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.56018
+      "rankScore": 0.56007
     },
     {
       "id": "github:docling-project/docling:434036114",
@@ -361,13 +361,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.53733
+      "rankScore": 0.53722
     },
     {
       "id": "arxiv:2510.18413",
@@ -402,7 +402,7 @@
         ]
       },
       "firstSeen": "2026-11-09T09:23:26Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
@@ -410,7 +410,7 @@
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.53084
+      "rankScore": 0.5307
     },
     {
       "id": "github:opendatalab/MinerU:432374295",
@@ -436,13 +436,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.5171
+      "rankScore": 0.517
     },
     {
       "id": "github:docling-project/docling:432354383",
@@ -468,13 +468,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.47679
+      "rankScore": 0.47668
     },
     {
       "id": "github:opendatalab/MinerU:431502262",
@@ -500,13 +500,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.46655
+      "rankScore": 0.46645
     },
     {
       "id": "arxiv:2610.36444",
@@ -542,13 +542,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.44923
+      "rankScore": 0.44917
     },
     {
       "id": "arxiv:2611.06449",
@@ -591,14 +591,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.91,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.44222
+      "rankScore": 0.4421
     },
     {
       "id": "github:opendatalab/MinerU:428913222",
@@ -624,12 +624,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-31T09:40:07Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.4273
+      "rankScore": 0.42722
     },
     {
       "id": "arxiv:2610.33004",
@@ -668,14 +668,14 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42281
+      "rankScore": 0.4227
     },
     {
       "id": "github:opendatalab/MinerU:428167074",
@@ -701,12 +701,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41931
+      "rankScore": 0.41923
     },
     {
       "id": "github:opendatalab/MinerU:428051170",
@@ -732,12 +732,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41875
+      "rankScore": 0.41868
     },
     {
       "id": "github:docling-project/docling:427986395",
@@ -763,12 +763,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41817
+      "rankScore": 0.41809
     },
     {
       "id": "github:opendatalab/MinerU:427762028",
@@ -794,12 +794,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41664
+      "rankScore": 0.41656
     },
     {
       "id": "arxiv:2606.09788",
@@ -838,14 +838,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41459
+      "rankScore": 0.41448
     },
     {
       "id": "arxiv:2512.10888",
@@ -884,14 +884,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.4143
+      "rankScore": 0.41419
     },
     {
       "id": "arxiv:2611.04874",
@@ -934,14 +934,14 @@
         ]
       },
       "firstSeen": "2026-11-04T10:56:26Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.409
+      "rankScore": 0.40889
     },
     {
       "id": "github:docling-project/docling:426615904",
@@ -967,12 +967,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-29T09:59:00Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40688
+      "rankScore": 0.40681
     },
     {
       "id": "arxiv:2611.05539",
@@ -1002,14 +1002,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40684
+      "rankScore": 0.40673
     },
     {
       "id": "github:docling-project/docling:425760117",
@@ -1035,12 +1035,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.39941
+      "rankScore": 0.39934
     },
     {
       "id": "arxiv:2609.18823",
@@ -1077,14 +1077,14 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.39609
+      "rankScore": 0.39599
     },
     {
       "id": "github:docling-project/docling:424894279",
@@ -1110,12 +1110,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.39295
+      "rankScore": 0.39288
     },
     {
       "id": "arxiv:2611.03023",
@@ -1151,14 +1151,14 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.3878
+      "rankScore": 0.3877
     },
     {
       "id": "arxiv:2610.39301",
@@ -1216,13 +1216,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.36546
+      "rankScore": 0.36538
     },
     {
       "id": "github:docling-project/docling:421598813",
@@ -1248,12 +1248,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.36471
+      "rankScore": 0.36466
     },
     {
       "id": "github:docling-project/docling:420824203",
@@ -1279,12 +1279,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.35981
+      "rankScore": 0.35977
     },
     {
       "id": "arxiv:2610.39308",
@@ -1328,13 +1328,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.35169
+      "rankScore": 0.35161
     },
     {
       "id": "github:docling-project/docling:418897384",
@@ -1360,12 +1360,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.34949
+      "rankScore": 0.34945
     },
     {
       "id": "arxiv:2610.28957",
@@ -1402,13 +1402,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.33566
+      "rankScore": 0.33562
     },
     {
       "id": "github:docling-project/docling:414745219",
@@ -1434,12 +1434,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32756
+      "rankScore": 0.32754
     },
     {
       "id": "github:docling-project/docling:412682585",
@@ -1465,12 +1465,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32039
+      "rankScore": 0.32037
     },
     {
       "id": "arxiv:2610.36929",
@@ -1504,13 +1504,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31863
+      "rankScore": 0.31856
     },
     {
       "id": "arxiv:2610.36759",
@@ -1547,13 +1547,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31763
+      "rankScore": 0.31757
     },
     {
       "id": "arxiv:2610.35240",
@@ -1587,13 +1587,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31643
+      "rankScore": 0.31637
     },
     {
       "id": "github:docling-project/docling:410246933",
@@ -1619,12 +1619,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.3129
+      "rankScore": 0.31288
     },
     {
       "id": "github:opendatalab/MinerU:409343850",
@@ -1650,12 +1650,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30949
+      "rankScore": 0.30947
     },
     {
       "id": "arxiv:2610.34879",
@@ -1686,13 +1686,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30849
+      "rankScore": 0.30843
     },
     {
       "id": "arxiv:2610.34148",
@@ -1724,13 +1724,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30734
+      "rankScore": 0.30728
     },
     {
       "id": "github:docling-project/docling:407981657",
@@ -1761,7 +1761,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30546
+      "rankScore": 0.30544
     },
     {
       "id": "github:docling-project/docling:407877825",
@@ -1792,7 +1792,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30524
+      "rankScore": 0.30522
     },
     {
       "id": "github:opendatalab/MinerU:407136872",
@@ -1823,7 +1823,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30343
+      "rankScore": 0.30342
     },
     {
       "id": "arxiv:2610.34094",
@@ -1855,13 +1855,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30075
+      "rankScore": 0.3007
     },
     {
       "id": "github:docling-project/docling:405653272",
@@ -1892,7 +1892,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30042
+      "rankScore": 0.3004
     },
     {
       "id": "github:docling-project/docling:404329764",
@@ -1923,7 +1923,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29784
+      "rankScore": 0.29783
     },
     {
       "id": "arxiv:2610.37701",
@@ -1957,13 +1957,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2972
+      "rankScore": 0.29714
     },
     {
       "id": "arxiv:2610.31385",
@@ -2006,13 +2006,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29392
+      "rankScore": 0.29388
     },
     {
       "id": "github:docling-project/docling:402480593",
@@ -2043,7 +2043,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29291
+      "rankScore": 0.2929
     },
     {
       "id": "github:docling-project/docling:400827827",
@@ -2074,7 +2074,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28976
+      "rankScore": 0.28975
     },
     {
       "id": "arxiv:2603.12718",
@@ -2110,13 +2110,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28748
+      "rankScore": 0.28743
     },
     {
       "id": "github:docling-project/docling:398929330",
@@ -2147,7 +2147,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28704
+      "rankScore": 0.28703
     },
     {
       "id": "github:opendatalab/MinerU:398902715",
@@ -2178,7 +2178,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28701
+      "rankScore": 0.287
     },
     {
       "id": "github:opendatalab/MinerU:398394476",
@@ -2209,7 +2209,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28624
+      "rankScore": 0.28623
     },
     {
       "id": "arxiv:2606.28916",
@@ -2243,13 +2243,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28219
+      "rankScore": 0.28214
     },
     {
       "id": "arxiv:2608.07943",
@@ -2287,13 +2287,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.93,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28103
+      "rankScore": 0.281
     },
     {
       "id": "arxiv:2610.28171",
@@ -2331,13 +2331,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27556
+      "rankScore": 0.27552
     },
     {
       "id": "arxiv:2610.07760",
@@ -2369,13 +2369,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27208
+      "rankScore": 0.27204
     },
     {
       "id": "arxiv:2611.00078",
@@ -2408,13 +2408,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27026
+      "rankScore": 0.27023
     },
     {
       "id": "arxiv:2610.14531",
@@ -2449,13 +2449,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26862
+      "rankScore": 0.26858
     },
     {
       "id": "arxiv:2610.25440",
@@ -2492,13 +2492,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26621
+      "rankScore": 0.26618
     },
     {
       "id": "arxiv:2610.25235",
@@ -2534,13 +2534,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26518
+      "rankScore": 0.26515
     },
     {
       "id": "arxiv:2610.26313",
@@ -2571,13 +2571,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25816
+      "rankScore": 0.25812
     },
     {
       "id": "arxiv:2610.22726",
@@ -2614,13 +2614,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25387
+      "rankScore": 0.25384
     },
     {
       "id": "arxiv:2610.21318",
@@ -2658,13 +2658,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25114
+      "rankScore": 0.25111
     },
     {
       "id": "arxiv:2610.20335",
@@ -2713,13 +2713,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24884
+      "rankScore": 0.24882
     },
     {
       "id": "arxiv:2610.21979",
@@ -2755,13 +2755,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24648
+      "rankScore": 0.24646
     },
     {
       "id": "arxiv:2610.21327",
@@ -2797,13 +2797,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24516
+      "rankScore": 0.24513
     },
     {
       "id": "arxiv:2610.15728",
@@ -2848,13 +2848,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24513
+      "rankScore": 0.24511
     },
     {
       "id": "arxiv:2610.20461",
@@ -2886,13 +2886,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24306
+      "rankScore": 0.24304
     },
     {
       "id": "arxiv:2610.11818",
@@ -2936,7 +2936,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24283
+      "rankScore": 0.24282
     },
     {
       "id": "arxiv:2609.15205",
@@ -2972,13 +2972,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24093
+      "rankScore": 0.24091
     },
     {
       "id": "arxiv:2610.11148",
@@ -3026,7 +3026,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.23595
+      "rankScore": 0.23593
     },
     {
       "id": "arxiv:2610.41561",
@@ -3055,14 +3055,14 @@
         ]
       },
       "firstSeen": "2026-11-02T11:08:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.23551
+      "rankScore": 0.2354
     },
     {
       "id": "arxiv:2605.12882",
@@ -3109,7 +3109,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2303
+      "rankScore": 0.23029
     },
     {
       "id": "arxiv:2609.37712",
@@ -3175,7 +3175,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22739
+      "rankScore": 0.22738
     },
     {
       "id": "arxiv:2610.12363",
@@ -3218,7 +3218,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22533
+      "rankScore": 0.22532
     },
     {
       "id": "arxiv:2609.27678",
@@ -3260,13 +3260,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22417
+      "rankScore": 0.22415
     },
     {
       "id": "arxiv:2609.36136",
@@ -3315,7 +3315,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2204
+      "rankScore": 0.22039
     },
     {
       "id": "arxiv:2609.38282",
@@ -3461,7 +3461,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20774
+      "rankScore": 0.20773
     },
     {
       "id": "arxiv:2604.23813",
@@ -3500,13 +3500,13 @@
         ]
       },
       "firstSeen": "2026-10-28T09:40:56Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.67,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20149
+      "rankScore": 0.20142
     },
     {
       "id": "arxiv:2611.01967",
@@ -3540,13 +3540,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.1958
+      "rankScore": 0.19571
     },
     {
       "id": "arxiv:2610.38356",
@@ -3600,13 +3600,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.19317
+      "rankScore": 0.19307
     },
     {
       "id": "arxiv:2611.00638",
@@ -3650,13 +3650,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17811
+      "rankScore": 0.17803
     },
     {
       "id": "arxiv:2611.00242",
@@ -3686,13 +3686,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17292
+      "rankScore": 0.17283
     },
     {
       "id": "arxiv:2606.26439",
@@ -3723,13 +3723,13 @@
         ]
       },
       "firstSeen": "2026-11-02T11:08:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17189
+      "rankScore": 0.17181
     },
     {
       "id": "arxiv:2610.35542",
@@ -3770,13 +3770,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16967
+      "rankScore": 0.16961
     },
     {
       "id": "arxiv:2610.36991",
@@ -3814,13 +3814,13 @@
         ]
       },
       "firstSeen": "2026-10-28T09:40:56Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16845
+      "rankScore": 0.16837
     },
     {
       "id": "arxiv:2610.40233",
@@ -3852,13 +3852,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16036
+      "rankScore": 0.16028
     },
     {
       "id": "arxiv:2511.16417",
@@ -3896,13 +3896,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.15997
+      "rankScore": 0.1599
     },
     {
       "id": "arxiv:2610.12823",
@@ -3938,13 +3938,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.15496
+      "rankScore": 0.15489
     },
     {
       "id": "arxiv:2610.33066",
@@ -3994,13 +3994,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.67,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.14939
+      "rankScore": 0.14935
     },
     {
       "id": "arxiv:2602.00122",
@@ -4051,13 +4051,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.14095
+      "rankScore": 0.14089
     },
     {
       "id": "arxiv:2604.22678",
@@ -4089,13 +4089,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.13277
+      "rankScore": 0.13271
     },
     {
       "id": "arxiv:2610.34722",
@@ -4128,13 +4128,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.12727
+      "rankScore": 0.12721
     },
     {
       "id": "arxiv:2604.25213",
@@ -4170,13 +4170,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.1189
+      "rankScore": 0.11884
     },
     {
       "id": "arxiv:2605.13831",
@@ -4224,13 +4224,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10987
+      "rankScore": 0.10983
     },
     {
       "id": "arxiv:2610.32725",
@@ -4263,13 +4263,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10855
+      "rankScore": 0.1085
     },
     {
       "id": "arxiv:2610.32463",
@@ -4300,13 +4300,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10733
+      "rankScore": 0.10728
     },
     {
       "id": "arxiv:2610.32411",
@@ -4343,13 +4343,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10708
+      "rankScore": 0.10703
     },
     {
       "id": "arxiv:2611.00092",
@@ -4385,13 +4385,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10265
+      "rankScore": 0.1026
     },
     {
       "id": "arxiv:2609.02401",
@@ -4431,13 +4431,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09115
+      "rankScore": 0.09113
     },
     {
       "id": "arxiv:2610.28836",
@@ -4475,13 +4475,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09093
+      "rankScore": 0.09089
     },
     {
       "id": "arxiv:2610.28282",
@@ -4517,13 +4517,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08988
+      "rankScore": 0.08984
     },
     {
       "id": "arxiv:2610.18238",
@@ -4558,13 +4558,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08889
+      "rankScore": 0.08887
     },
     {
       "id": "arxiv:2610.27309",
@@ -4596,13 +4596,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08602
+      "rankScore": 0.08598
     },
     {
       "id": "arxiv:2610.26431",
@@ -4634,13 +4634,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08438
+      "rankScore": 0.08434
     },
     {
       "id": "arxiv:2610.26401",
@@ -4673,13 +4673,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08433
+      "rankScore": 0.08429
     },
     {
       "id": "arxiv:2610.26362",
@@ -4713,13 +4713,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08425
+      "rankScore": 0.08422
     },
     {
       "id": "arxiv:2610.25621",
@@ -4754,13 +4754,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.0816
+      "rankScore": 0.08157
     },
     {
       "id": "arxiv:2610.25575",
@@ -4793,13 +4793,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08115
+      "rankScore": 0.08111
     },
     {
       "id": "arxiv:2610.25503",
@@ -4832,13 +4832,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08056
+      "rankScore": 0.08052
     },
     {
       "id": "arxiv:2610.17530",
@@ -4877,13 +4877,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06591
+      "rankScore": 0.06588
     },
     {
       "id": "arxiv:2610.21300",
@@ -4914,13 +4914,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06508
+      "rankScore": 0.06505
     },
     {
       "id": "arxiv:2608.20840",
@@ -4956,13 +4956,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06426
+      "rankScore": 0.06423
     },
     {
       "id": "arxiv:2608.25478",
@@ -4992,13 +4992,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05857
+      "rankScore": 0.05855
     },
     {
       "id": "arxiv:2610.17937",
@@ -5033,13 +5033,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05837
+      "rankScore": 0.05835
     },
     {
       "id": "arxiv:2609.35304",
@@ -5081,7 +5081,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05819
+      "rankScore": 0.05818
     },
     {
       "id": "arxiv:2609.07629",
@@ -5115,13 +5115,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05529
+      "rankScore": 0.05527
     },
     {
       "id": "arxiv:2610.15542",
@@ -5282,13 +5282,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:23:26Z",
+      "lastSeen": "2026-11-09T09:33:49Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05259
+      "rankScore": 0.05256
     },
     {
       "id": "arxiv:2609.01216",
@@ -5329,7 +5329,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04746
+      "rankScore": 0.04744
     },
     {
       "id": "arxiv:2610.13060",
@@ -5366,7 +5366,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04663
+      "rankScore": 0.04661
     },
     {
       "id": "arxiv:2609.27257",
@@ -5408,7 +5408,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04451
+      "rankScore": 0.0445
     },
     {
       "id": "arxiv:2610.09439",
@@ -5447,7 +5447,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04189
+      "rankScore": 0.04188
     },
     {
       "id": "arxiv:2610.09360",
@@ -5489,7 +5489,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04175
+      "rankScore": 0.04174
     },
     {
       "id": "arxiv:2610.10592",
@@ -5525,7 +5525,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.041
+      "rankScore": 0.04098
     },
     {
       "id": "arxiv:2610.08106",
@@ -5566,7 +5566,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04031
+      "rankScore": 0.04029
     },
     {
       "id": "arxiv:2610.07751",
@@ -5608,7 +5608,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03983
+      "rankScore": 0.03982
     },
     {
       "id": "arxiv:2610.07622",
@@ -5645,7 +5645,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03962
+      "rankScore": 0.0396
     },
     {
       "id": "arxiv:2605.14465",
@@ -5688,7 +5688,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03559
+      "rankScore": 0.03558
     },
     {
       "id": "arxiv:2505.24033",
@@ -5728,7 +5728,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03376
+      "rankScore": 0.03375
     },
     {
       "id": "arxiv:2610.02880",
@@ -5771,7 +5771,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.033
+      "rankScore": 0.03299
     },
     {
       "id": "arxiv:2610.01134",
@@ -5809,7 +5809,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.033
+      "rankScore": 0.03299
     },
     {
       "id": "arxiv:2610.01191",
@@ -5847,7 +5847,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03299
+      "rankScore": 0.03298
     },
     {
       "id": "arxiv:2606.01132",
@@ -5885,7 +5885,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03275
+      "rankScore": 0.03274
     },
     {
       "id": "arxiv:2610.02117",
@@ -5927,7 +5927,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03223
+      "rankScore": 0.03222
     },
     {
       "id": "arxiv:2510.17932",
@@ -5973,7 +5973,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03045
+      "rankScore": 0.03044
     },
     {
       "id": "arxiv:2609.39013",
@@ -6011,7 +6011,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03016
+      "rankScore": 0.03015
     },
     {
       "id": "arxiv:2609.19942",
@@ -6053,7 +6053,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03007
+      "rankScore": 0.03006
     },
     {
       "id": "arxiv:2609.38861",
@@ -6091,7 +6091,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03005
+      "rankScore": 0.03004
     },
     {
       "id": "arxiv:2609.38781",
@@ -6128,7 +6128,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02999
+      "rankScore": 0.02998
     },
     {
       "id": "arxiv:2510.09741",
@@ -6176,7 +6176,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02913
+      "rankScore": 0.02912
     },
     {
       "id": "arxiv:2606.20333",
@@ -6223,7 +6223,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02913
+      "rankScore": 0.02912
     },
     {
       "id": "arxiv:2609.17538",
@@ -6260,7 +6260,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02859
+      "rankScore": 0.02858
     },
     {
       "id": "arxiv:2609.34196",
@@ -6296,7 +6296,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02764
+      "rankScore": 0.02763
     }
   ],
   "ranking": {
