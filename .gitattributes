@@ -1,0 +1,4 @@
+*.pdf binary
+*.png binary
+*.webp binary
+docs/data/paper_index.json whitespace=cr-at-eol

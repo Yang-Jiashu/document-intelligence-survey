@@ -515,7 +515,7 @@ function renderTimeline() {
 function renderDatasets() {
     const datasets = [
         { name: 'DocVQA', task: 'VQA', year: 2020, size: '12K docs', metric: 'ANLS', links: { paper: '2007.00398', code: '' } },
-        { name: 'InfographicVQA', task: 'VQA', year: 2021, size: '5K docs', metric: 'ANLS', links: { paper: '2104.07453', code: '' } },
+        { name: 'InfographicVQA', task: 'VQA', year: 2021, size: '5K docs', metric: 'ANLS', links: { paper: '2104.12756', code: '' } },
         { name: 'PubLayNet', task: 'Layout', year: 2019, size: '360K pages', metric: 'mAP', links: { paper: '1908.07836', code: '' } },
         { name: 'DocLayNet', task: 'Layout', year: 2022, size: '80K pages', metric: 'mAP', links: { paper: '2206.01062', code: '' } },
         { name: 'OCRBench', task: 'OCR', year: 2023, size: '29 datasets', metric: 'Score', links: { paper: '2305.07895', code: '' } },

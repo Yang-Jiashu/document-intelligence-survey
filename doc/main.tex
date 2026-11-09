@@ -7,9 +7,8 @@
 %  In VSCode + LaTeX Workshop the default "latexmk" recipe already uses pdflatex
 %  and runs bibtex automatically (a .latexmkrc is included to pin this).
 %
-%  Placeholder figures use `example-image-duck` from the `mwe` package, which
-%  ships with full TeX Live. If you see "File `example-image-duck' not found",
-%  install it with:  tlmgr install mwe
+%  Literature chapters are shared with the ACL source. Before compiling, run
+%  python scripts/sync_paper_sources.py from the repository root.
 % =============================================================================
 \documentclass[]{style}
 
@@ -19,6 +18,14 @@
 
 \input{resources/packages}
 \setlength{\cftbeforesubsecskip}{1.5pt}
+\setlength{\headheight}{42pt}
+\addtolength{\topmargin}{-30pt}
+\setlength{\emergencystretch}{1em}
+\hypersetup{
+  pdftitle={Beyond OCR: A Survey of Document Intelligence from Structured Perception to Multimodal Question Answering},
+  pdfauthor={JiaShu Yang, Chi Zhang, Xingyu Qi, Ning Zhang, Jie Wu, Lingxu Chen, Jiani Guo},
+  pdfsubject={Revised manuscript, 9 November 2026}
+}
 
 %%%%%%%%%%%%%%%%%%%% Title / Authors / Affiliation %%%%%%%%%%%%%%%%%%%%
 
@@ -34,14 +41,7 @@
   Jiani Guo\texorpdfstring{$^{1}$}{}
 }
 
-% Optional group / team line rendered below the author names, in the same font.
-\makeatletter
-\g@addto@macro\authorlist{\\[3mm]
-  {\authorfont\sffamily Document Intelligence Research Group\texorpdfstring{$^{}$}{}}%
-}
-\makeatother
-
-\affiliation[]{Peking University}
+\affiliation[1]{Peking University}
 
 %%%%%%%%%%%%%%%%%%%% Helper macros (optional, kept from the template) %%%%%%%%%%%%%%%%%%%%
 \newcommand{\placeholder}[2]{%
@@ -57,15 +57,15 @@
 
 %%%%%%%%%%%%%%%%%%%% Header links: project page / code / contact %%%%%%%%%%%%%%%%%%%%
 \checkdata[
-\raisebox{-0.2em}{\includegraphics[width=0.025\linewidth]{figs/icons/globe.png}}~~Project Page]{\href{https://github.com/your-org/document-intelligence-survey}{\texttt{https://github.com/your-org/document-intelligence-survey}}
+\raisebox{-0.2em}{\includegraphics[width=0.025\linewidth]{figs/icons/globe.png}}~~Project Page]{\href{https://yang-jiashu.github.io/document-intelligence-survey/}{\texttt{https://yang-jiashu.github.io/document-intelligence-survey/}}
 \\[-1.5ex]}
 
 \checkdata[
-\raisebox{-0.2em}{\includegraphics[width=0.025\linewidth]{figs/icons/github.png}}~~Code Repository]{\href{https://github.com/your-org/document-intelligence-survey}{\texttt{https://github.com/your-org/document-intelligence-survey}}
+\raisebox{-0.2em}{\includegraphics[width=0.025\linewidth]{figs/icons/github.png}}~~Code Repository]{\href{https://github.com/Yang-Jiashu/document-intelligence-survey}{\texttt{https://github.com/Yang-Jiashu/document-intelligence-survey}}
 \\[-1.7ex]}
 
 \checkdata[
-\raisebox{-0.2em}{\includegraphics[width=0.025\linewidth]{figs/icons/mail.png}}~~Correspondence]{\href{mailto:jiashuyang@pku.edu.cn}{\texttt{jiashuyang@pku.edu.cn}}
+\raisebox{-0.2em}{\includegraphics[width=0.025\linewidth]{figs/icons/mail.png}}~~Correspondence]{\href{mailto:jiashuyang827@gmail.com}{\texttt{jiashuyang827@gmail.com}}
 \\[-1.7ex]}
 
 
@@ -76,7 +76,7 @@
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig01.pdf}
-\caption{Overview of the Document Intelligence pipeline: Part~I (Perception) covers layout analysis and OCR, producing structured text and layout; Part~II (Understanding) includes three parallel branches---table understanding, text RAG, and multimodal VLM---each converging on the final Document QA output.}
+\caption{Document intelligence routes organized by their evidence interfaces. OCR and layout pipelines, direct visual models, retrieval, and tool-based control can be combined; table understanding is a task setting rather than an exclusive alternative to RAG or VLMs.}
 \label{fig:pipeline_overview}
 \end{figure*}
 

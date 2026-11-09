@@ -2,8 +2,8 @@
   "source": {
     "bib": "custom.bib",
     "sections": "sections",
-    "bibEntries": 409,
-    "citedPapers": 409
+    "bibEntries": 412,
+    "citedPapers": 410
   },
   "taxonomy": [
     {
@@ -17,7 +17,7 @@
         "OCR-VLM",
         "OCR Evaluation"
       ],
-      "count": 89
+      "count": 93
     },
     {
       "id": "layout",
@@ -56,7 +56,7 @@
         "Graph Reasoning",
         "End-to-end QA"
       ],
-      "count": 38
+      "count": 40
     },
     {
       "id": "vlm",
@@ -69,7 +69,7 @@
         "High-resolution VLM",
         "Multimodal RAG"
       ],
-      "count": 93
+      "count": 94
     },
     {
       "id": "eval",
@@ -82,7 +82,7 @@
         "RAG Evaluation",
         "Real-world Benchmarks"
       ],
-      "count": 61
+      "count": 62
     }
   ],
   "papers": [
@@ -175,14 +175,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2601.08444",
       "url": "",
@@ -300,14 +300,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Structure-Aware Evidence Access",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "arxiv": "2502.16540",
       "url": "",
@@ -350,14 +350,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -531,14 +531,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2512.03413",
       "url": "",
@@ -581,14 +581,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2507.10057",
       "url": "",
@@ -681,14 +681,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -858,12 +858,14 @@
       ],
       "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "VLM-Based OCR"
+        "VLM-Based OCR",
+        "Comparing Perception Routes"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "VLM-Based OCR"
+        "VLM-Based OCR",
+        "Comparing Perception Routes"
       ],
       "arxiv": "2508.13238",
       "url": "",
@@ -984,13 +986,15 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Agentic Frameworks for Document QA",
+      "subcategory": "Vision-Language Models for Document Understanding",
       "subcategories": [
+        "Vision-Language Models for Document Understanding",
         "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
+        "Vision-Language Models for Document Understanding",
         "Agentic Frameworks for Document QA"
       ],
       "arxiv": "2511.11552",
@@ -1165,16 +1169,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "2512.14427",
@@ -1193,14 +1197,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2506.16037",
       "url": "",
@@ -1218,14 +1222,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2505.17625",
       "url": "",
@@ -1293,14 +1297,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -1318,14 +1322,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -1368,14 +1372,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2505.23667",
       "url": "",
@@ -1493,14 +1497,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -1543,14 +1547,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2503.21322",
       "url": "",
@@ -1674,14 +1678,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2512.06859",
       "url": "",
@@ -1745,17 +1749,21 @@
       "authors": "Li, Kuan, Zhang, Liwen, Jiang, Yong, Xie, Pengjun, Huang, Fei, Wang, Shuai, Cheng, Minhao",
       "venue": "arXiv 2025",
       "year": 2025,
-      "category": "eval",
+      "category": "rag",
       "categories": [
+        "rag",
         "eval"
       ],
-      "subcategory": "Real-World Image-Text Interaction Document Evaluation",
+      "subcategory": "Choosing Context Access and Retrieval Control",
       "subcategories": [
+        "Choosing Context Access and Retrieval Control",
         "Real-World Image-Text Interaction Document Evaluation"
       ],
       "topics": [],
       "tags": [
+        "rag",
         "eval",
+        "Choosing Context Access and Retrieval Control",
         "Real-World Image-Text Interaction Document Evaluation"
       ],
       "arxiv": "2502.09977",
@@ -1824,14 +1832,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2512.15922",
       "url": "",
@@ -1974,14 +1982,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -2179,12 +2187,14 @@
       ],
       "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "VLM-Based OCR"
+        "VLM-Based OCR",
+        "Comparing Perception Routes"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "VLM-Based OCR"
+        "VLM-Based OCR",
+        "Comparing Perception Routes"
       ],
       "arxiv": "2506.05218",
       "url": "",
@@ -2227,8 +2237,9 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Foundational Vision-Language Models for Document Understanding",
+      "subcategory": "Vision-Language Models for Document Understanding",
       "subcategories": [
+        "Vision-Language Models for Document Understanding",
         "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
@@ -2236,6 +2247,7 @@
       ],
       "tags": [
         "vlm",
+        "Vision-Language Models for Document Understanding",
         "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
@@ -2310,12 +2322,14 @@
       ],
       "subcategory": "VLM-Based OCR",
       "subcategories": [
-        "VLM-Based OCR"
+        "VLM-Based OCR",
+        "Comparing Perception Routes"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "VLM-Based OCR"
+        "VLM-Based OCR",
+        "Comparing Perception Routes"
       ],
       "arxiv": "2501.15558",
       "url": "",
@@ -2533,14 +2547,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -2870,14 +2884,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -2895,14 +2909,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2506.01710",
       "url": "",
@@ -2995,14 +3009,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2501.14693",
       "url": "",
@@ -3020,14 +3034,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2505.15110",
       "url": "",
@@ -3179,14 +3193,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2511.11233",
       "url": "",
@@ -3271,7 +3285,7 @@
     {
       "id": 126,
       "bibKey": "t2ragbench2025",
-      "title": "T $\\^ 2$-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation",
+      "title": "T$^2$-RAGBench: Text-and-Table Benchmark for Evaluating Retrieval-Augmented Generation",
       "authors": "Strich, Jan, Isgorur, Enes Kutay, Trescher, Maximilian, Biemann, Chris, Semmann, Martin",
       "venue": "arXiv 2025",
       "year": 2025,
@@ -3304,14 +3318,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2501.02152",
       "url": "",
@@ -3329,14 +3343,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2502.11799",
       "url": "",
@@ -3354,14 +3368,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2505.23621",
       "url": "",
@@ -3379,14 +3393,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2505.12415",
       "url": "",
@@ -3404,14 +3418,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2512.20312",
       "url": "",
@@ -3429,14 +3443,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2509.06278",
       "url": "",
@@ -3479,14 +3493,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2507.08046",
       "url": "",
@@ -3529,14 +3543,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -3554,14 +3568,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -3579,14 +3593,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2506.18421",
       "url": "",
@@ -3732,14 +3746,16 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Multimodal RAG",
+      "subcategory": "Vision-Language Models for Document Understanding",
       "subcategories": [
+        "Vision-Language Models for Document Understanding",
         "Multimodal RAG",
         "Agentic Frameworks for Document QA"
       ],
       "topics": [],
       "tags": [
         "vlm",
+        "Vision-Language Models for Document Understanding",
         "Multimodal RAG",
         "Agentic Frameworks for Document QA"
       ],
@@ -3811,15 +3827,17 @@
       ],
       "subcategory": "Deep Learning Methods",
       "subcategories": [
-        "Deep Learning Methods"
+        "Deep Learning Methods",
+        "Comparing Perception Routes"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "Deep Learning Methods"
+        "Deep Learning Methods",
+        "Comparing Perception Routes"
       ],
-      "arxiv": "2504.03621",
-      "url": "",
+      "arxiv": "2504.03621v1",
+      "url": "https://arxiv.org/abs/2504.03621v1",
       "github": "",
       "stars": 0
     },
@@ -3859,14 +3877,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2505.18961",
       "url": "",
@@ -3990,14 +4008,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -4040,16 +4058,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "",
@@ -4093,14 +4111,16 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "arxiv": "2402.01155",
       "url": "",
@@ -4118,14 +4138,16 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "arxiv": "2401.04398",
       "url": "",
@@ -4194,16 +4216,25 @@
       "year": 2024,
       "category": "vlm",
       "categories": [
-        "vlm"
+        "vlm",
+        "eval"
       ],
-      "subcategory": "Multimodal RAG",
+      "subcategory": "Vision-Language Models for Document Understanding",
       "subcategories": [
-        "Multimodal RAG"
+        "Vision-Language Models for Document Understanding",
+        "Multimodal RAG",
+        "Benchmark Scope and Observable Capabilities"
       ],
-      "topics": [],
+      "topics": [
+        "A comparison protocol"
+      ],
       "tags": [
         "vlm",
-        "Multimodal RAG"
+        "eval",
+        "Vision-Language Models for Document Understanding",
+        "Multimodal RAG",
+        "Benchmark Scope and Observable Capabilities",
+        "A comparison protocol"
       ],
       "arxiv": "2407.01449",
       "url": "",
@@ -4221,14 +4252,19 @@
       "categories": [
         "eval"
       ],
-      "subcategory": "Document QA Evaluation",
+      "subcategory": "Benchmark Scope and Observable Capabilities",
       "subcategories": [
+        "Benchmark Scope and Observable Capabilities",
         "Document QA Evaluation"
       ],
-      "topics": [],
+      "topics": [
+        "A comparison protocol"
+      ],
       "tags": [
         "eval",
-        "Document QA Evaluation"
+        "Benchmark Scope and Observable Capabilities",
+        "Document QA Evaluation",
+        "A comparison protocol"
       ],
       "arxiv": "",
       "url": "",
@@ -4395,14 +4431,17 @@
       "authors": "Wang, Dongsheng, Raman, Natraj, Sibue, Mathieu, Ma, Zhiqiang, Babkin, Petr, Kaur, Simerjot, Pei, Yulong, Nourbakhsh, Armineh, Liu, Xiaomo",
       "venue": "Proceedings of the 62nd annual meeting of the association for computational linguistics (volume 1: long papers)",
       "year": 2024,
-      "category": "layout",
+      "category": "ocr",
       "categories": [
+        "ocr",
         "layout",
         "vlm"
       ],
-      "subcategory": "Layout-Aware Reasoning and Generation",
+      "subcategory": "Comparing Perception Routes",
       "subcategories": [
+        "Comparing Perception Routes",
         "Layout-Aware Reasoning and Generation",
+        "Vision-Language Models for Document Understanding",
         "Foundational Vision-Language Models for Document Understanding",
         "Multimodal RAG"
       ],
@@ -4410,9 +4449,12 @@
         "The Rise of VLM and Advancements in High-Resolution Perception"
       ],
       "tags": [
+        "ocr",
         "layout",
         "vlm",
+        "Comparing Perception Routes",
         "Layout-Aware Reasoning and Generation",
+        "Vision-Language Models for Document Understanding",
         "Foundational Vision-Language Models for Document Understanding",
         "Multimodal RAG",
         "The Rise of VLM and Advancements in High-Resolution Perception"
@@ -4486,14 +4528,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Structure-Aware Evidence Access",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "arxiv": "2405.11461",
       "url": "",
@@ -4511,16 +4553,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "",
@@ -4539,14 +4581,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -4589,14 +4631,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -4748,14 +4790,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2402.12869",
       "url": "",
@@ -4773,14 +4815,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -4876,14 +4918,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2408.08841",
       "url": "",
@@ -4901,14 +4943,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -4926,14 +4968,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2404.16130",
       "url": "",
@@ -4951,14 +4993,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2410.04790",
       "url": "",
@@ -5054,14 +5096,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2402.01767",
       "url": "",
@@ -5104,14 +5146,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -5154,14 +5196,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2412.12386",
       "url": "",
@@ -5179,14 +5221,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Structure-Aware Evidence Access",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "arxiv": "",
       "url": "",
@@ -5354,14 +5396,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -5379,14 +5421,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Graph and Hierarchical Evidence Indexes",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Graph and Hierarchical Evidence Indexes"
       ],
       "arxiv": "2410.05779",
       "url": "",
@@ -5396,7 +5438,7 @@
     {
       "id": 209,
       "bibKey": "long2rag2024",
-      "title": "Long $\\^ 2$ RAG: Evaluating Long-Context & Long-Form Retrieval-Augmented Generation with Key Point Recall",
+      "title": "Long$^2$RAG: Evaluating Long-Context and Long-Form Retrieval-Augmented Generation with Key Point Recall",
       "authors": "Qi, Zehan, Xu, Rongwu, Guo, Zhijiang, Wang, Cunxiang, Zhang, Hao, Xu, Wei",
       "venue": "arXiv 2024",
       "year": 2024,
@@ -5535,14 +5577,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -5581,17 +5623,27 @@
       "authors": "Ma, Yubo, Zang, Yuhang, Chen, Liangyu, Chen, Meiqi, Jiao, Yizhu, Li, Xinze, Lu, Xinyuan, Liu, Ziyu, Ma, Yan, Dong, Xiaoyi, others",
       "venue": "Advances in Neural Information Processing Systems",
       "year": 2024,
-      "category": "eval",
+      "category": "ocr",
       "categories": [
+        "ocr",
+        "vlm",
         "eval"
       ],
-      "subcategory": "Document QA Evaluation",
+      "subcategory": "Comparing Perception Routes",
       "subcategories": [
+        "Comparing Perception Routes",
+        "Vision-Language Models for Document Understanding",
+        "Benchmark Scope and Observable Capabilities",
         "Document QA Evaluation"
       ],
       "topics": [],
       "tags": [
+        "ocr",
+        "vlm",
         "eval",
+        "Comparing Perception Routes",
+        "Vision-Language Models for Document Understanding",
+        "Benchmark Scope and Observable Capabilities",
         "Document QA Evaluation"
       ],
       "arxiv": "",
@@ -5951,14 +6003,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -5976,14 +6028,16 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "arxiv": "2402.14361",
       "url": "",
@@ -6027,16 +6081,16 @@
         "rag",
         "eval"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Structure-Aware Evidence Access",
       "subcategories": [
-        "Retrieval-Augmented Generation",
+        "Structure-Aware Evidence Access",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "topics": [],
       "tags": [
         "rag",
         "eval",
-        "Retrieval-Augmented Generation",
+        "Structure-Aware Evidence Access",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "arxiv": "",
@@ -6055,14 +6109,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2412.04272v1",
       "url": "",
@@ -6080,14 +6134,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2412.04272",
       "url": "",
@@ -6236,14 +6290,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -6286,14 +6340,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Structure-Aware Evidence Access",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "arxiv": "",
       "url": "",
@@ -6364,14 +6418,16 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "arxiv": "2411.02059",
       "url": "",
@@ -6389,14 +6445,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2402.12424",
       "url": "",
@@ -6414,14 +6470,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -6439,14 +6495,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2404.10150",
       "url": "",
@@ -6464,14 +6520,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -6489,14 +6545,16 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "arxiv": "",
       "url": "",
@@ -6514,14 +6572,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "",
       "url": "",
@@ -6670,14 +6728,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2406.12269",
       "url": "",
@@ -6776,13 +6834,15 @@
       "categories": [
         "vlm"
       ],
-      "subcategory": "Multimodal RAG",
+      "subcategory": "Vision-Language Models for Document Understanding",
       "subcategories": [
+        "Vision-Language Models for Document Understanding",
         "Multimodal RAG"
       ],
       "topics": [],
       "tags": [
         "vlm",
+        "Vision-Language Models for Document Understanding",
         "Multimodal RAG"
       ],
       "arxiv": "2410.10594",
@@ -6801,14 +6861,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2406.03753",
       "url": "",
@@ -7029,14 +7089,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -7054,16 +7114,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -7132,14 +7192,16 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning",
+        "Comparing Evidence Transformations and Their Checks"
       ],
       "arxiv": "",
       "url": "",
@@ -7157,13 +7219,15 @@
       "categories": [
         "eval"
       ],
-      "subcategory": "Visual Document Understanding and Basic QA Evaluation",
+      "subcategory": "Benchmark Scope and Observable Capabilities",
       "subcategories": [
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "topics": [],
       "tags": [
         "eval",
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "arxiv": "",
@@ -7260,16 +7324,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -7391,14 +7455,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "2312.11521",
       "url": "",
@@ -7416,14 +7480,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -7466,14 +7530,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2309.11049",
       "url": "",
@@ -7541,16 +7605,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "2310.06436",
@@ -7890,13 +7954,15 @@
       "categories": [
         "eval"
       ],
-      "subcategory": "Visual Document Understanding and Basic QA Evaluation",
+      "subcategory": "Benchmark Scope and Observable Capabilities",
       "subcategories": [
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "topics": [],
       "tags": [
         "eval",
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "arxiv": "",
@@ -7915,14 +7981,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -7940,14 +8006,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -7965,14 +8031,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Verifiable Reasoning and Multimodal Table Understanding Stage",
+      "subcategory": "Execution-Based Reasoning and Multimodal Table Understanding",
       "subcategories": [
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Verifiable Reasoning and Multimodal Table Understanding Stage"
+        "Execution-Based Reasoning and Multimodal Table Understanding"
       ],
       "arxiv": "2303.14935",
       "url": "",
@@ -7982,25 +8048,25 @@
     {
       "id": 309,
       "bibKey": "peng2023table",
-      "title": "Table-GPT: Table-tuned GPT for diverse table tasks",
-      "authors": "Peng, Li, Yeye, He, Dror, Yashar, Weiwei, Cui, Song, Ge, Haidong, Zhang, Rifinski, Fainman Danielle, Dongmei, Zhang, Surajit, Chaudhuri",
-      "venue": "arXiv (Cornell University)",
+      "title": "Table-GPT: Table-tuned GPT for Diverse Table Tasks",
+      "authors": "Li, Peng, He, Yeye, Yashar, Dror, Cui, Weiwei, Ge, Song, Zhang, Haidong, Rifinski Fainman, Danielle, Zhang, Dongmei, Chaudhuri, Surajit",
+      "venue": "arXiv 2023",
       "year": 2023,
       "category": "table",
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
-      "arxiv": "",
-      "url": "",
+      "arxiv": "2310.09263",
+      "url": "https://arxiv.org/abs/2310.09263",
       "github": "",
       "stars": 0
     },
@@ -8015,14 +8081,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "2310.10358",
       "url": "",
@@ -8196,14 +8262,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -8221,16 +8287,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -8352,14 +8418,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -8405,14 +8471,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -8430,14 +8496,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -8446,6 +8512,33 @@
     },
     {
       "id": 327,
+      "bibKey": "infographicvqa2021",
+      "title": "InfographicVQA",
+      "authors": "Mathew, Minesh, Bagal, Viraj, Tito, Rub\\`en, Karatzas, Dimosthenis, Valveny, Ernest, Jawahar, C. V.",
+      "venue": "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
+      "year": 2022,
+      "category": "eval",
+      "categories": [
+        "eval"
+      ],
+      "subcategory": "Benchmark Scope and Observable Capabilities",
+      "subcategories": [
+        "Benchmark Scope and Observable Capabilities",
+        "Visual Document Understanding and Basic QA Evaluation"
+      ],
+      "topics": [],
+      "tags": [
+        "eval",
+        "Benchmark Scope and Observable Capabilities",
+        "Visual Document Understanding and Basic QA Evaluation"
+      ],
+      "arxiv": "2104.12756",
+      "url": "https://openaccess.thecvf.com/content/WACV2022/html/Mathew_InfographicVQA_WACV_2022_paper.html",
+      "github": "",
+      "stars": 0
+    },
+    {
+      "id": 328,
       "bibKey": "wang2022lilt",
       "title": "Lilt: A simple yet effective language-independent layout transformer for structured document understanding",
       "authors": "Wang, Jiapeng, Jin, Lianwen, Ding, Kai",
@@ -8470,7 +8563,7 @@
       "stars": 0
     },
     {
-      "id": 328,
+      "id": 329,
       "bibKey": "saravanan2019cybersecurity",
       "title": "Machine Learning Construction: implications to cybersecurity",
       "authors": "Yousef, Waleed A",
@@ -8495,7 +8588,7 @@
       "stars": 0
     },
     {
-      "id": 329,
+      "id": 330,
       "bibKey": "patel2020performance",
       "title": "Machine Learning in OCR Technology: Performance Analysis of Different OCR Methods for Slide-to-Text Conversion in Lecture Videos",
       "authors": "Hukkeri, Geeta S, Goudar, RH, Janagond, Prashant, Patil, Pooja S",
@@ -8520,7 +8613,7 @@
       "stars": 0
     },
     {
-      "id": 330,
+      "id": 331,
       "bibKey": "wang2023multihiertt",
       "title": "MultiHiertt: Numerical reasoning over multi hierarchical tabular and textual data",
       "authors": "Zhao, Yilun, Li, Yunxiang, Li, Chenying, Zhang, Rui",
@@ -8530,14 +8623,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "2206.01347",
       "url": "",
@@ -8545,7 +8638,7 @@
       "stars": 0
     },
     {
-      "id": 331,
+      "id": 332,
       "bibKey": "liu2022gatdoc",
       "title": "Multimodal pre-training based on graph attention network for document understanding",
       "authors": "Zhang, Zhenrong, Ma, Jiefeng, Du, Jun, Wang, Licheng, Zhang, Jianshu",
@@ -8573,7 +8666,7 @@
       "stars": 0
     },
     {
-      "id": 332,
+      "id": 333,
       "bibKey": "kayser2022nlxgpt",
       "title": "Nlx-gpt: A model for natural language explanations in vision and vision-language tasks",
       "authors": "Sammani, Fawaz, Mukherjee, Tanmoy, Deligiannis, Nikos",
@@ -8601,25 +8694,31 @@
       "stars": 0
     },
     {
-      "id": 333,
+      "id": 334,
       "bibKey": "kim2022donut",
       "title": "Ocr-free document understanding transformer",
       "authors": "Kim, Geewook, Hong, Teakgyu, Yim, Moonbin, Nam, JeongYeon, Park, Jinyoung, Yim, Jinyeong, Hwang, Wonseok, Yun, Sangdoo, Han, Dongyoon, Park, Seunghyun",
       "venue": "European Conference on Computer Vision",
       "year": 2022,
-      "category": "vlm",
+      "category": "ocr",
       "categories": [
+        "ocr",
         "vlm"
       ],
-      "subcategory": "Foundational Vision-Language Models for Document Understanding",
+      "subcategory": "Comparing Perception Routes",
       "subcategories": [
+        "Comparing Perception Routes",
+        "Vision-Language Models for Document Understanding",
         "Foundational Vision-Language Models for Document Understanding"
       ],
       "topics": [
         "The Evolution of OCR-free and Multi-page Context"
       ],
       "tags": [
+        "ocr",
         "vlm",
+        "Comparing Perception Routes",
+        "Vision-Language Models for Document Understanding",
         "Foundational Vision-Language Models for Document Understanding",
         "The Evolution of OCR-free and Multi-page Context"
       ],
@@ -8629,7 +8728,7 @@
       "stars": 0
     },
     {
-      "id": 334,
+      "id": 335,
       "bibKey": "ocridl2022",
       "title": "Ocr-idl: Ocr annotations for industry document library dataset",
       "authors": "Biten, Ali Furkan, Tito, Ruben, Gomez, Lluis, Valveny, Ernest, Karatzas, Dimosthenis",
@@ -8654,7 +8753,7 @@
       "stars": 0
     },
     {
-      "id": 335,
+      "id": 336,
       "bibKey": "jiang2022omnitab",
       "title": "OmniTab: Pretraining with natural and synthetic data for few-shot table-based question answering",
       "authors": "Jiang, Zhengbao, Mao, Yi, He, Pengcheng, Neubig, Graham, Chen, Weizhu",
@@ -8664,14 +8763,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "2207.03637",
       "url": "",
@@ -8679,7 +8778,7 @@
       "stars": 0
     },
     {
-      "id": 336,
+      "id": 337,
       "bibKey": "liu2023reastap",
       "title": "ReasTAP: Injecting table reasoning skills during pre-training via synthetic reasoning examples",
       "authors": "Zhao, Yilun, Nan, Linyong, Qi, Zhenting, Zhang, Rui, Radev, Dragomir",
@@ -8689,14 +8788,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "2210.12374",
       "url": "",
@@ -8704,7 +8803,7 @@
       "stars": 0
     },
     {
-      "id": 337,
+      "id": 338,
       "bibKey": "mcdonald2016rerunning",
       "title": "Rerunning OCR: A machine learning approach to quality assessment and enhancement prediction",
       "authors": "Schneider, Pit, Maurer, Yves",
@@ -8729,7 +8828,7 @@
       "stars": 0
     },
     {
-      "id": 338,
+      "id": 339,
       "bibKey": "li2021tablewild",
       "title": "Table detection in the wild: A novel diverse table detection dataset and method",
       "authors": "Haloi, Mrinal, Shekhar, Shashank, Fande, Nikhil, Dash, Siddhant Swaroop, others",
@@ -8739,14 +8838,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "2209.09207",
       "url": "",
@@ -8754,7 +8853,7 @@
       "stars": 0
     },
     {
-      "id": 339,
+      "id": 340,
       "bibKey": "tta-vdu2023",
       "title": "Test-time adaptation for visual document understanding",
       "authors": "Ebrahimi, Sayna, Arik, Sercan O, Pfister, Tomas",
@@ -8779,7 +8878,7 @@
       "stars": 0
     },
     {
-      "id": 340,
+      "id": 341,
       "bibKey": "zhu2022towards",
       "title": "Towards complex document understanding by discrete reasoning",
       "authors": "Zhu, Fengbin, Lei, Wenqiang, Feng, Fuli, Wang, Chao, Zhang, Haozhou, Chua, Tat-Seng",
@@ -8789,14 +8888,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -8804,7 +8903,7 @@
       "stars": 0
     },
     {
-      "id": 341,
+      "id": 342,
       "bibKey": "yang2022transformerlayout",
       "title": "Transformer-based approach for document layout understanding",
       "authors": "Yang, Huichen, Hsu, William",
@@ -8829,7 +8928,7 @@
       "stars": 0
     },
     {
-      "id": 342,
+      "id": 343,
       "bibKey": "wu2022triple",
       "title": "Triple-fact retriever: An explainable reasoning retrieval model for multi-hop qa problem",
       "authors": "Wu, Chengmin, Hu, Enrui, Zhan, Ke, Luo, Lan, Zhang, Xinyu, Jiang, Hao, Wang, Qirui, Cao, Zhao, Yu, Fan, Chen, Lei",
@@ -8854,7 +8953,7 @@
       "stars": 0
     },
     {
-      "id": 343,
+      "id": 344,
       "bibKey": "li2022pdfmeta",
       "title": "Vision and natural language for metadata extraction from scientific PDF documents: a multimodal approach",
       "authors": "Boukhers, Zeyd, Bouabdallah, Azeddine",
@@ -8882,7 +8981,7 @@
       "stars": 0
     },
     {
-      "id": 344,
+      "id": 345,
       "bibKey": "raja2022visual",
       "title": "Visual understanding of complex table structures from document images",
       "authors": "Raja, Sachin, Mondal, Ajoy, Jawahar, CV",
@@ -8892,14 +8991,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -8907,7 +9006,7 @@
       "stars": 0
     },
     {
-      "id": 345,
+      "id": 346,
       "bibKey": "wang2023wildocr",
       "title": "Wild ocr: Deep learning architecture for text recognition in images",
       "authors": "Amudha, J, Thakur, Manmohan Singh, Shrivastava, Anupriya, Gupta, Shubham, Gupta, Deepa, Sharma, Kshitij",
@@ -8932,7 +9031,7 @@
       "stars": 0
     },
     {
-      "id": 346,
+      "id": 347,
       "bibKey": "gu2022xylayoutlm",
       "title": "Xylayoutlm: Towards layout-aware multimodal networks for visually-rich document understanding",
       "authors": "Gu, Zhangxuan, Meng, Changhua, Wang, Ke, Lan, Jun, Wang, Weiqiang, Gu, Ming, Zhang, Liqing",
@@ -8957,7 +9056,7 @@
       "stars": 0
     },
     {
-      "id": 347,
+      "id": 348,
       "bibKey": "infoseekqa2021",
       "title": "A dataset of information-seeking questions and answers anchored in research papers",
       "authors": "Dasigi, Pradeep, Lo, Kyle, Beltagy, Iz, Cohan, Arman, Smith, Noah A, Gardner, Matt",
@@ -8967,14 +9066,19 @@
       "categories": [
         "eval"
       ],
-      "subcategory": "Visual Document Understanding and Basic QA Evaluation",
+      "subcategory": "Benchmark Scope and Observable Capabilities",
       "subcategories": [
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
-      "topics": [],
+      "topics": [
+        "A comparison protocol"
+      ],
       "tags": [
         "eval",
-        "Visual Document Understanding and Basic QA Evaluation"
+        "Benchmark Scope and Observable Capabilities",
+        "Visual Document Understanding and Basic QA Evaluation",
+        "A comparison protocol"
       ],
       "arxiv": "2105.03011",
       "url": "",
@@ -8982,7 +9086,7 @@
       "stars": 0
     },
     {
-      "id": 348,
+      "id": 349,
       "bibKey": "zhang2022expression",
       "title": "A deep learning technology based ocr framework for recognition handwritten expression and text",
       "authors": "Gong, T, Yao, X",
@@ -9007,7 +9111,7 @@
       "stars": 0
     },
     {
-      "id": 349,
+      "id": 350,
       "bibKey": "pham2021multiplexed",
       "title": "A multiplexed network for end-to-end, multilingual OCR",
       "authors": "Huang, Jing, Pang, Guan, Kovvuri, Rama, Toh, Mandy, Liang, Kevin J, Krishnan, Praveen, Yin, Xi, Hassner, Tal",
@@ -9032,7 +9136,7 @@
       "stars": 0
     },
     {
-      "id": 350,
+      "id": 351,
       "bibKey": "nguyen2018postocr",
       "title": "A novel machine learning based approach for post-OCR error detection",
       "authors": "Virk, Shafqat Mumtaz, Dann\\'ells, Dana, Muhammad, Azam Sheikh",
@@ -9057,7 +9161,7 @@
       "stars": 0
     },
     {
-      "id": 351,
+      "id": 352,
       "bibKey": "vinciarelli2020survey",
       "title": "Deep learning techniques for optical character recognition",
       "authors": "Sarika, Naragudem, Sirisala, NageswaraRao",
@@ -9082,7 +9186,7 @@
       "stars": 0
     },
     {
-      "id": 352,
+      "id": 353,
       "bibKey": "wei2020deep",
       "title": "Deep multimodal learning for cross-modal retrieval: One model for all tasks",
       "authors": "Beltr\\'an, L Viviana Beltr\\'an, Caicedo, Juan C, Journet, Nicholas, Coustaty, Micka\\\"el, Lecellier, Francois, Doucet, Antoine",
@@ -9110,7 +9214,7 @@
       "stars": 0
     },
     {
-      "id": 353,
+      "id": 354,
       "bibKey": "ismail2021payment",
       "title": "Developing automated optical character recognition system using machine learning algorithm to solve payment verification issues",
       "authors": "Siek, Michael, Soeharto, Rafi",
@@ -9135,7 +9239,7 @@
       "stars": 0
     },
     {
-      "id": 354,
+      "id": 355,
       "bibKey": "doccollectionvqa2021",
       "title": "Document collection visual question answering",
       "authors": "Tito, Rub\\`en, Karatzas, Dimosthenis, Valveny, Ernest",
@@ -9160,7 +9264,7 @@
       "stars": 0
     },
     {
-      "id": 355,
+      "id": 356,
       "bibKey": "minouei2021enhancedobjectdetector",
       "title": "Document layout analysis with an enhanced object detector",
       "authors": "Minouei, Mohammad, Soheili, Mohammad Reza, Stricker, Didier",
@@ -9185,7 +9289,7 @@
       "stars": 0
     },
     {
-      "id": 356,
+      "id": 357,
       "bibKey": "docvqa2020",
       "title": "Docvqa: A dataset for vqa on document images",
       "authors": "Mathew, Minesh, Karatzas, Dimosthenis, Jawahar, CV",
@@ -9195,13 +9299,15 @@
       "categories": [
         "eval"
       ],
-      "subcategory": "Visual Document Understanding and Basic QA Evaluation",
+      "subcategory": "Benchmark Scope and Observable Capabilities",
       "subcategories": [
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "topics": [],
       "tags": [
         "eval",
+        "Benchmark Scope and Observable Capabilities",
         "Visual Document Understanding and Basic QA Evaluation"
       ],
       "arxiv": "",
@@ -9210,7 +9316,7 @@
       "stars": 0
     },
     {
-      "id": 357,
+      "id": 358,
       "bibKey": "mathew2020docvqa",
       "title": "Docvqa: A dataset for vqa on document images",
       "authors": "Mathew, Minesh, Karatzas, Dimosthenis, Jawahar, CV",
@@ -9235,7 +9341,7 @@
       "stars": 0
     },
     {
-      "id": 358,
+      "id": 359,
       "bibKey": "due2021",
       "title": "Due: End-to-end document understanding benchmark",
       "authors": "Borchmann, ukasz, Pietruszka, Micha, Stanislawek, Tomasz, Jurkiewicz, Dawid, Turski, Micha, Szyndler, Karolina, Grali\\'nski, Filip",
@@ -9260,7 +9366,7 @@
       "stars": 0
     },
     {
-      "id": 359,
+      "id": 360,
       "bibKey": "iconqa2024",
       "title": "Iconqa: A new benchmark for abstract diagram understanding and visual language reasoning",
       "authors": "Lu, Pan, Qiu, Liang, Chen, Jiaqi, Xia, Tony, Zhao, Yizhou, Zhang, Wei, Yu, Zhou, Liang, Xiaodan, Zhu, Song-Chun",
@@ -9285,7 +9391,7 @@
       "stars": 0
     },
     {
-      "id": 360,
+      "id": 361,
       "bibKey": "kumar2018adaptive",
       "title": "Image preprocessing and modified adaptive thresholding for improving OCR",
       "authors": "Kshetry, Rohan Lal",
@@ -9305,31 +9411,6 @@
         "Traditional Matching and Machine Learning Methods"
       ],
       "arxiv": "2111.14075",
-      "url": "",
-      "github": "",
-      "stars": 0
-    },
-    {
-      "id": 361,
-      "bibKey": "infographicvqa2021",
-      "title": "Infographicvqa",
-      "authors": "Mathew, Minesh, Bagal, Viraj, Tito, Rub\\`en, Karatzas, Dimosthenis, Valveny, Ernest, Jawahar, CV",
-      "venue": "Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision",
-      "year": 2021,
-      "category": "eval",
-      "categories": [
-        "eval"
-      ],
-      "subcategory": "Visual Document Understanding and Basic QA Evaluation",
-      "subcategories": [
-        "Visual Document Understanding and Basic QA Evaluation"
-      ],
-      "topics": [],
-      "tags": [
-        "eval",
-        "Visual Document Understanding and Basic QA Evaluation"
-      ],
-      "arxiv": "",
       "url": "",
       "github": "",
       "stars": 0
@@ -9423,16 +9504,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Task Generalization and the LLM Era"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Task Generalization and the LLM Era"
       ],
       "arxiv": "",
@@ -9501,14 +9582,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "2101.10573",
       "url": "",
@@ -9526,14 +9607,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Generation Enhancement and Modular Reasoning Stage",
+      "subcategory": "Generation Enhancement and Modular Reasoning",
       "subcategories": [
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Generation Enhancement and Modular Reasoning Stage"
+        "Generation Enhancement and Modular Reasoning"
       ],
       "arxiv": "",
       "url": "",
@@ -9679,16 +9760,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -9703,17 +9784,21 @@
       "authors": "Xu, Yiheng, Li, Minghao, Cui, Lei, Huang, Shaohan, Wei, Furu, Zhou, Ming",
       "venue": "Proceedings of the 26th ACM SIGKDD international conference on knowledge discovery & data mining",
       "year": 2020,
-      "category": "layout",
+      "category": "ocr",
       "categories": [
+        "ocr",
         "layout"
       ],
-      "subcategory": "Layout-Aware Representation Learning",
+      "subcategory": "Comparing Perception Routes",
       "subcategories": [
+        "Comparing Perception Routes",
         "Layout-Aware Representation Learning"
       ],
       "topics": [],
       "tags": [
+        "ocr",
         "layout",
+        "Comparing Perception Routes",
         "Layout-Aware Representation Learning"
       ],
       "arxiv": "",
@@ -9732,16 +9817,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "2006.06478",
@@ -9787,12 +9872,14 @@
       ],
       "subcategory": "Deep Learning Methods",
       "subcategories": [
-        "Deep Learning Methods"
+        "Deep Learning Methods",
+        "Comparing Perception Routes"
       ],
       "topics": [],
       "tags": [
         "ocr",
-        "Deep Learning Methods"
+        "Deep Learning Methods",
+        "Comparing Perception Routes"
       ],
       "arxiv": "2009.09941",
       "url": "",
@@ -9801,6 +9888,31 @@
     },
     {
       "id": 380,
+      "bibKey": "lewis2020rag",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Lewis, Patrick, Perez, Ethan, Piktus, Aleksandra, Petroni, Fabio, Karpukhin, Vladimir, Goyal, Naman, K\\\"uttler, Heinrich, Lewis, Mike, Yih, Wen-tau, Rockt\\\"aschel, Tim, Riedel, Sebastian, Kiela, Douwe",
+      "venue": "Advances in Neural Information Processing Systems",
+      "year": 2020,
+      "category": "rag",
+      "categories": [
+        "rag"
+      ],
+      "subcategory": "Retrieval-Augmented Generation",
+      "subcategories": [
+        "Retrieval-Augmented Generation"
+      ],
+      "topics": [],
+      "tags": [
+        "rag",
+        "Retrieval-Augmented Generation"
+      ],
+      "arxiv": "2005.11401",
+      "url": "https://papers.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+      "github": "",
+      "stars": 0
+    },
+    {
+      "id": 381,
       "bibKey": "sae2020",
       "title": "Select, answer and explain: Interpretable multi-hop reading comprehension over multiple documents",
       "authors": "Tu, Ming, Huang, Kevin, Wang, Guangtao, Huang, Jing, He, Xiaodong, Zhou, Bowen",
@@ -9810,16 +9922,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -9828,7 +9940,7 @@
       "stars": 0
     },
     {
-      "id": 381,
+      "id": 382,
       "bibKey": "eisenschlos2020understanding",
       "title": "Understanding tables with intermediate pre-training",
       "authors": "Eisenschlos, Julian, Krichene, Syrine, M\\\"uller, Thomas",
@@ -9838,14 +9950,14 @@
       "categories": [
         "table"
       ],
-      "subcategory": "Structure-Aware and Table Semantic Modeling Stage",
+      "subcategory": "Structure-Aware and Table Semantic Modeling",
       "subcategories": [
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "topics": [],
       "tags": [
         "table",
-        "Structure-Aware and Table Semantic Modeling Stage"
+        "Structure-Aware and Table Semantic Modeling"
       ],
       "arxiv": "",
       "url": "",
@@ -9853,7 +9965,7 @@
       "stars": 0
     },
     {
-      "id": 382,
+      "id": 383,
       "bibKey": "keremberke2021chargrid",
       "title": "Chargrid-OCR: End-to-end trainable optical character recognition for printed documents using instance segmentation",
       "authors": "Reisswig, Christian, Katti, Anoop R, Spinaci, Marco, H\\\"ohne, Johannes",
@@ -9878,7 +9990,7 @@
       "stars": 0
     },
     {
-      "id": 383,
+      "id": 384,
       "bibKey": "liu2019chineseocr",
       "title": "Deep learning-aided OCR techniques for Chinese uppercase characters in the application of Internet of Things",
       "authors": "Yin, Yue, Zhang, Wei, Hong, Sheng, Yang, Jie, Xiong, Jian, Gui, Guan",
@@ -9903,7 +10015,7 @@
       "stars": 0
     },
     {
-      "id": 384,
+      "id": 385,
       "bibKey": "eareader2019",
       "title": "Ea reader: Enhance attentive reader for cloze-style question answering via multi-space context fusion",
       "authors": "Fu, Chengzhen, Zhang, Yan",
@@ -9913,16 +10025,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Early Attention Mechanisms"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Early Attention Mechanisms"
       ],
       "arxiv": "",
@@ -9931,7 +10043,7 @@
       "stars": 0
     },
     {
-      "id": 385,
+      "id": 386,
       "bibKey": "explicitpaths2019",
       "title": "Exploiting explicit paths for multi-hop reading comprehension",
       "authors": "Kundu, Souvik, Khot, Tushar, Sabharwal, Ashish, Clark, Peter",
@@ -9941,16 +10053,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -9959,7 +10071,7 @@
       "stars": 0
     },
     {
-      "id": 386,
+      "id": 387,
       "bibKey": "epa2019",
       "title": "Explore, propose, and assemble: An interpretable model for multi-hop reading comprehension",
       "authors": "Jiang, Yichen, Joshi, Nitish, Chen, Yen-Chun, Bansal, Mohit",
@@ -9969,16 +10081,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "1906.05210",
@@ -9987,7 +10099,7 @@
       "stars": 0
     },
     {
-      "id": 387,
+      "id": 388,
       "bibKey": "dgn2019",
       "title": "Identifying supporting facts for multi-hop question answering with document graph networks",
       "authors": "Thayaparan, Mokanarangan, Valentino, Marco, Schlegel, Viktor, Freitas, Andr\\'e",
@@ -9997,16 +10109,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "1910.00290",
@@ -10015,7 +10127,7 @@
       "stars": 0
     },
     {
-      "id": 388,
+      "id": 389,
       "bibKey": "reasoningchains2020",
       "title": "Multi-hop question answering via reasoning chains",
       "authors": "Chen, Jifan, Lin, Shih-ting, Durrett, Greg",
@@ -10025,16 +10137,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "1910.02610",
@@ -10043,7 +10155,7 @@
       "stars": 0
     },
     {
-      "id": 389,
+      "id": 390,
       "bibKey": "nguyen2019multimodal",
       "title": "Multimodal deep networks for text and image-based document classification",
       "authors": "Audebert, Nicolas, Herold, Catherine, Slimani, Kuider, Vidal, C\\'edric",
@@ -10068,7 +10180,7 @@
       "stars": 0
     },
     {
-      "id": 390,
+      "id": 391,
       "bibKey": "zhong2019publaynet",
       "title": "Publaynet: largest dataset ever for document layout analysis",
       "authors": "Zhong, Xu, Tang, Jianbin, Yepes, Antonio Jimeno",
@@ -10093,7 +10205,7 @@
       "stars": 0
     },
     {
-      "id": 391,
+      "id": 392,
       "bibKey": "gcnmultihop2019",
       "title": "Question answering by reasoning across documents with graph convolutional networks",
       "authors": "De Cao, Nicola, Aziz, Wilker, Titov, Ivan",
@@ -10103,16 +10215,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Reasoning Based on Graph Structures and Global Information"
       ],
       "arxiv": "",
@@ -10121,7 +10233,7 @@
       "stars": 0
     },
     {
-      "id": 392,
+      "id": 393,
       "bibKey": "chiron2019selfsupervised",
       "title": "Self-supervised Data Bootstrapping for Deep Optical Character Recognition of Identity Documents",
       "authors": "Mothes, Oliver, Denzler, Joachim",
@@ -10146,7 +10258,7 @@
       "stars": 0
     },
     {
-      "id": 393,
+      "id": 394,
       "bibKey": "soto2019visual",
       "title": "Visual detection with context for document layout analysis",
       "authors": "Soto, Carlos, Yoo, Shinjae",
@@ -10171,7 +10283,7 @@
       "stars": 0
     },
     {
-      "id": 394,
+      "id": 395,
       "bibKey": "zhang2018baidu",
       "title": "Baidu Meizu deep learning competition: Arithmetic operation recognition using end-to-end learning OCR technologies",
       "authors": "Jiang, Yuxiang, Dong, Haiwei, El Saddik, Abdulmotaleb",
@@ -10196,7 +10308,7 @@
       "stars": 0
     },
     {
-      "id": 395,
+      "id": 396,
       "bibKey": "chen2025chunkingdiscourseawarehierarchicalretrieval",
       "title": "Beyond chunking: Microlearning secrets for effective online design",
       "authors": "Major, Amanda, Calandrino, Tina",
@@ -10206,14 +10318,14 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "Retrieval-Augmented Generation",
+      "subcategory": "Structure-Aware Evidence Access",
       "subcategories": [
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "topics": [],
       "tags": [
         "rag",
-        "Retrieval-Augmented Generation"
+        "Structure-Aware Evidence Access"
       ],
       "arxiv": "",
       "url": "",
@@ -10221,7 +10333,7 @@
       "stars": 0
     },
     {
-      "id": 396,
+      "id": 397,
       "bibKey": "wick2018calamari",
       "title": "Calamari-a high-performance tensorflow-based deep learning package for optical character recognition",
       "authors": "Wick, Christoph, Reul, Christian, Puppe, Frank",
@@ -10246,7 +10358,7 @@
       "stars": 0
     },
     {
-      "id": 397,
+      "id": 398,
       "bibKey": "kumar2014implementation",
       "title": "Implementation of optical character recognition using machine learning",
       "authors": "Chowrasia, V, Shilakari, S, Pandey, Rajeev",
@@ -10271,7 +10383,7 @@
       "stars": 0
     },
     {
-      "id": 398,
+      "id": 399,
       "bibKey": "rajput2016receipt",
       "title": "Utilize OCR text to extract receipt data and classify receipts with common machine learning algorithms",
       "authors": "Odd, Joel, Theologou, Emil",
@@ -10296,7 +10408,7 @@
       "stars": 0
     },
     {
-      "id": 399,
+      "id": 400,
       "bibKey": "coarsetofine2017",
       "title": "Coarse-to-fine question answering for long documents",
       "authors": "Choi, Eunsol, Hewlett, Daniel, Uszkoreit, Jakob, Polosukhin, Illia, Lacoste, Alexandre, Berant, Jonathan",
@@ -10306,16 +10418,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Early Attention Mechanisms"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Early Attention Mechanisms"
       ],
       "arxiv": "",
@@ -10324,7 +10436,7 @@
       "stars": 0
     },
     {
-      "id": 400,
+      "id": 401,
       "bibKey": "ferrara2017documentlayoutsemantic",
       "title": "Document layout analysis for semantic information extraction",
       "authors": "Adrian, Weronika T, Leone, Nicola, Manna, Marco, Marte, Cinzia",
@@ -10349,7 +10461,7 @@
       "stars": 0
     },
     {
-      "id": 401,
+      "id": 402,
       "bibKey": "dynamiccoattention2017",
       "title": "Dynamic coattention networks for question answering",
       "authors": "Xiong, Caiming, Zhong, Victor, Socher, Richard",
@@ -10359,16 +10471,16 @@
       "categories": [
         "rag"
       ],
-      "subcategory": "End-to-End Document Question Answering",
+      "subcategory": "Text QA Foundations and Their Scope",
       "subcategories": [
-        "End-to-End Document Question Answering"
+        "Text QA Foundations and Their Scope"
       ],
       "topics": [
         "Early Attention Mechanisms"
       ],
       "tags": [
         "rag",
-        "End-to-End Document Question Answering",
+        "Text QA Foundations and Their Scope",
         "Early Attention Mechanisms"
       ],
       "arxiv": "1611.01604",
@@ -10377,7 +10489,7 @@
       "stars": 0
     },
     {
-      "id": 402,
+      "id": 403,
       "bibKey": "tong2014statistical",
       "title": "Statistical learning for OCR text correction",
       "authors": "Mei, Jie, Islam, Aminul, Wu, Yajing, Moh'd, Abidalrahman, Milios, Evangelos E",
@@ -10402,7 +10514,7 @@
       "stars": 0
     },
     {
-      "id": 403,
+      "id": 404,
       "bibKey": "patel2012performance",
       "title": "Performance comparison of OCR tools",
       "authors": "Vijayarani, S, Sakila, A",
@@ -10427,7 +10539,7 @@
       "stars": 0
     },
     {
-      "id": 404,
+      "id": 405,
       "bibKey": "egocentric2022",
       "title": "Egocentric recognition of handled objects: Benchmark and analysis",
       "authors": "Ren, Xiaofeng, Philipose, Matthai",
@@ -10452,7 +10564,7 @@
       "stars": 0
     },
     {
-      "id": 405,
+      "id": 406,
       "bibKey": "ocropus2008",
       "title": "The OCRopus open source OCR system",
       "authors": "Breuel, Thomas M",
@@ -10477,7 +10589,7 @@
       "stars": 0
     },
     {
-      "id": 406,
+      "id": 407,
       "bibKey": "ogorman1993documentspectrum",
       "title": "The document spectrum for page layout analysis",
       "authors": "O'Gorman, Lawrence",
@@ -10502,7 +10614,7 @@
       "stars": 0
     },
     {
-      "id": 407,
+      "id": 408,
       "bibKey": "rice1995fifth",
       "title": "The fifth annual test of OCR accuracy",
       "authors": "Rice, Stephen V, Jenkins, Frank R, Nartker, Thomas A",
@@ -10527,7 +10639,7 @@
       "stars": 0
     },
     {
-      "id": 408,
+      "id": 409,
       "bibKey": "rice1994fourth",
       "title": "The fourth annual test of OCR accuracy",
       "authors": "Rice, Stephen V, Jenkins, Frank R, Nartker, Thomas A",
@@ -10552,7 +10664,7 @@
       "stars": 0
     },
     {
-      "id": 409,
+      "id": 410,
       "bibKey": "chen2025instructocr2",
       "title": "InstructOCR2: a lightweight and efficient multi-modal language model for document understanding",
       "authors": "TS, VQAKIE",

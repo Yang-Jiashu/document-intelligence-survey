@@ -2,7 +2,7 @@
 \usepackage{natbib}
 
 % For UTF-8 encoded CJK (Chinese, Japanese, Korean) characters
-\usepackage{CJKutf8}
+\IfFileExists{CJKutf8.sty}{\usepackage{CJKutf8}}{}
 
 % enables \newcommandx
 \usepackage{xargs}
@@ -18,7 +18,7 @@
 \usepackage{cleveref}
 
 \usepackage{amsmath}
-\usepackage{dsfont}
+\IfFileExists{dsfont.sty}{\usepackage{dsfont}}{}
 
 % % using itemize
 % \usepackage{enumerate}
@@ -42,8 +42,8 @@
 \usepackage{threeparttable}
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+\IfFileExists{algorithm.sty}{\usepackage{algorithm}}{}
+\IfFileExists{algpseudocode.sty}{\usepackage{algpseudocode}}{}
 \usepackage{wrapfig}
 \usepackage[table]{xcolor}  % loads xcolor with table support
 \usepackage{colortbl}       % gives \columncolor, \rowcolor
@@ -88,7 +88,7 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{minitoc}
+% No mini table of contents is used; minitoc conflicts with titlesec/titletoc.
 \usepackage{url}
 
 % cvpr packages

@@ -14,18 +14,19 @@
 \RequirePackage{hyphenat}
 \RequirePackage{setspace}
 \RequirePackage{parskip}
-\RequirePackage[latin, english]{babel}
+\RequirePackage[english]{babel}
 \RequirePackage{lipsum}
 \RequirePackage{etoolbox}
 \RequirePackage{fancyhdr}  % custom headers/footers
-\RequirePackage{ulem}  % underline support
+\IfFileExists{ulem.sty}{\RequirePackage{ulem}}{}  % unused optional underline support
 \DisableLigatures[f]{family=sf*} 
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
 
 
 \RequirePackage{booktabs}
-\RequirePackage{nicematrix}
+% Optional table extensions; the manuscript itself uses standard tabular(x).
+\IfFileExists{nicematrix.sty}{\RequirePackage{nicematrix}}{}
 \RequirePackage{multirow}
 \RequirePackage{bm}
 \newcommand{\nm}[1]{#1}
@@ -86,17 +87,19 @@
 \DeclareCaptionLabelSeparator{custom}{}
 \DeclareCaptionFormat{custom}{{\sffamily\textbf{#1 #2}} #3}
 \captionsetup{singlelinecheck=true,format=custom,labelsep=custom,font=small}
-\captionsetup[sub]{singlelinecheck=true,format=custom,labelsep=custom,font=small}
 
 \RequirePackage[T1]{fontenc} 
+\RequirePackage{lmodern}
 \DeclareFontFamily{T1}{sans}{} 
 \DeclareFontShape{T1}{sans}{m}{n}{<-> s * [1] resources/sans}{} 
-\pdfmapline{+sans < resources/Bold.ttf <T1-WGL4.enc} 
+\DeclareFontShape{T1}{sans}{b}{n}{<-> s * [1] resources/sans}{}
+\DeclareFontShape{T1}{sans}{bx}{n}{<-> s * [1] resources/sans}{}
+\pdfmapline{+sans < resources/Bold.ttf <ec.enc}
 \renewcommand{\sfdefault}{sans}%
 
 \DeclareFontFamily{T1}{sansmedium}{} 
 \DeclareFontShape{T1}{sansmedium}{m}{n}{<-> s*[1] resources/sansmedium}{} 
-\pdfmapline{+sansmedium < resources/Medium.ttf <T1-WGL4.enc}
+\pdfmapline{+sansmedium < resources/Medium.ttf <ec.enc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Authors, affiliations, infos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
