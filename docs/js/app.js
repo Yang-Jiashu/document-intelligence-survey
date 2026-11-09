@@ -496,7 +496,6 @@ function renderTimeline() {
     ];
     
     const container = document.getElementById('timelineContainer');
-    if (!container) return;
     container.innerHTML = milestones.map(m => `
         <div class="timeline-item">
             <div class="timeline-year">${m.year}</div>

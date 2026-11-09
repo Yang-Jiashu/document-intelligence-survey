@@ -299,13 +299,6 @@ body.home {
 .home .timeline-papers { gap:6px 10px; margin-top:14px; }
 .home .timeline-paper { min-height:26px; font-size:12px; font-weight:400; background:none; border:0; border-radius:0; color:#606c54; padding:0; }
 .home .timeline-paper:hover { color:#836443; background:none; text-decoration:underline; }
-.home .document-timeline { margin:0; }
-.home .document-timeline-scroll { overflow-x:auto; background:#fff; border:1px solid #d3d8c6; border-radius:4px; }
-.home .document-timeline-scroll:focus-visible { outline:2px solid #58694b; outline-offset:4px; }
-.home .document-timeline-scroll a { display:block; min-width:1050px; }
-.home .document-timeline img { display:block; width:100%; height:auto; }
-.home .document-timeline figcaption { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 22px; padding:14px 0 0; color:#636e59; font-size:14px; line-height:1.8; }
-.home .document-timeline figcaption a { color:#526244; text-decoration:underline; text-underline-offset:4px; }
 /* Existing evidence and source-status components retain their complete data. */
 .home .sota-container { grid-template-columns:repeat(2,minmax(0,1fr)); gap:21px; margin:0; }
 .home .sota-card { border:1px solid #d5dfc6; background:#fbf9ecb3; border-radius:3px; padding:23px; box-shadow:1px 3px 5px #87956b0d; }
