@@ -1,0 +1,26 @@
+{
+  "accessed": "2026-11-09",
+  "portraits": [
+    {
+      "name": "金连文",
+      "englishName": "Lianwen Jin",
+      "file": "lianwen-jin.webp",
+      "portraitSource": "https://www2.scut.edu.cn/_upload/article/images/b7/bc/ffc41b684a24bf56a0137edb360c/d04112d2-a7a4-4b17-859c-b6bbbe6708ca.jpg",
+      "profile": "https://www2.scut.edu.cn/ee/jcdb/list.htm"
+    },
+    {
+      "name": "白翔",
+      "englishName": "Xiang Bai",
+      "file": "xiang-bai.webp",
+      "portraitSource": "https://sse.hust.edu.cn/__local/D/8F/1A/7B88A40094E2BC49C71DA3F2A59_424A74F2_6470.jpeg",
+      "profile": "https://sse.hust.edu.cn/info/1083/3520.htm"
+    },
+    {
+      "name": "刘成林",
+      "englishName": "Cheng-Lin Liu",
+      "file": "chenglin-liu.webp",
+      "portraitSource": "https://ia.cas.cn/rcdw/202404/W020240429604703574720.jpg",
+      "profile": "https://ia.cas.cn/rcdw/202404/t20240425_7131770.html"
+    }
+  ]
+}

@@ -3,67 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Beyond OCR: a living research atlas for document intelligence, from structured perception to multimodal question answering. Explore the survey, papers, datasets and benchmark progress.">
-<meta name="theme-color" content="#080b10">
-<title>Beyond OCR — A Document Intelligence Research Atlas</title>
+<meta name="description" content="Open the Beyond OCR field guide: an interactive survey of document intelligence, its researchers, methods, papers, and benchmarks.">
+<meta name="theme-color" content="#f2ecdf">
+<title>Beyond OCR — An Open Field Guide to Document Intelligence</title>
 <link rel="stylesheet" href="css/style.css?v=20260712-1">
-<link rel="stylesheet" href="css/home.css?v=20261109-3">
+<link rel="stylesheet" href="css/home.css?v=20261109-4">
 </head>
-<body class="home">
+<body class="home reading-room">
 <a class="skip-link" href="#mainContent">Skip to content</a>
-<header class="header">
-  <div class="header-inner">
-    <a class="logo" href="#top" aria-label="Beyond OCR home"><svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 3h15l7 7v19H5z" stroke="currentColor"/><path d="M20 3v7h7M10 15h12M10 20h7M10 25h12" stroke="currentColor"/><circle cx="23" cy="20" r="2" fill="currentColor"/></svg><span>Beyond OCR<span class="brand-separator"> / </span><small>Research Atlas</small></span></a>
-    <button class="nav-toggle" id="navToggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">Menu <span aria-hidden="true">☰</span></button>
-    <nav class="nav-links" id="mainNav" aria-label="Main navigation">
-      <a href="#taxonomy">Research map</a><a href="#papers">Papers</a><a href="#sota">Benchmarks</a><a href="research.html">Latest progress <span aria-hidden="true">↗</span></a>
-      <a href="https://github.com/Yang-Jiashu/document-intelligence-survey" target="_blank" rel="noreferrer" class="github-btn">GitHub <span aria-hidden="true">↗</span></a>
-    </nav>
-  </div>
-</header>
+<div id="readerProgress" class="reader-progress" aria-hidden="true"></div>
+<header class="header"><div class="header-inner">
+  <a class="logo" href="#top" aria-label="Beyond OCR home"><span class="library-mark" aria-hidden="true">B<span>/</span>O</span><span>Beyond OCR<small>An open field guide</small></span></a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">Contents <span aria-hidden="true">☰</span></button>
+  <nav class="nav-links" id="mainNav" aria-label="Main navigation"><a href="#surveyBook">Open the book</a><a href="#scholars">People</a><a href="#taxonomy">Chapters</a><a href="#papers">Papers</a><a href="research.html">Latest progress ↗</a><a class="github-btn" href="https://github.com/Yang-Jiashu/document-intelligence-survey" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+</div></header>
 <main id="mainContent">
 <section class="hero" id="top" aria-labelledby="heroTitle">
   <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="hero-kicker"><span class="status-dot" aria-hidden="true"></span> A living survey of document intelligence</div>
-      <h1 id="heroTitle">Beyond<br><em>OCR.</em></h1>
-      <p class="hero-subtitle">From structured perception<br>to multimodal question answering.</p>
-      <p class="hero-summary">How do machines read, understand, and reason over documents? Explore the methods connecting pixels, structure, and knowledge.</p>
-      <p class="hero-authors" aria-label="Authors in paper order"><strong>JiaShu Yang</strong> · Chi Zhang · Xingyu Qi · Ning Zhang<br>Jie Wu · Lingxu Chen · Jiani Guo</p>
-      <div class="hero-badges"><a href="https://zenodo.org/records/21264117" target="_blank" rel="noreferrer" class="badge badge-primary">Read the survey <span aria-hidden="true">↗</span></a><a href="search.html" class="badge badge-secondary">Explore the papers <span aria-hidden="true">→</span></a></div>
-
-    </div>
-    <div class="document-atlas" id="documentAtlas" data-stage="perceive">
-      <div class="atlas-label"><span>FIG. 01</span> FROM PIXELS TO KNOWLEDGE <span class="atlas-signal" aria-hidden="true">⌁</span></div>
-      <div class="atlas-art">
-      <svg viewBox="0 0 560 410" role="img" aria-labelledby="atlasDiagramTitle atlasDiagramDescription">
-        <title id="atlasDiagramTitle">Three perspectives on document intelligence</title><desc id="atlasDiagramDescription">A document with text regions, structured tables and connected evidence. Use the three tabs below to explore perception, understanding and reasoning.</desc>
-        <defs><linearGradient id="pageSurface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#192a3e"/><stop offset="1" stop-color="#0a1019"/></linearGradient><radialGradient id="atlasGlow"><stop stop-color="#4e7eac" stop-opacity=".19"/><stop offset="1" stop-color="#0a1019" stop-opacity="0"/></radialGradient></defs>
-        <ellipse cx="289" cy="210" rx="240" ry="190" fill="url(#atlasGlow)"/>
-        <g class="atlas-orbits" fill="none" stroke="#243347"><ellipse cx="280" cy="211" rx="231" ry="134" transform="rotate(-25 280 211)"/><ellipse cx="280" cy="211" rx="236" ry="172" transform="rotate(23 280 211)"/><path d="M29 211h502M280 18v380" stroke-dasharray="2 8" opacity=".5"/></g>
-        <g transform="translate(148 37) rotate(-9 125 160)">
-          <path d="M15 22h230v305H15z" fill="#0b121d" stroke="#273b50"/><path d="M7 11h230v305H7z" fill="#0d1723" stroke="#31455c"/>
-          <path d="M0 0h185l44 44v261H0z" fill="url(#pageSurface)" stroke="#66819c"/><path d="M185 0v44h44" fill="#142334" stroke="#66819c"/>
-          <g stroke="#7b91a7" opacity=".5"><path d="M24 31h89M24 40h64" stroke-width="2"/><path d="M24 64h126M24 72h166M24 80h155M24 88h161M24 96h132M24 113h80M24 121h80M24 129h68M24 137h79M24 145h70M24 153h79M24 161h61M24 169h79M24 177h62M24 195h176M24 203h164M24 211h173M24 219h150M24 227h170M24 235h136M24 270h56"/><path d="M124 118h73v61h-73zM124 133h73M124 148h73M124 163h73M148 118v61M172 118v61"/></g>
-          <g data-layer="perceive" class="atlas-layer" fill="#79b3eb" fill-opacity=".08" stroke="#8dc3f5"><rect x="17" y="24" width="103" height="24" rx="2"/><rect x="17" y="57" width="190" height="46" rx="2"/><rect x="17" y="108" width="94" height="77" rx="2"/><path d="M17 55h190" stroke-width="2" class="scan-line"/><text x="21" y="257" fill="#a5cff4" stroke="none" font-size="9" font-family="monospace">TEXT · LAYOUT · READING ORDER</text></g>
-          <g data-layer="understand" class="atlas-layer" fill="#8dc9bd" fill-opacity=".1" stroke="#9ed4c8"><rect x="117" y="111" width="87" height="75" rx="2"/><rect x="17" y="188" width="190" height="54" rx="2"/><path d="M109 147h8M161 186v13h-52" fill="none"/><text x="21" y="257" fill="#9ed4c8" stroke="none" font-size="9" font-family="monospace">STRUCTURE · TABLES · SEMANTICS</text></g>
-          <g data-layer="reason" class="atlas-layer" fill="#e4c7a3" fill-opacity=".09" stroke="#d5bb95"><rect x="17" y="57" width="190" height="46" rx="2"/><rect x="117" y="111" width="87" height="75" rx="2"/><rect x="17" y="188" width="190" height="54" rx="2"/><path d="M205 80h30v132h-28" stroke-dasharray="3 4" fill="none"/><text x="21" y="257" fill="#e4c7a3" stroke="none" font-size="9" font-family="monospace">RETRIEVAL · EVIDENCE · REASONING</text></g>
-        </g>
-        <g class="atlas-callout" data-layer="perceive"><path d="M146 111H79v-9"/><circle cx="146" cy="111" r="3"/><text x="35" y="88">01 / PERCEIVE</text><text class="callout-note" x="35" y="103">Recover the structure</text></g>
-        <g class="atlas-callout" data-layer="understand"><path d="M357 178h86v-17"/><circle cx="357" cy="178" r="3"/><text x="389" y="140">02 / UNDERSTAND</text><text class="callout-note" x="389" y="155">Connect the meaning</text></g>
-        <g class="atlas-callout" data-layer="reason"><path d="M363 280h69v30"/><circle cx="363" cy="280" r="3"/><text x="379" y="330">03 / REASON</text><text class="callout-note" x="379" y="345">Ground the answer</text></g>
-        <g class="atlas-points" fill="#68849f"><circle cx="58" cy="278" r="2"/><circle cx="436" cy="64" r="2"/><circle cx="497" cy="235" r="2"/><circle cx="182" cy="368" r="2"/></g>
-      </svg>
-      </div>
-      <div class="atlas-tabs" role="tablist" aria-label="Explore document intelligence">
-        <button class="atlas-tab" id="atlas-tab-perceive" role="tab" type="button" data-stage="perceive" aria-selected="true" aria-controls="stagePanel"><span>01</span> Perceive</button>
-        <button class="atlas-tab" id="atlas-tab-understand" role="tab" type="button" data-stage="understand" aria-selected="false" aria-controls="stagePanel" tabindex="-1"><span>02</span> Understand</button>
-        <button class="atlas-tab" id="atlas-tab-reason" role="tab" type="button" data-stage="reason" aria-selected="false" aria-controls="stagePanel" tabindex="-1"><span>03</span> Reason</button>
-      </div>
-      <div class="atlas-caption" id="stagePanel" role="tabpanel" aria-labelledby="atlas-tab-perceive" tabindex="0"><h2 id="stageTitle">Read the page.</h2><p id="stageDescription">Recognize text, recover reading order, and turn document pixels into structured content.</p><a id="stageLink" href="search.html?category=ocr">Explore OCR methods →</a></div>
-    </div>
+    <div class="hero-copy"><div class="hero-kicker"><span class="edition-rule" aria-hidden="true"></span> THE DOCUMENT INTELLIGENCE FIELD GUIDE</div><h1 id="heroTitle">Beyond<br><em>OCR.</em></h1><p class="hero-subtitle">From structured perception<br>to multimodal question answering.</p><p class="hero-summary">Every document has more to tell.<br>Open the pages, follow the evidence, and explore the research that connects it all.</p><p class="hero-authors" aria-label="Authors in paper order"><strong>JiaShu Yang</strong> · Chi Zhang · Xingyu Qi · Ning Zhang<br>Jie Wu · Lingxu Chen · Jiani Guo</p><div class="hero-badges"><a class="badge badge-primary" href="https://zenodo.org/records/21264117" target="_blank" rel="noreferrer">Read the survey <span aria-hidden="true">↗</span></a><a class="badge badge-secondary" href="search.html">Browse the references <span aria-hidden="true">→</span></a></div><p class="hero-editor-note"><span aria-hidden="true">✎</span> A living survey. A place to keep reading.</p></div>
+    <section id="surveyBook" class="survey-book" data-page="0" tabindex="0" aria-label="Interactive survey book">
+      <div class="book-topline"><span>THE READING COPY</span><span>VOL. 01 / BEYOND OCR</span></div>
+      <div class="book-tabs" aria-label="Book chapters"><button class="book-tab is-active" type="button" data-book-page="0" aria-current="page">Contents</button><button class="book-tab" type="button" data-book-page="1">Perception</button><button class="book-tab" type="button" data-book-page="2">Understanding</button><button class="book-tab" type="button" data-book-page="3">Open questions</button></div>
+      <div class="book-shell"><div class="book-cover" aria-hidden="true"></div><div class="book-page-edges" aria-hidden="true"></div><div id="bookTurnArea" class="book-turn-area">
+        <article class="book-spread" data-spread="0" aria-label="Contents and the document as evidence">
+          <div class="book-page book-page-left"><div class="page-running-head">BEYOND OCR <span>A FIELD GUIDE</span></div><div class="book-title-page"><span class="book-small-label">A SURVEY OF</span><h2>Document<br><em>Intelligence</em></h2><div class="title-ornament" aria-hidden="true">✳</div><p>From the characters on a page<br>to the knowledge between pages.</p></div><div class="mini-contents"><button class="book-tab" type="button" data-book-page="1"><span>I.</span> Read the page <i>03</i></button><button class="book-tab" type="button" data-book-page="2"><span>II.</span> Understand the document <i>05</i></button><button class="book-tab" type="button" data-book-page="3"><span>III.</span> Ask better questions <i>07</i></button></div><div class="page-folio"><span>THE LIVING SURVEY</span><span>01</span></div></div>
+          <div class="book-page book-page-right"><div class="page-running-head">EXHIBIT A <span>DOCUMENT AS EVIDENCE</span></div><div class="specimen-page"><span class="specimen-kicker">RESEARCH MEMO / 01</span><button class="annotation-trigger specimen-heading" type="button" data-note="layout">A page has a structure.</button><div class="specimen-rule"></div><p>A document carries meaning through <button class="annotation-trigger" type="button" data-note="ocr">the words it contains</button> and the way those words are arranged.</p><div class="specimen-columns"><div class="specimen-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="specimen-table"><button class="annotation-trigger" type="button" data-note="table">TABLE 1 / STRUCTURE</button><table><thead><tr><th>Layer</th><th>Signals</th></tr></thead><tbody><tr><td>Text</td><td>Characters</td></tr><tr><td>Layout</td><td>Relations</td></tr><tr><td>Table</td><td>Cells</td></tr></tbody></table></div></div><p class="specimen-answer"><button class="annotation-trigger" type="button" data-note="evidence">An answer should lead<br>back to its evidence.</button></p></div><div class="page-folio"><span>CLICK A MARKED PASSAGE</span><span>02</span></div></div>
+        </article>
+        <article class="book-spread" data-spread="1" hidden aria-label="Perception: text and page structure">
+          <div class="book-page book-page-left"><div class="page-running-head">PART I <span>PERCEPTION</span></div><span class="chapter-number">I.</span><h2 class="book-chapter-title">Read<br>the page.</h2><p class="book-body">Before answering a question, a system needs to recover what is on the page.</p><p class="book-body"><button type="button" class="annotation-trigger" data-note="ocr">OCR recognizes the text.</button><br><button type="button" class="annotation-trigger" data-note="layout">Layout recovers its organization.</button></p><div class="margin-scribble">The words matter.<br>So does their place.</div><a class="book-text-link" href="search.html?category=ocr">Browse perception research ↗</a><div class="page-folio"><span>LAYOUT · RECOGNITION · ORDER</span><span>03</span></div></div>
+          <div class="book-page book-page-right"><div class="page-running-head">A CLOSER LOOK <span>DRAG THE SLIDER</span></div><h3 class="book-exercise-title">Reveal the structure.</h3><p class="book-exercise-caption">An illustrative layout overlay.</p><div class="ocr-comparison" id="ocrComparison" style="--reveal:55%"><div class="comparison-raw"><span>FIELD NOTES</span><h4>A document<br>is a system.</h4><p>Headings guide the reader.<br>Paragraphs develop an idea.<br>Tables preserve relationships.</p><div class="comparison-table"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="comparison-structure" aria-hidden="true"><div class="region region-title"><span>HEADING</span></div><div class="region region-body"><span>PARAGRAPH</span></div><div class="region region-table"><span>TABLE</span></div><div class="reading-order">1 → 2 → 3</div></div><div class="comparison-divider" aria-hidden="true"></div></div><label class="reveal-label" for="ocrReveal">Raw page <span>Structured page</span></label><input class="reveal-slider" type="range" id="ocrReveal" min="0" max="100" value="55" aria-label="Reveal the document structure"><output id="revealValue" class="reveal-value" for="ocrReveal">55% structure revealed</output><div class="page-folio"><span>PIXELS → STRUCTURE</span><span>04</span></div></div>
+        </article>
+        <article class="book-spread" data-spread="2" hidden aria-label="Understanding and evidence organization">
+          <div class="book-page book-page-left"><div class="page-running-head">PART II <span>UNDERSTANDING</span></div><span class="chapter-number">II.</span><h2 class="book-chapter-title">Connect<br>the meaning.</h2><p class="book-body">Structured tables, retrieved passages, and visual pages offer different routes to an answer.</p><div class="book-pathways"><button class="annotation-trigger" type="button" data-note="table"><span>01</span> Table understanding ↗</button><button class="annotation-trigger" type="button" data-note="rag"><span>02</span> Document RAG ↗</button><button class="annotation-trigger" type="button" data-note="vlm"><span>03</span> Vision-language models ↗</button></div><div class="page-folio"><span>THREE ROUTES TO DOCUMENT QA</span><span>05</span></div></div>
+          <div class="book-page book-page-right"><div class="page-running-head">FOLLOW THE THREAD <span>EVIDENCE</span></div><h3 class="book-exercise-title">Which evidence<br>supports the answer?</h3><div class="evidence-fragments"><div class="evidence-fragment"><span>PAGE A / PASSAGE</span><div class="specimen-lines" aria-hidden="true"><i></i><i></i><i></i></div></div><span class="evidence-thread" aria-hidden="true">↓</span><div class="evidence-fragment"><span>PAGE B / TABLE CELL</span><div class="evidence-cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="marked-cell"></i><i></i></div></div><span class="evidence-thread" aria-hidden="true">↓</span><button class="annotation-trigger evidence-conclusion" type="button" data-note="evidence">A grounded, verifiable answer ↗</button></div><p class="book-exercise-caption">Retrieval finds evidence. Reasoning connects it.</p><div class="page-folio"><span>ACROSS PAGES & MODALITIES</span><span>06</span></div></div>
+        </article>
+        <article class="book-spread" data-spread="3" hidden aria-label="Open questions and further reading">
+          <div class="book-page book-page-left"><div class="page-running-head">LOOKING AHEAD <span>OPEN QUESTIONS</span></div><h2 class="book-chapter-title">What remains<br>unsolved?</h2><div class="open-questions"><button class="annotation-trigger" type="button" data-note="evidence"><span>01</span><strong>Can we verify the evidence?</strong><small>Answers tied to pages, regions, and cells.</small></button><button class="annotation-trigger" type="button" data-note="rag"><span>02</span><strong>Can we connect complex evidence?</strong><small>Across documents, tools, and modalities.</small></button><button class="annotation-trigger" type="button" data-note="vlm"><span>03</span><strong>Will it work beyond the benchmark?</strong><small>Robustness under real-world conditions.</small></button></div><div class="page-folio"><span>FROM THE SURVEY'S OUTLOOK</span><span>07</span></div></div>
+          <div class="book-page book-page-right"><div class="page-running-head">KEEP READING <span>THE NEXT CHAPTER</span></div><div class="book-reading-list"><span class="book-small-label">CHOOSE A DIRECTION</span><h3>There is always<br>another page.</h3><a href="search.html?category=ocr">OCR & text recognition <span>↗</span></a><a href="search.html?category=layout">Layout analysis <span>↗</span></a><a href="search.html?category=table">Table understanding <span>↗</span></a><a href="search.html?category=rag">Retrieval-augmented generation <span>↗</span></a><a href="search.html?category=vlm">Vision-language models <span>↗</span></a><a href="search.html?category=eval">Evaluation & benchmarks <span>↗</span></a></div><div class="page-folio"><span>EXPLORE THE FULL BIBLIOGRAPHY</span><span>08</span></div></div>
+        </article>
+        <div class="book-turning-leaf" aria-hidden="true"></div><span class="book-corner" aria-hidden="true"></span>
+      </div></div>
+      <div class="book-controls"><button id="bookPrev" type="button" aria-label="Previous book spread" disabled><span aria-hidden="true">←</span> Previous</button><span class="book-drag-hint">Drag a page · use ← → keys</span><span id="bookPageLabel" class="book-page-label" aria-live="polite">01 / 04</span><button id="bookNext" type="button" aria-label="Next book spread">Next <span aria-hidden="true">→</span></button></div>
+      <aside id="bookAnnotation" class="book-annotation" aria-label="Margin note"><span class="annotation-label">IN THE MARGIN</span><div class="annotation-copy"><h3 id="bookAnnotationTitle">A field guide, with room in the margins.</h3><p id="bookAnnotationBody">Turn the pages to explore the survey. Select an underlined concept to open a note and follow its research direction.</p><a id="bookAnnotationLink" href="#taxonomy">Explore the research map →</a></div><button id="annotationClose" type="button" aria-label="Close margin note">×</button></aside>
+    </section>
   </div>
-  <div class="hero-bottom"><span>A SURVEY & AN OPEN RESEARCH ATLAS</span><a href="#taxonomy">Explore the field <span aria-hidden="true">↓</span></a></div>
+  <div class="hero-bottom"><span>AN OPEN NOTEBOOK ON DOCUMENT INTELLIGENCE</span><a href="#scholars">Meet the researchers <span aria-hidden="true">↓</span></a></div>
 </section>
 <section class="atlas-stats" aria-label="Survey coverage">
   <a href="search.html"><strong id="atlasPaperCount">—</strong><span>Cited references</span><i aria-hidden="true">↗</i></a>
@@ -72,8 +56,18 @@
   <a class="atlas-stats-note" href="research.html"><span class="status-dot" aria-hidden="true"></span><div>Research keeps moving.<small>Follow the latest progress →</small></div></a>
 </section>
 <div class="main">
+<section class="scholars-section atlas-section" id="scholars" aria-labelledby="scholarsTitle">
+  <div class="section-title"><div><span class="section-kicker">PEOPLE / THREE READING PATHS</span><h2 id="scholarsTitle">Researchers shaping OCR.</h2></div><p class="section-intro">Follow the people and the work behind text recognition, scene text, and document analysis.</p></div>
+  <div class="scholar-grid">
+    <article class="scholar-card"><div class="scholar-portrait"><img src="images/scholars/lianwen-jin.webp" width="480" height="588" loading="lazy" alt="金连文 · Lianwen Jin"><span class="portrait-index">01 / TEXT & DOCUMENTS</span></div><div class="scholar-copy"><h3>金连文 <span>Lianwen Jin</span></h3><p class="scholar-affiliation">South China University of Technology</p><p>Text recognition, handwriting, and document image understanding. A reading path from weakly supervised page recognition to multimodal OCR evaluation.</p><a class="scholar-profile" href="https://www2.scut.edu.cn/ee/jcdb/list.htm" target="_blank" rel="noreferrer">University profile ↗</a><details class="scholar-works"><summary>Open the bibliography <span aria-hidden="true">+</span></summary><a href="https://arxiv.org/abs/2207.14807" target="_blank" rel="noreferrer"><span>2022</span> PageNet <i>↗</i></a><a href="https://arxiv.org/abs/2305.07895" target="_blank" rel="noreferrer"><span>2023</span> OCRBench <i>↗</i></a></details></div></article>
+    <article class="scholar-card"><div class="scholar-portrait"><img src="images/scholars/xiang-bai.webp" loading="lazy" alt="白翔 · Xiang Bai"><span class="portrait-index">02 / SCENE TEXT</span></div><div class="scholar-copy"><h3>白翔 <span>Xiang Bai</span></h3><p class="scholar-affiliation">Huazhong University of Science and Technology</p><p>Computer vision and pattern recognition, with a sustained focus on scene text detection and recognition. Start with CRNN and differentiable binarization.</p><a class="scholar-profile" href="https://sse.hust.edu.cn/info/1083/3520.htm" target="_blank" rel="noreferrer">University profile ↗</a><details class="scholar-works"><summary>Open the bibliography <span aria-hidden="true">+</span></summary><a href="https://arxiv.org/abs/1507.05717" target="_blank" rel="noreferrer"><span>2015</span> CRNN <i>↗</i></a><a href="https://arxiv.org/abs/1911.08947" target="_blank" rel="noreferrer"><span>2019</span> Differentiable Binarization <i>↗</i></a></details></div></article>
+    <article class="scholar-card"><div class="scholar-portrait"><img src="images/scholars/chenglin-liu.webp" loading="lazy" alt="刘成林 · Cheng-Lin Liu"><span class="portrait-index">03 / HANDWRITING</span></div><div class="scholar-copy"><h3>刘成林 <span>Cheng-Lin Liu</span></h3><p class="scholar-affiliation">Institute of Automation, Chinese Academy of Sciences</p><p>Pattern recognition, character recognition, and document analysis. Explore the CASIA handwriting databases and research on Chinese handwriting recognition.</p><a class="scholar-profile" href="https://ia.cas.cn/rcdw/202404/t20240425_7131770.html" target="_blank" rel="noreferrer">Institute profile ↗</a><details class="scholar-works"><summary>Open the bibliography <span aria-hidden="true">+</span></summary><a href="https://nlpr.ia.ac.cn/databases/handwriting/home.html" target="_blank" rel="noreferrer"><span>DATA</span> CASIA handwriting databases <i>↗</i></a><a href="https://arxiv.org/abs/1606.05763" target="_blank" rel="noreferrer"><span>2016</span> Chinese handwriting recognition <i>↗</i></a></details></div></article>
+  </div>
+  <p class="scholar-source-note">Portraits and profiles: official university and institute pages. Paper years refer to first arXiv release. <a href="https://arxiv.org/abs/2305.07895" target="_blank" rel="noreferrer">A shared reading thread: OCRBench ↗</a></p>
+</section>
+
 <section class="atlas-section map-section" aria-labelledby="mapTitle">
-  <div class="section-title" id="taxonomy"><div><span class="section-kicker">01 / THE RESEARCH MAP</span><h2 id="mapTitle">One field.<br>Six connected perspectives.</h2></div><p class="section-intro">From recognizing a single character to reasoning across entire documents. Choose a direction to explore its methods and literature.</p></div>
+  <div class="section-title" id="taxonomy"><div><span class="section-kicker">THE CHAPTER INDEX / 01</span><h2 id="mapTitle">Six chapters.<br>One connected field.</h2></div><p class="section-intro">From recognizing a single character to reasoning across entire documents. Choose a direction to explore its methods and literature.</p></div>
   <div class="taxonomy-container" id="taxonomyContainer"></div>
 </section>
 <section class="search-section" aria-label="Search the paper index">
@@ -165,9 +159,9 @@
 <div class="footer-icon" style="background:linear-gradient(135deg,#4f6f82,#7e98a6)">IV</div>
 <div><h4>InternVL</h4><p>10.1K stars · Scalable vision-language model</p></div>
 </a>
-<a href="https://github.com/microsoft/OmniParser" target="_blank" class="footer-card">
+<a href="https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/OCR/OmniParser" target="_blank" class="footer-card">
 <div class="footer-icon" style="background:linear-gradient(135deg,#647f71,#a0a56d)">OP</div>
-<div><h4>OmniParser</h4><p>24.9K stars · Unified document parsing</p></div>
+<div><h4>OmniParser</h4><p>Text spotting, information extraction & tables</p></div>
 </a>
 <a href="https://github.com/clovaai/donut" target="_blank" class="footer-card">
 <div class="footer-icon" style="background:linear-gradient(135deg,#9a5b45,#8f6b3f)">DN</div>
@@ -181,6 +175,7 @@
 </footer>
 
 <script src="js/home.js?v=20261109-1"></script>
-<script src="js/app.js?v=20261109-1"></script>
+<script src="js/reading-room.js?v=20261109-4"></script>
+<script src="js/app.js?v=20261109-4"></script>
 </body>
 </html>

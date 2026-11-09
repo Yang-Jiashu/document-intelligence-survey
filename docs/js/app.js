@@ -155,11 +155,15 @@ function renderPapers() {
             </div>
         </div>
     `;
-    const first = papers.slice(0, 6).map(paperCard).join('');
-    const rest = papers.slice(6).map(paperCard).join('');
+    const featured = ['ocr', 'layout', 'table', 'vlm', 'rag', 'eval']
+        .map(category => papers.find(paper => paper.category === category)).filter(Boolean);
+    const featuredIds = new Set(featured.map(paper => paper.id));
+    const remaining = papers.filter(paper => !featuredIds.has(paper.id));
+    const first = featured.map(paperCard).join('');
+    const rest = remaining.map(paperCard).join('');
     container.innerHTML = first + (rest ? `
         <details class="paper-archive">
-            <summary>Explore ${papers.length - 6} more selected papers</summary>
+            <summary>Explore ${remaining.length} more selected papers</summary>
             <div class="paper-grid">${rest}</div>
         </details>` : '');
 }
@@ -474,7 +478,7 @@ function renderTimeline() {
         'LLaVA': '2304.08485',
         'Qwen2-VL': '2409.12191',
         'LightRAG': '2410.05779',
-        'OmniParser': '2408.11432',
+        'OmniParser': '2403.19128',
         'GraphRAG': '2404.16130',
         'Qwen3-VL': '2511.21631',
         'Autothink-rag': '2603.05551'
@@ -482,10 +486,10 @@ function renderTimeline() {
     const milestones = [
         { year: '2019', title: 'LayoutLM Era Begins', desc: 'First layout-aware pre-training for document AI', papers: ['LayoutLM'] },
         { year: '2020', title: 'DocVQA Benchmark', desc: 'Standardized visual question answering on documents', papers: ['DocVQA'] },
-        { year: '2021', title: 'OCR-free Paradigm', desc: 'End-to-end document understanding without OCR', papers: ['Donut', 'Pix2Struct'] },
-        { year: '2022', title: 'Unified Pre-training', desc: 'Unified text and image masking for document AI', papers: ['LayoutLMv3'] },
-        { year: '2023', title: 'VLM for Documents', desc: 'Large vision-language models applied to documents', papers: ['Monkey', 'LLaVA', 'Qwen2-VL'] },
-        { year: '2024', title: 'Document RAG & Parsing', desc: 'Retrieval-augmented generation and unified parsing', papers: ['LightRAG', 'OmniParser', 'GraphRAG'] },
+        { year: '2021', title: 'OCR-free Paradigm', desc: 'End-to-end document understanding without OCR', papers: ['Donut'] },
+        { year: '2022', title: 'Unified Pre-training', desc: 'Unified text and image masking for document AI', papers: ['LayoutLMv3', 'Pix2Struct'] },
+        { year: '2023', title: 'VLM for Documents', desc: 'Large vision-language models applied to documents', papers: ['Monkey', 'LLaVA'] },
+        { year: '2024', title: 'Document RAG & Parsing', desc: 'Retrieval-augmented generation and unified parsing', papers: ['LightRAG', 'OmniParser', 'GraphRAG', 'Qwen2-VL'] },
         { year: '2025', title: 'Advanced Document VLM', desc: 'State-of-the-art vision-language models for documents', papers: ['Qwen3-VL'] },
         { year: '2026', title: 'Agentic RAG', desc: 'Agent-driven retrieval and reasoning for documents', papers: ['Autothink-rag'] }
     ];
@@ -513,8 +517,8 @@ function renderDatasets() {
         { name: 'InfographicVQA', task: 'VQA', year: 2021, size: '5K docs', metric: 'ANLS', links: { paper: '2104.07453', code: '' } },
         { name: 'PubLayNet', task: 'Layout', year: 2019, size: '360K pages', metric: 'mAP', links: { paper: '1908.07836', code: '' } },
         { name: 'DocLayNet', task: 'Layout', year: 2022, size: '80K pages', metric: 'mAP', links: { paper: '2206.01062', code: '' } },
-        { name: 'OCRBench', task: 'OCR', year: 2023, size: '29 tasks', metric: 'Score', links: { paper: '2312.09601', code: '' } },
-        { name: 'CRAG', task: 'RAG', year: 2024, size: '4 domains', metric: 'Accuracy', links: { paper: '2401.15051', code: '' } },
+        { name: 'OCRBench', task: 'OCR', year: 2023, size: '29 datasets', metric: 'Score', links: { paper: '2305.07895', code: '' } },
+        { name: 'CRAG', task: 'RAG', year: 2024, size: '5 domains', metric: 'Accuracy', links: { paper: '2406.04744', code: '' } },
         { name: 'TableFact', task: 'Table', year: 2019, size: '16K claims', metric: 'Accuracy', links: { paper: '1909.02164', code: '' } },
         { name: 'FeTaQA', task: 'Table', year: 2021, size: '10K QA', metric: 'BLEU', links: { paper: '2104.00369', code: '' } }
     ];

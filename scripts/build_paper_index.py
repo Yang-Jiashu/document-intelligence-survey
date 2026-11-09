@@ -170,8 +170,21 @@ def parse_bib(path: Path) -> dict[str, dict[str, str]]:
 
 
 def extract_arxiv(fields: dict[str, str]) -> str:
+    modern_id = r"(?:0[7-9]|[1-9]\d)(?:0[1-9]|1[0-2])\.\d{4,5}"
+    legacy_id = r"[a-z][a-z0-9.-]*/\d{2}(?:0[1-9]|1[0-2])\d{3}"
+    identifier = rf"(?:{modern_id}|{legacy_id})(?:v[1-9]\d*)?"
+    # BibTeX commonly stores only the identifier in eprint, without a URL or
+    # arXiv prefix. Do not interpret arbitrary numbers elsewhere as arXiv IDs.
+    eprint = fields.get("eprint", "").strip()
+    archive = fields.get("archiveprefix", "arxiv").strip().lower()
+    if archive == "arxiv" and re.fullmatch(identifier, eprint, re.I):
+        return eprint
     for candidate in (fields.get("eprint", ""), fields.get("url", ""), fields.get("journal", ""), fields.get("_raw", "")):
-        match = re.search(r"(?:arxiv:|arxiv\.org/(?:abs|pdf)/)([0-9]{4}\.[0-9]{4,5}(?:v\d+)?)", candidate, re.I)
+        match = re.search(
+            rf"(?:arxiv:\s*|arxiv\.org/(?:abs|pdf)/)({identifier})(?=$|[\s?#,}}]|\.pdf\b)",
+            candidate,
+            re.I,
+        )
         if match:
             return match.group(1)
     return ""
