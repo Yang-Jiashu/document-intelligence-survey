@@ -27,6 +27,7 @@ body.home {
 .home .nav-links .github-btn { background: none !important; color: #d6e2ef !important; border: 1px solid #465465; padding: 8px 13px !important; font-size: 13px; font-weight: 450 !important; border-radius: 3px !important; margin-left: 8px; }
 .home .nav-links .github-btn:hover { border-color: #b4d4f4; }
 .home .nav-toggle { display: none; }
+.home #mainContent, .home #top { scroll-margin-top: 80px; }
 .home .hero { padding: 72px clamp(24px, 5.5vw, 80px) 0; border-bottom: 0; text-align: left; overflow: hidden; background: radial-gradient(ellipse at 77% 40%, #1c344c1f, transparent 50%); }
 .home .hero::after { display: none; }
 .home .hero-inner { max-width: 1280px; display: grid; grid-template-columns: 1.04fr 1fr; gap: 55px; margin: 0 auto; align-items: start; }
@@ -263,6 +264,7 @@ body.home {
   .home .lb-header, .home .lb-row { grid-template-columns: minmax(0,1fr) 75px; }
 }
 @media (max-width: 800px) {
+  .home #mainContent, .home #top { scroll-margin-top: 66px; }
   .home .header-inner { min-height: 66px; }
   .home .nav-toggle { display: inline-flex; align-items: center; gap: 12px; background: transparent; border: 1px solid #3b5067; color: #bed1e4; min-height: 40px; padding: 7px 11px; border-radius: 3px; font-size: 12px; cursor: pointer; }
   .home .nav-toggle span { font-size: 15px; }
