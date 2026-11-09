@@ -28,18 +28,20 @@
 .digest-more { display: inline-block; margin-top: 13px; color: var(--accent-dark, #5c6f4c); font-size: 11px; text-decoration: none; }
 .digest-more:hover { text-decoration: underline; }
 .digest-list.compact { display: block; }
-.home .digest-state { font-size: 10px; margin: 15px 0 11px; }
+.home .digest-state { font-size: 14px; margin: 15px 0 11px; }
 .home .digest-card { padding: 17px 0; }
-.home .digest-card h3 { font-size: 21px; color: #5c6f4c; }
+.home .digest-card h3 { font-size: 26px; color: #5c6f4c; }
 .home .digest-card h3 a { color: inherit; }
-.home .digest-card-meta, .home .digest-dates { font-size: 9px; }
-.home .digest-summary { font-size: 10px; line-height: 1.85; }
-.home .digest-summary-kind { font-size: 9px; }
+.home .digest-card-meta, .home .digest-dates { font-size: 12px; }
+.home .digest-summary { font-size: 16px; line-height: 1.85; }
+.home .digest-summary-kind { font-size: 12px; }
+.home .digest-more { font-size:15px; min-height:44px; padding-block:10px; }
 @media (max-width: 700px) {
   .digest-list { grid-template-columns: minmax(0, 1fr); }
   .digest-heading { align-items: flex-start; }
   .digest-heading h2 { font-size: 27px; }
   .digest-heading > span { padding-top: 5px; white-space: nowrap; }
-  .digest-card h3, .home .digest-card h3 { font-size: 20px; }
-  .home .digest-summary { font-size: 11px; }
+  .digest-card h3 { font-size: 20px; }
+  .home .digest-card h3 { font-size:24px; }
+  .home .digest-summary { font-size: 16px; }
 }
