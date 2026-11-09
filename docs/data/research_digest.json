@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-09T09:34:08Z",
+  "generatedAt": "2026-11-09T11:33:04Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
@@ -29,27 +29,6 @@
       "evidenceQuotes": []
     },
     {
-      "id": "arxiv:2606.28780",
-      "title": "Multimodal Graph RAG for Long-range Visually Rich Document Understanding",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2606.28780",
-      "published": "2026-06-27T07:14:31Z",
-      "updated": "2026-11-05T12:59:26Z",
-      "topics": [
-        "docqa"
-      ],
-      "sourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Multimodal large language models (MLLMs) are widely applied to visual document understanding. However, comprehending long documents remains an issue by the limited context window. Though recent multimodal retrieval-augmented generation (MMRAG) can address this challenge by retrieving relevant pages. It still struggles with the visual question answering (VQA) requiring holistic ",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
       "id": "arxiv:2608.28572",
       "title": "PULSAR: Pooled Unified Late-Interaction Search and Retrieval for Enterprise Visual Document RAG",
       "kind": "paper",
@@ -66,6 +45,27 @@
       "contributions": [],
       "summaryKind": "source-excerpt",
       "summarySourceFingerprint": "d4fed4489c5e580b998c8d0ec879a50423303cb0903b1e87c2c589e01ff788c6",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2606.28780",
+      "title": "Multimodal Graph RAG for Long-range Visually Rich Document Understanding",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2606.28780",
+      "published": "2026-06-27T07:14:31Z",
+      "updated": "2026-11-05T12:59:26Z",
+      "topics": [
+        "docqa"
+      ],
+      "sourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Multimodal large language models (MLLMs) are widely applied to visual document understanding. However, comprehending long documents remains an issue by the limited context window. Though recent multimodal retrieval-augmented generation (MMRAG) can address this challenge by retrieving relevant pages. It still struggles with the visual question answering (VQA) requiring holistic ",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -223,7 +223,7 @@
     }
   ],
   "pendingCount": 150,
-  "sourceLastAttempt": "2026-11-09T09:33:49Z",
+  "sourceLastAttempt": "2026-11-09T11:32:42Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",

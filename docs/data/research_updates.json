@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "scope": "document-intelligence",
-  "lastAttempt": "2026-11-09T09:33:49Z",
-  "lastSuccessfulCheck": "2026-11-09T09:33:49Z",
+  "lastAttempt": "2026-11-09T11:32:42Z",
+  "lastSuccessfulCheck": "2026-11-09T11:32:42Z",
   "status": "refreshed",
   "nextScheduledCheck": "2026-11-10",
   "updateCadence": "daily",
@@ -13,7 +13,7 @@
       "id": "ocr",
       "title": "OCR / 解析",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22optical+character+recognition%22+OR+abs%3A%22optical+character+recognition%22+OR+ti%3A%22optical-character-recognition%22+OR+abs%3A%22optical-character-recognition%22+OR+ti%3A%22OCR%22+OR+abs%3A%22OCR%22+OR+ti%3A%22document+parsing%22+OR+abs%3A%22document+parsing%22+OR+ti%3A%22document-parsing%22+OR+abs%3A%22document-parsing%22+OR+ti%3A%22document+extraction%22+OR+abs%3A%22document+extraction%22+OR+ti%3A%22document-extraction%22+OR+abs%3A%22document-extraction%22+OR+ti%3A%22document+digitization%22+OR+abs%3A%22document+digitization%22+OR+ti%3A%22document-digitization%22+OR+abs%3A%22document-digitization%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 39,
@@ -25,7 +25,7 @@
       "id": "layout",
       "title": "版面",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+layout%22+OR+abs%3A%22document+layout%22+OR+ti%3A%22document-layout%22+OR+abs%3A%22document-layout%22+OR+ti%3A%22layout+analysis%22+OR+abs%3A%22layout+analysis%22+OR+ti%3A%22layout-analysis%22+OR+abs%3A%22layout-analysis%22+OR+ti%3A%22reading+order%22+OR+abs%3A%22reading+order%22+OR+ti%3A%22reading-order%22+OR+abs%3A%22reading-order%22+OR+ti%3A%22document+structure%22+OR+abs%3A%22document+structure%22+OR+ti%3A%22document-structure%22+OR+abs%3A%22document-structure%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 9,
@@ -37,7 +37,7 @@
       "id": "table",
       "title": "表格 / 图表",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22table+structure+recognition%22+OR+abs%3A%22table+structure+recognition%22+OR+ti%3A%22table-structure-recognition%22+OR+abs%3A%22table-structure-recognition%22+OR+ti%3A%22table+extraction%22+OR+abs%3A%22table+extraction%22+OR+ti%3A%22table-extraction%22+OR+abs%3A%22table-extraction%22+OR+ti%3A%22table+question+answering%22+OR+abs%3A%22table+question+answering%22+OR+ti%3A%22table-question-answering%22+OR+abs%3A%22table-question-answering%22+OR+ti%3A%22chart+question+answering%22+OR+abs%3A%22chart+question+answering%22+OR+ti%3A%22chart-question-answering%22+OR+abs%3A%22chart-question-answering%22+OR+ti%3A%22chart+understanding%22+OR+abs%3A%22chart+understanding%22+OR+ti%3A%22chart-understanding%22+OR+abs%3A%22chart-understanding%22+OR+ti%3A%22table+recognition%22+OR+abs%3A%22table+recognition%22+OR+ti%3A%22table-recognition%22+OR+abs%3A%22table-recognition%22+OR+ti%3A%22table+detection%22+OR+abs%3A%22table+detection%22+OR+ti%3A%22table-detection%22+OR+abs%3A%22table-detection%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 11,
@@ -49,7 +49,7 @@
       "id": "docqa",
       "title": "文档问答",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+visual+question+answering%22+OR+abs%3A%22document+visual+question+answering%22+OR+ti%3A%22document-visual-question-answering%22+OR+abs%3A%22document-visual-question-answering%22+OR+ti%3A%22DocVQA%22+OR+abs%3A%22DocVQA%22+OR+ti%3A%22InfographicVQA%22+OR+abs%3A%22InfographicVQA%22+OR+ti%3A%22document+question+answering%22+OR+abs%3A%22document+question+answering%22+OR+ti%3A%22document-question-answering%22+OR+abs%3A%22document-question-answering%22+OR+ti%3A%22multi+page+document%22+OR+abs%3A%22multi+page+document%22+OR+ti%3A%22multi-page-document%22+OR+abs%3A%22multi-page-document%22+OR+ti%3A%22document+understanding%22+OR+abs%3A%22document+understanding%22+OR+ti%3A%22document-understanding%22+OR+abs%3A%22document-understanding%22+OR+ti%3A%22visually+rich+document%22+OR+abs%3A%22visually+rich+document%22+OR+ti%3A%22visually-rich-document%22+OR+abs%3A%22visually-rich-document%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 31,
@@ -61,7 +61,7 @@
       "id": "docrag",
       "title": "文档 RAG",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+retrieval%22+OR+abs%3A%22document+retrieval%22+OR+ti%3A%22document-retrieval%22+OR+abs%3A%22document-retrieval%22+OR+ti%3A%22multimodal+document+retrieval%22+OR+abs%3A%22multimodal+document+retrieval%22+OR+ti%3A%22multimodal-document-retrieval%22+OR+abs%3A%22multimodal-document-retrieval%22+OR+ti%3A%22document+RAG%22+OR+abs%3A%22document+RAG%22+OR+ti%3A%22document-RAG%22+OR+abs%3A%22document-RAG%22+OR+ti%3A%22PDF+question+answering%22+OR+abs%3A%22PDF+question+answering%22+OR+ti%3A%22PDF-question-answering%22+OR+abs%3A%22PDF-question-answering%22+OR+ti%3A%22long+document+understanding%22+OR+abs%3A%22long+document+understanding%22+OR+ti%3A%22long-document-understanding%22+OR+abs%3A%22long-document-understanding%22+OR+ti%3A%22visually+rich+document+retrieval%22+OR+abs%3A%22visually+rich+document+retrieval%22+OR+ti%3A%22visually-rich-document-retrieval%22+OR+abs%3A%22visually-rich-document-retrieval%22+OR+ti%3A%22ColPali%22+OR+abs%3A%22ColPali%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 11,
@@ -73,7 +73,7 @@
       "id": "eval",
       "title": "评测",
       "sourceUrl": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.CV+OR+cat%3Acs.CL+OR+cat%3Acs.AI+OR+cat%3Acs.IR+OR+cat%3Acs.LG+OR+cat%3Acs.DL+OR+cat%3Acs.HC%29+AND+%28ti%3A%22document+benchmark%22+OR+abs%3A%22document+benchmark%22+OR+ti%3A%22document-benchmark%22+OR+abs%3A%22document-benchmark%22+OR+ti%3A%22document+evaluation%22+OR+abs%3A%22document+evaluation%22+OR+ti%3A%22document-evaluation%22+OR+abs%3A%22document-evaluation%22+OR+ti%3A%22DocVQA%22+OR+abs%3A%22DocVQA%22+OR+ti%3A%22OmniDocBench%22+OR+abs%3A%22OmniDocBench%22+OR+ti%3A%22OCRBench%22+OR+abs%3A%22OCRBench%22+OR+ti%3A%22document+parsing+benchmark%22+OR+abs%3A%22document+parsing+benchmark%22+OR+ti%3A%22document-parsing-benchmark%22+OR+abs%3A%22document-parsing-benchmark%22%29&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=100",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 100,
       "matchedCount": 7,
@@ -88,7 +88,7 @@
       "title": "PaddlePaddle/PaddleOCR",
       "repo": "PaddlePaddle/PaddleOCR",
       "sourceUrl": "https://github.com/PaddlePaddle/PaddleOCR/releases",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 0,
@@ -100,7 +100,7 @@
       "title": "opendatalab/MinerU",
       "repo": "opendatalab/MinerU",
       "sourceUrl": "https://github.com/opendatalab/MinerU/releases",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 9,
@@ -112,7 +112,7 @@
       "title": "docling-project/docling",
       "repo": "docling-project/docling",
       "sourceUrl": "https://github.com/docling-project/docling/releases",
-      "lastChecked": "2026-11-09T09:33:49Z",
+      "lastChecked": "2026-11-09T11:32:42Z",
       "status": "fresh",
       "fetchedCount": 20,
       "matchedCount": 14,
@@ -145,86 +145,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-08T10:23:34Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "新收录"
       ],
-      "rankScore": 0.97694
-    },
-    {
-      "id": "arxiv:2606.28780",
-      "arxiv": "2606.28780",
-      "version": 2,
-      "title": "Multimodal Graph RAG for Long-range Visually Rich Document Understanding",
-      "abstract": "Multimodal large language models (MLLMs) are widely applied to visual document understanding. However, comprehending long documents remains an issue by the limited context window. Though recent multimodal retrieval-augmented generation (MMRAG) can address this challenge by retrieving relevant pages. It still struggles with the visual question answering (VQA) requiring holistic comprehension of a document. To cope with this, knowledge graph (KG) that summarizes global knowledge of a document can provide an effective solution. However, most existing LLM-based KG construction methods handle only the language modality, leaving the automatic creation of multimodal KGs (MMKGs) for visually rich documents largely unexplored. In this paper, we introduce a multimodal graph-based RAG approach to tackle this problem. Existing LLM-based KG methods evaluate the QA performance relying on indirect evidence such as comprehensiveness, diversity, empowerment, and so on. The lack of annotated datasets for comprehensive document-level VQA poses a significant challenge to effective model evaluation. To overcome this limitation, we also introduce a new benchmark, DLVQA (document-level VQA), which provides reference summaries and corresponding supporting facts for global document-level questions. Experimental results show that our approach outperforms existing MMRAG or KG-based approaches on multi-hop QA/VQA benchmarks and DLVQA.",
-      "authors": [
-        "Yi-Cheng Wang",
-        "Chu-Song Chen"
-      ],
-      "published": "2026-06-27T07:14:31Z",
-      "updated": "2026-11-05T12:59:26Z",
-      "url": "https://arxiv.org/abs/2606.28780",
-      "pdfUrl": "https://arxiv.org/pdf/2606.28780",
-      "arxivCategories": [
-        "cs.CV",
-        "cs.IR"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "docqa"
-      ],
-      "matchedTerms": {
-        "docqa": [
-          "document understanding",
-          "visually rich document"
-        ]
-      },
-      "firstSeen": "2026-11-06T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
-      "relevanceScore": 0.91,
-      "rankReasons": [
-        "文档主题匹配",
-        "近 7 天有更新",
-        "新收录",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.86894
-    },
-    {
-      "id": "github:docling-project/docling:435467388",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.148.0",
-      "abstract": "### Feature * Add surya v2.5 ([#5141](https://github.com/docling-project/docling/issues/5141)) ([`9b25840`](https://github.com/docling-project/docling/commit/9b25840a71ed3796ffc5c80cc8d96e110acba7d2)) * **pdf:** Mark superscript and subscript text from glyph size and baseline ([#4815](https://github.com/docling-project/docling/issues/4815)) ([`3bbd3fa`](https://github.com/docling-project/docling/commit/3bbd3fae3298a0c4a919f90f2bf4dcd1a29b6cbb)) * **calendar:** Add an iCalendar (.ics) backend ([#",
-      "authors": [],
-      "published": "2026-11-05T16:49:41Z",
-      "updated": "2026-11-05T16:49:41Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.148.0",
-      "tag": "v2.148.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-11-06T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "近 7 天有更新",
-        "新收录",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.81573
+      "rankScore": 0.97519
     },
     {
       "id": "arxiv:2608.28572",
@@ -263,7 +190,7 @@
         ]
       },
       "firstSeen": "2026-11-09T09:23:26Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
@@ -271,7 +198,46 @@
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.68818
+      "rankScore": 0.79665
+    },
+    {
+      "id": "arxiv:2606.28780",
+      "arxiv": "2606.28780",
+      "version": 2,
+      "title": "Multimodal Graph RAG for Long-range Visually Rich Document Understanding",
+      "abstract": "Multimodal large language models (MLLMs) are widely applied to visual document understanding. However, comprehending long documents remains an issue by the limited context window. Though recent multimodal retrieval-augmented generation (MMRAG) can address this challenge by retrieving relevant pages. It still struggles with the visual question answering (VQA) requiring holistic comprehension of a document. To cope with this, knowledge graph (KG) that summarizes global knowledge of a document can provide an effective solution. However, most existing LLM-based KG construction methods handle only the language modality, leaving the automatic creation of multimodal KGs (MMKGs) for visually rich documents largely unexplored. In this paper, we introduce a multimodal graph-based RAG approach to tackle this problem. Existing LLM-based KG methods evaluate the QA performance relying on indirect evidence such as comprehensiveness, diversity, empowerment, and so on. The lack of annotated datasets for comprehensive document-level VQA poses a significant challenge to effective model evaluation. To overcome this limitation, we also introduce a new benchmark, DLVQA (document-level VQA), which provides reference summaries and corresponding supporting facts for global document-level questions. Experimental results show that our approach outperforms existing MMRAG or KG-based approaches on multi-hop QA/VQA benchmarks and DLVQA.",
+      "authors": [
+        "Yi-Cheng Wang",
+        "Chu-Song Chen"
+      ],
+      "published": "2026-06-27T07:14:31Z",
+      "updated": "2026-11-05T12:59:26Z",
+      "url": "https://arxiv.org/abs/2606.28780",
+      "pdfUrl": "https://arxiv.org/pdf/2606.28780",
+      "arxivCategories": [
+        "cs.CV",
+        "cs.IR"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docqa"
+      ],
+      "matchedTerms": {
+        "docqa": [
+          "document understanding",
+          "visually rich document"
+        ]
+      },
+      "firstSeen": "2026-11-06T10:53:24Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
+      "relevanceScore": 0.91,
+      "rankReasons": [
+        "文档主题匹配",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.74751
     },
     {
       "id": "github:opendatalab/MinerU:433901302",
@@ -297,13 +263,45 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.61596
+      "rankScore": 0.68463
+    },
+    {
+      "id": "github:docling-project/docling:435467388",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.148.0",
+      "abstract": "### Feature * Add surya v2.5 ([#5141](https://github.com/docling-project/docling/issues/5141)) ([`9b25840`](https://github.com/docling-project/docling/commit/9b25840a71ed3796ffc5c80cc8d96e110acba7d2)) * **pdf:** Mark superscript and subscript text from glyph size and baseline ([#4815](https://github.com/docling-project/docling/issues/4815)) ([`3bbd3fa`](https://github.com/docling-project/docling/commit/3bbd3fae3298a0c4a919f90f2bf4dcd1a29b6cbb)) * **calendar:** Add an iCalendar (.ics) backend ([#",
+      "authors": [],
+      "published": "2026-11-05T16:49:41Z",
+      "updated": "2026-11-05T16:49:41Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.148.0",
+      "tag": "v2.148.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-11-06T10:53:24Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "近 7 天有更新",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.59428
     },
     {
       "id": "github:opendatalab/MinerU:432645485",
@@ -329,13 +327,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-04T10:56:26Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.56007
+      "rankScore": 0.55884
     },
     {
       "id": "github:docling-project/docling:434036114",
@@ -361,13 +359,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.53722
+      "rankScore": 0.53588
     },
     {
       "id": "arxiv:2510.18413",
@@ -402,7 +400,7 @@
         ]
       },
       "firstSeen": "2026-11-09T09:23:26Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
@@ -410,7 +408,7 @@
         "新收录",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.5307
+      "rankScore": 0.52918
     },
     {
       "id": "github:opendatalab/MinerU:432374295",
@@ -436,13 +434,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.517
+      "rankScore": 0.51578
     },
     {
       "id": "github:docling-project/docling:432354383",
@@ -468,13 +466,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.47668
+      "rankScore": 0.47547
     },
     {
       "id": "github:opendatalab/MinerU:431502262",
@@ -500,13 +498,13 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.46645
+      "rankScore": 0.46529
     },
     {
       "id": "arxiv:2610.36444",
@@ -542,13 +540,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.44917
+      "rankScore": 0.44844
     },
     {
       "id": "arxiv:2611.06449",
@@ -591,14 +589,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.91,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.4421
+      "rankScore": 0.44077
     },
     {
       "id": "github:opendatalab/MinerU:428913222",
@@ -624,12 +622,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-31T09:40:07Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.42722
+      "rankScore": 0.4263
     },
     {
       "id": "arxiv:2610.33004",
@@ -668,14 +666,14 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.4227
+      "rankScore": 0.42137
     },
     {
       "id": "github:opendatalab/MinerU:428167074",
@@ -701,12 +699,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41923
+      "rankScore": 0.41835
     },
     {
       "id": "github:opendatalab/MinerU:428051170",
@@ -732,12 +730,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41868
+      "rankScore": 0.4178
     },
     {
       "id": "github:docling-project/docling:427986395",
@@ -763,12 +761,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41809
+      "rankScore": 0.41722
     },
     {
       "id": "github:opendatalab/MinerU:427762028",
@@ -794,12 +792,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41656
+      "rankScore": 0.4157
     },
     {
       "id": "arxiv:2606.09788",
@@ -838,14 +836,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41448
+      "rankScore": 0.41321
     },
     {
       "id": "arxiv:2512.10888",
@@ -884,14 +882,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.41419
+      "rankScore": 0.41292
     },
     {
       "id": "arxiv:2611.04874",
@@ -934,14 +932,14 @@
         ]
       },
       "firstSeen": "2026-11-04T10:56:26Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40889
+      "rankScore": 0.40765
     },
     {
       "id": "github:docling-project/docling:426615904",
@@ -967,12 +965,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-29T09:59:00Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40681
+      "rankScore": 0.406
     },
     {
       "id": "arxiv:2611.05539",
@@ -1002,14 +1000,14 @@
         ]
       },
       "firstSeen": "2026-11-05T10:56:53Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.40673
+      "rankScore": 0.40547
     },
     {
       "id": "github:docling-project/docling:425760117",
@@ -1035,12 +1033,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.39934
+      "rankScore": 0.39858
     },
     {
       "id": "arxiv:2609.18823",
@@ -1077,14 +1075,14 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.39599
+      "rankScore": 0.39483
     },
     {
       "id": "github:docling-project/docling:424894279",
@@ -1110,12 +1108,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.39288
+      "rankScore": 0.39216
     },
     {
       "id": "arxiv:2611.03023",
@@ -1151,14 +1149,14 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.3877
+      "rankScore": 0.38655
     },
     {
       "id": "arxiv:2610.39301",
@@ -1216,13 +1214,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.36538
+      "rankScore": 0.36454
     },
     {
       "id": "github:docling-project/docling:421598813",
@@ -1248,12 +1246,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.36466
+      "rankScore": 0.36411
     },
     {
       "id": "github:docling-project/docling:420824203",
@@ -1279,12 +1277,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.35977
+      "rankScore": 0.35924
     },
     {
       "id": "arxiv:2610.39308",
@@ -1328,13 +1326,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.35161
+      "rankScore": 0.35071
     },
     {
       "id": "github:docling-project/docling:418897384",
@@ -1360,12 +1358,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.34945
+      "rankScore": 0.34898
     },
     {
       "id": "arxiv:2610.28957",
@@ -1402,13 +1400,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.33562
+      "rankScore": 0.33516
     },
     {
       "id": "github:docling-project/docling:414745219",
@@ -1434,12 +1432,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32754
+      "rankScore": 0.3272
     },
     {
       "id": "github:docling-project/docling:412682585",
@@ -1465,12 +1463,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.32037
+      "rankScore": 0.32007
     },
     {
       "id": "arxiv:2610.36929",
@@ -1504,13 +1502,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31856
+      "rankScore": 0.31782
     },
     {
       "id": "arxiv:2610.36759",
@@ -1547,13 +1545,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31757
+      "rankScore": 0.31683
     },
     {
       "id": "arxiv:2610.35240",
@@ -1587,13 +1585,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31637
+      "rankScore": 0.31567
     },
     {
       "id": "github:docling-project/docling:410246933",
@@ -1619,12 +1617,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.31288
+      "rankScore": 0.31263
     },
     {
       "id": "github:opendatalab/MinerU:409343850",
@@ -1650,12 +1648,12 @@
       },
       "relevanceScore": 1.0,
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "rankReasons": [
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30947
+      "rankScore": 0.30924
     },
     {
       "id": "arxiv:2610.34879",
@@ -1686,13 +1684,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30843
+      "rankScore": 0.30775
     },
     {
       "id": "arxiv:2610.34148",
@@ -1724,13 +1722,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30728
+      "rankScore": 0.30664
     },
     {
       "id": "github:docling-project/docling:407981657",
@@ -1761,7 +1759,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30544
+      "rankScore": 0.30523
     },
     {
       "id": "github:docling-project/docling:407877825",
@@ -1792,7 +1790,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30522
+      "rankScore": 0.30502
     },
     {
       "id": "github:opendatalab/MinerU:407136872",
@@ -1823,7 +1821,38 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.30342
+      "rankScore": 0.30322
+    },
+    {
+      "id": "github:docling-project/docling:405653272",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.135.0",
+      "abstract": "### Feature * **iwork:** Render Numbers chart images and read iWork '09 chart kinds ([#4630](https://github.com/docling-project/docling/issues/4630)) ([`f95402a`](https://github.com/docling-project/docling/commit/f95402a0f0e44ac17e4315ae2fde6ce4a456b131)) * **md:** Preserve inline formatting in Markdown table cells ([#4488](https://github.com/docling-project/docling/issues/4488)) ([`1a264db`](https://github.com/docling-project/docling/commit/1a264dbf269369ad237f6597d956f452ea3e8544)) ### Fix * *",
+      "authors": [],
+      "published": "2026-10-07T10:42:24Z",
+      "updated": "2026-10-07T10:42:24Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.135.0",
+      "tag": "v2.135.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-05T10:56:53Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.30023
     },
     {
       "id": "arxiv:2610.34094",
@@ -1855,44 +1884,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.3007
-    },
-    {
-      "id": "github:docling-project/docling:405653272",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.135.0",
-      "abstract": "### Feature * **iwork:** Render Numbers chart images and read iWork '09 chart kinds ([#4630](https://github.com/docling-project/docling/issues/4630)) ([`f95402a`](https://github.com/docling-project/docling/commit/f95402a0f0e44ac17e4315ae2fde6ce4a456b131)) * **md:** Preserve inline formatting in Markdown table cells ([#4488](https://github.com/docling-project/docling/issues/4488)) ([`1a264db`](https://github.com/docling-project/docling/commit/1a264dbf269369ad237f6597d956f452ea3e8544)) ### Fix * *",
-      "authors": [],
-      "published": "2026-10-07T10:42:24Z",
-      "updated": "2026-10-07T10:42:24Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.135.0",
-      "tag": "v2.135.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-05T10:56:53Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.3004
+      "rankScore": 0.30006
     },
     {
       "id": "github:docling-project/docling:404329764",
@@ -1923,7 +1921,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29783
+      "rankScore": 0.29766
     },
     {
       "id": "arxiv:2610.37701",
@@ -1957,13 +1955,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29714
+      "rankScore": 0.29649
     },
     {
       "id": "arxiv:2610.31385",
@@ -2006,13 +2004,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.29388
+      "rankScore": 0.29335
     },
     {
       "id": "github:docling-project/docling:402480593",
@@ -2043,7 +2041,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2929
+      "rankScore": 0.29276
     },
     {
       "id": "github:docling-project/docling:400827827",
@@ -2074,7 +2072,38 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28975
+      "rankScore": 0.28963
+    },
+    {
+      "id": "github:docling-project/docling:398929330",
+      "kind": "release",
+      "repo": "docling-project/docling",
+      "title": "docling · v2.131.0",
+      "abstract": "### Feature * **iwork:** Parse Keynote charts as classified pictures with data ([#4376](https://github.com/docling-project/docling/issues/4376)) ([`9da6935`](https://github.com/docling-project/docling/commit/9da693562ea817109d703c997f091ab3806dd074)) * **iwork:** Add Apple Keynote (`.key`) support ([#4330](https://github.com/docling-project/docling/issues/4330)) ([`87c6ea0`](https://github.com/docling-project/docling/commit/87c6ea0caddff2751b97accc9811b650eb714927)) ### Fix * **pypdfium2:** Buil",
+      "authors": [],
+      "published": "2026-09-29T07:58:11Z",
+      "updated": "2026-09-29T07:58:11Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.131.0",
+      "tag": "v2.131.0",
+      "sourceName": "GitHub · docling-project/docling",
+      "topics": [
+        "ocr",
+        "layout",
+        "table"
+      ],
+      "matchedTerms": {
+        "ocr": [
+          "官方文档解析项目"
+        ]
+      },
+      "relevanceScore": 1.0,
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-10-28T09:40:56Z",
+      "rankReasons": [
+        "官方文档工具发布",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.28693
     },
     {
       "id": "arxiv:2603.12718",
@@ -2110,44 +2139,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28743
-    },
-    {
-      "id": "github:docling-project/docling:398929330",
-      "kind": "release",
-      "repo": "docling-project/docling",
-      "title": "docling · v2.131.0",
-      "abstract": "### Feature * **iwork:** Parse Keynote charts as classified pictures with data ([#4376](https://github.com/docling-project/docling/issues/4376)) ([`9da6935`](https://github.com/docling-project/docling/commit/9da693562ea817109d703c997f091ab3806dd074)) * **iwork:** Add Apple Keynote (`.key`) support ([#4330](https://github.com/docling-project/docling/issues/4330)) ([`87c6ea0`](https://github.com/docling-project/docling/commit/87c6ea0caddff2751b97accc9811b650eb714927)) ### Fix * **pypdfium2:** Buil",
-      "authors": [],
-      "published": "2026-09-29T07:58:11Z",
-      "updated": "2026-09-29T07:58:11Z",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.131.0",
-      "tag": "v2.131.0",
-      "sourceName": "GitHub · docling-project/docling",
-      "topics": [
-        "ocr",
-        "layout",
-        "table"
-      ],
-      "matchedTerms": {
-        "ocr": [
-          "官方文档解析项目"
-        ]
-      },
-      "relevanceScore": 1.0,
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-10-28T09:40:56Z",
-      "rankReasons": [
-        "官方文档工具发布",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.28703
+      "rankScore": 0.28691
     },
     {
       "id": "github:opendatalab/MinerU:398902715",
@@ -2178,7 +2176,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.287
+      "rankScore": 0.2869
     },
     {
       "id": "github:opendatalab/MinerU:398394476",
@@ -2209,7 +2207,7 @@
         "官方文档工具发布",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28623
+      "rankScore": 0.28614
     },
     {
       "id": "arxiv:2606.28916",
@@ -2243,13 +2241,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.28214
+      "rankScore": 0.28161
     },
     {
       "id": "arxiv:2608.07943",
@@ -2287,13 +2285,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.93,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.281
+      "rankScore": 0.28069
     },
     {
       "id": "arxiv:2610.28171",
@@ -2331,13 +2329,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27552
+      "rankScore": 0.27507
     },
     {
       "id": "arxiv:2610.07760",
@@ -2369,13 +2367,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27204
+      "rankScore": 0.27157
     },
     {
       "id": "arxiv:2611.00078",
@@ -2408,13 +2406,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.27023
+      "rankScore": 0.26984
     },
     {
       "id": "arxiv:2610.14531",
@@ -2449,13 +2447,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26858
+      "rankScore": 0.26813
     },
     {
       "id": "arxiv:2610.25440",
@@ -2492,13 +2490,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26618
+      "rankScore": 0.26578
     },
     {
       "id": "arxiv:2610.25235",
@@ -2534,13 +2532,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.26515
+      "rankScore": 0.26475
     },
     {
       "id": "arxiv:2610.26313",
@@ -2571,13 +2569,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25812
+      "rankScore": 0.2577
     },
     {
       "id": "arxiv:2610.22726",
@@ -2614,13 +2612,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25384
+      "rankScore": 0.25351
     },
     {
       "id": "arxiv:2610.21318",
@@ -2658,13 +2656,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.25111
+      "rankScore": 0.2508
     },
     {
       "id": "arxiv:2610.20335",
@@ -2713,13 +2711,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.88,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24882
+      "rankScore": 0.24852
     },
     {
       "id": "arxiv:2610.21979",
@@ -2755,55 +2753,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24646
-    },
-    {
-      "id": "arxiv:2610.21327",
-      "arxiv": "2610.21327",
-      "version": 1,
-      "title": "DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding",
-      "abstract": "Multimodal long-document question answering requires models to seek sparse evidence across pages and modalities, understand heterogeneous document content, and reason over the collected evidence. Even advanced vision-language models (VLMs) can overlook sparse evidence and struggle with cross-modal reasoning in a single pass. Existing document agents further introduce multi-step interaction, but some still rely on predefined workflows or coarse-grained actions, limiting the flexibility and granularity of document reasoning. We introduce DocPilot, an agentic document framework that supports expressive orchestration and makes complex document solving learnable by small language models (SLMs). DocPilot orchestrates evidence seeking through page-level navigation and fine-grained evidence localization, and integrates local visual inspection, code-based numerical reasoning, and cross-modal reasoning for multimodal understanding. To transfer these capabilities to small models, we propose curriculum-based agentic training that progresses from single-ability learning to adaptive orchestration through supervision from data-grounded reasoning traces and executable interaction trajectories. Across MMLongBench-Doc, DocBench, FinRAGBench-V, and MADQA, DocPilot achieves strong gains with frontier VLM backbones, while DocPilot-4B delivers competitive performance against substantially larger models, demonstrating strong effectiveness and generalization across diverse long-document reasoning settings. The code is available at https://github.com/HKUSTDial/DocPilot.",
-      "authors": [
-        "Zhuowen Liang",
-        "Xiaotian Lin",
-        "Yuyu Luo",
-        "Haixun Wang",
-        "Nan Tang"
-      ],
-      "published": "2026-10-15T06:16:43Z",
-      "updated": "2026-10-15T06:16:43Z",
-      "url": "https://arxiv.org/abs/2610.21327",
-      "pdfUrl": "https://arxiv.org/pdf/2610.21327",
-      "arxivCategories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "docqa"
-      ],
-      "matchedTerms": {
-        "docqa": [
-          "document question answering",
-          "document understanding"
-        ]
-      },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
-      "relevanceScore": 0.87,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.24513
+      "rankScore": 0.24614
     },
     {
       "id": "arxiv:2610.15728",
@@ -2848,13 +2804,55 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.89,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24511
+      "rankScore": 0.24487
+    },
+    {
+      "id": "arxiv:2610.21327",
+      "arxiv": "2610.21327",
+      "version": 1,
+      "title": "DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding",
+      "abstract": "Multimodal long-document question answering requires models to seek sparse evidence across pages and modalities, understand heterogeneous document content, and reason over the collected evidence. Even advanced vision-language models (VLMs) can overlook sparse evidence and struggle with cross-modal reasoning in a single pass. Existing document agents further introduce multi-step interaction, but some still rely on predefined workflows or coarse-grained actions, limiting the flexibility and granularity of document reasoning. We introduce DocPilot, an agentic document framework that supports expressive orchestration and makes complex document solving learnable by small language models (SLMs). DocPilot orchestrates evidence seeking through page-level navigation and fine-grained evidence localization, and integrates local visual inspection, code-based numerical reasoning, and cross-modal reasoning for multimodal understanding. To transfer these capabilities to small models, we propose curriculum-based agentic training that progresses from single-ability learning to adaptive orchestration through supervision from data-grounded reasoning traces and executable interaction trajectories. Across MMLongBench-Doc, DocBench, FinRAGBench-V, and MADQA, DocPilot achieves strong gains with frontier VLM backbones, while DocPilot-4B delivers competitive performance against substantially larger models, demonstrating strong effectiveness and generalization across diverse long-document reasoning settings. The code is available at https://github.com/HKUSTDial/DocPilot.",
+      "authors": [
+        "Zhuowen Liang",
+        "Xiaotian Lin",
+        "Yuyu Luo",
+        "Haixun Wang",
+        "Nan Tang"
+      ],
+      "published": "2026-10-15T06:16:43Z",
+      "updated": "2026-10-15T06:16:43Z",
+      "url": "https://arxiv.org/abs/2610.21327",
+      "pdfUrl": "https://arxiv.org/pdf/2610.21327",
+      "arxivCategories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "docqa"
+      ],
+      "matchedTerms": {
+        "docqa": [
+          "document question answering",
+          "document understanding"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
+      "relevanceScore": 0.87,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.24482
     },
     {
       "id": "arxiv:2610.20461",
@@ -2886,13 +2884,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24304
+      "rankScore": 0.24274
     },
     {
       "id": "arxiv:2610.11818",
@@ -2936,7 +2934,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24282
+      "rankScore": 0.24262
     },
     {
       "id": "arxiv:2609.15205",
@@ -2972,13 +2970,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.87,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.24091
+      "rankScore": 0.24062
     },
     {
       "id": "arxiv:2610.11148",
@@ -3026,7 +3024,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.23593
+      "rankScore": 0.23575
     },
     {
       "id": "arxiv:2610.41561",
@@ -3055,14 +3053,14 @@
         ]
       },
       "firstSeen": "2026-11-02T11:08:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "近 7 天有更新",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.2354
+      "rankScore": 0.23409
     },
     {
       "id": "arxiv:2605.12882",
@@ -3109,7 +3107,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.23029
+      "rankScore": 0.2301
     },
     {
       "id": "arxiv:2609.37712",
@@ -3175,7 +3173,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22738
+      "rankScore": 0.22727
     },
     {
       "id": "arxiv:2610.12363",
@@ -3218,7 +3216,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22532
+      "rankScore": 0.22512
     },
     {
       "id": "arxiv:2609.27678",
@@ -3260,13 +3258,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.86,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22415
+      "rankScore": 0.22393
     },
     {
       "id": "arxiv:2609.36136",
@@ -3315,7 +3313,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.22039
+      "rankScore": 0.2203
     },
     {
       "id": "arxiv:2609.38282",
@@ -3358,7 +3356,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.21546
+      "rankScore": 0.21535
     },
     {
       "id": "arxiv:2609.05141",
@@ -3408,7 +3406,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20776
+      "rankScore": 0.20766
     },
     {
       "id": "arxiv:2605.11960",
@@ -3461,7 +3459,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20773
+      "rankScore": 0.20764
     },
     {
       "id": "arxiv:2604.23813",
@@ -3500,13 +3498,13 @@
         ]
       },
       "firstSeen": "2026-10-28T09:40:56Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.67,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.20142
+      "rankScore": 0.20066
     },
     {
       "id": "arxiv:2611.01967",
@@ -3540,13 +3538,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.19571
+      "rankScore": 0.19463
     },
     {
       "id": "arxiv:2610.38356",
@@ -3600,13 +3598,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.19307
+      "rankScore": 0.19201
     },
     {
       "id": "arxiv:2611.00638",
@@ -3650,13 +3648,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17803
+      "rankScore": 0.17705
     },
     {
       "id": "arxiv:2611.00242",
@@ -3686,13 +3684,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17283
+      "rankScore": 0.17189
     },
     {
       "id": "arxiv:2606.26439",
@@ -3723,13 +3721,13 @@
         ]
       },
       "firstSeen": "2026-11-02T11:08:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.17181
+      "rankScore": 0.17087
     },
     {
       "id": "arxiv:2610.35542",
@@ -3770,13 +3768,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16961
+      "rankScore": 0.16886
     },
     {
       "id": "arxiv:2610.36991",
@@ -3814,13 +3812,13 @@
         ]
       },
       "firstSeen": "2026-10-28T09:40:56Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16837
+      "rankScore": 0.16745
     },
     {
       "id": "arxiv:2610.40233",
@@ -3852,13 +3850,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.16028
+      "rankScore": 0.15941
     },
     {
       "id": "arxiv:2511.16417",
@@ -3896,13 +3894,13 @@
         ]
       },
       "firstSeen": "2026-10-30T10:01:46Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.1599
+      "rankScore": 0.15903
     },
     {
       "id": "arxiv:2610.12823",
@@ -3938,13 +3936,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.15489
+      "rankScore": 0.15405
     },
     {
       "id": "arxiv:2610.33066",
@@ -3994,13 +3992,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.67,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.14935
+      "rankScore": 0.14889
     },
     {
       "id": "arxiv:2602.00122",
@@ -4051,13 +4049,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.14089
+      "rankScore": 0.14013
     },
     {
       "id": "arxiv:2604.22678",
@@ -4089,13 +4087,13 @@
         ]
       },
       "firstSeen": "2026-10-27T16:29:50Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.13271
+      "rankScore": 0.132
     },
     {
       "id": "arxiv:2610.34722",
@@ -4128,13 +4126,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.12721
+      "rankScore": 0.12654
     },
     {
       "id": "arxiv:2604.25213",
@@ -4170,13 +4168,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.11884
+      "rankScore": 0.11822
     },
     {
       "id": "arxiv:2605.13831",
@@ -4224,13 +4222,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10983
+      "rankScore": 0.10943
     },
     {
       "id": "arxiv:2610.32725",
@@ -4263,13 +4261,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.1085
+      "rankScore": 0.10793
     },
     {
       "id": "arxiv:2610.32463",
@@ -4300,13 +4298,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10728
+      "rankScore": 0.10672
     },
     {
       "id": "arxiv:2610.32411",
@@ -4343,13 +4341,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.10703
+      "rankScore": 0.10647
     },
     {
       "id": "arxiv:2611.00092",
@@ -4385,13 +4383,13 @@
         ]
       },
       "firstSeen": "2026-11-03T10:53:24Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.1026
+      "rankScore": 0.10207
     },
     {
       "id": "arxiv:2609.02401",
@@ -4431,13 +4429,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09113
+      "rankScore": 0.09084
     },
     {
       "id": "arxiv:2610.28836",
@@ -4475,13 +4473,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.09089
+      "rankScore": 0.09043
     },
     {
       "id": "arxiv:2610.28282",
@@ -4517,13 +4515,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08984
+      "rankScore": 0.08938
     },
     {
       "id": "arxiv:2610.18238",
@@ -4558,13 +4556,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.62,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08887
+      "rankScore": 0.08859
     },
     {
       "id": "arxiv:2610.27309",
@@ -4596,13 +4594,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08598
+      "rankScore": 0.08555
     },
     {
       "id": "arxiv:2610.26431",
@@ -4634,13 +4632,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08434
+      "rankScore": 0.08391
     },
     {
       "id": "arxiv:2610.26401",
@@ -4673,13 +4671,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08429
+      "rankScore": 0.08387
     },
     {
       "id": "arxiv:2610.26362",
@@ -4713,13 +4711,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08422
+      "rankScore": 0.08379
     },
     {
       "id": "arxiv:2610.25621",
@@ -4754,13 +4752,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08157
+      "rankScore": 0.08116
     },
     {
       "id": "arxiv:2610.25575",
@@ -4793,13 +4791,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08111
+      "rankScore": 0.08071
     },
     {
       "id": "arxiv:2610.25503",
@@ -4832,13 +4830,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.08052
+      "rankScore": 0.08012
     },
     {
       "id": "arxiv:2610.17530",
@@ -4877,13 +4875,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06588
+      "rankScore": 0.06557
     },
     {
       "id": "arxiv:2610.21300",
@@ -4914,13 +4912,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06505
+      "rankScore": 0.06474
     },
     {
       "id": "arxiv:2608.20840",
@@ -4956,13 +4954,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.06423
+      "rankScore": 0.06392
     },
     {
       "id": "arxiv:2608.25478",
@@ -4992,54 +4990,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05855
-    },
-    {
-      "id": "arxiv:2610.17937",
-      "arxiv": "2610.17937",
-      "version": 1,
-      "title": "MERIT: Multimodal Evidence Reasoning over Image Tables",
-      "abstract": "Table reasoning with language models typically assumes access to clean textual tables. In practice, tables are often serialized into text, which can corrupt cell contents, distort structural relationships, and discard visual cues, leaving the model to reason over incomplete evidence. In contrast, table images retain this information, but using it requires both accurate perception and reasoning grounded in the relevant cells. To address this, we propose MERIT (Multimodal Evidence Reasoning over Image Tables), a three-stage framework for learning to reason over table images, with serialized tables serving as optional auxiliary inputs (if provided). Our analysis identifies visual evidence acquisition as a bottleneck, motivating table-specific encoder adaptation through reconstruction, localization, and color-conditioned supervision. Building on the adapted representations, supervised fine-tuning teaches explicit evidence selection and reasoning using verified trajectories. Finally, reinforcement learning refines the policy with separate rewards for evidence correctness, calculation, final answers, and output format. By providing feedback on intermediate steps, the framework targets retrieval and computational errors that final-answer supervision alone does not distinguish. We evaluate the approach on table question answering and fact verification, analyze the contributions of visual inputs and training components, and assess generalization to additional datasets with different table structures and visual presentations.",
-      "authors": [
-        "Haoyang Jiang",
-        "Zhuotong Fan",
-        "Mingyang Yi",
-        "Ju Fan",
-        "Lanqing Hu",
-        "Xiao Zan"
-      ],
-      "published": "2026-10-13T08:21:53Z",
-      "updated": "2026-10-13T08:21:53Z",
-      "url": "https://arxiv.org/abs/2610.17937",
-      "pdfUrl": "https://arxiv.org/pdf/2610.17937",
-      "arxivCategories": [
-        "cs.AI",
-        "cs.CV"
-      ],
-      "sourceName": "arXiv",
-      "kind": "paper",
-      "topics": [
-        "table"
-      ],
-      "matchedTerms": {
-        "table": [
-          "table question answering"
-        ]
-      },
-      "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
-      "relevanceScore": 0.57,
-      "rankReasons": [
-        "文档主题匹配",
-        "兼顾主题与来源多样性"
-      ],
-      "rankScore": 0.05835
+      "rankScore": 0.05827
     },
     {
       "id": "arxiv:2609.35304",
@@ -5081,7 +5038,48 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05818
+      "rankScore": 0.05808
+    },
+    {
+      "id": "arxiv:2610.17937",
+      "arxiv": "2610.17937",
+      "version": 1,
+      "title": "MERIT: Multimodal Evidence Reasoning over Image Tables",
+      "abstract": "Table reasoning with language models typically assumes access to clean textual tables. In practice, tables are often serialized into text, which can corrupt cell contents, distort structural relationships, and discard visual cues, leaving the model to reason over incomplete evidence. In contrast, table images retain this information, but using it requires both accurate perception and reasoning grounded in the relevant cells. To address this, we propose MERIT (Multimodal Evidence Reasoning over Image Tables), a three-stage framework for learning to reason over table images, with serialized tables serving as optional auxiliary inputs (if provided). Our analysis identifies visual evidence acquisition as a bottleneck, motivating table-specific encoder adaptation through reconstruction, localization, and color-conditioned supervision. Building on the adapted representations, supervised fine-tuning teaches explicit evidence selection and reasoning using verified trajectories. Finally, reinforcement learning refines the policy with separate rewards for evidence correctness, calculation, final answers, and output format. By providing feedback on intermediate steps, the framework targets retrieval and computational errors that final-answer supervision alone does not distinguish. We evaluate the approach on table question answering and fact verification, analyze the contributions of visual inputs and training components, and assess generalization to additional datasets with different table structures and visual presentations.",
+      "authors": [
+        "Haoyang Jiang",
+        "Zhuotong Fan",
+        "Mingyang Yi",
+        "Ju Fan",
+        "Lanqing Hu",
+        "Xiao Zan"
+      ],
+      "published": "2026-10-13T08:21:53Z",
+      "updated": "2026-10-13T08:21:53Z",
+      "url": "https://arxiv.org/abs/2610.17937",
+      "pdfUrl": "https://arxiv.org/pdf/2610.17937",
+      "arxivCategories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "sourceName": "arXiv",
+      "kind": "paper",
+      "topics": [
+        "table"
+      ],
+      "matchedTerms": {
+        "table": [
+          "table question answering"
+        ]
+      },
+      "firstSeen": "2026-10-28T01:15:31Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
+      "relevanceScore": 0.57,
+      "rankReasons": [
+        "文档主题匹配",
+        "兼顾主题与来源多样性"
+      ],
+      "rankScore": 0.05808
     },
     {
       "id": "arxiv:2609.07629",
@@ -5115,13 +5113,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05527
+      "rankScore": 0.05502
     },
     {
       "id": "arxiv:2610.15542",
@@ -5282,13 +5280,13 @@
         ]
       },
       "firstSeen": "2026-10-28T01:15:31Z",
-      "lastSeen": "2026-11-09T09:33:49Z",
+      "lastSeen": "2026-11-09T11:32:42Z",
       "relevanceScore": 0.57,
       "rankReasons": [
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.05256
+      "rankScore": 0.05233
     },
     {
       "id": "arxiv:2609.01216",
@@ -5329,7 +5327,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04744
+      "rankScore": 0.04723
     },
     {
       "id": "arxiv:2610.13060",
@@ -5366,7 +5364,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04661
+      "rankScore": 0.04641
     },
     {
       "id": "arxiv:2609.27257",
@@ -5408,7 +5406,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.0445
+      "rankScore": 0.04431
     },
     {
       "id": "arxiv:2610.09439",
@@ -5447,7 +5445,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04188
+      "rankScore": 0.0417
     },
     {
       "id": "arxiv:2610.09360",
@@ -5489,7 +5487,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04174
+      "rankScore": 0.04156
     },
     {
       "id": "arxiv:2610.10592",
@@ -5525,7 +5523,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04098
+      "rankScore": 0.04081
     },
     {
       "id": "arxiv:2610.08106",
@@ -5566,7 +5564,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.04029
+      "rankScore": 0.04013
     },
     {
       "id": "arxiv:2610.07751",
@@ -5608,7 +5606,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03982
+      "rankScore": 0.03965
     },
     {
       "id": "arxiv:2610.07622",
@@ -5645,7 +5643,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.0396
+      "rankScore": 0.03944
     },
     {
       "id": "arxiv:2605.14465",
@@ -5688,7 +5686,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03558
+      "rankScore": 0.03544
     },
     {
       "id": "arxiv:2505.24033",
@@ -5728,7 +5726,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03375
+      "rankScore": 0.03363
     },
     {
       "id": "arxiv:2610.02880",
@@ -5771,7 +5769,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03299
+      "rankScore": 0.03287
     },
     {
       "id": "arxiv:2610.01134",
@@ -5809,7 +5807,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03299
+      "rankScore": 0.03287
     },
     {
       "id": "arxiv:2610.01191",
@@ -5847,7 +5845,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03298
+      "rankScore": 0.03286
     },
     {
       "id": "arxiv:2606.01132",
@@ -5885,7 +5883,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03274
+      "rankScore": 0.03262
     },
     {
       "id": "arxiv:2610.02117",
@@ -5927,7 +5925,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03222
+      "rankScore": 0.0321
     },
     {
       "id": "arxiv:2510.17932",
@@ -5973,7 +5971,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03044
+      "rankScore": 0.03033
     },
     {
       "id": "arxiv:2609.39013",
@@ -6011,7 +6009,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03015
+      "rankScore": 0.03004
     },
     {
       "id": "arxiv:2609.19942",
@@ -6053,7 +6051,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03006
+      "rankScore": 0.02995
     },
     {
       "id": "arxiv:2609.38861",
@@ -6091,7 +6089,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.03004
+      "rankScore": 0.02993
     },
     {
       "id": "arxiv:2609.38781",
@@ -6128,7 +6126,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02998
+      "rankScore": 0.02988
     },
     {
       "id": "arxiv:2510.09741",
@@ -6176,7 +6174,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02912
+      "rankScore": 0.02902
     },
     {
       "id": "arxiv:2606.20333",
@@ -6223,7 +6221,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02912
+      "rankScore": 0.02902
     },
     {
       "id": "arxiv:2609.17538",
@@ -6260,7 +6258,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02858
+      "rankScore": 0.02848
     },
     {
       "id": "arxiv:2609.34196",
@@ -6296,7 +6294,7 @@
         "文档主题匹配",
         "兼顾主题与来源多样性"
       ],
-      "rankScore": 0.02763
+      "rankScore": 0.02754
     }
   ],
   "ranking": {
