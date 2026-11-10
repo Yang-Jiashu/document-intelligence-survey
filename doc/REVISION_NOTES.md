@@ -1,3 +1,10 @@
+# Complete chronology in two paper figures - 10 November 2026
+
+- Replaced the selective 32-work main figure with two 31-work figures directly in the paper, covering all 62 selected records including all 12 from 2026.
+- Kept a single S-shaped curve per figure, smaller model labels/icons, short alternating leaders and the 102 source/checkpoint links. Perception/document-model foundations and reasoning/evidence access provide complementary views, not disjoint research categories.
+- Retained the full literature discussions and bibliography. The standalone two-page chronology remains available as a convenient export.
+- Recompiled the full paper to 65 pages with 423 bibliography entries, resolved references and no overfull boxes. The two chronology figures appear on pages 3 and 4.
+
 # Clear overview and complete companion atlas - 10 November 2026
 
 - Simplified the main chronology to 32 milestones on one S-shaped curve, emphasizing changes in representation and evidence access rather than listing every release.

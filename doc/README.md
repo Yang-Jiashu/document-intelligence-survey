@@ -22,6 +22,12 @@ bash scripts/build_paper.sh
 
 The default result is `.build/paper/main.pdf`. An absolute output directory can be passed as the first argument. The helper synchronizes the sources, compiles the report with pdfLaTeX/BibTeX, and checks for unresolved citations and references. It uses only checkout-local caches when an installed minimal TeX distribution is missing formats or maps. A normal full TeX Live installation needs no such initialization.
 
+Restore the embedded chronology's source and checkpoint links before publishing the download (pdfLaTeX does not transfer annotations from included PDFs):
+
+```bash
+python scripts/figures/restore_timeline_links.py .build/paper/main.pdf doc/figs/fig12.pdf docs/paper.pdf
+```
+
 For source synchronization only:
 
 ```bash
@@ -45,7 +51,7 @@ The compatibility entry point build_evidence_diagrams.py delegates to build_visu
 
 The scripts write matching figure PDFs to both `figs/` and `../figs_by_qixingyu/`. Timeline dates mean the first public release year documented by the embedded source metadata; a citation's later venue year may differ.
 
-The main document-AI chronology shows 32 selected milestones on one S-shaped timeline. A two-page complete companion atlas retains all 62 selected works and evaluation resources from 2007 through 2026, split into 31 perception/model foundations and 31 reasoning/evidence-access entries. Both use `../scripts/figures/document_timeline_sources.json` as the factual source; the main selection is explicit in the generator. Model labels are 17.5pt and retained brand icons 19pt in native 1100×500 figures. Placeholder icons and within-group repeated brand icons are omitted. The generator exports both the main figure and `../docs/chronology-atlas.pdf`, linked from the paper. A pale yellow highlight means that public trained weights were verified on the recorded inspection date, not that the model was released on the paper date or shares a common license. Figures 13 and 14 use constructed financial and staffing reports to explain cross-page evidence and evaluation errors; they are not experimental results.
+The paper directly includes both pages of the document-AI chronology: 31 perception/document-model foundations and 31 reasoning/evidence-access entries, covering all 62 selected works and evaluation resources from 2007 through 2026. Each page follows one S-shaped curve, with short alternating leaders and no crossing category paths. Both use `../scripts/figures/document_timeline_sources.json` as the factual source. Model labels are 17.5pt and retained brand icons 19pt in native 1100×500 figures. Placeholder icons and within-group repeated brand icons are omitted. The generator exports the same two-page PDF to `figs/fig12.pdf`, `../figs_by_qixingyu/fig12.pdf` and the standalone `../docs/chronology-atlas.pdf`, along with a PNG/SVG for each page. A pale yellow highlight means that public trained weights were verified on the recorded inspection date, not that the model was released on the paper date or shares a common license. Figures 13 and 14 use constructed financial and staffing reports to explain cross-page evidence and evaluation errors; they are not experimental results.
 
 ## Revision and download
 

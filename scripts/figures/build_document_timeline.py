@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Render a sparse overview and a complete two-page linked chronology.
+"""Render the complete chronology as two linked, 31-entry paper figures.
 
 The adjacent 62-entry metadata is the only source of dates, research direction
-assignments, paper links and weight availability. A fixed editorial selection
-provides the 32-entry paper overview. Two 31-entry companion pages retain the
-complete source coverage, with no duplicate or omitted records. Every page has
-one black descending S-curve, sparse category dots and verified organization
-marks; placeholder task icons are never drawn. Native page size: 1100 x 500 pt.
+assignments, paper links and weight availability. Both paper figures preserve
+all records without duplicate or omitted entries. Each native 1100 x 500 pt
+page uses one black descending S-curve, sparse category dots and verified
+organization marks. No abbreviated overview or placeholder task icons are drawn.
+The same two-page PDF is exported to both manuscript figure locations and the
+standalone chronology download; each page also has its own SVG and PNG.
 """
 from __future__ import annotations
 
@@ -14,7 +15,6 @@ import base64
 import html
 import json
 import shutil
-from collections import defaultdict
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -229,7 +229,6 @@ def sample_curve(points):
     return sampled
 
 
-MAIN_NAMES = 'Tesseract|CRNN|DBNet|LayoutLM|TAPAS|RAG|DocVQA|Donut|LayoutLMv3|Pix2Struct|Hi-VT5 / MP-DocVQA|Qwen-VL|Chain-of-Table|GraphRAG|ColPali|Qwen2-VL|VisRAG|DocLayout-YOLO|TableGPT2|M3DocRAG|ViDoRAG|olmOCR|TableRAG|DeepSeek-OCR|Qwen3-VL|DeepSeek-OCR 2|PaddleOCR-VL-1.5|AutoThinkRAG|Qianfan-OCR|PreciseDoc|DocPilot|Unlimited OCR 2'.split('|')
 
 
 def paper_key(e):return (e['date'],e['name'])
@@ -301,23 +300,10 @@ def draw_clean(c,entries,groups,curve,stations,title=None,description=None):
     return {'page':[W,H],'nodes':occupied,'curve':curve,'pills':pills,'leaders':leaders,'max_leader_length':max_leader,'base_font':FONT,'icon_size':ICON,'issues':issues}
 
 
-def main_groups(entries):
-    periods=[(2007,2019),(2020,2021),(2022,2023),(2024,2024),(2025,2025),(2026,2026)]
-    chunks=[(4,),(4,),(4,),(4,4),(3,2),(4,3)]
-    positions=[[(40,480)],[(150,305)],[(330,425)],[(510,310),(555,125)],[(710,260),(750,95)],[(900,295),(930,115)]]
-    stations={0:(120,360,'2007–2019'),1:(260,345,'2020–2021'),2:(415,280,'2022–2023'),3:(590,175,'2024'),4:(800,140,'2025'),5:(1010,160,'2026')}
-    groups=[]
-    for k,((lo,hi),sizes,places) in enumerate(zip(periods,chunks,positions)):
-        selected=sorted([e for e in entries if lo<=int(e['date'][:4])<=hi],key=paper_key)
-        assert len(selected)==sum(sizes),(k,len(selected),sizes);offset=0
-        for size,place in zip(sizes,places):
-            groups.append({'entries':selected[offset:offset+size],'position':place,'station':k,'show_year':lo!=hi});offset+=size
-    curve=[('M',(25,360)),('C',(130,362,210,357,260,345)),('C',(330,330,370,315,415,280)),('C',(480,230,510,185,590,175)),('C',(670,147,725,137,800,140)),('C',(900,141,970,150,1010,160)),('C',(1040,166,1055,167,1075,165))]
-    return groups,curve,stations
-
-
-
-def build_atlas(all_entries):
+def build():
+    metadata=json.loads(SOURCE.read_text())
+    all_entries=[normalize_track(e) for e in metadata['entries']]
+    assert len(all_entries)==len({e['name'] for e in all_entries})==62
     foundation=[e for e in all_entries if e['track']=='perception' or (e['track']=='understanding' and int(e['date'][:4])<=2023)]
     systems=[e for e in all_entries if e not in foundation]
     assert len(foundation)==len(systems)==31
@@ -335,6 +321,8 @@ def build_atlas(all_entries):
     curve=[('M',(25,310)),('C',(130,312,210,317,250,305)),('C',(320,300,365,295,390,280)),('C',(455,260,480,242,510,230)),('C',(570,205,610,188,650,180)),('C',(700,160,750,160,785,160)),('C',(850,160,900,162,940,165)),('C',(980,170,1015,172,1040,170)),('C',(1060,170,1075,173,1080,172))]
     reports=[]
     for index,(sets,title) in enumerate([(first,'A. Perception and document-model foundations'),(second,'B. Reasoning and document-evidence access')],1):
+        SVG.clear()
+        SVG.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc"><title id="title">{esc(title)}</title><desc id="desc">31 selected works on a single curved chronology. Yellow labels mark verified official trained weights. This is page {index} of the complete 62-entry chronology. First-public-paper years are recorded separately from weight availability.</desc>')
         groups=[];stations={}
         for i,es in enumerate(sets):
             years=sorted({e['date'][:4] for e in es});label=years[0] if len(years)==1 else years[0]+'–'+years[-1]
@@ -343,8 +331,11 @@ def build_atlas(all_entries):
             groups.append({'entries':es,'position':(xs[i],first_baseline),'station':i,'show_year':len(years)>1})
             stations[i]=(cx,cy,label)
         entries=[e for es in sets for e in es]
-        qa=draw_clean(c,entries,groups,curve,stations,title,'Complete companion chronology · 31 entries · Yellow: verified official weights · Names link to original sources')
-        qa['title']=title;qa['entry_count']=len(entries);reports.append(qa);c.showPage()
+        qa=draw_clean(c,entries,groups,curve,stations,title,'31 selected works · Yellow: verified official weights · Names link to original sources')
+        qa['title']=title;qa['entry_count']=len(entries);reports.append(qa)
+        SVG.append('</svg>')
+        (ROOT/f'docs/images/document-timeline-{index}.svg').write_text('\n'.join(SVG)+'\n')
+        c.showPage()
     c.save()
     union=[n['name'] for page in reports for n in page['nodes']]
     assert len(union)==len(set(union))==62 and set(union)=={e['name'] for e in all_entries}
@@ -355,37 +346,24 @@ def build_atlas(all_entries):
         qa['uri_links']=len(page.get('/Annots',[]));assert qa['uri_links']==31+sum(n['weights'] for n in qa['nodes'])
         for ref in page.get('/Annots',[]):
             assert urlparse(str(ref.get_object()['/A']['/URI'])).scheme in {'http','https'}
-    folder=ROOT/'.build/timeline';document=pdfium.PdfDocument(str(atlas))
-    for i in range(2):document[i].render(scale=2).to_pil().save(folder/f'atlas-page-{i+1}.png')
-    (folder/'atlas-geometry.json').write_text(json.dumps({'coverage':{'unique_entries':62,'metadata_entries':len(all_entries),'missing':[],'duplicates':[]},'pages':reports},indent=2)+'\n')
-    print('ATLAS',[(page['entry_count'],page['issues']) for page in reports])
+    assert sum(page['uri_links'] for page in reports)==102
+    folder=ROOT/'.build/timeline';folder.mkdir(parents=True,exist_ok=True)
+    document=pdfium.PdfDocument(str(atlas))
+    for i in range(2):
+        image=document[i].render(scale=2).to_pil()
+        image.save(folder/f'atlas-page-{i+1}.png')
+        image.save(ROOT/f'docs/images/document-timeline-{i+1}.png')
+    for destination in (ROOT/'doc/figs/fig12.pdf',ROOT/'figs_by_qixingyu/fig12.pdf'):
+        shutil.copyfile(atlas,destination)
+    for extension in ('svg','png'):
+        shutil.copyfile(ROOT/f'docs/images/document-timeline-1.{extension}',ROOT/f'docs/images/document-timeline.{extension}')
+    shutil.copyfile(folder/'atlas-page-1.png',folder/'figure.png')
+    qa={'coverage':{'unique_entries':62,'metadata_entries':len(all_entries),'missing':[],'duplicates':[]},'uri_links':102,'pages':reports}
+    for filename in ('geometry.json','atlas-geometry.json'):
+        (folder/filename).write_text(json.dumps(qa,indent=2)+'\n')
+    print('TWO PAPER FIGURES',[(page['entry_count'],page['issues']) for page in reports],'; 62 unique works; 102 URI links')
 
-
-def build(main_only=False):
-    SVG.clear();metadata=json.loads(SOURCE.read_text());all_entries=[normalize_track(e) for e in metadata['entries']]
-    lookup={e['name']:e for e in all_entries};assert len(lookup)==len(all_entries)==62
-    assert len(MAIN_NAMES)==len(set(MAIN_NAMES))==32;selected=[lookup[name] for name in MAIN_NAMES]
-    groups,curve,stations=main_groups(selected);out=ROOT/'doc/figs/fig12.pdf'
-    c=canvas.Canvas(str(out),pagesize=(W,H),pageCompression=1,invariant=1)
-    c.setTitle('Selected milestones in document intelligence, 2007–2026');c.setAuthor('Beyond OCR survey authors')
-    SVG.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc"><title id="title">Selected milestones in document intelligence, 2007–2026</title><desc id="desc">32 selected models, methods and benchmarks on one descending curved chronology. Yellow labels indicate verified official trained weights. A complete 62-entry chronology is provided separately.</desc>')
-    qa=draw_clean(c,selected,groups,curve,stations);c.showPage();c.save();shutil.copyfile(out,ROOT/'figs_by_qixingyu/fig12.pdf')
-    from pypdf import PdfReader
-    linked=PdfReader(out).pages[0];qa['uri_links']=len(linked.get('/Annots',[]))
-    qa['selection_names']=MAIN_NAMES
-    qa['coverage']={'selected':32,'source_metadata':62,'missing_selected':[],'duplicates':[]}
-    assert qa['uri_links']==32+sum(n['weights'] for n in qa['nodes'])
-    assert set(qa['selection_names'])=={n['name'] for n in qa['nodes']}
-    for ref in linked.get('/Annots',[]):
-        assert urlparse(str(ref.get_object()['/A']['/URI'])).scheme in {'http','https'}
-    SVG.append('</svg>');(ROOT/'docs/images/document-timeline.svg').write_text('\n'.join(SVG)+'\n')
-    import pypdfium2 as pdfium
-    pdf=pdfium.PdfDocument(str(out));im=pdf[0].render(scale=2).to_pil();im.save(ROOT/'docs/images/document-timeline.png')
-    folder=ROOT/'.build/timeline';folder.mkdir(parents=True,exist_ok=True);im.save(folder/'figure.png');(folder/'geometry.json').write_text(json.dumps(qa,indent=2)+'\n')
-    print('MAIN',len(selected),'nodes; issues:',qa['issues'])
-    if not main_only:build_atlas(all_entries)
 
 
 if __name__=='__main__':
-    import sys
-    build(main_only='--main-only' in sys.argv)
+    build()
