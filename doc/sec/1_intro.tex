@@ -16,12 +16,14 @@ This is a curated narrative review. The bibliography combines foundational metho
 
 Technical descriptions and the principal comparisons refer to original papers or official resources. We distinguish a paper's first public version from its later venue publication when discussing chronology. A chronology indicates when a representative capability appeared; it does not establish that an earlier approach became obsolete. Benchmark findings retain the scope of their reported model versions, input access, and evaluation settings. This survey introduces no newly executed model benchmark, and the reported literature results should be interpreted under their original protocols.
 
-Figure~\ref{fig:document_ai_chronology} provides a chronological entry point to representative document-AI papers. OCR and layout models, structured document and table methods, and visual document models develop in parallel. The highlighted checkpoint links describe resource availability at the time of inspection, independently of paper dates; they do not rank model quality or establish a shared licensing regime.
+Figure~\ref{fig:document_ai_chronology} spans Tesseract's 2007 engine paper~\cite{smith2007overview} through selected work available by 10 November 2026. Its fan-out separates OCR/layout extraction, document models and VQA, structured/table reasoning, and document retrieval with agentic control. These are overlapping, coexisting research directions, rather than a claim that every later system descends from a particular OCR model. Highlighted checkpoint links describe verified resource availability independently of paper dates; they neither rank quality nor establish a shared licensing regime.
+
+The 2026 selection includes OCR/parsing reports (DeepSeek-OCR 2, PaddleOCR-VL-1.5 and Unlimited OCR 2)\cite{wei2026deepseekocr2visualcausal,real5omni2025,wei2026unlimitedocrworks2}; document models, grounding and VQA (Qianfan-OCR, PreciseDoc and CiteVQA)\cite{dong2026qianfanocrunifiedendtoendmodel,lu2026lmmpreciselygroundingelements,ma2026citevqabenchmarkingevidenceattribution}; multi-table evidence access (DBRAG)\cite{ampofo2026dbragmultitableretrievalaugmentedgeneration}; and retrieval/control systems (AutoThinkRAG, PULSAR, DocPilot, DocSkill and RouteDRAG)\cite{autothinkrag,constable2026pulsarpooledunifiedlateinteraction,liang2026docpilotinteractiveagentorchestration,huang2026docskillskillintegratedagenticreasoning,chen2026routedraglearningroutecontrol}. Placement identifies a primary emphasis, not a restriction on other capabilities.
 
 \begin{figure*}[tp]
 \centering
 \includegraphics[width=\textwidth]{figs/fig12.pdf}
-\caption{Selected document-AI papers by first public year. Yellow highlights mark verified official trained weights; daggers indicate partial/component releases. Names link to papers and highlights to weights; chronology does not imply model ancestry.}
+\caption{A branched chronology of 62 representative document-AI works and evaluation resources, through 10 November 2026. Years denote first public papers and are grouped into bands. Colored paths show coexisting directions, not direct model ancestry. Yellow highlights mark verified official trained weights; daggers indicate component/adapter releases. Names link to papers and highlights to weights.}
 \label{fig:document_ai_chronology}
 \end{figure*}
 

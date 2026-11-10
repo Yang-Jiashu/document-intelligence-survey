@@ -1,23 +1,46 @@
 {
-  "date_basis": "Date of the first public arXiv paper, not the checkpoint release date or conference year.",
-  "availability_checked": "2026-11-09",
+  "date_basis": "First public paper year: original arXiv v1 date when available; historical Tesseract uses its verified 2007 paper year, without inventing a day. Checkpoint release dates and later venue years are separate.",
+  "cutoff": "2026-11-10",
+  "availability_checked": "Per-entry verification on 2026-11-09 or 2026-11-10; see checked and sources fields.",
   "availability_definition": "Yellow marks a verified authors-released trained checkpoint, including an official adapter or a released subset of model components. Public weights do not imply unrestricted use, fully released training data, or an open-source license. Plain labels denote a method/framework or no official checkpoint verified, not proof that weights cannot exist.",
-  "chronology_note": "Representative selection, not exhaustive. Track membership is for reading and may overlap; links show chronology, not inheritance or performance superiority.",
+  "chronology_note": "Representative selection through 10 November 2026. Colored branches show overlapping, coexisting research directions, not direct scientific ancestry, replacement or performance superiority. Grouped year bands are not a linear time scale.",
   "tracks": [
     {
       "id": "perception",
-      "label": "OCR and layout representations"
+      "label": "OCR and layout extraction"
+    },
+    {
+      "id": "understanding",
+      "label": "Document models and VQA"
     },
     {
       "id": "structured",
-      "label": "Structured documents and reasoning"
+      "label": "Structured models and table QA"
     },
     {
-      "id": "visual",
-      "label": "Visual document models and retrieval"
+      "id": "retrieval",
+      "label": "Document retrieval and agents"
     }
   ],
   "entries": [
+    {
+      "name": "Tesseract",
+      "year": 2007,
+      "date_precision": "year",
+      "date_basis": "Publication year of Ray Smith, An Overview of the Tesseract OCR Engine, ICDAR2007, pp629-633; not engine invention or open-source-release date.",
+      "track": "perception",
+      "kind": "historical_engine",
+      "paper_url": "https://research.google/pubs/an-overview-of-the-tesseract-ocr-engine/",
+      "weights_url": null,
+      "availability_note": "No matching2007paper trained-model release verified. Do not fabricate a day or substitute modern Tesseract5 traineddata for the historical engine.",
+      "sources": [
+        "https://research.google/pubs/an-overview-of-the-tesseract-ocr-engine/"
+      ],
+      "checked": "2026-11-10",
+      "date": "2007",
+      "shared_stem": true,
+      "partial_weights": false
+    },
     {
       "name": "CRNN",
       "date": "2015-07-21",
@@ -30,7 +53,55 @@
         "https://github.com/bgshih/crnn",
         "https://github.com/bgshih/crnn#run-demo"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/1507.05717",
+      "shared_stem": true
+    },
+    {
+      "name": "CTPN",
+      "date": "2016-09-12",
+      "arxiv": "1609.03605",
+      "paper_url": "https://arxiv.org/abs/1609.03605",
+      "title": "Detecting Text in Natural Image with Connectionist Text Proposal Network",
+      "track": "perception",
+      "kind": "model",
+      "weights_url": "https://github.com/tianzhi0549/CTPN#installation",
+      "sources": [
+        "https://arxiv.org/abs/1609.03605",
+        "https://github.com/tianzhi0549/CTPN",
+        "https://raw.githubusercontent.com/tianzhi0549/CTPN/master/README.md"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official author implementation explicitly links the trained ctpn_trained_model.caffemodel via Google Drive and textdet.com. Link provenance verified in README; binary download not independently tested.",
+      "priority": 1,
+      "role": "Text-line detection using connected fine-scale proposals.",
+      "highlight_yellow": true,
+      "partial_weights": false,
+      "shared_stem": true
+    },
+    {
+      "name": "EAST",
+      "date": "2017-04-11",
+      "arxiv": "1704.03155",
+      "paper_url": "https://arxiv.org/abs/1704.03155",
+      "title": "EAST: An Efficient and Accurate Scene Text Detector",
+      "track": "perception",
+      "kind": "model",
+      "weights_url": "https://github.com/argman/EAST#download",
+      "sources": [
+        "https://arxiv.org/abs/1704.03155",
+        "https://github.com/argman/EAST",
+        "https://raw.githubusercontent.com/argman/EAST/master/readme.md"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Author implementation publishes ICDAR2013+2015-trained EAST models via Google Drive and Baidu. Do not substitute third-party PyTorch ports; binary download not independently tested.",
+      "priority": 1,
+      "role": "Efficient scene-text detection; enabling OCR milestone.",
+      "highlight_yellow": true,
+      "partial_weights": false,
+      "shared_stem": true
     },
     {
       "name": "Calamari",
@@ -44,7 +115,32 @@
         "https://github.com/Calamari-OCR/calamari",
         "https://github.com/Calamari-OCR/calamari_models"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/1807.02004",
+      "shared_stem": true
+    },
+    {
+      "name": "DBNet",
+      "date": "2019-11-20",
+      "arxiv": "1911.08947",
+      "paper_url": "https://arxiv.org/abs/1911.08947",
+      "title": "Real-time Scene Text Detection with Differentiable Binarization",
+      "track": "perception",
+      "kind": "model",
+      "weights_url": "https://github.com/MhLiao/DB#models",
+      "sources": [
+        "https://arxiv.org/abs/1911.08947",
+        "https://github.com/MhLiao/DB",
+        "https://raw.githubusercontent.com/MhLiao/DB/master/README.md"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official original DBNet Models section links trained models via Google Drive/Baidu; DBNet++ is listed separately and is not substituted for the 2019 DB paper.",
+      "priority": 1,
+      "role": "Differentiable binarization for text detection.",
+      "highlight_yellow": true,
+      "partial_weights": false
     },
     {
       "name": "LayoutLM",
@@ -58,7 +154,10 @@
         "https://github.com/microsoft/unilm/tree/master/layoutlm",
         "https://huggingface.co/microsoft/layoutlm-base-uncased"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/1912.13318"
     },
     {
       "name": "TAPAS",
@@ -72,7 +171,51 @@
         "https://github.com/google-research/tapas",
         "https://huggingface.co/google/tapas-base"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2004.02349"
+    },
+    {
+      "name": "RAG",
+      "date": "2020-05-22",
+      "arxiv": "2005.11401",
+      "paper_url": "https://arxiv.org/abs/2005.11401",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "track": "retrieval",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/facebook/rag-token-nq",
+      "sources": [
+        "https://arxiv.org/abs/2005.11401",
+        "https://github.com/facebookresearch/ParlAI/tree/main/projects/rag",
+        "https://huggingface.co/facebook/rag-token-nq"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official Facebook trained RAG-token model; HF API confirms pytorch_model.bin. Include as the explicitly labeled textual-RAG foundation, not a visual-document-specific model.",
+      "priority": 1,
+      "role": "Retrieve-then-generate foundation for document QA pipelines.",
+      "highlight_yellow": true,
+      "partial_weights": false
+    },
+    {
+      "name": "DocVQA",
+      "date": "2020-07-01",
+      "arxiv": "2007.00398",
+      "paper_url": "https://arxiv.org/abs/2007.00398",
+      "title": "DocVQA: A Dataset for VQA on Document Images",
+      "track": "understanding",
+      "kind": "benchmark",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2007.00398",
+        "https://www.docvqa.org/datasets/docvqa"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Dataset/benchmark node, not an authors-trained model.",
+      "priority": 1,
+      "role": "Single-page document visual QA.",
+      "highlight_yellow": false,
+      "partial_weights": false
     },
     {
       "name": "PP-OCR",
@@ -86,7 +229,10 @@
         "https://github.com/PaddlePaddle/PaddleOCR",
         "https://github.com/PaddlePaddle/PaddleOCR/blob/release/1.1/doc/doc_en/models_list_en.md"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2009.09941"
     },
     {
       "name": "LayoutLMv2",
@@ -100,27 +246,103 @@
         "https://github.com/microsoft/unilm/tree/master/layoutlmv2",
         "https://huggingface.co/microsoft/layoutlmv2-base-uncased"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2012.14740"
     },
     {
-      "name": "LayoutXLM",
-      "date": "2021-04-18",
-      "arxiv": "2104.08836",
-      "track": "perception",
-      "weights_url": "https://huggingface.co/microsoft/layoutxlm-base",
-      "availability_note": "Official Microsoft repository exposes pytorch_model.bin.",
+      "name": "InfographicVQA",
+      "date": "2021-04-26",
+      "arxiv": "2104.12756",
+      "paper_url": "https://arxiv.org/abs/2104.12756",
+      "title": "InfographicVQA",
+      "track": "understanding",
+      "kind": "benchmark",
+      "weights_url": null,
       "sources": [
-        "https://arxiv.org/abs/2104.08836",
-        "https://github.com/microsoft/unilm/tree/master/layoutxlm",
-        "https://huggingface.co/microsoft/layoutxlm-base"
+        "https://arxiv.org/abs/2104.12756",
+        "https://www.docvqa.org/datasets/infographicvqa"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-10",
+      "availability_note": "Dataset/benchmark node; first preprint2021, WACV publication2022.",
+      "priority": 1,
+      "role": "Whole-infographic reading, visual organization and QA.",
+      "highlight_yellow": false,
+      "partial_weights": false
+    },
+    {
+      "name": "TAT-QA",
+      "arxiv": "2105.07624",
+      "date": "2021-05-17",
+      "title": "TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance",
+      "paper_url": "https://arxiv.org/abs/2105.07624",
+      "track": "structured",
+      "kind": "benchmark",
+      "weights_url": null,
+      "highlight_yellow": false,
+      "sources": [
+        "https://arxiv.org/abs/2105.07624",
+        "https://github.com/NExTplusplus/TAT-QA"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Hybrid table-and-text numerical QA benchmark, introduced with the TAGOP model. The node label is the benchmark, so keep it plain; trained TAGOP baselines should not turn the dataset label yellow.",
+      "priority": 1,
+      "associated_model": {
+        "name": "TAGOP",
+        "weights_url": "https://github.com/NExTplusplus/TAT-QA#checkpoint",
+        "download_url": "https://drive.google.com/file/d/1Ttyh1xyulsGcOt_JmFsAhPuxx7G3fyha/view?usp=share_link",
+        "availability_note": "Official author README links trained TagOp checkpoint. Binary download not independently tested. Use only if relabeling node toTAGOP, not to highlight datasetTAT-QA."
+      },
+      "partial_weights": false
+    },
+    {
+      "name": "TAPEX",
+      "date": "2021-07-16",
+      "arxiv": "2107.07653",
+      "paper_url": "https://arxiv.org/abs/2107.07653",
+      "title": "TAPEX: Table Pre-training via Learning a Neural SQL Executor",
+      "track": "structured",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/microsoft/tapex-base",
+      "sources": [
+        "https://arxiv.org/abs/2107.07653",
+        "https://github.com/microsoft/Table-Pretraining",
+        "https://huggingface.co/microsoft/tapex-base"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official Microsoft model card cites this paper. HF API confirms model.safetensors and pytorch_model.bin, gated=false.",
+      "priority": 1,
+      "role": "Table pretraining through neural SQL execution.",
+      "highlight_yellow": true,
+      "partial_weights": false
+    },
+    {
+      "name": "TrOCR",
+      "date": "2021-09-21",
+      "arxiv": "2109.10282",
+      "paper_url": "https://arxiv.org/abs/2109.10282",
+      "title": "TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models",
+      "track": "perception",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/microsoft/trocr-base-handwritten",
+      "sources": [
+        "https://arxiv.org/abs/2109.10282",
+        "https://github.com/microsoft/unilm/tree/master/trocr",
+        "https://huggingface.co/microsoft/trocr-base-handwritten"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official Microsoft trained checkpoint; Hugging Face model API confirms public model.safetensors and pytorch_model.bin, gated=false.",
+      "priority": 1,
+      "role": "Transformer encoder-decoder recognition for printed/handwritten text.",
+      "highlight_yellow": true,
+      "partial_weights": false
     },
     {
       "name": "Donut",
       "date": "2021-11-30",
       "arxiv": "2111.15664",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/naver-clova-ix/donut-base",
       "availability_note": "Official clovaai/donut implementation links this checkpoint; repository exposes pytorch_model.bin.",
       "sources": [
@@ -128,7 +350,10 @@
         "https://github.com/clovaai/donut",
         "https://huggingface.co/naver-clova-ix/donut-base"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2111.15664"
     },
     {
       "name": "LiLT",
@@ -142,7 +367,10 @@
         "https://github.com/jpWang/LiLT",
         "https://github.com/jpWang/LiLT#available-checkpoints"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2202.13669"
     },
     {
       "name": "LayoutLMv3",
@@ -156,13 +384,36 @@
         "https://github.com/microsoft/unilm/tree/master/layoutlmv3",
         "https://huggingface.co/microsoft/layoutlmv3-base"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2204.08387"
+    },
+    {
+      "name": "DocLayNet",
+      "date": "2022-06-02",
+      "arxiv": "2206.01062",
+      "paper_url": "https://arxiv.org/abs/2206.01062",
+      "title": "DocLayNet: A Large Human-Annotated Dataset for Document-Layout Analysis",
+      "track": "perception",
+      "kind": "benchmark",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2206.01062",
+        "https://github.com/DS4SD/DocLayNet"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Dataset/benchmark node. Correct arXiv ID is2206.01062;2206.02816 in the existing BibTeX is an unrelated astronomy paper.",
+      "priority": 1,
+      "role": "Human-annotated multi-domain layout benchmark.",
+      "highlight_yellow": false,
+      "partial_weights": false
     },
     {
       "name": "Pix2Struct",
       "date": "2022-10-07",
       "arxiv": "2210.03347",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/google/pix2struct-base",
       "availability_note": "Official Google implementation releases Base/Large checkpoints; Google model repository exposes safetensors and pytorch weights.",
       "sources": [
@@ -170,7 +421,10 @@
         "https://github.com/google-research/pix2struct",
         "https://huggingface.co/google/pix2struct-base"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2210.03347"
     },
     {
       "name": "UDOP",
@@ -184,13 +438,80 @@
         "https://github.com/microsoft/UDOP",
         "https://huggingface.co/ZinengTang/Udop"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": true,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2212.02623"
+    },
+    {
+      "name": "Hi-VT5 / MP-DocVQA",
+      "date": "2022-12-07",
+      "arxiv": "2212.05935",
+      "paper_url": "https://arxiv.org/abs/2212.05935",
+      "title": "Hierarchical multimodal transformers for Multi-Page DocVQA",
+      "track": "understanding",
+      "kind": "model_and_benchmark",
+      "weights_url": "https://huggingface.co/rubentito/hivt5-base-mpdocvqa",
+      "sources": [
+        "https://arxiv.org/abs/2212.05935",
+        "https://github.com/rubenpt91/MP-DocVQA-Framework",
+        "https://raw.githubusercontent.com/rubenpt91/MP-DocVQA-Framework/master/readme.md",
+        "https://huggingface.co/rubentito/hivt5-base-mpdocvqa"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Author released Hi-VT5 checkpoint linked in official leaderboard; HF API confirms pytorch_model.bin. Important qualification: authors state released port weights do not transfer from the original MMF implementation and achieve lower performance. Highlight only Hi-VT5 model, not the MP-DocVQA dataset.",
+      "priority": 1,
+      "role": "Hierarchical multi-page model and MP-DocVQA benchmark introduced together.",
+      "highlight_yellow": true,
+      "partial_weights": false,
+      "display_name": "Hi-VT5",
+      "alternative_benchmark_label": "MP-DocVQA"
+    },
+    {
+      "name": "SlideVQA",
+      "date": "2023-01-12",
+      "arxiv": "2301.04883",
+      "paper_url": "https://arxiv.org/abs/2301.04883",
+      "title": "SlideVQA: A Dataset for Document Visual Question Answering on Multiple Images",
+      "track": "understanding",
+      "kind": "benchmark",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2301.04883",
+        "https://github.com/nttmdlab-nlp/SlideVQA"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Dataset/benchmark node, not a new standalone checkpoint. Correct paperID2301.04883, not2301.04819.",
+      "priority": 1,
+      "role": "Slide-deck QA with evidence pages and arithmetic expressions.",
+      "highlight_yellow": false,
+      "partial_weights": false
+    },
+    {
+      "name": "DUDE",
+      "date": "2023-05-15",
+      "arxiv": "2305.08455",
+      "paper_url": "https://arxiv.org/abs/2305.08455",
+      "title": "Document Understanding Dataset and Evaluation (DUDE)",
+      "track": "understanding",
+      "kind": "benchmark",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2305.08455",
+        "https://www.docvqa.org/datasets/dude"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Dataset/benchmark node with heterogeneous multi-page documents and answer types.",
+      "priority": 1,
+      "role": "Broad multi-page document understanding and evaluation.",
+      "highlight_yellow": false,
+      "partial_weights": false
     },
     {
       "name": "Qwen-VL",
       "date": "2023-08-24",
       "arxiv": "2308.12966",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/Qwen/Qwen-VL",
       "availability_note": "Official Qwen model repository exposes sharded pytorch weights.",
       "sources": [
@@ -198,7 +519,32 @@
         "https://github.com/QwenLM/Qwen-VL",
         "https://huggingface.co/Qwen/Qwen-VL"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2308.12966"
+    },
+    {
+      "name": "Nougat",
+      "date": "2023-08-25",
+      "arxiv": "2308.13418",
+      "paper_url": "https://arxiv.org/abs/2308.13418",
+      "title": "Nougat: Neural Optical Understanding for Academic Documents",
+      "track": "perception",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/facebook/nougat-base",
+      "sources": [
+        "https://arxiv.org/abs/2308.13418",
+        "https://github.com/facebookresearch/nougat",
+        "https://github.com/facebookresearch/nougat/releases/tag/0.1.0-base",
+        "https://huggingface.co/facebook/nougat-base"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official Facebook release contains nougat-base weights; HF API confirms model.safetensors and pytorch_model.bin. Public availability does not remove CC-BY-NC model restrictions.",
+      "priority": 1,
+      "role": "Academic PDF image-to-markup parsing.",
+      "highlight_yellow": true,
+      "partial_weights": false
     },
     {
       "name": "Table-GPT",
@@ -211,7 +557,10 @@
         "https://arxiv.org/abs/2310.09263",
         "https://github.com/microsoft/Table-GPT"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2310.09263"
     },
     {
       "name": "DocLLM",
@@ -224,13 +573,35 @@
         "https://arxiv.org/abs/2401.00908",
         "https://github.com/dongshengwang-ai/DocLLM"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2401.00908"
+    },
+    {
+      "name": "Chain-of-Table",
+      "arxiv": "2401.04398",
+      "date": "2024-01-09",
+      "title": "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "paper_url": "https://arxiv.org/abs/2401.04398",
+      "track": "structured",
+      "kind": "framework",
+      "weights_url": null,
+      "highlight_yellow": false,
+      "sources": [
+        "https://arxiv.org/abs/2401.04398",
+        "https://github.com/google-research/chain-of-table"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "In-context reasoning framework that evolves intermediate tables using an underlying LLM; not a newly released trained checkpoint. Consistent first-arXiv date is2024-01-09, not2023.",
+      "priority": 1,
+      "partial_weights": false
     },
     {
       "name": "mPLUG-DocOwl 1.5",
       "date": "2024-03-19",
       "arxiv": "2403.12895",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/mPLUG/DocOwl1.5",
       "availability_note": "Official X-PLUG implementation links the mPLUG model repository, which exposes safetensors and pytorch weights.",
       "sources": [
@@ -238,26 +609,33 @@
         "https://github.com/X-PLUG/mPLUG-DocOwl/tree/main/DocOwl1.5",
         "https://huggingface.co/mPLUG/DocOwl1.5"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2403.12895",
+      "display_name": "DocOwl1.5"
     },
     {
       "name": "GraphRAG",
       "date": "2024-04-24",
       "arxiv": "2404.16130",
-      "track": "structured",
+      "track": "retrieval",
       "weights_url": null,
       "availability_note": "GraphRAG is a retrieval/indexing framework using configurable underlying language models, not a new standalone pretrained checkpoint.",
       "sources": [
         "https://arxiv.org/abs/2404.16130",
         "https://github.com/microsoft/graphrag"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "framework",
+      "paper_url": "https://arxiv.org/abs/2404.16130"
     },
     {
       "name": "ColPali",
       "date": "2024-06-27",
       "arxiv": "2407.01449",
-      "track": "visual",
+      "track": "retrieval",
       "weights_url": "https://huggingface.co/vidore/colpali",
       "availability_note": "Official illuin-tech/colpali repository links the paper checkpoint. Public trained adapter/projection weights are available; the PaliGemma base remains subject to its own access/license terms.",
       "sources": [
@@ -265,20 +643,90 @@
         "https://github.com/illuin-tech/colpali",
         "https://huggingface.co/vidore/colpali"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": true,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2407.01449"
+    },
+    {
+      "name": "DocOwl2",
+      "date": "2024-09-05",
+      "arxiv": "2409.03420",
+      "paper_url": "https://arxiv.org/abs/2409.03420",
+      "title": "mPLUG-DocOwl2: High-resolution Compressing for OCR-free Multi-page Document Understanding",
+      "track": "understanding",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/mPLUG/DocOwl2",
+      "sources": [
+        "https://arxiv.org/abs/2409.03420",
+        "https://github.com/X-PLUG/mPLUG-DocOwl/tree/main/DocOwl2",
+        "https://raw.githubusercontent.com/X-PLUG/mPLUG-DocOwl/main/DocOwl2/README.md",
+        "https://huggingface.co/mPLUG/DocOwl2"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official author README links mPLUG/DocOwl2; HF API confirms model.safetensors, gated=false. First paper2024-09-05, despite ACL2025 venue.",
+      "priority": 1,
+      "role": "High-resolution compression for OCR-free multi-page comprehension.",
+      "highlight_yellow": true,
+      "partial_weights": false
     },
     {
       "name": "Qwen2-VL",
       "date": "2024-09-18",
       "arxiv": "2409.12191",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct",
       "availability_note": "Official Qwen checkpoint repository exposes sharded safetensors.",
       "sources": [
         "https://arxiv.org/abs/2409.12191",
         "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2409.12191"
+    },
+    {
+      "name": "LightRAG",
+      "date": "2024-10-08",
+      "arxiv": "2410.05779",
+      "paper_url": "https://arxiv.org/abs/2410.05779",
+      "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "track": "retrieval",
+      "kind": "framework",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2410.05779",
+        "https://github.com/HKUDS/LightRAG"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Retrieval/indexing framework, not a new authors-trained standalone checkpoint. Public code does not qualify for yellow weight highlighting.",
+      "priority": 1,
+      "role": "Lightweight graph-organized retrieval and document QA.",
+      "highlight_yellow": false,
+      "partial_weights": false
+    },
+    {
+      "name": "VisRAG",
+      "date": "2024-10-14",
+      "arxiv": "2410.10594",
+      "paper_url": "https://arxiv.org/abs/2410.10594",
+      "title": "VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents",
+      "track": "retrieval",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/openbmb/VisRAG-Ret",
+      "sources": [
+        "https://arxiv.org/abs/2410.10594",
+        "https://github.com/OpenBMB/VisRAG",
+        "https://raw.githubusercontent.com/OpenBMB/VisRAG/master/README.md",
+        "https://huggingface.co/openbmb/VisRAG-Ret"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official README records2024-10-14 model release; HF API confirms two sharded safetensors. This is the trained retriever component; generators use off-the-shelf VLMs. Treat as partial/component availability if using dagger convention.",
+      "priority": 1,
+      "role": "Parsing-free visual document retrieval and generation.",
+      "highlight_yellow": true,
+      "partial_weights": true
     },
     {
       "name": "DocLayout-YOLO",
@@ -292,7 +740,10 @@
         "https://github.com/opendatalab/DocLayout-YOLO",
         "https://huggingface.co/juliozhao/DocLayout-YOLO-DocStructBench"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2410.12628"
     },
     {
       "name": "TableGPT2",
@@ -306,39 +757,92 @@
         "https://github.com/tablegpt/tablegpt-agent",
         "https://huggingface.co/tablegpt/TableGPT2-7B"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2411.02059"
+    },
+    {
+      "name": "M3DocRAG",
+      "date": "2024-11-07",
+      "arxiv": "2411.04952",
+      "paper_url": "https://arxiv.org/abs/2411.04952",
+      "title": "M3DocRAG: Multi-modal Retrieval is What You Need for Multi-page Multi-document Understanding",
+      "track": "retrieval",
+      "kind": "framework",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2411.04952",
+        "https://m3docrag.github.io/",
+        "https://github.com/bloomberg/m3docrag",
+        "https://raw.githubusercontent.com/bloomberg/m3docrag/main/README.md"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Framework combines separately released ColPali and Qwen2-VL; official README downloads those existing models. Do not label the framework itself as a new trained checkpoint.",
+      "priority": 1,
+      "role": "Multi-page multi-document visual RAG and M3DocVQA benchmark.",
+      "highlight_yellow": false,
+      "partial_weights": false
     },
     {
       "name": "InternVL 2.5",
       "date": "2024-12-06",
       "arxiv": "2412.05271",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B",
       "availability_note": "Official OpenGVLab checkpoint repository exposes sharded safetensors.",
       "sources": [
         "https://arxiv.org/abs/2412.05271",
         "https://huggingface.co/OpenGVLab/InternVL2_5-8B"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2412.05271",
+      "display_name": "InternVL2.5"
     },
     {
       "name": "Qwen2.5-VL",
       "date": "2025-02-19",
       "arxiv": "2502.13923",
-      "track": "visual",
+      "track": "understanding",
       "weights_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
       "availability_note": "Official Qwen checkpoint repository exposes sharded safetensors.",
       "sources": [
         "https://arxiv.org/abs/2502.13923",
         "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2502.13923"
+    },
+    {
+      "name": "ViDoRAG",
+      "date": "2025-02-25",
+      "arxiv": "2502.18017",
+      "paper_url": "https://arxiv.org/abs/2502.18017",
+      "title": "ViDoRAG: Visual Document Retrieval-Augmented Generation via Dynamic Iterative Reasoning Agents",
+      "track": "retrieval",
+      "kind": "framework",
+      "weights_url": null,
+      "sources": [
+        "https://arxiv.org/abs/2502.18017",
+        "https://github.com/Alibaba-NLP/ViDoRAG",
+        "https://raw.githubusercontent.com/Alibaba-NLP/ViDoRAG/main/README.md"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Agentic RAG framework using configurable visual/text retrievers and VLMs; no new standalone authors-trained checkpoint verified. Code availability is not weight availability.",
+      "priority": 1,
+      "role": "Dynamic hybrid retrieval with exploration, summary and reflection agents.",
+      "highlight_yellow": false,
+      "partial_weights": false
     },
     {
       "name": "olmOCR",
       "date": "2025-02-25",
       "arxiv": "2502.18443",
-      "track": "visual",
+      "track": "perception",
       "weights_url": "https://huggingface.co/allenai/olmOCR-7B-0225-preview",
       "availability_note": "Original official AllenAI February 2025 checkpoint exposes sharded safetensors; not substituted with the later olmOCR-2 model.",
       "sources": [
@@ -346,26 +850,32 @@
         "https://github.com/allenai/olmocr",
         "https://huggingface.co/allenai/olmOCR-7B-0225-preview"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2502.18443"
     },
     {
       "name": "SmolDocling",
       "date": "2025-03-14",
       "arxiv": "2503.11576",
-      "track": "visual",
+      "track": "perception",
       "weights_url": "https://huggingface.co/ds4sd/SmolDocling-256M-preview",
       "availability_note": "Original official DS4SD SmolDocling checkpoint exposes model.safetensors; not substituted with later Granite-Docling.",
       "sources": [
         "https://arxiv.org/abs/2503.11576",
         "https://huggingface.co/ds4sd/SmolDocling-256M-preview"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2503.11576"
     },
     {
       "name": "MonkeyOCR",
       "date": "2025-06-05",
       "arxiv": "2506.05218",
-      "track": "visual",
+      "track": "perception",
       "weights_url": "https://huggingface.co/echo840/MonkeyOCR",
       "availability_note": "Official Yuliang-Liu/MonkeyOCR implementation links original recognition, relation and layout checkpoints.",
       "sources": [
@@ -373,13 +883,57 @@
         "https://github.com/Yuliang-Liu/MonkeyOCR",
         "https://huggingface.co/echo840/MonkeyOCR"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2506.05218"
+    },
+    {
+      "name": "TableRAG",
+      "arxiv": "2506.10380",
+      "date": "2025-06-12",
+      "title": "TableRAG: A Retrieval Augmented Generation Framework for Heterogeneous Document Reasoning",
+      "paper_url": "https://arxiv.org/abs/2506.10380",
+      "track": "structured",
+      "kind": "framework",
+      "weights_url": null,
+      "highlight_yellow": false,
+      "sources": [
+        "https://arxiv.org/abs/2506.10380",
+        "https://github.com/yxh-y/TableRAG/tree/main"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Yu,Jian,Chen2025 heterogeneous text-and-table RAG framework with query decomposition, text retrieval and SQL execution. Distinct from Chen etal2024 TableRAG:Million-Token Table Understanding with Language Models. No new standalone trained checkpoint verified.",
+      "priority": 1,
+      "disambiguation": "Yu et al.,2025,arxiv2506.10380; not Chen et al.,2024,arxiv2410.04739.",
+      "partial_weights": false
+    },
+    {
+      "name": "PaddleOCR-VL",
+      "date": "2025-10-16",
+      "arxiv": "2510.14528",
+      "paper_url": "https://arxiv.org/abs/2510.14528",
+      "title": "PaddleOCR-VL: Boosting Multilingual Document Parsing via a 0.9B Ultra-Compact Vision-Language Model",
+      "track": "perception",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL",
+      "sources": [
+        "https://arxiv.org/abs/2510.14528",
+        "https://github.com/PaddlePaddle/PaddleOCR",
+        "https://huggingface.co/PaddlePaddle/PaddleOCR-VL"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official original0.9B PaddleOCR-VL repository; HF API confirms model.safetensors, gated=false. Do not substitute a later PaddleOCR-VL1.5 release.",
+      "priority": 2,
+      "role": "Compact multilingual visual document parsing.",
+      "highlight_yellow": true,
+      "partial_weights": false
     },
     {
       "name": "DeepSeek-OCR",
       "date": "2025-10-21",
       "arxiv": "2510.18234",
-      "track": "visual",
+      "track": "perception",
       "weights_url": "https://huggingface.co/deepseek-ai/DeepSeek-OCR",
       "availability_note": "Official DeepSeek checkpoint repository exposes safetensors.",
       "sources": [
@@ -387,7 +941,356 @@
         "https://github.com/deepseek-ai/DeepSeek-OCR",
         "https://huggingface.co/deepseek-ai/DeepSeek-OCR"
       ],
-      "checked": "2026-11-09"
+      "checked": "2026-11-09",
+      "partial_weights": false,
+      "kind": "model",
+      "paper_url": "https://arxiv.org/abs/2510.18234"
+    },
+    {
+      "name": "Qwen3-VL",
+      "date": "2025-11-26",
+      "arxiv": "2511.21631",
+      "paper_url": "https://arxiv.org/abs/2511.21631",
+      "title": "Qwen3-VL Technical Report",
+      "track": "understanding",
+      "kind": "model",
+      "weights_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "sources": [
+        "https://arxiv.org/abs/2511.21631",
+        "https://github.com/QwenLM/Qwen3-VL",
+        "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "Official Qwen8B checkpoint; HF API confirms four sharded safetensors, gated=false. Timeline date is technical report first submission2025-11-26, not earlier model announcement.",
+      "priority": 1,
+      "role": "Long-context multi-image document comprehension; model is broader than documents.",
+      "highlight_yellow": true,
+      "partial_weights": false
+    },
+    {
+      "name": "DeepSeek-OCR 2",
+      "arxiv": "2601.20552",
+      "track": "perception",
+      "branch": "OCR / layout",
+      "date": "2026-01-28",
+      "weights_url": "https://huggingface.co/deepseek-ai/DeepSeek-OCR-2",
+      "project_url": "https://github.com/deepseek-ai/DeepSeek-OCR-2",
+      "model": "deepseek-ai/DeepSeek-OCR-2",
+      "contribution": "Semantic reordering of visual tokens through DeepEncoder V2.",
+      "priority": 1,
+      "paper_url": "https://arxiv.org/abs/2601.20552",
+      "title": "DeepSeek-OCR 2: Visual Causal Flow",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2601.20552",
+        "https://github.com/deepseek-ai/DeepSeek-OCR-2",
+        "https://huggingface.co/deepseek-ai/DeepSeek-OCR-2",
+        "https://huggingface.co/api/models/deepseek-ai/DeepSeek-OCR-2"
+      ],
+      "weights_verified": true,
+      "weight_files_verified": [
+        "model-00001-of-000001.safetensors"
+      ],
+      "availability_note": "Official linked model repository is public and ungated; trained safetensors files verified through the Hugging Face model API on 10 November 2026.",
+      "weight_verification_source": "https://huggingface.co/api/models/deepseek-ai/DeepSeek-OCR-2",
+      "partial_weights": false,
+      "bibkey": "wei2026deepseekocr2visualcausal"
+    },
+    {
+      "name": "PaddleOCR-VL-1.5",
+      "arxiv": "2601.21957",
+      "track": "perception",
+      "branch": "OCR / layout",
+      "date": "2026-01-29",
+      "weights_url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5",
+      "project_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "model": "PaddlePaddle/PaddleOCR-VL-1.5",
+      "contribution": "Compact document parsing with additional spotting, seal, and distortion-robustness tasks.",
+      "priority": 1,
+      "official_release_date": "2026-01-29",
+      "paper_url": "https://arxiv.org/abs/2601.21957",
+      "title": "PaddleOCR-VL-1.5: Towards a Multi-Task 0.9B VLM for Robust In-the-Wild Document Parsing",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2601.21957",
+        "https://github.com/PaddlePaddle/PaddleOCR",
+        "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5",
+        "https://huggingface.co/api/models/PaddlePaddle/PaddleOCR-VL-1.5"
+      ],
+      "weights_verified": true,
+      "weight_files_verified": [
+        "model.safetensors"
+      ],
+      "availability_note": "Official linked model repository is public and ungated; trained safetensors files verified through the Hugging Face model API on 10 November 2026.",
+      "weight_verification_source": "https://huggingface.co/api/models/PaddlePaddle/PaddleOCR-VL-1.5",
+      "partial_weights": false,
+      "display_name": "PaddleOCR-VL1.5",
+      "bibkey": "real5omni2025"
+    },
+    {
+      "name": "AutoThinkRAG",
+      "arxiv": "2603.05551",
+      "track": "retrieval",
+      "branch": "Retrieval / reasoning",
+      "date": "2026-03-05",
+      "weights_url": null,
+      "project_url": null,
+      "contribution": "Query-complexity routing with decoupled visual perception and language reasoning.",
+      "priority": 1,
+      "availability_note": "No official trained checkpoint verified from primary paper links; do not highlight. Existing general backbones do not count as this method releasing its own trained checkpoint.",
+      "paper_url": "https://arxiv.org/abs/2603.05551",
+      "title": "AutothinkRAG: Complexity-Aware Control of Retrieval-Augmented Reasoning for Image-Text Interaction",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2603.05551"
+      ],
+      "weights_verified": false,
+      "partial_weights": false,
+      "bibkey": "autothinkrag"
+    },
+    {
+      "name": "Qianfan-OCR",
+      "arxiv": "2603.13398",
+      "track": "understanding",
+      "branch": "Document understanding / VQA",
+      "overlaps": [
+        "OCR / layout"
+      ],
+      "date": "2026-03-11",
+      "weights_url": "https://huggingface.co/baidu/Qianfan-OCR",
+      "project_url": "https://github.com/baidubce/Qianfan-VL",
+      "model": "baidu/Qianfan-OCR",
+      "contribution": "Unified parsing, layout grounding, and prompt-driven document QA with Layout-as-Thought.",
+      "priority": 1,
+      "paper_url": "https://arxiv.org/abs/2603.13398",
+      "title": "Qianfan-OCR: A Unified End-to-End Model for Document Intelligence",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2603.13398",
+        "https://github.com/baidubce/Qianfan-VL",
+        "https://huggingface.co/baidu/Qianfan-OCR",
+        "https://huggingface.co/api/models/baidu/Qianfan-OCR"
+      ],
+      "weights_verified": true,
+      "weight_files_verified": [
+        "model-00001-of-00002.safetensors",
+        "model-00002-of-00002.safetensors"
+      ],
+      "availability_note": "Official linked model repository is public and ungated; trained safetensors files verified through the Hugging Face model API on 10 November 2026.",
+      "weight_verification_source": "https://huggingface.co/api/models/baidu/Qianfan-OCR",
+      "partial_weights": false,
+      "bibkey": "dong2026qianfanocrunifiedendtoendmodel"
+    },
+    {
+      "name": "CiteVQA",
+      "date": "2026-05-13",
+      "arxiv": "2605.12882",
+      "paper_url": "https://arxiv.org/abs/2605.12882",
+      "title": "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence",
+      "track": "understanding",
+      "kind": "benchmark",
+      "weights_url": null,
+      "availability_note": "Evaluation benchmark; no new trained model weights represented by this node.",
+      "sources": [
+        "https://arxiv.org/abs/2605.12882"
+      ],
+      "checked": "2026-11-10",
+      "partial_weights": false,
+      "bibkey": "ma2026citevqabenchmarkingevidenceattribution"
+    },
+    {
+      "name": "PreciseDoc",
+      "arxiv": "2606.24118",
+      "track": "understanding",
+      "branch": "Document understanding / VQA",
+      "date": "2026-06-23",
+      "weights_url": null,
+      "project_url": null,
+      "contribution": "Document element grounding with joint grounding and reasoning supervision.",
+      "priority": 1,
+      "availability_note": "No authors-released checkpoint verified from the official abstract/full-text links or targeted model/project search; do not highlight. This is not a claim that no weights can exist.",
+      "paper_url": "https://arxiv.org/abs/2606.24118",
+      "title": "An LMM for Precisely Grounding Elements in Documents",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2606.24118"
+      ],
+      "weights_verified": false,
+      "partial_weights": false,
+      "bibkey": "lu2026lmmpreciselygroundingelements"
+    },
+    {
+      "name": "PULSAR",
+      "arxiv": "2608.28572",
+      "track": "retrieval",
+      "branch": "Retrieval / reasoning",
+      "date": "2026-08-28",
+      "weights_url": null,
+      "project_url": null,
+      "contribution": "Pooled two-stage late-interaction indexing for enterprise visual document retrieval.",
+      "priority": 1,
+      "availability_note": "System paper uses a frozen ColPali-style backbone; no new authors-released trained checkpoint verified. Do not highlight solely because its underlying backbone has weights.",
+      "paper_url": "https://arxiv.org/abs/2608.28572",
+      "title": "PULSAR: Pooled Unified Late-Interaction Search and Retrieval for Enterprise Visual Document RAG",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2608.28572"
+      ],
+      "weights_verified": false,
+      "partial_weights": false,
+      "bibkey": "constable2026pulsarpooledunifiedlateinteraction"
+    },
+    {
+      "name": "DBRAG",
+      "arxiv": "2610.07622",
+      "date": "2026-10-06",
+      "title": "DBRAG: Multi-Table Retrieval-Augmented Generation for Complex Database Queries",
+      "paper_url": "https://arxiv.org/abs/2610.07622",
+      "track": "structured",
+      "kind": "framework",
+      "weights_url": null,
+      "highlight_yellow": false,
+      "sources": [
+        "https://arxiv.org/abs/2610.07622"
+      ],
+      "checked": "2026-11-10",
+      "availability_note": "2026 multi-table database-QA retrieval framework with table summaries, query-relevant rows, reranking and program-aided reasoning. No authors-released standalone checkpoint verified; do not highlight code/framework as weights.",
+      "priority": 1,
+      "partial_weights": false,
+      "bibkey": "ampofo2026dbragmultitableretrievalaugmentedgeneration"
+    },
+    {
+      "name": "DocPilot",
+      "arxiv": "2610.21327",
+      "track": "retrieval",
+      "branch": "Retrieval / reasoning",
+      "overlaps": [
+        "Document understanding / VQA"
+      ],
+      "date": "2026-10-15",
+      "weights_url": "https://huggingface.co/SetonLiang2/DocPilot",
+      "project_url": "https://github.com/HKUSTDial/DocPilot",
+      "model": "SetonLiang2/DocPilot",
+      "contribution": "Trainable orchestration of page navigation, local inspection, and document reasoning actions.",
+      "priority": 1,
+      "official_link_evidence": "Official HKUSTDial repository links the author-hosted DocPilot-4B checkpoint on Hugging Face.",
+      "paper_url": "https://arxiv.org/abs/2610.21327",
+      "title": "DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2610.21327",
+        "https://github.com/HKUSTDial/DocPilot",
+        "https://huggingface.co/SetonLiang2/DocPilot",
+        "https://huggingface.co/api/models/SetonLiang2/DocPilot"
+      ],
+      "weights_verified": true,
+      "weight_files_verified": [
+        "DocPilot-4B/model-00001-of-00002.safetensors",
+        "DocPilot-4B/model-00002-of-00002.safetensors"
+      ],
+      "availability_note": "Official linked model repository is public and ungated; trained safetensors files verified through the Hugging Face model API on 10 November 2026.",
+      "weight_verification_source": "https://huggingface.co/api/models/SetonLiang2/DocPilot",
+      "partial_weights": false,
+      "bibkey": "liang2026docpilotinteractiveagentorchestration"
+    },
+    {
+      "name": "DocSkill",
+      "arxiv": "2610.36759",
+      "track": "retrieval",
+      "branch": "Retrieval / reasoning",
+      "overlaps": [
+        "Document understanding / VQA"
+      ],
+      "date": "2026-10-27",
+      "weights_url": null,
+      "project_url": null,
+      "contribution": "Learned skill orchestration for multilingual multi-hop document QA.",
+      "priority": 2,
+      "availability_note": "No authors-released checkpoint verified from primary paper links or targeted project/model search; do not highlight.",
+      "paper_url": "https://arxiv.org/abs/2610.36759",
+      "title": "DocSkill: Skill-Integrated Agentic Reasoning for Multilingual Multi-Hop Document Question Answering",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2610.36759"
+      ],
+      "weights_verified": false,
+      "partial_weights": false,
+      "bibkey": "huang2026docskillskillintegratedagenticreasoning"
+    },
+    {
+      "name": "RouteDRAG",
+      "arxiv": "2610.36444",
+      "track": "retrieval",
+      "branch": "Retrieval / reasoning",
+      "date": "2026-10-27",
+      "weights_url": null,
+      "project_url": "https://github.com/Ereshkigal1/RouteDRAG",
+      "contribution": "Learning whether to invoke an agent and how to control subsequent document-RAG execution.",
+      "priority": 1,
+      "availability_note": "Official arXiv abstract says code is available, but linked repository currently contains only a README saying code will be released soon. No checkpoint verified; do not highlight.",
+      "paper_url": "https://arxiv.org/abs/2610.36444",
+      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2610.36444",
+        "https://github.com/Ereshkigal1/RouteDRAG"
+      ],
+      "weights_verified": false,
+      "partial_weights": false,
+      "bibkey": "chen2026routedraglearningroutecontrol"
+    },
+    {
+      "name": "Unlimited OCR 2",
+      "arxiv": "2610.39308",
+      "track": "perception",
+      "branch": "OCR / layout",
+      "date": "2026-10-29",
+      "weights_url": "https://huggingface.co/baidu/Unlimited-OCR-2",
+      "project_url": "https://github.com/baidu/Unlimited-OCR",
+      "model": "baidu/Unlimited-OCR-2",
+      "contribution": "Long-horizon parsing using sparse reference sliding-window attention.",
+      "priority": 1,
+      "official_release_date": "2026-10-27",
+      "release_date_source": "https://huggingface.co/baidu/Unlimited-OCR-2",
+      "date_note": "Model-card news records 27 October release, but the arXiv v1 paper date is 29 October. Do not date it by the 2 November news announcing the arXiv paper.",
+      "paper_url": "https://arxiv.org/abs/2610.39308",
+      "title": "Unlimited OCR Works 2",
+      "date_basis": "first public arXiv paper (v1), not revision, conference, or checkpoint date",
+      "date_verified": true,
+      "checked": "2026-11-10",
+      "sources": [
+        "https://arxiv.org/abs/2610.39308",
+        "https://github.com/baidu/Unlimited-OCR",
+        "https://huggingface.co/baidu/Unlimited-OCR-2",
+        "https://huggingface.co/api/models/baidu/Unlimited-OCR-2"
+      ],
+      "weights_verified": true,
+      "weight_files_verified": [
+        "model-00001-of-00002.safetensors",
+        "model-00002-of-00002.safetensors"
+      ],
+      "availability_note": "Official linked model repository is public and ungated; trained safetensors files verified through the Hugging Face model API on 10 November 2026.",
+      "weight_verification_source": "https://huggingface.co/api/models/baidu/Unlimited-OCR-2",
+      "partial_weights": false,
+      "bibkey": "wei2026unlimitedocrworks2"
     }
   ]
 }

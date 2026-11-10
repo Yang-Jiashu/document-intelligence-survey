@@ -1,3 +1,11 @@
+# Branched chronology through 2026 - 10 November 2026
+
+- Expanded the paper chronology from 27 to 62 representative works and evaluation resources, including 12 first published in 2026 and a historically dated Tesseract 2007 paper anchor.
+- Replaced the single curve with four coexisting directions: OCR/layout, document models/VQA, structured/table reasoning, and document retrieval/agents. Grouped year bands and a caption distinguish this reading map from model genealogy.
+- Reduced native model labels from about 20.7pt to 17.5pt and logos from 22pt to 19pt. Kept official checkpoint qualification separate from code availability; benchmarks and unverified releases stay unhighlighted.
+- Added primary-paper bibliography entries for the new 2026 examples and corrected DocLayNet's arXiv identifier to 2206.01062.
+- Kept the full literature body and the homepage layout/traffic statistics. Updated the manuscript download only.
+
 # Full-coverage restoration - 10 November 2026
 
 - Restored the detailed literature discussions to the main manuscript across all six shared chapters, retaining all 412 distinct works cited by the pre-condensation full manuscript. The earlier 22-page condensation removed too much substantive coverage; the supplementary reading catalog is no longer used as a substitute for the main survey.
