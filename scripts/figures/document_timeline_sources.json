@@ -3,7 +3,7 @@
   "cutoff": "2026-11-10",
   "availability_checked": "Per-entry verification on 2026-11-09 or 2026-11-10; see checked and sources fields.",
   "availability_definition": "Yellow marks a verified authors-released trained checkpoint, including an official adapter or a released subset of model components. Public weights do not imply unrestricted use, fully released training data, or an open-source license. Plain labels denote a method/framework or no official checkpoint verified, not proof that weights cannot exist.",
-  "chronology_note": "Representative selection through 10 November 2026. Colored branches show overlapping, coexisting research directions, not direct scientific ancestry, replacement or performance superiority. Grouped year bands are not a linear time scale.",
+  "chronology_note": "Representative selection through 10 November 2026. Colored branches show overlapping, coexisting research directions, not direct scientific ancestry, replacement or performance superiority. Year clusters are spaced schematically along the curves, not on a linear time scale.",
   "tracks": [
     {
       "id": "perception",

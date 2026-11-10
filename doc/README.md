@@ -45,7 +45,7 @@ The compatibility entry point build_evidence_diagrams.py delegates to build_visu
 
 The scripts write matching figure PDFs to both `figs/` and `../figs_by_qixingyu/`. Timeline dates mean the first public release year documented by the embedded source metadata; a citation's later venue year may differ.
 
-The four-branch document-AI chronology spans 62 selected works and evaluation resources from 2007 through 2026. It uses `../scripts/figures/document_timeline_sources.json` for first-paper dates and official checkpoint links. Model labels are 17.5pt and icons 19pt in the native 1100×720 figure, about 15% smaller than the preceding design. A pale yellow highlight means that public trained weights were verified on the recorded inspection date, not that the model was released on the paper date or shares a common license. Figures 13 and 14 use constructed financial and staffing reports to explain cross-page evidence and evaluation errors; they are not experimental results.
+The four-branch document-AI chronology spans 62 selected works and evaluation resources from 2007 through 2026. It uses `../scripts/figures/document_timeline_sources.json` for first-paper dates and official checkpoint links. Model labels are 17.5pt and icons 19pt in the native 1100×780 figure, about 15% smaller than the preceding design. A pale yellow highlight means that public trained weights were verified on the recorded inspection date, not that the model was released on the paper date or shares a common license. Figures 13 and 14 use constructed financial and staffing reports to explain cross-page evidence and evaluation errors; they are not experimental results.
 
 ## Revision and download
 

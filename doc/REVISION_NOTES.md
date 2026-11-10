@@ -1,3 +1,9 @@
+# Curved chronology layout - 10 November 2026
+
+- Retained all 62 selected works, including 12 from 2026, the four research directions and the smaller model labels/icons.
+- Replaced aligned year columns and parallel horizontal rails with an asymmetric curved composition, staggered branch origins and angled leaders. Year labels follow the local curves; the layout does not assert a linear time scale or model genealogy.
+- Recompiled the complete manuscript to 65 pages with resolved references and no overfull boxes. Preserved the full bibliography and all 102 paper/checkpoint links in the chronology; updated the paper download after rendering the figure in context.
+
 # Branched chronology through 2026 - 10 November 2026
 
 - Expanded the paper chronology from 27 to 62 representative works and evaluation resources, including 12 first published in 2026 and a historically dated Tesseract 2007 paper anchor.
