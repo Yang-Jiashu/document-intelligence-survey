@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Draw a linked, four-branch chronology of document intelligence.
+"""Render a sparse overview and a complete two-page linked chronology.
 
-All dates, track assignments and checkpoint qualifications come from the
-adjacent metadata file. Branches describe coexisting research directions, not
-model ancestry. Year bands intentionally group early, sparse years. The PDF is
-native 1100 x 780 pt: it must not be squeezed into the former 1100 x 480 box.
+The adjacent 62-entry metadata is the only source of dates, research direction
+assignments, paper links and weight availability. A fixed editorial selection
+provides the 32-entry paper overview. Two 31-entry companion pages retain the
+complete source coverage, with no duplicate or omitted records. Every page has
+one black descending S-curve, sparse category dots and verified organization
+marks; placeholder task icons are never drawn. Native page size: 1100 x 500 pt.
 """
 from __future__ import annotations
 
@@ -23,7 +25,7 @@ from reportlab.pdfgen import canvas
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = Path(__file__).with_name('document_timeline_sources.json')
 LOGOS = Path(__file__).with_name('timeline_logos')
-W, H = 1100, 780
+W, H = 1100, 500
 FONT, MIN_FONT, LEADING, ICON = 17.5, 15.0, 24, 19
 LABEL_WIDTH = 134
 INK, MUTED, YELLOW, YEAR = '#202B35', '#65717B', '#FFF0B8', '#E2EDF5'
@@ -33,10 +35,6 @@ TRACKS = {
     'structured': {'label': 'Tables / structured reasoning', 'color': '#3E8270'},
     'retrieval': {'label': 'Document retrieval / agents', 'color': '#826B9D'},
 }
-# Logical date buckets only: each track has separately curated positions.
-# Pooled clusters also show each entry's actual first-public-paper year.
-BANDS = [('2019–2021', 2019, 2021), ('2022–2023', 2022, 2023),
-         ('2024', 2024, 2024), ('2025', 2025, 2025), ('2026', 2026, 2026)]
 ALIASES = {'mPLUG-DocOwl 1.5': 'DocOwl 1.5', 'mPLUG-DocOwl': 'DocOwl',
            'mPLUG-DocOwl2': 'DocOwl2', 'mPLUG-DocOwl 2': 'DocOwl2'}
 SVG: list[str] = []
@@ -82,36 +80,6 @@ def path(c, points, width=1.5, color=INK):
     SVG.append(f'<path d="{" ".join(data)}" fill="none" stroke="{color}" stroke-width="{width:g}" stroke-linecap="round" stroke-linejoin="round"/>')
 
 
-def glyph(c, track, x, y, kind=None):
-    """Small original task symbols where no verified organization asset exists."""
-    color = TRACKS.get(track, TRACKS['perception'])['color']
-    if kind == 'benchmark':
-        # A neutral evaluation mark, not an invented model/organization logo.
-        path(c,[('M',(x-8,y-8)),('L',(x-8,y+8)),('M',(x-8,y-8)),
-                ('L',(x+8,y-8)),('M',(x-4,y-5)),('L',(x-4,y)),
-                ('M',(x+1,y-5)),('L',(x+1,y+4)),
-                ('M',(x+6,y-5)),('L',(x+6,y+8))],1.3,color)
-    elif track == 'perception':
-        for dx, dy in [(-1,-1),(-1,1),(1,-1),(1,1)]:
-            path(c, [('M',(x+dx*5,y+dy*8)),('L',(x+dx*8,y+dy*8)),
-                     ('L',(x+dx*8,y+dy*5))], 1.1, color)
-        text(c,x,y-4,'A',size=12,color=color,align='center')
-    elif track == 'structured':
-        path(c,[('M',(x-8,y-7)),('L',(x-8,y+7)),('L',(x+8,y+7)),
-                ('L',(x+8,y-7)),('L',(x-8,y-7)),('M',(x,y-7)),
-                ('L',(x,y+7)),('M',(x-8,y)),('L',(x+8,y))],1.1,color)
-    elif track == 'retrieval':
-        path(c,[('M',(x-6,y+5)),('L',(x+5,y+5)),('M',(x-6,y)),
-                ('L',(x+3,y)),('M',(x+3,y-4)),('L',(x+8,y-9))],1.1,color)
-        circle(c,x-6,y+5,2,color); circle(c,x+5,y+5,2,color)
-        circle(c,x-6,y,2,color); circle(c,x+3,y-4,2,color)
-    else:
-        path(c,[('M',(x-7,y-8)),('L',(x-7,y+8)),('L',(x+3,y+8)),
-                ('L',(x+8,y+3)),('L',(x+8,y-8)),('L',(x-7,y-8)),
-                ('M',(x-3,y+2)),('L',(x+3,y+2)),
-                ('M',(x-3,y-3)),('L',(x+3,y-3))],1.1,color)
-
-
 def asset_mapping():
     source = json.loads((LOGOS/'sources.json').read_text())
     assets = {a['id'].lower(): a for a in source['assets']}
@@ -140,7 +108,6 @@ def entry_brand(entry, assets, names):
 def logo(c, entry, x, y, assets, names):
     asset = entry_brand(entry, assets, names)
     if not asset:
-        glyph(c,entry['track'],x,y,entry.get('kind'))
         return None
     filename = LOGOS/asset['file']
     assert filename.is_file(), filename
@@ -158,7 +125,7 @@ def partial_weights(entry):
             or entry.get('weights_scope') in {'partial','component','adapter'})
 
 
-def model(c, entry, x, y, assets, names, show_year=False, max_width=LABEL_WIDTH):
+def model(c, entry, x, y, assets, names, show_year=False, max_width=LABEL_WIDTH, clean=False, seen_brands=None, seen_tracks=None):
     full_name = entry['name']
     value = entry.get('display_name') or ALIASES.get(full_name, full_name)
     if partial_weights(entry): value += '†'
@@ -176,7 +143,14 @@ def model(c, entry, x, y, assets, names, show_year=False, max_width=LABEL_WIDTH)
         rect(c,x-3,y-3,width+6,18.5,YELLOW,2.5)
         SVG.append('</a>')
         c.linkURL(weights,(x-3,y-3,x+width+3,y+.5),relative=0,thickness=0)
-    brand = logo(c,entry,x-16,y+6,assets,names)
+    if clean:
+        asset=entry_brand(entry,assets,names)
+        if asset and asset['id'] not in seen_brands:
+            brand=logo(c,entry,x-16,y+6,assets,names);seen_brands.add(asset['id'])
+        else:brand=None
+        if entry['track'] not in seen_tracks:
+            circle(c,x-29,y+6,1.7,TRACKS[entry['track']]['color']);seen_tracks.add(entry['track'])
+    else:brand=logo(c,entry,x-16,y+6,assets,names)
     SVG.append(f'<a href="{esc(paper)}"><title>{esc(full_name)} · {esc(entry["date"])}</title>')
     text(c,x,y,value,size=size)
     SVG.append('</a>')
@@ -184,7 +158,7 @@ def model(c, entry, x, y, assets, names, show_year=False, max_width=LABEL_WIDTH)
     if year:
         text(c,x+width+4,y+1,year,size=9.5,bold=False,color=MUTED)
     return {'name':full_name,'date':entry['date'],'track':entry['track'],
-            'bbox':[x-27,y-4,x+width+date_width+3,y+16],
+            'bbox':[x-32 if clean else x-27,y-4,x+width+date_width+3,y+16],
             'font_size':size,'logo':brand,'weights':bool(weights)}
 
 
@@ -197,12 +171,6 @@ def normalize_track(entry):
     assert result['track'] in TRACKS, result
     return result
 
-
-
-def italic_text(c,x,y,value,color):
-    c.setFont('Times-Italic',13.5);c.setFillColor(HexColor(color))
-    c.drawString(x,y,value)
-    SVG.append(f'<text x="{x}" y="{sy(y)}" font-family="Times New Roman,Times,serif" font-size="13.5" font-style="italic" fill="{color}">{esc(value)}</text>')
 
 
 def union_box(nodes):
@@ -261,140 +229,163 @@ def sample_curve(points):
     return sampled
 
 
-def build():
-    SVG.clear()
-    metadata=json.loads(SOURCE.read_text())
-    entries=[normalize_track(e) for e in metadata['entries']]
-    assert entries and len({e['name'] for e in entries})==len(entries)
-    early=sorted([e for e in entries if int(e['date'][:4])<=2018],key=lambda e:(e['date'],e['name']))
-    later=[e for e in entries if e not in early]
-    grouped=defaultdict(list)
-    for entry in later:
-        year=int(entry['date'][:4]);band=next(i for i,(_,lo,hi) in enumerate(BANDS) if lo<=year<=hi)
-        grouped[(entry['track'],band)].append(entry)
-    for group in grouped.values():group.sort(key=lambda e:(e['date'],e['name']))
-    assets,names=asset_mapping()
-    out=ROOT/'doc/figs/fig12.pdf'
-    c=canvas.Canvas(str(out),pagesize=(W,H),pageCompression=1,invariant=1)
-    c.setTitle('Document intelligence: a branching chronology, 2007–2026')
-    c.setAuthor('Beyond OCR survey authors')
-    c.setSubject('First-public-paper chronology; coexisting research directions, not model ancestry')
+MAIN_NAMES = 'Tesseract|CRNN|DBNet|LayoutLM|TAPAS|RAG|DocVQA|Donut|LayoutLMv3|Pix2Struct|Hi-VT5 / MP-DocVQA|Qwen-VL|Chain-of-Table|GraphRAG|ColPali|Qwen2-VL|VisRAG|DocLayout-YOLO|TableGPT2|M3DocRAG|ViDoRAG|olmOCR|TableRAG|DeepSeek-OCR|Qwen3-VL|DeepSeek-OCR 2|PaddleOCR-VL-1.5|AutoThinkRAG|Qianfan-OCR|PreciseDoc|DocPilot|Unlimited OCR 2'.split('|')
+
+
+def paper_key(e):return (e['date'],e['name'])
+
+
+def legend(c):
+    x=28
+    for track,label in [('perception','OCR / layout'),('understanding','Document / VQA'),('structured','Tables'),('retrieval','Retrieval / agents')]:
+        circle(c,x,16,1.9,TRACKS[track]['color']);text(c,x+7,12.5,label,size=10.5,bold=False,color=MUTED)
+        x+=stringWidth(label,'Times-Roman',10.5)+28
+    text(c,1075,12.5,'† Partial / component weights',size=10.5,bold=False,color=MUTED,align='right')
+
+
+def draw_clean(c,entries,groups,curve,stations,title=None,description=None):
+    assets,names=asset_mapping();occupied=[];nodegroups=[]
     c.setFillColor(white);c.rect(0,0,W,H,stroke=0,fill=1)
-    SVG.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc"><title id="title">Document intelligence: a branching chronology, 2007–2026</title><desc id="desc">{len(entries)} representative models and methods, arranged around a descending S-shaped OCR/layout spine and three winding branches for document understanding, structured reasoning and retrieval. Yellow highlights indicate verified official weights. Branches organize coexisting research directions, not model ancestry.</desc><rect width="{W}" height="{H}" fill="white"/>')
-    # Curated, deliberately asymmetric cluster positions. Values are name x,
-    # first baseline, and a nearby year pill on the curve or its short leader.
-    layout={
-      ('perception',0):(45,570,(215,623)),
-      ('perception',1):(235,745,(457,428)),
-      ('perception',2):(535,410,(565,340)),
-      ('perception',3):(710,475,(800,308)),
-      ('perception',4):(930,300,(1010,352)),
-      ('understanding',0):(188,580,(320,624)),
-      ('understanding',1):(450,716,(535,600)),
-      ('understanding',2):(660,748,(740,650)),
-      ('understanding',3):(880,728,(895,689)),
-      ('understanding',4):(940,590,(1040,630)),
-      ('structured',0):(245,430,(410,460)),
-      ('structured',1):(430,330,(510,250)),
-      ('structured',2):(650,210,(710,242)),
-      ('structured',3):(775,270,(820,244)),
-      ('structured',4):(900,205,(960,234)),
-      ('retrieval',0):(255,310,(360,340)),
-      ('retrieval',2):(430,205,(480,50)),
-      ('retrieval',3):(720,100,(780,37)),
-      ('retrieval',4):(935,160,(1000,37)),
-    }
-    main=[('M',(22,622)),('C',(140,626,220,626,285,610)),
-          ('C',(306,605,322,600,335,590)),('C',(370,570,392,545,410,520)),
-          ('C',(455,455,450,380,565,340)),('C',(740,258,850,320,1070,365))]
-    understanding=[('M',(285,610)),('C',(350,650,450,575,535,600)),
-                   ('C',(620,615,680,625,740,650)),('C',(810,680,865,705,930,675)),
-                   ('C',(1000,650,1040,635,1080,610))]
-    structured=[('M',(410,520)),('C',(395,455,370,410,370,350)),
-                ('C',(370,275,430,225,510,250)),
-                ('C',(590,215,710,255,800,245)),('C',(870,240,950,250,1020,235))]
-    retrieval=[('M',(335,590)),('C',(305,490,375,350,375,250)),
-               ('C',(372,150,375,65,430,65)),('C',(500,35,610,40,700,38)),
-               ('C',(820,22,950,50,1070,30))]
-    curves={'perception':main,'understanding':understanding,'structured':structured,'retrieval':retrieval}
-    for track,points in curves.items():path(c,points,1.9,TRACKS[track]['color'])
-    # Different branch birth points and endings keep the silhouette a tree,
-    # rather than four rails hidden behind cosmetic curves.
-    for track,x,y in [('understanding',285,610),('structured',410,520),('retrieval',335,590)]:
-        circle(c,x,y,2.5,TRACKS[track]['color'])
-    for track,x,y,dx,dy in [('perception',1070,365,7,3),('understanding',1080,610,7,-4),
-                           ('structured',1020,235,7,-1),('retrieval',1070,30,7,-1)]:
-        path(c,[('M',(x-dx,y+dy+3)),('L',(x+1,y)),('L',(x-dx,y+dy-3))],1.4,TRACKS[track]['color'])
-    occupied=[];groups=[]
-    for i,entry in enumerate(early):occupied.append(model(c,entry,45,744-i*24,assets,names,True,max_width=108))
-    groups.append({'track':'perception','label':'2007–2018','pill':(80,623),'nodes':occupied[:len(early)]})
-    for key,group in grouped.items():
-        assert key in layout,('No curated placement',key)
-        x,first,pill=layout[key];nodegroup=[]
-        for i,entry in enumerate(group):
-            item=model(c,entry,x,first-i*LEADING,assets,names,BANDS[key[1]][1]!=BANDS[key[1]][2])
-            occupied.append(item);nodegroup.append(item)
-        years=sorted({e['date'][:4] for e in group})
-        label=years[0] if len(years)==1 else years[0]+'–'+years[-1]
-        groups.append({'track':key[0],'label':label,'pill':pill,'nodes':nodegroup})
-    rect(c,810,755,258,19,YELLOW,3)
-    text(c,939,760,'Publicly available weights',size=12.5,align='center')
-    italic_text(c,450,505,'OCR / layout',TRACKS['perception']['color'])
-    italic_text(c,620,610,'Document understanding / VQA',TRACKS['understanding']['color'])
-    italic_text(c,560,255,'Tables / structured reasoning',TRACKS['structured']['color'])
-    italic_text(c,625,75,'Retrieval / agents',TRACKS['retrieval']['color'])
-    boxes=[n['bbox'] for n in occupied]
-    leaders=[];pillboxes=[]
+    SVG.append(f'<rect width="{W}" height="{H}" fill="white"/>')
+    if title:
+        text(c,28,477,title,size=20)
+        text(c,28,459,description or '',size=10.5,bold=False,color=MUTED)
+    else:
+        rect(c,835,474,238,20,YELLOW,3);text(c,954,480,'Publicly available weights',size=12.5,align='center')
+    path(c,curve,2.1,'#17212B');endpoint=curve[-1][1][-2:]
+    path(c,[('M',(endpoint[0]-8,endpoint[1]+4)),('L',(endpoint[0]+2,endpoint[1])),('L',(endpoint[0]-8,endpoint[1]-4))],1.8,'#17212B')
     for group in groups:
-        label=group['label'];px,py=group['pill']
-        pw=stringWidth(label,'Times-Bold',13)+14
-        rect(c,px-pw/2,py-9,pw,20,YEAR,3)
-        text(c,px,py-3,label,size=13,align='center')
-        if group['track']=='perception' and label=='2019–2021':
-            points=[(px-pw/2,py),(155,py-13),(155,564)]
-            path(c,[('M',points[0])]+[('L',point) for point in points[1:]],.8,TRACKS[group['track']]['color'])
-        else:
-            points=link_cluster(c,(px,py,pw),union_box(group['nodes']),boxes,TRACKS[group['track']]['color'])
-        leaders.append({'track':group['track'],'label':label,'points':points})
-        pillboxes.append({'label':label,'bbox':[px-pw/2,py-9,px+pw/2,py+11]})
-    text(c,30,17,'Coexisting research directions; branches do not imply ancestry.',size=10.5,bold=False,color=MUTED)
-    text(c,1070,17,'† Component / adapter weights · First-public-paper years',size=10.5,bold=False,color=MUTED,align='right')
-    issues=[]
-    assert {e['name'] for e in occupied}=={e['name'] for e in entries}
-    for e in occupied:
-        x0,y0,x1,y1=e['bbox']
-        if not(3<x0<x1<W-5 and 35<y0<y1<H-4):issues.append(['bounds',e['name'],e['bbox']])
+        selected=group['entries'];x,y=group['position'];seen_brands=set();seen_tracks=set();members=[]
+        for i,e in enumerate(selected):
+            item=model(c,e,x,y-i*LEADING,assets,names,group.get('show_year',False),clean=True,seen_brands=seen_brands,seen_tracks=seen_tracks)
+            occupied.append(item);members.append(item)
+        nodegroups.append((group,members))
+    boxes=[n['bbox'] for n in occupied];pills=[];leaders=[]
+    for key,(x,y,label) in stations.items():
+        pw=stringWidth(label,'Times-Bold',13)+14;rect(c,x-pw/2,y-9,pw,20,YEAR,3);text(c,x,y-3,label,size=13,align='center')
+        pills.append({'label':label,'bbox':[x-pw/2,y-9,x+pw/2,y+11]})
+    for group,nodes in nodegroups:
+        x,y,label=stations[group['station']];pw=stringWidth(label,'Times-Bold',13)+14
+        points=link_cluster(c,(x,y,pw),union_box(nodes),boxes,'#69757F')
+        leaders.append({'station':label,'points':points,'names':[e['name'] for e in nodes]})
+    legend(c);issues=[]
+    assert len(occupied)==len(entries) and {n['name'] for n in occupied}=={e['name'] for e in entries}
+    for n in occupied:
+        x0,y0,x1,y1=n['bbox']
+        if not(3<x0<x1<W-4 and 30<y0<y1<H-2):issues.append(['bounds',n['name']])
     for i,a in enumerate(occupied):
-        for b in occupied[i+1:]:
-            ax0,ay0,ax1,ay1=a['bbox'];bx0,by0,bx1,by1=b['bbox']
-            if max(ax0,bx0)<min(ax1,bx1) and max(ay0,by0)<min(ay1,by1):issues.append(['label overlap',a['name'],b['name']])
-    for pill in pillboxes:
-        x0,y0,x1,y1=pill['bbox']
-        for e in occupied:
-            bx0,by0,bx1,by1=e['bbox']
-            if max(x0,bx0)<min(x1,bx1) and max(y0,by0)<min(y1,by1):issues.append(['pill overlap',pill['label'],e['name']])
-    for i,a in enumerate(pillboxes):
         ax0,ay0,ax1,ay1=a['bbox']
-        for b in pillboxes[i+1:]:
+        for b in occupied[i+1:]:
+            bx0,by0,bx1,by1=b['bbox']
+            if max(ax0,bx0)<min(ax1,bx1) and max(ay0,by0)<min(ay1,by1):issues.append(['node pair',a['name'],b['name']])
+    for i,a in enumerate(pills):
+        ax0,ay0,ax1,ay1=a['bbox']
+        for b in pills[i+1:]:
             bx0,by0,bx1,by1=b['bbox']
             if max(ax0,bx0)<min(ax1,bx1) and max(ay0,by0)<min(ay1,by1):issues.append(['pill pair',a['label'],b['label']])
-    for track,curve in curves.items():
-        points=sample_curve(curve)
-        for e in occupied:
-            x0,y0,x1,y1=e['bbox']
-            if any(x0-.5<x<x1+.5 and y0-.5<y<y1+.5 for x,y in points):issues.append(['curve collision',track,e['name']])
+        for n in occupied:
+            bx0,by0,bx1,by1=n['bbox']
+            if max(ax0,bx0)<min(ax1,bx1) and max(ay0,by0)<min(ay1,by1):issues.append(['pill node',a['label'],n['name']])
+    points=sample_curve(curve)
+    for n in occupied:
+        x0,y0,x1,y1=n['bbox']
+        if any(x0-.5<x<x1+.5 and y0-.5<y<y1+.5 for x,y in points):issues.append(['curve node',n['name']])
     for leader in leaders:
-        if not all(segment_clear(a,b,boxes) for a,b in zip(leader['points'],leader['points'][1:])):
-            issues.append(['leader collision',leader['track'],leader['label']])
-    assert not issues, issues
-    c.showPage();c.save();shutil.copyfile(out,ROOT/'figs_by_qixingyu/fig12.pdf')
-    SVG.append('</svg>');(ROOT/'docs/images/document-timeline.svg').write_text('\n'.join(SVG)+'\n')
-    qa=ROOT/'.build/timeline';qa.mkdir(parents=True,exist_ok=True)
-    (qa/'geometry.json').write_text(json.dumps({'page':[W,H],'base_font':FONT,'icon':ICON,'nodes':occupied,'leaders':leaders,'pills':pillboxes,'curves':curves,'issues':issues},indent=2)+'\n')
+        if not all(segment_clear(a,b,boxes) for a,b in zip(leader['points'],leader['points'][1:])):issues.append(['leader',leader['names']])
+    for _,members in nodegroups:
+        brands=[n['logo'] for n in members if n['logo']]
+        assert len(brands)==len(set(brands)),brands
+    max_leader=max(sum(((b[0]-a[0])**2+(b[1]-a[1])**2)**.5 for a,b in zip(leader['points'],leader['points'][1:])) for leader in leaders)
+    assert max_leader<=60,(max_leader,title)
+    assert not issues,issues
+    return {'page':[W,H],'nodes':occupied,'curve':curve,'pills':pills,'leaders':leaders,'max_leader_length':max_leader,'base_font':FONT,'icon_size':ICON,'issues':issues}
+
+
+def main_groups(entries):
+    periods=[(2007,2019),(2020,2021),(2022,2023),(2024,2024),(2025,2025),(2026,2026)]
+    chunks=[(4,),(4,),(4,),(4,4),(3,2),(4,3)]
+    positions=[[(40,480)],[(150,305)],[(330,425)],[(510,310),(555,125)],[(710,260),(750,95)],[(900,295),(930,115)]]
+    stations={0:(120,360,'2007–2019'),1:(260,345,'2020–2021'),2:(415,280,'2022–2023'),3:(590,175,'2024'),4:(800,140,'2025'),5:(1010,160,'2026')}
+    groups=[]
+    for k,((lo,hi),sizes,places) in enumerate(zip(periods,chunks,positions)):
+        selected=sorted([e for e in entries if lo<=int(e['date'][:4])<=hi],key=paper_key)
+        assert len(selected)==sum(sizes),(k,len(selected),sizes);offset=0
+        for size,place in zip(sizes,places):
+            groups.append({'entries':selected[offset:offset+size],'position':place,'station':k,'show_year':lo!=hi});offset+=size
+    curve=[('M',(25,360)),('C',(130,362,210,357,260,345)),('C',(330,330,370,315,415,280)),('C',(480,230,510,185,590,175)),('C',(670,147,725,137,800,140)),('C',(900,141,970,150,1010,160)),('C',(1040,166,1055,167,1075,165))]
+    return groups,curve,stations
+
+
+
+def build_atlas(all_entries):
+    foundation=[e for e in all_entries if e['track']=='perception' or (e['track']=='understanding' and int(e['date'][:4])<=2023)]
+    systems=[e for e in all_entries if e not in foundation]
+    assert len(foundation)==len(systems)==31
+    ordered=sorted(systems,key=paper_key)
+    first=[]
+    for lo,hi in [(2007,2018),(2019,2020),(2021,2021),(2022,2022),(2023,2023),(2024,2024),(2025,2025),(2026,2026)]:
+        first.append(sorted([e for e in foundation if lo<=int(e['date'][:4])<=hi],key=paper_key))
+    second=[ordered[i:i+4] for i in range(0,len(ordered),4)]
+    assert [len(es) for es in first]==[5,5,3,5,4,1,5,3]
+    assert len(second)==8 and all(1<=len(es)<=4 for es in second)
+    atlas=ROOT/'docs/chronology-atlas.pdf';c=canvas.Canvas(str(atlas),pagesize=(W,H),pageCompression=1,invariant=1)
+    c.setTitle('Complete document-intelligence chronology: 62 entries, 2007–2026');c.setAuthor('Beyond OCR survey authors')
+    centers=[(90,310),(250,305),(390,280),(510,230),(650,180),(785,160),(940,165),(1040,170)]
+    xs=[40,170,325,440,575,710,845,945]
+    curve=[('M',(25,310)),('C',(130,312,210,317,250,305)),('C',(320,300,365,295,390,280)),('C',(455,260,480,242,510,230)),('C',(570,205,610,188,650,180)),('C',(700,160,750,160,785,160)),('C',(850,160,900,162,940,165)),('C',(980,170,1015,172,1040,170)),('C',(1060,170,1075,173,1080,172))]
+    reports=[]
+    for index,(sets,title) in enumerate([(first,'A. Perception and document-model foundations'),(second,'B. Reasoning and document-evidence access')],1):
+        groups=[];stations={}
+        for i,es in enumerate(sets):
+            years=sorted({e['date'][:4] for e in es});label=years[0] if len(years)==1 else years[0]+'–'+years[-1]
+            cx,cy=centers[i]
+            first_baseline=cy+26+(15 if i else 0)+(len(es)-1)*LEADING if i%2==0 else cy-40
+            groups.append({'entries':es,'position':(xs[i],first_baseline),'station':i,'show_year':len(years)>1})
+            stations[i]=(cx,cy,label)
+        entries=[e for es in sets for e in es]
+        qa=draw_clean(c,entries,groups,curve,stations,title,'Complete companion chronology · 31 entries · Yellow: verified official weights · Names link to original sources')
+        qa['title']=title;qa['entry_count']=len(entries);reports.append(qa);c.showPage()
+    c.save()
+    union=[n['name'] for page in reports for n in page['nodes']]
+    assert len(union)==len(set(union))==62 and set(union)=={e['name'] for e in all_entries}
     import pypdfium2 as pdfium
-    document=pdfium.PdfDocument(str(out));rendered=document[0].render(scale=2).to_pil()
-    rendered.save(ROOT/'docs/images/document-timeline.png');rendered.save(qa/'figure.png')
-    print(f'{len(entries)} entries; native {W}x{H}; issues: {json.dumps(issues)}; {out}')
+    from pypdf import PdfReader
+    reader=PdfReader(atlas);assert len(reader.pages)==2
+    for i,(page,qa) in enumerate(zip(reader.pages,reports),1):
+        qa['uri_links']=len(page.get('/Annots',[]));assert qa['uri_links']==31+sum(n['weights'] for n in qa['nodes'])
+        for ref in page.get('/Annots',[]):
+            assert urlparse(str(ref.get_object()['/A']['/URI'])).scheme in {'http','https'}
+    folder=ROOT/'.build/timeline';document=pdfium.PdfDocument(str(atlas))
+    for i in range(2):document[i].render(scale=2).to_pil().save(folder/f'atlas-page-{i+1}.png')
+    (folder/'atlas-geometry.json').write_text(json.dumps({'coverage':{'unique_entries':62,'metadata_entries':len(all_entries),'missing':[],'duplicates':[]},'pages':reports},indent=2)+'\n')
+    print('ATLAS',[(page['entry_count'],page['issues']) for page in reports])
 
 
-if __name__=='__main__':build()
+def build(main_only=False):
+    SVG.clear();metadata=json.loads(SOURCE.read_text());all_entries=[normalize_track(e) for e in metadata['entries']]
+    lookup={e['name']:e for e in all_entries};assert len(lookup)==len(all_entries)==62
+    assert len(MAIN_NAMES)==len(set(MAIN_NAMES))==32;selected=[lookup[name] for name in MAIN_NAMES]
+    groups,curve,stations=main_groups(selected);out=ROOT/'doc/figs/fig12.pdf'
+    c=canvas.Canvas(str(out),pagesize=(W,H),pageCompression=1,invariant=1)
+    c.setTitle('Selected milestones in document intelligence, 2007–2026');c.setAuthor('Beyond OCR survey authors')
+    SVG.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc"><title id="title">Selected milestones in document intelligence, 2007–2026</title><desc id="desc">32 selected models, methods and benchmarks on one descending curved chronology. Yellow labels indicate verified official trained weights. A complete 62-entry chronology is provided separately.</desc>')
+    qa=draw_clean(c,selected,groups,curve,stations);c.showPage();c.save();shutil.copyfile(out,ROOT/'figs_by_qixingyu/fig12.pdf')
+    from pypdf import PdfReader
+    linked=PdfReader(out).pages[0];qa['uri_links']=len(linked.get('/Annots',[]))
+    qa['selection_names']=MAIN_NAMES
+    qa['coverage']={'selected':32,'source_metadata':62,'missing_selected':[],'duplicates':[]}
+    assert qa['uri_links']==32+sum(n['weights'] for n in qa['nodes'])
+    assert set(qa['selection_names'])=={n['name'] for n in qa['nodes']}
+    for ref in linked.get('/Annots',[]):
+        assert urlparse(str(ref.get_object()['/A']['/URI'])).scheme in {'http','https'}
+    SVG.append('</svg>');(ROOT/'docs/images/document-timeline.svg').write_text('\n'.join(SVG)+'\n')
+    import pypdfium2 as pdfium
+    pdf=pdfium.PdfDocument(str(out));im=pdf[0].render(scale=2).to_pil();im.save(ROOT/'docs/images/document-timeline.png')
+    folder=ROOT/'.build/timeline';folder.mkdir(parents=True,exist_ok=True);im.save(folder/'figure.png');(folder/'geometry.json').write_text(json.dumps(qa,indent=2)+'\n')
+    print('MAIN',len(selected),'nodes; issues:',qa['issues'])
+    if not main_only:build_atlas(all_entries)
+
+
+if __name__=='__main__':
+    import sys
+    build(main_only='--main-only' in sys.argv)

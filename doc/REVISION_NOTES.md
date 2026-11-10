@@ -1,3 +1,10 @@
+# Clear overview and complete companion atlas - 10 November 2026
+
+- Simplified the main chronology to 32 milestones on one S-shaped curve, emphasizing changes in representation and evidence access rather than listing every release.
+- Retained the complete 62-work selection, including all 12 entries from 2026, in a separate two-page companion atlas linked directly from the paper. The manuscript's literature discussions and bibliography remain intact.
+- Removed placeholder glyphs, repeated affiliation icons and long category paths. Dense years use short two-sided leaders instead of crossing trajectories; the small type and official weight qualifications are retained.
+- Recompiled and checked the full 65-page paper with all 423 bibliography entries, resolved references and no overfull boxes. Preserved 55 main-figure links and 102 links across the companion atlas.
+
 # Curved chronology layout - 10 November 2026
 
 - Retained all 62 selected works, including 12 from 2026, the four research directions and the smaller model labels/icons.
