@@ -38,6 +38,15 @@
       "outputTokensReserved": 0,
       "blocked": false,
       "blockedReason": "unavailable"
+    },
+    "2026-11-13": {
+      "modelRequests": 0,
+      "summaryRequests": 0,
+      "embeddingRequests": 0,
+      "inputTokensReserved": 0,
+      "outputTokensReserved": 0,
+      "blocked": false,
+      "blockedReason": "unavailable"
     }
   }
 }

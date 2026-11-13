@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-12T11:12:10Z",
+  "generatedAt": "2026-11-13T10:59:44Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
@@ -29,6 +29,27 @@
       "evidenceQuotes": []
     },
     {
+      "id": "arxiv:2611.14758",
+      "title": "Benchmarking Multilingual Document Understanding in Vision-Language Models",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2611.14758",
+      "published": "2026-11-10T21:35:26Z",
+      "updated": "2026-11-10T21:35:26Z",
+      "topics": [
+        "docqa"
+      ],
+      "sourceFingerprint": "d74b4b63e4cb0bd86b275e459ad9bed040510119cd5344bd12ddfd79bc09d860",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Recent Vision-Language Models (VLMs) perform strongly on multimodal tasks, Document Understanding (DU) among them, but the benchmarks that measure them mostly cover English documents and narrow problems. How well current VLMs generalize across languages, tasks, styles and layouts therefore remains unclear. We introduce MDU, a multilingual DU benchmark of 23146 examples spanning",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "d74b4b63e4cb0bd86b275e459ad9bed040510119cd5344bd12ddfd79bc09d860",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
       "id": "arxiv:2611.10642",
       "title": "VisProve: Learning Typed Visual Provenance for Scientific Document Question Answering",
       "kind": "paper",
@@ -50,21 +71,21 @@
       "evidenceQuotes": []
     },
     {
-      "id": "arxiv:2606.28780",
-      "title": "Multimodal Graph RAG for Long-range Visually Rich Document Understanding",
+      "id": "arxiv:2611.15418",
+      "title": "ChartGalaxy++: A Richly Annotated Dataset for Chart Understanding and Generation",
       "kind": "paper",
-      "url": "https://arxiv.org/abs/2606.28780",
-      "published": "2026-06-27T07:14:31Z",
-      "updated": "2026-11-05T12:59:26Z",
+      "url": "https://arxiv.org/abs/2611.15418",
+      "published": "2026-11-11T12:47:17Z",
+      "updated": "2026-11-11T12:47:17Z",
       "topics": [
-        "docqa"
+        "table"
       ],
-      "sourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
+      "sourceFingerprint": "be292ffa292ee0a6d437f75ea1a1c33e6663156d7cc3fb31fb6117d7b3c90628",
       "sourceBasis": "arxiv-abstract",
-      "summary": "Multimodal large language models (MLLMs) are widely applied to visual document understanding. However, comprehending long documents remains an issue by the limited context window. Though recent multimodal retrieval-augmented generation (MMRAG) can address this challenge by retrieving relevant pages. It still struggles with the visual question answering (VQA) requiring holistic ",
+      "summary": "Infographic charts communicate data through cohesive compositions of visual elements such as charts, text, and images. Existing infographic chart datasets primarily annotate individual elements with bounding boxes and category labels. Such element-level annotations do not capture hierarchical and spatial relationships, limiting their use for understanding how elements are organ",
       "contributions": [],
       "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "ada5e905615ceda4c27dbf2312acbc5b7736609269b215e3f28f6fbe7e0123f3",
+      "summarySourceFingerprint": "be292ffa292ee0a6d437f75ea1a1c33e6663156d7cc3fb31fb6117d7b3c90628",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -136,6 +157,29 @@
       "evidenceQuotes": []
     },
     {
+      "id": "arxiv:2610.20335",
+      "title": "Read, Parse, Describe: Unified Document Parsing with Visual Element Description Generation",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2610.20335",
+      "published": "2026-10-14T15:17:28Z",
+      "updated": "2026-11-12T14:44:58Z",
+      "topics": [
+        "docqa",
+        "layout",
+        "ocr"
+      ],
+      "sourceFingerprint": "1c366e5bfe8ac3543809db22252ee0dd54f1809b68c467461e6c3e0abfde7ae2",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Document understanding systems are typically evaluated as separate components via layout analysis, optical text recognition, reading-order prediction, and image captioning. This separation leaves scientific figures, captions, and visual semantics weakly connected, and fails to measure whether a model can produce a single page-level parse that is both structurally faithful and s",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "1c366e5bfe8ac3543809db22252ee0dd54f1809b68c467461e6c3e0abfde7ae2",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
       "id": "arxiv:2611.10679",
       "title": "RankShift: Evaluating Ranking Instability Across Benchmark Dimensions in Document Parsing",
       "kind": "paper",
@@ -152,27 +196,6 @@
       "contributions": [],
       "summaryKind": "source-excerpt",
       "summarySourceFingerprint": "b5906462c12f7642c7b0ec93e6a0799190dac3b8c7bc3828a688cd74e17d57da",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
-      "id": "arxiv:2509.17481",
-      "title": "ChartHal: A Fine-grained Framework Evaluating Hallucination of Large Vision Language Models in Chart Understanding",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2509.17481",
-      "published": "2025-09-22T08:15:55Z",
-      "updated": "2026-11-07T16:04:27Z",
-      "topics": [
-        "table"
-      ],
-      "sourceFingerprint": "e3efa08ae7bd38543ab5c7e797f976b414485dba4cf250d210f02089c205f0fd",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Large Vision-Language Models (LVLMs) have recently demonstrated remarkable progress, yet hallucination remains a critical barrier, particularly in chart understanding, which requires sophisticated perceptual and cognitive abilities as well as rigorous factual accuracy. While prior work has investigated hallucinations and chart comprehension independently, their intersection rem",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "e3efa08ae7bd38543ab5c7e797f976b414485dba4cf250d210f02089c205f0fd",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -198,32 +221,10 @@
       "stale": false,
       "summaryStatus": "fallback",
       "evidenceQuotes": []
-    },
-    {
-      "id": "arxiv:2611.12957",
-      "title": "DocFS: File Systems as Agentic Reasoning Environments for Complex Multimodal Document Question Answering",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2611.12957",
-      "published": "2026-11-07T07:16:38Z",
-      "updated": "2026-11-07T07:16:38Z",
-      "topics": [
-        "docqa",
-        "layout"
-      ],
-      "sourceFingerprint": "7cb45de9eb70e1a5fd821c2abb917f3a3c376607f47a1120986ff087488ec11c",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "VLM-based agents solve complex tasks by iteratively interacting with environments, and their effectiveness depends heavily on how the environment exposes information and provides tools for acting on it. However, constructing an effective environment for complex multimodal document question answering remains challenging: documents usually span many pages, with multimodal content",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "7cb45de9eb70e1a5fd821c2abb917f3a3c376607f47a1120986ff087488ec11c",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
     }
   ],
-  "pendingCount": 163,
-  "sourceLastAttempt": "2026-11-12T11:11:44Z",
+  "pendingCount": 166,
+  "sourceLastAttempt": "2026-11-13T10:59:20Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",
@@ -239,7 +240,7 @@
     "embeddingRequests": 0,
     "inputTokensReserved": 0,
     "outputTokensReserved": 0,
-    "day": "2026-11-12",
+    "day": "2026-11-13",
     "timezone": "UTC",
     "maxRequests": 8,
     "maxSummaries": 8,
