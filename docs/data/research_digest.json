@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-13T10:59:44Z",
+  "generatedAt": "2026-11-14T10:27:19Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
     {
-      "id": "github:opendatalab/MinerU:441761839",
-      "title": "MinerU · MinerU 4.2.1",
+      "id": "github:docling-project/docling:445094657",
+      "title": "docling · v2.150.1",
       "kind": "release",
-      "url": "https://github.com/opendatalab/MinerU/releases/tag/mineru-4.2.1-released",
-      "published": "2026-11-11T13:53:12Z",
-      "updated": "2026-11-11T13:53:29Z",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.150.1",
+      "published": "2026-11-14T07:04:56Z",
+      "updated": "2026-11-14T07:04:56Z",
       "topics": [
         "layout",
         "ocr",
         "table"
       ],
-      "sourceFingerprint": "cf08081033600fb331d53edf2b4210a04c5dbd42b0230632f2ff8c96a3fbe042",
+      "sourceFingerprint": "43e707b7a3bd0c0ede4ef164db2b7d40a3231e7df39963d5d185d5f6b901d315",
       "sourceBasis": "official-release-notes",
-      "summary": "## 4.2.1 - **修复 Doclib 截断续读遗漏内容**。Markdown 文档或单页读取在 `context=0` 时，达到长度限制后通过 `next_request.locator` 与 `next_request.after` 继续读取当前页的剩余内容，读完后再建议下一页。CLI 续读标记和 SDK 文档同步更新。 - **完善托管解析服务的故障恢复**。连续启动或重启失败达到上限后停止自动重试，并清理残留进程。重新设置托管模式或档位、重启文档库服务后可再次尝试恢复。切换模式、档位及关闭服务时，完善旧进程和控制通道的回收。 - **修复 Windows 托管服务端口探测**。按照服务实际绑定行为检查端口，在非严格端口模式下跳过已占用或被系统保留的端口，减少探测成功后仍无法启动的问题。 - **改善文档库服务的优雅退出**。通过宿主停机",
+      "summary": "### Fix * **cli:** Omit from_formats in convert-remote unless --from is set (#5346) (`ebc50e3`) * **docx:** Detect headings from paragraph-level w:outlineLvl (#3312) (#4129) (`31d14a7`) * **docx:*",
       "contributions": [],
       "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "cf08081033600fb331d53edf2b4210a04c5dbd42b0230632f2ff8c96a3fbe042",
+      "summarySourceFingerprint": "43e707b7a3bd0c0ede4ef164db2b7d40a3231e7df39963d5d185d5f6b901d315",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -50,27 +50,6 @@
       "evidenceQuotes": []
     },
     {
-      "id": "arxiv:2611.10642",
-      "title": "VisProve: Learning Typed Visual Provenance for Scientific Document Question Answering",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2611.10642",
-      "published": "2026-11-07T10:30:38Z",
-      "updated": "2026-11-07T10:30:38Z",
-      "topics": [
-        "docqa"
-      ],
-      "sourceFingerprint": "52b2996f4958b319ea1785cfda069317454227388982149e7b8cec620dfd9167",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Visual citations show where an answer is supported, but not how the cited content contributes to it. In scientific document question answering, a model may read a value directly, compress several observations, or combine evidence to infer a conclusion. We study typed visual provenance, where a system generates an answer together with source regions and explicit support relation",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "52b2996f4958b319ea1785cfda069317454227388982149e7b8cec620dfd9167",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
       "id": "arxiv:2611.15418",
       "title": "ChartGalaxy++: A Richly Annotated Dataset for Chart Understanding and Generation",
       "kind": "paper",
@@ -86,6 +65,27 @@
       "contributions": [],
       "summaryKind": "source-excerpt",
       "summarySourceFingerprint": "be292ffa292ee0a6d437f75ea1a1c33e6663156d7cc3fb31fb6117d7b3c90628",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2611.10642",
+      "title": "VisProve: Learning Typed Visual Provenance for Scientific Document Question Answering",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2611.10642",
+      "published": "2026-11-07T10:30:38Z",
+      "updated": "2026-11-07T10:30:38Z",
+      "topics": [
+        "docqa"
+      ],
+      "sourceFingerprint": "52b2996f4958b319ea1785cfda069317454227388982149e7b8cec620dfd9167",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Visual citations show where an answer is supported, but not how the cited content contributes to it. In scientific document question answering, a model may read a value directly, compress several observations, or combine evidence to infer a conclusion. We study typed visual provenance, where a system generates an answer together with source regions and explicit support relation",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "52b2996f4958b319ea1785cfda069317454227388982149e7b8cec620dfd9167",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -135,22 +135,21 @@
       "evidenceQuotes": []
     },
     {
-      "id": "arxiv:2611.11886",
-      "title": "Multi-Modal Agricultural Document Understanding at the DAGRI Task",
+      "id": "arxiv:2610.36444",
+      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
       "kind": "paper",
-      "url": "https://arxiv.org/abs/2611.11886",
-      "published": "2026-11-09T05:06:27Z",
-      "updated": "2026-11-09T05:06:27Z",
+      "url": "https://arxiv.org/abs/2610.36444",
+      "published": "2026-10-27T00:45:49Z",
+      "updated": "2026-10-27T00:45:49Z",
       "topics": [
-        "docqa",
-        "table"
+        "docrag"
       ],
-      "sourceFingerprint": "6bea4a64bacb430da569a8178887839ae09e0b2763566642afef2037761f70ba",
+      "sourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
       "sourceBasis": "arxiv-abstract",
-      "summary": "Agricultural documents, such as prefectural technical reports and crop calendars, are critical knowledge resources. However, their complex table layouts, significant variations in document length, and dense multi-modal elements pose substantial challenges for automated understanding. To address these issues, the NTCIR-19 DAGRI (Data Analytics for aGRicultural Information) task ",
+      "summary": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and po",
       "contributions": [],
       "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "6bea4a64bacb430da569a8178887839ae09e0b2763566642afef2037761f70ba",
+      "summarySourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -180,6 +179,28 @@
       "evidenceQuotes": []
     },
     {
+      "id": "arxiv:2611.12957",
+      "title": "DocFS: File Systems as Agentic Reasoning Environments for Complex Multimodal Document Question Answering",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2611.12957",
+      "published": "2026-11-07T07:16:38Z",
+      "updated": "2026-11-07T07:16:38Z",
+      "topics": [
+        "docqa",
+        "layout"
+      ],
+      "sourceFingerprint": "7cb45de9eb70e1a5fd821c2abb917f3a3c376607f47a1120986ff087488ec11c",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "VLM-based agents solve complex tasks by iteratively interacting with environments, and their effectiveness depends heavily on how the environment exposes information and provides tools for acting on it. However, constructing an effective environment for complex multimodal document question answering remains challenging: documents usually span many pages, with multimodal content",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "7cb45de9eb70e1a5fd821c2abb917f3a3c376607f47a1120986ff087488ec11c",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
       "id": "arxiv:2611.10679",
       "title": "RankShift: Evaluating Ranking Instability Across Benchmark Dimensions in Document Parsing",
       "kind": "paper",
@@ -200,31 +221,10 @@
       "stale": false,
       "summaryStatus": "fallback",
       "evidenceQuotes": []
-    },
-    {
-      "id": "arxiv:2610.36444",
-      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2610.36444",
-      "published": "2026-10-27T00:45:49Z",
-      "updated": "2026-10-27T00:45:49Z",
-      "topics": [
-        "docrag"
-      ],
-      "sourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and po",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
     }
   ],
-  "pendingCount": 166,
-  "sourceLastAttempt": "2026-11-13T10:59:20Z",
+  "pendingCount": 168,
+  "sourceLastAttempt": "2026-11-14T10:26:41Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",
@@ -240,7 +240,7 @@
     "embeddingRequests": 0,
     "inputTokensReserved": 0,
     "outputTokensReserved": 0,
-    "day": "2026-11-13",
+    "day": "2026-11-14",
     "timezone": "UTC",
     "maxRequests": 8,
     "maxSummaries": 8,
