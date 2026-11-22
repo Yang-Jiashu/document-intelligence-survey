@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-21T11:02:24Z",
+  "generatedAt": "2026-11-22T11:25:55Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
@@ -157,48 +157,6 @@
       "evidenceQuotes": []
     },
     {
-      "id": "arxiv:2604.22774",
-      "title": "When VLMs 'Fix' Students: Identifying and Penalizing Over-Correction in the Evaluation of Multi-line Handwritten Math OCR",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2604.22774",
-      "published": "2026-04-01T05:27:52Z",
-      "updated": "2026-11-17T06:11:15Z",
-      "topics": [
-        "ocr"
-      ],
-      "sourceFingerprint": "e55b8485399f091b3fbdf8293046c19e8b2ed5f632e0267ab241211dbde47f84",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Accurate transcription of handwritten mathematics is crucial for educational AI systems, yet current benchmarks fail to evaluate this capability properly. Most prior studies focus on single-line expressions and rely on lexical metrics such as BLEU, which fail to assess the semantic reasoning across multi-line student solutions. In this paper, we present the first systematic stu",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "e55b8485399f091b3fbdf8293046c19e8b2ed5f632e0267ab241211dbde47f84",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
-      "id": "arxiv:2611.22310",
-      "title": "EviDARL: Evidence-Centric Dual-Agent Reasoning via Alternating Reinforcement Learning for Multi-Table Question Answering",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2611.22310",
-      "published": "2026-11-17T07:07:41Z",
-      "updated": "2026-11-17T07:07:41Z",
-      "topics": [
-        "table"
-      ],
-      "sourceFingerprint": "4aaeb9cc375737ba390dcffa3a463bd19ea5cfad159a16f8994d6aa6d9b32205",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Despite advances in LLM-based table reasoning, most studies focus on single-table settings. Multi-table QA requires multi-hop reasoning over complex table relationships and evidence dispersed across long contexts, often without verifiable intermediate traces. To address these challenges, we introduce EviDA, an evidence-centric dual-agent framework comprising an Evidence Constru",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "4aaeb9cc375737ba390dcffa3a463bd19ea5cfad159a16f8994d6aa6d9b32205",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
       "id": "arxiv:2609.02486",
       "title": "ViSAR: Training-Free Adaptive-$k$ Retrieval for Document Visual Question Answering",
       "kind": "paper",
@@ -220,10 +178,52 @@
       "stale": false,
       "summaryStatus": "fallback",
       "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2604.22774",
+      "title": "When VLMs 'Fix' Students: Identifying and Penalizing Over-Correction in the Evaluation of Multi-line Handwritten Math OCR",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2604.22774",
+      "published": "2026-04-01T05:27:52Z",
+      "updated": "2026-11-17T06:11:15Z",
+      "topics": [
+        "ocr"
+      ],
+      "sourceFingerprint": "e55b8485399f091b3fbdf8293046c19e8b2ed5f632e0267ab241211dbde47f84",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Accurate transcription of handwritten mathematics is crucial for educational AI systems, yet current benchmarks fail to evaluate this capability properly. Most prior studies focus on single-line expressions and rely on lexical metrics such as BLEU, which fail to assess the semantic reasoning across multi-line student solutions. In this paper, we present the first systematic stu",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "e55b8485399f091b3fbdf8293046c19e8b2ed5f632e0267ab241211dbde47f84",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
+      "id": "arxiv:2611.21303",
+      "title": "Syllable- and Word-Level Evaluation of Tibetan OCR",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2611.21303",
+      "published": "2026-11-16T16:03:52Z",
+      "updated": "2026-11-16T16:03:52Z",
+      "topics": [
+        "ocr"
+      ],
+      "sourceFingerprint": "4f7ae4172fd2192fb06cad866ceb4af9f32fc110b40750c99cc1c9a359301b7c",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Optical character recognition (OCR) for Tibetan is evaluated predominantly by character error rate (CER). Tibetan marks syllable boundaries but does not mark word boundaries, so a word error rate requires a segmenter. This study evaluates nine recognizer configurations on typeset, woodblock and two handwritten script styles, alone and in combination, and reports syllable- and w",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "4f7ae4172fd2192fb06cad866ceb4af9f32fc110b40750c99cc1c9a359301b7c",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
     }
   ],
   "pendingCount": 198,
-  "sourceLastAttempt": "2026-11-21T11:01:59Z",
+  "sourceLastAttempt": "2026-11-22T11:25:33Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",
@@ -239,7 +239,7 @@
     "embeddingRequests": 0,
     "inputTokensReserved": 0,
     "outputTokensReserved": 0,
-    "day": "2026-11-21",
+    "day": "2026-11-22",
     "timezone": "UTC",
     "maxRequests": 8,
     "maxSummaries": 8,
