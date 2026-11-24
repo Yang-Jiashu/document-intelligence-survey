@@ -1,10 +1,33 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-23T12:46:02Z",
+  "generatedAt": "2026-11-24T13:45:53Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
+    {
+      "id": "github:docling-project/docling:455466942",
+      "title": "docling · v2.152.0",
+      "kind": "release",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.152.0",
+      "published": "2026-11-23T13:29:58Z",
+      "updated": "2026-11-23T13:29:58Z",
+      "topics": [
+        "layout",
+        "ocr",
+        "table"
+      ],
+      "sourceFingerprint": "28d74e33f3b051dbcd2ba009f4428c14ff7f7c0d322d9c5c904b32b86e97d3a8",
+      "sourceBasis": "official-release-notes",
+      "summary": "### Feature * **pdf:** Cancel queued PDF parsing when conversions stop (#5456) (`4c0a96d`) * **service:** Let the server choose the default pipeline (#4875) (`adfdff3`) * Turn audio/video transcri",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "28d74e33f3b051dbcd2ba009f4428c14ff7f7c0d322d9c5c904b32b86e97d3a8",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
     {
       "id": "arxiv:2611.27494",
       "title": "Typhoon OCR 2: From Thai Document Transcription to Multilingual, Multi-Task OCR",
@@ -23,29 +46,6 @@
       "contributions": [],
       "summaryKind": "source-excerpt",
       "summarySourceFingerprint": "da7041080ea96dbdf9d9e6495062e198472c5b6e4a2d9f5fda966c764b91b770",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
-      "id": "github:docling-project/docling:451535386",
-      "title": "docling · v2.151.1",
-      "kind": "release",
-      "url": "https://github.com/docling-project/docling/releases/tag/v2.151.1",
-      "published": "2026-11-19T15:27:09Z",
-      "updated": "2026-11-19T15:27:09Z",
-      "topics": [
-        "layout",
-        "ocr",
-        "table"
-      ],
-      "sourceFingerprint": "c3391a70a13ea261bcb95dcf2f21abdbcf163b6e51fa05cfab9a38f445c9b7d4",
-      "sourceBasis": "official-release-notes",
-      "summary": "### Fix * **service-client:** Keep the WebSocket poll fallback within the original timeout (#5121) (`f9249e5`) * **service-client:** Propagate input iterator errors (#5013) (`1150323`) * Preserve",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "c3391a70a13ea261bcb95dcf2f21abdbcf163b6e51fa05cfab9a38f445c9b7d4",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -95,6 +95,27 @@
       "evidenceQuotes": []
     },
     {
+      "id": "arxiv:2610.36444",
+      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2610.36444",
+      "published": "2026-10-27T00:45:49Z",
+      "updated": "2026-10-27T00:45:49Z",
+      "topics": [
+        "docrag"
+      ],
+      "sourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and po",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
       "id": "arxiv:2611.25506",
       "title": "Carry the Fine Print: Budget-Aware Visual Token Compression for Document OCR",
       "kind": "paper",
@@ -111,27 +132,6 @@
       "contributions": [],
       "summaryKind": "source-excerpt",
       "summarySourceFingerprint": "fd62de9a39d485fd3292ce1a958782efd670ebef5efbd75d9752ba66499dba62",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
-      "id": "arxiv:2610.36444",
-      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2610.36444",
-      "published": "2026-10-27T00:45:49Z",
-      "updated": "2026-10-27T00:45:49Z",
-      "topics": [
-        "docrag"
-      ],
-      "sourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and po",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -222,8 +222,8 @@
       "evidenceQuotes": []
     }
   ],
-  "pendingCount": 200,
-  "sourceLastAttempt": "2026-11-23T12:42:23Z",
+  "pendingCount": 201,
+  "sourceLastAttempt": "2026-11-24T13:44:08Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",
@@ -239,7 +239,7 @@
     "embeddingRequests": 0,
     "inputTokensReserved": 0,
     "outputTokensReserved": 0,
-    "day": "2026-11-23",
+    "day": "2026-11-24",
     "timezone": "UTC",
     "maxRequests": 8,
     "maxSummaries": 8,
