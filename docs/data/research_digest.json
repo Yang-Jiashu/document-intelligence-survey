@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "document-intelligence",
-  "generatedAt": "2026-11-27T12:21:33Z",
+  "generatedAt": "2026-11-28T11:46:31Z",
   "mode": "source-excerpts",
   "status": "unconfigured",
   "items": [
@@ -94,6 +94,27 @@
       "evidenceQuotes": []
     },
     {
+      "id": "arxiv:2611.32006",
+      "title": "TableRouter: Query-Aware Evidence Construction for Long-Table Question Answering",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2611.32006",
+      "published": "2026-11-24T05:55:07Z",
+      "updated": "2026-11-24T05:55:07Z",
+      "topics": [
+        "table"
+      ],
+      "sourceFingerprint": "a490d321932a4bdc6cf6ca4333e3bcf62abf076065675e173174fcd25fcdc294",
+      "sourceBasis": "arxiv-abstract",
+      "summary": "LLMs can reason over tables, but when tables outgrow the context budget, retrieving relevant rows is only part of the solution. A retrieved subset may omit information required for an exact aggregate; even complete evidence may remain difficult for an LLM to use. We introduce TableRouter, a training-free framework that analyzes each query, then chooses between two routes: a com",
+      "contributions": [],
+      "summaryKind": "source-excerpt",
+      "summarySourceFingerprint": "a490d321932a4bdc6cf6ca4333e3bcf62abf076065675e173174fcd25fcdc294",
+      "summaryGeneratedAt": null,
+      "stale": false,
+      "summaryStatus": "fallback",
+      "evidenceQuotes": []
+    },
+    {
       "id": "arxiv:2611.33791",
       "title": "ExtractBench Pro: The Long Tail of Document Extraction",
       "kind": "paper",
@@ -130,27 +151,6 @@
       "contributions": [],
       "summaryKind": "source-excerpt",
       "summarySourceFingerprint": "5649e5e8365cd2180353ebba6104c0397d9ac989605381d381ce1a9eebfed516",
-      "summaryGeneratedAt": null,
-      "stale": false,
-      "summaryStatus": "fallback",
-      "evidenceQuotes": []
-    },
-    {
-      "id": "arxiv:2611.32006",
-      "title": "TableRouter: Query-Aware Evidence Construction for Long-Table Question Answering",
-      "kind": "paper",
-      "url": "https://arxiv.org/abs/2611.32006",
-      "published": "2026-11-24T05:55:07Z",
-      "updated": "2026-11-24T05:55:07Z",
-      "topics": [
-        "table"
-      ],
-      "sourceFingerprint": "a490d321932a4bdc6cf6ca4333e3bcf62abf076065675e173174fcd25fcdc294",
-      "sourceBasis": "arxiv-abstract",
-      "summary": "LLMs can reason over tables, but when tables outgrow the context budget, retrieving relevant rows is only part of the solution. A retrieved subset may omit information required for an exact aggregate; even complete evidence may remain difficult for an LLM to use. We introduce TableRouter, a training-free framework that analyzes each query, then chooses between two routes: a com",
-      "contributions": [],
-      "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "a490d321932a4bdc6cf6ca4333e3bcf62abf076065675e173174fcd25fcdc294",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -199,21 +199,21 @@
       "evidenceQuotes": []
     },
     {
-      "id": "arxiv:2603.04614",
-      "title": "SGR3 Model: Scene Graph Retrieval-Reasoning Model in 3D",
+      "id": "arxiv:2610.36444",
+      "title": "RouteDRAG: Learning to Route and Control Agentic Execution for Multimodal Document RAG",
       "kind": "paper",
-      "url": "https://arxiv.org/abs/2603.04614",
-      "published": "2026-03-04T21:19:54Z",
-      "updated": "2026-11-21T12:11:50Z",
+      "url": "https://arxiv.org/abs/2610.36444",
+      "published": "2026-10-27T00:45:49Z",
+      "updated": "2026-10-27T00:45:49Z",
       "topics": [
         "docrag"
       ],
-      "sourceFingerprint": "545dd57a3c38bf4736fb042d4fd5f4f0656e031606b414ef0d5bc0146de09704",
+      "sourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
       "sourceBasis": "arxiv-abstract",
-      "summary": "3D scene graphs provide a structured representation of object entities and their relationships, enabling high-level interpretation and reasoning for robots while remaining intuitively understandable to humans. Existing approaches for 3D scene graph generation typically combine scene reconstruction with graph neural networks (GNNs). However, such pipelines require multi-modal da",
+      "summary": "Web-based applications increasingly rely on understanding long multimodal documents, where answering questions often requires combining information across pages, tables, and figures. Agentic retrieval-augmented generation addresses these tasks through iterative retrieval and reasoning. However, Agentic execution is not always necessary, introducing additional computation and po",
       "contributions": [],
       "summaryKind": "source-excerpt",
-      "summarySourceFingerprint": "545dd57a3c38bf4736fb042d4fd5f4f0656e031606b414ef0d5bc0146de09704",
+      "summarySourceFingerprint": "a09490111882093d516a2584adefb67586f48f48b664fc2254d680694ce0020b",
       "summaryGeneratedAt": null,
       "stale": false,
       "summaryStatus": "fallback",
@@ -221,7 +221,7 @@
     }
   ],
   "pendingCount": 216,
-  "sourceLastAttempt": "2026-11-27T12:21:08Z",
+  "sourceLastAttempt": "2026-11-28T11:46:08Z",
   "model": {
     "provider": "cloudflare-workers-ai",
     "summary": "@cf/zai-org/glm-4.7-flash",
@@ -237,7 +237,7 @@
     "embeddingRequests": 0,
     "inputTokensReserved": 0,
     "outputTokensReserved": 0,
-    "day": "2026-11-27",
+    "day": "2026-11-28",
     "timezone": "UTC",
     "maxRequests": 8,
     "maxSummaries": 8,
